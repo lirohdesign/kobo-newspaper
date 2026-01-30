@@ -1,4 +1,3 @@
-    weather_html = f'<div class="weather-block">{weather_content}</div>'import requests
 import os
 import feedparser
 import time
