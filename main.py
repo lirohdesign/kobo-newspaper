@@ -19,10 +19,23 @@ def collect_weather():
             start = r.text.find('<pre class="glossaryProduct">') + 29
             end = r.text.find('</pre>', start)
             raw = r.text[start:end].replace('&nbsp;', ' ').replace('&amp;', '&')
+            
+            # Remove glossary hyperlinks
             clean_text = re.sub(r'<a [^>]*>(.*?)</a>', r'\1', raw)
+            
+            # Split into sections
             paragraphs = clean_text.split('\n\n')
-            return "".join([f'<p style="margin-bottom: 1em;">{p.replace("\n", " ").strip()}</p>' for p in paragraphs if p.strip()])
-    except:
+            html_paragraphs = []
+            
+            for p in paragraphs:
+                if p.strip():
+                    # PERFORM THE REPLACE OUTSIDE THE F-STRING
+                    clean_p = p.replace('\n', ' ').strip()
+                    html_paragraphs.append(f'<p style="margin-bottom: 1em;">{clean_p}</p>')
+            
+            return "".join(html_paragraphs)
+    except Exception as e:
+        print(f"Weather error: {e}")
         return "<p>weather unavailable.</p>"
 
 def collect_guardian_links():
