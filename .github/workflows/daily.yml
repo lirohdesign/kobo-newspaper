@@ -21,6 +21,10 @@ jobs:
         run: pip install -r requirements.txt
 
       - name: Run Scraper
+        env:
+          # This allows main.py to send the 10 Guardian/NYT links
+          INSTAPAPER_USER: ${{ secrets.INSTAPAPER_USER }}
+          INSTAPAPER_PASS: ${{ secrets.INSTAPAPER_PASS }}
         run: python main.py
 
       - name: Deploy to GitHub Pages
@@ -32,11 +36,11 @@ jobs:
 
       - name: Notify Instapaper
         env:
+          # This allows the final 'ping' so Instapaper fetches the newsletter
           INSTAPAPER_USER: ${{ secrets.INSTAPAPER_USER }}
           INSTAPAPER_PASS: ${{ secrets.INSTAPAPER_PASS }}
         run: |
-          # Wait 90s for GitHub to actually push the file to the web
-          sleep 90
+          sleep 180
           curl -u "$INSTAPAPER_USER:$INSTAPAPER_PASS" \
           https://www.instapaper.com/api/add \
-          -d "url=https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/index.html"
+          -d "url=https://lirohdesign.github.io/kobo-newspaper/index.html"
