@@ -25,10 +25,19 @@ def get_weather_afd():
         if '<pre class="glossaryProduct">' in r.text:
             start = r.text.find('<pre class="glossaryProduct">') + 29
             end = r.text.find('</pre>', start)
-            return r.text[start:end].replace('&nbsp;', ' ').replace('&amp;', '&')
+            raw = r.text[start:end].replace('&nbsp;', ' ').replace('&amp;', '&')
+            
+            # preserve double line breaks for sections, strip single line breaks for flow
+            paragraphs = raw.split('\n\n')
+            cleaned_paragraphs = []
+            for p in paragraphs:
+                cleaned_p = p.replace('\n', ' ').strip()
+                if cleaned_p:
+                    cleaned_paragraphs.append(cleaned_p)
+            return "\n\n".join(cleaned_paragraphs)
         return "weather data currently unavailable."
-    except:
-        return "weather connection error."
+    except Exception as e:
+        return f"weather connection error: {e}"
 
 def update_archive_index():
     if not os.path.exists("old_issues"):
@@ -46,21 +55,22 @@ def update_archive_index():
         f.write(index_html)
 
 def main():
-    # 1. handle cst time (utc - 6)
+    # 1. cst time handling
     utc_now = datetime.utcnow()
     cst_now = utc_now - timedelta(hours=6)
     date_str = cst_now.strftime("%b %d, %y").lower()
     time_str = cst_now.strftime("%I:%M %p").lower()
     file_date = cst_now.strftime("%Y-%m-%d")
 
-    # 2. sync guardian long reads
+    # 2. sync news (guardian only)
     archive_items = []
     feed_url = "https://www.theguardian.com/news/series/the-long-read/rss"
     
-    print("syncing news...")
+    print(f"syncing news at {time_str} cst...")
     try:
         resp = requests.get(feed_url, timeout=15, headers={'User-Agent': 'Mozilla/5.0'})
         feed = feedparser.parse(resp.content)
+        print(f"  found {len(feed.entries)} entries in guardian feed.")
         
         count = 0
         for entry in feed.entries:
@@ -69,9 +79,11 @@ def main():
                 if add_url_to_instapaper(entry.link):
                     archive_items.append(f'<li><a href="{entry.link}">{entry.title.lower()}</a></li>')
                     count += 1
+                    print(f"    synced: {entry.title[:30]}...")
                     time.sleep(1)
+        print(f"  successfully synced {count} articles.")
     except Exception as e:
-        print(f"feed error: {e}")
+        print(f"  news sync failed: {e}")
     
     # 3. build newsletter body
     weather_raw = get_weather_afd()
@@ -96,7 +108,7 @@ def main():
 
     final_html = f"""<!DOCTYPE html><html><head><meta charset="UTF-8"><link rel="stylesheet" href="style.css"></head><body>{html_body}</body></html>"""
 
-    # 4. save files
+    # 4. save and archive
     with open("index.html", "w", encoding="utf-8") as f:
         f.write(final_html)
 
