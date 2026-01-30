@@ -1,6 +1,7 @@
 import requests
 import os
 import feedparser
+import re
 import time
 from datetime import datetime, timedelta
 
@@ -27,17 +28,21 @@ def get_weather_afd():
             end = r.text.find('</pre>', start)
             raw = r.text[start:end].replace('&nbsp;', ' ').replace('&amp;', '&')
             
-            # preserve double line breaks for sections, strip single line breaks for flow
-            paragraphs = raw.split('\n\n')
-            cleaned_paragraphs = []
+            # 1. remove glossary hyperlinks (keeps the text between the <a> tags)
+            clean_text = re.sub(r'<a [^>]*>(.*?)</a>', r'\1', raw)
+            
+            # 2. handle kobo-friendly paragraph wrapping
+            paragraphs = clean_text.split('\n\n')
+            html_paragraphs = []
             for p in paragraphs:
                 cleaned_p = p.replace('\n', ' ').strip()
                 if cleaned_p:
-                    cleaned_paragraphs.append(cleaned_p)
-            return "\n\n".join(cleaned_paragraphs)
-        return "weather data currently unavailable."
+                    # wrap in <p> tags for instapaper/kobo parsing
+                    html_paragraphs.append(f'<p>{cleaned_p}</p>')
+            return "".join(html_paragraphs)
+        return "<p>weather data currently unavailable.</p>"
     except:
-        return "weather connection error."
+        return "<p>weather connection error.</p>"
 
 def update_archive_index():
     if not os.path.exists("old_issues"):
