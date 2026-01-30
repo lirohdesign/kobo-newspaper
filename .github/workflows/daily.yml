@@ -39,8 +39,7 @@ jobs:
           INSTAPAPER_USER: ${{ secrets.INSTAPAPER_USER }}
           INSTAPAPER_PASS: ${{ secrets.INSTAPAPER_PASS }}
         run: |
-          sleep 180
-          # We add ?t=[timestamp] to the URL so Instapaper thinks it's a new page
+          sleep 30
           curl -u "$INSTAPAPER_USER:$INSTAPAPER_PASS" \
           https://www.instapaper.com/api/add \
           -d "url=https://lirohdesign.github.io/kobo-newspaper/index.html?t=$(date +%s)"
