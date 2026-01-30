@@ -1,6 +1,44 @@
-body { font-family: -apple-system, sans-serif; line-height: 1.6; max-width: 800px; margin: 40px auto; padding: 20px; color: #111; }
-.masthead { font-family: "Georgia", serif; font-size: 48px; font-weight: bold; border-bottom: 4px double #000; text-align: center; margin-bottom: 5px; text-transform: lowercase; }
-.timestamp { text-align: center; font-size: 14px; color: #666; margin-bottom: 20px; }
-.weather-block { background: #f9f9f9; padding: 15px; border: 1px solid #ddd; white-space: pre-wrap; font-family: monospace; font-size: 14px; }
-.reddit-block { font-style: italic; color: #444; }
-a { color: #0066cc; text-decoration: none; }
+body { 
+    font-family: -apple-system, sans-serif; 
+    line-height: 1.6; 
+    max-width: 700px; 
+    margin: 40px auto; 
+    padding: 20px; 
+    color: #333; 
+}
+
+.masthead { 
+    font-family: serif; 
+    font-size: 32px; 
+    text-align: left; 
+    margin-bottom: 0; 
+    color: #000;
+}
+
+.timestamp { 
+    font-size: 12px; 
+    color: #888; 
+    margin-bottom: 30px; 
+}
+
+h2 { 
+    font-size: 18px; 
+    font-weight: 600; 
+    margin-top: 40px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 5px;
+}
+
+.weather-block { 
+    white-space: pre-wrap; 
+    font-family: monospace; 
+    font-size: 13px; 
+    color: #444;
+    background: #fafafa;
+    padding: 10px;
+}
+
+ul { list-style: none; padding: 0; }
+li { margin-bottom: 8px; font-size: 14px; }
+a { color: #555; text-decoration: underline; }
+a:hover { color: #000; }
