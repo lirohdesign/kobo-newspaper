@@ -78,31 +78,20 @@ def collect_nyt():
             with open(path, "r", encoding="utf-8") as f:
                 raw_html = f.read()
             
-            # 1. Strip scripts/styles to prevent layout hijacking
+            # 1. Remove all CSS and Javascript
             clean = re.sub(r'<(style|script)[^>]*>.*?</\1>', '', raw_html, flags=re.DOTALL)
             
-            # 2. Extract P, H3, and IMG tags
-            content_blocks = re.findall(r'<(p|h3|img)[^>]*>(.*?)</\1>|<img[^>]*>', clean, flags=re.DOTALL)
+            # 2. Extract only P and H3 tags
+            content_blocks = re.findall(r'<(p|h3)[^>]*>(.*?)</\1>', clean, flags=re.DOTALL)
             
             html_out = []
-            for match in content_blocks:
-                # Reconstruct the tag without any of its original attributes (IDs, classes, styles)
-                # except for the 'src' on images.
-                full_tag = match[0] or "" 
+            for tag, text in content_blocks:
+                # 3. Strip ALL inner HTML (links, spans, images) for pure text
+                text_only = re.sub(r'<[^>]+>', '', text).strip()
                 
-                if 'img' in full_tag or '<img' in str(match):
-                    # Extract just the SRC to avoid tracking pixels or oversized fixed widths
-                    src_match = re.search(r'src="([^"]+)"', str(match))
-                    if src_match:
-                        src = src_match.group(1)
-                        # Skip tiny tracking pixels (usually 1x1 or containing 'spacer')
-                        if "spacer" not in src and "tracking" not in src:
-                            html_out.append(f'<img src="{src}" style="max-width: 100%; height: auto; margin: 1em 0;">')
-                else:
-                    tag_type = match[0]
-                    text_content = re.sub(r'<[^>]+>', '', match[1]) # Strip links inside the text
-                    if len(text_content.strip()) > 30:
-                        html_out.append(f'<{tag_type}>{text_content.strip()}</{tag_type}>')
+                # Only keep blocks with substantial text to avoid footer/social junk
+                if len(text_only) > 40: 
+                    html_out.append(f'<{tag}>{text_only}</{tag}>')
             
             return "".join(html_out)
         except Exception as e:
@@ -121,31 +110,34 @@ def main():
         news_content = collect_guardian_links()
         nyt_content = collect_nyt() 
 
+        # ASSEMBLE HTML
         html_body = f"""
-        <div id="instapaper_filler">
-            <article>
-                <h1>liroh daily: {date_str}</h1>
-                
-                <section id="weather-section">
-                    <h2>01. weather discussion</h2>
-                    {weather_content}
-                </section>
-                
-                <hr>
-                
-                <section id="nyt-section">
-                    <h2>02. the morning news</h2>
+        <article class="h-entry">
+            <header>
+                <h1 class="p-name">liroh daily: {date_str} // {time_str} cst</h1>
+            </header>
+            
+            <section class="e-content">
+                <h2>01. weather discussion</h2>
+                {weather_content}
+            </section>
+            
+            <hr>
+            
+            <section class="e-content">
+                <h2>02. the morning news</h2>
+                <div class="nyt-text-section">
                     {nyt_content}
-                </section>
-                
-                <hr>
-                
-                <section id="links-section">
-                    <h2>03. daily links</h2>
-                    <ul>{news_content}</ul>
-                </section>
-            </article>
-        </div>
+                </div>
+            </section>
+            
+            <hr>
+            
+            <section class="e-content">
+                <h2>03. daily links</h2>
+                <ul>{news_content}</ul>
+            </section>
+        </article>
         """
 
         # Define final_html BEFORE trying to write files
