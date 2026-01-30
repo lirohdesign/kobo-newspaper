@@ -1,34 +1,6 @@
-/* Global Page Styles */
-body { 
-    font-family: -apple-system, sans-serif; 
-    line-height: 1.6; 
-    max-width: 800px; 
-    margin: 40px auto; 
-    padding: 20px; 
-    color: #111; 
-}
-
-/* Weather Section: Monospace and Reflowed */
-.weather-block { 
-    background: #f8f8f8; 
-    padding: 15px; 
-    border-radius: 4px;
-    white-space: pre-wrap; 
-    word-wrap: break-word; 
-    font-family: "Courier New", Courier, monospace; 
-    font-size: 15px; 
-    border-left: 4px solid #0066cc;
-}
-
-/* Reddit Section: Indented for Comments */
-.reddit-block {
-    background: #fff;
-    border-left: 3px solid #ddd;
-    padding-left: 15px;
-    margin-top: 10px;
-    font-style: italic;
-}
-
-/* News & Links */
+body { font-family: -apple-system, sans-serif; line-height: 1.6; max-width: 800px; margin: 40px auto; padding: 20px; color: #111; }
+.masthead { font-family: "Georgia", serif; font-size: 48px; font-weight: bold; border-bottom: 4px double #000; text-align: center; margin-bottom: 5px; text-transform: lowercase; }
+.timestamp { text-align: center; font-size: 14px; color: #666; margin-bottom: 20px; }
+.weather-block { background: #f9f9f9; padding: 15px; border: 1px solid #ddd; white-space: pre-wrap; font-family: monospace; font-size: 14px; }
+.reddit-block { font-style: italic; color: #444; }
 a { color: #0066cc; text-decoration: none; }
-hr { border: 0; border-top: 1px solid #eee; margin: 30px 0; }

@@ -9,21 +9,20 @@ INSTAPAPER_USER = os.environ.get("INSTAPAPER_USER")
 INSTAPAPER_PASS = os.environ.get("INSTAPAPER_PASS")
 
 def add_url_to_instapaper(url):
-    """Sends individual links to Instapaper and returns True if successful."""
+    """Sends individual links to Instapaper. Returns True if successful."""
     if not INSTAPAPER_USER or not INSTAPAPER_PASS:
         return False
     api_url = "https://www.instapaper.com/api/add"
-    unique_url = f"{url}?kobosync={int(time.time())}"
+    # unique tag for individual articles
+    unique_url = f"{url}?sync={int(time.time())}"
     try:
         r = requests.post(api_url, auth=(INSTAPAPER_USER, INSTAPAPER_PASS), data={'url': unique_url}, timeout=15)
-        print(f"  [{r.status_code}] Direct Push: {unique_url}")
         return r.status_code == 200
-    except Exception as e:
-        print(f"  Error: {e}")
+    except:
         return False
 
 def get_weather_afd():
-    """Scrapes raw NOAA text with better tag detection."""
+    """Scrapes raw NOAA text."""
     url = "https://forecast.weather.gov/product.php?site=iwx&issuedby=iwx&product=afd&format=ci&version=1&glossary=1"
     try:
         r = requests.get(url, timeout=20, headers={'User-Agent': 'Mozilla/5.0'})
@@ -32,71 +31,62 @@ def get_weather_afd():
             start = r.text.find('<pre class="glossaryProduct">') + 29
             end = r.text.find('</pre>', start)
             return r.text[start:end].replace('&nbsp;', ' ').replace('&amp;', '&')
-        return "Weather discussion tag not found on NOAA page."
+        return "Weather discussion tag not found."
     except Exception as e:
         return f"Weather connection error: {e}"
 
 def main():
-    # 1. DIRECT NEWS & ARCHIVE BUILDING
-    archive_html = "<ul>"
-    print("Syncing News...")
+    # 1. NEWS SYNC & ARCHIVE
+    archive_items = []
     feeds = {
         "Guardian": "https://www.theguardian.com/news/series/the-long-read/rss",
         "NYT": "https://rss.nytimes.com/services/xml/rss/nyt/TheMorning.xml"
     }
     
+    print("Syncing News...")
     for name, feed_url in feeds.items():
         try:
             resp = requests.get(feed_url, timeout=15, headers={'User-Agent': 'Mozilla/5.0'})
             feed = feedparser.parse(resp.content)
+            print(f"  {name}: Found {len(feed.entries)} articles total.")
+            
             limit = 10 if name == "Guardian" else 2
             count = 0
             for entry in feed.entries:
                 if count >= limit: break
-                if not any(s in entry.link.lower() for s in ['sport', 'football', 'podcast', 'audio']):
-                    success = add_url_to_instapaper(entry.link)
-                    if success:
-                        archive_html += f'<li><a href="{entry.link}">{entry.title}</a> ({name})</li>'
+                # More precise filter: only excludes if 'sport' or 'podcast' is in the URL path
+                link_lower = entry.link.lower()
+                is_excluded = any(x in link_lower for x in ['/sport/', '/football/', '/podcast/', '/audio/'])
+                
+                if not is_excluded:
+                    if add_url_to_instapaper(entry.link):
+                        archive_items.append(f'<li><a href="{entry.link}">{entry.title}</a> ({name})</li>')
                         count += 1
-                        time.sleep(2)
+                        print(f"    Sent: {entry.title}")
+                        time.sleep(2) # Breath between articles
         except Exception as e:
-            print(f"Feed error: {e}")
-    
-    archive_html += "</ul>"
+            print(f"  Error with {name}: {e}")
 
     # 2. BUILDING THE PAGE
-    print("Building Newsletter...")
     weather_raw = get_weather_afd()
     current_dt = datetime.now().strftime("%B %d, %Y at %I:%M %p")
+    archive_list = "".join(archive_items) if archive_items else "<li>No articles synced this run.</li>"
 
-    # Construct the HTML body directly (Avoiding Markdown errors)
     html_content = f"""
-    <h1>liroh daily</h1>
-    <p><strong>Updated:</strong> {current_dt}</p>
+    <div class="masthead">liroh daily</div>
+    <p class="timestamp"><strong>Updated:</strong> {current_dt}</p>
     <hr>
-    <h2>🌩️ Weather Discussion (IWX)</h2>
+    <h2>🌩️ Weather Discussion</h2>
     <div class="weather-block">{weather_raw}</div>
     <hr>
     <h2>📰 Today's Archive</h2>
-    <p>The following articles were sent to your Instapaper feed:</p>
-    {archive_html}
+    <ul>{archive_list}</ul>
     <hr>
     <h2>🤖 Reddit Highlights</h2>
-    <div class="reddit-block">Awaiting API Credentials...</div>
+    <div class="reddit-block">Awaiting API...</div>
     """
 
-    # 3. FINAL WRAPPER
-    html_wrapper = f"""<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="style.css">
-    <title>liroh daily</title>
-</head>
-<body>
-    {html_content}
-</body>
-</html>"""
+    html_wrapper = f"""<!DOCTYPE html><html><head><meta charset="UTF-8"><link rel="stylesheet" href="style.css"><title>liroh daily</title></head><body>{html_content}</body></html>"""
 
     with open("index.html", "w", encoding="utf-8") as f:
         f.write(html_wrapper)
