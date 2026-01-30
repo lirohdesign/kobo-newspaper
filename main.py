@@ -73,22 +73,26 @@ def collect_nyt():
     path = "nyt_morning.html"
     if os.path.exists(path):
         try:
-            print("DIAGNOSTIC: Found NYT morning file. Injecting...")
             with open(path, "r", encoding="utf-8") as f:
-                content = f.read()
+                raw_html = f.read()
             
-            # 1. Strip all hyperlinks but keep the text: <a href="...">Link</a> -> Link
-            content = re.sub(r'<a[^>]*>(.*?)</a>', r'\1', content)
+            # 1. Strip all scripts and styles entirely
+            clean = re.sub(r'<(style|script)[^>]*>.*?</\1>', '', raw_html, flags=re.DOTALL)
             
-            # 2. Strip all image tags (removes ad placeholders/broken images)
-            content = re.sub(r'<img[^>]*>', '', content)
+            # 2. Extract only the text inside <p> tags and <h3> tags
+            # This ignores the 'ad' divs and nested tables
+            content_blocks = re.findall(r'<(p|h3)[^>]*>(.*?)</\1>', clean, flags=re.DOTALL)
             
-            # 3. Strip common ad/tracking div classes found in NYT emails
-            content = re.sub(r'<div[^>]*class="[^"]*(ad-|newsletter-ad)[^"]*"[^>]*>.*?</div>', '', content, flags=re.DOTALL)
-
-            return f'<div class="nyt-section">{content}</div>'
+            html_out = []
+            for tag, text in content_blocks:
+                # Strip any remaining inner tags (like spans or links) from the text
+                text_only = re.sub(r'<[^>]+>', '', text)
+                if len(text_only.strip()) > 10: # Avoid tiny fragments
+                    html_out.append(f'<{tag}>{text_only.strip()}</{tag}>')
+            
+            return f'<div class="nyt-text-only">{"".join(html_out)}</div>'
         except Exception as e:
-            print(f"DIAGNOSTIC ERROR (NYT): {e}")
+            print(f"NYT Cleaning Error: {e}")
     return ""
 
 def main():
@@ -104,16 +108,30 @@ def main():
         nyt_content = collect_nyt() 
 
         html_body = f"""
-        <header>
-            <h1 class="masthead">liroh daily</h1>
-            <h3 style="font-weight: normal; text-transform: lowercase;">
-                <time>{date_str} // {time_str} cst</time>
-            </h3>
-        </header>
-        <article>
-            <section><h2>weather</h2>{weather_content}</section>
-            <section><h2>the morning</h2>{nyt_content}</section>
-            <section><h2>links</h2><ul>{news_content}</ul></section>
+        <article class="h-entry">
+            <header>
+                <h1 class="p-name">liroh daily</h1>
+                <p><time class="dt-published">{date_str} // {time_str} cst</time></p>
+            </header>
+            
+            <section class="e-content">
+                <h2>today's weather discussion</h2>
+                {weather_content}
+            </section>
+            
+            <hr>
+            
+            <section class="e-content">
+                <h2>the morning from nyt</h2>
+                {nyt_content}
+            </section>
+            
+            <hr>
+            
+            <section class="e-content">
+                <h2>daily long reads</h2>
+                <ul>{news_content}</ul>
+            </section>
         </article>
         """
         
