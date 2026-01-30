@@ -36,8 +36,8 @@ def get_weather_afd():
                     cleaned_paragraphs.append(cleaned_p)
             return "\n\n".join(cleaned_paragraphs)
         return "weather data currently unavailable."
-    except Exception as e:
-        return f"weather connection error: {e}"
+    except:
+        return "weather connection error."
 
 def update_archive_index():
     if not os.path.exists("old_issues"):
@@ -45,24 +45,24 @@ def update_archive_index():
     files = sorted([f for f in os.listdir("old_issues") if f.endswith(".html")], reverse=True)
     links = "".join([f'<li><a href="old_issues/{f}">{f.replace(".html", "")}</a></li>' for f in files])
     
-    index_html = f"""<!DOCTYPE html><html><head><meta charset="UTF-8"><link rel="stylesheet" href="style.css"></head>
+    index_html = f"""<!DOCTYPE html><html><head><meta charset="UTF-8"><link rel="stylesheet" href="../style.css"></head>
     <body>
         <div class="masthead">old issues</div>
-        <p><a href="index.html">← back to current</a></p>
+        <p><a href="../index.html">← back to current</a></p>
         <ul>{links}</ul>
     </body></html>"""
     with open("archive.html", "w", encoding="utf-8") as f:
         f.write(index_html)
 
 def main():
-    # 1. cst time handling
+    # 1. cst time handling (utc-6)
     utc_now = datetime.utcnow()
     cst_now = utc_now - timedelta(hours=6)
     date_str = cst_now.strftime("%b %d, %y").lower()
     time_str = cst_now.strftime("%I:%M %p").lower()
     file_date = cst_now.strftime("%Y-%m-%d")
 
-    # 2. sync news (guardian only)
+    # 2. sync news (guardian)
     archive_items = []
     feed_url = "https://www.theguardian.com/news/series/the-long-read/rss"
     
@@ -70,22 +70,28 @@ def main():
     try:
         resp = requests.get(feed_url, timeout=15, headers={'User-Agent': 'Mozilla/5.0'})
         feed = feedparser.parse(resp.content)
-        print(f"  found {len(feed.entries)} entries in guardian feed.")
+        print(f"  found {len(feed.entries)} entries.")
         
         count = 0
         for entry in feed.entries:
             if count >= 10: break
-            if not any(x in entry.link.lower() for x in ['/sport/', '/podcast/', '/audio/']):
+            
+            # surgical filter: only block if it's a dedicated podcast page or sport section
+            # this allows long reads that happen to have an 'audio' player inside them
+            link_low = entry.link.lower()
+            is_podcast_page = "/podcasts/" in link_low or "/video/" in link_low
+            is_sport = "/sport/" in link_low or "/football/" in link_low
+            
+            if not (is_podcast_page or is_sport):
                 if add_url_to_instapaper(entry.link):
                     archive_items.append(f'<li><a href="{entry.link}">{entry.title.lower()}</a></li>')
                     count += 1
-                    print(f"    synced: {entry.title[:30]}...")
                     time.sleep(1)
         print(f"  successfully synced {count} articles.")
     except Exception as e:
         print(f"  news sync failed: {e}")
     
-    # 3. build newsletter body
+    # 3. build body
     weather_raw = get_weather_afd()
     daily_links = "".join(archive_items) if archive_items else "<li>no links synced today.</li>"
 
