@@ -76,23 +76,22 @@ def collect_nyt():
             with open(path, "r", encoding="utf-8") as f:
                 raw_html = f.read()
             
-            # 1. Strip all scripts and styles entirely
+            # 1. Remove style/script blocks
             clean = re.sub(r'<(style|script)[^>]*>.*?</\1>', '', raw_html, flags=re.DOTALL)
             
-            # 2. Extract only the text inside <p> tags and <h3> tags
-            # This ignores the 'ad' divs and nested tables
+            # 2. Extract content from P and H3 tags only
             content_blocks = re.findall(r'<(p|h3)[^>]*>(.*?)</\1>', clean, flags=re.DOTALL)
             
             html_out = []
             for tag, text in content_blocks:
-                # Strip any remaining inner tags (like spans or links) from the text
+                # 3. Aggressively strip ALL tags inside (links, spans, images)
                 text_only = re.sub(r'<[^>]+>', '', text)
-                if len(text_only.strip()) > 10: # Avoid tiny fragments
+                if len(text_only.strip()) > 20: # Skip fragments
                     html_out.append(f'<{tag}>{text_only.strip()}</{tag}>')
             
-            return f'<div class="nyt-text-only">{"".join(html_out)}</div>'
+            return "".join(html_out)
         except Exception as e:
-            print(f"NYT Cleaning Error: {e}")
+            print(f"DIAGNOSTIC ERROR (NYT): {e}")
     return ""
 
 def main():
@@ -108,31 +107,33 @@ def main():
         nyt_content = collect_nyt() 
 
         html_body = f"""
-        <article class="h-entry">
+        <div class="h-feed">
             <header>
                 <h1 class="p-name">liroh daily</h1>
-                <p><time class="dt-published">{date_str} // {time_str} cst</time></p>
+                <p><time>{date_str} // {time_str} cst</time></p>
             </header>
             
-            <section class="e-content">
+            <article class="h-entry">
                 <h2>today's weather discussion</h2>
-                {weather_content}
-            </section>
+                <div class="e-content">{weather_content}</div>
+            </article>
             
             <hr>
             
-            <section class="e-content">
-                <h2>the morning from nyt</h2>
-                {nyt_content}
-            </section>
+            <article class="h-entry">
+                <h2>the morning news</h2>
+                <div class="e-content">{nyt_content}</div>
+            </article>
             
             <hr>
             
-            <section class="e-content">
-                <h2>daily long reads</h2>
-                <ul>{news_content}</ul>
-            </section>
-        </article>
+            <article class="h-entry">
+                <h2>daily guardian links</h2>
+                <div class="e-content">
+                    <ul>{news_content}</ul>
+                </div>
+            </article>
+        </div>
         """
         
         # Define final_html BEFORE trying to write files
