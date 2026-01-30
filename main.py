@@ -2,7 +2,7 @@ import requests
 import os
 import feedparser
 import time
-from datetime import datetime
+from datetime import datetime, timedelta
 
 # --- configuration ---
 INSTAPAPER_USER = os.environ.get("INSTAPAPER_USER")
@@ -31,12 +31,9 @@ def get_weather_afd():
         return "weather connection error."
 
 def update_archive_index():
-    """generates a minimalist index of all files in old_issues/"""
     if not os.path.exists("old_issues"):
         return
-    
     files = sorted([f for f in os.listdir("old_issues") if f.endswith(".html")], reverse=True)
-    
     links = "".join([f'<li><a href="old_issues/{f}">{f.replace(".html", "")}</a></li>' for f in files])
     
     index_html = f"""<!DOCTYPE html><html><head><meta charset="UTF-8"><link rel="stylesheet" href="style.css"></head>
@@ -45,46 +42,44 @@ def update_archive_index():
         <p><a href="index.html">← back to current</a></p>
         <ul>{links}</ul>
     </body></html>"""
-    
     with open("archive.html", "w", encoding="utf-8") as f:
         f.write(index_html)
 
 def main():
-    # 1. sync news
+    # 1. handle cst time (utc - 6)
+    utc_now = datetime.utcnow()
+    cst_now = utc_now - timedelta(hours=6)
+    date_str = cst_now.strftime("%b %d, %y").lower()
+    time_str = cst_now.strftime("%I:%M %p").lower()
+    file_date = cst_now.strftime("%Y-%m-%d")
+
+    # 2. sync guardian long reads
     archive_items = []
-    feeds = {
-        "guardian": "https://www.theguardian.com/news/series/the-long-read/rss",
-        "nyt": "https://rss.nytimes.com/services/xml/rss/nyt/TheMorning.xml"
-    }
+    feed_url = "https://www.theguardian.com/news/series/the-long-read/rss"
     
-    for name, feed_url in feeds.items():
-        try:
-            resp = requests.get(feed_url, timeout=15, headers={'User-Agent': 'Mozilla/5.0'})
-            feed = feedparser.parse(resp.content)
-            limit = 10 if name == "guardian" else 2
-            count = 0
-            for entry in feed.entries:
-                if count >= limit: break
-                if not any(x in entry.link.lower() for x in ['/sport/', '/podcast/']):
-                    if add_url_to_instapaper(entry.link):
-                        archive_items.append(f'<li><a href="{entry.link}">{entry.title.lower()}</a></li>')
-                        count += 1
-                        time.sleep(1)
-        except:
-            continue
+    print("syncing news...")
+    try:
+        resp = requests.get(feed_url, timeout=15, headers={'User-Agent': 'Mozilla/5.0'})
+        feed = feedparser.parse(resp.content)
+        
+        count = 0
+        for entry in feed.entries:
+            if count >= 10: break
+            if not any(x in entry.link.lower() for x in ['/sport/', '/podcast/', '/audio/']):
+                if add_url_to_instapaper(entry.link):
+                    archive_items.append(f'<li><a href="{entry.link}">{entry.title.lower()}</a></li>')
+                    count += 1
+                    time.sleep(1)
+    except Exception as e:
+        print(f"feed error: {e}")
     
-    # 2. build content
+    # 3. build newsletter body
     weather_raw = get_weather_afd()
-    now = datetime.now()
-    date_str = now.strftime("%b %d, %y")
-    time_str = now.strftime("%I:%M %p").lower()
-    file_date = now.strftime("%Y-%m-%d")
-    
     daily_links = "".join(archive_items) if archive_items else "<li>no links synced today.</li>"
 
     html_body = f"""
     <div class="masthead">liroh daily</div>
-    <div class="timestamp">{date_str} // {time_str}</div>
+    <div class="timestamp">{date_str} // {time_str} cst</div>
     
     <h2>weather discussion</h2>
     <div class="weather-block">{weather_raw}</div>
@@ -101,23 +96,19 @@ def main():
 
     final_html = f"""<!DOCTYPE html><html><head><meta charset="UTF-8"><link rel="stylesheet" href="style.css"></head><body>{html_body}</body></html>"""
 
-    # 3. save live version
+    # 4. save files
     with open("index.html", "w", encoding="utf-8") as f:
         f.write(final_html)
 
-    # 4. save to archive folder with adjusted CSS path
     if not os.path.exists("old_issues"):
         os.makedirs("old_issues")
     
-    # replace the relative link so archived files can find the css one level up
     archive_html = final_html.replace('href="style.css"', 'href="../style.css"')
-    
     with open(f"old_issues/{file_date}.html", "w", encoding="utf-8") as f:
         f.write(archive_html)
         
-    # 5. update the index
     update_archive_index()
-    print("success: newsletter and archive updated.")
+    print("success: liroh daily updated.")
 
 if __name__ == "__main__":
     main()
