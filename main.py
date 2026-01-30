@@ -38,29 +38,37 @@ def main():
     with open("newsletter_template.md", "r") as f:
         template = f.read()
 
-    # Fill in the placeholders
-    final_content = template.replace("{{date}}", datetime.now().strftime("%B %d, %Y"))
-    final_content = final_content.replace("{{weather}}", weather_md)
-    final_content = final_content.replace("{{news}}", news_md)
-    final_content = final_content.replace("{{reddit}}", "*(Awaiting API Credentials)*")
+    # 4. PRE-PROCESS the replacements to avoid f-string backslash errors
+    # We turn the triple backticks into HTML <pre> tags here
+    weather_html = weather_md.replace('```', '<pre>').replace('```', '</pre>')
+    # We turn Markdown newlines into HTML breaks here
+    news_html = news_md.replace('\n', '<br>')
 
-    # 4. Save as HTML for GitHub Pages
-    # We'll use a simple wrapper to make the Markdown look like a webpage
-    html_wrapper = f"""
+    final_body = template.replace("{{date}}", datetime.now().strftime("%B %d, %Y"))
+    final_body = final_body.replace("{{weather}}", weather_html)
+    final_body = final_body.replace("{{news}}", news_html)
+    final_body = final_body.replace("{{reddit}}", "*(Awaiting API Credentials)*")
+
+    # 5. Save as HTML with a simple wrapper
+    # Using a standard string (no 'f') avoids the CSS brace confusion
+    html_wrapper = """
     <html>
     <head>
         <style>
-            body {{ font-family: -apple-system, sans-serif; line-height: 1.6; max-width: 800px; margin: 40px auto; padding: 0 20px; }}
-            pre {{ background: #f4f4f4; padding: 15px; overflow-x: auto; font-size: 13px; }}
-            a {{ color: #0066cc; text-decoration: none; }}
-            hr {{ border: 0; border-top: 1px solid #eee; margin: 40px 0; }}
+            body { font-family: sans-serif; line-height: 1.6; max-width: 800px; margin: 40px auto; padding: 20px; }
+            pre { background: #f4f4f4; padding: 15px; white-space: pre-wrap; word-wrap: break-word; font-size: 13px; }
+            a { color: #0066cc; text-decoration: none; }
         </style>
     </head>
     <body>
-        {final_content.replace('```', '<pre>').replace('```', '</pre>').replace('\n', '<br>')}
+        {content}
     </body>
     </html>
     """
 
+    # This 'plugs' your final_body into the {content} placeholder safely
+    final_html = html_wrapper.format(content=final_body)
+
     with open("index.html", "w", encoding="utf-8") as f:
-        f.write(html_wrapper)
+        f.write(final_html)
+    print("Success: index.html created.")
