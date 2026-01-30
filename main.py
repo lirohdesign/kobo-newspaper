@@ -33,7 +33,8 @@ def collect_weather():
                 if p.strip():
                     clean_p = p.replace('\n', ' ').strip()
                     html_p.append(f'<p style="margin-bottom: 1em;">{clean_p}</p>')
-            return "".join(html_p)
+            # Wrap the entire weather block in a div that Instapaper recognizes as 'content'
+            return f'<div class="instapaper_body"><h3>today\'s weather discussion</h3>{"".join(html_p)}</div>'
     except:
         pass
     return "<p>weather unavailable.</p>"
@@ -76,7 +77,15 @@ def collect_nyt():
             with open(path, "r", encoding="utf-8") as f:
                 content = f.read()
             
-            # Simple wrapper to keep it distinct in the newsletter
+            # 1. Strip all hyperlinks but keep the text: <a href="...">Link</a> -> Link
+            content = re.sub(r'<a[^>]*>(.*?)</a>', r'\1', content)
+            
+            # 2. Strip all image tags (removes ad placeholders/broken images)
+            content = re.sub(r'<img[^>]*>', '', content)
+            
+            # 3. Strip common ad/tracking div classes found in NYT emails
+            content = re.sub(r'<div[^>]*class="[^"]*(ad-|newsletter-ad)[^"]*"[^>]*>.*?</div>', '', content, flags=re.DOTALL)
+
             return f'<div class="nyt-section">{content}</div>'
         except Exception as e:
             print(f"DIAGNOSTIC ERROR (NYT): {e}")
