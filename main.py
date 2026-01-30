@@ -108,7 +108,7 @@ def main():
     
     # step C: assemble newsletter only AFTER data is in hand
     # wrap the core content in a way Instapaper respects
-html_body = f"""
+    html_body = f"""
     <header>
         <h1 class="masthead">liroh daily</h1>
         <h3 style="font-weight: normal; text-transform: lowercase;">
@@ -131,16 +131,15 @@ html_body = f"""
     
     final_html = f"<!DOCTYPE html><html><head><meta charset='UTF-8'><link rel='stylesheet' href='style.css'></head><body>{html_body}</body></html>"
     
-    # step D: save current and archive
-    with open("index.html", "w", encoding="utf-8") as f: f.write(final_html)
+
+    with open("index.html", "w", encoding="utf-8") as f: 
+        f.write(final_html)
     
-    # archive logic
     file_date = cst_now.strftime("%Y-%m-%d")
-    if not os.path.exists("old_issues"): os.makedirs("old_issues")
+    if not os.path.exists("old_issues"): 
+        os.makedirs("old_issues")
+        
     with open(f"old_issues/{file_date}.html", "w", encoding="utf-8") as f:
         f.write(final_html.replace('href="style.css"', 'href="../style.css"'))
     
     print("build successful.")
-
-if __name__ == "__main__":
-    main()
