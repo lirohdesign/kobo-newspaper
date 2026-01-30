@@ -29,13 +29,11 @@ h2 {
     padding-bottom: 5px;
 }
 
-.weather-block { 
-    white-space: pre-wrap; 
-    font-family: monospace; 
-    font-size: 13px; 
-    color: #444;
-    background: #fafafa;
-    padding: 10px;
+.weather-block p { 
+    margin-top: 0;
+    margin-bottom: 1em; 
+    text-align: left;
+    font-family: inherit; /* keeps it minimalist vs monospace if you prefer */
 }
 
 ul { list-style: none; padding: 0; }
