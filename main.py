@@ -41,39 +41,48 @@ def collect_weather():
 def collect_guardian_links():
     links_html = []
     feed_url = "https://www.theguardian.com/news/series/the-long-read/rss"
-    # Essential: Use a full, modern browser header
-    headers = {
-        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
-    }
+    headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'}
     
     try:
-        print(f"  Fetching feed: {feed_url}")
+        print(f"--- DIAGNOSTIC START: News Collection ---")
         resp = requests.get(feed_url, timeout=15, headers=headers)
         feed = feedparser.parse(resp.content)
-        
-        # LOGGING: Check if we actually found items
-        print(f"  Feed status: {resp.status_code}. Entries found: {len(feed.entries)}")
+        print(f"DEBUG: Feed retrieved. Status: {resp.status_code}. Total entries in RSS: {len(feed.entries)}")
         
         count = 0
-        for entry in feed.entries:
-            if count >= 10: break
+        for i, entry in enumerate(feed.entries):
+            if count >= 10: 
+                print(f"DEBUG: reached 10 article limit at RSS index {i}")
+                break
             
             link_low = entry.link.lower()
-            # Surgical filter
             if not any(x in link_low for x in ['/podcasts/', '/video/', '/sport/', '/football/']):
-                print(f"    Processing: {entry.title[:40]}...")
+                # 1. Trigger Instapaper sync
+                add_to_instapaper(entry.link)
                 
-                # TRIGGER: Send to Instapaper
-                if add_to_instapaper(entry.link):
-                    links_html.append(f'<li><a href="{entry.link}">{entry.title.lower()}</a></li>')
-                    count += 1
-                    time.sleep(2) # Breathe
-                else:
-                    print(f"    Failed to send to Instapaper: {entry.title[:20]}")
+                # 2. Build the HTML string for this specific link
+                captured_title = entry.title.lower()
+                list_item = f'<li><a href="{entry.link}">{captured_title}</a></li>'
+                
+                # 3. Append to the list
+                links_html.append(list_item)
+                
+                # 4. Diagnostic print
+                count += 1
+                print(f"DEBUG: [{count}/10] Appended to list: {captured_title[:40]}")
+                time.sleep(1)
+            else:
+                print(f"DEBUG: Skipping filtered item: {link_low[:50]}...")
+
+        # FINAL CHECK before returning
+        result_string = "".join(links_html)
+        print(f"DEBUG: Final joined string length: {len(result_string)} characters.")
+        print(f"--- DIAGNOSTIC END: News Collection ---")
         
-        return "".join(links_html)
+        return result_string
+        
     except Exception as e:
-        print(f"  Guardian sync failed: {e}")
+        print(f"ERROR in collect_guardian_links: {e}")
         return "<li>guardian sync error.</li>"
 
 def add_to_instapaper(url):
@@ -99,13 +108,15 @@ def main():
     
     # step C: assemble newsletter only AFTER data is in hand
     # wrap the core content in a way Instapaper respects
-    html_body = f"""
+html_body = f"""
     <header>
         <h1 class="masthead">liroh daily</h1>
-        <p class="timestamp">{date_str} // {time_str} cst</p>
+        <h3 style="font-weight: normal; text-transform: lowercase;">
+            <time>{date_str} // {time_str} cst</time>
+        </h3>
     </header>
     
-    <article>
+    <article id="main-content">
         <section>
             <h2>weather discussion</h2>
             <div class="weather-block">{weather_content}</div>
@@ -116,11 +127,6 @@ def main():
             <ul>{news_content}</ul>
         </section>
     </article>
-    
-    <footer>
-        <hr style="margin-top:50px; border:0; border-top:1px dashed #ccc;">
-        <p style="font-size:12px; text-align:center;"><a href="archive.html">view old issues</a></p>
-    </footer>
     """
     
     final_html = f"<!DOCTYPE html><html><head><meta charset='UTF-8'><link rel='stylesheet' href='style.css'></head><body>{html_body}</body></html>"
