@@ -35,8 +35,8 @@ jobs:
           INSTAPAPER_USER: ${{ secrets.INSTAPAPER_USER }}
           INSTAPAPER_PASS: ${{ secrets.INSTAPAPER_PASS }}
         run: |
-          # We wait 60s for the page to go live before telling Instapaper
-          sleep 60
+          # Wait 90s for GitHub to actually push the file to the web
+          sleep 90
           curl -u "$INSTAPAPER_USER:$INSTAPAPER_PASS" \
           https://www.instapaper.com/api/add \
-          -d "url=https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/"
+          -d "url=https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/index.html"
