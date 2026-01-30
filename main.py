@@ -54,7 +54,9 @@ def collect_guardian_links():
             link_low = entry.link.lower()
             if not any(x in link_low for x in ['/podcasts/', '/video/', '/sport/']):
                 add_to_instapaper(entry.link)
-                links_html.append(f'<li><a href="{entry.link}">{entry.title.lower()}</a></li>')
+                # Change the list item to include a small snippet or 'Read more' text
+                # This adds 'weight' to the section so the bot doesn't ignore it.
+                links_html.append(f'<li><strong>{entry.title.lower()}</strong> — <a href="{entry.link}">read full article at the guardian</a></li>')
                 count += 1
                 print(f"DIAGNOSTIC: Added {entry.title[:30]}")
         return "".join(links_html)
@@ -76,18 +78,31 @@ def collect_nyt():
             with open(path, "r", encoding="utf-8") as f:
                 raw_html = f.read()
             
-            # 1. Remove style/script blocks
+            # 1. Strip scripts/styles to prevent layout hijacking
             clean = re.sub(r'<(style|script)[^>]*>.*?</\1>', '', raw_html, flags=re.DOTALL)
             
-            # 2. Extract content from P and H3 tags only
-            content_blocks = re.findall(r'<(p|h3)[^>]*>(.*?)</\1>', clean, flags=re.DOTALL)
+            # 2. Extract P, H3, and IMG tags
+            content_blocks = re.findall(r'<(p|h3|img)[^>]*>(.*?)</\1>|<img[^>]*>', clean, flags=re.DOTALL)
             
             html_out = []
-            for tag, text in content_blocks:
-                # 3. Aggressively strip ALL tags inside (links, spans, images)
-                text_only = re.sub(r'<[^>]+>', '', text)
-                if len(text_only.strip()) > 20: # Skip fragments
-                    html_out.append(f'<{tag}>{text_only.strip()}</{tag}>')
+            for match in content_blocks:
+                # Reconstruct the tag without any of its original attributes (IDs, classes, styles)
+                # except for the 'src' on images.
+                full_tag = match[0] or "" 
+                
+                if 'img' in full_tag or '<img' in str(match):
+                    # Extract just the SRC to avoid tracking pixels or oversized fixed widths
+                    src_match = re.search(r'src="([^"]+)"', str(match))
+                    if src_match:
+                        src = src_match.group(1)
+                        # Skip tiny tracking pixels (usually 1x1 or containing 'spacer')
+                        if "spacer" not in src and "tracking" not in src:
+                            html_out.append(f'<img src="{src}" style="max-width: 100%; height: auto; margin: 1em 0;">')
+                else:
+                    tag_type = match[0]
+                    text_content = re.sub(r'<[^>]+>', '', match[1]) # Strip links inside the text
+                    if len(text_content.strip()) > 30:
+                        html_out.append(f'<{tag_type}>{text_content.strip()}</{tag_type}>')
             
             return "".join(html_out)
         except Exception as e:
@@ -107,35 +122,32 @@ def main():
         nyt_content = collect_nyt() 
 
         html_body = f"""
-        <div class="h-feed">
-            <header>
-                <h1 class="p-name">liroh daily</h1>
-                <p><time>{date_str} // {time_str} cst</time></p>
-            </header>
-            
-            <article class="h-entry">
-                <h2>today's weather discussion</h2>
-                <div class="e-content">{weather_content}</div>
-            </article>
-            
-            <hr>
-            
-            <article class="h-entry">
-                <h2>the morning news</h2>
-                <div class="e-content">{nyt_content}</div>
-            </article>
-            
-            <hr>
-            
-            <article class="h-entry">
-                <h2>daily guardian links</h2>
-                <div class="e-content">
+        <div id="instapaper_filler">
+            <article>
+                <h1>liroh daily: {date_str}</h1>
+                
+                <section id="weather-section">
+                    <h2>01. weather discussion</h2>
+                    {weather_content}
+                </section>
+                
+                <hr>
+                
+                <section id="nyt-section">
+                    <h2>02. the morning news</h2>
+                    {nyt_content}
+                </section>
+                
+                <hr>
+                
+                <section id="links-section">
+                    <h2>03. daily links</h2>
                     <ul>{news_content}</ul>
-                </div>
+                </section>
             </article>
         </div>
         """
-        
+
         # Define final_html BEFORE trying to write files
         final_html = f"<!DOCTYPE html><html><head><meta charset='UTF-8'><link rel='stylesheet' href='style.css'></head><body>{html_body}</body></html>"
 
