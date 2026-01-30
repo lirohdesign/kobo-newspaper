@@ -92,7 +92,7 @@ def main():
 
         weather_content = collect_weather()
         news_content = collect_guardian_links()
-        nyt_content = collect_nyt() # Get the NYT data
+        nyt_content = collect_nyt() 
 
         html_body = f"""
         <header>
@@ -107,16 +107,27 @@ def main():
             <section><h2>links</h2><ul>{news_content}</ul></section>
         </article>
         """
+        
+        # Define final_html BEFORE trying to write files
+        final_html = f"<!DOCTYPE html><html><head><meta charset='UTF-8'><link rel='stylesheet' href='style.css'></head><body>{html_body}</body></html>"
 
-        # 1. Save the new issue to the archive folder
+        # ENSURE FOLDER EXISTS
+        if not os.path.exists("old_issues"):
+            os.makedirs("old_issues")
+            print("DIAGNOSTIC: Created old_issues directory.")
+
+        # Save to main index
+        with open("index.html", "w", encoding="utf-8") as f:
+            f.write(final_html)
+            print("DIAGNOSTIC: index.html written.")
+
+        # Save to archive folder
         archive_path = f"old_issues/{file_date}.html"
         with open(archive_path, "w", encoding="utf-8") as f:
             f.write(final_html.replace('href="style.css"', 'href="../style.css"'))
         
-        # 2. Rebuild the archive list (KEEP THIS)
         update_archive_index()
 
-        # 3. Clean up the temporary NYT file
         if os.path.exists("nyt_morning.html"):
             os.remove("nyt_morning.html")
             print("DIAGNOSTIC: NYT temp file cleared.")
