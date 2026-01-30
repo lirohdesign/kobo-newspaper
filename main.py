@@ -41,28 +41,46 @@ def collect_weather():
 def collect_guardian_links():
     links_html = []
     feed_url = "https://www.theguardian.com/news/series/the-long-read/rss"
+    # Essential: Use a full, modern browser header
+    headers = {
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
+    }
+    
     try:
-        resp = requests.get(feed_url, timeout=15, headers={'User-Agent': 'Mozilla/5.0'})
+        print(f"  Fetching feed: {feed_url}")
+        resp = requests.get(feed_url, timeout=15, headers=headers)
         feed = feedparser.parse(resp.content)
+        
+        # LOGGING: Check if we actually found items
+        print(f"  Feed status: {resp.status_code}. Entries found: {len(feed.entries)}")
+        
         count = 0
         for entry in feed.entries:
             if count >= 10: break
+            
             link_low = entry.link.lower()
-            if not any(x in link_low for x in ['/podcasts/', '/video/', '/sport/']):
-                # send to instapaper first
-                success = add_to_instapaper(entry.link)
-                if success:
+            # Surgical filter
+            if not any(x in link_low for x in ['/podcasts/', '/video/', '/sport/', '/football/']):
+                print(f"    Processing: {entry.title[:40]}...")
+                
+                # TRIGGER: Send to Instapaper
+                if add_to_instapaper(entry.link):
                     links_html.append(f'<li><a href="{entry.link}">{entry.title.lower()}</a></li>')
                     count += 1
-                    time.sleep(2)
+                    time.sleep(2) # Breathe
+                else:
+                    print(f"    Failed to send to Instapaper: {entry.title[:20]}")
+        
         return "".join(links_html)
-    except:
+    except Exception as e:
+        print(f"  Guardian sync failed: {e}")
         return "<li>guardian sync error.</li>"
 
 def add_to_instapaper(url):
     api_url = "https://www.instapaper.com/api/add"
     try:
-        r = requests.post(api_url, auth=(INSTAPAPER_USER, INSTAPAPER_PASS), data={'url': url}, timeout=15)
+        r = requests.post(api_url, auth=(INSTAPAPER_USER, INSTAPAPER_PASS), 
+                         data={'url': url}, timeout=15)
         return r.status_code == 200
     except:
         return False
@@ -80,15 +98,29 @@ def main():
     news_content = collect_guardian_links()
     
     # step C: assemble newsletter only AFTER data is in hand
+    # wrap the core content in a way Instapaper respects
     html_body = f"""
-    <div class="masthead">liroh daily</div>
-    <div class="timestamp">{date_str} // {time_str} cst</div>
-    <h2>weather discussion</h2>
-    <div class="weather-block">{weather_content}</div>
-    <h2>daily links</h2>
-    <ul>{news_content}</ul>
-    <hr style="margin-top:50px; border:0; border-top:1px dashed #ccc;">
-    <p style="font-size:12px; text-align:center;"><a href="archive.html">view old issues</a></p>
+    <header>
+        <h1 class="masthead">liroh daily</h1>
+        <p class="timestamp">{date_str} // {time_str} cst</p>
+    </header>
+    
+    <article>
+        <section>
+            <h2>weather discussion</h2>
+            <div class="weather-block">{weather_content}</div>
+        </section>
+        
+        <section>
+            <h2>daily links</h2>
+            <ul>{news_content}</ul>
+        </section>
+    </article>
+    
+    <footer>
+        <hr style="margin-top:50px; border:0; border-top:1px dashed #ccc;">
+        <p style="font-size:12px; text-align:center;"><a href="archive.html">view old issues</a></p>
+    </footer>
     """
     
     final_html = f"<!DOCTYPE html><html><head><meta charset='UTF-8'><link rel='stylesheet' href='style.css'></head><body>{html_body}</body></html>"
