@@ -70,10 +70,12 @@ def main():
     final_body = final_body.replace("{{news}}", "*Articles sent separately.*")
     final_body = final_body.replace("{{reddit}}", "*(Awaiting API Credentials)*")
 
-    # 3. HTML Wrapper
+# 3. HTML Wrapper
+    # Double braces {{ }} are for CSS (literal braces)
+    # Single braces {content} is the Python variable
     html_wrapper = """<!DOCTYPE html><html><head><style>
-        body { font-family: sans-serif; line-height: 1.6; max-width: 800px; margin: 40px auto; padding: 20px; }
-        pre { background: #f4f4f4; padding: 15px; white-space: pre-wrap; word-wrap: break-word; font-size: 13px; }
+        body {{ font-family: sans-serif; line-height: 1.6; max-width: 800px; margin: 40px auto; padding: 20px; }}
+        pre {{ background: #f4f4f4; padding: 15px; white-space: pre-wrap; word-wrap: break-word; font-size: 13px; }}
     </style></head><body>{content}</body></html>"""
 
     with open("index.html", "w", encoding="utf-8") as f:
