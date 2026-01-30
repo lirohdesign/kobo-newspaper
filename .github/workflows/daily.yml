@@ -2,27 +2,31 @@ name: Kobo Daily Sync
 
 on:
   schedule:
-    - cron: '0 11 * * *'
-  workflow_dispatch:
+    - cron: '0 11 * * *' # 5:00 AM CST (UTC-6)
+  workflow_dispatch:      # Allows you to click "Run workflow" manually
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
 
 jobs:
-  build:
+  build_and_deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
+      - name: Checkout Repository
         uses: actions/checkout@v3
 
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
           python-version: '3.9'
-
+          
       - name: Install dependencies
         run: pip install -r requirements.txt
-
-      - name: Run Scraper
+        
+      - name: Run Newspaper Build
         env:
-          # This allows main.py to send the 10 Guardian/NYT links
           INSTAPAPER_USER: ${{ secrets.INSTAPAPER_USER }}
           INSTAPAPER_PASS: ${{ secrets.INSTAPAPER_PASS }}
         run: python main.py
@@ -34,12 +38,32 @@ jobs:
           publish_dir: ./
           publish_branch: gh-pages
 
-      - name: Notify Instapaper
+  notify_instapaper:
+    needs: build_and_deploy
+    runs-on: ubuntu-latest
+    steps:
+      - name: Wait for Live Propagation
+        run: |
+          echo "Verifying live URL: https://lirohdesign.github.io/kobo-newspaper/index.html"
+          # Check for a 200 OK status up to 10 times before giving up
+          for i in {1..10}; do
+            STATUS=$(curl -s -o /dev/null -w "%{http_code}" https://lirohdesign.github.io/kobo-newspaper/index.html)
+            if [ "$STATUS" -eq 200 ]; then
+              echo "Site is live (200 OK)."
+              exit 0
+            fi
+            echo "Attempt $i: Site returned $STATUS. Waiting 15 seconds..."
+            sleep 15
+          done
+          echo "Timed out waiting for propagation."
+          exit 1
+
+      - name: Trigger Instapaper Sync
         env:
           INSTAPAPER_USER: ${{ secrets.INSTAPAPER_USER }}
           INSTAPAPER_PASS: ${{ secrets.INSTAPAPER_PASS }}
         run: |
-          sleep 30
-          curl -u "$INSTAPAPER_USER:$INSTAPAPER_PASS" \
+          # Use a cache-buster timestamp to ensure Instapaper sees it as a fresh page
+          curl -u "${{ secrets.INSTAPAPER_USER }}:${{ secrets.INSTAPAPER_PASS }}" \
           https://www.instapaper.com/api/add \
           -d "url=https://lirohdesign.github.io/kobo-newspaper/index.html?t=$(date +%s)"
