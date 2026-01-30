@@ -68,6 +68,20 @@ def update_archive_index():
     index_html = f"<!DOCTYPE html><html><body><h1>archive</h1><ul>{links}</ul></body></html>"
     with open("archive.html", "w", encoding="utf-8") as f: f.write(index_html)
 
+def collect_nyt():
+    path = "nyt_morning.html"
+    if os.path.exists(path):
+        try:
+            print("DIAGNOSTIC: Found NYT morning file. Injecting...")
+            with open(path, "r", encoding="utf-8") as f:
+                content = f.read()
+            
+            # Simple wrapper to keep it distinct in the newsletter
+            return f'<div class="nyt-section">{content}</div>'
+        except Exception as e:
+            print(f"DIAGNOSTIC ERROR (NYT): {e}")
+    return ""
+
 def main():
     try:
         print("--- BUILD START ---")
@@ -78,6 +92,7 @@ def main():
 
         weather_content = collect_weather()
         news_content = collect_guardian_links()
+        nyt_content = collect_nyt() # Get the NYT data
 
         html_body = f"""
         <header>
@@ -88,18 +103,24 @@ def main():
         </header>
         <article>
             <section><h2>weather</h2>{weather_content}</section>
+            <section><h2>the morning</h2>{nyt_content}</section>
             <section><h2>links</h2><ul>{news_content}</ul></section>
         </article>
         """
-        final_html = f"<!DOCTYPE html><html><head><meta charset='UTF-8'><link rel='stylesheet' href='style.css'></head><body>{html_body}</body></html>"
 
-        print(f"DIAGNOSTIC: Writing files (HTML length: {len(final_html)})")
-        with open("index.html", "w", encoding="utf-8") as f: f.write(final_html)
-        if not os.path.exists("old_issues"): os.makedirs("old_issues")
-        with open(f"old_issues/{file_date}.html", "w", encoding="utf-8") as f:
+        # 1. Save the new issue to the archive folder
+        archive_path = f"old_issues/{file_date}.html"
+        with open(archive_path, "w", encoding="utf-8") as f:
             f.write(final_html.replace('href="style.css"', 'href="../style.css"'))
         
+        # 2. Rebuild the archive list (KEEP THIS)
         update_archive_index()
+
+        # 3. Clean up the temporary NYT file
+        if os.path.exists("nyt_morning.html"):
+            os.remove("nyt_morning.html")
+            print("DIAGNOSTIC: NYT temp file cleared.")
+        
         print("--- BUILD SUCCESSFUL ---")
     except Exception as e:
         print(f"CRITICAL ERROR: {e}")

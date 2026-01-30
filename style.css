@@ -36,6 +36,33 @@ h2 {
     font-family: inherit; /* keeps it minimalist vs monospace if you prefer */
 }
 
+/* Reset for injected NYT content */
+.nyt-section {
+    font-family: inherit !important;
+    line-height: 1.6;
+    font-size: 1rem;
+    color: #333;
+}
+
+/* Force NYT tables to behave on mobile/Kobo screens */
+.nyt-section table {
+    width: 100% !important;
+    display: block !important;
+}
+
+/* Hide typical email "clutter" like web-view links or spacers */
+.nyt-section img[height="1"], 
+.nyt-section .email-header, 
+.nyt-section .footer-links {
+    display: none !important;
+}
+
+/* Ensure images don't overflow the Kobo screen */
+.nyt-section img {
+    max-width: 100% !important;
+    height: auto !important;
+}
+
 ul { list-style: none; padding: 0; }
 li { margin-bottom: 8px; font-size: 14px; }
 a { color: #555; text-decoration: underline; }
