@@ -1,4 +1,3 @@
-import requests
 import os
 import feedparser
 import time
@@ -9,45 +8,34 @@ INSTAPAPER_USER = os.environ.get("INSTAPAPER_USER")
 INSTAPAPER_PASS = os.environ.get("INSTAPAPER_PASS")
 
 def add_url_to_instapaper(url):
-    """Adds a unique tag to ensure Instapaper accepts the link every time."""
+    """Sends individual links to Instapaper using Basic Auth."""
+    if not INSTAPAPER_USER or not INSTAPAPER_PASS:
+        return
     api_url = "https://www.instapaper.com/api/add"
-    # Tagging the URL with a timestamp prevents Instapaper's duplicate filter from blocking it
     unique_url = f"{url}?kobosync={int(time.time())}"
-    data = {'username': INSTAPAPER_USER, 'password': INSTAPAPER_PASS, 'url': unique_url}
     try:
-        r = requests.post(api_url, data=data, timeout=15)
+        # Using 'auth=' here matches the curl -u command in your yml
+        r = requests.post(api_url, auth=(INSTAPAPER_USER, INSTAPAPER_PASS), data={'url': unique_url}, timeout=15)
         print(f"  [{r.status_code}] Direct Push: {unique_url}")
-        time.sleep(3) 
+        time.sleep(2)
     except Exception as e:
         print(f"  Error: {e}")
 
 def get_weather_afd():
-    """Scrapes and REFLOWS text from IWX Weather Discussion."""
+    """Scrapes raw weather text. We will handle reflow via CSS now."""
     url = "https://forecast.weather.gov/product.php?site=iwx&issuedby=iwx&product=afd&format=ci&version=1&glossary=1"
     try:
         r = requests.get(url, timeout=15, headers={'User-Agent': 'Mozilla/5.0'})
         r.encoding = 'utf-8'
         start = r.text.find('<pre class="glossaryProduct">') + 29
         end = r.text.find('</pre>', start)
-        raw_text = r.text[start:end].replace('&nbsp;', ' ').replace('&amp;', '&')
-        
-        # WEATHER REFLOW: This removes the hard line breaks so the text wraps naturally.
-        # It replaces single newlines with spaces, but keeps double newlines as paragraphs.
-        lines = raw_text.splitlines()
-        reflowed_text = ""
-        for line in lines:
-            line = line.strip()
-            if not line:
-                reflowed_text += "\n\n" # Preserve paragraph breaks
-            else:
-                reflowed_text += line + " "
-        return reflowed_text
+        return r.text[start:end].replace('&nbsp;', ' ').replace('&amp;', '&')
     except:
-        return "Weather unavailable today."
+        return "Weather unavailable."
 
 def main():
-    # 1. DIRECT NEWS (Guardian & NYT)
-    print("Sending News Direct...")
+    # 1. DIRECT NEWS
+    print("Syncing News...")
     feeds = {
         "Guardian": "https://www.theguardian.com/news/series/the-long-read/rss",
         "NYT": "https://rss.nytimes.com/services/xml/rss/nyt/TheMorning.xml"
@@ -60,36 +48,39 @@ def main():
             count = 0
             for entry in feed.entries:
                 if count >= limit: break
-                
-                # UPDATED FILTER: Excludes sports and podcasts
-                is_excluded = any(s in entry.link.lower() for s in ['sport', 'football', 'soccer', 'podcast'])
-                
-                if not is_excluded:
+                # Podcast and Sport Filter
+                if not any(s in entry.link.lower() for s in ['sport', 'football', 'podcast', 'audio']):
                     add_url_to_instapaper(entry.link)
                     count += 1
-        except Exception as e:
-            print(f"Feed error: {e}")
+        except:
+            continue
 
-    # 2. NEWSLETTER CONTENT (Weather)
+    # 2. NEWSLETTER CONTENT
     print("Building Newsletter...")
-    weather_content = get_weather_afd()
+    weather_raw = get_weather_afd()
     
     with open("newsletter_template.md", "r") as f:
         template = f.read()
 
-    current_date = datetime.now().strftime("%B %d, %Y")
-    final_body = template.replace("{{date}}", current_date)
-    final_body = final_body.replace("{{weather}}", weather_content)
+    # We use a simple div; the CSS file handles the 'Natural Flow' wrapping
+    weather_html = f'<div class="weather-block">{weather_raw}</div>'
+    
+    final_body = template.replace("{{date}}", datetime.now().strftime("%B %d, %Y"))
+    final_body = final_body.replace("{{weather}}", weather_html)
     final_body = final_body.replace("{{news}}", "*Articles sent separately.*")
-    final_body = final_body.replace("{{reddit}}", "*(Awaiting API Credentials)*")
+    final_body = final_body.replace("{{reddit}}", '<div class="reddit-block">Awaiting API...</div>')
 
-    # 3. HTML Wrapper
-    # We use white-space: pre-wrap to allow the reflowed weather to wrap on small screens.
-    html_wrapper = """<!DOCTYPE html><html><head><style>
-        body {{ font-family: -apple-system, sans-serif; line-height: 1.6; max-width: 800px; margin: 40px auto; padding: 20px; color: #111; }}
-        pre {{ white-space: pre-wrap; word-wrap: break-word; font-family: inherit; font-size: 16px; }}
-        a {{ color: #0066cc; text-decoration: none; }}
-    </style></head><body>{content}</body></html>"""
+    # 3. HTML Wrapper (No more braces to crash Python!)
+    html_wrapper = """<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    {content}
+</body>
+</html>"""
 
     with open("index.html", "w", encoding="utf-8") as f:
         f.write(html_wrapper.format(content=final_body))

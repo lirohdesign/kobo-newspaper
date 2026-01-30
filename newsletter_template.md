@@ -15,6 +15,3 @@
 
 ## 🤖 Reddit Highlights
 {{reddit}}
-
----
-*End of Briefing*
