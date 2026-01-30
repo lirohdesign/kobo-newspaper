@@ -96,50 +96,62 @@ def add_to_instapaper(url):
 
 # --- module 2: build ---
 def main():
-    # step A: handle time
-    cst_now = datetime.utcnow() - timedelta(hours=6)
-    date_str = cst_now.strftime("%b %d, %y").lower()
-    time_str = cst_now.strftime("%I:%M %p").lower()
-    
-    # step B: collect data (the "step before build")
-    print("starting collection...")
-    weather_content = collect_weather()
-    news_content = collect_guardian_links()
-    
-    # step C: assemble newsletter only AFTER data is in hand
-    # wrap the core content in a way Instapaper respects
-    html_body = f"""
-    <header>
-        <h1 class="masthead">liroh daily</h1>
-        <h3 style="font-weight: normal; text-transform: lowercase;">
-            <time>{date_str} // {time_str} cst</time>
-        </h3>
-    </header>
-    
-    <article id="main-content">
-        <section>
-            <h2>weather discussion</h2>
-            <div class="weather-block">{weather_content}</div>
-        </section>
+    try:
+        # 1. handle time
+        cst_now = datetime.utcnow() - timedelta(hours=6)
+        date_str = cst_now.strftime("%b %d, %y").lower()
+        time_str = cst_now.strftime("%I:%M %p").lower()
+        file_date = cst_now.strftime("%Y-%m-%d")
         
-        <section>
-            <h2>daily links</h2>
-            <ul>{news_content}</ul>
-        </section>
-    </article>
-    """
-    
-    final_html = f"<!DOCTYPE html><html><head><meta charset='UTF-8'><link rel='stylesheet' href='style.css'></head><body>{html_body}</body></html>"
-    
+        # 2. collect data
+        print("DIAGNOSTIC: Starting collection...")
+        weather_content = collect_weather()
+        news_content = collect_guardian_links()
+        
+        # 3. assembly
+        # Using <h3> for timestamp to force Instapaper to keep it
+        html_body = f"""
+        <header>
+            <h1 class="masthead">liroh daily</h1>
+            <h3 style="font-weight: normal; text-transform: lowercase;">
+                <time>{date_str} // {time_str} cst</time>
+            </h3>
+        </header>
+        
+        <article id="main-content">
+            <section>
+                <h2>weather discussion</h2>
+                <div class="weather-block">{weather_content}</div>
+            </section>
+            
+            <section>
+                <h2>daily links</h2>
+                <ul>{news_content}</ul>
+            </section>
+        </article>
+        """
+        
+        final_html = f"<!DOCTYPE html><html><head><meta charset='UTF-8'><link rel='stylesheet' href='style.css'></head><body>{html_body}</body></html>"
+        
+        # 4. CRITICAL: Save files and VERIFY they exist
+        print(f"DIAGNOSTIC: Writing index.html... (Length: {len(final_html)})")
+        with open("index.html", "w", encoding="utf-8") as f: 
+            f.write(final_html)
+            
+        if not os.path.exists("old_issues"): 
+            os.makedirs("old_issues")
+            
+        archive_path = f"old_issues/{file_date}.html"
+        with open(archive_path, "w", encoding="utf-8") as f:
+            f.write(final_html.replace('href="style.css"', 'href="../style.css"'))
+        
+        if os.path.exists("index.html"):
+            print("DIAGNOSTIC: index.html verified on disk.")
+        else:
+            print("DIAGNOSTIC ERROR: index.html failed to write!")
 
-    with open("index.html", "w", encoding="utf-8") as f: 
-        f.write(final_html)
-    
-    file_date = cst_now.strftime("%Y-%m-%d")
-    if not os.path.exists("old_issues"): 
-        os.makedirs("old_issues")
+        update_archive_index()
+        print("build successful.")
         
-    with open(f"old_issues/{file_date}.html", "w", encoding="utf-8") as f:
-        f.write(final_html.replace('href="style.css"', 'href="../style.css"'))
-    
-    print("build successful.")
+    except Exception as e:
+        print(f"CRITICAL ERROR in main: {e}")
