@@ -67,24 +67,39 @@ def collect_nyt(ts):
 
 def sync_private_feeds(sent_ids):
     try:
-        feeds = json.loads(PRIVATE_FEEDS)
+        raw_feeds = os.environ.get("PRIVATE_FEEDS", "[]")
+        feeds = json.loads(raw_feeds)
         newly_sent_hashes = []
-        is_sunday = datetime.utcnow().weekday() == 6
-        limit = 2 if is_sunday else 1 
         
+        # --- TEST SETTINGS ---
+        FORCE_TEST = True  # Set to True to ignore the log and send articles now
+        TEST_LIMIT = 2     # How many to send for this test
+        # ---------------------
+
         for url in feeds:
             try:
                 r = requests.get(url, timeout=15)
                 all_links = re.findall(r'<item>.*?<link>(.*?)</link>', r.text, re.DOTALL)
-                to_send = [l.strip() for l in all_links if get_hash(l.strip()) not in sent_ids]
-                to_send.reverse() 
                 
-                for article_url in to_send[:limit]:
+                if FORCE_TEST:
+                    # Just grab the top 2 from the feed regardless of history
+                    to_send = [l.strip() for l in all_links[:TEST_LIMIT]]
+                    print(f"TEST MODE: Forcing send of {len(to_send)} articles from {url}")
+                else:
+                    # Normal logic
+                    to_send = [l.strip() for l in all_links if get_hash(l.strip()) not in sent_ids]
+                    to_send.reverse()
+                
+                for article_url in to_send[:TEST_LIMIT]:
                     add_to_instapaper(article_url)
                     newly_sent_hashes.append(get_hash(article_url))
-            except: pass
+                    print(f"Private Sync: Sent {article_url[:30]}...")
+            except Exception as e:
+                print(f"Private Sync Error: {e}")
+                
         return newly_sent_hashes
-    except: return []
+    except:
+        return []
 
 def main():
     try:
