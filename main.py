@@ -144,9 +144,11 @@ def main():
             f.write(master_index.replace("style.css", "../style.css"))
 
         # Instapaper Sends
-        if weather_content: add_to_instapaper(f"{base_url}/weather.html")
-        if nyt_content: add_to_instapaper(f"{base_url}/nyt.html")
-        add_to_instapaper(f"{base_url}/links.html")
+        if weather_content: 
+            add_to_instapaper(f"{base_url}/weather.html?v={ts}")
+        if nyt_content: 
+            add_to_instapaper(f"{base_url}/nyt.html?v={ts}")
+        add_to_instapaper(f"{base_url}/links.html?v={ts}")
 
         update_archive_index()
         with open(sent_log_path, "w") as f:
