@@ -51,6 +51,7 @@ jobs:
           INSTAPAPER_USER: ${{ secrets.INSTAPAPER_USER }}
           INSTAPAPER_PASS: ${{ secrets.INSTAPAPER_PASS }}
           GUARDIAN_API_KEY: ${{ secrets.GUARDIAN_API_KEY }}
+          PRIVATE_FEEDS: ${{ secrets.PRIVATE_FEEDS }} # ADD THIS LINE
         run: python main.py
 
       - name: Deploy to GitHub Pages

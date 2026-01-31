@@ -74,6 +74,29 @@ def collect_nyt(ts):
             pass
     return ""
 
+def sync_private_feeds():
+    """Independent Substack sync: grabs the single newest post only."""
+    print("Starting Private RSS Sync...")
+    raw_feeds = os.environ.get("PRIVATE_FEEDS", "[]")
+    try:
+        feeds = json.loads(raw_feeds)
+        for url in feeds:
+            try:
+                r = requests.get(url, timeout=15)
+                # Finds all links inside <item> tags
+                all_links = re.findall(r'<item>.*?<link>(.*?)</link>', r.text, re.DOTALL)
+                # Substack articles usually have /p/ in the URL
+                article_links = [l.strip() for l in all_links if "/p/" in l]
+                
+                if article_links:
+                    newest_post = article_links[0]
+                    add_to_instapaper(newest_post)
+                    print(f"Sent newest private post: {newest_post}")
+            except Exception as e:
+                print(f"Error syncing {url}: {e}")
+    except:
+        print("No private feeds found or JSON error.")
+
 def main():
     try:
         print("--- BUILD START ---")
@@ -151,11 +174,10 @@ def main():
         add_to_instapaper(f"{base_url}/links.html?v={ts}")
 
         update_archive_index()
+        sync_private_feeds() # Add this line
         with open(sent_log_path, "w") as f:
             json.dump((newly_sent_ids + sent_ids)[:200], f)
-        print("--- BUILD SUCCESSFUL ---")
-    except Exception as e:
-        print(f"CRITICAL ERROR: {e}")
+
 
 if __name__ == "__main__":
     main()
