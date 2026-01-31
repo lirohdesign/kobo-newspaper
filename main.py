@@ -115,6 +115,31 @@ def collect_nyt():
             print(f"DIAGNOSTIC ERROR (NYT): {e}")
     return ""
 
+def diagnostic_guardian_raw():
+    api_key = os.environ.get("GUARDIAN_API_KEY")
+    url = "https://content.guardianapis.com/search"
+    
+    # We are asking for 'all' tags and fields to see the full scope
+    params = {
+        'api-key': api_key,
+        'show-fields': 'all', 
+        'show-tags': 'all',
+        'page-size': 5
+    }
+
+    try:
+        print("DIAGNOSTIC: Fetching raw API data...")
+        r = requests.get(url, params=params, timeout=15)
+        data = r.json()
+        
+        # This will print the raw JSON to your GitHub Logs
+        import json
+        print(json.dumps(data, indent=2))
+        
+        return "Check logs for raw JSON output."
+    except Exception as e:
+        return f"Error: {e}"
+        
 def main():
     try:
         print("--- BUILD START ---")
