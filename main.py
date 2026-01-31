@@ -66,39 +66,47 @@ def collect_nyt(ts):
     return ""
 
 def sync_private_feeds(sent_ids):
+    raw_feeds = os.environ.get("PRIVATE_FEEDS", "[]")
     try:
-        raw_feeds = os.environ.get("PRIVATE_FEEDS", "[]")
         feeds = json.loads(raw_feeds)
         newly_sent_hashes = []
         
         # --- TEST SETTINGS ---
-        FORCE_TEST = True  # Set to True to ignore the log and send articles now
-        TEST_LIMIT = 2     # How many to send for this test
+        FORCE_TEST = True  # Set to True to ignore the log for testing
+        TEST_LIMIT = 2     # How many to send during the test
         # ---------------------
-
+        
         for url in feeds:
             try:
                 r = requests.get(url, timeout=15)
+                # re.DOTALL is key here—it lets the '.' match across line breaks
                 all_links = re.findall(r'<item>.*?<link>(.*?)</link>', r.text, re.DOTALL)
                 
+                # Filter to only get links containing "/p/" (standard Substack article format)
+                article_links = [l.strip() for l in all_links if "/p/" in l]
+                
                 if FORCE_TEST:
-                    # Just grab the top 2 from the feed regardless of history
-                    to_send = [l.strip() for l in all_links[:TEST_LIMIT]]
-                    print(f"TEST MODE: Forcing send of {len(to_send)} articles from {url}")
+                    # Grab the most recent ones regardless of history
+                    to_send = article_links[:TEST_LIMIT]
                 else:
-                    # Normal logic
-                    to_send = [l.strip() for l in all_links if get_hash(l.strip()) not in sent_ids]
+                    # Normal logic: filter by hash and reverse to get oldest first
+                    to_send = [l for l in article_links if get_hash(l) not in sent_ids]
                     to_send.reverse()
                 
-                for article_url in to_send[:TEST_LIMIT]:
-                    add_to_instapaper(article_url)
-                    newly_sent_hashes.append(get_hash(article_url))
-                    print(f"Private Sync: Sent {article_url[:30]}...")
+                # Respect the daily limit (unless forcing a test)
+                is_sunday = datetime.utcnow().weekday() == 6
+                daily_limit = TEST_LIMIT if FORCE_TEST else (2 if is_sunday else 1)
+
+                for article_url in to_send[:daily_limit]:
+                    if add_to_instapaper(article_url):
+                        newly_sent_hashes.append(get_hash(article_url))
+                        print(f"Private Sync: Successfully sent {article_url}")
             except Exception as e:
-                print(f"Private Sync Error: {e}")
+                print(f"Error in private feed loop: {e}")
                 
         return newly_sent_hashes
-    except:
+    except Exception as e:
+        print(f"Secret/JSON Error: {e}")
         return []
 
 def main():
