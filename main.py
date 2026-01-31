@@ -56,7 +56,8 @@ def collect_weather(ts):
     return ""
 
 def collect_nyt(ts):
-    path = "nyt_morning.html"
+    # The file now lives in the folder where we sync gh-pages
+    path = "existing_site/nyt_morning.html" 
     if os.path.exists(path):
         try:
             with open(path, "r", encoding="utf-8") as f:
