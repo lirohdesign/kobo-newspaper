@@ -77,44 +77,46 @@ def collect_nyt(ts):
 def sync_private_feeds():
     print("--- PRIVATE RSS DEBUG START ---")
     
-    # 1. Check the Environment Variable
     raw_feeds = os.environ.get("PRIVATE_FEEDS")
     if not raw_feeds:
         print("CRITICAL: PRIVATE_FEEDS environment variable is EMPTY or MISSING.")
         return
     
-    print(f"INFO: Raw Secret string starts with: {raw_feeds[:10]}...")
-    
-    # 2. Try to parse the JSON
     try:
         feeds = json.loads(raw_feeds)
         print(f"INFO: Successfully parsed {len(feeds)} feed(s).")
     except Exception as e:
-        print(f"ERROR: JSON Parsing failed. Ensure your Secret looks like [\"url\"] and not just url. Error: {e}")
+        print(f"ERROR: JSON Parsing failed: {e}")
         return
 
-    # 3. Process Feeds
+    # Standard browser header to bypass Substack/Cloudflare blocks
+    headers = {
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+        'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    }
+
     for url in feeds:
         print(f"INFO: Fetching RSS from: {url}")
         try:
-            r = requests.get(url, timeout=15)
+            r = requests.get(url, timeout=15, headers=headers)
             print(f"INFO: HTTP Status: {r.status_code}")
             
-            # 4. Regex Check
-            # Substack often puts line breaks between <item> and <link>, so DOTALL is vital
-            all_links = re.findall(r'<item>.*?<link>(.*?)</link>', r.text, re.DOTALL)
-            article_links = [l.strip() for l in all_links if "/p/" in l]
-            
-            print(f"INFO: Found {len(article_links)} total links with '/p/' in this feed.")
-            
-            if article_links:
-                newest_post = article_links[0]
-                print(f"INFO: Sending newest post to Instapaper: {newest_post}")
-                success = add_to_instapaper(newest_post)
-                print(f"INFO: Instapaper API Success: {success}")
+            if r.status_code == 200:
+                # re.DOTALL is essential for multi-line <item> blocks
+                all_links = re.findall(r'<item>.*?<link>(.*?)</link>', r.text, re.DOTALL)
+                article_links = [l.strip() for l in all_links if "/p/" in l]
+                
+                print(f"INFO: Found {len(article_links)} article links.")
+                
+                if article_links:
+                    newest_post = article_links[0]
+                    print(f"INFO: Sending newest post to Instapaper: {newest_post}")
+                    success = add_to_instapaper(newest_post)
+                    print(f"INFO: Instapaper API Success: {success}")
+                else:
+                    print("WARNING: No article links found in the XML.")
             else:
-                print("WARNING: No article links found. Checking raw XML sample...")
-                print(f"XML SAMPLE: {r.text[:200]}")
+                print(f"ERROR: Server returned {r.status_code}. Content start: {r.text[:100]}")
                 
         except Exception as e:
             print(f"ERROR: Failed during feed processing: {e}")
