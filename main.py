@@ -115,31 +115,32 @@ def collect_nyt():
             print(f"DIAGNOSTIC ERROR (NYT): {e}")
     return ""
 
-def diagnostic_guardian_raw():
+def collect_guardian_raw():
     api_key = os.environ.get("GUARDIAN_API_KEY")
+    # We use a broad search to see what the 'firehose' looks like
     url = "https://content.guardianapis.com/search"
-    
-    # We are asking for 'all' tags and fields to see the full scope
     params = {
         'api-key': api_key,
         'show-fields': 'all', 
         'show-tags': 'all',
-        'page-size': 5
+        'page-size': 50
     }
 
     try:
-        print("DIAGNOSTIC: Fetching raw API data...")
         r = requests.get(url, params=params, timeout=15)
-        data = r.json()
+        # We save it as a string to write to the file
+        raw_json_string = json.dumps(r.json(), indent=4)
         
-        # This will print the raw JSON to your GitHub Logs
-        import json
-        print(json.dumps(data, indent=2))
-        
-        return "Check logs for raw JSON output."
+        # Write to the local file (like nyt.html)
+        with open("guardian_raw.html", "w", encoding="utf-8") as f:
+            f.write(f"<html><body><h1>Guardian Raw API Dump</h1><pre>{raw_json_string}</pre></body></html>")
+            
+        print("DIAGNOSTIC: guardian_raw.html written.")
+        return "Raw data successfully captured."
     except Exception as e:
-        return f"Error: {e}"
-        
+        print(f"DIAGNOSTIC ERROR: {e}")
+        return ""
+
 def main():
     try:
         print("--- BUILD START ---")
@@ -149,6 +150,7 @@ def main():
         file_date = cst_now.strftime("%Y-%m-%d")
 
         weather_content = collect_weather()
+        collect_guardian_raw()
         news_content = collect_guardian_links()
         nyt_content = collect_nyt() 
 
