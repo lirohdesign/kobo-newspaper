@@ -2,20 +2,33 @@ name: Kobo Daily Sync
 
 on:
   schedule:
-    - cron: '0 11 * * *' # 5:00 AM CST (UTC-6)
-  workflow_dispatch:      # Allows you to click "Run workflow" manually
+    - cron: '0 11 * * *' # 5:00 AM CST
+  workflow_dispatch:
 
 permissions:
   contents: write
   pages: write
-  id-token: write
 
 jobs:
   build_and_deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout Repository
+      - name: Checkout Main Repository
         uses: actions/checkout@v3
+
+      # This step pulls your existing archive so the Python script can update it
+      - name: Checkout Existing Gh-Pages (for Archive)
+        uses: actions/checkout@v3
+        with:
+          ref: gh-pages
+          path: existing_site
+          
+      - name: Sync Archive Folders
+        run: |
+          if [ -d "existing_site/old_issues" ]; then
+            cp -r existing_site/old_issues ./
+            echo "DIAGNOSTIC: Previous issues synced."
+          fi
 
       - name: Set up Python
         uses: actions/setup-python@v4
@@ -29,7 +42,7 @@ jobs:
         env:
           INSTAPAPER_USER: ${{ secrets.INSTAPAPER_USER }}
           INSTAPAPER_PASS: ${{ secrets.INSTAPAPER_PASS }}
-          GUARDIAN_API_KEY: ${{ secrets.GUARDIAN_API_KEY }} # Add this line
+          GUARDIAN_API_KEY: ${{ secrets.GUARDIAN_API_KEY }}
         run: python main.py
 
       - name: Deploy to GitHub Pages
@@ -38,33 +51,3 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./
           publish_branch: gh-pages
-
-  notify_instapaper:
-    needs: build_and_deploy
-    runs-on: ubuntu-latest
-    steps:
-      - name: Wait for Live Propagation
-        run: |
-          echo "Verifying live URL: https://lirohdesign.github.io/kobo-newspaper/index.html"
-          # Check for a 200 OK status up to 10 times before giving up
-          for i in {1..10}; do
-            STATUS=$(curl -s -o /dev/null -w "%{http_code}" https://lirohdesign.github.io/kobo-newspaper/index.html)
-            if [ "$STATUS" -eq 200 ]; then
-              echo "Site is live (200 OK)."
-              exit 0
-            fi
-            echo "Attempt $i: Site returned $STATUS. Waiting 15 seconds..."
-            sleep 15
-          done
-          echo "Timed out waiting for propagation."
-          exit 1
-
-      - name: Trigger Instapaper Sync
-        env:
-          INSTAPAPER_USER: ${{ secrets.INSTAPAPER_USER }}
-          INSTAPAPER_PASS: ${{ secrets.INSTAPAPER_PASS }}
-        run: |
-          # Use a cache-buster timestamp to ensure Instapaper sees it as a fresh page
-          curl -u "${{ secrets.INSTAPAPER_USER }}:${{ secrets.INSTAPAPER_PASS }}" \
-          https://www.instapaper.com/api/add \
-          -d "url=https://lirohdesign.github.io/kobo-newspaper/index.html?t=$(date +%s)"
