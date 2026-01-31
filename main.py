@@ -17,20 +17,27 @@ def add_to_instapaper(url):
     except:
         return False
 
-def collect_weather():
+def get_timestamp():
+    # Returns format: 30jan26 1028
+    cst_now = datetime.utcnow() - timedelta(hours=6)
+    return cst_now.strftime("%d%b%y %H%M").lower()
+
+def collect_weather(ts):
     url = "https://forecast.weather.gov/product.php?site=iwx&issuedby=iwx&product=afd&format=ci&version=1&glossary=1"
     try:
         r = requests.get(url, timeout=20, headers={'User-Agent': 'Mozilla/5.0'})
-        r.encoding = 'utf-8'
         if '<pre class="glossaryProduct">' in r.text:
             start = r.text.find('<pre class="glossaryProduct">') + 29
             end = r.text.find('</pre>', start)
             raw = r.text[start:end].replace('&nbsp;', ' ').replace('&amp;', '&')
             clean_text = re.sub(r'<a [^>]*>(.*?)</a>', r'\1', raw)
-            paragraphs = [p.replace('\n', ' ').strip() for p in paragraphs if p.strip()]
-            html_p = "".join([f'<p style="margin-bottom: 1em;">{p}</p>' for p in paragraphs])
-            # Create standalone page for Instapaper
-            weather_html = f"<!DOCTYPE html><html><head><meta charset='UTF-8'></head><body><h1>Weather Discussion</h1>{html_p}</body></html>"
+            paragraphs = [p.replace('\n', ' ').strip() for p in clean_text.split('\n\n') if p.strip()]
+            html_p = "".join([f'<p>{p}</p>' for p in paragraphs])
+            
+            weather_html = f"""<!DOCTYPE html><html>
+            <head><meta charset='UTF-8'><link rel='stylesheet' href='style.css'></head>
+            <body><h1>liroh weather {ts}</h1>{html_p}</body></html>"""
+            
             with open("weather.html", "w", encoding="utf-8") as f:
                 f.write(weather_html)
             return True
@@ -38,28 +45,7 @@ def collect_weather():
         pass
     return False
 
-def collect_guardian_api():
-    if not GUARDIAN_API_KEY: return []
-    url = "https://content.guardianapis.com/search"
-    params = {
-        'api-key': GUARDIAN_API_KEY,
-        'page-size': 50,
-        'type': 'article',
-        'section': '-sport,-football,-community,-crosswords',
-        'tag': '-tone/minutebyminute,-type/audio',
-        'show-fields': 'wordcount,trailText',
-        'order-by': 'newest'
-    }
-    try:
-        r = requests.get(url, params=params, timeout=15)
-        data = r.json()
-        with open("guardian_raw.json", "w", encoding="utf-8") as f:
-            json.dump(data, f, indent=4)
-        return data.get('response', {}).get('results', [])
-    except:
-        return []
-
-def collect_nyt():
+def collect_nyt(ts):
     path = "nyt_morning.html"
     if os.path.exists(path):
         try:
@@ -67,10 +53,12 @@ def collect_nyt():
                 raw_html = f.read()
             clean = re.sub(r'<(style|script)[^>]*>.*?</\1>', '', raw_html, flags=re.DOTALL)
             content_blocks = re.findall(r'<(p|h3)[^>]*>(.*?)</\1>', clean, flags=re.DOTALL)
-            processed_content = "".join([f'<{tag}>{re.sub(r"<[^>]+>", "", text).strip()}</{tag}>' for tag, text in content_blocks if len(text) > 40])
+            processed = "".join([f'<{tag}>{re.sub(r"<[^>]+>", "", text).strip()}</{tag}>' for tag, text in content_blocks if len(text) > 40])
             
-            # Create standalone NYT page
-            nyt_html = f"<!DOCTYPE html><html><head><meta charset='UTF-8'></head><body><h1>NYT Morning Briefing</h1>{processed_content}</body></html>"
+            nyt_html = f"""<!DOCTYPE html><html>
+            <head><meta charset='UTF-8'><link rel='stylesheet' href='style.css'></head>
+            <body><h1>liroh nyt morning {ts}</h1>{processed}</body></html>"""
+            
             with open("nyt.html", "w", encoding="utf-8") as f:
                 f.write(nyt_html)
             return True
@@ -78,98 +66,71 @@ def collect_nyt():
             pass
     return False
 
+def collect_guardian_api():
+    if not GUARDIAN_API_KEY: return []
+    params = {
+        'api-key': GUARDIAN_API_KEY, 'page-size': 50, 'type': 'article',
+        'section': '-sport,-football,-community,-crosswords',
+        'tag': '-tone/minutebyminute,-type/audio',
+        'show-fields': 'wordcount,trailText', 'order-by': 'newest'
+    }
+    try:
+        r = requests.get("https://content.guardianapis.com/search", params=params, timeout=15)
+        return r.json().get('response', {}).get('results', [])
+    except:
+        return []
+
 def main():
     try:
         print("--- BUILD START ---")
+        ts = get_timestamp()
         base_url = "https://lirohdesign.github.io/kobo-newspaper"
-        
-        # 1. Duplicate Prevention
         sent_log_path = "sent_articles.json"
-        if os.path.exists(sent_log_path):
-            with open(sent_log_path, "r") as f:
-                sent_ids = json.load(f)
-        else:
-            sent_ids = []
+        sent_ids = json.load(open(sent_log_path)) if os.path.exists(sent_log_path) else []
 
-        # 2. Weather & NYT Packets
-        if collect_weather():
-            add_to_instapaper(f"{base_url}/weather.html")
-            print("DIAGNOSTIC: Weather packet sent.")
+        if collect_weather(ts): add_to_instapaper(f"{base_url}/weather.html")
+        if collect_nyt(ts): add_to_instapaper(f"{base_url}/nyt.html")
 
-        if collect_nyt():
-            add_to_instapaper(f"{base_url}/nyt.html")
-            print("DIAGNOSTIC: NYT packet sent.")
-
-        # 3. Guardian Processing
         raw_pool = collect_guardian_api()
         front_page_items = []
         newly_sent_ids = []
 
         for article in raw_pool:
             if len(front_page_items) >= 10: break
-            
-            a_id = article.get('id')
             fields = article.get('fields', {})
             word_count = int(fields.get('wordcount', 0))
-            
-            # 1,000 word threshold + check for duplicates
-            if a_id in sent_ids or word_count < 1000: continue
+            if article.get('id') in sent_ids or word_count < 1000: continue
 
             article_url = article.get('webUrl')
-            # Send full article to Instapaper queue
             add_to_instapaper(article_url)
-            
-            # Add to Front Page summary
             read_time = max(1, word_count // 200)
-            item_html = f"""
-            <div style="margin-bottom: 2.5em; border-bottom: 1px solid #ccc; padding-bottom: 1em;">
-                <h3 style="text-transform: lowercase;"><a href="{article_url}">{article.get('webTitle')}</a></h3>
-                <p style="font-size: 0.9em; color: #666;">{word_count} words // ~{read_time} min read</p>
-                <div style="margin-top: 0.5em;">{fields.get('trailText', '')}</div>
-            </div>
-            """
-            front_page_items.append(item_html)
-            newly_sent_ids.append(a_id)
-            print(f"DIAGNOSTIC: Added {a_id[:30]}")
-
-        # 4. Generate the Unified Webpage (The Hub)
-        # We add links to the Weather and NYT packets at the top
-        hub_header = f"""
-            <nav style="margin-bottom: 2em; padding: 10px; background: #f9f9f9; border: 1px solid #eee;">
-                <a href="weather.html">Today's Weather</a> | 
-                <a href="nyt.html">NYT Morning Briefing</a> |
-                <a href="archive.html">Issue Archive</a>
-            </nav>
-        """
-
-        front_page_html = f"""
-        <!DOCTYPE html><html><head><meta charset='UTF-8'></head>
-        <body style="font-family: serif; max-width: 600px; margin: auto; padding: 20px;">
-            <h1 style="border-bottom: 2px solid #000;">liroh daily</h1>
-            <p style="font-style: italic;">{datetime.now().strftime('%B %d, %Y')}</p>
             
-            {hub_header}
+            item_html = f"""
+            <div class='article-entry'>
+                <h3><a href='{article_url}'>{article.get('webTitle').lower()}</a></h3>
+                <p class='metadata'>{word_count} words // ~{read_time} min read</p>
+                <div class='trail-text'>{fields.get('trailText', '')}</div>
+            </div>"""
+            front_page_items.append(item_html)
+            newly_sent_ids.append(article.get('id'))
 
-            <section>
-                <h2>03. daily links</h2>
-                {''.join(front_page_items) if front_page_items else '<p>No new long-form links today.</p>'}
-            </section>
-        </body></html>
-        """
-        with open("index.html", "w", encoding="utf-8") as f:
-            f.write(front_page_html)
+        hub_html = f"""<!DOCTYPE html><html>
+        <head><meta charset='UTF-8'><link rel='stylesheet' href='style.css'></head>
+        <body>
+            <h1>liroh links {ts}</h1>
+            <nav><a href="weather.html">weather</a> | <a href="nyt.html">nyt briefing</a> | <a href="archive.html">archive</a></nav>
+            <section>{''.join(front_page_items) if front_page_items else '<p>no new long-form links.</p>'}</section>
+        </body></html>"""
         
-        # Send Front Page to Instapaper
+        with open("index.html", "w", encoding="utf-8") as f:
+            f.write(hub_html)
         add_to_instapaper(f"{base_url}/index.html")
-        print("DIAGNOSTIC: Front Page packet sent.")
 
-        # 5. Persistent History Update
         with open(sent_log_path, "w") as f:
             json.dump((newly_sent_ids + sent_ids)[:200], f)
-
+        if os.path.exists("nyt_morning.html"): os.remove("nyt_morning.html")
         print("--- BUILD SUCCESSFUL ---")
     except Exception as e:
         print(f"CRITICAL ERROR: {e}")
 
-if __name__ == "__main__":
-    main()
+if __name__ == "__main__": main()
