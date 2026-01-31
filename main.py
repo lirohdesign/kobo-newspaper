@@ -42,23 +42,40 @@ def collect_weather():
 def collect_guardian_links():
     links_html = []
     feed_url = "https://www.theguardian.com/news/series/the-long-read/rss"
-    headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'}
+    headers = {'User-Agent': 'Mozilla/5.0'}
+    
     try:
         print("DIAGNOSTIC: Fetching Guardian RSS...")
         resp = requests.get(feed_url, timeout=15, headers=headers)
         feed = feedparser.parse(resp.content)
-        print(f"DIAGNOSTIC: Found {len(feed.entries)} entries.")
+        
         count = 0
         for entry in feed.entries:
             if count >= 10: break
+            
+            # 1. Filter out Podcasts and Video
             link_low = entry.link.lower()
-            if not any(x in link_low for x in ['/podcasts/', '/video/', '/sport/']):
-                add_to_instapaper(entry.link)
-                # Change the list item to include a small snippet or 'Read more' text
-                # This adds 'weight' to the section so the bot doesn't ignore it.
-                links_html.append(f'<li><strong>{entry.title.lower()}</strong> — <a href="{entry.link}">read full article at the guardian</a></li>')
-                count += 1
-                print(f"DIAGNOSTIC: Added {entry.title[:30]}")
+            if any(x in link_low for x in ['/podcasts/', '/video/', '/sport/']):
+                continue
+                
+            # 2. Filter by Read Time (Proxy: Word Count)
+            # We check the 'summary' or 'description' field
+            content_text = entry.get('summary', '') or entry.get('description', '')
+            word_count = len(content_text.split())
+            
+            # Guardian RSS snippets are usually short, but the 'Long Read' 
+            # snippets are often substantial enough to judge. 
+            # If the snippet is extremely short, it's likely a redirect/stub.
+            if word_count < 50: 
+                print(f"DIAGNOSTIC: Skipping short stub: {entry.title[:30]}")
+                continue
+
+            # 3. Add valid long-form links
+            add_to_instapaper(entry.link)
+            links_html.append(f'<li><a href="{entry.link}">{entry.title.lower()}</a></li>')
+            count += 1
+            print(f"DIAGNOSTIC: Added {entry.title[:30]}")
+            
         return "".join(links_html)
     except Exception as e:
         print(f"DIAGNOSTIC ERROR (Guardian): {e}")
