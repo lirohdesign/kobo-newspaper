@@ -138,11 +138,14 @@ def main():
         print(f"Prepared {len(links_list_html)} new public links.")
 
         # Save HTML Files
-        print("Writing HTML files to disk...")
-        links_final_content = "".join(links_list_html)
-        with open("links.html", "w", encoding="utf-8") as f:
-            f.write(f"<!DOCTYPE html><html><head><meta charset='UTF-8'><link rel='stylesheet' href='style.css'></head><body><h1>liroh links {ts}</h1>{links_final_content}</body></html>")
-
+        if len(links_list_html) > 0:
+            print(f"Writing {len(links_list_html)} links to links.html...")
+            links_final_content = "".join(links_list_html)
+            with open("links.html", "w", encoding="utf-8") as f:
+                f.write(f"<!DOCTYPE html><html><head><meta charset='UTF-8'><link rel='stylesheet' href='style.css'></head><body><h1>liroh links {ts}</h1>{links_final_content}</body></html>")
+        else:
+            print("WARNING: No new links to write. Skipping links.html update to avoid blank page.")
+            links_final_content = "<p>No new long-form articles found today.</p>"
         master_index = f"<!DOCTYPE html><html><head><meta charset='UTF-8'><link rel='stylesheet' href='style.css'></head><body><h1>liroh daily {ts}</h1><nav><a href='weather.html'>weather</a> | <a href='nyt.html'>nyt</a> | <a href='links.html'>links</a> | <a href='archive.html'>archive</a></nav><section><h2>01. weather</h2>{weather_content if weather_content else '<p>unavailable</p>'}</section><hr><section><h2>02. nyt briefing</h2>{nyt_content if nyt_content else '<p>unavailable</p>'}</section><hr><section><h2>03. daily links</h2>{links_final_content}</section></body></html>"
         with open("index.html", "w", encoding="utf-8") as f: f.write(master_index)
         
