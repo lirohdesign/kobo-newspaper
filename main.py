@@ -3,6 +3,7 @@ import os
 import feedparser
 import time
 import re
+import json # Ensure this is here
 from datetime import datetime, timedelta
 
 # --- settings ---
@@ -117,7 +118,6 @@ def collect_nyt():
 
 def collect_guardian_raw():
     api_key = os.environ.get("GUARDIAN_API_KEY")
-    # We use a broad search to see what the 'firehose' looks like
     url = "https://content.guardianapis.com/search"
     params = {
         'api-key': api_key,
@@ -128,18 +128,16 @@ def collect_guardian_raw():
 
     try:
         r = requests.get(url, params=params, timeout=15)
-        # We save it as a string to write to the file
+        # Convert the dictionary to a pretty-printed string
         raw_json_string = json.dumps(r.json(), indent=4)
         
-        # Write to the local file (like nyt.html)
+        # Write the HTML file to the current directory
         with open("guardian_raw.html", "w", encoding="utf-8") as f:
             f.write(f"<html><body><h1>Guardian Raw API Dump</h1><pre>{raw_json_string}</pre></body></html>")
             
-        print("DIAGNOSTIC: guardian_raw.html written.")
-        return "Raw data successfully captured."
+        print("DIAGNOSTIC: guardian_raw.html successfully written to disk.")
     except Exception as e:
         print(f"DIAGNOSTIC ERROR: {e}")
-        return ""
 
 def main():
     try:
