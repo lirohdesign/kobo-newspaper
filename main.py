@@ -104,14 +104,20 @@ def main():
         
         sent_log_path = "sent_articles.json"
         sent_ids = json.load(open(sent_log_path)) if os.path.exists(sent_log_path) else []
+        print(f"Loaded {len(sent_ids)} historical IDs from log.")
 
         weather_content = collect_weather(ts)
+        print("Weather collection complete.")
+        
         nyt_content = collect_nyt(ts)
+        print("NYT collection complete.")
 
         # Guardian Processing
+        print("Fetching Guardian articles...")
         params = {'api-key': GUARDIAN_API_KEY, 'page-size': 50, 'type': 'article', 'section': '-sport,-football', 'show-fields': 'wordcount,trailText', 'order-by': 'newest'}
         r = requests.get("https://content.guardianapis.com/search", params=params, timeout=15)
         raw_pool = r.json().get('response', {}).get('results', [])
+        print(f"Found {len(raw_pool)} articles in Guardian pool.")
         
         links_list_html = []
         newly_sent_ids = []
@@ -125,36 +131,47 @@ def main():
             article_url = article.get('webUrl')
             if add_to_instapaper(article_url):
                 read_time = max(1, word_count // 200)
-                # Preserving Guardian casing
                 item = f"<div class='article-entry'><h3><a href='{article_url}'>{article.get('webTitle')}</a></h3><p class='metadata'>{word_count} words // ~{read_time} min read</p><div class='trail-text'>{fields.get('trailText', '')}</div></div>"
                 links_list_html.append(item)
                 newly_sent_ids.append(article.get('id'))
 
+        print(f"Prepared {len(links_list_html)} new public links.")
+
+        # Save HTML Files
+        print("Writing HTML files to disk...")
         links_final_content = "".join(links_list_html)
-        
-        # Master Index build
+        with open("links.html", "w", encoding="utf-8") as f:
+            f.write(f"<!DOCTYPE html><html><head><meta charset='UTF-8'><link rel='stylesheet' href='style.css'></head><body><h1>liroh links {ts}</h1>{links_final_content}</body></html>")
+
         master_index = f"<!DOCTYPE html><html><head><meta charset='UTF-8'><link rel='stylesheet' href='style.css'></head><body><h1>liroh daily {ts}</h1><nav><a href='weather.html'>weather</a> | <a href='nyt.html'>nyt</a> | <a href='links.html'>links</a> | <a href='archive.html'>archive</a></nav><section><h2>01. weather</h2>{weather_content if weather_content else '<p>unavailable</p>'}</section><hr><section><h2>02. nyt briefing</h2>{nyt_content if nyt_content else '<p>unavailable</p>'}</section><hr><section><h2>03. daily links</h2>{links_final_content}</section></body></html>"
         with open("index.html", "w", encoding="utf-8") as f: f.write(master_index)
         
-        # Archive copy
         if not os.path.exists("old_issues"): os.makedirs("old_issues")
         with open(f"old_issues/{file_date}.html", "w", encoding="utf-8") as f:
             f.write(master_index.replace("style.css", "../style.css"))
 
-        # Instapaper Sends for Public Pages
+        # Instapaper Sends
+        print("Sending public pages to Instapaper...")
         if weather_content: add_to_instapaper(f"{base_url}/weather.html?v={ts}")
         if nyt_content: add_to_instapaper(f"{base_url}/nyt.html?v={ts}")
         add_to_instapaper(f"{base_url}/links.html?v={ts}")
 
-        # Private Backlog/Daily Sync
+        # Private Backlog Sync
+        print("Starting private feed sync...")
         private_hashes = sync_private_feeds(sent_ids)
+        print(f"Private sync complete. Sent {len(private_hashes)} items.")
 
         update_archive_index()
         
-        # Save both IDs and Fingerprints (hashes) to log
+        # Save Log
         with open(sent_log_path, "w") as f:
             json.dump((newly_sent_ids + private_hashes + sent_ids)[:500], f)
+        
         print("--- BUILD SUCCESSFUL ---")
-    except Exception as e: print(f"CRITICAL ERROR: {e}")
+    except Exception as e: 
+        print(f"CRITICAL ERROR: {e}")
+        # This will show you exactly what line failed in the Actions log
+        import traceback
+        traceback.print_exc()
 
 if __name__ == "__main__": main()
