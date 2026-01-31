@@ -177,7 +177,6 @@ def main():
         sync_private_feeds() # Add this line
         with open(sent_log_path, "w") as f:
             json.dump((newly_sent_ids + sent_ids)[:200], f)
-
-
+            
 if __name__ == "__main__":
     main()
