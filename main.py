@@ -21,6 +21,19 @@ def get_timestamp():
     cst_now = datetime.utcnow() - timedelta(hours=6)
     return cst_now.strftime("%d%b%y %H%M").lower()
 
+def update_archive_index():
+    if not os.path.exists("old_issues"):
+        os.makedirs("old_issues")
+    files = sorted([f for f in os.listdir("old_issues") if f.endswith(".html")], reverse=True)
+    links = "".join([f'<li><a href="old_issues/{f}">{f.replace(".html", "")}</a></li>' for f in files])
+    
+    html = f"""<!DOCTYPE html><html>
+<head><meta charset='UTF-8'><link rel='stylesheet' href='style.css'></head>
+<body><h1>liroh archive</h1><nav><a href="index.html">back to home</a></nav><ul>{links}</ul></body></html>"""
+    
+    with open("archive.html", "w", encoding="utf-8") as f:
+        f.write(html)
+
 def collect_weather(ts):
     url = "https://forecast.weather.gov/product.php?site=iwx&issuedby=iwx&product=afd&format=ci&version=1&glossary=1"
     try:
@@ -70,11 +83,10 @@ def main():
         
         if not os.path.exists("old_issues"): os.makedirs("old_issues")
 
-        # 1. Weather and NYT
         weather_content = collect_weather(ts)
         nyt_content = collect_nyt(ts)
 
-        # 2. Guardian / Links
+        # Guardian Processing
         sent_log_path = "sent_articles.json"
         sent_ids = json.load(open(sent_log_path)) if os.path.exists(sent_log_path) else []
         
@@ -92,7 +104,7 @@ def main():
             if article.get('id') in sent_ids or word_count < 1000: continue
 
             article_url = article.get('webUrl')
-            add_to_instapaper(article_url) # Send original article
+            add_to_instapaper(article_url)
             
             read_time = max(1, word_count // 200)
             item = f"""<div class='article-entry'>
@@ -105,49 +117,41 @@ def main():
 
         links_final_content = "".join(links_list_html)
         
-        # Save separate links.html for Instapaper
+        # links.html for Instapaper
         links_page = f"""<!DOCTYPE html><html><head><meta charset='UTF-8'><link rel='stylesheet' href='style.css'></head>
         <body><h1>liroh links {ts}</h1>{links_final_content}</body></html>"""
         with open("links.html", "w", encoding="utf-8") as f:
             f.write(links_page)
 
-        # 3. Create Master index.html (The Full Hub)
-        master_index = f"""<!DOCTYPE html><html><head><meta charset='UTF-8'><link rel='stylesheet' href='style.css'></head>
-        <body>
-            <h1>liroh daily {ts}</h1>
-            <nav><a href="weather.html">weather</a> | <a href="nyt.html">nyt</a> | <a href="links.html">links</a> | <a href="archive.html">archive</a></nav>
-            
-            <h2>weather</h2>
-            {weather_content if weather_content else '<p>weather unavailable</p>'}
-            
-            <hr>
-            
-            <h2>morning briefing</h2>
-            {nyt_content if nyt_content else '<p>briefing unavailable</p>'}
-            
-            <hr>
-            
-            <h2>daily links</h2>
-            {links_final_content}
-        </body></html>"""
+        # index.html MASTER EDITION
+        master_index = f"""<!DOCTYPE html><html>
+<head><meta charset='UTF-8'><link rel='stylesheet' href='style.css'></head>
+<body>
+    <h1>liroh daily {ts}</h1>
+    <nav><a href="weather.html">weather</a> | <a href="nyt.html">nyt</a> | <a href="links.html">links</a> | <a href="archive.html">archive</a></nav>
+    <section><h2>01. weather</h2>{weather_content if weather_content else '<p>unavailable</p>'}</section>
+    <hr>
+    <section><h2>02. nyt briefing</h2>{nyt_content if nyt_content else '<p>unavailable</p>'}</section>
+    <hr>
+    <section><h2>03. daily links</h2>{links_final_content}</section>
+</body></html>"""
         
         with open("index.html", "w", encoding="utf-8") as f:
             f.write(master_index)
         
-        # Save archive copy
         with open(f"old_issues/{file_date}.html", "w", encoding="utf-8") as f:
-            f.write(master_index)
+            # Archive copies need to look back one level for CSS
+            f.write(master_index.replace("style.css", "../style.css"))
 
-        # 4. Instapaper Sends (Modular Only)
+        # Instapaper Sends
         if weather_content: add_to_instapaper(f"{base_url}/weather.html")
         if nyt_content: add_to_instapaper(f"{base_url}/nyt.html")
         add_to_instapaper(f"{base_url}/links.html")
 
-        # 5. Cleanup
+        update_archive_index()
         with open(sent_log_path, "w") as f:
             json.dump((newly_sent_ids + sent_ids)[:200], f)
         if os.path.exists("nyt_morning.html"): os.remove("nyt_morning.html")
-        
         print("--- BUILD SUCCESSFUL ---")
     except Exception as e:
         print(f"CRITICAL ERROR: {e}")
