@@ -56,7 +56,6 @@ def collect_weather(ts):
     return ""
 
 def collect_nyt(ts):
-    # Changed path from 'existing_site/' to root since YAML moves it now
     path = "nyt_morning.html" 
     if os.path.exists(path):
         try:
@@ -71,8 +70,8 @@ def collect_nyt(ts):
             with open("nyt.html", "w", encoding="utf-8") as f:
                 f.write(html)
             return content
-    except:
-        pass
+        except:
+            pass
     return ""
 
 def main():
@@ -108,6 +107,7 @@ def main():
             add_to_instapaper(article_url)
             
             read_time = max(1, word_count // 200)
+            # Casing preserved here (removed .lower())
             item = f"""<div class='article-entry'>
             <h3><a href='{article_url}'>{article.get('webTitle')}</a></h3>
             <p class='metadata'>{word_count} words // ~{read_time} min read</p>
@@ -141,7 +141,6 @@ def main():
             f.write(master_index)
         
         with open(f"old_issues/{file_date}.html", "w", encoding="utf-8") as f:
-            # Archive copies need to look back one level for CSS
             f.write(master_index.replace("style.css", "../style.css"))
 
         # Instapaper Sends
