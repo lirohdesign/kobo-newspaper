@@ -154,7 +154,6 @@ def main():
         update_archive_index()
         with open(sent_log_path, "w") as f:
             json.dump((newly_sent_ids + sent_ids)[:200], f)
-        if os.path.exists("nyt_morning.html"): os.remove("nyt_morning.html")
         print("--- BUILD SUCCESSFUL ---")
     except Exception as e:
         print(f"CRITICAL ERROR: {e}")
