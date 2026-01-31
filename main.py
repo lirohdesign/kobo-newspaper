@@ -115,4 +115,22 @@ def main():
             newly_sent_ids.append(article.get('id'))
 
         hub_html = f"""<!DOCTYPE html><html>
-        <head><meta charset='UTF-8'><link rel='stylesheet' href
+        <head><meta charset='UTF-8'><link rel='stylesheet' href='style.css'></head>
+        <body>
+            <h1>liroh links {ts}</h1>
+            <nav><a href="weather.html">weather</a> | <a href="nyt.html">nyt briefing</a> | <a href="archive.html">archive</a></nav>
+            <section>{''.join(front_page_items) if front_page_items else '<p>no new long-form links.</p>'}</section>
+        </body></html>"""
+        
+        with open("index.html", "w", encoding="utf-8") as f:
+            f.write(hub_html)
+        add_to_instapaper(f"{base_url}/index.html")
+
+        with open(sent_log_path, "w") as f:
+            json.dump((newly_sent_ids + sent_ids)[:200], f)
+        if os.path.exists("nyt_morning.html"): os.remove("nyt_morning.html")
+        print("--- BUILD SUCCESSFUL ---")
+    except Exception as e:
+        print(f"CRITICAL ERROR: {e}")
+
+if __name__ == "__main__": main()
