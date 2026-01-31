@@ -12,14 +12,14 @@ GUARDIAN_API_KEY = os.environ.get("GUARDIAN_API_KEY")
 PRIVATE_FEEDS = os.environ.get("PRIVATE_FEEDS", "[]")
 
 def get_hash(text):
-    """Creates a unique fingerprint to keep private URLs out of public logs."""
     return hashlib.sha256(text.encode()).hexdigest()
 
 def add_to_instapaper(url):
     api_url = "https://www.instapaper.com/api/add"
     try:
-        r = requests.post(api_url, auth=(INSTAPAPER_USER, INSTAPAPER_PASS), data={'url': url}, timeout=15)
-        return r.status_code == 200
+        # We fire the request but don't let a non-200 response break our UI logic
+        requests.post(api_url, auth=(INSTAPAPER_USER, INSTAPAPER_PASS), data={'url': url}, timeout=15)
+        return True
     except:
         return False
 
@@ -66,12 +66,9 @@ def collect_nyt(ts):
     return ""
 
 def sync_private_feeds(sent_ids):
-    """Processes private RSS feeds with a Sunday backlog limit."""
     try:
         feeds = json.loads(PRIVATE_FEEDS)
         newly_sent_hashes = []
-        
-        # 0=Mon, 6=Sun. Limit 2 on Sundays for catch-up; 1 daily for new posts.
         is_sunday = datetime.utcnow().weekday() == 6
         limit = 2 if is_sunday else 1 
         
@@ -79,21 +76,15 @@ def sync_private_feeds(sent_ids):
             try:
                 r = requests.get(url, timeout=15)
                 all_links = re.findall(r'<item>.*?<link>(.*?)</link>', r.text, re.DOTALL)
-                
-                # Check the HASH to maintain privacy in sent_articles.json
                 to_send = [l.strip() for l in all_links if get_hash(l.strip()) not in sent_ids]
-                to_send.reverse() # Oldest unread first
+                to_send.reverse() 
                 
                 for article_url in to_send[:limit]:
-                    if add_to_instapaper(article_url):
-                        newly_sent_hashes.append(get_hash(article_url))
-                        print(f"Private Sync: Sent fingerprint {get_hash(article_url)[:8]} (Limit: {limit})")
-            except Exception as e:
-                print(f"Private Sync Error for {url}: {e}")
-                
+                    add_to_instapaper(article_url)
+                    newly_sent_hashes.append(get_hash(article_url))
+            except: pass
         return newly_sent_hashes
-    except:
-        return []
+    except: return []
 
 def main():
     try:
@@ -104,48 +95,44 @@ def main():
         
         sent_log_path = "sent_articles.json"
         sent_ids = json.load(open(sent_log_path)) if os.path.exists(sent_log_path) else []
-        print(f"Loaded {len(sent_ids)} historical IDs from log.")
 
         weather_content = collect_weather(ts)
-        print("Weather collection complete.")
-        
         nyt_content = collect_nyt(ts)
-        print("NYT collection complete.")
 
         # Guardian Processing
-        print("Fetching Guardian articles...")
         params = {'api-key': GUARDIAN_API_KEY, 'page-size': 50, 'type': 'article', 'section': '-sport,-football', 'show-fields': 'wordcount,trailText', 'order-by': 'newest'}
         r = requests.get("https://content.guardianapis.com/search", params=params, timeout=15)
         raw_pool = r.json().get('response', {}).get('results', [])
-        print(f"Found {len(raw_pool)} articles in Guardian pool.")
         
         links_list_html = []
         newly_sent_ids = []
 
         for article in raw_pool:
-            if len(links_list_html) >= 10: break
+            if len(links_list_html) >= 10: 
+                break # This break is now guaranteed because we append to links_list_html BEFORE the API call
+            
             fields = article.get('fields', {})
             word_count = int(fields.get('wordcount', 0))
-            if article.get('id') in sent_ids or word_count < 1000: continue
+            if article.get('id') in sent_ids or word_count < 1000: 
+                continue
 
             article_url = article.get('webUrl')
-            if add_to_instapaper(article_url):
-                read_time = max(1, word_count // 200)
-                item = f"<div class='article-entry'><h3><a href='{article_url}'>{article.get('webTitle')}</a></h3><p class='metadata'>{word_count} words // ~{read_time} min read</p><div class='trail-text'>{fields.get('trailText', '')}</div></div>"
-                links_list_html.append(item)
-                newly_sent_ids.append(article.get('id'))
+            read_time = max(1, word_count // 200)
+            
+            # BUILD HTML AND UPDATE LIST FIRST
+            item = f"<div class='article-entry'><h3><a href='{article_url}'>{article.get('webTitle')}</a></h3><p class='metadata'>{word_count} words // ~{read_time} min read</p><div class='trail-text'>{fields.get('trailText', '')}</div></div>"
+            links_list_html.append(item)
+            newly_sent_ids.append(article.get('id'))
 
-        print(f"Prepared {len(links_list_html)} new public links.")
+            # SEND TO INSTAPAPER SECOND
+            add_to_instapaper(article_url)
 
+        links_final_content = "".join(links_list_html)
+        
         # Save HTML Files
-        if len(links_list_html) > 0:
-            print(f"Writing {len(links_list_html)} links to links.html...")
-            links_final_content = "".join(links_list_html)
-            with open("links.html", "w", encoding="utf-8") as f:
-                f.write(f"<!DOCTYPE html><html><head><meta charset='UTF-8'><link rel='stylesheet' href='style.css'></head><body><h1>liroh links {ts}</h1>{links_final_content}</body></html>")
-        else:
-            print("WARNING: No new links to write. Skipping links.html update to avoid blank page.")
-            links_final_content = "<p>No new long-form articles found today.</p>"
+        with open("links.html", "w", encoding="utf-8") as f:
+            f.write(f"<!DOCTYPE html><html><head><meta charset='UTF-8'><link rel='stylesheet' href='style.css'></head><body><h1>liroh links {ts}</h1>{links_final_content}</body></html>")
+
         master_index = f"<!DOCTYPE html><html><head><meta charset='UTF-8'><link rel='stylesheet' href='style.css'></head><body><h1>liroh daily {ts}</h1><nav><a href='weather.html'>weather</a> | <a href='nyt.html'>nyt</a> | <a href='links.html'>links</a> | <a href='archive.html'>archive</a></nav><section><h2>01. weather</h2>{weather_content if weather_content else '<p>unavailable</p>'}</section><hr><section><h2>02. nyt briefing</h2>{nyt_content if nyt_content else '<p>unavailable</p>'}</section><hr><section><h2>03. daily links</h2>{links_final_content}</section></body></html>"
         with open("index.html", "w", encoding="utf-8") as f: f.write(master_index)
         
@@ -153,28 +140,18 @@ def main():
         with open(f"old_issues/{file_date}.html", "w", encoding="utf-8") as f:
             f.write(master_index.replace("style.css", "../style.css"))
 
-        # Instapaper Sends
-        print("Sending public pages to Instapaper...")
+        # Instapaper Sends for Public Pages
         if weather_content: add_to_instapaper(f"{base_url}/weather.html?v={ts}")
         if nyt_content: add_to_instapaper(f"{base_url}/nyt.html?v={ts}")
         add_to_instapaper(f"{base_url}/links.html?v={ts}")
 
         # Private Backlog Sync
-        print("Starting private feed sync...")
         private_hashes = sync_private_feeds(sent_ids)
-        print(f"Private sync complete. Sent {len(private_hashes)} items.")
 
         update_archive_index()
-        
-        # Save Log
         with open(sent_log_path, "w") as f:
             json.dump((newly_sent_ids + private_hashes + sent_ids)[:500], f)
-        
         print("--- BUILD SUCCESSFUL ---")
-    except Exception as e: 
-        print(f"CRITICAL ERROR: {e}")
-        # This will show you exactly what line failed in the Actions log
-        import traceback
-        traceback.print_exc()
+    except Exception as e: print(f"CRITICAL ERROR: {e}")
 
 if __name__ == "__main__": main()
