@@ -17,113 +17,62 @@ def get_hash(text):
 def add_to_instapaper(url):
     api_url = "https://www.instapaper.com/api/add"
     try:
-        # We fire the request but don't let a non-200 response break our UI logic
         requests.post(api_url, auth=(INSTAPAPER_USER, INSTAPAPER_PASS), data={'url': url}, timeout=15)
         return True
     except:
         return False
 
-def get_timestamp():
-    cst_now = datetime.utcnow() - timedelta(hours=6)
-    return cst_now.strftime("%d%b%y %H%M").lower()
-
-def update_archive_index():
-    if not os.path.exists("old_issues"): os.makedirs("old_issues")
-    files = sorted([f for f in os.listdir("old_issues") if f.endswith(".html")], reverse=True)
-    links = "".join([f'<li><a href="old_issues/{f}">{f.replace(".html", "")}</a></li>' for f in files])
-    html = f"<!DOCTYPE html><html><head><meta charset='UTF-8'><link rel='stylesheet' href='style.css'></head><body><h1>liroh archive</h1><nav><a href='index.html'>back to home</a></nav><ul>{links}</ul></body></html>"
-    with open("archive.html", "w", encoding="utf-8") as f: f.write(html)
-
-def collect_weather(ts):
-    url = "https://forecast.weather.gov/product.php?site=iwx&issuedby=iwx&product=afd&format=ci&version=1&glossary=1"
-    try:
-        r = requests.get(url, timeout=20, headers={'User-Agent': 'Mozilla/5.0'})
-        if '<pre class="glossaryProduct">' in r.text:
-            start = r.text.find('<pre class="glossaryProduct">') + 29
-            end = r.text.find('</pre>', start)
-            raw = r.text[start:end].replace('&nbsp;', ' ').replace('&amp;', '&')
-            clean_text = re.sub(r'<a [^>]*>(.*?)</a>', r'\1', raw)
-            paragraphs = [p.replace('\n', ' ').strip() for p in clean_text.split('\n\n') if p.strip()]
-            content = "".join([f'<p>{p}</p>' for p in paragraphs])
-            html = f"<!DOCTYPE html><html><head><meta charset='UTF-8'><link rel='stylesheet' href='style.css'></head><body><h1>liroh weather {ts}</h1>{content}</body></html>"
-            with open("weather.html", "w", encoding="utf-8") as f: f.write(html)
-            return content
-    except: pass
-    return ""
-
-def collect_nyt(ts):
-    path = "nyt_morning.html" 
-    if os.path.exists(path):
-        try:
-            with open(path, "r", encoding="utf-8") as f: raw_html = f.read()
-            clean = re.sub(r'<(style|script)[^>]*>.*?</\1>', '', raw_html, flags=re.DOTALL)
-            content_blocks = re.findall(r'<(p|h3)[^>]*>(.*?)</\1>', clean, flags=re.DOTALL)
-            content = "".join([f'<{tag}>{re.sub(r"<[^>]+>", "", text).strip()}</{tag}>' for tag, text in content_blocks if len(text) > 40])
-            html = f"<!DOCTYPE html><html><head><meta charset='UTF-8'><link rel='stylesheet' href='style.css'></head><body><h1>liroh nyt morning {ts}</h1>{content}</body></html>"
-            with open("nyt.html", "w", encoding="utf-8") as f: f.write(html)
-            return content
-        except: pass
-    return ""
-
 def sync_private_feeds(sent_ids):
-    raw_feeds = os.environ.get("PRIVATE_FEEDS", "[]")
     try:
-        feeds = json.loads(raw_feeds)
+        feeds = json.loads(PRIVATE_FEEDS)
         newly_sent_hashes = []
         
         # --- TEST SETTINGS ---
-        FORCE_TEST = True  # Set to True to ignore the log for testing
-        TEST_LIMIT = 2     # How many to send during the test
-        # ---------------------
+        FORCE_TEST = True  # Set to False after you confirm Substack works!
+        TEST_LIMIT = 2
         
         for url in feeds:
             try:
                 r = requests.get(url, timeout=15)
-                # re.DOTALL is key here—it lets the '.' match across line breaks
+                # re.DOTALL handles the multi-line XML structure of RSS
                 all_links = re.findall(r'<item>.*?<link>(.*?)</link>', r.text, re.DOTALL)
-                
-                # Filter to only get links containing "/p/" (standard Substack article format)
                 article_links = [l.strip() for l in all_links if "/p/" in l]
                 
                 if FORCE_TEST:
-                    # Grab the most recent ones regardless of history
                     to_send = article_links[:TEST_LIMIT]
                 else:
-                    # Normal logic: filter by hash and reverse to get oldest first
                     to_send = [l for l in article_links if get_hash(l) not in sent_ids]
                     to_send.reverse()
                 
-                # Respect the daily limit (unless forcing a test)
                 is_sunday = datetime.utcnow().weekday() == 6
                 daily_limit = TEST_LIMIT if FORCE_TEST else (2 if is_sunday else 1)
 
                 for article_url in to_send[:daily_limit]:
                     if add_to_instapaper(article_url):
                         newly_sent_hashes.append(get_hash(article_url))
-                        print(f"Private Sync: Successfully sent {article_url}")
+                        print(f"Private Sync: Sent {article_url[:40]}")
             except Exception as e:
-                print(f"Error in private feed loop: {e}")
-                
+                print(f"Feed error: {e}")
         return newly_sent_hashes
-    except Exception as e:
-        print(f"Secret/JSON Error: {e}")
-        return []
+    except: return []
 
 def main():
     try:
         print("--- BUILD START ---")
-        ts = get_timestamp()
+        ts = (datetime.utcnow() - timedelta(hours=6)).strftime("%d%b%y %H%M").lower()
         file_date = (datetime.utcnow() - timedelta(hours=6)).strftime("%Y-%m-%d")
-        base_url = "https://lirohdesign.github.io/kobo-newspaper"
         
+        # Bulletproof Log Loading from root (main branch)
         sent_log_path = "sent_articles.json"
-        sent_ids = json.load(open(sent_log_path)) if os.path.exists(sent_log_path) else []
+        sent_ids = []
+        if os.path.exists(sent_log_path):
+            try:
+                with open(sent_log_path, "r") as f:
+                    sent_ids = json.load(f)
+            except: sent_ids = []
 
-        weather_content = collect_weather(ts)
-        nyt_content = collect_nyt(ts)
-
-        # Guardian Processing
-        params = {'api-key': GUARDIAN_API_KEY, 'page-size': 50, 'type': 'article', 'section': '-sport,-football', 'show-fields': 'wordcount,trailText', 'order-by': 'newest'}
+        # Guardian Fetch
+        params = {'api-key': GUARDIAN_API_KEY, 'page-size': 50, 'show-fields': 'wordcount,trailText', 'order-by': 'newest'}
         r = requests.get("https://content.guardianapis.com/search", params=params, timeout=15)
         raw_pool = r.json().get('response', {}).get('results', [])
         
@@ -131,49 +80,36 @@ def main():
         newly_sent_ids = []
 
         for article in raw_pool:
-            if len(links_list_html) >= 10: 
-                break # This break is now guaranteed because we append to links_list_html BEFORE the API call
-            
+            if len(links_list_html) >= 10: break
             fields = article.get('fields', {})
             word_count = int(fields.get('wordcount', 0))
-            if article.get('id') in sent_ids or word_count < 1000: 
-                continue
+            if article.get('id') in sent_ids or word_count < 1000: continue
 
             article_url = article.get('webUrl')
             read_time = max(1, word_count // 200)
+            item = f"<div class='article-entry'><h3><a href='{article_url}'>{article.get('webTitle')}</a></h3><p>{word_count} words // ~{read_time} min read</p></div>"
             
-            # BUILD HTML AND UPDATE LIST FIRST
-            item = f"<div class='article-entry'><h3><a href='{article_url}'>{article.get('webTitle')}</a></h3><p class='metadata'>{word_count} words // ~{read_time} min read</p><div class='trail-text'>{fields.get('trailText', '')}</div></div>"
             links_list_html.append(item)
             newly_sent_ids.append(article.get('id'))
-
-            # SEND TO INSTAPAPER SECOND
             add_to_instapaper(article_url)
 
-        links_final_content = "".join(links_list_html)
-        
-        # Save HTML Files
+        # Write Files
+        links_html = "".join(links_list_html)
         with open("links.html", "w", encoding="utf-8") as f:
-            f.write(f"<!DOCTYPE html><html><head><meta charset='UTF-8'><link rel='stylesheet' href='style.css'></head><body><h1>liroh links {ts}</h1>{links_final_content}</body></html>")
-
-        master_index = f"<!DOCTYPE html><html><head><meta charset='UTF-8'><link rel='stylesheet' href='style.css'></head><body><h1>liroh daily {ts}</h1><nav><a href='weather.html'>weather</a> | <a href='nyt.html'>nyt</a> | <a href='links.html'>links</a> | <a href='archive.html'>archive</a></nav><section><h2>01. weather</h2>{weather_content if weather_content else '<p>unavailable</p>'}</section><hr><section><h2>02. nyt briefing</h2>{nyt_content if nyt_content else '<p>unavailable</p>'}</section><hr><section><h2>03. daily links</h2>{links_final_content}</section></body></html>"
-        with open("index.html", "w", encoding="utf-8") as f: f.write(master_index)
-        
+            f.write(f"<html><body><h1>links {ts}</h1>{links_html}</body></html>")
+            
+        # Archive
         if not os.path.exists("old_issues"): os.makedirs("old_issues")
         with open(f"old_issues/{file_date}.html", "w", encoding="utf-8") as f:
-            f.write(master_index.replace("style.css", "../style.css"))
+            f.write(f"<html><body><h1>daily {ts}</h1>{links_html}</body></html>")
 
-        # Instapaper Sends for Public Pages
-        if weather_content: add_to_instapaper(f"{base_url}/weather.html?v={ts}")
-        if nyt_content: add_to_instapaper(f"{base_url}/nyt.html?v={ts}")
-        add_to_instapaper(f"{base_url}/links.html?v={ts}")
-
-        # Private Backlog Sync
+        # Sync Private RSS
         private_hashes = sync_private_feeds(sent_ids)
 
-        update_archive_index()
+        # Save Log back to root
         with open(sent_log_path, "w") as f:
             json.dump((newly_sent_ids + private_hashes + sent_ids)[:500], f)
+            
         print("--- BUILD SUCCESSFUL ---")
     except Exception as e: print(f"CRITICAL ERROR: {e}")
 
