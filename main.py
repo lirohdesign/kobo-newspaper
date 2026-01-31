@@ -132,13 +132,28 @@ def main():
             newly_sent_ids.append(a_id)
             print(f"DIAGNOSTIC: Added {a_id[:30]}")
 
-        # 4. Generate Front Page Packet
+        # 4. Generate the Unified Webpage (The Hub)
+        # We add links to the Weather and NYT packets at the top
+        hub_header = f"""
+            <nav style="margin-bottom: 2em; padding: 10px; background: #f9f9f9; border: 1px solid #eee;">
+                <a href="weather.html">Today's Weather</a> | 
+                <a href="nyt.html">NYT Morning Briefing</a> |
+                <a href="archive.html">Issue Archive</a>
+            </nav>
+        """
+
         front_page_html = f"""
         <!DOCTYPE html><html><head><meta charset='UTF-8'></head>
         <body style="font-family: serif; max-width: 600px; margin: auto; padding: 20px;">
-            <h1 style="border-bottom: 2px solid #000;">Guardian Front Page</h1>
+            <h1 style="border-bottom: 2px solid #000;">liroh daily</h1>
             <p style="font-style: italic;">{datetime.now().strftime('%B %d, %Y')}</p>
-            {''.join(front_page_items) if front_page_items else '<p>No new long-form links today.</p>'}
+            
+            {hub_header}
+
+            <section>
+                <h2>03. daily links</h2>
+                {''.join(front_page_items) if front_page_items else '<p>No new long-form links today.</p>'}
+            </section>
         </body></html>
         """
         with open("index.html", "w", encoding="utf-8") as f:
