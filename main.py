@@ -56,8 +56,7 @@ def collect_weather(ts):
     return ""
 
 def collect_nyt(ts):
-    # The file now lives in the folder where we sync gh-pages
-    path = "existing_site/nyt_morning.html" 
+    path = "nyt_morning.html" 
     if os.path.exists(path):
         try:
             with open(path, "r", encoding="utf-8") as f:
@@ -108,8 +107,9 @@ def main():
             add_to_instapaper(article_url)
             
             read_time = max(1, word_count // 200)
+            # Casing preserved here (removed .lower())
             item = f"""<div class='article-entry'>
-            <h3><a href='{article_url}'>{article.get('webTitle').lower()}</a></h3>
+            <h3><a href='{article_url}'>{article.get('webTitle')}</a></h3>
             <p class='metadata'>{word_count} words // ~{read_time} min read</p>
             <div class='trail-text'>{fields.get('trailText', '')}</div>
             </div>"""
@@ -141,7 +141,6 @@ def main():
             f.write(master_index)
         
         with open(f"old_issues/{file_date}.html", "w", encoding="utf-8") as f:
-            # Archive copies need to look back one level for CSS
             f.write(master_index.replace("style.css", "../style.css"))
 
         # Instapaper Sends
