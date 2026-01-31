@@ -128,14 +128,13 @@ def collect_guardian_raw():
 
     try:
         r = requests.get(url, params=params, timeout=15)
-        # Convert the dictionary to a pretty-printed string
-        raw_json_string = json.dumps(r.json(), indent=4)
+        data = r.json()
         
-        # Write the HTML file to the current directory
-        with open("guardian_raw.html", "w", encoding="utf-8") as f:
-            f.write(f"<html><body><h1>Guardian Raw API Dump</h1><pre>{raw_json_string}</pre></body></html>")
+        # Write as a PURE JSON file, not HTML
+        with open("guardian_raw.json", "w", encoding="utf-8") as f:
+            json.dump(data, f, indent=4) # indent=4 makes it tidy
             
-        print("DIAGNOSTIC: guardian_raw.html successfully written to disk.")
+        print("DIAGNOSTIC: guardian_raw.json successfully written.")
     except Exception as e:
         print(f"DIAGNOSTIC ERROR: {e}")
 
