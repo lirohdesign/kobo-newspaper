@@ -27,9 +27,8 @@ def collect_weather():
             end = r.text.find('</pre>', start)
             raw = r.text[start:end].replace('&nbsp;', ' ').replace('&amp;', '&')
             clean_text = re.sub(r'<a [^>]*>(.*?)</a>', r'\1', raw)
-            paragraphs = clean_text.split('\n\n')
-            html_p = "".join([f'<p style="margin-bottom: 1em;">{p.replace("\n", " ").strip()}</p>' for p in paragraphs if p.strip()])
-            
+            paragraphs = [p.replace('\n', ' ').strip() for p in paragraphs if p.strip()]
+            html_p = "".join([f'<p style="margin-bottom: 1em;">{p}</p>' for p in paragraphs])
             # Create standalone page for Instapaper
             weather_html = f"<!DOCTYPE html><html><head><meta charset='UTF-8'></head><body><h1>Weather Discussion</h1>{html_p}</body></html>"
             with open("weather.html", "w", encoding="utf-8") as f:
