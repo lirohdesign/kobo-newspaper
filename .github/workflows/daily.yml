@@ -14,21 +14,18 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Main Repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4 # Updated to v4 for better stability
 
-      # This step pulls your existing archive so the Python script can update it
-      - name: Checkout Existing Gh-Pages (for Archive)
-        uses: actions/checkout@v3
-        with:
-          ref: gh-pages
-          path: existing_site
-          
-      - name: Sync Archive Folders
+      # Pull the existing archive folder into a temporary directory
+      - name: Download Existing Archive
         run: |
+          git clone --branch gh-pages --depth 1 https://github.com/${{ github.repository }}.git existing_site
           if [ -d "existing_site/old_issues" ]; then
             cp -r existing_site/old_issues ./
-            echo "DIAGNOSTIC: Previous issues synced."
+            echo "DIAGNOSTIC: Previous issues synced successfully."
           fi
+          # Clean up the temp clone so it doesn't interfere with the build
+          rm -rf existing_site
 
       - name: Set up Python
         uses: actions/setup-python@v4

@@ -24,9 +24,14 @@ def get_timestamp():
 def update_archive_index():
     if not os.path.exists("old_issues"):
         os.makedirs("old_issues")
+    
+    # Sort files so newest is at the top
     files = sorted([f for f in os.listdir("old_issues") if f.endswith(".html")], reverse=True)
+    
+    # Link formatting for the web
     links = "".join([f'<li><a href="old_issues/{f}">{f.replace(".html", "")}</a></li>' for f in files])
     
+    # ... rest of your HTML generation ...
     html = f"""<!DOCTYPE html><html>
 <head><meta charset='UTF-8'><link rel='stylesheet' href='style.css'></head>
 <body><h1>liroh archive</h1><nav><a href="index.html">back to home</a></nav><ul>{links}</ul></body></html>"""
