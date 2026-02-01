@@ -2,26 +2,44 @@ name: Substack Private Sync
 
 on:
   schedule:
-    - cron: '0 * * * *'  # Runs every hour
-  workflow_dispatch:      # Allows you to click "Run" manually
-
-permissions:
-  contents: write
+    - cron: '30 1 * * *'
+  workflow_dispatch:
 
 jobs:
   sync_substack:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+
+      # 1. RESTORE CACHE: Look for a saved 'substack-log'
+      - name: Restore Hash Log
+        uses: actions/cache@v3
+        with:
+          path: sent_substack.json
+          key: substack-log-${{ github.run_id }}
+          restore-keys: |
+            substack-log-
+
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
           python-version: '3.9'
+
       - name: Install dependencies
         run: pip install requests
+
       - name: Run Sync
         env:
           INSTAPAPER_USER: ${{ secrets.INSTAPAPER_USER }}
           INSTAPAPER_PASS: ${{ secrets.INSTAPAPER_PASS }}
           PRIVATE_FEEDS: ${{ secrets.PRIVATE_FEEDS }}
         run: python private_sync.py
+
+      # 2. SAVE CACHE: Store the updated json for the next run
+      # This only happens if the script actually ran successfully.
+      - name: Save Hash Log
+        if: always()
+        uses: actions/cache@v3
+        with:
+          path: sent_substack.json
+          key: substack-log-${{ github.run_id }}
