@@ -14,7 +14,7 @@ CUTOFF_DATE = datetime(2026, 1, 31)
 # --- TEMP TEST LOGIC ---
 # Set to True to ignore the cutoff and Sunday rule for one run. 
 # Set to False for production.
-TEST_MODE = True 
+TEST_MODE = False 
 # -----------------------
 
 def get_hash(text):
