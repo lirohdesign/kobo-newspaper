@@ -2,7 +2,8 @@ name: Substack Private Sync
 
 on:
   schedule:
-    - cron: '30 1 * * *'
+    # 6:00 AM CST (12:00 PM UTC) - Morning sync to match daily newspaper rhythm
+    - cron: '0 12 * * *'
   workflow_dispatch:
 
 jobs:
