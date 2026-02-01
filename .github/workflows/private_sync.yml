@@ -1,0 +1,24 @@
+name: Substack Private Sync
+
+on:
+  schedule:
+    - cron: '0 * * * *'  # Runs every hour
+  workflow_dispatch:      # Allows you to click "Run" manually
+
+jobs:
+  sync_substack:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+      - name: Install dependencies
+        run: pip install requests
+      - name: Run Sync
+        env:
+          INSTAPAPER_USER: ${{ secrets.INSTAPAPER_USER }}
+          INSTAPAPER_PASS: ${{ secrets.INSTAPAPER_PASS }}
+          PRIVATE_FEEDS: ${{ secrets.PRIVATE_FEEDS }}
+        run: python private_sync.py

@@ -1,63 +1,42 @@
-name: Kobo Daily Sync
+name: Daily Newspaper
 
 on:
   schedule:
-    # 6:30 AM CST (12:30 PM UTC) Weekdays (Mon-Fri)
-    - cron: '30 12 * * 1-5'
-    # 7:45 AM CST (1:45 PM UTC) Weekends (Sat-Sun)
-    - cron: '45 13 * * 6,0'
+    - cron: '0 1 * * *'  # 7:00 PM CST
   workflow_dispatch:
-
-permissions:
-  contents: write
-  pages: write
 
 jobs:
   build_and_deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout Main Repository
-        uses: actions/checkout@v4 # Updated to v4 for better stability
-
-      - name: Download Existing Data and Archive
+      - uses: actions/checkout@v4
+      
+      - name: Sync existing site
         run: |
           git clone --branch gh-pages --depth 1 https://github.com/${{ github.repository }}.git existing_site
-          
-          # Move the NYT file to the root so main.py finds it easily
-          if [ -f "existing_site/nyt_morning.html" ]; then
-            cp existing_site/nyt_morning.html ./
-            echo "DIAGNOSTIC: NYT source found and moved to root."
-          fi
-
-          # Move the archive folder
-          if [ -d "existing_site/old_issues" ]; then
-            cp -r existing_site/old_issues ./
-            echo "DIAGNOSTIC: Previous issues synced successfully."
-          fi
-          
-          # Now it is safe to remove the temp clone
+          if [ -f "existing_site/nyt_morning.html" ]; then cp existing_site/nyt_morning.html ./; fi
+          if [ -d "existing_site/old_issues" ]; then cp -r existing_site/old_issues ./; fi
           rm -rf existing_site
-
+          
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
           python-version: '3.9'
           
       - name: Install dependencies
-        run: pip install -r requirements.txt
+        run: pip install requests
         
       - name: Run Newspaper Build
         env:
           INSTAPAPER_USER: ${{ secrets.INSTAPAPER_USER }}
           INSTAPAPER_PASS: ${{ secrets.INSTAPAPER_PASS }}
           GUARDIAN_API_KEY: ${{ secrets.GUARDIAN_API_KEY }}
-          PRIVATE_FEEDS: ${{ secrets.PRIVATE_FEEDS }} # ADD THIS LINE
         run: python main.py
-
+        
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./
           publish_branch: gh-pages
-          keep_files: true  # This prevents the action from deleting the NYT file
+          keep_files: true
