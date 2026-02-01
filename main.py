@@ -89,48 +89,44 @@ def sync_private_feeds():
     print("--- PRIVATE RSS DEBUG START ---")
     raw_feeds = os.environ.get("PRIVATE_FEEDS")
     if not raw_feeds:
-        print("CRITICAL: PRIVATE_FEEDS environment variable is EMPTY or MISSING.")
+        print("CRITICAL: PRIVATE_FEEDS missing.")
         return
     
     try:
+        # Convert Substack URL to RSSHub format
+        # Example: https://adriennegarrison.substack.com/feed 
+        # Becomes: https://rsshub.app/substack/posts/adriennegarrison
         feeds = json.loads(raw_feeds)
-        print(f"INFO: Successfully parsed {len(feeds)} feed(s).")
-    except Exception as e:
-        print(f"ERROR: JSON Parsing failed: {e}")
-        return
-
-    headers = {
-        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
-        'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
-    }
-
-    for url in feeds:
-            print(f"INFO: Fetching RSS from: {url}")
+        for url in feeds:
+            if "substack.com" in url:
+                subdomain = url.split("//")[1].split(".")[0]
+                fetch_url = f"https://rsshub.app/substack/posts/{subdomain}"
+            else:
+                fetch_url = url
+            
+            print(f"INFO: Fetching via RSSHub: {fetch_url}")
             try:
-                # Masking as a common RSS reader (Feedly) to bypass blocks
-                rss_headers = {
-                    'User-Agent': 'Feedly/1.0 (http://www.feedly.com)',
-                    'Accept': 'application/rss+xml, application/xml, text/xml'
-                }
-                # Go DIRECTLY to the URL, skipping the proxy
-                r = requests.get(url, timeout=15, headers=rss_headers)
+                # We add a 20s timeout because RSSHub can be slow
+                r = requests.get(fetch_url, timeout=25)
                 print(f"INFO: HTTP Status: {r.status_code}")
                 
                 if r.status_code == 200:
-                    # Substack XML uses <link> tags inside <item> tags
-                    all_links = re.findall(r'<item>.*?<link>(.*?)</link>', r.text, re.DOTALL)
+                    all_links = re.findall(r'<link>(.*?)</link>', r.text)
+                    # Filter for actual post links
                     article_links = [l.strip() for l in all_links if "/p/" in l]
-                    
-                    print(f"INFO: Found {len(article_links)} article links.")
+                    print(f"INFO: Found {len(article_links)} links.")
                     
                     if article_links:
-                        newest_post = article_links[0]
-                        print(f"INFO: Sending newest post to Instapaper: {newest_post}")
-                        add_to_instapaper(newest_post)
+                        newest = article_links[0]
+                        print(f"INFO: Sending to Instapaper: {newest}")
+                        add_to_instapaper(newest)
                 else:
-                    print(f"ERROR: Server returned {r.status_code}. Sample: {r.text[:50]}")
+                    print(f"ERROR: RSSHub returned {r.status_code}")
             except Exception as e:
-                print(f"ERROR: Private feed fetch failed: {e}")
+                print(f"ERROR: Fetch failed: {e}")
+    except Exception as e:
+        print(f"ERROR: JSON Parsing error: {e}")
+    print("--- PRIVATE RSS DEBUG END ---")
 
 def main():
     try:
