@@ -9,6 +9,9 @@ INSTAPAPER_USER = os.environ.get("INSTAPAPER_USER")
 INSTAPAPER_PASS = os.environ.get("INSTAPAPER_PASS")
 GUARDIAN_API_KEY = os.environ.get("GUARDIAN_API_KEY")
 
+# Now stored in your persistent archive folder
+SENT_LOG_PATH = "old_issues/sent_articles.json"
+
 def add_to_instapaper(url):
     print(f"DEBUG: Attempting Instapaper add: {url}")
     api_url = "https://www.instapaper.com/api/add"
@@ -86,13 +89,16 @@ def main():
         file_date = (datetime.utcnow() - timedelta(hours=6)).strftime("%Y-%m-%d")
         base_url = "https://lirohdesign.github.io/kobo-newspaper"
         
+        # Ensure the folder exists before any logic runs
+        if not os.path.exists("old_issues"):
+            os.makedirs("old_issues")
+            
         weather_content = collect_weather(ts)
         nyt_content = collect_nyt(ts)
 
-        # Guardian Processing
-        sent_log_path = "sent_articles.json"
+        # Load existing Sent IDs from the archive folder
         try:
-            sent_ids = json.load(open(sent_log_path)) if os.path.exists(sent_log_path) else []
+            sent_ids = json.load(open(SENT_LOG_PATH)) if os.path.exists(SENT_LOG_PATH) else []
         except:
             sent_ids = []
         
@@ -146,7 +152,8 @@ def main():
 
         update_archive_index()
         
-        with open(sent_log_path, "w") as f:
+        # Save updated log back to the archive folder
+        with open(SENT_LOG_PATH, "w") as f:
             json.dump((newly_sent_ids + sent_ids)[:200], f)
             
         print("--- BUILD SUCCESSFUL ---")
