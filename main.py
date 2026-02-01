@@ -105,26 +105,32 @@ def sync_private_feeds():
     }
 
     for url in feeds:
-        proxied_url = f"https://api.allorigins.win/get?url={url}"
-        print(f"INFO: Fetching RSS via Proxy from: {url}")
-        try:
-            r = requests.get(proxied_url, timeout=20)
-            if r.status_code == 200:
-                data = r.json()
-                xml_content = data.get('contents', '')
-                all_links = re.findall(r'<item>.*?<link>(.*?)</link>', xml_content, re.DOTALL)
-                article_links = [l.strip() for l in all_links if "/p/" in l]
-                print(f"INFO: Found {len(article_links)} article links in private feed.")
+            print(f"INFO: Fetching RSS from: {url}")
+            try:
+                # Masking as a common RSS reader (Feedly) to bypass blocks
+                rss_headers = {
+                    'User-Agent': 'Feedly/1.0 (http://www.feedly.com)',
+                    'Accept': 'application/rss+xml, application/xml, text/xml'
+                }
+                # Go DIRECTLY to the URL, skipping the proxy
+                r = requests.get(url, timeout=15, headers=rss_headers)
+                print(f"INFO: HTTP Status: {r.status_code}")
                 
-                if article_links:
-                    newest_post = article_links[0]
-                    print(f"INFO: Sending newest private post: {newest_post}")
-                    add_to_instapaper(newest_post)
-            else:
-                print(f"ERROR: Proxy returned {r.status_code}")
-        except Exception as e:
-            print(f"ERROR: Private feed loop failed: {e}")
-    print("--- PRIVATE RSS DEBUG END ---")
+                if r.status_code == 200:
+                    # Substack XML uses <link> tags inside <item> tags
+                    all_links = re.findall(r'<item>.*?<link>(.*?)</link>', r.text, re.DOTALL)
+                    article_links = [l.strip() for l in all_links if "/p/" in l]
+                    
+                    print(f"INFO: Found {len(article_links)} article links.")
+                    
+                    if article_links:
+                        newest_post = article_links[0]
+                        print(f"INFO: Sending newest post to Instapaper: {newest_post}")
+                        add_to_instapaper(newest_post)
+                else:
+                    print(f"ERROR: Server returned {r.status_code}. Sample: {r.text[:50]}")
+            except Exception as e:
+                print(f"ERROR: Private feed fetch failed: {e}")
 
 def main():
     try:
