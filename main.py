@@ -89,14 +89,12 @@ def main():
         file_date = (datetime.utcnow() - timedelta(hours=6)).strftime("%Y-%m-%d")
         base_url = "https://lirohdesign.github.io/kobo-newspaper"
         
-        # Ensure the folder exists before any logic runs
         if not os.path.exists("old_issues"):
             os.makedirs("old_issues")
             
         weather_content = collect_weather(ts)
         nyt_content = collect_nyt(ts)
 
-        # Load existing Sent IDs from the archive folder
         try:
             sent_ids = json.load(open(SENT_LOG_PATH)) if os.path.exists(SENT_LOG_PATH) else []
         except:
@@ -116,7 +114,9 @@ def main():
             if article.get('id') in sent_ids or word_count < 1000: continue
 
             article_url = article.get('webUrl')
-            add_to_instapaper(article_url)
+            
+            # --- REMOVED: add_to_instapaper(article_url) ---
+            # Articles are now manually selected by you from links.html on your reader.
             
             read_time = max(1, word_count // 200)
             item = f"""<div class='article-entry'>
@@ -132,7 +132,6 @@ def main():
         with open("links.html", "w", encoding="utf-8") as f:
             f.write(f"<!DOCTYPE html><html><head><meta charset='UTF-8'><link rel='stylesheet' href='style.css'></head><body><h1>liroh links {ts}</h1>{links_final_content}</body></html>")
 
-        # MASTER index.html
         master_index = f"""<!DOCTYPE html><html><head><meta charset='UTF-8'><link rel='stylesheet' href='style.css'></head>
 <body><h1>liroh daily {ts}</h1><nav><a href="weather.html">weather</a> | <a href="nyt.html">nyt</a> | <a href="links.html">links</a> | <a href="archive.html">archive</a></nav>
 <section><h2>01. weather</h2>{weather_content if weather_content else '<p>unavailable</p>'}</section><hr>
@@ -145,20 +144,16 @@ def main():
         with open(f"old_issues/{file_date}.html", "w", encoding="utf-8") as f:
             f.write(master_index.replace("style.css", "../style.css"))
 
-        # Instapaper Sends for local pages
+        # We still send the "containers" so you have access to the menu
         if weather_content: add_to_instapaper(f"{base_url}/weather.html?v={ts}")
         if nyt_content: add_to_instapaper(f"{base_url}/nyt.html?v={ts}")
         add_to_instapaper(f"{base_url}/links.html?v={ts}")
 
         update_archive_index()
         
-        # Save updated log back to the archive folder
         with open(SENT_LOG_PATH, "w") as f:
             json.dump((newly_sent_ids + sent_ids)[:200], f)
             
         print("--- BUILD SUCCESSFUL ---")
     except Exception as e:
         print(f"CRITICAL ERROR: {e}")
-
-if __name__ == "__main__":
-    main()
