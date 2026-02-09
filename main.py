@@ -116,7 +116,7 @@ def main():
             if article.get('id') in sent_ids or word_count < 1000: continue
 
             article_url = article.get('webUrl')
-            # add_to_instapaper(article_url)
+            add_to_instapaper(article_url)
             
             read_time = max(1, word_count // 200)
             item = f"""<div class='article-entry'>
