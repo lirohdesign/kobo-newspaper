@@ -9,6 +9,10 @@ INSTAPAPER_USER = os.environ.get("INSTAPAPER_USER")
 INSTAPAPER_PASS = os.environ.get("INSTAPAPER_PASS")
 GUARDIAN_API_KEY = os.environ.get("GUARDIAN_API_KEY")
 
+# Set to False to stop sending Guardian articles to Instapaper (links still
+# show up in the daily build either way). Flip back to True when reading more.
+SEND_GUARDIAN_TO_INSTAPAPER = False
+
 # Now stored in your persistent archive folder
 SENT_LOG_PATH = "old_issues/sent_articles.json"
 
@@ -116,8 +120,9 @@ def main():
             if article.get('id') in sent_ids or word_count < 1000: continue
 
             article_url = article.get('webUrl')
-            add_to_instapaper(article_url)
-            
+            if SEND_GUARDIAN_TO_INSTAPAPER:
+                add_to_instapaper(article_url)
+
             read_time = max(1, word_count // 200)
             item = f"""<div class='article-entry'>
             <h3><a href='{article_url}'>{article.get('webTitle')}</a></h3>
