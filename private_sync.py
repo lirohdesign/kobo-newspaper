@@ -71,28 +71,17 @@ def sync():
         feeds = []
 
     for url in feeds:
-        # Each feed gets its own try/except: a single proxy hiccup shouldn't
+        # Each feed gets its own try/except: one feed's fetch failure shouldn't
         # abort the remaining feeds or skip the hash-log save below.
         try:
-            # Using your successful AllOrigins proxy protocol
-            proxied_url = f"https://api.allorigins.win/get?url={url}"
-            print(f"INFO: Fetching via Proxy: {url}")
+            print(f"INFO: Fetching feed {get_hash(url)[:8]}...")
 
-            r = requests.get(proxied_url, timeout=25)
+            r = requests.get(url, timeout=25, headers={'User-Agent': 'Mozilla/5.0'})
             if r.status_code != 200:
-                print(f"ERROR: Proxy returned {r.status_code}")
+                print(f"ERROR: Feed returned {r.status_code}")
                 continue
 
-            try:
-                xml_content = r.json().get('contents', '')
-            except ValueError:
-                # The proxy truncates large feeds into invalid JSON. Fall back
-                # to the raw text so the <item> regex can still salvage
-                # whichever complete entries survived the cut.
-                print("WARN: Proxy response was truncated/invalid JSON; parsing raw text instead.")
-                xml_content = r.text
-
-            items = re.findall(r'<item>(.*?)</item>', xml_content, re.DOTALL)
+            items = re.findall(r'<item>(.*?)</item>', r.text, re.DOTALL)
             print(f"DEBUG: Found {len(items)} item(s) in feed.")
 
             backlog_queue = []
