@@ -14,7 +14,7 @@ jobs:
 
       # 1. RESTORE CACHE: Look for a saved 'substack-log'
       - name: Restore Hash Log
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
           path: sent_substack.json
           key: substack-log-${{ github.run_id }}
@@ -22,9 +22,9 @@ jobs:
             substack-log-
 
       - name: Set up Python
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5
         with:
-          python-version: '3.9'
+          python-version: '3.13'
 
       - name: Install dependencies
         run: pip install requests
@@ -40,7 +40,7 @@ jobs:
       # This only happens if the script actually ran successfully.
       - name: Save Hash Log
         if: always()
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
           path: sent_substack.json
           key: substack-log-${{ github.run_id }}
