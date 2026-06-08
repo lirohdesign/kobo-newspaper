@@ -9,6 +9,10 @@ INSTAPAPER_USER = os.environ.get("INSTAPAPER_USER")
 INSTAPAPER_PASS = os.environ.get("INSTAPAPER_PASS")
 GUARDIAN_API_KEY = os.environ.get("GUARDIAN_API_KEY")
 
+# Set to False to stop sending Guardian articles to Instapaper (links still
+# show up in the daily build either way). Flip back to True when reading more.
+SEND_GUARDIAN_TO_INSTAPAPER = False
+
 # Now stored in your persistent archive folder
 SENT_LOG_PATH = "old_issues/sent_articles.json"
 
@@ -70,8 +74,8 @@ def collect_nyt(ts):
             with open(path, "r", encoding="utf-8") as f:
                 raw_html = f.read()
             clean = re.sub(r'<(style|script)[^>]*>.*?</\1>', '', raw_html, flags=re.DOTALL)
-            content_blocks = re.findall(r'<(p|h3)[^>]*>(.*?)</\1>', clean, flags=re.DOTALL)
-            content = "".join([f'<{tag}>{re.sub(r"<[^>]+>", "", text).strip()}</{tag}>' for tag, text in content_blocks if len(text) > 40])
+            content_blocks = re.findall(r'<(p|h2|h3|li)[^>]*>(.*?)</\1>', clean, flags=re.DOTALL)
+            content = "".join([f'<{tag}>{re.sub(r"<[^>]+>", "", text).strip()}</{tag}>' for tag, text in content_blocks if tag in ('h2', 'h3') or len(text) > 40])
             
             html = f"""<!DOCTYPE html><html><head><meta charset='UTF-8'><link rel='stylesheet' href='style.css'></head>
             <body><h1>liroh nyt morning {ts}</h1>{content}</body></html>"""
@@ -116,8 +120,9 @@ def main():
             if article.get('id') in sent_ids or word_count < 1000: continue
 
             article_url = article.get('webUrl')
-            add_to_instapaper(article_url)
-            
+            if SEND_GUARDIAN_TO_INSTAPAPER:
+                add_to_instapaper(article_url)
+
             read_time = max(1, word_count // 200)
             item = f"""<div class='article-entry'>
             <h3><a href='{article_url}'>{article.get('webTitle')}</a></h3>
