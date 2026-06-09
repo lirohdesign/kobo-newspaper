@@ -106,7 +106,11 @@ def main():
         except:
             sent_ids = []
         
-        params = {'api-key': GUARDIAN_API_KEY, 'page-size': 50, 'type': 'article', 'section': '-sport,-football', 'show-fields': 'wordcount,trailText', 'order-by': 'newest'}
+        # Section include-list mirrors the trades/market-sentiment/climate/policy
+        # buckets in taste.md — deliberately leaves out politics/us-news/uk-news,
+        # where slugfest and hot-take material concentrates and a length+recency
+        # filter has no way to tell that apart from signal.
+        params = {'api-key': GUARDIAN_API_KEY, 'page-size': 50, 'type': 'article', 'section': 'environment|world|global-development|business|science', 'show-fields': 'wordcount,trailText', 'order-by': 'newest'}
         r = requests.get("https://content.guardianapis.com/search", params=params, timeout=15)
         raw_pool = r.json().get('response', {}).get('results', [])
         

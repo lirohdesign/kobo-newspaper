@@ -1,0 +1,86 @@
+{
+  "_README": "Source map for the Reddit digest, organized by the buckets defined in taste.md. Entries marked DRAFT are starting candidates that haven't been vetted in a live run yet — check them against taste.md's filters (especially the slugfest and petty-gripe rules) before trusting them long-term.",
+
+  "daily": [
+    {
+      "id": "trades_and_ground_level",
+      "label": "Trades, on-the-ground practice, emerging tech",
+      "subreddits": [
+        "aviation", "aviationmaintenance", "avionics", "FlightTraining", "flying",
+        "drones", "dji", "TinyWhoop", "uavs_stock",
+        "Homebuilding", "HomeMaintenance", "tractors", "smallengines", "SolarDIY",
+        "Beekeeping", "homestead", "Permaculture"
+      ],
+      "notes": "Drawn straight from your existing follow list — these already match the practitioner-discussion / on-the-ground framing well. OP is often a photo or a one-line question; anchor on the title and surface the substantive replies underneath."
+    },
+    {
+      "id": "market_sentiment_real_estate",
+      "label": "Market sentiment, trade conditions, real estate economics",
+      "subreddits": [
+        "RealEstate", "Construction", "Homebuilding"
+      ],
+      "notes": "DRAFT. Your follow list doesn't include a dedicated real-estate-economics sub, so these are starting guesses. Caution: r/RealEstate skews toward individual-buyer anxiety threads ('should I waive inspection') — exactly the petty-gripe pattern taste.md says to filter. Worth checking whether it clears the bar after a week of real output, or whether something more trade-press-flavored fits better."
+    },
+    {
+      "id": "climate_ecology_human_rights",
+      "label": "Climate, ecology, conservation, climate justice, human rights",
+      "subreddits": [
+        "climate", "ecology", "conservation", "HumanRights",
+        "sustainability", "Sustainable", "Permaculture"
+      ],
+      "notes": "DRAFT, deliberately cast wide per 'open to anything.' Sustainability/Sustainable/Permaculture overlap with the trades bucket — that's fine, a good thread can surface in either. Same slugfest/outrage filter from taste.md applies here, probably more than anywhere else."
+    },
+    {
+      "id": "political_economy_academic",
+      "label": "Political economy — academic register, not the slugfest",
+      "subreddits": [
+        "AskEconomics", "badeconomics", "georgism"
+      ],
+      "notes": "DRAFT, aimed at the 'academic, not slugfest' framing specifically. r/badeconomics is more rigorous than its name suggests (it exists to dissect bad arguments using real theory). Filter for evidence-and-structure threads; topical overlap with a culture-war fight is not the same as fit."
+    },
+    {
+      "id": "scifi_recommendations",
+      "label": "Sci-fi book & film recommendations",
+      "subreddits": [
+        "printSF", "scifi", "TrueSciFi"
+      ],
+      "notes": "DRAFT. Target recommendation-shaped threads specifically ('what should I read/watch next', 'looking for something like X'), not general sci-fi news or discourse — that distinction matters more than the subreddit choice here."
+    }
+  ],
+
+  "seasonal": [
+    {
+      "id": "literary_prizes",
+      "label": "Booker Prize & Nobel Prize in Literature",
+      "trigger": "calendar_window",
+      "windows": [
+        "Booker Prize: longlist (~July), shortlist (~September), winner (~November)",
+        "Nobel Prize in Literature: announced early October"
+      ],
+      "subreddits": ["books", "literature", "TrueLit"],
+      "notes": "Explicitly NOT the Pulitzer. Match on keywords ('Booker', 'Nobel') around these windows rather than following day-to-day — most days would come up empty, then flood around announcements."
+    },
+    {
+      "id": "major_reports",
+      "label": "IPCC assessments & major economic reports",
+      "trigger": "release_event",
+      "examples": [
+        "IPCC Assessment Report releases",
+        "major Fed releases / significant economic data drops"
+      ],
+      "subreddits": ["climate", "Economics", "economy"],
+      "notes": "Check for and surface discussion around known release windows; same evidence-over-hot-take filter from taste.md applies to the discussion threads these spawn."
+    }
+  ],
+
+  "from_your_follow_list_not_yet_placed": {
+    "note": "Subreddits from your historical follow dump that don't map cleanly onto a bucket above. Some look like deliberate 'weight down' calls from taste.md (financialindependence/personalfinance/Frugal — the lottery-ideology pattern); others (dad, Dogtraining, reactivedogs, Huntingdogs, redletterchristians, Darkroom, Lightning, CLOUDS, Kiteboarding, Sup, mathteachers, TheGreatLoop, ThingsIWishIKnew, treehouse, treehouses, declutter, minimalism, minimalist, NoLawns, fucklawns) just look like personal-life/hobby follows that may not be 'newspaper'-shaped at all. Flagging rather than guessing — say the word if any of these should be folded into a bucket.",
+    "subreddits": [
+      "financialindependence", "personalfinance", "Frugal",
+      "dad", "Dogtraining", "reactivedogs", "Huntingdogs", "redletterchristians",
+      "Darkroom", "Lightning", "CLOUDS", "Kiteboarding", "Sup", "mathteachers",
+      "TheGreatLoop", "ThingsIWishIKnew", "treehouse", "treehouses",
+      "declutter", "minimalism", "minimalist", "NoLawns", "fucklawns"
+    ]
+  }
+}
