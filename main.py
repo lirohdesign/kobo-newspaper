@@ -219,7 +219,15 @@ def main():
             links_list_html.append(item)
             newly_sent_ids.append(article.get('id'))
 
-        links_final_content = "".join(links_list_html)
+        if links_list_html:
+            links_final_content = "".join(links_list_html)
+        else:
+            links_final_content = (
+                f"<p class='metadata'>No new articles met the criteria as of {ts}. "
+                f"The filter looks for pieces of 1,000 words or more from The Guardian's "
+                f"environment, world, global development, business, and science sections "
+                f"that have not previously appeared here.</p>"
+            )
         
         with open("links.html", "w", encoding="utf-8") as f:
             f.write(f"<!DOCTYPE html><html><head><meta charset='UTF-8'><link rel='stylesheet' href='style.css'></head><body><h1>liroh links {ts}</h1>{links_final_content}</body></html>")
