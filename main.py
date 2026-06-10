@@ -9,6 +9,7 @@ from datetime import datetime, timedelta
 from pathlib import Path
 
 from bs4 import BeautifulSoup
+import importlib.util
 
 try:
     import certifi
@@ -98,6 +99,94 @@ def collect_nyt(ts):
             print(f"DEBUG: NYT Error: {e}")
     return ""
 
+def _first_tuesday_of_month(year, month):
+    d = datetime(year, month, 1)
+    days_ahead = (1 - d.weekday()) % 7
+    return d + timedelta(days=days_ahead)
+
+
+def _run_scraper(scraper_filename):
+    path = Path(scraper_filename)
+    if not path.exists():
+        print(f"DEBUG: Calendar scraper not found — {scraper_filename}")
+        return ""
+    spec = importlib.util.spec_from_file_location("_scraper", path)
+    mod = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(mod)
+    return mod.collect()
+
+
+def collect_calendar(today):
+    """Read calendar.json, return (upcoming_html, scraper_results_html)."""
+    try:
+        cal = json.loads(Path("calendar.json").read_text())
+    except Exception as e:
+        print(f"DEBUG: calendar.json error — {e}")
+        return "", ""
+
+    lookahead = timedelta(days=cal.get("lookahead_days", 14))
+    upcoming = []
+    scraper_sections = []
+
+    for event in cal.get("events", []):
+        trigger = event.get("trigger")
+        label = event["label"]
+        url = event.get("url", "")
+        due_today = False
+        next_date = None
+
+        if trigger == "first_tuesday_monthly":
+            ft = _first_tuesday_of_month(today.year, today.month)
+            due_today = abs((today.date() - ft.date()).days) <= 1
+            if ft.date() >= today.date():
+                next_date = ft
+            else:
+                # Already past this month's — show next month's
+                if today.month == 12:
+                    next_date = _first_tuesday_of_month(today.year + 1, 1)
+                else:
+                    next_date = _first_tuesday_of_month(today.year, today.month + 1)
+
+        elif trigger == "annual_window":
+            months = event.get("months", [])
+            due_today = today.month in months
+            # Find next window start
+            future = [datetime(today.year, m, 1) for m in months if datetime(today.year, m, 1).date() >= today.date()]
+            if not future:
+                future = [datetime(today.year + 1, m, 1) for m in months]
+            next_date = min(future) if future else None
+
+        elif trigger == "manual":
+            for d_str in event.get("dates", []):
+                try:
+                    d = datetime.strptime(d_str, "%Y-%m-%d")
+                    if abs((today.date() - d.date()).days) <= 1:
+                        due_today = True
+                    if d.date() >= today.date() and (next_date is None or d < next_date):
+                        next_date = d
+                except ValueError:
+                    pass
+
+        # Upcoming calendar entry
+        if next_date and (next_date.date() - today.date()) <= lookahead:
+            link = f"<a href='{url}'>{label}</a>" if url else label
+            date_str = next_date.strftime("%-d %b")
+            upcoming.append(f"<li>{date_str} &mdash; {link}</li>")
+
+        # Run scraper if due
+        if due_today and event.get("scraper"):
+            print(f"DEBUG: Calendar — running scraper for {label}")
+            content = _run_scraper(event["scraper"])
+            if content:
+                scraper_sections.append(
+                    f"<div class='article-entry'><h3>{label}</h3>{content}</div>"
+                )
+
+    upcoming_html = f"<ul>{''.join(upcoming)}</ul>" if upcoming else "<p class='metadata'>No scheduled releases in the next {cal.get('lookahead_days', 14)} days.</p>"
+    scraper_html = "\n".join(scraper_sections)
+    return upcoming_html, scraper_html
+
+
 def collect_cinema(ts):
     print("DEBUG: Collecting Cinema...")
     try:
@@ -179,9 +268,11 @@ def main():
         if not os.path.exists("old_issues"):
             os.makedirs("old_issues")
             
+        today = datetime.utcnow() - timedelta(hours=6)
         weather_content = collect_weather(ts)
         nyt_content = collect_nyt(ts)
         cinema_content = collect_cinema(ts)
+        calendar_upcoming, calendar_scrapers = collect_calendar(today)
 
         # Load existing Sent IDs from the archive folder
         try:
@@ -232,13 +323,16 @@ def main():
         with open("links.html", "w", encoding="utf-8") as f:
             f.write(f"<!DOCTYPE html><html><head><meta charset='UTF-8'><link rel='stylesheet' href='style.css'></head><body><h1>liroh links {ts}</h1>{links_final_content}</body></html>")
 
+        calendar_section = f"{calendar_scrapers}<h3>upcoming</h3>{calendar_upcoming}" if calendar_scrapers else calendar_upcoming
+
         # MASTER index.html
         master_index = f"""<!DOCTYPE html><html><head><meta charset='UTF-8'><link rel='stylesheet' href='style.css'></head>
 <body><h1>liroh daily {ts}</h1><nav><a href="weather.html">weather</a> | <a href="nyt.html">nyt</a> | <a href="links.html">links</a> | <a href="cinema.html">cinema</a> | <a href="archive.html">archive</a></nav>
 <section><h2>01. weather</h2>{weather_content if weather_content else '<p>unavailable</p>'}</section><hr>
 <section><h2>02. nyt briefing</h2>{nyt_content if nyt_content else '<p>unavailable</p>'}</section><hr>
 <section><h2>03. daily links</h2>{links_final_content}</section><hr>
-<section><h2>04. cinema</h2>{cinema_content if cinema_content else '<p>unavailable</p>'}</section></body></html>"""
+<section><h2>04. cinema</h2>{cinema_content if cinema_content else '<p>unavailable</p>'}</section><hr>
+<section><h2>05. calendar</h2>{calendar_section}</section></body></html>"""
         
         with open("index.html", "w", encoding="utf-8") as f:
             f.write(master_index)
