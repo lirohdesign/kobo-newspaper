@@ -2,7 +2,19 @@ import requests
 import os
 import re
 import json
+import ssl
+import urllib.error
+import urllib.request
 from datetime import datetime, timedelta
+from pathlib import Path
+
+from bs4 import BeautifulSoup
+
+try:
+    import certifi
+    SSL_CONTEXT = ssl.create_default_context(cafile=certifi.where())
+except ImportError:
+    SSL_CONTEXT = None
 
 # --- settings ---
 INSTAPAPER_USER = os.environ.get("INSTAPAPER_USER")
@@ -86,6 +98,76 @@ def collect_nyt(ts):
             print(f"DEBUG: NYT Error: {e}")
     return ""
 
+def collect_cinema(ts):
+    print("DEBUG: Collecting Cinema...")
+    try:
+        venues_data = json.loads(Path("venues.json").read_text())
+    except Exception as e:
+        print(f"DEBUG: Cinema venues.json error: {e}")
+        return ""
+
+    user_agent = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36"
+
+    def fetch_html(url):
+        req = urllib.request.Request(url, headers={"User-Agent": user_agent})
+        with urllib.request.urlopen(req, timeout=20, context=SSL_CONTEXT) as resp:
+            return resp.read().decode("utf-8", errors="replace")
+
+    def parse_vickers(html):
+        soup = BeautifulSoup(html, "html.parser")
+        films = []
+        for block in soup.find_all(class_="podsfilm"):
+            title_el = block.find(class_="podsfilmtitlelink")
+            if not title_el:
+                continue
+            series_el = block.find(class_="podsfilmseries")
+            info_el = block.find(class_="showinfodiv")
+            blurb_el = block.find(class_="arthouseblurb")
+            showtime_els = block.find_all(class_="arthousebutton")
+            films.append({
+                "title": title_el.get_text(strip=True),
+                "series": series_el.get_text(strip=True) if series_el else "",
+                "info": info_el.get_text(strip=True) if info_el else "",
+                "blurb": blurb_el.get_text(strip=True) if blurb_el else "",
+                "showtimes": [s.get_text(strip=True) for s in showtime_els if s.get_text(strip=True)],
+            })
+        return films
+
+    parsers = {"vickers": parse_vickers}
+
+    def render_film(film):
+        series_badge = f"<p class='metadata'>{film['series'].upper()}</p>" if film["series"] else ""
+        showtimes_html = ""
+        if film["showtimes"]:
+            times = " &nbsp;·&nbsp; ".join(film["showtimes"])
+            showtimes_html = f"<p class='metadata'>{times}</p>"
+        return f"<div class='article-entry'>{series_badge}<h3>{film['title']}</h3><p class='metadata'>{film['info']}</p><p>{film['blurb']}</p>{showtimes_html}</div>"
+
+    sections = []
+    for venue in venues_data.get("venues", []):
+        vid = venue["id"]
+        parser = parsers.get(vid)
+        if not parser:
+            continue
+        try:
+            html = fetch_html(venue["url"])
+            films = parser(html)
+            print(f"DEBUG: {venue['name']}: {len(films)} films")
+            if films:
+                film_html = "\n".join(render_film(f) for f in films)
+                sections.append(f"<h2>{venue['name']}</h2>\n{film_html}")
+            else:
+                sections.append(f"<h2>{venue['name']}</h2><p>No listings found.</p>")
+        except (urllib.error.URLError, urllib.error.HTTPError, OSError) as exc:
+            print(f"DEBUG: {venue['name']} fetch failed — {exc}")
+            sections.append(f"<h2>{venue['name']}</h2><p>Unavailable.</p>")
+
+    content = "\n<hr>\n".join(sections)
+    with open("cinema.html", "w", encoding="utf-8") as f:
+        f.write(f"<!DOCTYPE html><html><head><meta charset='UTF-8'><link rel='stylesheet' href='style.css'></head><body><h1>liroh cinema {ts}</h1>{content}</body></html>")
+    return content
+
+
 def main():
     try:
         print("--- BUILD START ---")
@@ -99,6 +181,7 @@ def main():
             
         weather_content = collect_weather(ts)
         nyt_content = collect_nyt(ts)
+        cinema_content = collect_cinema(ts)
 
         # Load existing Sent IDs from the archive folder
         try:
@@ -143,10 +226,11 @@ def main():
 
         # MASTER index.html
         master_index = f"""<!DOCTYPE html><html><head><meta charset='UTF-8'><link rel='stylesheet' href='style.css'></head>
-<body><h1>liroh daily {ts}</h1><nav><a href="weather.html">weather</a> | <a href="nyt.html">nyt</a> | <a href="links.html">links</a> | <a href="archive.html">archive</a></nav>
+<body><h1>liroh daily {ts}</h1><nav><a href="weather.html">weather</a> | <a href="nyt.html">nyt</a> | <a href="links.html">links</a> | <a href="cinema.html">cinema</a> | <a href="archive.html">archive</a></nav>
 <section><h2>01. weather</h2>{weather_content if weather_content else '<p>unavailable</p>'}</section><hr>
 <section><h2>02. nyt briefing</h2>{nyt_content if nyt_content else '<p>unavailable</p>'}</section><hr>
-<section><h2>03. daily links</h2>{links_final_content}</section></body></html>"""
+<section><h2>03. daily links</h2>{links_final_content}</section><hr>
+<section><h2>04. cinema</h2>{cinema_content if cinema_content else '<p>unavailable</p>'}</section></body></html>"""
         
         with open("index.html", "w", encoding="utf-8") as f:
             f.write(master_index)
@@ -158,6 +242,7 @@ def main():
         if weather_content: add_to_instapaper(f"{base_url}/weather.html?v={ts}")
         if nyt_content: add_to_instapaper(f"{base_url}/nyt.html?v={ts}")
         add_to_instapaper(f"{base_url}/links.html?v={ts}")
+        if cinema_content: add_to_instapaper(f"{base_url}/cinema.html?v={ts}")
 
         update_archive_index()
         
