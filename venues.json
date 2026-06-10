@@ -1,0 +1,11 @@
+{
+  "_README": "Venue source map for the cinema page. Each entry needs a matching parser in cinema_scrape.py. Add new venues here when you find other theaters worth following — each will need its own parse_ function since theater sites all look different.",
+
+  "venues": [
+    {
+      "id": "vickers",
+      "name": "Vickers Theatre",
+      "url": "https://vickerstheatre.com"
+    }
+  ]
+}
