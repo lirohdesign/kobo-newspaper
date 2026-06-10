@@ -65,6 +65,119 @@ and the reasoning behind them*. Putting that review inside the same long-form
 reading habit you already have is what makes it likely to actually happen,
 rather than turning into a JSON file you mean to open someday and don't.
 
+## Access wall — Reddit data is currently blocked
+
+This has been investigated and hit real structural limits, not code problems.
+
+- **Unauthenticated `.json` endpoints** — hard 403 from Reddit's servers. This
+  was broadly blocked after Reddit's 2023 API policy changes. No amount of
+  User-Agent tuning fixes it.
+- **OAuth API (script app)** — applied for personal/script access and was
+  denied.
+- **RSS feeds** (`.rss`)  — still serve, but give only titles, post text, and
+  links. No comment data.
+
+Without comments, the core value of this digest evaporates. The design in
+`framework.md` is built around practitioner comments, corrections, and
+on-the-ground reports — the post title alone isn't the signal, the thread is.
+RSS-only would produce a link list indistinguishable from a Google alert.
+
+Third-party options investigated:
+- **Pullpush.io / Arctic Shift** — community Pushshift replacements; provide
+  post and comment data but reliability has been inconsistent and they have
+  no SLA.
+- **Apify** — paid scraping platform with a Reddit actor; would work
+  technically but adds cost and a dependency on a third party staying
+  unblocked.
+- **SerpApi / Google Custom Search** — surfaces Reddit threads via Google
+  search; gives snippets and links, not full thread content or comments.
+- **AI browsing (Perplexity API, etc.)** — could synthesize Reddit discussion
+  from web search results, but you'd be getting the model's summary of a
+  summary, not actual thread content. Drift from reality compounds quickly and
+  there's no way to know when it's happening.
+
+**Current status: parked.** The Reddit digest spec (`taste.md`,
+`claude_scrape.md`, `sources.json`) remains valid if access ever becomes
+feasible. Don't re-investigate the unauthenticated endpoint or RSS-only paths
+— those dead ends are documented above.
+
+## Calendar and event scrapers
+
+The daily build includes a **section 05 calendar**, driven by `calendar.json`.
+This is how the project handles content that clusters around known events
+rather than arriving daily — Purdue ag reports, literary prizes, major
+institutional releases.
+
+### How a run uses the calendar
+
+Each run reads `calendar.json` and evaluates every entry against today's date.
+Events fall into one of three states:
+
+- **Due today** — rendered as an active card in section 05, with either scraped
+  content or a fallback notice (see below). This is what gets read.
+- **Upcoming within 14 days** — listed under an "upcoming" subhead. Serves as
+  a heads-up so the next few days feel expected, not surprising.
+- **Outside the window** — silently skipped.
+
+### Trigger types
+
+| Trigger | Fires when | Example |
+| :--- | :--- | :--- |
+| `first_tuesday_monthly` | First Tuesday of each month (±1 day) | Ag Economy Barometer |
+| `annual_window` | Current month is in the `months` array | Booker longlist (July), Nobel (October) |
+| `manual` | Today matches a date in the `dates` array (±1 day) | IPCC releases, FOMC dates |
+
+For `manual` entries, add dates as `"YYYY-MM-DD"` strings to the `dates` array
+in `calendar.json` when they become known. FOMC dates are published a year in
+advance at federalreserve.gov; IPCC release dates are announced months ahead.
+
+### Timing language
+
+Due events always show a timing label — "today", "tomorrow", "in 3 days",
+"next week", "this month" — so the reading context is always clear. The label
+is generated from the trigger, not hardcoded, so it stays accurate.
+
+### The fallback is the feature
+
+Not every event has a scraper. For events that do, the scraped content
+replaces the fallback. For events that don't — and for any event whose scraper
+fails or returns empty — the calendar always surfaces a card that says:
+
+> **Booker Prize Longlist** — this month  
+> No automated fetch available. [Check thebookerprizes.com →]
+
+This is intentional. The goal is to make sure the event reaches you even when
+automation can't do the full job. A reliable reminder with a direct link is
+more useful than silence. Don't remove the fallback path in pursuit of a
+"cleaner" output when a scraper is present — the fallback is what makes the
+system robust when scrapers break.
+
+### Adding a scraper for a calendar entry
+
+1. Write a Python module with a `collect()` function that returns an HTML
+   string (or empty string on failure). Follow the pattern in
+   `barometer_scrape.py`.
+2. Set `"scraper": "your_scrape.py"` on the entry in `calendar.json`.
+3. The calendar system dynamically imports and calls `collect()` when the
+   trigger fires. No changes to `main.py` needed.
+
+### Verifying the calendar is working
+
+Because event triggers are date-dependent, they're hard to test in a dry run.
+The most reliable verification is to check the archive after a trigger date
+has passed:
+
+1. Open `old_issues/` and find the file dated on or just after the expected
+   trigger date (e.g. the first Tuesday of the month for the Barometer).
+2. Search for the event label (e.g. "Purdue Ag Economy Barometer") in that
+   file. If it's present with scraped content, the scraper ran. If it's
+   present with "Check source →", the fallback fired (scraper failed or
+   absent). If it's absent entirely, the trigger didn't fire — check the
+   date logic and the `calendar.json` entry.
+
+See `claude.md` for a specific verification checklist a future session can
+follow.
+
 ## What lives where
 
 | Concern | Lives in |

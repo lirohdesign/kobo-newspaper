@@ -67,6 +67,40 @@ them — don't reopen them without genuinely new information:
   intended mechanism — don't "fix" an empty daily result by widening the
   daily net to cover this instead.
 
+## Verifying the calendar system
+
+The calendar and event scrapers (section 05 of the daily build) are hard to
+test in a dry run because their triggers are date-dependent. If asked to check
+whether they're working, do this:
+
+1. **Find the expected trigger date.** For the Barometer: the first Tuesday of
+   the most recent month. For annual events: the first day of the relevant
+   window month. For manual entries: the date listed in `calendar.json`.
+
+2. **Open the archive file for that date.** List `old_issues/` and find the
+   `.html` file dated on or just after the trigger date. Read it.
+
+3. **Search for the event label.** Use the `label` value from `calendar.json`
+   (e.g. "Purdue Ag Economy Barometer", "Booker Prize Longlist"). Three
+   possible outcomes:
+   - **Scraped content present** — scraper ran and returned data. Working.
+   - **"Check source →" fallback present** — trigger fired but scraper failed
+     or returned empty. Check the scraper file for fetch errors or HTML
+     structure changes.
+   - **Label absent entirely** — trigger didn't fire. Check the `calendar.json`
+     entry (correct trigger type? correct month/date?), and check whether the
+     archive file exists at all for that date (build may have failed).
+
+4. **If the scraper is broken,** look at the source URL in `calendar.json` and
+   fetch it manually to see whether the page structure changed. Scrapers for
+   institutional sites (Purdue, Nobel, Booker) are the most likely to break
+   silently after a site redesign — the fallback notice will still appear, but
+   the scraped content will be missing.
+
+Don't try to retroactively test by running the scraper in isolation and
+checking its output against today's page — the page may have changed since the
+trigger date. The archive is the ground truth.
+
 ## One more standing lesson from this project
 The Substack sync (`project_substack_sync_blocked.md`) died to IP-based bot
 blocking from GitHub Actions runners — a hosting problem, not a code problem,

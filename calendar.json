@@ -1,0 +1,97 @@
+{
+  "_README": "Event calendar for the daily build. Each entry can optionally reference a scraper module. Trigger types: 'first_tuesday_monthly' runs on the first Tuesday of each month; 'annual_window' runs during the listed months; 'manual' requires explicit dates in the 'dates' array (YYYY-MM-DD). The build shows upcoming events within lookahead_days and runs any attached scraper when the event is due.",
+
+  "lookahead_days": 14,
+
+  "events": [
+    {
+      "id": "ag_barometer",
+      "label": "Purdue Ag Economy Barometer",
+      "url": "https://ag.purdue.edu/commercialag/ageconomybarometer/",
+      "cadence": "monthly",
+      "trigger": "first_tuesday_monthly",
+      "scraper": "barometer_scrape.py",
+      "notes": "Purdue/CME Group sentiment index of 400 ag producers. Published first Tuesday each month."
+    },
+    {
+      "id": "purdue_farmland",
+      "label": "Indiana Farmland Values & Cash Rents Survey",
+      "url": "https://ag.purdue.edu/commercialag/home/farmland-values/",
+      "cadence": "annual",
+      "trigger": "annual_window",
+      "months": [6],
+      "scraper": null,
+      "notes": "Annual survey conducted in June, results published shortly after. Check URL for new release."
+    },
+    {
+      "id": "purdue_crop_costs",
+      "label": "Purdue Crop Cost & Return Guide",
+      "url": "https://ag.purdue.edu/commercialag/home/purdue-agricultural-economics-report/",
+      "cadence": "annual",
+      "trigger": "annual_window",
+      "months": [9, 10],
+      "scraper": null,
+      "notes": "Annual cost/return projections for corn, soybeans, wheat. Typically released in fall."
+    },
+    {
+      "id": "booker_longlist",
+      "label": "Booker Prize Longlist",
+      "url": "https://thebookerprizes.com/the-booker-prize/prize-history",
+      "cadence": "annual",
+      "trigger": "annual_window",
+      "months": [7],
+      "scraper": null,
+      "notes": "Longlist announced ~July each year. Not the Pulitzer."
+    },
+    {
+      "id": "booker_shortlist",
+      "label": "Booker Prize Shortlist",
+      "url": "https://thebookerprizes.com/the-booker-prize/prize-history",
+      "cadence": "annual",
+      "trigger": "annual_window",
+      "months": [9],
+      "scraper": null,
+      "notes": "Shortlist announced ~September each year."
+    },
+    {
+      "id": "booker_winner",
+      "label": "Booker Prize Winner",
+      "url": "https://thebookerprizes.com/the-booker-prize/prize-history",
+      "cadence": "annual",
+      "trigger": "annual_window",
+      "months": [11],
+      "scraper": null,
+      "notes": "Winner announced ~November each year."
+    },
+    {
+      "id": "nobel_literature",
+      "label": "Nobel Prize in Literature",
+      "url": "https://www.nobelprize.org/prizes/literature/",
+      "cadence": "annual",
+      "trigger": "annual_window",
+      "months": [10],
+      "scraper": null,
+      "notes": "Announced early October each year."
+    },
+    {
+      "id": "ipcc_reports",
+      "label": "IPCC Assessment Reports",
+      "url": "https://www.ipcc.ch/news/",
+      "cadence": "irregular",
+      "trigger": "manual",
+      "dates": [],
+      "scraper": null,
+      "notes": "Add dates manually when Purdue announces a new report release. Check ipcc.ch/news."
+    },
+    {
+      "id": "fed_fomc",
+      "label": "Federal Reserve FOMC Statement",
+      "url": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
+      "cadence": "irregular",
+      "trigger": "manual",
+      "dates": [],
+      "scraper": null,
+      "notes": "Add FOMC statement dates from the Fed calendar each year. 8 meetings annually."
+    }
+  ]
+}
