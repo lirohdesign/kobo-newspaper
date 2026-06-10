@@ -65,6 +65,42 @@ and the reasoning behind them*. Putting that review inside the same long-form
 reading habit you already have is what makes it likely to actually happen,
 rather than turning into a JSON file you mean to open someday and don't.
 
+## Access wall — Reddit data is currently blocked
+
+This has been investigated and hit real structural limits, not code problems.
+
+- **Unauthenticated `.json` endpoints** — hard 403 from Reddit's servers. This
+  was broadly blocked after Reddit's 2023 API policy changes. No amount of
+  User-Agent tuning fixes it.
+- **OAuth API (script app)** — applied for personal/script access and was
+  denied.
+- **RSS feeds** (`.rss`)  — still serve, but give only titles, post text, and
+  links. No comment data.
+
+Without comments, the core value of this digest evaporates. The design in
+`framework.md` is built around practitioner comments, corrections, and
+on-the-ground reports — the post title alone isn't the signal, the thread is.
+RSS-only would produce a link list indistinguishable from a Google alert.
+
+Third-party options investigated:
+- **Pullpush.io / Arctic Shift** — community Pushshift replacements; provide
+  post and comment data but reliability has been inconsistent and they have
+  no SLA.
+- **Apify** — paid scraping platform with a Reddit actor; would work
+  technically but adds cost and a dependency on a third party staying
+  unblocked.
+- **SerpApi / Google Custom Search** — surfaces Reddit threads via Google
+  search; gives snippets and links, not full thread content or comments.
+- **AI browsing (Perplexity API, etc.)** — could synthesize Reddit discussion
+  from web search results, but you'd be getting the model's summary of a
+  summary, not actual thread content. Drift from reality compounds quickly and
+  there's no way to know when it's happening.
+
+**Current status: parked.** The Reddit digest spec (`taste.md`,
+`claude_scrape.md`, `sources.json`) remains valid if access ever becomes
+feasible. Don't re-investigate the unauthenticated endpoint or RSS-only paths
+— those dead ends are documented above.
+
 ## What lives where
 
 | Concern | Lives in |
