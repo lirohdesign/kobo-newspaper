@@ -105,6 +105,18 @@ def _first_tuesday_of_month(year, month):
     return d + timedelta(days=days_ahead)
 
 
+def _timing_label(days_away):
+    if days_away <= 0:
+        return "today"
+    elif days_away == 1:
+        return "tomorrow"
+    elif days_away <= 6:
+        return f"in {days_away} days"
+    elif days_away <= 13:
+        return "next week"
+    return ""
+
+
 def _run_scraper(scraper_filename):
     path = Path(scraper_filename)
     if not path.exists():
@@ -117,7 +129,12 @@ def _run_scraper(scraper_filename):
 
 
 def collect_calendar(today):
-    """Read calendar.json, return (upcoming_html, scraper_results_html)."""
+    """Read calendar.json, return (active_html, upcoming_html).
+
+    active_html — cards for events due today/this month, each showing either
+    scraped content or a fallback reminder with a direct link.
+    upcoming_html — plain list of events arriving within lookahead_days.
+    """
     try:
         cal = json.loads(Path("calendar.json").read_text())
     except Exception as e:
@@ -125,66 +142,86 @@ def collect_calendar(today):
         return "", ""
 
     lookahead = timedelta(days=cal.get("lookahead_days", 14))
-    upcoming = []
-    scraper_sections = []
+    active_cards = []
+    upcoming_items = []
 
     for event in cal.get("events", []):
         trigger = event.get("trigger")
         label = event["label"]
         url = event.get("url", "")
         due_today = False
+        timing = ""
         next_date = None
 
         if trigger == "first_tuesday_monthly":
             ft = _first_tuesday_of_month(today.year, today.month)
-            due_today = abs((today.date() - ft.date()).days) <= 1
+            days_away = (ft.date() - today.date()).days
+            due_today = abs(days_away) <= 1
+            timing = _timing_label(max(0, days_away))
             if ft.date() >= today.date():
                 next_date = ft
             else:
-                # Already past this month's — show next month's
-                if today.month == 12:
-                    next_date = _first_tuesday_of_month(today.year + 1, 1)
-                else:
-                    next_date = _first_tuesday_of_month(today.year, today.month + 1)
+                nm = (today.replace(day=1) + timedelta(days=32)).replace(day=1)
+                next_date = _first_tuesday_of_month(nm.year, nm.month)
 
         elif trigger == "annual_window":
             months = event.get("months", [])
             due_today = today.month in months
-            # Find next window start
-            future = [datetime(today.year, m, 1) for m in months if datetime(today.year, m, 1).date() >= today.date()]
-            if not future:
-                future = [datetime(today.year + 1, m, 1) for m in months]
-            next_date = min(future) if future else None
+            if due_today:
+                timing = "this month"
+                next_date = today
+            else:
+                future = [datetime(today.year, m, 1) for m in months
+                          if datetime(today.year, m, 1).date() >= today.date()]
+                if not future:
+                    future = [datetime(today.year + 1, m, 1) for m in months]
+                next_date = min(future) if future else None
 
         elif trigger == "manual":
             for d_str in event.get("dates", []):
                 try:
                     d = datetime.strptime(d_str, "%Y-%m-%d")
-                    if abs((today.date() - d.date()).days) <= 1:
+                    days_away = (d.date() - today.date()).days
+                    if abs(days_away) <= 1:
                         due_today = True
+                        timing = _timing_label(max(0, days_away))
                     if d.date() >= today.date() and (next_date is None or d < next_date):
                         next_date = d
                 except ValueError:
                     pass
 
-        # Upcoming calendar entry
-        if next_date and (next_date.date() - today.date()) <= lookahead:
-            link = f"<a href='{url}'>{label}</a>" if url else label
-            date_str = next_date.strftime("%-d %b")
-            upcoming.append(f"<li>{date_str} &mdash; {link}</li>")
+        if due_today:
+            print(f"DEBUG: Calendar — due: {label}")
+            link_html = f"<a href='{url}'>{label}</a>" if url else label
+            timing_html = f"<p class='metadata'>{timing}</p>" if timing else ""
 
-        # Run scraper if due
-        if due_today and event.get("scraper"):
-            print(f"DEBUG: Calendar — running scraper for {label}")
-            content = _run_scraper(event["scraper"])
-            if content:
-                scraper_sections.append(
-                    f"<div class='article-entry'><h3>{label}</h3>{content}</div>"
+            scraper_content = ""
+            if event.get("scraper"):
+                scraper_content = _run_scraper(event["scraper"])
+
+            if scraper_content:
+                active_cards.append(
+                    f"<div class='article-entry'><h3>{link_html}</h3>"
+                    f"{timing_html}{scraper_content}</div>"
+                )
+            else:
+                # Fallback: always surface the event even without a scraper
+                check_note = f"No automated fetch available. <a href='{url}'>Check source →</a>" if url else "No automated fetch — check source manually."
+                active_cards.append(
+                    f"<div class='article-entry'><h3>{link_html}</h3>"
+                    f"{timing_html}<p class='metadata'>{check_note}</p></div>"
                 )
 
-    upcoming_html = f"<ul>{''.join(upcoming)}</ul>" if upcoming else "<p class='metadata'>No scheduled releases in the next {cal.get('lookahead_days', 14)} days.</p>"
-    scraper_html = "\n".join(scraper_sections)
-    return upcoming_html, scraper_html
+        elif next_date and (next_date.date() - today.date()) <= lookahead:
+            days_away = (next_date.date() - today.date()).days
+            tl = _timing_label(days_away)
+            link_html = f"<a href='{url}'>{label}</a>" if url else label
+            upcoming_items.append(f"<li>{link_html} &mdash; {tl}</li>")
+
+    active_html = "\n".join(active_cards)
+    upcoming_html = (f"<h3>upcoming</h3><ul>{''.join(upcoming_items)}</ul>"
+                     if upcoming_items else "")
+    return active_html, upcoming_html
 
 
 def collect_cinema(ts):
@@ -272,7 +309,7 @@ def main():
         weather_content = collect_weather(ts)
         nyt_content = collect_nyt(ts)
         cinema_content = collect_cinema(ts)
-        calendar_upcoming, calendar_scrapers = collect_calendar(today)
+        calendar_active, calendar_upcoming = collect_calendar(today)
 
         # Load existing Sent IDs from the archive folder
         try:
@@ -323,7 +360,7 @@ def main():
         with open("links.html", "w", encoding="utf-8") as f:
             f.write(f"<!DOCTYPE html><html><head><meta charset='UTF-8'><link rel='stylesheet' href='style.css'></head><body><h1>liroh links {ts}</h1>{links_final_content}</body></html>")
 
-        calendar_section = f"{calendar_scrapers}<h3>upcoming</h3>{calendar_upcoming}" if calendar_scrapers else calendar_upcoming
+        calendar_section = "\n".join(filter(None, [calendar_active, calendar_upcoming])) or "<p class='metadata'>No events due or upcoming in the next 14 days.</p>"
 
         # MASTER index.html
         master_index = f"""<!DOCTYPE html><html><head><meta charset='UTF-8'><link rel='stylesheet' href='style.css'></head>
