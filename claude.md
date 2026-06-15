@@ -108,3 +108,18 @@ and no amount of retrying or proxy-juggling fixed it. If the Reddit fetch
 ever starts returning blocks or 403s from Actions, don't assume it's the same
 fixable-by-better-code situation the early Substack debugging looked like —
 check whether it's the same structural wall first.
+
+## Kobo pipeline
+
+This project's `.md` files are converted to epub by kobo-loader and synced to
+a Kobo e-reader. One formatting rule applies to all `.md` files here:
+
+**Use `* * *` for horizontal rules — never `---` in the document body.**
+Pandoc treats standalone `---` as a YAML block opener; `*bold*` or `*italic*`
+after it triggers a parse error. YAML front matter at the very top is fine.
+
+If `KOBO.md` is present in this directory, read it at session start. Generated
+by kobo-loader (`python3 kobo_notes.py kobo-newspaper`), it contains pending
+notes captured while reading this project's docs on the Kobo device. Gitignored
+and regenerated on each run — do not edit it. To resolve a note: add its ID to
+`.kobo_resolved.json` (also gitignored).
