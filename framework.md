@@ -178,6 +178,26 @@ has passed:
 See `claude.md` for a specific verification checklist a future session can
 follow.
 
+## Future development
+
+**Pipeline ideas** — music/listening guide as a newspaper section;
+playlist pipeline to Spotify (highlights or vocabulary lookups → playlist);
+multilingual vocabulary section (English / French / Portuguese); kids
+newspaper edition for a 5-year-old (separate Instapaper account).
+
+**Local venues — films and concerts** — scrape local venue calendars and
+add upcoming films and concerts as a daily section. `cinema_scrape.py`
+handles cinema; extend to concerts. Cinema entries should prioritize
+showtime dates over description text.
+
+**Crossword or word puzzle** — a format native to e-reader constraints
+(text-based, no graphics dependency). Better than a standard crossword grid
+for epub; to be scoped further.
+
+**Delivery timing** — issues should arrive by 6:30 AM; currently arriving
+at 10 AM or later. Check the cron schedule and whether the GitHub Actions
+runner timezone is set correctly.
+
 ## What lives where
 
 | Concern | Lives in |
