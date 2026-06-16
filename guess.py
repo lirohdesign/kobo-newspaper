@@ -101,7 +101,7 @@ def _render_png(guesses_scores, secret, show_answer, path):
         d.line([((ck-16)*s, cy*s), ((ck-5)*s, (cy+12)*s), ((ck+18)*s, (cy-15)*s)],
                fill="white", width=4*s, joint="curve")
 
-    img.resize((W, H), Image.LANCZOS).save(path)
+    img.resize((W, H), Image.LANCZOS).save(path, "JPEG", quality=92)
 
 
 def _make_guesses(rng, secret, all_codes):
@@ -138,13 +138,13 @@ def collect_guess(today=None, base_url=""):
 
     os.makedirs(OUT_DIR, exist_ok=True)
     date = today.strftime("%Y-%m-%d")
-    q_name = f"guess-{date}.png"
-    a_name = f"guess-{date}-answer.png"
+    q_name = f"guess-{date}.jpg"
+    a_name = f"guess-{date}-answer.jpg"
     _render_png(guesses, secret, False, os.path.join(OUT_DIR, q_name))
     _render_png(guesses, secret, True,  os.path.join(OUT_DIR, a_name))
 
-    q_src = f"{OUT_DIR}/{q_name}"
-    a_src = f"{OUT_DIR}/{a_name}"
+    q_src = f"{base_url}/{OUT_DIR}/{q_name}"
+    a_src = f"{base_url}/{OUT_DIR}/{a_name}"
 
     puzzle = (
         f"<div class='puzzle-block'>"
