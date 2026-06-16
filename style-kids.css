@@ -93,6 +93,13 @@ ul { padding-left: 1.4em; }
 
 /* weather */
 
+.apod-img {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    margin: 0.6em 0;
+}
+
 .otd-list {
     line-height: 2;
     padding-left: 1.2em;
