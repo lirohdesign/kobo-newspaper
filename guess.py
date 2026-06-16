@@ -126,15 +126,14 @@ def collect_guess(today=None):
     all_codes = list(permutations(SHAPES, N))
     secret = list(rng.choice(all_codes))
     guesses = _make_guesses(rng, secret, all_codes)
-    return (
+    puzzle = (
         f"<div class='puzzle-block'>"
         f"<p class='math-hint'>A secret code of {N} shapes (no repeats) was chosen from the {len(SHAPES)} above. "
         f"Each row shows a guess and its score: "
         f"&#9679; = right shape, right spot &nbsp; &#9675; = right shape, wrong spot. "
         f"What is the code?</p>"
         f"{_svg(guesses, secret, show_answer=False)}"
-        f"<p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p>"
-        f"<p class='math-hint'>&#8645; flip for answer</p>"
-        f"{_svg(guesses, secret, show_answer=True)}"
         f"</div>"
     )
+    answer = f"<div class='puzzle-block'>{_svg(guesses, secret, show_answer=True)}</div>"
+    return puzzle, answer

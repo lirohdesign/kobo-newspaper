@@ -418,13 +418,19 @@ def kids_main():
             os.makedirs("old_issues")
 
         weather_content = collect_kids_weather(ts)
-        math_content = collect_math_challenge(today)
+        math_content, math_answers = collect_math_challenge(today)
         wyr_content = collect_wyr(today)
-        towers_content = collect_towers(today)
-        guess_content = collect_guess(today)
+        towers_content, towers_answers = collect_towers(today)
+        guess_content, guess_answers = collect_guess(today)
         language_content = collect_language(today)
         otd_content = collect_dayinhistory(today)
         apod_content = collect_apod()
+
+        answers_section = (
+            f"<h3>02. math challenge</h3>{math_answers}"
+            f"<h3>04. towers</h3>{towers_answers}"
+            f"<h3>05. code breaker</h3>{guess_answers}"
+        )
 
         page = f"""<!DOCTYPE html><html><head><meta charset='UTF-8'><link rel='stylesheet' href='style-kids.css'></head>
 <body><h1>liroh kids {ts}</h1>
@@ -435,7 +441,8 @@ def kids_main():
 <section><h2>05. code breaker</h2>{guess_content}</section><hr>
 <section><h2>06. word of the day</h2>{language_content if language_content else '<p>unavailable</p>'}</section><hr>
 <section><h2>07. on this day</h2>{otd_content if otd_content else '<p>unavailable</p>'}</section><hr>
-<section><h2>08. space</h2>{apod_content if apod_content else '<p>unavailable</p>'}</section>
+<section><h2>08. space</h2>{apod_content if apod_content else '<p>unavailable</p>'}</section><hr>
+<section><h2>09. answers</h2>{answers_section}</section>
 </body></html>"""
 
         with open("index-kids.html", "w", encoding="utf-8") as f:

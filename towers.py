@@ -93,14 +93,13 @@ def collect_towers(today=None):
     n = 3
     grid = _fill_grid(rng, n)
     clues = _clues(grid, n)
-    return (
+    puzzle = (
         f"<div class='puzzle-block'>"
         f"<p class='math-hint'>Fill each row and column with 1–{n}. "
         f"The number on each edge shows how many towers you can see from that side "
         f"— taller towers hide shorter ones behind them.</p>"
         f"{_svg(grid, clues, n, filled=False)}"
-        f"<p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p>"
-        f"<p class='math-hint'>&#8645; flip for answer</p>"
-        f"{_svg(grid, clues, n, filled=True)}"
         f"</div>"
     )
+    answer = f"<div class='puzzle-block'>{_svg(grid, clues, n, filled=True)}</div>"
+    return puzzle, answer
