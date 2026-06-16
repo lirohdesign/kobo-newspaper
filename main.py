@@ -419,6 +419,7 @@ def kids_main():
         ts = get_timestamp()
         today = central_now()
         file_date = today.strftime("%Y-%m-%d")
+        # GitHub Pages URL for Instapaper; image paths in guess.py/towers.py are smart about this
         base_url = "https://lirohdesign.github.io/kobo-newspaper"
 
         if not os.path.exists("old_issues"):

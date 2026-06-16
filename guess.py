@@ -143,8 +143,8 @@ def collect_guess(today=None, base_url=""):
     _render_png(guesses, secret, False, os.path.join(OUT_DIR, q_name))
     _render_png(guesses, secret, True,  os.path.join(OUT_DIR, a_name))
 
-    q_src = f"{base_url}/{OUT_DIR}/{q_name}"
-    a_src = f"{base_url}/{OUT_DIR}/{a_name}"
+    q_src = f"{OUT_DIR}/{q_name}"
+    a_src = f"{OUT_DIR}/{a_name}"
 
     puzzle = (
         f"<div class='puzzle-block'>"
