@@ -15,16 +15,16 @@ def collect_apod():
         if "code" in data:
             print(f"DEBUG: APOD API error {data.get('code')}: {data.get('msg', data)}")
             return ""
-        media = data.get("media_type")
-        if media != "image":
-            print(f"DEBUG: APOD skipped — media_type is '{media}'")
-            return ""
         title = data.get("title", "")
-        img_url = data.get("url", "")
         words = data.get("explanation", "").split()
         explanation = " ".join(words[:120]) + ("..." if len(words) > 120 else "")
-        print(f"DEBUG: APOD ok — {title}")
-        img_html = f"<img src='{img_url}' alt='{title}' class='apod-img'>" if img_url else ""
+        media = data.get("media_type")
+        print(f"DEBUG: APOD ok — {title} ({media})")
+        if media == "image":
+            img_url = data.get("url", "")
+            img_html = f"<img src='{img_url}' alt='{title}' class='apod-img'>" if img_url else ""
+        else:
+            img_html = ""
         return (
             f"<p class='math-hint'>NASA astronomy picture of the day</p>"
             f"<p><strong>{title}</strong></p>"
