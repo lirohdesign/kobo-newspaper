@@ -20,7 +20,10 @@ except ImportError:
 # --- settings ---
 INSTAPAPER_USER = os.environ.get("INSTAPAPER_USER")
 INSTAPAPER_PASS = os.environ.get("INSTAPAPER_PASS")
+INSTAPAPER_USER_KIDS = os.environ.get("INSTAPAPER_USER_KIDS")
+INSTAPAPER_PASS_KIDS = os.environ.get("INSTAPAPER_PASS_KIDS")
 GUARDIAN_API_KEY = os.environ.get("GUARDIAN_API_KEY")
+NWS_CWA = os.environ.get("NWS_CWA", "iwx")
 
 # Set to False to stop sending Guardian articles to Instapaper (links still
 # show up in the daily build either way). Flip back to True when reading more.
@@ -29,11 +32,11 @@ SEND_GUARDIAN_TO_INSTAPAPER = False
 # Now stored in your persistent archive folder
 SENT_LOG_PATH = "old_issues/sent_articles.json"
 
-def add_to_instapaper(url):
+def add_to_instapaper(url, user=None, pwd=None):
     print(f"DEBUG: Attempting Instapaper add: {url}")
     api_url = "https://www.instapaper.com/api/add"
     try:
-        r = requests.post(api_url, auth=(INSTAPAPER_USER, INSTAPAPER_PASS), data={'url': url}, timeout=15)
+        r = requests.post(api_url, auth=(user or INSTAPAPER_USER, pwd or INSTAPAPER_PASS), data={'url': url}, timeout=15)
         print(f"DEBUG: Instapaper Response: {r.status_code}")
         return r.status_code == 200
     except Exception as e:
@@ -59,7 +62,8 @@ def update_archive_index():
 
 def collect_weather(ts):
     print("DEBUG: Collecting Weather...")
-    url = "https://forecast.weather.gov/product.php?site=iwx&issuedby=iwx&product=afd&format=ci&version=1&glossary=1"
+    cwa = NWS_CWA.lower()
+    url = f"https://forecast.weather.gov/product.php?site={cwa}&issuedby={cwa}&product=afd&format=ci&version=1&glossary=1"
     try:
         r = requests.get(url, timeout=20, headers={'User-Agent': 'Mozilla/5.0'})
         if '<pre class="glossaryProduct">' in r.text:
@@ -393,5 +397,57 @@ def main():
     except Exception as e:
         print(f"CRITICAL ERROR: {e}")
 
+def kids_main():
+    from math_generator import collect_math_challenge
+    from would_you_rather import collect_wyr
+    from kids_weather import collect_kids_weather
+
+    try:
+        print("--- KIDS BUILD START ---")
+        ts = get_timestamp()
+        file_date = (datetime.utcnow() - timedelta(hours=6)).strftime("%Y-%m-%d")
+        today = datetime.utcnow() - timedelta(hours=6)
+        base_url = "https://lirohdesign.github.io/kobo-newspaper"
+
+        if not os.path.exists("old_issues"):
+            os.makedirs("old_issues")
+
+        weather_content = collect_kids_weather(ts)
+        math_content = collect_math_challenge(today)
+        wyr_content = collect_wyr(today)
+
+        page = f"""<!DOCTYPE html><html><head><meta charset='UTF-8'><link rel='stylesheet' href='style-kids.css'></head>
+<body><h1>liroh kids {ts}</h1>
+<section><h2>01. weather</h2>{weather_content if weather_content else '<p>unavailable</p>'}</section><hr>
+<section><h2>02. math challenge</h2>{math_content}</section><hr>
+<section><h2>03. would you rather</h2>{wyr_content}</section>
+</body></html>"""
+
+        with open("index-kids.html", "w", encoding="utf-8") as f:
+            f.write(page)
+
+        with open(f"old_issues/{file_date}-kids.html", "w", encoding="utf-8") as f:
+            f.write(page.replace("style-kids.css", "../style-kids.css"))
+
+        if INSTAPAPER_USER_KIDS and INSTAPAPER_PASS_KIDS:
+            add_to_instapaper(
+                f"{base_url}/index-kids.html?v={ts}",
+                user=INSTAPAPER_USER_KIDS,
+                pwd=INSTAPAPER_PASS_KIDS
+            )
+
+        update_archive_index()
+        print("--- KIDS BUILD SUCCESSFUL ---")
+    except Exception as e:
+        print(f"CRITICAL ERROR: {e}")
+
+
 if __name__ == "__main__":
-    main()
+    import argparse
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--mode", choices=["standard", "kids"], default="standard")
+    args = parser.parse_args()
+    if args.mode == "kids":
+        kids_main()
+    else:
+        main()
