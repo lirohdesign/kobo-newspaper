@@ -75,8 +75,7 @@ def _render_png(grid, clues, n, filled, path):
     num_f = _font(56 * s)
 
     def tc(x, y, val, font):
-        d.text((x * s, y * s), str(val), fill="black", font=font, anchor="mm",
-               stroke_width=max(1, s // 2), stroke_fill="black")
+        d.text((x * s, y * s), str(val), fill="black", font=font, anchor="mm")
 
     gx = gy = mg
     for c, v in enumerate(top):    tc(gx + c*cs + cs/2, mg/2, v, clue_f)
