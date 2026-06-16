@@ -20,12 +20,15 @@ def collect_apod():
             print(f"DEBUG: APOD skipped — media_type is '{media}'")
             return ""
         title = data.get("title", "")
+        img_url = data.get("url", "")
         words = data.get("explanation", "").split()
         explanation = " ".join(words[:120]) + ("..." if len(words) > 120 else "")
         print(f"DEBUG: APOD ok — {title}")
+        img_html = f"<img src='{img_url}' alt='{title}' class='apod-img'>" if img_url else ""
         return (
             f"<p class='math-hint'>NASA astronomy picture of the day</p>"
             f"<p><strong>{title}</strong></p>"
+            f"{img_html}"
             f"<p>{explanation}</p>"
         )
     except Exception as e:
