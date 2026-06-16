@@ -7,9 +7,18 @@ import urllib.error
 import urllib.request
 from datetime import datetime, timedelta
 from pathlib import Path
+from zoneinfo import ZoneInfo
 
 from bs4 import BeautifulSoup
 import importlib.util
+
+# Central time, DST-aware — handles CST/CDT automatically so timestamps don't
+# drift an hour (and roll the date) across the spring/fall changeover.
+CENTRAL = ZoneInfo("America/Chicago")
+
+
+def central_now():
+    return datetime.now(CENTRAL)
 
 try:
     import certifi
@@ -44,8 +53,7 @@ def add_to_instapaper(url, user=None, pwd=None):
         return False
 
 def get_timestamp():
-    cst_now = datetime.utcnow() - timedelta(hours=6)
-    return cst_now.strftime("%d%b%y %H%M").lower()
+    return central_now().strftime("%d%b%y %H%M").lower()
 
 def update_archive_index():
     if not os.path.exists("old_issues"):
@@ -302,14 +310,13 @@ def main():
     try:
         print("--- BUILD START ---")
         ts = get_timestamp()
-        file_date = (datetime.utcnow() - timedelta(hours=6)).strftime("%Y-%m-%d")
+        today = central_now()
+        file_date = today.strftime("%Y-%m-%d")
         base_url = "https://lirohdesign.github.io/kobo-newspaper"
-        
+
         # Ensure the folder exists before any logic runs
         if not os.path.exists("old_issues"):
             os.makedirs("old_issues")
-            
-        today = datetime.utcnow() - timedelta(hours=6)
         weather_content = collect_weather(ts)
         nyt_content = collect_nyt(ts)
         cinema_content = collect_cinema(ts)
@@ -410,8 +417,8 @@ def kids_main():
     try:
         print("--- KIDS BUILD START ---")
         ts = get_timestamp()
-        file_date = (datetime.utcnow() - timedelta(hours=6)).strftime("%Y-%m-%d")
-        today = datetime.utcnow() - timedelta(hours=6)
+        today = central_now()
+        file_date = today.strftime("%Y-%m-%d")
         base_url = "https://lirohdesign.github.io/kobo-newspaper"
 
         if not os.path.exists("old_issues"):
