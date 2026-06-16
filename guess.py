@@ -101,7 +101,7 @@ def _render_png(guesses_scores, secret, show_answer, path):
         d.line([((ck-16)*s, cy*s), ((ck-5)*s, (cy+12)*s), ((ck+18)*s, (cy-15)*s)],
                fill="white", width=4*s, joint="curve")
 
-    img.resize((W, H), Image.LANCZOS).save(path, "JPEG", quality=92)
+    img.resize((W, H), Image.LANCZOS).save(path, "JPEG", quality=80)
 
 
 def _make_guesses(rng, secret, all_codes):

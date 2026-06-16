@@ -96,7 +96,7 @@ def _render_png(grid, clues, n, filled, path):
     d.rectangle([gx*s, gy*s, (gx + n*cs)*s, (gy + n*cs)*s],
                 outline="black", width=4 * s)
 
-    img.resize((W, W), Image.LANCZOS).save(path, "JPEG", quality=92)
+    img.resize((W, W), Image.LANCZOS).save(path, "JPEG", quality=80)
 
 
 def collect_towers(today=None, base_url=""):

@@ -52,11 +52,11 @@ def collect_language(today=None):
 
     def word_row(label, word, sounds):
         ph = f" <span class='lang-sounds'>({sounds})</span>" if sounds else ""
-        return f"<p class='lang-row'><span class='lang-label'>{label}</span> <span class='lang-word'>{word}</span>{ph}</p>"
+        return f"<p class='lang-row'><strong>{label}:</strong> <span class='lang-word'>{word}</span>{ph}</p>"
 
     return (
         f"<div class='lang-block'>"
-        f"<p class='lang-eng'><span class='lang-label'>en</span> {entry['eng']}</p>"
+        f"<p class='lang-eng'><strong>en:</strong> {entry['eng']}</p>"
         f"{word_row('fr', fr['word'], _with_article(fr['word'], fr.get('sounds'), FR_ARTICLES))}"
         f"{word_row('pt', pt['word'], _with_article(pt['word'], pt.get('sounds'), PT_ARTICLES))}"
         f"</div>"
