@@ -27,7 +27,7 @@ jobs:
           python-version: '3.13'
           
       - name: Install dependencies
-        run: pip install requests beautifulsoup4 certifi
+        run: pip install requests beautifulsoup4 certifi pillow
         
       - name: Run Newspaper Build
         env:
