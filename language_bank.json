@@ -1,0 +1,870 @@
+[
+  {
+    "topic": "animals",
+    "eng": "cat",
+    "fr": {
+      "word": "le chat",
+      "ipa": "/ʃa/",
+      "sounds": "shah"
+    },
+    "pt": {
+      "word": "o gato",
+      "ipa": "/ˈɡa.tu/",
+      "sounds": "gah-too"
+    }
+  },
+  {
+    "topic": "animals",
+    "eng": "dog",
+    "fr": {
+      "word": "le chien",
+      "ipa": "/ʃjɛ̃/",
+      "sounds": "shyan"
+    },
+    "pt": {
+      "word": "o cachorro",
+      "ipa": "/kaˈʃo.ʁu/",
+      "sounds": "kah-shoh-roo"
+    }
+  },
+  {
+    "topic": "animals",
+    "eng": "bird",
+    "fr": {
+      "word": "l'oiseau",
+      "ipa": "/wa.zo/",
+      "sounds": "wah-zoh"
+    },
+    "pt": {
+      "word": "o pássaro",
+      "ipa": "/ˈpa.sa.ɾu/",
+      "sounds": "pah-sah-roo"
+    }
+  },
+  {
+    "topic": "animals",
+    "eng": "fish",
+    "fr": {
+      "word": "le poisson",
+      "ipa": "/pwa.sɔ̃/",
+      "sounds": "pwah-sohn"
+    },
+    "pt": {
+      "word": "o peixe",
+      "ipa": "/ˈpe.ʃi/",
+      "sounds": "peh-shee"
+    }
+  },
+  {
+    "topic": "animals",
+    "eng": "horse",
+    "fr": {
+      "word": "le cheval",
+      "ipa": "/ʃə.val/",
+      "sounds": "shuh-vahl"
+    },
+    "pt": {
+      "word": "o cavalo",
+      "ipa": "/kaˈva.lu/",
+      "sounds": "kah-vah-loo"
+    }
+  },
+  {
+    "topic": "animals",
+    "eng": "rabbit",
+    "fr": {
+      "word": "le lapin",
+      "ipa": "/la.pɛ̃/",
+      "sounds": "lah-pan"
+    },
+    "pt": {
+      "word": "o coelho",
+      "ipa": "/kuˈe.ʎu/",
+      "sounds": "koo-eh-lyoo"
+    }
+  },
+  {
+    "topic": "animals",
+    "eng": "elephant",
+    "fr": {
+      "word": "l'éléphant",
+      "ipa": "/e.le.fɑ̃/",
+      "sounds": "ay-lay-fahn"
+    },
+    "pt": {
+      "word": "o elefante",
+      "ipa": "/e.leˈfɐ̃.t͡ʃi/",
+      "sounds": "eh-leh-fahn-chee"
+    }
+  },
+  {
+    "topic": "animals",
+    "eng": "lion",
+    "fr": {
+      "word": "le lion",
+      "ipa": "/ljɔ̃/",
+      "sounds": "lyohn"
+    },
+    "pt": {
+      "word": "o leão",
+      "ipa": "/leˈɐ̃w̃/",
+      "sounds": "leh-own"
+    }
+  },
+  {
+    "topic": "animals",
+    "eng": "bear",
+    "fr": {
+      "word": "l'ours",
+      "ipa": "/uʁ/",
+      "sounds": "oor"
+    },
+    "pt": {
+      "word": "o urso",
+      "ipa": "/ˈuʁ.su/",
+      "sounds": "oor-soo"
+    }
+  },
+  {
+    "topic": "animals",
+    "eng": "frog",
+    "fr": {
+      "word": "la grenouille",
+      "ipa": "/ɡʁə.nuj/",
+      "sounds": "gruh-nwee"
+    },
+    "pt": {
+      "word": "o sapo",
+      "ipa": "/ˈsa.pu/",
+      "sounds": "sah-poo"
+    }
+  },
+  {
+    "topic": "animals",
+    "eng": "butterfly",
+    "fr": {
+      "word": "le papillon",
+      "ipa": "/pa.pi.jɔ̃/",
+      "sounds": "pah-pee-yohn"
+    },
+    "pt": {
+      "word": "a borboleta",
+      "ipa": "/boʁ.boˈle.tɐ/",
+      "sounds": "bohr-boh-leh-tuh"
+    }
+  },
+  {
+    "topic": "animals",
+    "eng": "turtle",
+    "fr": {
+      "word": "la tortue",
+      "ipa": "/tɔʁ.ty/",
+      "sounds": "tawr-tew"
+    },
+    "pt": {
+      "word": "a tartaruga",
+      "ipa": "/taʁ.taˈɾu.ɡɐ/",
+      "sounds": "tahr-tah-roo-guh"
+    }
+  },
+  {
+    "topic": "sky",
+    "eng": "sun",
+    "fr": {
+      "word": "le soleil",
+      "ipa": "/sɔ.lɛj/",
+      "sounds": "saw-lay"
+    },
+    "pt": {
+      "word": "o sol",
+      "ipa": "/ˈsɔl/",
+      "sounds": "sawl"
+    }
+  },
+  {
+    "topic": "sky",
+    "eng": "moon",
+    "fr": {
+      "word": "la lune",
+      "ipa": "/lyn/",
+      "sounds": "lewn"
+    },
+    "pt": {
+      "word": "a lua",
+      "ipa": "/ˈlu.ɐ/",
+      "sounds": "loo-uh"
+    }
+  },
+  {
+    "topic": "sky",
+    "eng": "star",
+    "fr": {
+      "word": "l'étoile",
+      "ipa": "/e.twal/",
+      "sounds": "ay-twahl"
+    },
+    "pt": {
+      "word": "a estrela",
+      "ipa": "/isˈtɾe.lɐ/",
+      "sounds": "ees-treh-luh"
+    }
+  },
+  {
+    "topic": "sky",
+    "eng": "cloud",
+    "fr": {
+      "word": "le nuage",
+      "ipa": "/ny.aʒ/",
+      "sounds": "new-ahzh"
+    },
+    "pt": {
+      "word": "a nuvem",
+      "ipa": "/ˈnu.vẽj̃/",
+      "sounds": "noo-veng"
+    }
+  },
+  {
+    "topic": "sky",
+    "eng": "rain",
+    "fr": {
+      "word": "la pluie",
+      "ipa": "/plɥi/",
+      "sounds": "plwee"
+    },
+    "pt": {
+      "word": "a chuva",
+      "ipa": "/ˈʃu.vɐ/",
+      "sounds": "shoo-vuh"
+    }
+  },
+  {
+    "topic": "sky",
+    "eng": "snow",
+    "fr": {
+      "word": "la neige",
+      "ipa": "/nɛʒ/",
+      "sounds": "nehzh"
+    },
+    "pt": {
+      "word": "a neve",
+      "ipa": "/ˈnɛ.vi/",
+      "sounds": "neh-vee"
+    }
+  },
+  {
+    "topic": "sky",
+    "eng": "wind",
+    "fr": {
+      "word": "le vent",
+      "ipa": "/vɑ̃/",
+      "sounds": "vahn"
+    },
+    "pt": {
+      "word": "o vento",
+      "ipa": "/ˈvẽ.tu/",
+      "sounds": "ven-too"
+    }
+  },
+  {
+    "topic": "sky",
+    "eng": "rainbow",
+    "fr": {
+      "word": "l'arc-en-ciel",
+      "ipa": "/aʁ.kɑ̃.sjɛl/",
+      "sounds": "ahr-kahn-syehl"
+    },
+    "pt": {
+      "word": "o arco-íris",
+      "ipa": "/ˌaʁ.kuˈi.ɾis/",
+      "sounds": "ahr-koo-ee-rees"
+    }
+  },
+  {
+    "topic": "nature",
+    "eng": "tree",
+    "fr": {
+      "word": "l'arbre",
+      "ipa": "/aʁbʁ/",
+      "sounds": "ahrbr"
+    },
+    "pt": {
+      "word": "a árvore",
+      "ipa": "/ˈaʁ.vo.ɾi/",
+      "sounds": "ahr-voh-ree"
+    }
+  },
+  {
+    "topic": "nature",
+    "eng": "flower",
+    "fr": {
+      "word": "la fleur",
+      "ipa": "/flœʁ/",
+      "sounds": "fluhr"
+    },
+    "pt": {
+      "word": "a flor",
+      "ipa": "/ˈfloɾ/",
+      "sounds": "flohr"
+    }
+  },
+  {
+    "topic": "nature",
+    "eng": "river",
+    "fr": {
+      "word": "la rivière",
+      "ipa": "/ʁi.vjɛʁ/",
+      "sounds": "ree-vyehr"
+    },
+    "pt": {
+      "word": "o rio",
+      "ipa": "/ˈri.o/",
+      "sounds": "ree-oh"
+    }
+  },
+  {
+    "topic": "nature",
+    "eng": "mountain",
+    "fr": {
+      "word": "la montagne",
+      "ipa": "/mɔ̃.taɲ/",
+      "sounds": "mohn-tahny"
+    },
+    "pt": {
+      "word": "a montanha",
+      "ipa": "/mõˈtɐ̃.ɲɐ/",
+      "sounds": "mohn-tahn-nyuh"
+    }
+  },
+  {
+    "topic": "nature",
+    "eng": "ocean",
+    "fr": {
+      "word": "l'océan",
+      "ipa": "/ɔ.se.ɑ̃/",
+      "sounds": "aw-say-ahn"
+    },
+    "pt": {
+      "word": "o oceano",
+      "ipa": "/o.seˈɐ̃.nu/",
+      "sounds": "oh-seh-ahn-noo"
+    }
+  },
+  {
+    "topic": "nature",
+    "eng": "forest",
+    "fr": {
+      "word": "la forêt",
+      "ipa": "/fɔ.ʁɛ/",
+      "sounds": "faw-reh"
+    },
+    "pt": {
+      "word": "a floresta",
+      "ipa": "/floˈɾɛs.tɐ/",
+      "sounds": "floh-rehs-tuh"
+    }
+  },
+  {
+    "topic": "nature",
+    "eng": "garden",
+    "fr": {
+      "word": "le jardin",
+      "ipa": "/ʒaʁ.dɛ̃/",
+      "sounds": "zhahr-dan"
+    },
+    "pt": {
+      "word": "o jardim",
+      "ipa": "/ʒaʁˈd͡ʒĩ/",
+      "sounds": "zhahr-jeen"
+    }
+  },
+  {
+    "topic": "body",
+    "eng": "hand",
+    "fr": {
+      "word": "la main",
+      "ipa": "/mɛ̃/",
+      "sounds": "man"
+    },
+    "pt": {
+      "word": "a mão",
+      "ipa": "/ˈmɐ̃w̃/",
+      "sounds": "mown"
+    }
+  },
+  {
+    "topic": "body",
+    "eng": "eye",
+    "fr": {
+      "word": "l'oeil",
+      "ipa": "/œj/",
+      "sounds": "uhy"
+    },
+    "pt": {
+      "word": "o olho",
+      "ipa": "/ˈo.ʎu/",
+      "sounds": "oh-lyoo"
+    }
+  },
+  {
+    "topic": "body",
+    "eng": "ear",
+    "fr": {
+      "word": "l'oreille",
+      "ipa": "/ɔ.ʁɛj/",
+      "sounds": "aw-ray"
+    },
+    "pt": {
+      "word": "a orelha",
+      "ipa": "/oˈɾe.ʎɐ/",
+      "sounds": "oh-reh-lyuh"
+    }
+  },
+  {
+    "topic": "body",
+    "eng": "nose",
+    "fr": {
+      "word": "le nez",
+      "ipa": "/ne/",
+      "sounds": "nay"
+    },
+    "pt": {
+      "word": "o nariz",
+      "ipa": null,
+      "sounds": "nah-rees"
+    }
+  },
+  {
+    "topic": "body",
+    "eng": "mouth",
+    "fr": {
+      "word": "la bouche",
+      "ipa": "/buʃ/",
+      "sounds": "boosh"
+    },
+    "pt": {
+      "word": "a boca",
+      "ipa": "/ˈbo.kɐ/",
+      "sounds": "boh-kuh"
+    }
+  },
+  {
+    "topic": "body",
+    "eng": "foot",
+    "fr": {
+      "word": "le pied",
+      "ipa": "/pje/",
+      "sounds": "pyay"
+    },
+    "pt": {
+      "word": "o pé",
+      "ipa": "/ˈpɛ/",
+      "sounds": "peh"
+    }
+  },
+  {
+    "topic": "body",
+    "eng": "heart",
+    "fr": {
+      "word": "le coeur",
+      "ipa": "/kœʁ/",
+      "sounds": "kuhr"
+    },
+    "pt": {
+      "word": "o coração",
+      "ipa": "/ko.ɾaˈsɐ̃w̃/",
+      "sounds": "koh-rah-sown"
+    }
+  },
+  {
+    "topic": "body",
+    "eng": "head",
+    "fr": {
+      "word": "la tête",
+      "ipa": "/tɛt/",
+      "sounds": "teht"
+    },
+    "pt": {
+      "word": "a cabeça",
+      "ipa": "/kaˈbet͡sa/",
+      "sounds": "kah-behtsah"
+    }
+  },
+  {
+    "topic": "food",
+    "eng": "bread",
+    "fr": {
+      "word": "le pain",
+      "ipa": "/pɛ̃/",
+      "sounds": "pan"
+    },
+    "pt": {
+      "word": "o pão",
+      "ipa": "/ˈpɐ̃w̃/",
+      "sounds": "pown"
+    }
+  },
+  {
+    "topic": "food",
+    "eng": "apple",
+    "fr": {
+      "word": "la pomme",
+      "ipa": "/pɔm/",
+      "sounds": "pawm"
+    },
+    "pt": {
+      "word": "a maçã",
+      "ipa": "/maˈsɐ̃/",
+      "sounds": "mah-sahn"
+    }
+  },
+  {
+    "topic": "food",
+    "eng": "milk",
+    "fr": {
+      "word": "le lait",
+      "ipa": "/lɛ/",
+      "sounds": "leh"
+    },
+    "pt": {
+      "word": "o leite",
+      "ipa": "/ˈlej.t͡ʃi/",
+      "sounds": "lay-chee"
+    }
+  },
+  {
+    "topic": "food",
+    "eng": "egg",
+    "fr": {
+      "word": "l'oeuf",
+      "ipa": "/œf/",
+      "sounds": "uhf"
+    },
+    "pt": {
+      "word": "o ovo",
+      "ipa": "/ˈo.vu/",
+      "sounds": "oh-voo"
+    }
+  },
+  {
+    "topic": "food",
+    "eng": "water",
+    "fr": {
+      "word": "l'eau",
+      "ipa": "/o/",
+      "sounds": "oh"
+    },
+    "pt": {
+      "word": "a água",
+      "ipa": "/ˈa.ɡwɐ/",
+      "sounds": "ah-gwuh"
+    }
+  },
+  {
+    "topic": "food",
+    "eng": "cheese",
+    "fr": {
+      "word": "le fromage",
+      "ipa": "/fʁɔ.maʒ/",
+      "sounds": "fraw-mahzh"
+    },
+    "pt": {
+      "word": "o queijo",
+      "ipa": "/ˈke.ʒu/",
+      "sounds": "keh-zhoo"
+    }
+  },
+  {
+    "topic": "food",
+    "eng": "orange",
+    "fr": {
+      "word": "l'orange",
+      "ipa": "/ɔ.ʁɑ̃ʒ/",
+      "sounds": "aw-rahnzh"
+    },
+    "pt": {
+      "word": "a laranja",
+      "ipa": null,
+      "sounds": "lah-rahn-zhuh"
+    }
+  },
+  {
+    "topic": "food",
+    "eng": "strawberry",
+    "fr": {
+      "word": "la fraise",
+      "ipa": "/fʁɛz/",
+      "sounds": "frehz"
+    },
+    "pt": {
+      "word": "o morango",
+      "ipa": "/moˈɾɐ̃.ɡu/",
+      "sounds": "moh-rahn-goo"
+    }
+  },
+  {
+    "topic": "colors",
+    "eng": "red",
+    "fr": {
+      "word": "rouge",
+      "ipa": "/ʁuʒ/",
+      "sounds": "roozh"
+    },
+    "pt": {
+      "word": "vermelho",
+      "ipa": "/veʁˈme.ʎu/",
+      "sounds": "vehr-meh-lyoo"
+    }
+  },
+  {
+    "topic": "colors",
+    "eng": "blue",
+    "fr": {
+      "word": "bleu",
+      "ipa": "/blø/",
+      "sounds": "bluh"
+    },
+    "pt": {
+      "word": "azul",
+      "ipa": "/aˈzuw/",
+      "sounds": "ah-zool"
+    }
+  },
+  {
+    "topic": "colors",
+    "eng": "green",
+    "fr": {
+      "word": "vert",
+      "ipa": "/vɛʁ/",
+      "sounds": "vehr"
+    },
+    "pt": {
+      "word": "verde",
+      "ipa": "/ˈβeɾ.de/",
+      "sounds": "vehr-deh"
+    }
+  },
+  {
+    "topic": "colors",
+    "eng": "yellow",
+    "fr": {
+      "word": "jaune",
+      "ipa": "/ʒon/",
+      "sounds": "zhohn"
+    },
+    "pt": {
+      "word": "amarelo",
+      "ipa": "/a.maˈɾɛ.lu/",
+      "sounds": "ah-mah-reh-loh"
+    }
+  },
+  {
+    "topic": "colors",
+    "eng": "white",
+    "fr": {
+      "word": "blanc",
+      "ipa": "/blɑ̃/",
+      "sounds": "blahn"
+    },
+    "pt": {
+      "word": "branco",
+      "ipa": "/ˈbɾɐ̃.ku/",
+      "sounds": "brahn-koo"
+    }
+  },
+  {
+    "topic": "colors",
+    "eng": "black",
+    "fr": {
+      "word": "noir",
+      "ipa": "/nwaʁ/",
+      "sounds": "nwahr"
+    },
+    "pt": {
+      "word": "preto",
+      "ipa": "/ˈpɾe.tu/",
+      "sounds": "preh-too"
+    }
+  },
+  {
+    "topic": "home",
+    "eng": "house",
+    "fr": {
+      "word": "la maison",
+      "ipa": "/mɛ.zɔ̃/",
+      "sounds": "meh-zohn"
+    },
+    "pt": {
+      "word": "a casa",
+      "ipa": "/ˈka.zɐ/",
+      "sounds": "kah-zuh"
+    }
+  },
+  {
+    "topic": "home",
+    "eng": "door",
+    "fr": {
+      "word": "la porte",
+      "ipa": "/pɔʁt/",
+      "sounds": "pawrt"
+    },
+    "pt": {
+      "word": "a porta",
+      "ipa": "/ˈpɔʁ.tɐ/",
+      "sounds": "pawr-tuh"
+    }
+  },
+  {
+    "topic": "home",
+    "eng": "window",
+    "fr": {
+      "word": "la fenêtre",
+      "ipa": "/fə.nɛtʁ/",
+      "sounds": "fuh-nehtr"
+    },
+    "pt": {
+      "word": "a janela",
+      "ipa": "/ʒaˈnɛ.lɐ/",
+      "sounds": "zhah-neh-luh"
+    }
+  },
+  {
+    "topic": "home",
+    "eng": "book",
+    "fr": {
+      "word": "le livre",
+      "ipa": "/livʁ/",
+      "sounds": "leevr"
+    },
+    "pt": {
+      "word": "o livro",
+      "ipa": "/ˈli.vɾu/",
+      "sounds": "lee-vroo"
+    }
+  },
+  {
+    "topic": "home",
+    "eng": "table",
+    "fr": {
+      "word": "la table",
+      "ipa": "/tabl/",
+      "sounds": "tahbl"
+    },
+    "pt": {
+      "word": "a mesa",
+      "ipa": "/ˈme.zɐ/",
+      "sounds": "meh-zuh"
+    }
+  },
+  {
+    "topic": "home",
+    "eng": "chair",
+    "fr": {
+      "word": "la chaise",
+      "ipa": "/ʃɛz/",
+      "sounds": "shehz"
+    },
+    "pt": {
+      "word": "a cadeira",
+      "ipa": "/kaˈde.ɾɐ/",
+      "sounds": "kah-deh-ruh"
+    }
+  },
+  {
+    "topic": "home",
+    "eng": "bed",
+    "fr": {
+      "word": "le lit",
+      "ipa": "/li/",
+      "sounds": "lee"
+    },
+    "pt": {
+      "word": "a cama",
+      "ipa": "/ˈka.ma/",
+      "sounds": "kah-mah"
+    }
+  },
+  {
+    "topic": "family",
+    "eng": "mother",
+    "fr": {
+      "word": "la mère",
+      "ipa": "/mɛʁ/",
+      "sounds": "mehr"
+    },
+    "pt": {
+      "word": "a mãe",
+      "ipa": "/ˈmɐ̃j̃/",
+      "sounds": "main"
+    }
+  },
+  {
+    "topic": "family",
+    "eng": "father",
+    "fr": {
+      "word": "le père",
+      "ipa": "/pɛʁ/",
+      "sounds": "pehr"
+    },
+    "pt": {
+      "word": "o pai",
+      "ipa": null,
+      "sounds": "pie"
+    }
+  },
+  {
+    "topic": "family",
+    "eng": "brother",
+    "fr": {
+      "word": "le frère",
+      "ipa": "/fʁɛʁ/",
+      "sounds": "frehr"
+    },
+    "pt": {
+      "word": "o irmão",
+      "ipa": "/iʁˈmɐ̃w̃/",
+      "sounds": "eer-mown"
+    }
+  },
+  {
+    "topic": "family",
+    "eng": "sister",
+    "fr": {
+      "word": "la soeur",
+      "ipa": "/sœʁ/",
+      "sounds": "suhr"
+    },
+    "pt": {
+      "word": "a irmã",
+      "ipa": "/iʁˈmɐ̃/",
+      "sounds": "eer-mahn"
+    }
+  },
+  {
+    "topic": "family",
+    "eng": "friend",
+    "fr": {
+      "word": "l'ami",
+      "ipa": "/a.mi/",
+      "sounds": "ah-mee"
+    },
+    "pt": {
+      "word": "o amigo",
+      "ipa": "/aˈmi.ɡu/",
+      "sounds": "ah-mee-goo"
+    }
+  },
+  {
+    "topic": "family",
+    "eng": "baby",
+    "fr": {
+      "word": "le bébé",
+      "ipa": "/be.be/",
+      "sounds": "bay-bay"
+    },
+    "pt": {
+      "word": "o bebê",
+      "ipa": "/beˈbe/",
+      "sounds": "beh-beh"
+    }
+  }
+]
