@@ -1,9 +1,25 @@
+import os
 import random
 from datetime import datetime
+
+from PIL import Image, ImageDraw, ImageFont
+
+SS = 2          # supersample factor — render big, downscale for crisp edges
+OUT_DIR = "puzzles"
 
 
 def _rng(today):
     return random.Random(int(today.strftime("%Y%j")) * 100 + 11)
+
+
+def _font(size):
+    # CI has DejaVu on disk; elsewhere Pillow's embedded default is scalable.
+    for p in ("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", "DejaVuSans.ttf"):
+        try:
+            return ImageFont.truetype(p, size)
+        except Exception:
+            pass
+    return ImageFont.load_default(size=size)
 
 
 def _fill_grid(rng, n):
@@ -47,59 +63,67 @@ def _clues(grid, n):
     return top, right, bottom, left
 
 
-def _svg(grid, clues, n, filled):
-    cs, mg = 60, 50
+def _render_png(grid, clues, n, filled, path):
+    cs, mg = 120, 80                 # logical px: cell size, clue margin
     W = mg + n * cs + mg
+    s = SS
     top, right, bottom, left = clues
 
-    def T(x, y, v, sz=20):
-        return (f'<text x="{x}" y="{y}" text-anchor="middle" '
-                f'dominant-baseline="middle" font-size="{sz}" '
-                f'font-weight="bold" fill="#000">{v}</text>')
+    img = Image.new("RGB", (W * s, W * s), "white")
+    d = ImageDraw.Draw(img)
+    clue_f = _font(46 * s)
+    num_f = _font(56 * s)
 
-    out = [f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W} {W}" '
-           f'style="width:100%;max-width:320px;display:block">']
+    def tc(x, y, val, font):
+        d.text((x * s, y * s), str(val), fill="black", font=font, anchor="mm",
+               stroke_width=max(1, s // 2), stroke_fill="black")
 
-    gx, gy = mg, mg
-
-    for c, v in enumerate(top):
-        out.append(T(gx + c*cs + cs//2, mg//2, v))
-    for c, v in enumerate(bottom):
-        out.append(T(gx + c*cs + cs//2, gy + n*cs + mg//2, v))
-    for r, v in enumerate(left):
-        out.append(T(mg//2, gy + r*cs + cs//2, v))
-    for r, v in enumerate(right):
-        out.append(T(gx + n*cs + mg//2, gy + r*cs + cs//2, v))
+    gx = gy = mg
+    for c, v in enumerate(top):    tc(gx + c*cs + cs/2, mg/2, v, clue_f)
+    for c, v in enumerate(bottom): tc(gx + c*cs + cs/2, gy + n*cs + mg/2, v, clue_f)
+    for r, v in enumerate(left):   tc(mg/2, gy + r*cs + cs/2, v, clue_f)
+    for r, v in enumerate(right):  tc(gx + n*cs + mg/2, gy + r*cs + cs/2, v, clue_f)
 
     for r in range(n):
         for c in range(n):
-            x, y = gx + c*cs, gy + r*cs
-            out.append(f'<rect x="{x}" y="{y}" width="{cs}" height="{cs}" '
-                       f'fill="{"#f0f0f0" if filled else "#fff"}" '
-                       f'stroke="#000" stroke-width="1.5"/>')
+            x, y = (gx + c*cs) * s, (gy + r*cs) * s
+            d.rectangle([x, y, x + cs*s, y + cs*s],
+                        fill=((240, 240, 240) if filled else "white"),
+                        outline="black", width=2 * s)
             if filled:
-                out.append(T(x + cs//2, y + cs//2, grid[r][c], sz=22))
+                tc(gx + c*cs + cs/2, gy + r*cs + cs/2, grid[r][c], num_f)
 
-    out.append(f'<rect x="{gx}" y="{gy}" width="{n*cs}" height="{n*cs}" '
-               f'fill="none" stroke="#000" stroke-width="3"/>')
-    out.append('</svg>')
-    return ''.join(out)
+    d.rectangle([gx*s, gy*s, (gx + n*cs)*s, (gy + n*cs)*s],
+                outline="black", width=4 * s)
+
+    img.resize((W, W), Image.LANCZOS).save(path)
 
 
-def collect_towers(today=None):
+def collect_towers(today=None, base_url=""):
     if today is None:
         today = datetime.now()
     rng = _rng(today)
     n = 3
     grid = _fill_grid(rng, n)
     clues = _clues(grid, n)
+
+    os.makedirs(OUT_DIR, exist_ok=True)
+    date = today.strftime("%Y-%m-%d")
+    q_name = f"towers-{date}.png"
+    a_name = f"towers-{date}-answer.png"
+    _render_png(grid, clues, n, False, os.path.join(OUT_DIR, q_name))
+    _render_png(grid, clues, n, True,  os.path.join(OUT_DIR, a_name))
+
+    q_src = f"{OUT_DIR}/{q_name}"
+    a_src = f"{OUT_DIR}/{a_name}"
+
     puzzle = (
         f"<div class='puzzle-block'>"
         f"<p class='math-hint'>Fill each row and column with 1–{n}. "
         f"The number on each edge shows how many towers you can see from that side "
         f"— taller towers hide shorter ones behind them.</p>"
-        f"{_svg(grid, clues, n, filled=False)}"
+        f"<img src='{q_src}' alt='towers puzzle' class='apod-img'>"
         f"</div>"
     )
-    answer = f"<div class='puzzle-block'>{_svg(grid, clues, n, filled=True)}</div>"
+    answer = f"<div class='puzzle-block'><img src='{a_src}' alt='towers answer' class='apod-img'></div>"
     return puzzle, answer

@@ -1,14 +1,27 @@
+import os
 import random
 from datetime import datetime
 from itertools import permutations
 
+from PIL import Image, ImageDraw, ImageFont
 
 SHAPES = ['circle', 'square', 'triangle', 'diamond']
 N = 3
+SS = 2          # supersample factor — render big, downscale for crisp edges
+OUT_DIR = "puzzles"
 
 
 def _rng(today):
     return random.Random(int(today.strftime("%Y%j")) * 100 + 22)
+
+
+def _font(size):
+    for p in ("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", "DejaVuSans.ttf"):
+        try:
+            return ImageFont.truetype(p, size)
+        except Exception:
+            pass
+    return ImageFont.load_default(size=size)
 
 
 def _score(secret, guess):
@@ -17,82 +30,78 @@ def _score(secret, guess):
     return black, white
 
 
-def _shape(sh, cx, cy, r=13, fill="#1a1a1a"):
+def _shape(d, sh, cx, cy, r, s, fill="black", outline=None, ow=0):
+    def P(pts):
+        return [(x * s, y * s) for x, y in pts]
     if sh == 'circle':
-        return f'<circle cx="{cx}" cy="{cy}" r="{r}" fill="{fill}"/>'
-    if sh == 'square':
-        return f'<rect x="{cx-r}" y="{cy-r}" width="{r*2}" height="{r*2}" fill="{fill}"/>'
-    if sh == 'triangle':
-        h = int(r * 1.65)
-        pts = f"{cx},{cy-h} {cx-r},{cy+r//2} {cx+r},{cy+r//2}"
-        return f'<polygon points="{pts}" fill="{fill}"/>'
-    if sh == 'diamond':
-        pts = f"{cx},{cy-r-4} {cx+r},{cy} {cx},{cy+r+4} {cx-r},{cy}"
-        return f'<polygon points="{pts}" fill="{fill}"/>'
-    if sh == 'cross':
-        t = max(4, r // 3)
-        return (f'<rect x="{cx-t}" y="{cy-r}" width="{t*2}" height="{r*2}" fill="{fill}"/>'
-                f'<rect x="{cx-r}" y="{cy-t}" width="{r*2}" height="{t*2}" fill="{fill}"/>')
-    return ''
+        d.ellipse(P([(cx-r, cy-r), (cx+r, cy+r)]), fill=fill, outline=outline, width=ow*s)
+    elif sh == 'square':
+        d.rectangle(P([(cx-r, cy-r), (cx+r, cy+r)]), fill=fill, outline=outline, width=ow*s)
+    elif sh == 'triangle':
+        h = r * 1.5
+        d.polygon(P([(cx, cy-h), (cx-r, cy+r*0.7), (cx+r, cy+r*0.7)]), fill=fill, outline=outline)
+    elif sh == 'diamond':
+        d.polygon(P([(cx, cy-r-3), (cx+r, cy), (cx, cy+r+3), (cx-r, cy)]), fill=fill, outline=outline)
 
 
-def _dots(black, white, cx, cy):
-    r, gap = 5, 13
+def _dots(d, black, white, cx, cy, s):
+    r, gap = 9, 26
     start = cx - (N - 1) * gap / 2
-    out = []
     for i in range(N):
         x = start + i * gap
+        box = [(x-r)*s, (cy-r)*s, (x+r)*s, (cy+r)*s]
         if i < black:
-            out.append(f'<circle cx="{x}" cy="{cy}" r="{r}" fill="#000"/>')
+            d.ellipse(box, fill="black")
         elif i < black + white:
-            out.append(f'<circle cx="{x}" cy="{cy}" r="{r}" fill="none" stroke="#000" stroke-width="1.5"/>')
+            d.ellipse(box, outline="black", width=2*s)
         else:
-            out.append(f'<circle cx="{x}" cy="{cy}" r="{r}" fill="none" stroke="#ccc" stroke-width="1"/>')
-    return ''.join(out)
+            d.ellipse(box, outline=(200, 200, 200), width=max(1, s))
 
 
-def _svg(guesses_scores, secret, show_answer):
-    cell, pad, score_w, row_h, legend_h = 50, 14, 38, 56, 62
+def _render_png(guesses_scores, secret, show_answer, path):
+    cell, pad, score_w = 100, 30, 120
+    row_h, legend_h = 100, 116
+    s = SS
     W = pad + N * cell + pad + score_w + pad
     n_rows = len(guesses_scores) + (1 if show_answer else 0)
     H = legend_h + n_rows * row_h + pad
 
-    out = [f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W} {H}" '
-           f'style="width:100%;max-width:360px;display:block">']
+    img = Image.new("RGB", (W * s, H * s), "white")
+    d = ImageDraw.Draw(img)
+    label_f = _font(20 * s)
+    head_f = _font(22 * s)
 
-    # Legend
-    out.append(f'<text x="{pad}" y="13" font-size="11" fill="#555" font-weight="bold">shapes:</text>')
-    sp = (W - pad * 2) // len(SHAPES)
+    # Legend — the four shapes so the reader knows the alphabet
+    d.text((pad * s, 8 * s), "shapes:", fill=(90, 90, 90), font=head_f)
+    sp = (W - pad * 2) / len(SHAPES)
     for i, sh in enumerate(SHAPES):
-        cx = pad + i * sp + sp // 2
-        out.append(_shape(sh, cx, 34, r=10, fill="#555"))
-        out.append(f'<text x="{cx}" y="54" text-anchor="middle" font-size="10" fill="#555">'
-                   f'{"crs" if sh == "cross" else sh[:3]}</text>')
-
-    out.append(f'<line x1="{pad}" y1="{legend_h-3}" x2="{W-pad}" y2="{legend_h-3}" '
-               f'stroke="#ccc" stroke-width="1"/>')
+        cx = pad + i * sp + sp / 2
+        _shape(d, sh, cx, 56, 18, s, fill=(90, 90, 90))
+        d.text((cx * s, 92 * s), sh, fill=(90, 90, 90), font=label_f, anchor="mm")
+    d.line([(pad*s, (legend_h-6)*s), ((W-pad)*s, (legend_h-6)*s)],
+           fill=(200, 200, 200), width=max(1, s))
 
     # Guess rows
     for i, (guess, (black, white)) in enumerate(guesses_scores):
         ry = legend_h + i * row_h
-        out.append(f'<rect x="{pad//2}" y="{ry}" width="{W-pad}" height="{row_h}" '
-                   f'fill="{"#f5f5f5" if i % 2 == 0 else "#fff"}"/>')
+        if i % 2 == 0:
+            d.rectangle([(pad/2)*s, ry*s, (W-pad/2)*s, (ry+row_h)*s], fill=(245, 245, 245))
         for ci, sh in enumerate(guess):
-            out.append(_shape(sh, pad + ci * cell + cell // 2, ry + row_h // 2))
-        out.append(_dots(black, white, pad + N * cell + pad + score_w // 2, ry + row_h // 2))
+            _shape(d, sh, pad + ci*cell + cell/2, ry + row_h/2, 28, s)
+        _dots(d, black, white, pad + N*cell + pad + score_w/2, ry + row_h/2, s)
 
     # Answer row
     if show_answer:
         ry = legend_h + len(guesses_scores) * row_h
-        out.append(f'<rect x="{pad//2}" y="{ry}" width="{W-pad}" height="{row_h}" fill="#111"/>')
+        d.rectangle([(pad/2)*s, ry*s, (W-pad/2)*s, (ry+row_h)*s], fill=(17, 17, 17))
         for ci, sh in enumerate(secret):
-            out.append(_shape(sh, pad + ci * cell + cell // 2, ry + row_h // 2, fill="#fff"))
-        out.append(f'<text x="{pad + N*cell + pad + score_w//2}" y="{ry + row_h//2}" '
-                   f'text-anchor="middle" dominant-baseline="middle" '
-                   f'font-size="16" fill="#fff" font-weight="bold">&#10003;</text>')
+            _shape(d, sh, pad + ci*cell + cell/2, ry + row_h/2, 28, s, fill="white")
+        ck = pad + N*cell + pad + score_w/2
+        cy = ry + row_h/2
+        d.line([((ck-16)*s, cy*s), ((ck-5)*s, (cy+12)*s), ((ck+18)*s, (cy-15)*s)],
+               fill="white", width=4*s, joint="curve")
 
-    out.append('</svg>')
-    return ''.join(out)
+    img.resize((W, H), Image.LANCZOS).save(path)
 
 
 def _make_guesses(rng, secret, all_codes):
@@ -119,21 +128,32 @@ def _make_guesses(rng, secret, all_codes):
     return result
 
 
-def collect_guess(today=None):
+def collect_guess(today=None, base_url=""):
     if today is None:
         today = datetime.now()
     rng = _rng(today)
     all_codes = list(permutations(SHAPES, N))
     secret = list(rng.choice(all_codes))
     guesses = _make_guesses(rng, secret, all_codes)
+
+    os.makedirs(OUT_DIR, exist_ok=True)
+    date = today.strftime("%Y-%m-%d")
+    q_name = f"guess-{date}.png"
+    a_name = f"guess-{date}-answer.png"
+    _render_png(guesses, secret, False, os.path.join(OUT_DIR, q_name))
+    _render_png(guesses, secret, True,  os.path.join(OUT_DIR, a_name))
+
+    q_src = f"{OUT_DIR}/{q_name}"
+    a_src = f"{OUT_DIR}/{a_name}"
+
     puzzle = (
         f"<div class='puzzle-block'>"
         f"<p class='math-hint'>A secret code of {N} shapes (no repeats) was chosen from the {len(SHAPES)} above. "
         f"Each row shows a guess and its score: "
         f"&#9679; = right shape, right spot &nbsp; &#9675; = right shape, wrong spot. "
         f"What is the code?</p>"
-        f"{_svg(guesses, secret, show_answer=False)}"
+        f"<img src='{q_src}' alt='code breaker puzzle' class='apod-img'>"
         f"</div>"
     )
-    answer = f"<div class='puzzle-block'>{_svg(guesses, secret, show_answer=True)}</div>"
+    answer = f"<div class='puzzle-block'><img src='{a_src}' alt='code breaker answer' class='apod-img'></div>"
     return puzzle, answer
