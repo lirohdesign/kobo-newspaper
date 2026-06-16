@@ -1,209 +1,276 @@
-# Framework — how the Reddit digest pipeline fits together
+# Framework — architecture of the kobo-newspaper system
 
-This describes the end-to-end shape of the system: what reads what, what gets
-generated, and where state lives. `taste.md` is the rubric, `sources.json` is
-the source map, `claude_scrape.md` is the runtime prompt that applies the
-rubric to a day's candidates — this document is how those pieces connect into
-a run (and an occasional second kind of run).
+Two editions run from one repo: a **standard** daily newspaper and a **kids** edition. Both deploy to GitHub Pages and sync to Instapaper. This document covers how the pieces fit together end to end — standard build, kids build, deployment, and the rendering contract that Instapaper and Kobo impose.
 
-## The daily run, step by step
+* * *
 
-1. **Gather candidates.** For each subreddit in `sources.json`'s `daily`
-   buckets, fetch via Reddit's unauthenticated `.json` endpoints (search or
-   hot/top, depending on the bucket). Pull posts and their comment trees, and
-   do a cheap pre-filter before anything reaches the API — drop one-line
-   comments, sort by score, cap how many comments per thread get carried
-   forward. This keeps the payload (and the token bill) reasonable and means
-   the model spends its judgment on plausible candidates, not noise.
+## Standard build
 
-2. **Classify and summarize via the API.** One batched call (or one per
-   bucket, whichever reads more cleanly in practice) hands the day's
-   candidates to Claude along with `taste.md` (the rubric) and
-   `claude_scrape.md` (the operating instructions for this specific task).
-   For each candidate it returns:
-   - a tier — **include** / **borderline** / **exclude**
-   - a one-line reason for that call
-   - for includes: a synthesized presentation — the post as brief context,
-     plus the substantive comments worth carrying — not a raw dump
+`python3 main.py` (default mode)
 
-3. **Render.** Included items become a new section in the daily build,
-   alongside weather / NYT / links — same `style.css`, same long-form HTML
-   shape, organized by bucket so the structure stays legible.
+Reads and writes:
 
-4. **Persist.**
-   - **Sent-hash log** (e.g. `sent_reddit.json`) — masked thread IDs, the
-     same SHA-256 pattern used elsewhere in this project, so nothing repeats
-     and nothing identifying ends up in logs.
-   - **Near-miss log** (e.g. `reddit_near_misses.json`) — every
-     **borderline** call: masked ID, subreddit, a one-line gist, the model's
-     stated reason, timestamp. This is the calibration record. It's
-     deliberately *not* a junk drawer of everything excluded — just the close
-     calls, because that's where drift from your actual taste would show up
-     first, long before the model started getting the easy calls wrong.
+| Output | Purpose |
+| :--- | :--- |
+| `index.html` | Today's paper — linked to from Instapaper |
+| `weather.html`, `nyt.html`, `links.html`, `cinema.html` | Separate pages sent as individual Instapaper items |
+| `old_issues/YYYY-MM-DD.html` | Archive copy (CSS path rewritten to `../style.css`) |
+| `archive.html` | Index of all archived issues (both editions) |
 
-## Seasonal / triggered buckets
+Sections: weather (NWS API), NYT morning briefing scrape, links (Reddit/RSS — currently parked), cinema (local venue scrape), calendar events (section 05, `calendar.json`-driven).
 
-Each run also does a cheap check against `sources.json`'s `seasonal` entries —
-is today inside (or near) one of the listed `windows`, or does a keyword match
-("Booker," "Nobel," "IPCC") turn up live discussion? If so, that bucket runs
-through the same classify-and-render path for this run only. Most days this
-check costs almost nothing and finds nothing — that's expected, not a bug.
+Timezone: `ZoneInfo("America/Chicago")` via `central_now()` — DST-aware. Never use `utcnow() - timedelta(hours=6)`; that hardcodes CST and breaks during CDT.
 
-## The calibration digest — periodic, not daily
+* * *
 
-On a set cadence (weekly is a reasonable starting point; adjust once you see
-how fast the near-miss log actually fills up), generate a short digest *from
-the near-miss log*: a handful of the borderline calls and the model's stated
-reasoning for each, presented the same long-form way as everything else, and
-delivered to Instapaper like any other section.
+## Kids build
 
-This is the calibration mechanism, and it exists because of a real structural
-gap: Instapaper is a one-way, static delivery surface — there's no
-like/dismiss/engagement signal coming back. The only way to know whether the
-model's threshold matches yours is to periodically *look at the close calls
-and the reasoning behind them*. Putting that review inside the same long-form
-reading habit you already have is what makes it likely to actually happen,
-rather than turning into a JSON file you mean to open someday and don't.
+`python3 main.py --mode kids` → `kids_main()` in `main.py`
 
-## Access wall — Reddit data is currently blocked
+### Sections (in order)
 
-This has been investigated and hit real structural limits, not code problems.
+| # | Section | Module | Returns |
+| :--- | :--- | :--- | :--- |
+| 01 | weather | `kids_weather.py` | HTML string or None |
+| 02 | math challenge | `math_generator.py` | `(content, answers)` |
+| 03 | would you rather | `would_you_rather.py` | HTML string |
+| 04 | towers (skyscrapers) | `towers.py` | `(content, answers)` |
+| 05 | code breaker (mastermind) | `guess.py` | `(content, answers)` |
+| 06 | word of the day | `language.py` | HTML string or None |
+| 07 | on this day | `dayinhistory.py` | HTML string or None |
+| 08 | space (APOD) | `apod_scrape.py` | HTML string or None |
+| 09 | answers | assembled in `main.py` | math + towers + guess answers |
 
-- **Unauthenticated `.json` endpoints** — hard 403 from Reddit's servers. This
-  was broadly blocked after Reddit's 2023 API policy changes. No amount of
-  User-Agent tuning fixes it.
-- **OAuth API (script app)** — applied for personal/script access and was
-  denied.
-- **RSS feeds** (`.rss`)  — still serve, but give only titles, post text, and
-  links. No comment data.
+Modules that return `(content, answers)` tuples: the `content` goes into its numbered section; the `answers` are assembled into section 09. All other modules return a single HTML string (or None on failure, which renders as `<p>unavailable</p>`).
 
-Without comments, the core value of this digest evaporates. The design in
-`framework.md` is built around practitioner comments, corrections, and
-on-the-ground reports — the post title alone isn't the signal, the thread is.
-RSS-only would produce a link list indistinguishable from a Google alert.
+### Outputs
 
-Third-party options investigated:
-- **Pullpush.io / Arctic Shift** — community Pushshift replacements; provide
-  post and comment data but reliability has been inconsistent and they have
-  no SLA.
-- **Apify** — paid scraping platform with a Reddit actor; would work
-  technically but adds cost and a dependency on a third party staying
-  unblocked.
-- **SerpApi / Google Custom Search** — surfaces Reddit threads via Google
-  search; gives snippets and links, not full thread content or comments.
-- **AI browsing (Perplexity API, etc.)** — could synthesize Reddit discussion
-  from web search results, but you'd be getting the model's summary of a
-  summary, not actual thread content. Drift from reality compounds quickly and
-  there's no way to know when it's happening.
+| Output | Notes |
+| :--- | :--- |
+| `index-kids.html` | Generated, gitignored — not tracked in main branch |
+| `old_issues/YYYY-MM-DD-kids.html` | Archive copy (CSS path rewritten to `../style-kids.css`) |
+| `puzzles/YYYY-MM-DD-name.jpg` | Puzzle images — gitignored, persist on gh-pages via `keep_files: true` |
 
-**Current status: parked.** The Reddit digest spec (`taste.md`,
-`claude_scrape.md`, `sources.json`) remains valid if access ever becomes
-feasible. Don't re-investigate the unauthenticated endpoint or RSS-only paths
-— those dead ends are documented above.
+### Key constants in kids_main
+
+```python
+base_url = "https://lirohdesign.github.io/kobo-newspaper"
+today = central_now()           # ZoneInfo("America/Chicago"), DST-aware
+ts = get_timestamp()            # "16jun26 0030" (lower, ddmmmyy hhmm CST/CDT)
+file_date = today.strftime("%Y-%m-%d")
+kids_url = f"{base_url}/index-kids.html?v={ts}"  # ?v= cache-busts Instapaper
+```
+
+### Instapaper delivery
+
+Kids URL is sent to both `INSTAPAPER_USER_KIDS` (the child's account) and `INSTAPAPER_USER` (the parent's account) if both sets of credentials are set.
+
+### Math challenge
+
+`math_generator.py` uses `random.Random(int(today.strftime("%Y%j")))` — deterministic from date.
+
+- **Skip counting**: one blank in a 5-term sequence, varying step sizes (2, 3, 5, 10, 11, 25, 50, 100)
+- **Mental math**: nines trick — `9/19/29/.../99 + other`, with `Think (n+1) + other − 1` hint
+- **Quick facts**: 4 problems, mix of add/sub/multiply. Subtraction is **no-borrow**: each digit of subtrahend ≤ matching digit of minuend (e.g. 78 − 46, not 76 − 48). Addition allows carrying.
+
+### Puzzle rendering pipeline
+
+Both `towers.py` and `guess.py` render via Pillow. The pipeline:
+
+```
+logical layout (Python)
+  → render at 2× (SS=2, all coords × SS)
+  → LANCZOS downscale to 70% of logical size
+  → save as JPEG quality 80
+  → write to puzzles/{name}-{date}.jpg
+  → HTML <img src="{base_url}/puzzles/{name}-{date}.jpg">
+```
+
+Towers (skyscrapers): 3×3 Latin square with edge visibility clues. RNG seed: `int(today.strftime("%Y%j")) * 100 + 11`.
+
+Code Breaker (Mastermind): secret = 3 shapes chosen without repeats from [circle, square, triangle, diamond]. Up to 5 AI-generated guesses shown with black/white dot scores. RNG seed: `int(today.strftime("%Y%j")) * 100 + 22`.
+
+Each puzzle generates two files: `{name}-{date}.jpg` (puzzle) and `{name}-{date}-answer.jpg` (answer, shown in section 09). Date-stamped filenames defeat Instapaper's per-URL image cache — without the date, the same URL would serve the first day's image forever.
+
+Font loading (both modules):
+
+```python
+def _font(size):
+    for p in ("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", "DejaVuSans.ttf"):
+        try: return ImageFont.truetype(p, size)
+        except Exception: pass
+    return ImageFont.load_default(size=size)  # returns scalable FreeTypeFont in Pillow ≥10.1
+```
+
+CI ubuntu has DejaVu on disk. The fallback `load_default(size=...)` returns a scalable font (not the old bitmap default) in Pillow ≥10.1 — safe to rely on.
+
+### Language module
+
+`language.py` picks a daily word from `language_bank.json` using `random.Random(int(today.strftime("%Y%j")))`.
+
+Article sound merging: French and Portuguese vocabulary entries carry their article (e.g. `l'ami`, `o amigo`). The displayed word includes the article; the phonetic guide must too. `_with_article(word, sounds, articles)` handles two cases:
+
+- **Elided** (`l'`): article sound attaches directly — `"l" + "ah-mee"` → `"lah-mee"`
+- **Spaced** (`le`, `o`, etc.): article sound prepended with space — `"oo" + "ah-mee-goo"` → `"oo ah-mee-goo"`
+- **No article** (bare word): phonetics pass through unchanged
+
+`FR_ARTICLES` and `PT_ARTICLES` dicts map article string → `(sound, elided_bool)`. Words not matching any article key pass through. If you add vocabulary where the article sound would collide with the noun sound, check `_with_article` logic first.
+
+HTML output uses `<ul class='lang-block'>` with `<li><strong>en:</strong> …</li>` — **not** `<div><p>`. This is intentional for Kobo rendering (see below).
+
+### APOD
+
+`apod_scrape.py` tries NASA's API first (`api.nasa.gov/planetary/apod`), falls back to scraping `apod.nasa.gov` directly. The API is unreliable (frequent timeouts, 429s, 5xx) — the web page is stable. Three retry attempts with backoff before falling back. Explanation text is sanitized to strip trailing nav copy ("`Explore the Universe:`", "`Tomorrow's picture:`").
+
+Video days return a thumbnail via `thumbs=true` API param; the web scraper finds `<img>` in the page directly.
+
+* * *
+
+## Instapaper and Kobo rendering contract
+
+This section documents what the delivery chain strips, ignores, or breaks — learned through live testing. Read this before adding any new content type.
+
+### What Instapaper strips
+- **Inline SVG** — completely removed. Never use inline SVG for content.
+- **CSS** — mostly stripped when delivering to Kobo. Assume zero styling survives.
+- **CSS transforms, flexbox, grid** — stripped.
+- **Flag emoji** — stripped (platform rendering issues).
+- **`<div>` class attributes** — the div itself may survive but class-based CSS won't apply on Kobo.
+
+### What survives to Kobo
+- **Semantic HTML tags**: `<strong>`, `<em>`, `<ul>`, `<li>`, `<h1>`–`<h3>`, `<p>`, `<img>`
+- **`<img>` with absolute URLs** pointing to publicly accessible JPEGs — confirmed working
+- **Inline `style=` attributes** — partially, but don't rely on them for anything critical
+
+### Image rules (critical)
+1. **JPEG only.** PNG images render correctly in browser and in Instapaper's web UI, but appear as blank icons on Kobo via Instapaper offline delivery. APOD (JPEG) is the proof case. Always use JPEG for puzzle images.
+2. **Absolute URLs only.** Relative paths (`puzzles/name.jpg`) work in a browser because the browser resolves them against the page URL. Instapaper's Kobo offline pipeline does not resolve relative URLs at cache time — the image is silently skipped. Use `{base_url}/puzzles/{name}.jpg` always.
+3. **Date-stamp filenames.** Instapaper caches images by URL. A puzzle image at a fixed URL (`towers-puzzle.jpg`) would serve the first day's image forever. Include the date: `towers-2026-06-16.jpg`.
+
+### Bold/emphasis rules (critical)
+- `<strong>` inside `<li>` — **renders as bold on Kobo.** Confirmed working (matches "on this day" dates pattern).
+- `<strong>` inside `<p>` — **does not reliably bold on Kobo.** CSS bold works in browser but the Kobo Instapaper app strips it.
+- Use `<ul><li>` structure for any labelled list where bold labels matter (language module does this deliberately).
+
+### Cache busting
+Add `?v={timestamp}` to page URLs sent to Instapaper. Without this, Instapaper may serve a cached version of the page rather than re-fetching. The `kids_url` and all per-section page URLs include `?v={ts}`.
+
+* * *
+
+## Deployment
+
+### GitHub Actions (`.github/workflows/daily.yml`)
+
+Runs on schedule (weekday 6:29 AM CST / 7:43 AM CST weekends) plus `workflow_dispatch`.
+
+Steps:
+1. Clone gh-pages branch → restore `old_issues/` and `nyt_morning.html` into workspace
+2. Install: `pip install requests beautifulsoup4 certifi pillow`
+3. Run standard build (`python main.py`)
+4. Run kids build (`python main.py --mode kids`)
+5. Deploy: `peaceiris/actions-gh-pages@v4` with `publish_dir: ./`, `keep_files: true`
+
+`keep_files: true` means files already on gh-pages are not deleted when new content is deployed. This is how `puzzles/*.jpg` accumulate across days — each build adds new date-stamped files without removing old ones. It also preserves archived `old_issues/` across builds.
+
+### GitHub Pages base URL
+
+`https://lirohdesign.github.io/kobo-newspaper`
+
+All image `src` attributes must use this absolute base. It's set as `base_url` in both `main()` and `kids_main()`.
+
+### What is and isn't tracked in main branch
+
+Tracked (source):
+- All `.py` modules, `.json` banks, `.css`, `.md` docs, `calendar.json`, `daily.yml`
+
+Not tracked (generated, gitignored):
+- `index-kids.html`, `archive.html`, `old_issues/`, `puzzles/` — all generated by build and deployed to gh-pages
+- `KOBO.md`, `.kobo_resolved.json` — kobo-loader annotation files
+- `__pycache__/`
+
+* * *
+
+## Reddit digest pipeline (parked)
+
+The spec for a Claude-scored Reddit digest lives in `taste.md`, `sources.json`, and `claude_scrape.md`. The pipeline is described below but is **currently not running** — Reddit data access is blocked (see "Access wall" section).
+
+### Daily run design
+
+1. **Gather.** Fetch from subreddits in `sources.json` `daily` buckets via unauthenticated `.json` endpoints. Pre-filter: drop one-line comments, sort by score, cap comments per thread.
+2. **Classify.** One batched API call with `taste.md` (rubric) and `claude_scrape.md` (instructions). Per candidate: tier (include/borderline/exclude), one-line reason, synthesized presentation for includes.
+3. **Render.** Included items → new section in daily build, alongside existing sections.
+4. **Persist.** Sent-hash log (SHA-256 masked IDs, no repeats) + near-miss log (borderline calls only — the calibration record).
+
+### Seasonal buckets
+
+Each run checks `sources.json` `seasonal` entries — is today inside a `windows` range, or does a keyword match? If yes, that bucket runs once for this build. Most days: no match, no cost.
+
+### Calibration digest
+
+On a set cadence, generate a short digest from the near-miss log (borderline calls + reasoning) and deliver it to Instapaper. This is how drift gets caught — Instapaper gives no engagement signal back, so the only feedback loop is reviewing close calls periodically. See `taste.md` and `claude_scrape.md` for the rubric and prompt contract.
+
+### Access wall
+
+- **Unauthenticated `.json` endpoints** — hard 403 since Reddit's 2023 API changes
+- **OAuth script app** — applied, denied
+- **RSS** — serves only titles and post text, no comments; comment thread is the signal, not the title
+
+Third-party options (Pullpush, Apify, SerpApi) all have reliability, cost, or depth tradeoffs that make them poor substitutes. **Status: parked.** Spec remains valid if access becomes feasible — don't re-investigate the dead ends above.
+
+* * *
 
 ## Calendar and event scrapers
 
-The daily build includes a **section 05 calendar**, driven by `calendar.json`.
-This is how the project handles content that clusters around known events
-rather than arriving daily — Purdue ag reports, literary prizes, major
-institutional releases.
-
-### How a run uses the calendar
-
-Each run reads `calendar.json` and evaluates every entry against today's date.
-Events fall into one of three states:
-
-- **Due today** — rendered as an active card in section 05, with either scraped
-  content or a fallback notice (see below). This is what gets read.
-- **Upcoming within 14 days** — listed under an "upcoming" subhead. Serves as
-  a heads-up so the next few days feel expected, not surprising.
-- **Outside the window** — silently skipped.
+The standard build includes a **section 05 calendar** driven by `calendar.json`. Handles content that clusters around known events (Purdue ag reports, literary prizes, institutional releases).
 
 ### Trigger types
 
-| Trigger | Fires when | Example |
-| :--- | :--- | :--- |
-| `first_tuesday_monthly` | First Tuesday of each month (±1 day) | Ag Economy Barometer |
-| `annual_window` | Current month is in the `months` array | Booker longlist (July), Nobel (October) |
-| `manual` | Today matches a date in the `dates` array (±1 day) | IPCC releases, FOMC dates |
+| Trigger | Fires when |
+| :--- | :--- |
+| `first_tuesday_monthly` | First Tuesday of each month (±1 day) |
+| `annual_window` | Current month is in the `months` array |
+| `manual` | Today matches a date in the `dates` array (±1 day) |
 
-For `manual` entries, add dates as `"YYYY-MM-DD"` strings to the `dates` array
-in `calendar.json` when they become known. FOMC dates are published a year in
-advance at federalreserve.gov; IPCC release dates are announced months ahead.
+Events due today → rendered as active card. Events within 14 days → listed under "upcoming." Outside window → skipped.
 
-### Timing language
+### Scraper contract
 
-Due events always show a timing label — "today", "tomorrow", "in 3 days",
-"next week", "this month" — so the reading context is always clear. The label
-is generated from the trigger, not hardcoded, so it stays accurate.
+Write a module with a `collect()` function returning an HTML string (or empty string on failure). Set `"scraper": "your_scrape.py"` on the `calendar.json` entry. `main.py` dynamically imports and calls `collect()` when the trigger fires — no changes to `main.py` needed.
 
 ### The fallback is the feature
 
-Not every event has a scraper. For events that do, the scraped content
-replaces the fallback. For events that don't — and for any event whose scraper
-fails or returns empty — the calendar always surfaces a card that says:
+When no scraper exists, or a scraper fails, the calendar still surfaces a card with a direct link ("Check thebookerprizes.com →"). A reliable reminder beats silence. Don't remove the fallback path in pursuit of a cleaner output.
 
-> **Booker Prize Longlist** — this month  
-> No automated fetch available. [Check thebookerprizes.com →]
+### Verifying
 
-This is intentional. The goal is to make sure the event reaches you even when
-automation can't do the full job. A reliable reminder with a direct link is
-more useful than silence. Don't remove the fallback path in pursuit of a
-"cleaner" output when a scraper is present — the fallback is what makes the
-system robust when scrapers break.
+Calendar triggers are date-dependent — can't be tested with a dry run. Check the archive instead: open `old_issues/` and find the file dated on or after the expected trigger date. Search for the event `label` from `calendar.json`. Three outcomes: scraped content present (working), fallback "Check source →" (trigger fired, scraper failed), label absent (trigger didn't fire — check `calendar.json` date logic).
 
-### Adding a scraper for a calendar entry
-
-1. Write a Python module with a `collect()` function that returns an HTML
-   string (or empty string on failure). Follow the pattern in
-   `barometer_scrape.py`.
-2. Set `"scraper": "your_scrape.py"` on the entry in `calendar.json`.
-3. The calendar system dynamically imports and calls `collect()` when the
-   trigger fires. No changes to `main.py` needed.
-
-### Verifying the calendar is working
-
-Because event triggers are date-dependent, they're hard to test in a dry run.
-The most reliable verification is to check the archive after a trigger date
-has passed:
-
-1. Open `old_issues/` and find the file dated on or just after the expected
-   trigger date (e.g. the first Tuesday of the month for the Barometer).
-2. Search for the event label (e.g. "Purdue Ag Economy Barometer") in that
-   file. If it's present with scraped content, the scraper ran. If it's
-   present with "Check source →", the fallback fired (scraper failed or
-   absent). If it's absent entirely, the trigger didn't fire — check the
-   date logic and the `calendar.json` entry.
-
-See `claude.md` for a specific verification checklist a future session can
-follow.
-
-## Future development
-
-**Pipeline ideas** — music/listening guide as a newspaper section;
-playlist pipeline to Spotify (highlights or vocabulary lookups → playlist);
-multilingual vocabulary section (English / French / Portuguese); kids
-newspaper edition for a 5-year-old (separate Instapaper account).
-
-**Local venues — films and concerts** — scrape local venue calendars and
-add upcoming films and concerts as a daily section. `cinema_scrape.py`
-handles cinema; extend to concerts. Cinema entries should prioritize
-showtime dates over description text.
-
-**Crossword or word puzzle** — a format native to e-reader constraints
-(text-based, no graphics dependency). Better than a standard crossword grid
-for epub; to be scoped further.
-
-**Delivery timing** — issues should arrive by 6:30 AM; currently arriving
-at 10 AM or later. Check the cron schedule and whether the GitHub Actions
-runner timezone is set correctly.
+* * *
 
 ## What lives where
 
-| Concern | Lives in |
+| Concern | File |
 | :--- | :--- |
-| What counts as signal, what to filter, format constraints | `taste.md` |
-| Which subreddits, which bucket, daily vs. seasonal, and why | `sources.json` |
-| The runtime prompt — how to apply the rubric to a batch of candidates | `claude_scrape.md` |
-| How the pieces connect into a run, end to end | this file |
-| Maintenance guidance for future work on this system | `claude.md` |
+| Kids section content and scoring rubric | `taste.md` (for Reddit); section-specific modules for kids |
+| Reddit subreddits, buckets, daily vs. seasonal | `sources.json` |
+| Reddit runtime prompt and output contract | `claude_scrape.md` |
+| Calendar events and scrapers | `calendar.json` |
+| Architecture (this document) | `framework.md` |
+| Maintenance guidance, dead ends, standing lessons | `CLAUDE.md` |
+| Kids section ideas, build/future status | `kids_planning_docs/ideas.md` |
+| Kids build original architecture plan | `kids_planning_docs/plan-kidsEdition.prompt.md` |
+| One-shot bank generation scripts (keep, not for CI) | `fetch_phonetics.py`, `scrape_dayinhistory.py` |
+
+* * *
+
+## Future development
+
+**Word scramble** — text-only, fully deterministic. Local JSON bank (~365 words + definitions). WordNet via NLTK auto-generates brief definitions locally. Renders as scrambled letter blocks + blank underline. See `kids_planning_docs/ideas.md`.
+
+**Music** — LilyPond lead sheets (Mutopia Project) require LilyPond compiler in CI. Ukulele tabs need vertical measure-by-measure layout to avoid horizontal overflow on narrow e-ink.
+
+**Spot the Difference** — clone a master SVG, hide 2–3 elements in the copy. Instapaper strips SVG, so PNG export via Pillow would be required (same pipeline as towers/guess).
+
+**Local concerts** — extend `cinema_scrape.py` pattern to venue concert calendars.
+
+**Delivery timing** — adjust cron if issues aren't arriving before wakeup time. CI runner is UTC; cron is written in UTC, converted to CST/CDT mentally.
