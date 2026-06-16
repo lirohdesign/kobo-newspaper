@@ -404,6 +404,8 @@ def kids_main():
     from apod_scrape import collect_apod
     from language import collect_language
     from dayinhistory import collect_dayinhistory
+    from towers import collect_towers
+    from guess import collect_guess
 
     try:
         print("--- KIDS BUILD START ---")
@@ -418,18 +420,22 @@ def kids_main():
         weather_content = collect_kids_weather(ts)
         math_content = collect_math_challenge(today)
         wyr_content = collect_wyr(today)
-        apod_content = collect_apod()
+        towers_content = collect_towers(today)
+        guess_content = collect_guess(today)
         language_content = collect_language(today)
         otd_content = collect_dayinhistory(today)
+        apod_content = collect_apod()
 
         page = f"""<!DOCTYPE html><html><head><meta charset='UTF-8'><link rel='stylesheet' href='style-kids.css'></head>
 <body><h1>liroh kids {ts}</h1>
 <section><h2>01. weather</h2>{weather_content if weather_content else '<p>unavailable</p>'}</section><hr>
 <section><h2>02. math challenge</h2>{math_content}</section><hr>
 <section><h2>03. would you rather</h2>{wyr_content}</section><hr>
-<section><h2>04. word of the day</h2>{language_content if language_content else '<p>unavailable</p>'}</section><hr>
-<section><h2>05. on this day</h2>{otd_content if otd_content else '<p>unavailable</p>'}</section><hr>
-<section><h2>06. space</h2>{apod_content if apod_content else '<p>unavailable</p>'}</section>
+<section><h2>04. towers</h2>{towers_content}</section><hr>
+<section><h2>05. code breaker</h2>{guess_content}</section><hr>
+<section><h2>06. word of the day</h2>{language_content if language_content else '<p>unavailable</p>'}</section><hr>
+<section><h2>07. on this day</h2>{otd_content if otd_content else '<p>unavailable</p>'}</section><hr>
+<section><h2>08. space</h2>{apod_content if apod_content else '<p>unavailable</p>'}</section>
 </body></html>"""
 
         with open("index-kids.html", "w", encoding="utf-8") as f:
