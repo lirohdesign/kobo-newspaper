@@ -50,10 +50,8 @@ def collect_math_challenge(today=None):
     facts = _basic_facts(rng)
 
     facts_html = "".join(f"<li>{prob} = ____</li>" for prob, _ in facts)
-    all_answers = [str(seq_ans), str(nines_ans)] + [str(a) for _, a in facts]
-    answers_str = " &nbsp;·&nbsp; ".join(f"{i+1}) {a}" for i, a in enumerate(all_answers))
 
-    return (
+    challenge = (
         f"<div class='math-challenge'>"
         f"<p><strong>1. fill in the missing number</strong><br>"
         f"count by {step}s: <span class='math-seq'>{seq_display}</span></p>"
@@ -62,7 +60,14 @@ def collect_math_challenge(today=None):
         f"<span class='math-hint'>hint: {nines_hint}</span></p>"
         f"<p><strong>3. quick facts</strong></p>"
         f"<ul class='fact-list'>{facts_html}</ul>"
-        f"<p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p>"
-        f"<p class='math-answers'>&#8645; flip for answers &nbsp;&nbsp; {answers_str}</p>"
         f"</div>"
     )
+
+    answer_lines = [
+        f"missing number: {seq_ans}",
+        f"mental math: {nines_ans}",
+        "quick facts: " + " &nbsp;·&nbsp; ".join(str(a) for _, a in facts),
+    ]
+    answers = "".join(f"<p class='math-answers'>{line}</p>" for line in answer_lines)
+
+    return challenge, answers

@@ -36,17 +36,18 @@ def _shape(sh, cx, cy, r=13, fill="#1a1a1a"):
     return ''
 
 
-def _dots(black, white, ox, oy):
-    r, gap = 5, 14
-    pos = [(ox, oy), (ox+gap, oy), (ox, oy+gap), (ox+gap, oy+gap)]
+def _dots(black, white, cx, cy):
+    r, gap = 5, 13
+    start = cx - (N - 1) * gap / 2
     out = []
-    for i, (x, y) in enumerate(pos):
+    for i in range(N):
+        x = start + i * gap
         if i < black:
-            out.append(f'<circle cx="{x}" cy="{y}" r="{r}" fill="#000"/>')
+            out.append(f'<circle cx="{x}" cy="{cy}" r="{r}" fill="#000"/>')
         elif i < black + white:
-            out.append(f'<circle cx="{x}" cy="{y}" r="{r}" fill="none" stroke="#000" stroke-width="1.5"/>')
+            out.append(f'<circle cx="{x}" cy="{cy}" r="{r}" fill="none" stroke="#000" stroke-width="1.5"/>')
         else:
-            out.append(f'<circle cx="{x}" cy="{y}" r="{r}" fill="none" stroke="#ccc" stroke-width="1"/>')
+            out.append(f'<circle cx="{x}" cy="{cy}" r="{r}" fill="none" stroke="#ccc" stroke-width="1"/>')
     return ''.join(out)
 
 
@@ -78,7 +79,7 @@ def _svg(guesses_scores, secret, show_answer):
                    f'fill="{"#f5f5f5" if i % 2 == 0 else "#fff"}"/>')
         for ci, sh in enumerate(guess):
             out.append(_shape(sh, pad + ci * cell + cell // 2, ry + row_h // 2))
-        out.append(_dots(black, white, pad + N * cell + pad + 2, ry + row_h // 2 - 11))
+        out.append(_dots(black, white, pad + N * cell + pad + score_w // 2, ry + row_h // 2))
 
     # Answer row
     if show_answer:
@@ -125,15 +126,14 @@ def collect_guess(today=None):
     all_codes = list(permutations(SHAPES, N))
     secret = list(rng.choice(all_codes))
     guesses = _make_guesses(rng, secret, all_codes)
-    return (
+    puzzle = (
         f"<div class='puzzle-block'>"
-        f"<p class='math-hint'>A secret code of 4 shapes (no repeats) was chosen from the 5 above. "
+        f"<p class='math-hint'>A secret code of {N} shapes (no repeats) was chosen from the {len(SHAPES)} above. "
         f"Each row shows a guess and its score: "
         f"&#9679; = right shape, right spot &nbsp; &#9675; = right shape, wrong spot. "
         f"What is the code?</p>"
         f"{_svg(guesses, secret, show_answer=False)}"
-        f"<p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p>"
-        f"<p class='math-hint'>&#8645; flip for answer</p>"
-        f"{_svg(guesses, secret, show_answer=True)}"
         f"</div>"
     )
+    answer = f"<div class='puzzle-block'>{_svg(guesses, secret, show_answer=True)}</div>"
+    return puzzle, answer
