@@ -75,7 +75,8 @@ def _render_png(grid, clues, n, filled, path):
     num_f = _font(56 * s)
 
     def tc(x, y, val, font):
-        d.text((x * s, y * s), str(val), fill="black", font=font, anchor="mm")
+        d.text((x * s, y * s), str(val), fill="black", font=font, anchor="mm",
+               stroke_width=max(1, s // 2), stroke_fill="black")
 
     gx = gy = mg
     for c, v in enumerate(top):    tc(gx + c*cs + cs/2, mg/2, v, clue_f)
@@ -113,8 +114,8 @@ def collect_towers(today=None, base_url=""):
     _render_png(grid, clues, n, False, os.path.join(OUT_DIR, q_name))
     _render_png(grid, clues, n, True,  os.path.join(OUT_DIR, a_name))
 
-    q_src = f"{OUT_DIR}/{q_name}"
-    a_src = f"{OUT_DIR}/{a_name}"
+    q_src = f"{base_url}/{OUT_DIR}/{q_name}"
+    a_src = f"{base_url}/{OUT_DIR}/{a_name}"
 
     puzzle = (
         f"<div class='puzzle-block'>"
