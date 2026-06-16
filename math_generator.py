@@ -33,8 +33,16 @@ def _basic_facts(rng):
             a, b = rng.randint(1, 50), rng.randint(1, 50)
             facts.append((f"{a} + {b}", a + b))
         elif op == "sub":
-            a = rng.randint(10, 99)
-            b = rng.randint(1, a)
+            # No borrowing: each digit of b ≤ the matching digit of a, so it
+            # stays achievable with mental math at this age (e.g. 78 − 46, not
+            # 76 − 48 which needs a regroup in the ones place).
+            while True:
+                tens_a, units_a = rng.randint(1, 9), rng.randint(0, 9)
+                tens_b, units_b = rng.randint(0, tens_a), rng.randint(0, units_a)
+                a = tens_a * 10 + units_a
+                b = tens_b * 10 + units_b
+                if b >= 1 and a != b:
+                    break
             facts.append((f"{a} − {b}", a - b))
         else:
             a = rng.choice([2, 3, 4, 5, 10, 11])
