@@ -427,9 +427,9 @@ def kids_main():
 <section><h2>01. weather</h2>{weather_content if weather_content else '<p>unavailable</p>'}</section><hr>
 <section><h2>02. math challenge</h2>{math_content}</section><hr>
 <section><h2>03. would you rather</h2>{wyr_content}</section><hr>
-<section><h2>04. space</h2>{apod_content if apod_content else '<p>unavailable</p>'}</section><hr>
-<section><h2>05. word of the day</h2>{language_content if language_content else '<p>unavailable</p>'}</section><hr>
-<section><h2>06. on this day</h2>{otd_content if otd_content else '<p>unavailable</p>'}</section>
+<section><h2>04. word of the day</h2>{language_content if language_content else '<p>unavailable</p>'}</section><hr>
+<section><h2>05. on this day</h2>{otd_content if otd_content else '<p>unavailable</p>'}</section><hr>
+<section><h2>06. space</h2>{apod_content if apod_content else '<p>unavailable</p>'}</section>
 </body></html>"""
 
         with open("index-kids.html", "w", encoding="utf-8") as f:

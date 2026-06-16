@@ -118,6 +118,17 @@ ul { padding-left: 1.4em; }
     margin: 0.5em 0;
 }
 
+.lang-label {
+    display: inline-block;
+    width: 1.8em;
+    font-size: 0.75em;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #555;
+    vertical-align: middle;
+}
+
 .lang-eng {
     font-size: 1.3em;
     font-weight: bold;
