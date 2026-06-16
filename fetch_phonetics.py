@@ -73,7 +73,7 @@ def ipa_to_sounds(ipa_str, mapping):
     return re.sub(r"-+", "-", "-".join(parts)).strip("-") or None
 
 
-def get_wiktionary_ipa(lookup_word, language_section):
+def get_wiktionary_ipa(lookup_word, language_section, prefer_dialect=None):
     try:
         r = requests.get(
             f"https://en.wiktionary.org/wiki/{lookup_word}",
@@ -85,7 +85,9 @@ def get_wiktionary_ipa(lookup_word, language_section):
         content = soup.find("div", class_="mw-parser-output")
         if not content:
             return None
+
         in_section = False
+        candidates = []  # list of (ipa, parent_li_text)
         for child in content.children:
             if not hasattr(child, "name") or not child.name:
                 continue
@@ -98,10 +100,22 @@ def get_wiktionary_ipa(lookup_word, language_section):
             if not in_section:
                 continue
             for span in child.find_all("span", class_="IPA"):
-                ipa = re.sub(r"\s*\(.*?\)\s*", "", span.get_text(strip=True)).strip()
-                if ipa.startswith("/") or ipa.startswith("["):
+                raw = span.get_text(strip=True)
+                ipa = re.sub(r"\s*\(.*?\)\s*", "", raw).strip()
+                if not (ipa.startswith("/") or ipa.startswith("[")):
+                    continue
+                # Capture the enclosing <li> text for dialect detection
+                li = span.find_parent("li")
+                context = li.get_text() if li else ""
+                candidates.append((ipa, context))
+
+        if not candidates:
+            return None
+        if prefer_dialect:
+            for ipa, ctx in candidates:
+                if prefer_dialect.lower() in ctx.lower():
                     return ipa
-        return None
+        return candidates[0][0]
     except Exception as e:
         print(f"    Wiktionary error for '{lookup_word}': {e}")
         return None
@@ -118,7 +132,7 @@ def main():
 
         fr_ipa = get_wiktionary_ipa(entry["fr_lookup"], "French")
         time.sleep(0.8)
-        pt_ipa = get_wiktionary_ipa(entry["pt_lookup"], "Portuguese")
+        pt_ipa = get_wiktionary_ipa(entry["pt_lookup"], "Portuguese", prefer_dialect="Brazil")
         time.sleep(0.8)
 
         fr_sounds = ipa_to_sounds(fr_ipa, FR_MAPPING) if fr_ipa else None
