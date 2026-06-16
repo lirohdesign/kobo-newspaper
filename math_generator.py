@@ -62,6 +62,7 @@ def collect_math_challenge(today=None):
         f"<span class='math-hint'>hint: {nines_hint}</span></p>"
         f"<p><strong>3. quick facts</strong></p>"
         f"<ul class='fact-list'>{facts_html}</ul>"
-        f"<p class='math-answers'>answers: {answers_str}</p>"
+        f"<p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p>"
+        f"<p class='math-answers'>&#8645; flip for answers &nbsp;&nbsp; {answers_str}</p>"
         f"</div>"
     )
