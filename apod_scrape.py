@@ -11,6 +11,9 @@ def collect_apod():
             params={"api_key": NASA_API_KEY},
             timeout=15
         )
+        if r.status_code != 200:
+            print(f"DEBUG: APOD HTTP {r.status_code}: {r.text[:200]}")
+            return ""
         data = r.json()
         if "code" in data:
             print(f"DEBUG: APOD API error {data.get('code')}: {data.get('msg', data)}")

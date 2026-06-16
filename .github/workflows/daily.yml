@@ -39,6 +39,8 @@ jobs:
 
       - name: Run Kids Build
         env:
+          INSTAPAPER_USER: ${{ secrets.INSTAPAPER_USER }}
+          INSTAPAPER_PASS: ${{ secrets.INSTAPAPER_PASS }}
           INSTAPAPER_USER_KIDS: ${{ secrets.INSTAPAPER_USER_KIDS }}
           INSTAPAPER_PASS_KIDS: ${{ secrets.INSTAPAPER_PASS_KIDS }}
           NWS_LAT: ${{ secrets.NWS_LAT }}
