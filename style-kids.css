@@ -118,28 +118,19 @@ ul { padding-left: 1.4em; }
     margin: 0.5em 0;
 }
 
-.lang-table {
-    border-collapse: collapse;
-    width: 100%;
-}
-
-.lang-table td {
-    padding: 0.3em 0.5em;
-}
-
-.lang-flag {
-    width: 2em;
-    font-size: 1.3em;
-}
-
 .lang-eng {
     font-size: 1.3em;
     font-weight: bold;
     text-transform: lowercase;
+    margin-bottom: 0.3em;
+}
+
+.lang-row {
+    margin: 0.2em 0;
 }
 
 .lang-word {
-    font-size: 1.15em;
+    font-size: 1.1em;
     font-weight: bold;
 }
 

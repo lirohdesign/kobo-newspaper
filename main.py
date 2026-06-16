@@ -438,12 +438,11 @@ def kids_main():
         with open(f"old_issues/{file_date}-kids.html", "w", encoding="utf-8") as f:
             f.write(page.replace("style-kids.css", "../style-kids.css"))
 
+        kids_url = f"{base_url}/index-kids.html?v={ts}"
         if INSTAPAPER_USER_KIDS and INSTAPAPER_PASS_KIDS:
-            add_to_instapaper(
-                f"{base_url}/index-kids.html?v={ts}",
-                user=INSTAPAPER_USER_KIDS,
-                pwd=INSTAPAPER_PASS_KIDS
-            )
+            add_to_instapaper(kids_url, user=INSTAPAPER_USER_KIDS, pwd=INSTAPAPER_PASS_KIDS)
+        if INSTAPAPER_USER and INSTAPAPER_PASS:
+            add_to_instapaper(kids_url, user=INSTAPAPER_USER, pwd=INSTAPAPER_PASS)
 
         update_archive_index()
         print("--- KIDS BUILD SUCCESSFUL ---")
