@@ -3,8 +3,8 @@ from datetime import datetime
 from itertools import permutations
 
 
-SHAPES = ['circle', 'square', 'triangle', 'diamond', 'cross']
-N = 4
+SHAPES = ['circle', 'square', 'triangle', 'diamond']
+N = 3
 
 
 def _rng(today):

@@ -90,7 +90,7 @@ def collect_towers(today=None):
     if today is None:
         today = datetime.now()
     rng = _rng(today)
-    n = 4
+    n = 3
     grid = _fill_grid(rng, n)
     clues = _clues(grid, n)
     return (
