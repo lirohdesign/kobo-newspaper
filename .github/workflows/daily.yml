@@ -34,7 +34,16 @@ jobs:
           INSTAPAPER_USER: ${{ secrets.INSTAPAPER_USER }}
           INSTAPAPER_PASS: ${{ secrets.INSTAPAPER_PASS }}
           GUARDIAN_API_KEY: ${{ secrets.GUARDIAN_API_KEY }}
+          NWS_CWA: ${{ secrets.NWS_CWA }}
         run: python main.py
+
+      - name: Run Kids Build
+        env:
+          INSTAPAPER_USER_KIDS: ${{ secrets.INSTAPAPER_USER_KIDS }}
+          INSTAPAPER_PASS_KIDS: ${{ secrets.INSTAPAPER_PASS_KIDS }}
+          NWS_LAT: ${{ secrets.NWS_LAT }}
+          NWS_LON: ${{ secrets.NWS_LON }}
+        run: python main.py --mode kids
         
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
