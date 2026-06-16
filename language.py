@@ -23,14 +23,14 @@ def collect_language(today=None):
     fr = entry["fr"]
     pt = entry["pt"]
 
-    def word_row(flag, word, sounds):
+    def word_row(label, word, sounds):
         ph = f" <span class='lang-sounds'>({sounds})</span>" if sounds else ""
-        return f"<p class='lang-row'>{flag} <span class='lang-word'>{word}</span>{ph}</p>"
+        return f"<p class='lang-row'><span class='lang-label'>{label}</span> <span class='lang-word'>{word}</span>{ph}</p>"
 
     return (
         f"<div class='lang-block'>"
-        f"<p class='lang-eng'>🇺🇸 {entry['eng']}</p>"
-        f"{word_row('🇫🇷', fr['word'], fr.get('sounds'))}"
-        f"{word_row('🇧🇷', pt['word'], pt.get('sounds'))}"
+        f"<p class='lang-eng'><span class='lang-label'>en</span> {entry['eng']}</p>"
+        f"{word_row('fr', fr['word'], fr.get('sounds'))}"
+        f"{word_row('pt', pt['word'], pt.get('sounds'))}"
         f"</div>"
     )
