@@ -402,6 +402,7 @@ def kids_main():
     from would_you_rather import collect_wyr
     from kids_weather import collect_kids_weather
     from apod_scrape import collect_apod
+    from language import collect_language
 
     try:
         print("--- KIDS BUILD START ---")
@@ -417,13 +418,15 @@ def kids_main():
         math_content = collect_math_challenge(today)
         wyr_content = collect_wyr(today)
         apod_content = collect_apod()
+        language_content = collect_language(today)
 
         page = f"""<!DOCTYPE html><html><head><meta charset='UTF-8'><link rel='stylesheet' href='style-kids.css'></head>
 <body><h1>liroh kids {ts}</h1>
 <section><h2>01. weather</h2>{weather_content if weather_content else '<p>unavailable</p>'}</section><hr>
 <section><h2>02. math challenge</h2>{math_content}</section><hr>
 <section><h2>03. would you rather</h2>{wyr_content}</section><hr>
-<section><h2>04. space</h2>{apod_content if apod_content else '<p>unavailable</p>'}</section>
+<section><h2>04. space</h2>{apod_content if apod_content else '<p>unavailable</p>'}</section><hr>
+<section><h2>05. word of the day</h2>{language_content if language_content else '<p>unavailable</p>'}</section>
 </body></html>"""
 
         with open("index-kids.html", "w", encoding="utf-8") as f:
