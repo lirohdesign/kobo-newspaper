@@ -96,7 +96,7 @@ def _render_png(grid, clues, n, filled, path):
     d.rectangle([gx*s, gy*s, (gx + n*cs)*s, (gy + n*cs)*s],
                 outline="black", width=4 * s)
 
-    img.resize((W, W), Image.LANCZOS).save(path)
+    img.resize((W, W), Image.LANCZOS).save(path, "JPEG", quality=92)
 
 
 def collect_towers(today=None, base_url=""):
@@ -109,8 +109,8 @@ def collect_towers(today=None, base_url=""):
 
     os.makedirs(OUT_DIR, exist_ok=True)
     date = today.strftime("%Y-%m-%d")
-    q_name = f"towers-{date}.png"
-    a_name = f"towers-{date}-answer.png"
+    q_name = f"towers-{date}.jpg"
+    a_name = f"towers-{date}-answer.jpg"
     _render_png(grid, clues, n, False, os.path.join(OUT_DIR, q_name))
     _render_png(grid, clues, n, True,  os.path.join(OUT_DIR, a_name))
 
