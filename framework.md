@@ -159,18 +159,33 @@ Add `?v={timestamp}` to page URLs sent to Instapaper. Without this, Instapaper m
 
 ## Deployment
 
-### GitHub Actions (`.github/workflows/daily.yml`)
+Two independent GitHub Actions workflows, each with their own schedule and deploy step. They were split so the kids build never waits behind the standard build's external scraper steps (NYT, weather, cinema, calendar).
 
-Runs on schedule (weekday 6:29 AM CST / 7:43 AM CST weekends) plus `workflow_dispatch`.
+### Standard build (`.github/workflows/daily.yml`)
 
-Steps:
+Runs weekday 6:29 AM CST / weekend 7:43 AM CST, plus `workflow_dispatch`.
+
 1. Clone gh-pages branch → restore `old_issues/` and `nyt_morning.html` into workspace
 2. Install: `pip install requests beautifulsoup4 certifi pillow`
 3. Run standard build (`python main.py`)
-4. Run kids build (`python main.py --mode kids`)
-5. Deploy: `peaceiris/actions-gh-pages@v4` with `publish_dir: ./`, `keep_files: true`
+4. Deploy: `peaceiris/actions-gh-pages@v4` with `publish_dir: ./`, `keep_files: true`
 
-`keep_files: true` means files already on gh-pages are not deleted when new content is deployed. This is how `puzzles/*.jpg` accumulate across days — each build adds new date-stamped files without removing old ones. It also preserves archived `old_issues/` across builds.
+### Kids build (`.github/workflows/kids-daily.yml`)
+
+Runs daily at 5:50 AM CST, plus `workflow_dispatch`. No dependency on the standard build's content or schedule.
+
+1. Clone gh-pages branch → restore `old_issues/` only (kids build doesn't need `nyt_morning.html`)
+2. Install: `pip install -r requirements.txt`
+3. Run kids build (`python main.py --mode kids`)
+4. Deploy: same `peaceiris/actions-gh-pages@v4` step, `keep_files: true`
+
+Both workflows write into the same `old_issues/` and `archive.html` on gh-pages. Since the kids run completes well before the standard run starts, there's no overlap/race on the gh-pages branch.
+
+`keep_files: true` means files already on gh-pages are not deleted when new content is deployed. This is how `puzzles/*.jpg` accumulate across days — each build adds new date-stamped files without removing old ones. It also preserves archived `old_issues/` across builds, and preserves each workflow's output (e.g. `index.html`) when the *other* workflow deploys.
+
+### DST drift (known limitation)
+
+GitHub Actions cron is fixed UTC and does not adjust for daylight saving time. All three schedule entries (standard weekday/weekend, kids daily) are written assuming CST (UTC-6) — during CDT (UTC-5, roughly March–November) actual delivery is an hour later than the comment states. This is a known, accepted imprecision, not a bug to "fix" by chasing DST-aware cron syntax (GitHub Actions doesn't support it). If delivery timing actually matters more precisely, the fix is two cron lines per schedule (one for each DST period) with no automatic switching — would need manual updates twice a year, or a date-gated job condition.
 
 ### GitHub Pages base URL
 

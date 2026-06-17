@@ -1,41 +1,43 @@
-name: Daily Newspaper
+name: Kids Newspaper
 
 on:
   schedule:
-    # 6:30 AM CST (12:30 PM UTC) Weekdays (Mon-Fri)
-    - cron: '29 12 * * 1-5'
-    # 7:45 AM CST (1:45 PM UTC) Weekends (Sat-Sun)
-    - cron: '43 13 * * 6,0'
+    # 5:50 AM CST (11:50 AM UTC) every day. Drifts to 6:50 AM during CDT —
+    # GitHub Actions cron is fixed UTC and doesn't adjust for DST, same as
+    # the standard build's schedule in daily.yml.
+    - cron: '50 11 * * *'
   workflow_dispatch:
 
 jobs:
-  build_and_deploy:
+  build_and_deploy_kids:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      
+
       - name: Sync existing site
         run: |
           git clone --branch gh-pages --depth 1 https://github.com/${{ github.repository }}.git existing_site
-          if [ -f "existing_site/nyt_morning.html" ]; then cp existing_site/nyt_morning.html ./; fi
           if [ -d "existing_site/old_issues" ]; then cp -r existing_site/old_issues ./; fi
           rm -rf existing_site
-          
+
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.13'
-          
+
       - name: Install dependencies
-        run: pip install requests beautifulsoup4 certifi pillow
-        
-      - name: Run Newspaper Build
+        run: pip install -r requirements.txt
+
+      - name: Run Kids Build
         env:
           INSTAPAPER_USER: ${{ secrets.INSTAPAPER_USER }}
           INSTAPAPER_PASS: ${{ secrets.INSTAPAPER_PASS }}
-          GUARDIAN_API_KEY: ${{ secrets.GUARDIAN_API_KEY }}
-          NWS_CWA: ${{ secrets.NWS_CWA }}
-        run: python main.py
+          INSTAPAPER_USER_KIDS: ${{ secrets.INSTAPAPER_USER_KIDS }}
+          INSTAPAPER_PASS_KIDS: ${{ secrets.INSTAPAPER_PASS_KIDS }}
+          NWS_LAT: ${{ secrets.NWS_LAT }}
+          NWS_LON: ${{ secrets.NWS_LON }}
+          NASA_API_KEY: ${{ secrets.NASA_API_KEY }}
+        run: python main.py --mode kids
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
