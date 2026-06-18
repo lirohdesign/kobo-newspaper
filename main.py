@@ -62,7 +62,7 @@ def update_archive_index():
     links = "".join([f'<li><a href="old_issues/{f}">{f.replace(".html", "")}</a></li>' for f in files])
     
     html = f"""<!DOCTYPE html><html>
-<head><meta charset='UTF-8'><link rel='stylesheet' href='style.css'></head>
+<head><meta charset='UTF-8'><title>liroh archive</title><link rel='stylesheet' href='style.css'></head>
 <body><h1>liroh archive</h1><nav><a href="index.html">back to home</a></nav><ul>{links}</ul></body></html>"""
     
     with open("archive.html", "w", encoding="utf-8") as f:
@@ -82,7 +82,7 @@ def collect_weather(ts):
             paragraphs = [p.replace('\n', ' ').strip() for p in clean_text.split('\n\n') if p.strip()]
             content = "".join([f'<p>{p}</p>' for p in paragraphs])
             
-            html = f"""<!DOCTYPE html><html><head><meta charset='UTF-8'><link rel='stylesheet' href='style.css'></head>
+            html = f"""<!DOCTYPE html><html><head><meta charset='UTF-8'><title>liroh weather {ts}</title><link rel='stylesheet' href='style.css'></head>
             <body><h1>liroh weather {ts}</h1>{content}</body></html>"""
             with open("weather.html", "w", encoding="utf-8") as f:
                 f.write(html)
@@ -102,7 +102,7 @@ def collect_nyt(ts):
             content_blocks = re.findall(r'<(p|h2|h3|li)[^>]*>(.*?)</\1>', clean, flags=re.DOTALL)
             content = "".join([f'<{tag}>{re.sub(r"<[^>]+>", "", text).strip()}</{tag}>' for tag, text in content_blocks if tag in ('h2', 'h3') or len(text) > 40])
             
-            html = f"""<!DOCTYPE html><html><head><meta charset='UTF-8'><link rel='stylesheet' href='style.css'></head>
+            html = f"""<!DOCTYPE html><html><head><meta charset='UTF-8'><title>liroh nyt morning {ts}</title><link rel='stylesheet' href='style.css'></head>
             <body><h1>liroh nyt morning {ts}</h1>{content}</body></html>"""
             with open("nyt.html", "w", encoding="utf-8") as f:
                 f.write(html)
@@ -302,7 +302,7 @@ def collect_cinema(ts):
 
     content = "\n<hr>\n".join(sections)
     with open("cinema.html", "w", encoding="utf-8") as f:
-        f.write(f"<!DOCTYPE html><html><head><meta charset='UTF-8'><link rel='stylesheet' href='style.css'></head><body><h1>liroh cinema {ts}</h1>{content}</body></html>")
+        f.write(f"<!DOCTYPE html><html><head><meta charset='UTF-8'><title>liroh cinema {ts}</title><link rel='stylesheet' href='style.css'></head><body><h1>liroh cinema {ts}</h1>{content}</body></html>")
     return content
 
 
@@ -369,12 +369,12 @@ def main():
             )
         
         with open("links.html", "w", encoding="utf-8") as f:
-            f.write(f"<!DOCTYPE html><html><head><meta charset='UTF-8'><link rel='stylesheet' href='style.css'></head><body><h1>liroh links {ts}</h1>{links_final_content}</body></html>")
+            f.write(f"<!DOCTYPE html><html><head><meta charset='UTF-8'><title>liroh links {ts}</title><link rel='stylesheet' href='style.css'></head><body><h1>liroh links {ts}</h1>{links_final_content}</body></html>")
 
         calendar_section = "\n".join(filter(None, [calendar_active, calendar_upcoming])) or "<p class='metadata'>No events due or upcoming in the next 14 days.</p>"
 
         # MASTER index.html
-        master_index = f"""<!DOCTYPE html><html><head><meta charset='UTF-8'><link rel='stylesheet' href='style.css'></head>
+        master_index = f"""<!DOCTYPE html><html><head><meta charset='UTF-8'><title>liroh daily {ts}</title><link rel='stylesheet' href='style.css'></head>
 <body><h1>liroh daily {ts}</h1><nav><a href="weather.html">weather</a> | <a href="nyt.html">nyt</a> | <a href="links.html">links</a> | <a href="cinema.html">cinema</a> | <a href="archive.html">archive</a></nav>
 <section><h2>01. weather</h2>{weather_content if weather_content else '<p>unavailable</p>'}</section><hr>
 <section><h2>02. nyt briefing</h2>{nyt_content if nyt_content else '<p>unavailable</p>'}</section><hr>
@@ -440,7 +440,7 @@ def kids_main():
             f"<h3>05. code breaker</h3>{guess_answers}"
         )
 
-        page = f"""<!DOCTYPE html><html><head><meta charset='UTF-8'><link rel='stylesheet' href='style-kids.css'></head>
+        page = f"""<!DOCTYPE html><html><head><meta charset='UTF-8'><title>liroh kids {ts}</title><link rel='stylesheet' href='style-kids.css'></head>
 <body><h1>liroh kids {ts}</h1>
 <section><h2>01. weather</h2>{weather_content if weather_content else '<p>unavailable</p>'}</section><hr>
 <section><h2>02. math challenge</h2>{math_content}</section><hr>

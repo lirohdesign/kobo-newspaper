@@ -44,6 +44,7 @@ These were learned through repeated live testing. Violating them causes silent f
 
 **Cache busting:**
 - Always append `?v={ts}` to page URLs sent to Instapaper. Without it, Instapaper may serve a stale cached version of the page.
+- Every generated page needs an explicit `<title>` tag in `<head>`, matching the `<h1>`. None of them had one — Instapaper fell back to parsing the `<h1>` for its title, and that fallback appears to cache more stubbornly than body content: `?v={ts}` refreshed the displayed content correctly but the bookmark's title metadata stayed pinned to a previous day's value. Fixed across all 7 page builders in `main.py` 2026-06-18.
 
 * * *
 
