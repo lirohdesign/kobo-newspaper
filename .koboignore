@@ -1,0 +1,10 @@
+# <!-- kobo-loader:start -->
+# .koboignore — exclude files from kobo-loader's markdown/PDF sweep.
+# Gitignore-style: one glob pattern per line, '#' starts a comment. A
+# pattern with no '/' matches a file or folder name anywhere in this
+# tree; a pattern with a '/' matches the full path relative to this
+# project's root. A trailing '/' is just a readability marker for a
+# directory pattern. kobo-loader only reads this file — patterns below
+# are yours to add, edit, or remove.
+# <!-- kobo-loader:end -->
+
