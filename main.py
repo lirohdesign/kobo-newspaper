@@ -391,7 +391,10 @@ def main():
         with open(f"old_issues/{file_date}.html", "w", encoding="utf-8") as f:
             f.write(master_index.replace("style.css", "../style.css"))
 
-        # Instapaper Sends for local pages
+        # Combined send — single page covering all sections (like kids build)
+        add_to_instapaper(f"{base_url}/index.html?v={ts}", title=f"liroh daily {ts}")
+
+        # Individual sends kept until combined page is confirmed working
         if weather_content: add_to_instapaper(f"{base_url}/weather.html?v={ts}", title=f"liroh weather {ts}")
         if nyt_content: add_to_instapaper(f"{base_url}/nyt.html?v={ts}", title=f"liroh nyt morning {ts}")
         add_to_instapaper(f"{base_url}/links.html?v={ts}", title=f"liroh links {ts}")
