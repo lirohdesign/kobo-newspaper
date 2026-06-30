@@ -41,11 +41,14 @@ SEND_GUARDIAN_TO_INSTAPAPER = False
 # Now stored in your persistent archive folder
 SENT_LOG_PATH = "old_issues/sent_articles.json"
 
-def add_to_instapaper(url, user=None, pwd=None):
+def add_to_instapaper(url, user=None, pwd=None, title=None):
     print(f"DEBUG: Attempting Instapaper add: {url}")
     api_url = "https://www.instapaper.com/api/add"
     try:
-        r = requests.post(api_url, auth=(user or INSTAPAPER_USER, pwd or INSTAPAPER_PASS), data={'url': url}, timeout=15)
+        data = {'url': url}
+        if title:
+            data['title'] = title
+        r = requests.post(api_url, auth=(user or INSTAPAPER_USER, pwd or INSTAPAPER_PASS), data=data, timeout=15)
         print(f"DEBUG: Instapaper Response: {r.status_code}")
         return r.status_code == 200
     except Exception as e:
@@ -389,10 +392,10 @@ def main():
             f.write(master_index.replace("style.css", "../style.css"))
 
         # Instapaper Sends for local pages
-        if weather_content: add_to_instapaper(f"{base_url}/weather.html?v={ts}")
-        if nyt_content: add_to_instapaper(f"{base_url}/nyt.html?v={ts}")
-        add_to_instapaper(f"{base_url}/links.html?v={ts}")
-        if cinema_content: add_to_instapaper(f"{base_url}/cinema.html?v={ts}")
+        if weather_content: add_to_instapaper(f"{base_url}/weather.html?v={ts}", title=f"liroh weather {ts}")
+        if nyt_content: add_to_instapaper(f"{base_url}/nyt.html?v={ts}", title=f"liroh nyt morning {ts}")
+        add_to_instapaper(f"{base_url}/links.html?v={ts}", title=f"liroh links {ts}")
+        if cinema_content: add_to_instapaper(f"{base_url}/cinema.html?v={ts}", title=f"liroh cinema {ts}")
 
         update_archive_index()
         
@@ -461,9 +464,9 @@ def kids_main():
 
         kids_url = f"{base_url}/index-kids.html?v={ts}"
         if INSTAPAPER_USER_KIDS and INSTAPAPER_PASS_KIDS:
-            add_to_instapaper(kids_url, user=INSTAPAPER_USER_KIDS, pwd=INSTAPAPER_PASS_KIDS)
+            add_to_instapaper(kids_url, user=INSTAPAPER_USER_KIDS, pwd=INSTAPAPER_PASS_KIDS, title=f"liroh kids {ts}")
         if INSTAPAPER_USER and INSTAPAPER_PASS:
-            add_to_instapaper(kids_url, user=INSTAPAPER_USER, pwd=INSTAPAPER_PASS)
+            add_to_instapaper(kids_url, user=INSTAPAPER_USER, pwd=INSTAPAPER_PASS, title=f"liroh kids {ts}")
 
         update_archive_index()
         print("--- KIDS BUILD SUCCESSFUL ---")
