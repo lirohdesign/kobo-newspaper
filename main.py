@@ -394,11 +394,11 @@ def main():
         # Combined send — single page covering all sections (like kids build)
         add_to_instapaper(f"{base_url}/index.html?v={ts}", title=f"liroh daily {ts}")
 
-        # Individual sends kept until combined page is confirmed working
-        if weather_content: add_to_instapaper(f"{base_url}/weather.html?v={ts}", title=f"liroh weather {ts}")
-        if nyt_content: add_to_instapaper(f"{base_url}/nyt.html?v={ts}", title=f"liroh nyt morning {ts}")
-        add_to_instapaper(f"{base_url}/links.html?v={ts}", title=f"liroh links {ts}")
-        if cinema_content: add_to_instapaper(f"{base_url}/cinema.html?v={ts}", title=f"liroh cinema {ts}")
+        # Individual sends disabled — combined index.html send confirmed working
+        # if weather_content: add_to_instapaper(f"{base_url}/weather.html?v={ts}", title=f"liroh weather {ts}")
+        # if nyt_content: add_to_instapaper(f"{base_url}/nyt.html?v={ts}", title=f"liroh nyt morning {ts}")
+        # add_to_instapaper(f"{base_url}/links.html?v={ts}", title=f"liroh links {ts}")
+        # if cinema_content: add_to_instapaper(f"{base_url}/cinema.html?v={ts}", title=f"liroh cinema {ts}")
 
         update_archive_index()
         
