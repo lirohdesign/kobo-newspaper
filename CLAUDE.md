@@ -26,6 +26,17 @@ The full architecture is in `framework.md`. Read that too before touching anythi
 
 * * *
 
+## One-off specials — confirmed working pattern (2026-07-08)
+
+For a same-day special edition (first proof: the kids Indianapolis Zoo special, confirmed delivered to the device in under 12 minutes from request), don't touch `main.py` or the daily workflows. Instead:
+
+1. **Static page** at repo root (e.g. `zoo-special.html`), committed to `main`, following all the Kobo rendering rules below (explicit `<title>`, `<ul><li><strong>` for labelled lists, JPEG images at absolute URLs with date-stamped filenames).
+2. **Images in a committed dir** (e.g. `zoo/`) — *not* `puzzles/`, which is untracked-on-main by convention. Wikipedia REST API (`/api/rest_v1/page/summary/{Page}`) gives a lead image per species; Wikimedia rate-limits (429) and rejects arbitrary thumb sizes (400) — retry with backoff and fall back to the original file URL, then resize to ≤560px wide JPEG via Pillow.
+3. **One-off workflow** (`.github/workflows/zoo-special.yml` is the template) triggered `on: push: paths: [<the page>]` — this self-triggers on the push that adds it, so no `gh` CLI needed locally. Steps: checkout → sync `old_issues/` from gh-pages → peaceiris deploy → **poll the live URL until it serves the new content** → curl the Instapaper API with the repo secrets. The send-after-deploy ordering matters; the daily builds send before deploy and get away with it, but a brand-new URL must be live before Instapaper fetches it.
+4. Trigger paths are scoped to the special page, so the workflow is inert afterward — safe to leave or delete.
+
+* * *
+
 ## Instapaper / Kobo rendering — standing rules
 
 These were learned through repeated live testing. Violating them causes silent failures that are only visible on the physical device.
