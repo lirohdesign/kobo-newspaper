@@ -1,0 +1,64 @@
+name: Zoo Special (one-off)
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'zoo-special.html'
+  workflow_dispatch:
+
+jobs:
+  deploy_and_send:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Sync existing site
+        run: |
+          git clone --branch gh-pages --depth 1 https://github.com/${{ github.repository }}.git existing_site
+          if [ -d "existing_site/old_issues" ]; then cp -r existing_site/old_issues ./; fi
+          rm -rf existing_site
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./
+          publish_branch: gh-pages
+          keep_files: true
+
+      - name: Wait for page to go live
+        run: |
+          URL="https://lirohdesign.github.io/kobo-newspaper/zoo-special.html"
+          for i in $(seq 1 30); do
+            if curl -sf "$URL?live=$i" | grep -q "zoo special 2026-07-08"; then
+              echo "Page is live."
+              exit 0
+            fi
+            echo "Not live yet (attempt $i), waiting 10s..."
+            sleep 10
+          done
+          echo "Page never went live" && exit 1
+
+      - name: Send to Instapaper
+        env:
+          INSTAPAPER_USER: ${{ secrets.INSTAPAPER_USER }}
+          INSTAPAPER_PASS: ${{ secrets.INSTAPAPER_PASS }}
+          INSTAPAPER_USER_KIDS: ${{ secrets.INSTAPAPER_USER_KIDS }}
+          INSTAPAPER_PASS_KIDS: ${{ secrets.INSTAPAPER_PASS_KIDS }}
+        run: |
+          TS=$(date +%s)
+          URL="https://lirohdesign.github.io/kobo-newspaper/zoo-special.html?v=$TS"
+          TITLE="liroh kids zoo special 2026-07-08"
+          if [ -n "$INSTAPAPER_USER_KIDS" ]; then
+            CODE=$(curl -s -o /dev/null -w "%{http_code}" -u "$INSTAPAPER_USER_KIDS:$INSTAPAPER_PASS_KIDS" \
+              --data-urlencode "url=$URL" --data-urlencode "title=$TITLE" \
+              https://www.instapaper.com/api/add)
+            echo "Kids account: HTTP $CODE"
+          fi
+          if [ -n "$INSTAPAPER_USER" ]; then
+            CODE=$(curl -s -o /dev/null -w "%{http_code}" -u "$INSTAPAPER_USER:$INSTAPAPER_PASS" \
+              --data-urlencode "url=$URL" --data-urlencode "title=$TITLE" \
+              https://www.instapaper.com/api/add)
+            echo "Main account: HTTP $CODE"
+          fi
