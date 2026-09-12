@@ -19,6 +19,7 @@ Run standalone: python3 research_pull.py
 """
 import json
 import ssl
+import time
 import urllib.request
 import urllib.error
 import urllib.parse
@@ -91,13 +92,34 @@ def _domain_of(url):
     return netloc[4:] if netloc.startswith("www.") else netloc
 
 
+def _fetch_with_retry(url, attempts=3):
+    """Substack (hosting Epoch AI, SemiAnalysis, Zitron) is known to
+    occasionally 403 requests from GitHub Actions' shared runner IPs — this
+    project already has a documented dead end where Substack hard-blocks
+    those IPs entirely for a different feature (see CLAUDE.md). A single
+    403 seen in testing here resolved immediately on direct retry, so it
+    reads as transient rate-limiting rather than a hard block — worth a
+    short backoff-retry, but if 403s start recurring consistently, that's
+    the same wall as before and isn't fixable by retrying harder."""
+    last_error = None
+    for attempt in range(attempts):
+        try:
+            req = urllib.request.Request(url, headers={"User-Agent": USER_AGENT})
+            with urllib.request.urlopen(req, timeout=20, context=SSL_CONTEXT) as r:
+                return r.read()
+        except urllib.error.HTTPError as e:
+            last_error = e
+            if e.code != 403 or attempt == attempts - 1:
+                raise
+            time.sleep(2 ** attempt)
+    raise last_error
+
+
 def fetch_feed(url):
     """Fetch and parse an RSS/Atom feed. Returns a list of item dicts, each
     with plain-text 'summary' plus raw 'content_links' (hrefs found in the
     item's full content, when the feed provides one via content:encoded)."""
-    req = urllib.request.Request(url, headers={"User-Agent": USER_AGENT})
-    with urllib.request.urlopen(req, timeout=20, context=SSL_CONTEXT) as r:
-        data = r.read()
+    data = _fetch_with_retry(url)
     root = ET.fromstring(data)
     content_ns = {"content": "http://purl.org/rss/1.0/modules/content/"}
 

@@ -75,7 +75,7 @@
       "site_url": "https://quickstats.nass.usda.gov/",
       "cadence": "weekly_in_season",
       "requires_env": "NASS_API_KEY",
-      "notes": "UNVERIFIED as of 2026-09-13 — built against the documented Quick Stats API schema but never tested against a real key (none was available at build time). Sanity-check the first real output against quickstats.nass.usda.gov before trusting it. Only meaningful April-November; returns empty (not an error) off-season."
+      "notes": "Verified 2026-09-12 against live data once NASS_API_KEY was added. Two real bugs surfaced and were fixed during verification: a title/summary date mismatch, and a label collision where CORN's grain vs. silage harvest sub-series (distinguished by util_practice_desc, not class_desc) both rendered as generic 'Harvested: N%'. Only meaningful April-November; returns empty (not an error) off-season."
     },
     {
       "id": "interconnection_fyi",
