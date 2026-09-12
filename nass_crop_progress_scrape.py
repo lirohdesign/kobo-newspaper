@@ -55,16 +55,17 @@ def _query(key, commodity, year):
 
 
 def _label_of(row):
-    """NASS's own short_desc disambiguates sub-series (grain vs. silage
-    harvest, etc.) that a hand-rolled unit_desc transform collapses into
-    identical-looking duplicate labels — e.g. two distinct 'Harvested: N%'
-    rows for CORN, GRAIN vs CORN, SILAGE. Extract just the stage name,
-    keeping any class qualifier from class_desc when it's not the generic
-    'ALL CLASSES' bucket."""
+    """Confirmed via a live raw-row dump (2026-09-12): CORN's harvest
+    progress splits into GRAIN and SILAGE sub-series distinguished by
+    util_practice_desc, not class_desc (which doesn't even appear in these
+    rows — an earlier guess at the disambiguating field was wrong and
+    caused a silent duplicate-label bug in production). Only surface the
+    qualifier when it's not the generic 'ALL PRODUCTION PRACTICES' bucket
+    that most stages (denting, dough, etc.) report under."""
     stage = row.get("unit_desc", "").replace("PCT ", "").title()
-    class_desc = (row.get("class_desc") or "").strip()
-    if class_desc and class_desc.upper() != "ALL CLASSES":
-        return f"{stage} ({class_desc.title()})"
+    practice = (row.get("util_practice_desc") or row.get("prodn_practice_desc") or "").strip()
+    if practice and practice.upper() not in ("ALL PRODUCTION PRACTICES", "ALL UTILIZATION PRACTICES"):
+        return f"{stage} ({practice.title()})"
     return stage
 
 
@@ -127,19 +128,6 @@ def fetch_items():
 
 
 if __name__ == "__main__":
-    import sys
-    if len(sys.argv) > 1 and sys.argv[1] == "--debug-raw":
-        key = os.environ.get("NASS_API_KEY")
-        year = datetime.now(timezone.utc).year
-        for commodity in COMMODITIES:
-            rows = _query(key, commodity, year)
-            usable = [r for r in rows if r.get("end_code") and r.get("Value") not in (None, "", "(D)", "(NA)")]
-            latest_week = max((r["end_code"] for r in usable), default=None)
-            print(f"=== {commodity}, end_code {latest_week} ===")
-            for r in usable:
-                if r["end_code"] == latest_week:
-                    print(json.dumps(r, indent=2))
-    else:
-        for item in fetch_items():
-            print(item["title"])
-            print(item["summary"])
+    for item in fetch_items():
+        print(item["title"])
+        print(item["summary"])
