@@ -54,17 +54,45 @@ def _query(key, commodity, year):
     return body.get("data", [])
 
 
+def _label_of(row):
+    """NASS's own short_desc disambiguates sub-series (grain vs. silage
+    harvest, etc.) that a hand-rolled unit_desc transform collapses into
+    identical-looking duplicate labels — e.g. two distinct 'Harvested: N%'
+    rows for CORN, GRAIN vs CORN, SILAGE. Extract just the stage name,
+    keeping any class qualifier from class_desc when it's not the generic
+    'ALL CLASSES' bucket."""
+    stage = row.get("unit_desc", "").replace("PCT ", "").title()
+    class_desc = (row.get("class_desc") or "").strip()
+    if class_desc and class_desc.upper() != "ALL CLASSES":
+        return f"{stage} ({class_desc.title()})"
+    return stage
+
+
 def _summarize(commodity, rows):
-    if not rows:
-        return None
-    latest_week = max(r["end_code"] for r in rows if r.get("end_code"))
-    latest_rows = [r for r in rows if r.get("end_code") == latest_week]
-    parts = [f"{r['unit_desc'].replace('PCT ', '').title()}: {r['Value']}%"
-             for r in latest_rows if r.get("Value") not in (None, "", "(D)", "(NA)")]
-    if not parts:
-        return None
+    """Returns (summary_text, week_ending) for the most recent reporting
+    week that actually has data, or (None, None) if there's nothing usable
+    (e.g. off-season)."""
+    usable = [r for r in rows if r.get("end_code") and r.get("Value") not in (None, "", "(D)", "(NA)")]
+    if not usable:
+        return None, None
+
+    latest_week = max(r["end_code"] for r in usable)
+    latest_rows = [r for r in usable if r["end_code"] == latest_week]
     week_ending = latest_rows[0].get("week_ending", "")
-    return f"Indiana {commodity.title()} as of week ending {week_ending}: " + ", ".join(parts) + "."
+
+    seen = set()
+    parts = []
+    for r in latest_rows:
+        label = _label_of(r)
+        key = (label, r["Value"])
+        if key in seen:
+            continue
+        seen.add(key)
+        parts.append(f"{label}: {r['Value']}%")
+
+    if not parts:
+        return None, None
+    return f"Indiana {commodity.title()} as of week ending {week_ending}: " + ", ".join(parts) + ".", week_ending
 
 
 def fetch_items():
@@ -82,12 +110,11 @@ def fetch_items():
             print(f"DEBUG: nass_crop_progress — {commodity} fetch failed — {e}")
             continue
 
-        summary = _summarize(commodity, rows)
+        summary, week_ending = _summarize(commodity, rows)
         if not summary:
             print(f"DEBUG: nass_crop_progress — {commodity}: no current-season data (likely off-season)")
             continue
 
-        week_ending = next((r.get("week_ending") for r in rows if r.get("Value") not in (None, "")), "")
         items.append({
             "title": f"Indiana {commodity.title()} Progress — week ending {week_ending}",
             "link": SITE_URL,
