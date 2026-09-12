@@ -1,0 +1,101 @@
+{
+  "id": "semianalysis",
+  "status": "ok",
+  "items": [
+    {
+      "title": "Nvidia\u2019s Backstop Universe \u2013 Heads I Win, Tails Who Loses?",
+      "link": "https://newsletter.semianalysis.com/p/nvidias-backstop-universe-heads-i",
+      "date": "Fri, 11 Sep 2026 17:04:52 GMT",
+      "summary": "Follow the money behind the AI buildout with our AI Compute, Capital and Markets Model - understand who is funding the expansion, how deals are structured, and where the risks sit. Contact our team here to find out more.We\u2019re also hiring for SemiAnalysis\u2019s Compute, Capital & Markets team. We have\u2026"
+    },
+    {
+      "title": "What is So Hard About Behind-The-Meter Power For Datacenters? Part 1",
+      "link": "https://newsletter.semianalysis.com/p/what-is-so-hard-about-behind-the",
+      "date": "Thu, 10 Sep 2026 14:28:20 GMT",
+      "summary": "Last year we were the first to call out Onsite Gas Generation as the primary method adopted by AI Labs and Hyperscalers to solve power constraints. Our positive view was far from being consensus: behind-the-meter primary power solutions have been called all sorts of names, such as \u201cscience\u2026"
+    },
+    {
+      "title": "TPU Inference Externalization Full Steam Ahead - InferenceX",
+      "link": "https://newsletter.semianalysis.com/p/tpu-inferencex-full-steam",
+      "date": "Mon, 07 Sep 2026 20:00:18 GMT",
+      "summary": "For more than a decade, the industry has watched Google build an empire on its own silicon. Search, Ads, YouTube, and every generation of Gemini run on TPUs. Few accelerators have attracted as much architectural scrutiny or as much debate about what their performance and economics would look like\u2026"
+    },
+    {
+      "title": "Korea\u2019s Trillion-Dollar Sovereign AI Investment: Nvidia Wins, Hynix Loses",
+      "link": "https://newsletter.semianalysis.com/p/koreas-trillion-dollar-sovereign",
+      "date": "Tue, 01 Sep 2026 20:14:32 GMT",
+      "summary": "Every day, businesses and governments around the world are becoming increasingly reliant on America\u2019s frontier models. Startup CEOs already can\u2019t imagine running their companies without AI, and it won\u2019t be long until the same is true for every other organization in the world.At the same time, it\u2019s\u2026"
+    },
+    {
+      "title": "Most Neoclouds Suck At Security",
+      "link": "https://newsletter.semianalysis.com/p/most-neoclouds-suck-at-security",
+      "date": "Sun, 30 Aug 2026 15:46:22 GMT",
+      "summary": "In Shakespeare\u2019s Julius Caesar, Caesar ignores a soothsayer\u2019s warning, shrugs off his wife\u2019s dream of blood running through the streets, waves away a letter revealing his assassins by name, and strides gallantly into the one room in Rome where every senator is \u201crequired\u201d to check their weapons at\u2026"
+    },
+    {
+      "title": "OpenAI Jalape\u00f1o: Better Than Nvidia Blackwell",
+      "link": "https://newsletter.semianalysis.com/p/openai-jalapeno-better-than-nvidia",
+      "date": "Tue, 25 Aug 2026 14:00:38 GMT",
+      "summary": "OpenAI has spent the past couple years quietly building \u201cJalape\u00f1o,\u201d an inference chip just announced at Hot Chips. Rumors of a successful tapeout had been swirling for a while. But now we have details. OpenAI invited us to look at their chip, go to their labs to check out how real it is, and\u2026"
+    },
+    {
+      "title": "AgentX - InferenceXv3: Does CUDA Moat Hold up in Agentic Inferencing?",
+      "link": "https://newsletter.semianalysis.com/p/agentx-inferencexv3-does-cuda-moat",
+      "date": "Mon, 24 Aug 2026 00:19:35 GMT",
+      "summary": "Since the Claude Code inflection point in November 2025, long-context, multi-turn agentic workloads have grown rapidly. They now dominate traffic for production inferencing. In April 2026, OpenAI\u2019s Enterprise agentic spending overtook ChatGPT spending.Agentic workflows have decisively taken the\u2026"
+    },
+    {
+      "title": "Are Open Models Catching Up?",
+      "link": "https://newsletter.semianalysis.com/p/are-open-models-catching-up",
+      "date": "Fri, 21 Aug 2026 16:40:02 GMT",
+      "summary": "The past two months have been a breakout period for open source AI. Yes, there was the \u201cDeepSeek moment\u201d back in January 2025, but no one actually used R1 to do any economically valuable work. In contrast, models like GLM 5.3 and Kimi K3 are genuinely capable of many of the same coding and agentic\u2026"
+    },
+    {
+      "title": "Cerebras's Next Generation CS-4: Fast Just Got Faster",
+      "link": "https://newsletter.semianalysis.com/p/cerebrass-next-generation-cs-4-fast",
+      "date": "Wed, 19 Aug 2026 01:32:08 GMT",
+      "summary": "Cerebras revealed CS-4 this week, with more details to come at Hot Chips. CS-4 is their fourth-generation rack built around the same third generation 5nm wafer-scale engine: WSE-3. CS-4 doubles the performance of CS-3 through increased power consumption and clock frequency per wafer, and better\u2026"
+    },
+    {
+      "title": "$12B of US ratepayers' money wasted on a modeling mistake and PJM wants to do it again",
+      "link": "https://newsletter.semianalysis.com/p/12b-of-us-ratepayers-money-wasted",
+      "date": "Sun, 16 Aug 2026 22:27:59 GMT",
+      "summary": "Earlier this year, we explained why residents of the PJM area, America\u2019s largest electricity market, have seen their power bills rise by ~20%. We argued that the main culprit was PJM\u2019s auction design choices and how PJM models demand and supply. To better understand the extent of the problem, our\u2026"
+    },
+    {
+      "title": "Ultra-High Interactivity on NVIDIA GPUs? - TileRT InferenceX",
+      "link": "https://newsletter.semianalysis.com/p/ultra-high-interactivity-on-nvidia",
+      "date": "Mon, 10 Aug 2026 04:51:35 GMT",
+      "summary": "Premium-priced \u201cfast modes\u201d are proving that users will pay more for lower latency and faster tokens, potentially yielding higher gross margins. Frontier AI labs such as OpenAI are therefore evaluating purpose-built inference systems, including Cerebras and NVIDIA Groq LPUs that prioritize\u2026"
+    },
+    {
+      "title": "SpaceX 10GW in 2027 \u2013 Why It\u2019s Real, Will Drive $300B ARR for SpaceX, and Why Microsoft Will Be the Largest Offtaker",
+      "link": "https://newsletter.semianalysis.com/p/spacex-10gw-in-2027-why-its-real",
+      "date": "Fri, 07 Aug 2026 20:08:04 GMT",
+      "summary": "Elon Musk shocked the world, once again, when he announced on SpaceX\u2019s first earnings his Gigawatt ambitions for next year. He \u201cconservatively\u201d aims to build & deliver an incremental 6-8GW in 2027 alone, with potential for that number to be well above +10GW. At 50B per GW, that\u2019s $300-500B in capex\u2026"
+    },
+    {
+      "title": "Gemini is Cooked but GCP is Cooking",
+      "link": "https://newsletter.semianalysis.com/p/gemini-is-cooked-but-gcp-is-cooking",
+      "date": "Fri, 07 Aug 2026 02:32:44 GMT",
+      "summary": "On Wednesday, August 5th, Google announced a complete overhaul of DeepMind leadership. A quick recap:Demis Hassabis, DeepMind co-founder and former CEO, is no longer involved in day-to-day operations.Jeff Dean, former Google Chief Scientist and Gemini co-lead is leaving to start a neolab called\u2026"
+    },
+    {
+      "title": "Kimi K3, The Manos, The Mythos, The Legendos",
+      "link": "https://newsletter.semianalysis.com/p/kimi-k3-the-manos-the-mythos-the",
+      "date": "Mon, 03 Aug 2026 19:42:30 GMT",
+      "summary": "Kimi K3 took the world by storm at its announcement, sweeping leaderboards and establishing itself as the open frontier model. While the community is eager to understand how Kimi K3 works, many have been surprised by the unconventional techniques driving its performance. This article serves as a\u2026"
+    },
+    {
+      "title": "The Wild Wild West Of LEGO Datacenters",
+      "link": "https://newsletter.semianalysis.com/p/the-wild-wild-west-of-lego-datacenters",
+      "date": "Wed, 29 Jul 2026 22:09:56 GMT",
+      "summary": "The Labor Problem and Modularization to the RescueToday we dig into the world of datacenter construction, because how datacenters are built now bears little resemblance to how the industry has historically done it. Concrete walls arrive as finished panels, mechanical and electrical rooms arrive\u2026"
+    }
+  ],
+  "label": "SemiAnalysis",
+  "area": "ai_market",
+  "site_url": "https://semianalysis.com/",
+  "fetched_at": "2026-09-12T17:40:28.954897+00:00",
+  "description_unreliable": false
+}

@@ -1,0 +1,11 @@
+{
+  "id": "epoch_ai",
+  "status": "error",
+  "error": "HTTP Error 403: Forbidden",
+  "items": [],
+  "label": "Epoch AI \u2014 Gradient Updates & Data Insights",
+  "area": "ai_market",
+  "site_url": "https://epoch.ai/",
+  "fetched_at": "2026-09-12T17:40:28.572176+00:00",
+  "description_unreliable": false
+}

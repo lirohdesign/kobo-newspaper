@@ -1,0 +1,2420 @@
+{
+  "abcnews.com": {
+    "count": 1,
+    "example_links": [
+      "https://abcnews.com/Business/openai-ceo-sam-altman-claims-ai-singularity-arrived/story?id=135120342&ref=wheresyoured.at"
+    ],
+    "first_seen": "2026-09-12T17:40:29.242704+00:00",
+    "seen_in_sources": [
+      "ed_zitron"
+    ]
+  },
+  "access.redhat.com": {
+    "count": 1,
+    "example_links": [
+      "https://access.redhat.com/security/cve/cve-2026-4631"
+    ],
+    "first_seen": "2026-09-12T17:40:28.955363+00:00",
+    "seen_in_sources": [
+      "semianalysis"
+    ]
+  },
+  "adweek.com": {
+    "count": 1,
+    "example_links": [
+      "https://www.adweek.com/media/openais-ad-business-is-on-pace-to-miss-its-own-forecast-by-90-analyst-says/?ref=wheresyoured.at"
+    ],
+    "first_seen": "2026-09-12T17:40:29.242704+00:00",
+    "seen_in_sources": [
+      "ed_zitron"
+    ]
+  },
+  "ai.meta.com": {
+    "count": 1,
+    "example_links": [
+      "https://ai.meta.com/research/publications/cyberseceval-3-advancing-the-evaluation-of-cybersecurity-risks-and-capabilities-in-large-language-models/"
+    ],
+    "first_seen": "2026-09-12T17:40:28.955363+00:00",
+    "seen_in_sources": [
+      "semianalysis"
+    ]
+  },
+  "aireiter.com": {
+    "count": 1,
+    "example_links": [
+      "https://aireiter.com/blog/gpt-5-6-sol-token-usage-cost-guide?ref=wheresyoured.at"
+    ],
+    "first_seen": "2026-09-12T17:40:29.242704+00:00",
+    "seen_in_sources": [
+      "ed_zitron"
+    ]
+  },
+  "aligneddc.com": {
+    "count": 1,
+    "example_links": [
+      "https://aligneddc.com/"
+    ],
+    "first_seen": "2026-09-12T17:40:28.955363+00:00",
+    "seen_in_sources": [
+      "semianalysis"
+    ]
+  },
+  "amd.com": {
+    "count": 1,
+    "example_links": [
+      "https://www.amd.com/en/resources/product-security.html"
+    ],
+    "first_seen": "2026-09-12T17:40:28.955363+00:00",
+    "seen_in_sources": [
+      "semianalysis"
+    ]
+  },
+  "americanoversight.org": {
+    "count": 1,
+    "example_links": [
+      "https://americanoversight.org/investigation/covid-relief-funds-and-loans-where-has-the-money-gone/?ref=wheresyoured.at"
+    ],
+    "first_seen": "2026-09-12T17:40:29.242704+00:00",
+    "seen_in_sources": [
+      "ed_zitron"
+    ]
+  },
+  "americanprogress.org": {
+    "count": 1,
+    "example_links": [
+      "https://www.americanprogress.org/article/subprime-mortgages-by-the-numbers/?ref=wheresyoured.at"
+    ],
+    "first_seen": "2026-09-12T17:40:29.242704+00:00",
+    "seen_in_sources": [
+      "ed_zitron"
+    ]
+  },
+  "anthropic.com": {
+    "count": 6,
+    "example_links": [
+      "https://www.anthropic.com/glasswing",
+      "https://www.anthropic.com/news/higher-limits-spacex?ref=wheresyoured.at",
+      "https://www.anthropic.com/news/anthropic-raises-30-billion-series-g-funding-380-billion-post-money-valuation?ref=wheresyoured.at"
+    ],
+    "first_seen": "2026-09-12T17:40:28.955363+00:00",
+    "seen_in_sources": [
+      "semianalysis",
+      "ed_zitron"
+    ]
+  },
+  "api-docs.deepseek.com": {
+    "count": 1,
+    "example_links": [
+      "https://api-docs.deepseek.com/guides/thinking_mode/"
+    ],
+    "first_seen": "2026-09-12T17:40:28.955363+00:00",
+    "seen_in_sources": [
+      "semianalysis"
+    ]
+  },
+  "apnews.com": {
+    "count": 1,
+    "example_links": [
+      "https://apnews.com/article/meta-ai-zuckerberg-llama-chatgpt-9431120efcc8e598c3d34af9b5201d1c?ref=wheresyoured.at"
+    ],
+    "first_seen": "2026-09-12T17:40:29.242704+00:00",
+    "seen_in_sources": [
+      "ed_zitron"
+    ]
+  },
+  "apollo.com": {
+    "count": 1,
+    "example_links": [
+      "https://www.apollo.com/wealth/insights-news/insights/daily-spark/in-ai-the-41-percent-depends-on-the-59-percent?ref=wheresyoured.at"
+    ],
+    "first_seen": "2026-09-12T17:40:29.242704+00:00",
+    "seen_in_sources": [
+      "ed_zitron"
+    ]
+  },
+  "applieddigital.com": {
+    "count": 1,
+    "example_links": [
+      "https://www.applieddigital.com/"
+    ],
+    "first_seen": "2026-09-12T17:40:28.955363+00:00",
+    "seen_in_sources": [
+      "semianalysis"
+    ]
+  },
+  "aranind.com": {
+    "count": 1,
+    "example_links": [
+      "https://aranind.com/"
+    ],
+    "first_seen": "2026-09-12T17:40:28.955363+00:00",
+    "seen_in_sources": [
+      "semianalysis"
+    ]
+  },
+  "archive.ph": {
+    "count": 5,
+    "example_links": [
+      "https://archive.ph/IrVHw?ref=wheresyoured.at#selection-757.8-757.9",
+      "https://archive.ph/RU6a8?ref=wheresyoured.at",
+      "https://archive.ph/submit/?url=https%3A%2F%2Fwww.bloomberg.com%2Fnews%2Farticles%2F2026-05-05%2Fopenai-to-spend-50-billion-on-computing-in-2026-brockman-says%3Fsrnd%3Dhomepage-americas&ref=wheresyoured.at"
+    ],
+    "first_seen": "2026-09-12T17:40:29.242704+00:00",
+    "seen_in_sources": [
+      "ed_zitron"
+    ]
+  },
+  "archives-resultats-elections.interieur.gouv.fr": {
+    "count": 1,
+    "example_links": [
+      "https://www.archives-resultats-elections.interieur.gouv.fr/resultats/presidentielle-2022/FE.php?ref=wheresyoured.at"
+    ],
+    "first_seen": "2026-09-12T17:40:29.242704+00:00",
+    "seen_in_sources": [
+      "ed_zitron"
+    ]
+  },
+  "archives.cpajournal.com": {
+    "count": 1,
+    "example_links": [
+      "http://archives.cpajournal.com/2002/1202/features/f122002.htm?ref=wheresyoured.at#:~:text=became%20aware%20of%20%E2%80%9C-,off%E2%80%93balance%20sheet,-%E2%80%9D%20partnerships%20that%20hid"
+    ],
+    "first_seen": "2026-09-12T17:40:29.242704+00:00",
+    "seen_in_sources": [
+      "ed_zitron"
+    ]
+  },
+  "artificialanalysis.ai": {
+    "count": 1,
+    "example_links": [
+      "https://artificialanalysis.ai/"
+    ],
+    "first_seen": "2026-09-12T17:40:28.955363+00:00",
+    "seen_in_sources": [
+      "semianalysis"
+    ]
+  },
+  "artificiallawyer.com": {
+    "count": 1,
+    "example_links": [
+      "https://www.artificiallawyer.com/2026/01/08/harvey-hits-190m-arr-building-memory-personalisation/?ref=wheresyoured.at"
+    ],
+    "first_seen": "2026-09-12T17:40:29.242704+00:00",
+    "seen_in_sources": [
+      "ed_zitron"
+    ]
+  },
+  "arxiv.org": {
+    "count": 8,
+    "example_links": [
+      "https://arxiv.org/abs/2604.15464v1",
+      "https://arxiv.org/abs/2406.05590",
+      "https://arxiv.org/abs/2505.23819"
+    ],
+    "first_seen": "2026-09-12T17:40:28.955363+00:00",
+    "seen_in_sources": [
+      "semianalysis",
+      "ed_zitron"
+    ]
+  },
+  "axios.com": {
+    "count": 4,
+    "example_links": [
+      "https://www.axios.com/2026/07/27/off-grid-ai-data-centers-reckoning",
+      "https://www.axios.com/2026/08/23/greg-abbott-texas-data-centers-ai-backlash?ref=wheresyoured.at",
+      "https://www.axios.com/2026/05/28/ai-spending-roi-enterprise-costs?ref=wheresyoured.at"
+    ],
+    "first_seen": "2026-09-12T17:40:28.955363+00:00",
+    "seen_in_sources": [
+      "semianalysis",
+      "ed_zitron"
+    ]
+  },
+  "bain.com": {
+    "count": 1,
+    "example_links": [
+      "https://www.bain.com/insights/how-can-we-meet-ais-insatiable-demand-for-compute-power-technology-report-2025/?ref=wheresyoured.at"
+    ],
+    "first_seen": "2026-09-12T17:40:29.242704+00:00",
+    "seen_in_sources": [
+      "ed_zitron"
+    ]
+  },
+  "bbc.co.uk": {
+    "count": 1,
+    "example_links": [
+      "https://www.bbc.co.uk/news/business-12099638?ref=wheresyoured.at"
+    ],
+    "first_seen": "2026-09-12T17:40:29.242704+00:00",
+    "seen_in_sources": [
+      "ed_zitron"
+    ]
+  },
+  "bbc.com": {
+    "count": 1,
+    "example_links": [
+      "https://www.bbc.com/worklife/article/20220616-is-remote-work-worse-for-wellbeing-than-people-think?ref=wheresyoured.at"
+    ],
+    "first_seen": "2026-09-12T17:40:29.242704+00:00",
+    "seen_in_sources": [
+      "ed_zitron"
+    ]
+  },
+  "bcaresearch.com": {
+    "count": 1,
+    "example_links": [
+      "https://www.bcaresearch.com/reports/chief-economists-view-give-me-chastity-not-yet-19-08-2026/224466?ref=wheresyoured.at"
+    ],
+    "first_seen": "2026-09-12T17:40:29.242704+00:00",
+    "seen_in_sources": [
+      "ed_zitron"
+    ]
+  },
+  "bing.com": {
+    "count": 1,
+    "example_links": [
+      "https://www.bing.com/search?pglt=2083&q=onsite+gas+deep+dive&cvid=bb1ec263808b4c889798e699f40117f7&gs_lcrp=EgRlZGdlKgYIABBFGDkyBggAEEUYOdIBCDI4OTZqMGo3qAIAsAIA&FORM=ANNTA1&PC=DCTS"
+    ],
+    "first_seen": "2026-09-12T17:40:28.955363+00:00",
+    "seen_in_sources": [
+      "semianalysis"
+    ]
+  },
+  "blog.aks.azure.com": {
+    "count": 1,
+    "example_links": [
+      "https://blog.aks.azure.com/2025/10/24/dynamo-on-aks#enterprise-scale-inference-experiments--dynamo-with-gb200-running-on-aks"
+    ],
+    "first_seen": "2026-09-12T17:40:28.955363+00:00",
+    "seen_in_sources": [
+      "semianalysis"
+    ]
+  },
+  "blog.google": {
+    "count": 3,
+    "example_links": [
+      "https://blog.google/innovation-and-ai/infrastructure-and-cloud/google-cloud/ironwood-google-tpu-things-to-know/",
+      "https://blog.google/security/chrome-stronger-with-every-update/",
+      "https://blog.google/company-news/inside-google/message-ceo/next-chapter-ai-momentum/"
+    ],
+    "first_seen": "2026-09-12T17:40:28.955363+00:00",
+    "seen_in_sources": [
+      "semianalysis"
+    ]
+  },
+  "blogs.microsoft.com": {
+    "count": 1,
+    "example_links": [
+      "https://blogs.microsoft.com/blog/2025/11/18/microsoft-nvidia-and-anthropic-announce-strategic-partnerships/?ref=wheresyoured.at"
+    ],
+    "first_seen": "2026-09-12T17:40:29.242704+00:00",
+    "seen_in_sources": [
+      "ed_zitron"
+    ]
+  },
+  "blogs.nvidia.com": {
+    "count": 2,
+    "example_links": [
+      "https://blogs.nvidia.com/blog/ai-cloud-providers-reference-architecture/",
+      "https://blogs.nvidia.com/blog/inference-open-source-models-blackwell-reduce-cost-per-token/?ref=wheresyoured.at"
+    ],
+    "first_seen": "2026-09-12T17:40:28.955363+00:00",
+    "seen_in_sources": [
+      "semianalysis",
+      "ed_zitron"
+    ]
+  },
+  "bloomberg.com": {
+    "count": 8,
+    "example_links": [
+      "https://www.bloomberg.com/news/articles/2026-08-26/anthropic-to-pay-nscale-45-billion-for-ai-computing-power?ref=wheresyoured.at",
+      "https://www.bloomberg.com/news/articles/2006-02-12/why-the-economy-is-a-lot-stronger-than-you-think?utm_medium=cpc_search&utm_campaign=NB_ENG_DSAXX_DSAXXXXXXXXXX_EVG_XXXX_XXX_COUSA_EN_EN_X_BLOM_GO_SE_XXX_XXXXXXXXXX&gad_source=1&gclid=Cj0KCQiA88a5BhDPARIsAFj595gR6_lrqfpLH3b3A3gz8LM0vNF58jAufXZnBaiImlRZCM9JvRu4sTwaAnEfEALw_wcB&gclsrc=aw.ds&ref=wheresyoured.at",
+      "https://www.bloomberg.com/news/articles/2026-04-24/google-plans-to-invest-up-to-40-billion-in-anthropic?ref=wheresyoured.at"
+    ],
+    "first_seen": "2026-09-12T17:40:29.242704+00:00",
+    "seen_in_sources": [
+      "ed_zitron"
+    ]
+  },
+  "brookings.edu": {
+    "count": 3,
+    "example_links": [
+      "https://www.brookings.edu/articles/credit-crisis-the-sky-is-not-falling/?ref=wheresyoured.at",
+      "https://www.brookings.edu/articles/new-evidence-on-data-center-employment-effects/?ref=wheresyoured.at"
+    ],
+    "first_seen": "2026-09-12T17:40:29.242704+00:00",
+    "seen_in_sources": [
+      "ed_zitron"
+    ]
+  },
+  "bsky.app": {
+    "count": 2,
+    "example_links": [
+      "https://bsky.app/profile/arakharazian.bsky.social/post/3mukjsrupvs2t?ref=wheresyoured.at",
+      "https://bsky.app/profile/punkey.org/?ref=wheresyoured.at"
+    ],
+    "first_seen": "2026-09-12T17:40:29.242704+00:00",
+    "seen_in_sources": [
+      "ed_zitron"
+    ]
+  },
+  "businessinsider.com": {
+    "count": 7,
+    "example_links": [
+      "https://www.businessinsider.com/astra-model-launch-agi-milestone-openai-greg-brockman-2026-9?ref=wheresyoured.at",
+      "https://www.businessinsider.com/adam-neumann-flow-apartment-startup-tour-florida-wework-2023-12?ref=wheresyoured.at",
+      "https://www.businessinsider.com/stock-market-signal-chip-stocks-ai-capex-mag7-jpmorgan-2026-7?ref=wheresyoured.at"
+    ],
+    "first_seen": "2026-09-12T17:40:29.242704+00:00",
+    "seen_in_sources": [
+      "ed_zitron"
+    ]
+  },
+  "businesswire.com": {
+    "count": 1,
+    "example_links": [
+      "https://www.businesswire.com/news/home/20251204702555/en/Press-Release-of-December-4-2025-Related-to-the-Proposed-Public-Buy-Out-Offer-Followed-by-a-Squeeze-out-on-the-Shares-of-the-Company-Balyo-Initiated-by-Silver-Bands-4-US-Corp.?ref=wheresyoured.at"
+    ],
+    "first_seen": "2026-09-12T17:40:29.242704+00:00",
+    "seen_in_sources": [
+      "ed_zitron"
+    ]
+  },
+  "calculatedriskblog.com": {
+    "count": 1,
+    "example_links": [
+      "https://www.calculatedriskblog.com/2007/10/imf-mortgage-reset-chart.html?ref=wheresyoured.at"
+    ],
+    "first_seen": "2026-09-12T17:40:29.242704+00:00",
+    "seen_in_sources": [
+      "ed_zitron"
+    ]
+  },
+  "carta.com": {
+    "count": 1,
+    "example_links": [
+      "https://carta.com/data/vc-fund-performance-q1-2026-full-report/?ref=wheresyoured.at#tvpi"
+    ],
+    "first_seen": "2026-09-12T17:40:29.242704+00:00",
+    "seen_in_sources": [
+      "ed_zitron"
+    ]
+  },
+  "cbsnews.com": {
+    "count": 1,
+    "example_links": [
+      "https://www.cbsnews.com/news/what-the-metaverse-looks-like/?ref=wheresyoured.at"
+    ],
+    "first_seen": "2026-09-12T17:40:29.242704+00:00",
+    "seen_in_sources": [
+      "ed_zitron"
+    ]
+  },
+  "cfo.com": {
+    "count": 1,
+    "example_links": [
+      "https://www.cfo.com/news/judge-socks-lucent-for-300-million/677475/?ref=wheresyoured.at"
+    ],
+    "first_seen": "2026-09-12T17:40:29.242704+00:00",
+    "seen_in_sources": [
+      "ed_zitron"
+    ]
+  },
+  "clustermax.ai": {
+    "count": 1,
+    "example_links": [
+      "https://www.clustermax.ai/criteria"
+    ],
+    "first_seen": "2026-09-12T17:40:28.955363+00:00",
+    "seen_in_sources": [
+      "semianalysis"
+    ]
+  },
+  "cnbc.com": {
+    "count": 8,
+    "example_links": [
+      "https://www.cnbc.com/video/2026/04/08/crowdstrike-ceo-ai-finding-vulnerabilities-will-cause-high-number-of-cybersecurity-attacks.html",
+      "https://www.cnbc.com/2026/03/25/legal-ai-startup-harvey-raises-200-million-at-11-billion-valuation.html?ref=wheresyoured.at",
+      "https://www.cnbc.com/2019/08/17/wework-ipo-filing-strangest-and-most-alarming-things.html?ref=wheresyoured.at"
+    ],
+    "first_seen": "2026-09-12T17:40:28.955363+00:00",
+    "seen_in_sources": [
+      "semianalysis",
+      "ed_zitron"
+    ]
+  },
+  "cnn.com": {
+    "count": 1,
+    "example_links": [
+      "https://www.cnn.com/2024/05/15/business/inflation-biden-rate-fed/index.html?ref=wheresyoured.at"
+    ],
+    "first_seen": "2026-09-12T17:40:29.242704+00:00",
+    "seen_in_sources": [
+      "ed_zitron"
+    ]
+  },
+  "companiesmarketcap.com": {
+    "count": 1,
+    "example_links": [
+      "https://companiesmarketcap.com/tsmc/revenue/?ref=wheresyoured.at"
+    ],
+    "first_seen": "2026-09-12T17:40:29.242704+00:00",
+    "seen_in_sources": [
+      "ed_zitron"
+    ]
+  },
+  "computerworld.com": {
+    "count": 2,
+    "example_links": [
+      "https://www.computerworld.com/article/1618790/as-microsoft-embraces-ai-it-says-sayonara-to-the-metaverse.html?ref=wheresyoured.at",
+      "https://www.computerworld.com/article/4059383/openai-admits-ai-hallucinations-are-mathematically-inevitable-not-just-engineering-flaws.html?ref=wheresyoured.at"
+    ],
+    "first_seen": "2026-09-12T17:40:29.242704+00:00",
+    "seen_in_sources": [
+      "ed_zitron"
+    ]
+  },
+  "coreweave.com": {
+    "count": 5,
+    "example_links": [
+      "https://www.coreweave.com/blog/nvidia-vera-rubin-nvl72-on-coreweave-10x-more-tokens-per-megawatt-than-blackwell",
+      "https://www.coreweave.com/news/jane-street-signs-6-billion-ai-cloud-agreement-with-coreweave?ref=wheresyoured.at",
+      "https://www.coreweave.com/news/coreweave-expands-agreement-with-openai-by-up-to-6-5b?ref=wheresyoured.at"
+    ],
+    "first_seen": "2026-09-12T17:40:28.955363+00:00",
+    "seen_in_sources": [
+      "semianalysis",
+      "ed_zitron"
+    ]
+  },
+  "courthousenews.com": {
+    "count": 1,
+    "example_links": [
+      "http://courthousenews.com/lucent-ordered-to-return-188-2m-loan-payment/?ref=wheresyoured.at"
+    ],
+    "first_seen": "2026-09-12T17:40:29.242704+00:00",
+    "seen_in_sources": [
+      "ed_zitron"
+    ]
+  },
+  "crusoe.ai": {
+    "count": 1,
+    "example_links": [
+      "https://www.crusoe.ai/resources/newsroom/crusoe-blue-owl-capital-and-primary-digital-infrastructure-enter-joint-venture?ref=wheresyoured.at"
+    ],
+    "first_seen": "2026-09-12T17:40:29.242704+00:00",
+    "seen_in_sources": [
+      "ed_zitron"
+    ]
+  },
+  "d18rn0p25nwr6d.cloudfront.net": {
+    "count": 1,
+    "example_links": [
+      "https://d18rn0p25nwr6d.cloudfront.net/CIK-0001045810/e361e58a-7483-44f5-bc62-a9080ae6ec72.pdf?ref=wheresyoured.at"
+    ],
+    "first_seen": "2026-09-12T17:40:29.242704+00:00",
+    "seen_in_sources": [
+      "ed_zitron"
+    ]
+  },
+  "datacenter.fyi": {
+    "count": 1,
+    "example_links": [
+      "https://www.datacenter.fyi/public-record/01af289e?ref=wheresyoured.at"
+    ],
+    "first_seen": "2026-09-12T17:40:29.242704+00:00",
+    "seen_in_sources": [
+      "ed_zitron"
+    ]
+  },
+  "dchub.cloud": {
+    "count": 1,
+    "example_links": [
+      "https://dchub.cloud/facilities/ubs-ubs-data-centre-c1e0c5d6?ref=wheresyoured.at"
+    ],
+    "first_seen": "2026-09-12T17:40:29.242704+00:00",
+    "seen_in_sources": [
+      "ed_zitron"
+    ]
+  },
+  "deepswe.datacurve.ai": {
+    "count": 1,
+    "example_links": [
+      "https://deepswe.datacurve.ai/"
+    ],
+    "first_seen": "2026-09-12T17:40:28.955363+00:00",
+    "seen_in_sources": [
+      "semianalysis"
+    ]
+  },
+  "deloitte.com": {
+    "count": 1,
+    "example_links": [
+      "https://www.deloitte.com/uk/en/services/consulting/blogs/what-is-the-metaverse.html?ref=wheresyoured.at"
+    ],
+    "first_seen": "2026-09-12T17:40:29.242704+00:00",
+    "seen_in_sources": [
+      "ed_zitron"
+    ]
+  },
+  "developer.nvidia.com": {
+    "count": 1,
+    "example_links": [
+      "https://developer.nvidia.com/blog/infiniband-multilayered-security-protects-data-centers-and-ai-workloads"
+    ],
+    "first_seen": "2026-09-12T17:40:28.955363+00:00",
+    "seen_in_sources": [
+      "semianalysis"
+    ]
+  },
+  "developers.googleblog.com": {
+    "count": 1,
+    "example_links": [
+      "https://developers.googleblog.com/torchtpu-running-pytorch-natively-on-tpus-at-google-scale/"
+    ],
+    "first_seen": "2026-09-12T17:40:28.955363+00:00",
+    "seen_in_sources": [
+      "semianalysis"
+    ]
+  },
+  "dgmatrix.com": {
+    "count": 1,
+    "example_links": [
+      "https://www.dgmatrix.com/"
+    ],
+    "first_seen": "2026-09-12T17:40:28.955363+00:00",
+    "seen_in_sources": [
+      "semianalysis"
+    ]
+  },
+  "digg.com": {
+    "count": 1,
+    "example_links": [
+      "https://digg.com/tech/s8cbulyc?ref=wheresyoured.at"
+    ],
+    "first_seen": "2026-09-12T17:40:29.242704+00:00",
+    "seen_in_sources": [
+      "ed_zitron"
+    ]
+  },
+  "digitalrealty.com": {
+    "count": 1,
+    "example_links": [
+      "https://www.digitalrealty.com/resources/blog/revisiting-the-worlds-largest-data-center-350-e-cermak-chi1?ref=wheresyoured.at"
+    ],
+    "first_seen": "2026-09-12T17:40:29.242704+00:00",
+    "seen_in_sources": [
+      "ed_zitron"
+    ]
+  },
+  "docs.nvidia.com": {
+    "count": 1,
+    "example_links": [
+      "https://docs.nvidia.com/aiperf/benchmark-modes/trace-replay-with-mooncake-traces"
+    ],
+    "first_seen": "2026-09-12T17:40:28.955363+00:00",
+    "seen_in_sources": [
+      "semianalysis"
+    ]
+  },
+  "docs.pytorch.org": {
+    "count": 1,
+    "example_links": [
+      "https://docs.pytorch.org/xla/master/learn/xla-overview.html"
+    ],
+    "first_seen": "2026-09-12T17:40:28.955363+00:00",
+    "seen_in_sources": [
+      "semianalysis"
+    ]
+  },
+  "docs.sglang.io": {
+    "count": 1,
+    "example_links": [
+      "https://docs.sglang.io/cookbook/intro"
+    ],
+    "first_seen": "2026-09-12T17:40:28.955363+00:00",
+    "seen_in_sources": [
+      "semianalysis"
+    ]
+  },
+  "docs.vllm.ai": {
+    "count": 1,
+    "example_links": [
+      "https://docs.vllm.ai/en/latest/design/attention_backends/#standard-attention-mha-mqa-gqa-backends"
+    ],
+    "first_seen": "2026-09-12T17:40:28.955363+00:00",
+    "seen_in_sources": [
+      "semianalysis"
+    ]
+  },
+  "dropbox.com": {
+    "count": 1,
+    "example_links": [
+      "https://www.dropbox.com/scl/fi/usg5aj146gcc8qqtgw3if/Watch-CNBCs-full-interview-with-Elevation-Partners-Roger-McNamee.mp4?rlkey=sfm3nz29n2nce6hlzs9oubmyu&dl=0&ref=wheresyoured.at"
+    ],
+    "first_seen": "2026-09-12T17:40:29.242704+00:00",
+    "seen_in_sources": [
+      "ed_zitron"
+    ]
+  },
+  "dwarkesh.com": {
+    "count": 1,
+    "example_links": [
+      "https://www.dwarkesh.com/p/openai-huggingface?utm_campaign=posts-open-in-app&triedRedirect=true"
+    ],
+    "first_seen": "2026-09-12T17:40:28.955363+00:00",
+    "seen_in_sources": [
+      "semianalysis"
+    ]
+  },
+  "ebsco.com": {
+    "count": 1,
+    "example_links": [
+      "https://www.ebsco.com/research-starters/business-and-management/enron-collapse?ref=wheresyoured.at"
+    ],
+    "first_seen": "2026-09-12T17:40:29.242704+00:00",
+    "seen_in_sources": [
+      "ed_zitron"
+    ]
+  },
+  "ecfr.gov": {
+    "count": 1,
+    "example_links": [
+      "https://www.ecfr.gov/current/title-40/chapter-I/subchapter-U/part-1068/subpart-A/section-1068.30"
+    ],
+    "first_seen": "2026-09-12T17:40:28.955363+00:00",
+    "seen_in_sources": [
+      "semianalysis"
+    ]
+  },
+  "edgeconnex.com": {
+    "count": 1,
+    "example_links": [
+      "https://www.edgeconnex.com/"
+    ],
+    "first_seen": "2026-09-12T17:40:28.955363+00:00",
+    "seen_in_sources": [
+      "semianalysis"
+    ]
+  },
+  "eiec.kdi.re.kr": {
+    "count": 1,
+    "example_links": [
+      "https://eiec.kdi.re.kr/policy/materialView.do?num=269498"
+    ],
+    "first_seen": "2026-09-12T17:40:28.955363+00:00",
+    "seen_in_sources": [
+      "semianalysis"
+    ]
+  },
+  "eli.org": {
+    "count": 1,
+    "example_links": [
+      "https://www.eli.org/vibrant-environment-blog/ais-cooling-problem-how-data-centers-are-transforming-water-use?ref=wheresyoured.at"
+    ],
+    "first_seen": "2026-09-12T17:40:29.242704+00:00",
+    "seen_in_sources": [
+      "ed_zitron"
+    ]
+  },
+  "elibrary.ferc.gov": {
+    "count": 1,
+    "example_links": [
+      "https://elibrary.ferc.gov/eLibrary/filelist?accession_number=20260731-5214&optimized=false"
+    ],
+    "first_seen": "2026-09-12T17:40:28.955363+00:00",
+    "seen_in_sources": [
+      "semianalysis"
+    ]
+  },
+  "elle.com": {
+    "count": 1,
+    "example_links": [
+      "https://www.elle.com/culture/movies-tv/interviews/a19756/the-story-behind-the-sex-and-the-city-post-it-breakup/?ref=wheresyoured.at"
+    ],
+    "first_seen": "2026-09-12T17:40:29.242704+00:00",
+    "seen_in_sources": [
+      "ed_zitron"
+    ]
+  },
+  "en.wikipedia.org": {
+    "count": 4,
+    "example_links": [
+      "https://en.wikipedia.org/wiki/Coordinated_vulnerability_disclosure",
+      "https://en.wikipedia.org/wiki/Thundering_herd_problem",
+      "https://en.wikipedia.org/wiki/Red_Queen%27s_race?ref=wheresyoured.at"
+    ],
+    "first_seen": "2026-09-12T17:40:28.955363+00:00",
+    "seen_in_sources": [
+      "semianalysis",
+      "ed_zitron"
+    ]
+  },
+  "epa.gov": {
+    "count": 1,
+    "example_links": [
+      "https://www.epa.gov/green-book"
+    ],
+    "first_seen": "2026-09-12T17:40:28.955363+00:00",
+    "seen_in_sources": [
+      "semianalysis"
+    ]
+  },
+  "everycrsreport.com": {
+    "count": 1,
+    "example_links": [
+      "https://www.everycrsreport.com/reports/R41806.html?ref=wheresyoured.at"
+    ],
+    "first_seen": "2026-09-12T17:40:29.242704+00:00",
+    "seen_in_sources": [
+      "ed_zitron"
+    ]
+  },
+  "falcao.org": {
+    "count": 1,
+    "example_links": [
+      "https://falcao.org/posts/ai-bug-reports-open-source/"
+    ],
+    "first_seen": "2026-09-12T17:40:28.955363+00:00",
+    "seen_in_sources": [
+      "semianalysis"
+    ]
+  },
+  "fdic.gov": {
+    "count": 1,
+    "example_links": [
+      "https://www.fdic.gov/media/18636?ref=wheresyoured.at"
+    ],
+    "first_seen": "2026-09-12T17:40:29.242704+00:00",
+    "seen_in_sources": [
+      "ed_zitron"
+    ]
+  },
+  "federalregister.gov": {
+    "count": 2,
+    "example_links": [
+      "https://www.federalregister.gov/documents/2026/01/15/2026-00677/new-source-performance-standards-review-for-stationary-combustion-turbines-and-stationary-gas",
+      "https://www.federalregister.gov/documents/2024/07/03/2024-14668/north-american-electric-reliability-corporation-order-approving-extreme-cold-weather-reliability"
+    ],
+    "first_seen": "2026-09-12T17:40:28.955363+00:00",
+    "seen_in_sources": [
+      "semianalysis"
+    ]
+  },
+  "ferc.gov": {
+    "count": 1,
+    "example_links": [
+      "https://www.ferc.gov/media/winter-storm-elliott-report-inquiry-bulk-power-system-operations-during-december-2022"
+    ],
+    "first_seen": "2026-09-12T17:40:28.955363+00:00",
+    "seen_in_sources": [
+      "semianalysis"
+    ]
+  },
+  "ferconline.ferc.gov": {
+    "count": 1,
+    "example_links": [
+      "http://ferconline.ferc.gov"
+    ],
+    "first_seen": "2026-09-12T17:40:28.955363+00:00",
+    "seen_in_sources": [
+      "semianalysis"
+    ]
+  },
+  "fierce-network.com": {
+    "count": 1,
+    "example_links": [
+      "https://www.fierce-network.com/fierce-network-tv/ai-data-center-boom-exposes-labor-crunch?ref=wheresyoured.at"
+    ],
+    "first_seen": "2026-09-12T17:40:29.242704+00:00",
+    "seen_in_sources": [
+      "ed_zitron"
+    ]
+  },
+  "finance.yahoo.com": {
+    "count": 6,
+    "example_links": [
+      "https://finance.yahoo.com/technology/ai/articles/openai-cuts-cursor-off-models-223547147.html?ref=wheresyoured.at",
+      "https://finance.yahoo.com/news/evidence-of-food-price-gouging-is-hard-to-find-181613112.html?guccounter=1&guce_referrer=aHR0cHM6Ly93d3cuZ29vZ2xlLmNvbS8&guce_referrer_sig=AQAAAC_Tt58CQZKzpitjOxlbPO9olzXVaJ_X0R3l9o9dEITnVASt3w9kY8PfgLxxGTs9SEV_1VHsG0GHbijLnDH1F86s1rtAT6ekj4ZXmKD-AjTlT1n-qzpPYEdmMH6tfrJyIG46gYa04B7r2xDINvB2YgrRHaI1C--64fkctjn-LVDu&ref=wheresyoured.at",
+      "https://finance.yahoo.com/technology/ai/articles/microsoft-ai-sales-mostly-come-180651710.html?ref=wheresyoured.at"
+    ],
+    "first_seen": "2026-09-12T17:40:29.242704+00:00",
+    "seen_in_sources": [
+      "ed_zitron"
+    ]
+  },
+  "fireworks.ai": {
+    "count": 1,
+    "example_links": [
+      "https://fireworks.ai/blog/series-d-announcement"
+    ],
+    "first_seen": "2026-09-12T17:40:28.955363+00:00",
+    "seen_in_sources": [
+      "semianalysis"
+    ]
+  },
+  "fitchratings.com": {
+    "count": 1,
+    "example_links": [
+      "https://www.fitchratings.com/research/infrastructure-project-finance/fitch-rates-se-cosmos-llc-senior-secured-notes-bb-outlook-stable-28-05-2026?ref=wheresyoured.at"
+    ],
+    "first_seen": "2026-09-12T17:40:29.242704+00:00",
+    "seen_in_sources": [
+      "ed_zitron"
+    ]
+  },
+  "fortune.com": {
+    "count": 2,
+    "example_links": [
+      "https://fortune.com/well/2023/02/28/what-remote-work-does-to-your-brain-and-body/?ref=wheresyoured.at",
+      "https://fortune.com/2026/03/10/google-ceo-sundar-pichai-692-million-compensation-waymo-wing-success/?ref=wheresyoured.at"
+    ],
+    "first_seen": "2026-09-12T17:40:29.242704+00:00",
+    "seen_in_sources": [
+      "ed_zitron"
+    ]
+  },
+  "foxbusiness.com": {
+    "count": 1,
+    "example_links": [
+      "https://www.foxbusiness.com/media/wolf-wall-street-unveils-ultimate-strategy-average-investor?ref=wheresyoured.at"
+    ],
+    "first_seen": "2026-09-12T17:40:29.242704+00:00",
+    "seen_in_sources": [
+      "ed_zitron"
+    ]
+  },
+  "fraser.stlouisfed.org": {
+    "count": 1,
+    "example_links": [
+      "https://fraser.stlouisfed.org/files/docs/historical/fct/cop_report_20090109.pdf?ref=wheresyoured.at"
+    ],
+    "first_seen": "2026-09-12T17:40:29.242704+00:00",
+    "seen_in_sources": [
+      "ed_zitron"
+    ]
+  },
+  "fred.stlouisfed.org": {
+    "count": 1,
+    "example_links": [
+      "https://fred.stlouisfed.org/series/houst?ref=wheresyoured.at"
+    ],
+    "first_seen": "2026-09-12T17:40:29.242704+00:00",
+    "seen_in_sources": [
+      "ed_zitron"
+    ]
+  },
+  "ft.com": {
+    "count": 7,
+    "example_links": [
+      "https://www.ft.com/content/27c07fd7-dc7d-42ec-9b89-38bb14cc1676?syn-25a6b1a6=1&ref=wheresyoured.at",
+      "https://www.ft.com/content/b37030b6-bda8-4ba9-8e08-e6b88687b8f5?syn-25a6b1a6=1&ref=wheresyoured.at",
+      "https://www.ft.com/content/5ee49718-c258-4f01-aa32-7e5b76ae5245?syn-25a6b1a6=1&ref=wheresyoured.at"
+    ],
+    "first_seen": "2026-09-12T17:40:29.242704+00:00",
+    "seen_in_sources": [
+      "ed_zitron"
+    ]
+  },
+  "futurehouse.org": {
+    "count": 1,
+    "example_links": [
+      "https://www.futurehouse.org/research/hle-exam"
+    ],
+    "first_seen": "2026-09-12T17:40:28.955363+00:00",
+    "seen_in_sources": [
+      "semianalysis"
+    ]
+  },
+  "futurism.com": {
+    "count": 1,
+    "example_links": [
+      "https://futurism.com/artificial-intelligence/claude-wife-photos?ref=wheresyoured.at"
+    ],
+    "first_seen": "2026-09-12T17:40:29.242704+00:00",
+    "seen_in_sources": [
+      "ed_zitron"
+    ]
+  },
+  "gamesradar.com": {
+    "count": 1,
+    "example_links": [
+      "https://www.gamesradar.com/blackwater-review/?ref=wheresyoured.at"
+    ],
+    "first_seen": "2026-09-12T17:40:29.242704+00:00",
+    "seen_in_sources": [
+      "ed_zitron"
+    ]
+  },
+  "geekwire.com": {
+    "count": 1,
+    "example_links": [
+      "https://www.geekwire.com/2026/aws-is-booming-but-amazons-free-cash-flow-turns-negative-on-record-ai-spending/?ref=wheresyoured.at"
+    ],
+    "first_seen": "2026-09-12T17:40:29.242704+00:00",
+    "seen_in_sources": [
+      "ed_zitron"
+    ]
+  },
+  "github.com": {
+    "count": 6,
+    "example_links": [
+      "https://github.com/vllm-project/tpu-inference/blob/a32e183a676cf428cb1cea953f58fdd616accb3e/tpu_inference/models/vllm/vllm_model_wrapper.py#L171-L348",
+      "https://github.com/SemiAnalysisAI/clustermax",
+      "https://github.com/SemiAnalysisAI/InferenceX"
+    ],
+    "first_seen": "2026-09-12T17:40:28.955363+00:00",
+    "seen_in_sources": [
+      "semianalysis"
+    ]
+  },
+  "gizmodo.com": {
+    "count": 1,
+    "example_links": [
+      "http://gizmodo.com/sam-altman-admits-its-going-to-take-a-long-time-before-ai-goes-mainstream-2000802418?ref=wheresyoured.at"
+    ],
+    "first_seen": "2026-09-12T17:40:29.242704+00:00",
+    "seen_in_sources": [
+      "ed_zitron"
+    ]
+  },
+  "goldmansachs.com": {
+    "count": 1,
+    "example_links": [
+      "https://www.goldmansachs.com/insights/articles/tracking-trillions-the-assumptions-shaping-scale-of-the-ai-build-out?ref=wheresyoured.at"
+    ],
+    "first_seen": "2026-09-12T17:40:29.242704+00:00",
+    "seen_in_sources": [
+      "ed_zitron"
+    ]
+  },
+  "google.github.io": {
+    "count": 1,
+    "example_links": [
+      "https://google.github.io/torchax/user_guide/how-it-works/"
+    ],
+    "first_seen": "2026-09-12T17:40:28.955363+00:00",
+    "seen_in_sources": [
+      "semianalysis"
+    ]
+  },
+  "googlecloudpresscorner.com": {
+    "count": 1,
+    "example_links": [
+      "https://www.googlecloudpresscorner.com/2023-02-03-Anthropic-Forges-Partnership-With-Google-Cloud-to-Help-Deliver-Reliable-and-Responsible-AI?ref=wheresyoured.at"
+    ],
+    "first_seen": "2026-09-12T17:40:29.242704+00:00",
+    "seen_in_sources": [
+      "ed_zitron"
+    ]
+  },
+  "govinfo.gov": {
+    "count": 2,
+    "example_links": [
+      "https://www.govinfo.gov/content/pkg/FR-2024-07-03/pdf/2024-14668.pdf",
+      "https://www.govinfo.gov/content/pkg/CHRG-107shrg79888/html/CHRG-107shrg79888.htm?ref=wheresyoured.at"
+    ],
+    "first_seen": "2026-09-12T17:40:28.955363+00:00",
+    "seen_in_sources": [
+      "semianalysis",
+      "ed_zitron"
+    ]
+  },
+  "groundbrkr.com": {
+    "count": 1,
+    "example_links": [
+      "https://www.groundbrkr.com/p/the-teaser-period-why-the-ai-boom?ref=wheresyoured.at"
+    ],
+    "first_seen": "2026-09-12T17:40:29.242704+00:00",
+    "seen_in_sources": [
+      "ed_zitron"
+    ]
+  },
+  "group.softbank": {
+    "count": 2,
+    "example_links": [
+      "https://group.softbank/en/news/press/20260227?ref=wheresyoured.at",
+      "https://group.softbank/en/news/press/20230428?ref=wheresyoured.at"
+    ],
+    "first_seen": "2026-09-12T17:40:29.242704+00:00",
+    "seen_in_sources": [
+      "ed_zitron"
+    ]
+  },
+  "guides.nyu.edu": {
+    "count": 1,
+    "example_links": [
+      "https://guides.nyu.edu/bloombergguide/bloomberg-query-language-bql?ref=wheresyoured.at"
+    ],
+    "first_seen": "2026-09-12T17:40:29.242704+00:00",
+    "seen_in_sources": [
+      "ed_zitron"
+    ]
+  },
+  "hackerone.com": {
+    "count": 1,
+    "example_links": [
+      "https://hackerone.com/together_ai"
+    ],
+    "first_seen": "2026-09-12T17:40:28.955363+00:00",
+    "seen_in_sources": [
+      "semianalysis"
+    ]
+  },
+  "harvey.ai": {
+    "count": 1,
+    "example_links": [
+      "https://www.harvey.ai/blog/harvey-raises-at-dollar11-billion-valuation-to-scale-agents-across-law-firms-and-enterprises?ref=wheresyoured.at"
+    ],
+    "first_seen": "2026-09-12T17:40:29.242704+00:00",
+    "seen_in_sources": [
+      "ed_zitron"
+    ]
+  },
+  "home.treasury.gov": {
+    "count": 1,
+    "example_links": [
+      "https://home.treasury.gov/data/troubled-asset-relief-program?ref=wheresyoured.at"
+    ],
+    "first_seen": "2026-09-12T17:40:29.242704+00:00",
+    "seen_in_sources": [
+      "ed_zitron"
+    ]
+  },
+  "hosted-files.sched.co": {
+    "count": 1,
+    "example_links": [
+      "https://hosted-files.sched.co/pytorchconferenceeu2026/cb/TorchTPU%20-%20PyTorch%20Paris%20%2726%20-%20Google%20Slides.pdf"
+    ],
+    "first_seen": "2026-09-12T17:40:28.955363+00:00",
+    "seen_in_sources": [
+      "semianalysis"
+    ]
+  },
+  "hpcwire.com": {
+    "count": 1,
+    "example_links": [
+      "https://www.hpcwire.com/2023/03/21/nvidia-announces-bluefield-3-ga-oracle-cloud-is-early-user/"
+    ],
+    "first_seen": "2026-09-12T17:40:28.955363+00:00",
+    "seen_in_sources": [
+      "semianalysis"
+    ]
+  },
+  "huggingface.co": {
+    "count": 3,
+    "example_links": [
+      "https://huggingface.co/Motif-Technologies/Motif-2.6B",
+      "https://huggingface.co/blog/security-incident-july-2026",
+      "https://huggingface.co/datasets/semianalysisai/cc-traces-weka-062126"
+    ],
+    "first_seen": "2026-09-12T17:40:28.955363+00:00",
+    "seen_in_sources": [
+      "semianalysis"
+    ]
+  },
+  "hut8.com": {
+    "count": 2,
+    "example_links": [
+      "https://www.hut8.com/news-insights/press-releases/hut-8-announces-ai-infrastructure-partnership-with-anthropic-and-fluidstack?ref=wheresyoured.at"
+    ],
+    "first_seen": "2026-09-12T17:40:29.242704+00:00",
+    "seen_in_sources": [
+      "ed_zitron"
+    ]
+  },
+  "inc.com": {
+    "count": 1,
+    "example_links": [
+      "https://www.inc.com/minda-zetlin/malcolm-gladwell-criticizes-remote-work-engagement-podcast.html?ref=wheresyoured.at"
+    ],
+    "first_seen": "2026-09-12T17:40:29.242704+00:00",
+    "seen_in_sources": [
+      "ed_zitron"
+    ]
+  },
+  "inferencemax.ai": {
+    "count": 1,
+    "example_links": [
+      "https://inferencemax.ai/"
+    ],
+    "first_seen": "2026-09-12T17:40:28.955363+00:00",
+    "seen_in_sources": [
+      "semianalysis"
+    ]
+  },
+  "inferencemax.semianalysis.com": {
+    "count": 1,
+    "example_links": [
+      "https://inferencemax.semianalysis.com/quotes"
+    ],
+    "first_seen": "2026-09-12T17:40:28.955363+00:00",
+    "seen_in_sources": [
+      "semianalysis"
+    ]
+  },
+  "inferencex.semianalysis.com": {
+    "count": 6,
+    "example_links": [
+      "https://inferencex.semianalysis.com/",
+      "https://inferencex.semianalysis.com"
+    ],
+    "first_seen": "2026-09-12T17:40:28.955363+00:00",
+    "seen_in_sources": [
+      "semianalysis"
+    ]
+  },
+  "insidelines.pjm.com": {
+    "count": 1,
+    "example_links": [
+      "https://insidelines.pjm.com/"
+    ],
+    "first_seen": "2026-09-12T17:40:28.955363+00:00",
+    "seen_in_sources": [
+      "semianalysis"
+    ]
+  },
+  "intel.com": {
+    "count": 1,
+    "example_links": [
+      "https://www.intel.com/content/www/us/en/security/security-practices/vulnerability-management/bug-bounty-program.html"
+    ],
+    "first_seen": "2026-09-12T17:40:28.955363+00:00",
+    "seen_in_sources": [
+      "semianalysis"
+    ]
+  },
+  "investing.com": {
+    "count": 2,
+    "example_links": [
+      "https://www.investing.com/news/transcripts/earnings-call-transcript-nvidia-beats-q2-2026-estimates-as-ai-demand-stays-hot-93CH-4878028?ref=wheresyoured.at",
+      "http://investing.com/?ref=wheresyoured.at"
+    ],
+    "first_seen": "2026-09-12T17:40:29.242704+00:00",
+    "seen_in_sources": [
+      "ed_zitron"
+    ]
+  },
+  "investopedia.com": {
+    "count": 2,
+    "example_links": [
+      "https://www.investopedia.com/terms/n/ninja-loan.asp?ref=wheresyoured.at",
+      "https://www.investopedia.com/terms/o/optionadjustedspread.asp?ref=wheresyoured.at"
+    ],
+    "first_seen": "2026-09-12T17:40:29.242704+00:00",
+    "seen_in_sources": [
+      "ed_zitron"
+    ]
+  },
+  "investor.atmeta.com": {
+    "count": 1,
+    "example_links": [
+      "https://investor.atmeta.com/investor-news/press-release-details/2026/Meta-Reports-Fourth-Quarter-and-Full-Year-2025-Results/default.aspx?ref=wheresyoured.at"
+    ],
+    "first_seen": "2026-09-12T17:40:29.242704+00:00",
+    "seen_in_sources": [
+      "ed_zitron"
+    ]
+  },
+  "investor.nvidia.com": {
+    "count": 2,
+    "example_links": [
+      "https://investor.nvidia.com/news/press-release-details/2025/NVIDIA-and-Samsung-Build-AI-Factory-to-Transform-Global-Intelligent-Manufacturing/default.aspx",
+      "https://investor.nvidia.com/financial-info/financial-reports/default.aspx?ref=wheresyoured.at"
+    ],
+    "first_seen": "2026-09-12T17:40:28.955363+00:00",
+    "seen_in_sources": [
+      "semianalysis",
+      "ed_zitron"
+    ]
+  },
+  "investors.coreweave.com": {
+    "count": 5,
+    "example_links": [
+      "https://investors.coreweave.com/news/news-details/2025/CoreWeave-Expands-Agreement-with-OpenAI-by-up-to-6-5B/default.aspx?ref=wheresyoured.at",
+      "https://investors.coreweave.com/news/news-details/2026/CoreWeave-Reports-Strong-Second-Quarter-2026-Results/default.aspx?ref=wheresyoured.at",
+      "https://investors.coreweave.com/news/news-details/2026/CoreWeave-Announces-Pricing-of-1-25-Billion-of-Senior-Notes-and-2-Billion-of-Senior-Notes/default.aspx?ref=wheresyoured.at"
+    ],
+    "first_seen": "2026-09-12T17:40:29.242704+00:00",
+    "seen_in_sources": [
+      "ed_zitron"
+    ]
+  },
+  "investors.micron.com": {
+    "count": 1,
+    "example_links": [
+      "https://investors.micron.com/news/press-release/2022/Micron-Announces-Historic-Investment-of-up-to-100-Billion-to-Build-Megafab-in-Central-New-York-10-04-2022/default.aspx?ref=wheresyoured.at"
+    ],
+    "first_seen": "2026-09-12T17:40:29.242704+00:00",
+    "seen_in_sources": [
+      "ed_zitron"
+    ]
+  },
+  "ir.aboutamazon.com": {
+    "count": 1,
+    "example_links": [
+      "https://ir.aboutamazon.com/news-release/news-release-details/2026/Amazon-com-Announces-Second-Quarter-Results/?ref=wheresyoured.at"
+    ],
+    "first_seen": "2026-09-12T17:40:29.242704+00:00",
+    "seen_in_sources": [
+      "ed_zitron"
+    ]
+  },
+  "ir.amd.com": {
+    "count": 1,
+    "example_links": [
+      "https://ir.amd.com/news-events/press-releases/detail/1292/amd-and-anthropic-announce-strategic-partnership-to-deploy-up-to-2-gigawatts-of-amd-instinct-mi450-series-gpus?ref=wheresyoured.at"
+    ],
+    "first_seen": "2026-09-12T17:40:29.242704+00:00",
+    "seen_in_sources": [
+      "ed_zitron"
+    ]
+  },
+  "ir.apollo.com": {
+    "count": 2,
+    "example_links": [
+      "https://ir.apollo.com/news-events/press-releases/detail/629/apollo-leads-35-billion-capital-solution-for-broadcom-ai?ref=wheresyoured.at"
+    ],
+    "first_seen": "2026-09-12T17:40:29.242704+00:00",
+    "seen_in_sources": [
+      "ed_zitron"
+    ]
+  },
+  "ir.spacex.com": {
+    "count": 1,
+    "example_links": [
+      "https://ir.spacex.com/updates/releases-details/2026/SpaceX-Announces-Pricing-of-25-Billion-Inaugural-Bond-Issuance-2026-33VwNgsx3O/default.aspx?ref=wheresyoured.at"
+    ],
+    "first_seen": "2026-09-12T17:40:29.242704+00:00",
+    "seen_in_sources": [
+      "ed_zitron"
+    ]
+  },
+  "iren.com": {
+    "count": 2,
+    "example_links": [
+      "https://iren.com/resources/blog/iren-signs97-billion-agreement-with-microsoft-to-deploy-ai-cloud-infrastructure?ref=wheresyoured.at"
+    ],
+    "first_seen": "2026-09-12T17:40:29.242704+00:00",
+    "seen_in_sources": [
+      "ed_zitron"
+    ]
+  },
+  "issues.chromium.org": {
+    "count": 1,
+    "example_links": [
+      "https://issues.chromium.org/issues/487383169"
+    ],
+    "first_seen": "2026-09-12T17:40:28.955363+00:00",
+    "seen_in_sources": [
+      "semianalysis"
+    ]
+  },
+  "jax-ml.github.io": {
+    "count": 1,
+    "example_links": [
+      "https://jax-ml.github.io/scaling-book/tpus/"
+    ],
+    "first_seen": "2026-09-12T17:40:28.955363+00:00",
+    "seen_in_sources": [
+      "semianalysis"
+    ]
+  },
+  "joelonsoftware.com": {
+    "count": 1,
+    "example_links": [
+      "https://www.joelonsoftware.com/2002/06/12/strategy-letter-v/"
+    ],
+    "first_seen": "2026-09-12T17:40:28.955363+00:00",
+    "seen_in_sources": [
+      "semianalysis"
+    ]
+  },
+  "karmanindustries.com": {
+    "count": 1,
+    "example_links": [
+      "https://www.karmanindustries.com/"
+    ],
+    "first_seen": "2026-09-12T17:40:28.955363+00:00",
+    "seen_in_sources": [
+      "semianalysis"
+    ]
+  },
+  "kexue.fm": {
+    "count": 1,
+    "example_links": [
+      "https://kexue.fm/archives/11848"
+    ],
+    "first_seen": "2026-09-12T17:40:28.955363+00:00",
+    "seen_in_sources": [
+      "semianalysis"
+    ]
+  },
+  "kimi.com": {
+    "count": 1,
+    "example_links": [
+      "https://www.kimi.com/blog/kimi-k3"
+    ],
+    "first_seen": "2026-09-12T17:40:28.955363+00:00",
+    "seen_in_sources": [
+      "semianalysis"
+    ]
+  },
+  "kvcache.ai": {
+    "count": 1,
+    "example_links": [
+      "https://kvcache.ai/blog/scaling-kv-cache-beyond-memory/"
+    ],
+    "first_seen": "2026-09-12T17:40:28.955363+00:00",
+    "seen_in_sources": [
+      "semianalysis"
+    ]
+  },
+  "law.cornell.edu": {
+    "count": 1,
+    "example_links": [
+      "https://www.law.cornell.edu/uscode/text/42/7475"
+    ],
+    "first_seen": "2026-09-12T17:40:28.955363+00:00",
+    "seen_in_sources": [
+      "semianalysis"
+    ]
+  },
+  "lightwaveonline.com": {
+    "count": 1,
+    "example_links": [
+      "https://www.lightwaveonline.com/optical-tech/transport/article/16655713/lucent-and-winstar-to-build-2-billion-fiber-and-wireless-network?ref=wheresyoured.at"
+    ],
+    "first_seen": "2026-09-12T17:40:29.242704+00:00",
+    "seen_in_sources": [
+      "ed_zitron"
+    ]
+  },
+  "lore.kernel.org": {
+    "count": 1,
+    "example_links": [
+      "https://lore.kernel.org/linux-media/CAHk-=wi4zC+Ze8e+p3tMv8TtG_80KzsZ1syL9anBtmEh5Z40vg@mail.gmail.com/"
+    ],
+    "first_seen": "2026-09-12T17:40:28.955363+00:00",
+    "seen_in_sources": [
+      "semianalysis"
+    ]
+  },
+  "ludic.mataroa.blog": {
+    "count": 5,
+    "example_links": [
+      "https://ludic.mataroa.blog/blog/ai-mania-is-eviscerating-global-decision-making/?ref=wheresyoured.at",
+      "https://ludic.mataroa.blog/blog/ai-mania-is-eviscerating-global-decision-making/?ref=wheresyoured.at#:~:text=II.%20Heretics%20Will%20Be%20Shot",
+      "https://ludic.mataroa.blog/blog/i-will-fucking-piledrive-you-if-you-mention-ai-again/?ref=wheresyoured.at"
+    ],
+    "first_seen": "2026-09-12T17:40:29.242704+00:00",
+    "seen_in_sources": [
+      "ed_zitron"
+    ]
+  },
+  "lwn.net": {
+    "count": 1,
+    "example_links": [
+      "https://lwn.net/Articles/1073193/"
+    ],
+    "first_seen": "2026-09-12T17:40:28.955363+00:00",
+    "seen_in_sources": [
+      "semianalysis"
+    ]
+  },
+  "macrotrends.net": {
+    "count": 3,
+    "example_links": [
+      "https://www.macrotrends.net/3047/us-mortgage-delinquency-rate?ref=wheresyoured.at",
+      "https://www.macrotrends.net/stocks/charts/DUOL/duolingo/revenue?ref=wheresyoured.at",
+      "https://www.macrotrends.net/stocks/charts/NVDA/nvidia/revenue?ref=wheresyoured.at"
+    ],
+    "first_seen": "2026-09-12T17:40:29.242704+00:00",
+    "seen_in_sources": [
+      "ed_zitron"
+    ]
+  },
+  "marketwatch.com": {
+    "count": 1,
+    "example_links": [
+      "https://www.marketwatch.com/story/winstar-lucent-in-high-speed-deal?gaa_at=eafs&gaa_n=AWEtsqda91S1bDjuJGRB6EQgUFyR99-iZpVmwjauw5N60wwKa9791gRK85GSGM8ZOm0%3D&gaa_ts=692ddd8a&gaa_sig=3dEew6XAHxTQ3An6zxqpeM5cu07SJRSH0TtFDNg4L9QUF99LUqTiCVYt_nfntCNf_BwtSqsXkqXOoyRisXNrjg%3D%3D&ref=wheresyoured.at"
+    ],
+    "first_seen": "2026-09-12T17:40:29.242704+00:00",
+    "seen_in_sources": [
+      "ed_zitron"
+    ]
+  },
+  "mckinsey.com": {
+    "count": 1,
+    "example_links": [
+      "https://www.mckinsey.com/capabilities/growth-marketing-and-sales/our-insights/value-creation-in-the-metaverse?ref=wheresyoured.at"
+    ],
+    "first_seen": "2026-09-12T17:40:29.242704+00:00",
+    "seen_in_sources": [
+      "ed_zitron"
+    ]
+  },
+  "mellon.com": {
+    "count": 1,
+    "example_links": [
+      "https://www.mellon.com/insights/insights-articles/a-closer-look-at-magnificent-seven-stocks.html?ref=wheresyoured.at"
+    ],
+    "first_seen": "2026-09-12T17:40:29.242704+00:00",
+    "seen_in_sources": [
+      "ed_zitron"
+    ]
+  },
+  "microsoft.com": {
+    "count": 2,
+    "example_links": [
+      "https://www.microsoft.com/en-us/msrc/bounty-microsoft-azure",
+      "https://www.microsoft.com/en-us/investor/earnings/fy-2026-q4/press-release-webcast?ref=wheresyoured.at"
+    ],
+    "first_seen": "2026-09-12T17:40:28.955363+00:00",
+    "seen_in_sources": [
+      "semianalysis",
+      "ed_zitron"
+    ]
+  },
+  "mimo.mi.com": {
+    "count": 1,
+    "example_links": [
+      "https://mimo.mi.com/docs/en-US/news/latest/1000tps"
+    ],
+    "first_seen": "2026-09-12T17:40:28.955363+00:00",
+    "seen_in_sources": [
+      "semianalysis"
+    ]
+  },
+  "monitoringanalytics.com": {
+    "count": 1,
+    "example_links": [
+      "https://www.monitoringanalytics.com/reports/Reports/2026/IMM_Analysis_of_the_20272028_RPM_Base_Residual_Auction_Part_B_20260709.pdf"
+    ],
+    "first_seen": "2026-09-12T17:40:28.955363+00:00",
+    "seen_in_sources": [
+      "semianalysis"
+    ]
+  },
+  "moopec.com": {
+    "count": 1,
+    "example_links": [
+      "https://www.moopec.com/es/blog/noticias-2/global-transformer-steel-supply-in-crisis-shortage-expected-to-last-until-2029-144?ref=wheresyoured.at"
+    ],
+    "first_seen": "2026-09-12T17:40:29.242704+00:00",
+    "seen_in_sources": [
+      "ed_zitron"
+    ]
+  },
+  "motherjones.com": {
+    "count": 1,
+    "example_links": [
+      "https://www.motherjones.com/politics/2009/12/real-size-bailout-treasury-fed/?ref=wheresyoured.at"
+    ],
+    "first_seen": "2026-09-12T17:40:29.242704+00:00",
+    "seen_in_sources": [
+      "ed_zitron"
+    ]
+  },
+  "mrbruh.com": {
+    "count": 1,
+    "example_links": [
+      "https://mrbruh.com/amd2/"
+    ],
+    "first_seen": "2026-09-12T17:40:28.955363+00:00",
+    "seen_in_sources": [
+      "semianalysis"
+    ]
+  },
+  "multistate.us": {
+    "count": 1,
+    "example_links": [
+      "https://www.multistate.us/insider/2026/6/22/state-data-center-policy-shifts-as-governors-impose-new-restrictions?ref=wheresyoured.at"
+    ],
+    "first_seen": "2026-09-12T17:40:29.242704+00:00",
+    "seen_in_sources": [
+      "ed_zitron"
+    ]
+  },
+  "nbcnews.com": {
+    "count": 2,
+    "example_links": [
+      "https://www.nbcnews.com/id/wbna9831894?ref=wheresyoured.at",
+      "https://www.nbcnews.com/data-graphics/grocery-price-tracker-inflation-trends-eggs-bread-trump-administration-rcna257424?ref=wheresyoured.at"
+    ],
+    "first_seen": "2026-09-12T17:40:29.242704+00:00",
+    "seen_in_sources": [
+      "ed_zitron"
+    ]
+  },
+  "ncua.gov": {
+    "count": 1,
+    "example_links": [
+      "https://ncua.gov/regulation-supervision/letters-credit-unions-other-guidance/concentration-risk?ref=wheresyoured.at"
+    ],
+    "first_seen": "2026-09-12T17:40:29.242704+00:00",
+    "seen_in_sources": [
+      "ed_zitron"
+    ]
+  },
+  "nebius.com": {
+    "count": 2,
+    "example_links": [
+      "https://nebius.com/newsroom/nebius-announces-multi-billion-dollar-agreement-with-microsoft-for-ai-infrastructure?ref=wheresyoured.at"
+    ],
+    "first_seen": "2026-09-12T17:40:29.242704+00:00",
+    "seen_in_sources": [
+      "ed_zitron"
+    ]
+  },
+  "nerc.com": {
+    "count": 1,
+    "example_links": [
+      "https://www.nerc.com/globalassets/standards/approved-standards/eop/eop-012-3.pdf"
+    ],
+    "first_seen": "2026-09-12T17:40:28.955363+00:00",
+    "seen_in_sources": [
+      "semianalysis"
+    ]
+  },
+  "networking-docs.nvidia.com": {
+    "count": 1,
+    "example_links": [
+      "https://networking-docs.nvidia.com/doca/archive/3-4-0/bluefield-modes-of-operation"
+    ],
+    "first_seen": "2026-09-12T17:40:28.955363+00:00",
+    "seen_in_sources": [
+      "semianalysis"
+    ]
+  },
+  "networkworld.com": {
+    "count": 1,
+    "example_links": [
+      "https://www.networkworld.com/article/4205156/palo-alto-networks-at-black-hat-how-ai-erased-the-50-day-patch-window.html"
+    ],
+    "first_seen": "2026-09-12T17:40:28.955363+00:00",
+    "seen_in_sources": [
+      "semianalysis"
+    ]
+  },
+  "news.bbc.co.uk": {
+    "count": 1,
+    "example_links": [
+      "http://news.bbc.co.uk/2/hi/business/1817445.stm?ref=wheresyoured.at"
+    ],
+    "first_seen": "2026-09-12T17:40:29.242704+00:00",
+    "seen_in_sources": [
+      "ed_zitron"
+    ]
+  },
+  "news.crunchbase.com": {
+    "count": 1,
+    "example_links": [
+      "https://news.crunchbase.com/venture/funding-data-third-largest-year-2025/?ref=wheresyoured.at"
+    ],
+    "first_seen": "2026-09-12T17:40:29.242704+00:00",
+    "seen_in_sources": [
+      "ed_zitron"
+    ]
+  },
+  "news.pedaily.cn": {
+    "count": 1,
+    "example_links": [
+      "https://news.pedaily.cn/202607/566749.shtml"
+    ],
+    "first_seen": "2026-09-12T17:40:28.955363+00:00",
+    "seen_in_sources": [
+      "semianalysis"
+    ]
+  },
+  "news1.kr": {
+    "count": 1,
+    "example_links": [
+      "https://www.news1.kr/it-science/general-it/5868735"
+    ],
+    "first_seen": "2026-09-12T17:40:28.955363+00:00",
+    "seen_in_sources": [
+      "semianalysis"
+    ]
+  },
+  "newsroom.amd.com": {
+    "count": 1,
+    "example_links": [
+      "https://newsroom.amd.com/news/amd-and-openai-announce-strategic-partnership-to-d/?ref=wheresyoured.at"
+    ],
+    "first_seen": "2026-09-12T17:40:29.242704+00:00",
+    "seen_in_sources": [
+      "ed_zitron"
+    ]
+  },
+  "newswire.ca": {
+    "count": 1,
+    "example_links": [
+      "https://www.newswire.ca/news-releases/concentric-energy-advisors-welcomes-capital-markets-expert-todd-shipman-as-an-executive-advisor-690945131.html?ref=wheresyoured.at"
+    ],
+    "first_seen": "2026-09-12T17:40:29.242704+00:00",
+    "seen_in_sources": [
+      "ed_zitron"
+    ]
+  },
+  "niassembly.gov.uk": {
+    "count": 1,
+    "example_links": [
+      "https://www.niassembly.gov.uk/globalassets/documents/social-dev/welfare-reform/submissions/9.wave-submission-2.pdf?ref=wheresyoured.at"
+    ],
+    "first_seen": "2026-09-12T17:40:29.242704+00:00",
+    "seen_in_sources": [
+      "ed_zitron"
+    ]
+  },
+  "notpeerreviewed.com": {
+    "count": 1,
+    "example_links": [
+      "https://notpeerreviewed.com/blog/tail-latency/"
+    ],
+    "first_seen": "2026-09-12T17:40:28.955363+00:00",
+    "seen_in_sources": [
+      "semianalysis"
+    ]
+  },
+  "npr.org": {
+    "count": 2,
+    "example_links": [
+      "https://www.npr.org/sections/money/2022/09/13/1122059402/the-economics-behind-quiet-quitting-and-what-we-should-call-it-instead?ref=wheresyoured.at",
+      "https://www.npr.org/2022/08/19/1117753535/quiet-quitting-work-tiktok?ref=wheresyoured.at"
+    ],
+    "first_seen": "2026-09-12T17:40:29.242704+00:00",
+    "seen_in_sources": [
+      "ed_zitron"
+    ]
+  },
+  "nrdc.org": {
+    "count": 1,
+    "example_links": [
+      "https://www.nrdc.org/stories/ai-boom-stressing-grid-it-doesnt-have-be-way?ref=wheresyoured.at"
+    ],
+    "first_seen": "2026-09-12T17:40:29.242704+00:00",
+    "seen_in_sources": [
+      "ed_zitron"
+    ]
+  },
+  "nvd.nist.gov": {
+    "count": 1,
+    "example_links": [
+      "https://nvd.nist.gov/vuln/detail/cve-2026-46300"
+    ],
+    "first_seen": "2026-09-12T17:40:28.955363+00:00",
+    "seen_in_sources": [
+      "semianalysis"
+    ]
+  },
+  "nvidia.com": {
+    "count": 1,
+    "example_links": [
+      "https://www.nvidia.com/en-us/product-security/"
+    ],
+    "first_seen": "2026-09-12T17:40:28.955363+00:00",
+    "seen_in_sources": [
+      "semianalysis"
+    ]
+  },
+  "nvidia.custhelp.com": {
+    "count": 1,
+    "example_links": [
+      "https://nvidia.custhelp.com/app/answers/detail/a_id/5659"
+    ],
+    "first_seen": "2026-09-12T17:40:28.955363+00:00",
+    "seen_in_sources": [
+      "semianalysis"
+    ]
+  },
+  "nvidianews.nvidia.com": {
+    "count": 5,
+    "example_links": [
+      "https://nvidianews.nvidia.com/news/nvidia-partners-with-apollo-blackrock-blackstone-brookfield-goldman-sachs-and-kkr-to-establish-ai-compute-infrastructure-financing-platforms-to-mobilize-over-500-billion-of-third-party-capital",
+      "https://nvidianews.nvidia.com/news/nvidia-introduces-new-family-of-bluefield-dpus-to-bring-breakthrough-networking-storage-and-security-performance-to-every-data-center",
+      "https://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-fourth-quarter-and-fiscal-2026?ref=wheresyoured.at"
+    ],
+    "first_seen": "2026-09-12T17:40:28.955363+00:00",
+    "seen_in_sources": [
+      "semianalysis",
+      "ed_zitron"
+    ]
+  },
+  "nytimes.com": {
+    "count": 3,
+    "example_links": [
+      "https://www.nytimes.com/2020/12/22/us/politics/trump-pardons.html?ref=wheresyoured.at",
+      "https://www.nytimes.com/2026/06/25/technology/openai-ipo-artificial-intelligence.html?ref=wheresyoured.at",
+      "https://www.nytimes.com/2026/07/31/magazine/larry-ellison-ai-oracle.html?ref=wheresyoured.at#:~:text=business%20with%20China.-,In,-July%2C%20S%26P"
+    ],
+    "first_seen": "2026-09-12T17:40:29.242704+00:00",
+    "seen_in_sources": [
+      "ed_zitron"
+    ]
+  },
+  "openai.com": {
+    "count": 9,
+    "example_links": [
+      "https://openai.com/index/hugging-face-model-evaluation-security-incident/",
+      "https://openai.com/daybreak/",
+      "https://openai.com/index/jalapeno-first-results/"
+    ],
+    "first_seen": "2026-09-12T17:40:28.955363+00:00",
+    "seen_in_sources": [
+      "semianalysis",
+      "ed_zitron"
+    ]
+  },
+  "opencve.alliance.unm.edu": {
+    "count": 1,
+    "example_links": [
+      "https://opencve.alliance.unm.edu/cve/CVE-2026-65617"
+    ],
+    "first_seen": "2026-09-12T17:40:28.955363+00:00",
+    "seen_in_sources": [
+      "semianalysis"
+    ]
+  },
+  "openrouter.ai": {
+    "count": 1,
+    "example_links": [
+      "https://openrouter.ai/moonshotai/kimi-k3#providers"
+    ],
+    "first_seen": "2026-09-12T17:40:28.955363+00:00",
+    "seen_in_sources": [
+      "semianalysis"
+    ]
+  },
+  "oracle.com": {
+    "count": 1,
+    "example_links": [
+      "https://www.oracle.com/corporate/security-practices/assurance/vulnerability/disclosure/"
+    ],
+    "first_seen": "2026-09-12T17:40:28.955363+00:00",
+    "seen_in_sources": [
+      "semianalysis"
+    ]
+  },
+  "ounces-partnership-nvidia-advance-160100272.html": {
+    "count": 1,
+    "example_links": [
+      "http://ounces-partnership-nvidia-advance-160100272.html/?ref=wheresyoured.at"
+    ],
+    "first_seen": "2026-09-12T17:40:29.242704+00:00",
+    "seen_in_sources": [
+      "ed_zitron"
+    ]
+  },
+  "pa.gov": {
+    "count": 1,
+    "example_links": [
+      "https://www.pa.gov/governor/newsroom/2026-press-releases/governor-shapiro-signs-executive-order-on-data-center-developmen?ref=wheresyoured.at"
+    ],
+    "first_seen": "2026-09-12T17:40:29.242704+00:00",
+    "seen_in_sources": [
+      "ed_zitron"
+    ]
+  },
+  "pase.com": {
+    "count": 1,
+    "example_links": [
+      "https://www.pase.com/projects/facebook-prineville/?ref=wheresyoured.at"
+    ],
+    "first_seen": "2026-09-12T17:40:29.242704+00:00",
+    "seen_in_sources": [
+      "ed_zitron"
+    ]
+  },
+  "pcmag.com": {
+    "count": 1,
+    "example_links": [
+      "https://www.pcmag.com/news/meta-security-researchers-openclaw-ai-agent-accidentally-deleted-her-emails?ref=wheresyoured.at"
+    ],
+    "first_seen": "2026-09-12T17:40:29.242704+00:00",
+    "seen_in_sources": [
+      "ed_zitron"
+    ]
+  },
+  "pew.org": {
+    "count": 1,
+    "example_links": [
+      "https://www.pew.org/en/research-and-analysis/issue-briefs/2026/08/mortgage-lending-standards-are-too-tight?ref=wheresyoured.at"
+    ],
+    "first_seen": "2026-09-12T17:40:29.242704+00:00",
+    "seen_in_sources": [
+      "ed_zitron"
+    ]
+  },
+  "pjm-model.semianalysis.com": {
+    "count": 1,
+    "example_links": [
+      "https://pjm-model.semianalysis.com/"
+    ],
+    "first_seen": "2026-09-12T17:40:28.955363+00:00",
+    "seen_in_sources": [
+      "semianalysis"
+    ]
+  },
+  "pjm.com": {
+    "count": 1,
+    "example_links": [
+      "https://www.pjm.com/-/media/DotCom/markets-ops/rpm/rpm-auction-info/2024-2025/2024-2025-base-residual-auction-report.ashx"
+    ],
+    "first_seen": "2026-09-12T17:40:28.955363+00:00",
+    "seen_in_sources": [
+      "semianalysis"
+    ]
+  },
+  "platform.claude.com": {
+    "count": 1,
+    "example_links": [
+      "https://platform.claude.com/docs/en/build-with-claude/prompt-caching#:~:text=Check%20that%20calls%20are%20made%20within%20the%20cache%20lifetime%20(5%20minutes%20by%20default)"
+    ],
+    "first_seen": "2026-09-12T17:40:28.955363+00:00",
+    "seen_in_sources": [
+      "semianalysis"
+    ]
+  },
+  "predatorylending.duke.edu": {
+    "count": 1,
+    "example_links": [
+      "https://predatorylending.duke.edu/business-analysis/evolution-of-mortgage-lending/subprime-lending/?ref=wheresyoured.at"
+    ],
+    "first_seen": "2026-09-12T17:40:29.242704+00:00",
+    "seen_in_sources": [
+      "ed_zitron"
+    ]
+  },
+  "preferreddata.com": {
+    "count": 1,
+    "example_links": [
+      "https://www.preferreddata.com/blog/google-workspace-gemini-mandatory-price-increase-2026-nc-smb-cloud-cost-playbook?ref=wheresyoured.at"
+    ],
+    "first_seen": "2026-09-12T17:40:29.242704+00:00",
+    "seen_in_sources": [
+      "ed_zitron"
+    ]
+  },
+  "primeintellect.ai": {
+    "count": 1,
+    "example_links": [
+      "https://www.primeintellect.ai/"
+    ],
+    "first_seen": "2026-09-12T17:40:28.955363+00:00",
+    "seen_in_sources": [
+      "semianalysis"
+    ]
+  },
+  "pymnts.com": {
+    "count": 2,
+    "example_links": [
+      "https://www.pymnts.com/news/investment-tracker/2026/harvey-targets-15-5-billion-valuation-as-revenue-surges-past-350-million/?ref=wheresyoured.at"
+    ],
+    "first_seen": "2026-09-12T17:40:29.242704+00:00",
+    "seen_in_sources": [
+      "ed_zitron"
+    ]
+  },
+  "pypi.org": {
+    "count": 1,
+    "example_links": [
+      "https://pypi.org/project/mooncake-transfer-engine/"
+    ],
+    "first_seen": "2026-09-12T17:40:28.955363+00:00",
+    "seen_in_sources": [
+      "semianalysis"
+    ]
+  },
+  "pytorch.org": {
+    "count": 1,
+    "example_links": [
+      "https://pytorch.org/blog/helion-on-tpu-towards-hardware-heterogeneous-kernel-authoring/"
+    ],
+    "first_seen": "2026-09-12T17:40:28.955363+00:00",
+    "seen_in_sources": [
+      "semianalysis"
+    ]
+  },
+  "q.com": {
+    "count": 1,
+    "example_links": [
+      "https://q.com/"
+    ],
+    "first_seen": "2026-09-12T17:40:28.955363+00:00",
+    "seen_in_sources": [
+      "semianalysis"
+    ]
+  },
+  "radiant.co": {
+    "count": 1,
+    "example_links": [
+      "https://radiant.co/"
+    ],
+    "first_seen": "2026-09-12T17:40:28.955363+00:00",
+    "seen_in_sources": [
+      "semianalysis"
+    ]
+  },
+  "ramp.com": {
+    "count": 1,
+    "example_links": [
+      "https://ramp.com/data/april-2026-ai-index?ref=wheresyoured.at"
+    ],
+    "first_seen": "2026-09-12T17:40:29.242704+00:00",
+    "seen_in_sources": [
+      "ed_zitron"
+    ]
+  },
+  "recipes.vllm.ai": {
+    "count": 1,
+    "example_links": [
+      "http://recipes.vllm.ai"
+    ],
+    "first_seen": "2026-09-12T17:40:28.955363+00:00",
+    "seen_in_sources": [
+      "semianalysis"
+    ]
+  },
+  "researchgate.net": {
+    "count": 1,
+    "example_links": [
+      "https://www.researchgate.net/figure/US-Subprime-Mortgage-Originations-from-1996-to-2008-source-Inside-Mortgage-Finance_fig1_333894677?ref=wheresyoured.at"
+    ],
+    "first_seen": "2026-09-12T17:40:29.242704+00:00",
+    "seen_in_sources": [
+      "ed_zitron"
+    ]
+  },
+  "reuters.com": {
+    "count": 8,
+    "example_links": [
+      "https://www.reuters.com/business/finance/anthropics-mythos-sends-us-banks-rushing-plug-cyber-holes-2026-05-12/",
+      "https://www.reuters.com/technology/anthropic-signs-35-billion-cloud-deal-with-nvidia-backed-lambda-source-says-2026-08-31/?ref=wheresyoured.at",
+      "https://www.reuters.com/world/americas/trump-ally-erik-prince-plans-keep-personnel-haiti-10-years-fight-gangs-collect-2025-08-14/?ref=wheresyoured.at"
+    ],
+    "first_seen": "2026-09-12T17:40:28.955363+00:00",
+    "seen_in_sources": [
+      "semianalysis",
+      "ed_zitron"
+    ]
+  },
+  "robinsloan.com": {
+    "count": 1,
+    "example_links": [
+      "https://www.robinsloan.com/lab/jarvising/?ref=wheresyoured.at"
+    ],
+    "first_seen": "2026-09-12T17:40:29.242704+00:00",
+    "seen_in_sources": [
+      "ed_zitron"
+    ]
+  },
+  "s201.q4cdn.com": {
+    "count": 2,
+    "example_links": [
+      "https://s201.q4cdn.com/141608511/files/doc_financials/2027/NVDA-2027-Q2-10Q-Final-including-exhibits.pdf?ref=wheresyoured.at",
+      "https://s201.q4cdn.com/141608511/files/doc_financials/2023/Q423/Q4FY23-CFO-Commentary.pdf?ref=wheresyoured.at"
+    ],
+    "first_seen": "2026-09-12T17:40:29.242704+00:00",
+    "seen_in_sources": [
+      "ed_zitron"
+    ]
+  },
+  "sbenergy.com": {
+    "count": 1,
+    "example_links": [
+      "https://sbenergy.com/openai-and-softbank-group-partner-with-sb-energy/?ref=wheresyoured.at"
+    ],
+    "first_seen": "2026-09-12T17:40:29.242704+00:00",
+    "seen_in_sources": [
+      "ed_zitron"
+    ]
+  },
+  "se.com": {
+    "count": 1,
+    "example_links": [
+      "https://www.se.com/ww/en/"
+    ],
+    "first_seen": "2026-09-12T17:40:28.955363+00:00",
+    "seen_in_sources": [
+      "semianalysis"
+    ]
+  },
+  "sec.gov": {
+    "count": 1,
+    "example_links": [
+      "https://www.sec.gov/Archives/edgar/data/1819989/000095010325015073/dp237633_ex9901.htm?ref=wheresyoured.at"
+    ],
+    "first_seen": "2026-09-12T17:40:29.242704+00:00",
+    "seen_in_sources": [
+      "ed_zitron"
+    ]
+  },
+  "securityguardservices.com": {
+    "count": 1,
+    "example_links": [
+      "https://securityguardservices.com/constellis-awarded-10-3b-contract-from-u-s-army-contracting-command/?ref=wheresyoured.at"
+    ],
+    "first_seen": "2026-09-12T17:40:29.242704+00:00",
+    "seen_in_sources": [
+      "ed_zitron"
+    ]
+  },
+  "sfstandard.com": {
+    "count": 1,
+    "example_links": [
+      "https://sfstandard.com/2026/08/13/openai-sam-altman-problem/?ref=wheresyoured.at"
+    ],
+    "first_seen": "2026-09-12T17:40:29.242704+00:00",
+    "seen_in_sources": [
+      "ed_zitron"
+    ]
+  },
+  "sharonai.com": {
+    "count": 1,
+    "example_links": [
+      "https://sharonai.com/press-releases/sharon-ai-reports-second-quarter-2026-results/?ref=wheresyoured.at"
+    ],
+    "first_seen": "2026-09-12T17:40:29.242704+00:00",
+    "seen_in_sources": [
+      "ed_zitron"
+    ]
+  },
+  "spglobal.com": {
+    "count": 2,
+    "example_links": [
+      "https://www.spglobal.com/ratings/en/regulatory/article/-/view/sourceId/101679428?ref=wheresyoured.at",
+      "https://www.spglobal.com/ratings/en/regulatory/article/-/view/sourceId/101695609?ref=wheresyoured.at"
+    ],
+    "first_seen": "2026-09-12T17:40:29.242704+00:00",
+    "seen_in_sources": [
+      "ed_zitron"
+    ]
+  },
+  "statesman.com": {
+    "count": 1,
+    "example_links": [
+      "https://www.statesman.com/business/technology/article/former-3m-austin-stargate-22170105.php?ref=wheresyoured.at"
+    ],
+    "first_seen": "2026-09-12T17:40:29.242704+00:00",
+    "seen_in_sources": [
+      "ed_zitron"
+    ]
+  },
+  "statista.com": {
+    "count": 1,
+    "example_links": [
+      "http://statista.com/statistics/1105798/it-spending-share-revenue-by-industry/?ref=wheresyoured.at"
+    ],
+    "first_seen": "2026-09-12T17:40:29.242704+00:00",
+    "seen_in_sources": [
+      "ed_zitron"
+    ]
+  },
+  "supermicro.com": {
+    "count": 1,
+    "example_links": [
+      "https://www.supermicro.com/en/accelerators/nvidia/vera-rubin?ref=wheresyoured.at"
+    ],
+    "first_seen": "2026-09-12T17:40:29.242704+00:00",
+    "seen_in_sources": [
+      "ed_zitron"
+    ]
+  },
+  "sustcsonglin.github.io": {
+    "count": 1,
+    "example_links": [
+      "https://sustcsonglin.github.io/blog/2024/deltanet-1/"
+    ],
+    "first_seen": "2026-09-12T17:40:28.955363+00:00",
+    "seen_in_sources": [
+      "semianalysis"
+    ]
+  },
+  "taxpolicy.org.uk": {
+    "count": 1,
+    "example_links": [
+      "https://taxpolicy.org.uk/2023/02/09/ebooks/?ref=wheresyoured.at"
+    ],
+    "first_seen": "2026-09-12T17:40:29.242704+00:00",
+    "seen_in_sources": [
+      "ed_zitron"
+    ]
+  },
+  "techcrunch.com": {
+    "count": 7,
+    "example_links": [
+      "https://techcrunch.com/2025/06/05/cursors-anysphere-nabs-9-9b-valuation-soars-past-500m-arr/?ref=wheresyoured.at",
+      "https://techcrunch.com/2026/05/27/ai-coding-startup-cognition-raises-1b-at-25b-pre-money-valuation/?ref=wheresyoured.at",
+      "https://techcrunch.com/2026/05/30/what-a-joke-github-copilots-new-token-based-billing-spurs-consternation-among-devs/?ref=wheresyoured.at"
+    ],
+    "first_seen": "2026-09-12T17:40:29.242704+00:00",
+    "seen_in_sources": [
+      "ed_zitron"
+    ]
+  },
+  "theguardian.com": {
+    "count": 5,
+    "example_links": [
+      "https://www.theguardian.com/technology/2026/aug/17/are-microsofts-ai-plans-being-held-back-by-a-shortage-of-chips?ref=wheresyoured.at",
+      "https://www.theguardian.com/australia-news/2015/dec/09/australian-mercenary-reportedly-killed-yemen-clashes?ref=wheresyoured.at",
+      "https://www.theguardian.com/technology/2026/aug/23/ai-debt-bomb-crisis?ref=wheresyoured.at"
+    ],
+    "first_seen": "2026-09-12T17:40:29.242704+00:00",
+    "seen_in_sources": [
+      "ed_zitron"
+    ]
+  },
+  "theinformation.com": {
+    "count": 6,
+    "example_links": [
+      "https://www.theinformation.com/articles/openai-boost-revenue-forecasts-predicts-112-billion-cash-burn-2030?rc=kz8jh3&ref=wheresyoured.at",
+      "https://www.theinformation.com/articles/inside-cognitions-booming-growth-high-cash-burn?utm_campaign=Editorial&utm_content=Article&utm_medium=organic_social&utm_source=threads%2Ctwitter&rc=kz8jh3",
+      "https://www.theinformation.com/articles/nvidia-ai-chip-prices-rise-17-server-makers-tell-customers?rc=kz8jh3&ref=wheresyoured.at"
+    ],
+    "first_seen": "2026-09-12T17:40:29.242704+00:00",
+    "seen_in_sources": [
+      "ed_zitron"
+    ]
+  },
+  "thenextweb.com": {
+    "count": 1,
+    "example_links": [
+      "https://thenextweb.com/news/google-deepmind-morale-gemini-delay-talent?ref=wheresyoured.at"
+    ],
+    "first_seen": "2026-09-12T17:40:29.242704+00:00",
+    "seen_in_sources": [
+      "ed_zitron"
+    ]
+  },
+  "theregister.com": {
+    "count": 2,
+    "example_links": [
+      "https://www.theregister.com/ai-and-ml/2026/07/21/oracle-faces-100m-annual-bill-to-back-wisconsin-datacenter-power-promises/5275728?ref=wheresyoured.at"
+    ],
+    "first_seen": "2026-09-12T17:40:29.242704+00:00",
+    "seen_in_sources": [
+      "ed_zitron"
+    ]
+  },
+  "theverge.com": {
+    "count": 1,
+    "example_links": [
+      "https://www.theverge.com/tech/924891/meta-is-working-on-an-openclaw-like-ai-agent-for-regular-people?ref=wheresyoured.at"
+    ],
+    "first_seen": "2026-09-12T17:40:29.242704+00:00",
+    "seen_in_sources": [
+      "ed_zitron"
+    ]
+  },
+  "tiktok.com": {
+    "count": 1,
+    "example_links": [
+      "https://www.tiktok.com/@moreperfectunion/video/7667664611084078350?ref=wheresyoured.at"
+    ],
+    "first_seen": "2026-09-12T17:40:29.242704+00:00",
+    "seen_in_sources": [
+      "ed_zitron"
+    ]
+  },
+  "tilert.ai": {
+    "count": 1,
+    "example_links": [
+      "https://www.tilert.ai/"
+    ],
+    "first_seen": "2026-09-12T17:40:28.955363+00:00",
+    "seen_in_sources": [
+      "semianalysis"
+    ]
+  },
+  "time.com": {
+    "count": 2,
+    "example_links": [
+      "https://time.com/article/2026/08/26/openai-sam-altman-interview/?ref=wheresyoured.at#:~:text=Mark%20Chen%20estimated-,OpenAI,-is%20%E2%80%9C80%25%20of",
+      "https://time.com/6287012/why-finding-job-is-difficult/?ref=wheresyoured.at"
+    ],
+    "first_seen": "2026-09-12T17:40:29.242704+00:00",
+    "seen_in_sources": [
+      "ed_zitron"
+    ]
+  },
+  "tokenomics.info": {
+    "count": 1,
+    "example_links": [
+      "https://tokenomics.info/cerebras"
+    ],
+    "first_seen": "2026-09-12T17:40:28.955363+00:00",
+    "seen_in_sources": [
+      "semianalysis"
+    ]
+  },
+  "tomshardware.com": {
+    "count": 3,
+    "example_links": [
+      "https://www.tomshardware.com/tech-industry/artificial-intelligence/github-copilot-customers-suffer-from-sticker-shock-as-microsoft-switches-to-usage-based-pricing-customers-report-up-to-100-fold-price-hikes?ref=wheresyoured.at",
+      "https://www.tomshardware.com/tech-industry/nvidia-ai-and-hpc-gpu-sales-reportedly-approached-half-a-million-units-in-q3-thanks-to-meta-facebook?ref=wheresyoured.at",
+      "https://www.tomshardware.com/pc-components/cpus/shifting-need-for-cpus-in-ai-workloads-drives-intensifying-shortages-price-hikes?ref=wheresyoured.at"
+    ],
+    "first_seen": "2026-09-12T17:40:29.242704+00:00",
+    "seen_in_sources": [
+      "ed_zitron"
+    ]
+  },
+  "tracxn.com": {
+    "count": 1,
+    "example_links": [
+      "https://tracxn.com/d/companies/harvey/__wv3Ir3KF1kZj1Zll1_0BJ3nIHx8uKPnDrx2Z1k7aQkU/funding-and-investors?ref=wheresyoured.at"
+    ],
+    "first_seen": "2026-09-12T17:40:29.242704+00:00",
+    "seen_in_sources": [
+      "ed_zitron"
+    ]
+  },
+  "uk.finance.yahoo.com": {
+    "count": 1,
+    "example_links": [
+      "https://uk.finance.yahoo.com/news/why-strategist-thinks-longer-term-123408535.html?ref=wheresyoured.at"
+    ],
+    "first_seen": "2026-09-12T17:40:29.242704+00:00",
+    "seen_in_sources": [
+      "ed_zitron"
+    ]
+  },
+  "v": {
+    "count": 1,
+    "example_links": [
+      "http://v/?ref=wheresyoured.at"
+    ],
+    "first_seen": "2026-09-12T17:40:29.242704+00:00",
+    "seen_in_sources": [
+      "ed_zitron"
+    ]
+  },
+  "variety.com": {
+    "count": 1,
+    "example_links": [
+      "https://variety.com/2026/digital/news/youtube-q2-2026-ad-sales-alphabet-google-earnings-results-1236818132/?ref=wheresyoured.at"
+    ],
+    "first_seen": "2026-09-12T17:40:29.242704+00:00",
+    "seen_in_sources": [
+      "ed_zitron"
+    ]
+  },
+  "vcluster.com": {
+    "count": 1,
+    "example_links": [
+      "https://www.vcluster.com/docs/vcluster/production-guide/choose-worker-node-model#decide-with-three-questions"
+    ],
+    "first_seen": "2026-09-12T17:40:28.955363+00:00",
+    "seen_in_sources": [
+      "semianalysis"
+    ]
+  },
+  "vllm-project.github.io": {
+    "count": 1,
+    "example_links": [
+      "https://vllm-project.github.io/2026/07/14/vllm-tilert-pd.html"
+    ],
+    "first_seen": "2026-09-12T17:40:28.955363+00:00",
+    "seen_in_sources": [
+      "semianalysis"
+    ]
+  },
+  "vllm.ai": {
+    "count": 2,
+    "example_links": [
+      "https://vllm.ai/blog/2025-10-16-vllm-tpu",
+      "https://vllm.ai/blog/2026-07-27-k3"
+    ],
+    "first_seen": "2026-09-12T17:40:28.955363+00:00",
+    "seen_in_sources": [
+      "semianalysis"
+    ]
+  },
+  "volts.wtf": {
+    "count": 1,
+    "example_links": [
+      "https://www.volts.wtf/p/doing-data-centers-the-not-dumb-way"
+    ],
+    "first_seen": "2026-09-12T17:40:28.955363+00:00",
+    "seen_in_sources": [
+      "semianalysis"
+    ]
+  },
+  "wayback.archive-it.org": {
+    "count": 1,
+    "example_links": [
+      "https://wayback.archive-it.org/all/20090423085253/http://www.cepr.net/index.php/publications/reports/the-run-up-in-home-prices-is-it-real-or-is-it-another-bubble/?ref=wheresyoured.at"
+    ],
+    "first_seen": "2026-09-12T17:40:29.242704+00:00",
+    "seen_in_sources": [
+      "ed_zitron"
+    ]
+  },
+  "wccftech.com": {
+    "count": 1,
+    "example_links": [
+      "https://wccftech.com/nvidia-has-managed-to-reduce-token-costs-by-10x-with-blackwell/?ref=wheresyoured.at"
+    ],
+    "first_seen": "2026-09-12T17:40:29.242704+00:00",
+    "seen_in_sources": [
+      "ed_zitron"
+    ]
+  },
+  "web.archive.org": {
+    "count": 1,
+    "example_links": [
+      "https://web.archive.org/web/20051126044138/http://www.realtor.org/research.nsf/pages/anti-bubblereports"
+    ],
+    "first_seen": "2026-09-12T17:40:29.242704+00:00",
+    "seen_in_sources": [
+      "ed_zitron"
+    ]
+  },
+  "wired.com": {
+    "count": 2,
+    "example_links": [
+      "https://www.wired.com/story/openai-elon-musk-cursor-billion-revenue/?ref=wheresyoured.at",
+      "https://www.wired.com/story/real-reason-data-center-gas-power-plants-are-so-dirty/?ref=wheresyoured.at"
+    ],
+    "first_seen": "2026-09-12T17:40:29.242704+00:00",
+    "seen_in_sources": [
+      "ed_zitron"
+    ]
+  },
+  "wsj.com": {
+    "count": 8,
+    "example_links": [
+      "https://www.wsj.com/tech/nvidia-pauses-revenue-sharing-deals-with-ai-cloud-companies-9c71454e?mod=author_content_page_1_pos_4",
+      "https://www.wsj.com/cio-journal/yes-were-entering-the-era-of-artificial-general-intelligence-d9b0920e?ref=wheresyoured.at",
+      "https://www.wsj.com/articles/if-your-gen-z-co-workers-are-quiet-quitting-heres-what-that-means-11660260608?ref=wheresyoured.at"
+    ],
+    "first_seen": "2026-09-12T17:40:28.955363+00:00",
+    "seen_in_sources": [
+      "semianalysis",
+      "ed_zitron"
+    ]
+  },
+  "youtu.be": {
+    "count": 3,
+    "example_links": [
+      "https://youtu.be/wv4eCJUTZRY?si=tMJ_GHX-d7oIxosg&t=110&ref=wheresyoured.at",
+      "https://youtu.be/Gnl833wXRz0?si=8C0rRusA01z3lSvf&t=738&ref=wheresyoured.at",
+      "https://youtu.be/_6B2ccRy3YM?si=gPmB_xoA-yRvcAgX&t=190&ref=wheresyoured.at"
+    ],
+    "first_seen": "2026-09-12T17:40:29.242704+00:00",
+    "seen_in_sources": [
+      "ed_zitron"
+    ]
+  },
+  "zsa.io": {
+    "count": 1,
+    "example_links": [
+      "https://www.zsa.io/moonlander?ref=wheresyoured.at"
+    ],
+    "first_seen": "2026-09-12T17:40:29.242704+00:00",
+    "seen_in_sources": [
+      "ed_zitron"
+    ]
+  }
+}

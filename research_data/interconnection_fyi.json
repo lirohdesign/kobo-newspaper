@@ -1,0 +1,17 @@
+{
+  "id": "interconnection_fyi",
+  "status": "ok",
+  "items": [
+    {
+      "title": "Indiana data-center tracker \u2014 2026-09-12",
+      "link": "https://www.interconnection.fyi/data-center/state/IN#snapshot-2026-09-12",
+      "date": "2026-09-12",
+      "summary": "56 tracked Indiana data-center projects: 33 Proposed, 13 Cancelled, 6 Construction, 4 Operational. Top counties by project count: Lake (9), Porter (7), Marion (6), St. Joseph (5), Allen (3)."
+    }
+  ],
+  "label": "interconnection.fyi \u2014 Indiana data-center tracker",
+  "area": "grid_buildout",
+  "site_url": "https://www.interconnection.fyi/data-center/state/IN",
+  "fetched_at": "2026-09-12T17:40:32.643809+00:00",
+  "description_unreliable": false
+}
