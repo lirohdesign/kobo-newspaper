@@ -66,6 +66,18 @@
       "notes": "No RSS. Uses the USDM data service JSON API directly (structured data, not scraped HTML) — updates every Thursday. aoi param needs Indiana's FIPS code (18), not 'IN' — confirmed 2026-09-12."
     },
     {
+      "id": "nass_crop_progress",
+      "label": "USDA NASS Crop Progress — Indiana",
+      "area": "agriculture",
+      "type": "scrape",
+      "module": "nass_crop_progress_scrape",
+      "function": "fetch_items",
+      "site_url": "https://quickstats.nass.usda.gov/",
+      "cadence": "weekly_in_season",
+      "requires_env": "NASS_API_KEY",
+      "notes": "UNVERIFIED as of 2026-09-13 — built against the documented Quick Stats API schema but never tested against a real key (none was available at build time). Sanity-check the first real output against quickstats.nass.usda.gov before trusting it. Only meaningful April-November; returns empty (not an error) off-season."
+    },
+    {
       "id": "interconnection_fyi",
       "label": "interconnection.fyi — Indiana data-center tracker",
       "area": "grid_buildout",
@@ -79,10 +91,8 @@
   ],
 
   "no_feed_available": {
-    "note": "Confirmed no usable RSS during setup (2026-09-12). US Drought Monitor and interconnection.fyi now have direct scrapers (type 'scrape' above). Still need one:",
-    "sources": [
-      "USDA NASS Crop Progress — weekly in-season (Apr-Nov). Real API exists (quickstats.nass.usda.gov/api) but requires a free registered API key — needs the user to sign up and provide NASS_API_KEY."
-    ]
+    "note": "Confirmed no usable RSS during setup (2026-09-12). US Drought Monitor, interconnection.fyi, and NASS Crop Progress now have direct scrapers/API integrations (type 'scrape' above). None currently outstanding.",
+    "sources": []
   },
 
   "deprioritized": {

@@ -27,6 +27,8 @@ jobs:
         run: pip install -r requirements.txt
 
       - name: Run research pull
+        env:
+          NASS_API_KEY: ${{ secrets.NASS_API_KEY }}
         run: python research_pull.py
 
       - name: Commit updated research_data
