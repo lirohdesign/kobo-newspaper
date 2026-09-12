@@ -127,6 +127,19 @@ def fetch_items():
 
 
 if __name__ == "__main__":
-    for item in fetch_items():
-        print(item["title"])
-        print(item["summary"])
+    import sys
+    if len(sys.argv) > 1 and sys.argv[1] == "--debug-raw":
+        key = os.environ.get("NASS_API_KEY")
+        year = datetime.now(timezone.utc).year
+        for commodity in COMMODITIES:
+            rows = _query(key, commodity, year)
+            usable = [r for r in rows if r.get("end_code") and r.get("Value") not in (None, "", "(D)", "(NA)")]
+            latest_week = max((r["end_code"] for r in usable), default=None)
+            print(f"=== {commodity}, end_code {latest_week} ===")
+            for r in usable:
+                if r["end_code"] == latest_week:
+                    print(json.dumps(r, indent=2))
+    else:
+        for item in fetch_items():
+            print(item["title"])
+            print(item["summary"])
