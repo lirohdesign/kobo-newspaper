@@ -64,15 +64,25 @@
       "site_url": "https://droughtmonitor.unl.edu/CurrentMap/StateDroughtMonitor.aspx?IN",
       "cadence": "weekly",
       "notes": "No RSS. Uses the USDM data service JSON API directly (structured data, not scraped HTML) — updates every Thursday. aoi param needs Indiana's FIPS code (18), not 'IN' — confirmed 2026-09-12."
+    },
+    {
+      "id": "interconnection_fyi",
+      "label": "interconnection.fyi — Indiana data-center tracker",
+      "area": "grid_buildout",
+      "type": "scrape",
+      "module": "interconnection_fyi_scrape",
+      "function": "fetch_items",
+      "site_url": "https://www.interconnection.fyi/data-center/state/IN",
+      "cadence": "weekly",
+      "notes": "No RSS/API, but the page's __NEXT_DATA__ script tag embeds the full project list as JSON — read that directly instead of scraping rendered HTML. This is a live snapshot, not a chronological feed, so fetch_items() emits one dated summary (counts by status/county) per pull rather than per-project items; the history ledger is what lets the Tuesday session compare week over week."
     }
   ],
 
   "no_feed_available": {
-    "note": "Confirmed no usable RSS during setup (2026-09-12) or update too irregular for weekly polling. US Drought Monitor now has a direct scraper (type 'scrape' above, via a real JSON API). These still need one:",
+    "note": "Confirmed no usable RSS during setup (2026-09-12). US Drought Monitor and interconnection.fyi now have direct scrapers (type 'scrape' above). Still need one:",
     "sources": [
-      "interconnection.fyi — daily-updated tracker, no feed",
-      "USDA NASS Crop Progress — weekly in-season (Apr-Nov), no feed",
-      "drought.gov Midwest Drought Status Update — monthly narrative, no feed"
+      "USDA NASS Crop Progress — weekly in-season (Apr-Nov). Real API exists (quickstats.nass.usda.gov/api) but requires a free registered API key — needs the user to sign up and provide NASS_API_KEY.",
+      "drought.gov Midwest Drought Status Update — monthly narrative, no feed, not yet investigated for a structured-data equivalent"
     ]
   }
 }
