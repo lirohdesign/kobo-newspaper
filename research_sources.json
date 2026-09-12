@@ -81,8 +81,18 @@
   "no_feed_available": {
     "note": "Confirmed no usable RSS during setup (2026-09-12). US Drought Monitor and interconnection.fyi now have direct scrapers (type 'scrape' above). Still need one:",
     "sources": [
-      "USDA NASS Crop Progress — weekly in-season (Apr-Nov). Real API exists (quickstats.nass.usda.gov/api) but requires a free registered API key — needs the user to sign up and provide NASS_API_KEY.",
-      "drought.gov Midwest Drought Status Update — monthly narrative, no feed, not yet investigated for a structured-data equivalent"
+      "USDA NASS Crop Progress — weekly in-season (Apr-Nov). Real API exists (quickstats.nass.usda.gov/api) but requires a free registered API key — needs the user to sign up and provide NASS_API_KEY."
+    ]
+  },
+
+  "deprioritized": {
+    "note": "Investigated 2026-09-12, deliberately not built. Revisit only if something changes.",
+    "sources": [
+      {
+        "id": "drought_gov_midwest",
+        "label": "drought.gov Midwest Drought Status Update",
+        "reason": "No structured API (Drupal site, no public JSON:API exposed). Worse, the update itself is irregular enough that no Midwest-specific update exists in the current listing at all (most recent regional updates were California-Nevada, Intermountain West, Southern Plains) — would mean building a scraper for content that isn't there most weeks. The drought_monitor source above already covers Indiana's drought classification directly from a real API, which is the higher-value, more reliable signal for the same underlying question."
+      }
     ]
   }
 }
