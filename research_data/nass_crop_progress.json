@@ -3,21 +3,21 @@
   "status": "ok",
   "items": [
     {
-      "title": "Indiana Corn Progress \u2014 week ending 2026-08-02",
+      "title": "Indiana Corn Progress \u2014 week ending 2026-09-06",
       "link": "https://quickstats.nass.usda.gov/",
-      "date": "2026-08-02",
+      "date": "2026-09-06",
       "summary": "Indiana Corn as of week ending 2026-09-06: Dented: 68%, Dough: 95%, Mature: 12%, Harvested: 0%, Harvested: 30%."
     },
     {
-      "title": "Indiana Soybeans Progress \u2014 week ending 2026-06-21",
+      "title": "Indiana Soybeans Progress \u2014 week ending 2026-09-06",
       "link": "https://quickstats.nass.usda.gov/",
-      "date": "2026-06-21",
+      "date": "2026-09-06",
       "summary": "Indiana Soybeans as of week ending 2026-09-06: Dropping Leaves: 23%, Setting Pods: 96%."
     }
   ],
   "label": "USDA NASS Crop Progress \u2014 Indiana",
   "area": "agriculture",
   "site_url": "https://quickstats.nass.usda.gov/",
-  "fetched_at": "2026-09-12T17:40:32.118492+00:00",
+  "fetched_at": "2026-09-12T17:42:23.472310+00:00",
   "description_unreliable": false
 }
