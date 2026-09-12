@@ -53,13 +53,23 @@
       "site_url": "https://www.datacenterdynamics.com/",
       "cadence": "weekly",
       "notes": "Feed is broad industry news (includes sponsored posts and unrelated telecom stories) — needs curation for data-center siting/power/Indiana relevance, don't just dump the raw feed."
+    },
+    {
+      "id": "drought_monitor",
+      "label": "US Drought Monitor — Indiana",
+      "area": "climate_drought",
+      "type": "scrape",
+      "module": "drought_monitor_scrape",
+      "function": "fetch_items",
+      "site_url": "https://droughtmonitor.unl.edu/CurrentMap/StateDroughtMonitor.aspx?IN",
+      "cadence": "weekly",
+      "notes": "No RSS. Uses the USDM data service JSON API directly (structured data, not scraped HTML) — updates every Thursday. aoi param needs Indiana's FIPS code (18), not 'IN' — confirmed 2026-09-12."
     }
   ],
 
   "no_feed_available": {
-    "note": "Confirmed no usable RSS during setup (2026-09-12) or update too irregular for weekly polling. These need direct scrapers (like barometer_scrape.py) or a calendar-triggered check instead of a generic RSS pull — not yet built.",
+    "note": "Confirmed no usable RSS during setup (2026-09-12) or update too irregular for weekly polling. US Drought Monitor now has a direct scraper (type 'scrape' above, via a real JSON API). These still need one:",
     "sources": [
-      "US Drought Monitor (droughtmonitor.unl.edu) — weekly Thursday map update, no feed",
       "interconnection.fyi — daily-updated tracker, no feed",
       "USDA NASS Crop Progress — weekly in-season (Apr-Nov), no feed",
       "drought.gov Midwest Drought Status Update — monthly narrative, no feed"

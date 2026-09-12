@@ -133,10 +133,23 @@ def fetch_feed(url):
     return items
 
 
+def _fetch_via_module(source):
+    """Dispatch to a dedicated scraper module for sources with no feed
+    (e.g. drought_monitor_scrape.py). The module must expose a function
+    returning items in the same shape fetch_feed() produces."""
+    import importlib
+    module = importlib.import_module(source["module"])
+    fn = getattr(module, source["function"])
+    return fn()
+
+
 def pull_source(source):
     sid = source["id"]
     try:
-        items = fetch_feed(source["feed_url"])
+        if source["type"] == "scrape":
+            items = _fetch_via_module(source)
+        else:
+            items = fetch_feed(source["feed_url"])
     except (urllib.error.URLError, urllib.error.HTTPError, ET.ParseError, OSError) as e:
         print(f"DEBUG: {sid} fetch failed — {e}")
         return {"id": sid, "status": "error", "error": str(e), "items": []}
@@ -232,7 +245,7 @@ def main():
         tracked_domains.update(d for d in (_domain_of(s.get("site_url", "")), _domain_of(s.get("feed_url", ""))) if d)
 
     for source in manifest["sources"]:
-        if source["type"] != "rss":
+        if source["type"] not in ("rss", "scrape"):
             continue
         result = pull_source(source)
         result["label"] = source["label"]
@@ -242,7 +255,7 @@ def main():
         result["description_unreliable"] = source.get("description_unreliable", False)
 
         if result["status"] == "ok":
-            own_domains = {d for d in (_domain_of(source["site_url"]), _domain_of(source["feed_url"])) if d}
+            own_domains = {d for d in (_domain_of(source.get("site_url", "")), _domain_of(source.get("feed_url", ""))) if d}
             new_count = append_history(source["id"], result["items"])
             update_discovered_sources(source["id"], own_domains, tracked_domains, result["items"])
             print(f"DEBUG: {source['id']} — {new_count} new item(s) added to history ledger")
