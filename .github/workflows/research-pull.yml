@@ -1,0 +1,38 @@
+name: Research Pull
+
+on:
+  schedule:
+    # 5:30 AM CST (11:30 AM UTC) daily — before the 6:30 AM daily build, so
+    # research.html has fresh data by the time main.py runs. Same DST caveat
+    # as daily.yml/kids-daily.yml: fires an hour "early" in local time once
+    # CDT ends in November, since GitHub Actions cron is fixed UTC.
+    - cron: '30 11 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  pull_and_commit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run research pull
+        run: python research_pull.py
+
+      - name: Commit updated research_data
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add research_data/
+          git diff --cached --quiet && echo "No changes to commit" || git commit -m "Automated research data pull"
+          git push

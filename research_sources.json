@@ -1,0 +1,68 @@
+{
+  "_README": "Feed-driven sources for the weekly research monitor (AI/data-center market risk, grid buildout, ag/climate). Ported from the Claude-app scheduled tasks after their unattended WebFetch calls were getting auto-denied — these are plain RSS pulls instead, so there's no permission gate to hit. Verified working 2026-09-12 by fetching each feed directly. type 'rss' is parsed as generic RSS/Atom via research_pull.py. Curation (cutting low-value sources, adding new ones) happens in the Tuesday session, not here automatically.",
+
+  "sources": [
+    {
+      "id": "epoch_ai",
+      "label": "Epoch AI — Gradient Updates & Data Insights",
+      "area": "ai_market",
+      "type": "rss",
+      "feed_url": "https://epochai.substack.com/feed",
+      "site_url": "https://epoch.ai/",
+      "cadence": "weekly",
+      "notes": "Quantitative AI-trends shop. Highest-signal bull-case data source."
+    },
+    {
+      "id": "semianalysis",
+      "label": "SemiAnalysis",
+      "area": "ai_market",
+      "type": "rss",
+      "feed_url": "https://newsletter.semianalysis.com/feed",
+      "site_url": "https://semianalysis.com/",
+      "cadence": "weekly",
+      "notes": "Semiconductor/data-center supply chain analysis. Free tier only — paid Core Research posts may appear in the feed but are gated; skip if content is truncated."
+    },
+    {
+      "id": "ed_zitron",
+      "label": "Ed Zitron — Where's Your Ed At",
+      "area": "ai_market",
+      "type": "rss",
+      "feed_url": "https://www.wheresyoured.at/rss/",
+      "site_url": "https://www.wheresyoured.at/",
+      "cadence": "weekly",
+      "notes": "Bear-case AI-economics analysis. Feed includes paywalled posts titled with a 'Premium:' prefix — filter those out or flag as paywalled, don't synthesize from the title alone. Confirmed 2026-09-12: every item's <description> is a fixed subscribe-boilerplate footer, not real preview text — description_unreliable below suppresses it from rendering.",
+      "filter": {"skip_title_prefix": "Premium:"},
+      "description_unreliable": true
+    },
+    {
+      "id": "farmdoc_daily",
+      "label": "farmdoc daily",
+      "area": "agriculture",
+      "type": "rss",
+      "feed_url": "https://farmdocdaily.illinois.edu/feed",
+      "site_url": "https://farmdocdaily.illinois.edu/",
+      "cadence": "weekly_digest",
+      "notes": "Publishes daily — treat as a weekly digest and summarize the 1-3 most notable posts from the past week, not every item."
+    },
+    {
+      "id": "data_center_dynamics",
+      "label": "Data Center Dynamics",
+      "area": "grid_buildout",
+      "type": "rss",
+      "feed_url": "https://www.datacenterdynamics.com/en/rss/",
+      "site_url": "https://www.datacenterdynamics.com/",
+      "cadence": "weekly",
+      "notes": "Feed is broad industry news (includes sponsored posts and unrelated telecom stories) — needs curation for data-center siting/power/Indiana relevance, don't just dump the raw feed."
+    }
+  ],
+
+  "no_feed_available": {
+    "note": "Confirmed no usable RSS during setup (2026-09-12) or update too irregular for weekly polling. These need direct scrapers (like barometer_scrape.py) or a calendar-triggered check instead of a generic RSS pull — not yet built.",
+    "sources": [
+      "US Drought Monitor (droughtmonitor.unl.edu) — weekly Thursday map update, no feed",
+      "interconnection.fyi — daily-updated tracker, no feed",
+      "USDA NASS Crop Progress — weekly in-season (Apr-Nov), no feed",
+      "drought.gov Midwest Drought Status Update — monthly narrative, no feed"
+    ]
+  }
+}

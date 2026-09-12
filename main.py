@@ -12,6 +12,8 @@ from zoneinfo import ZoneInfo
 from bs4 import BeautifulSoup
 import importlib.util
 
+from research_scrape import collect_research
+
 # Central time, DST-aware — handles CST/CDT automatically so timestamps don't
 # drift an hour (and roll the date) across the spring/fall changeover.
 CENTRAL = ZoneInfo("America/Chicago")
@@ -323,6 +325,7 @@ def main():
         weather_content = collect_weather(ts)
         nyt_content = collect_nyt(ts)
         cinema_content = collect_cinema(ts)
+        research_content = collect_research(ts)
         calendar_active, calendar_upcoming = collect_calendar(today)
 
         # Load existing Sent IDs from the archive folder
@@ -378,12 +381,13 @@ def main():
 
         # MASTER index.html
         master_index = f"""<!DOCTYPE html><html><head><meta charset='UTF-8'><title>liroh daily {ts}</title><link rel='stylesheet' href='style.css'></head>
-<body><h1>liroh daily {ts}</h1><nav><a href="weather.html">weather</a> | <a href="nyt.html">nyt</a> | <a href="links.html">links</a> | <a href="cinema.html">cinema</a> | <a href="archive.html">archive</a></nav>
+<body><h1>liroh daily {ts}</h1><nav><a href="weather.html">weather</a> | <a href="nyt.html">nyt</a> | <a href="links.html">links</a> | <a href="cinema.html">cinema</a> | <a href="research.html">research</a> | <a href="archive.html">archive</a></nav>
 <section><h2>01. weather</h2>{weather_content if weather_content else '<p>unavailable</p>'}</section><hr>
 <section><h2>02. nyt briefing</h2>{nyt_content if nyt_content else '<p>unavailable</p>'}</section><hr>
 <section><h2>03. daily links</h2>{links_final_content}</section><hr>
 <section><h2>04. cinema</h2>{cinema_content if cinema_content else '<p>unavailable</p>'}</section><hr>
-<section><h2>05. calendar</h2>{calendar_section}</section></body></html>"""
+<section><h2>05. research</h2>{research_content if research_content else '<p>unavailable</p>'}</section><hr>
+<section><h2>06. calendar</h2>{calendar_section}</section></body></html>"""
         
         with open("index.html", "w", encoding="utf-8") as f:
             f.write(master_index)
