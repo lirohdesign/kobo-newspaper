@@ -1,0 +1,108 @@
+{
+  "_README": "Feed-driven sources for the weekly research monitor (AI/data-center market risk, grid buildout, ag/climate). Ported from the Claude-app scheduled tasks after their unattended WebFetch calls were getting auto-denied — these are plain RSS pulls instead, so there's no permission gate to hit. Verified working 2026-09-12 by fetching each feed directly. type 'rss' is parsed as generic RSS/Atom via research_pull.py. Curation (cutting low-value sources, adding new ones) happens in the Tuesday session, not here automatically.",
+
+  "sources": [
+    {
+      "id": "epoch_ai",
+      "label": "Epoch AI — Gradient Updates & Data Insights",
+      "area": "ai_market",
+      "type": "rss",
+      "feed_url": "https://epochai.substack.com/feed",
+      "site_url": "https://epoch.ai/",
+      "cadence": "weekly",
+      "notes": "Quantitative AI-trends shop. Highest-signal bull-case data source."
+    },
+    {
+      "id": "semianalysis",
+      "label": "SemiAnalysis",
+      "area": "ai_market",
+      "type": "rss",
+      "feed_url": "https://newsletter.semianalysis.com/feed",
+      "site_url": "https://semianalysis.com/",
+      "cadence": "weekly",
+      "notes": "Semiconductor/data-center supply chain analysis. Free tier only — paid Core Research posts may appear in the feed but are gated; skip if content is truncated."
+    },
+    {
+      "id": "ed_zitron",
+      "label": "Ed Zitron — Where's Your Ed At",
+      "area": "ai_market",
+      "type": "rss",
+      "feed_url": "https://www.wheresyoured.at/rss/",
+      "site_url": "https://www.wheresyoured.at/",
+      "cadence": "weekly",
+      "notes": "Bear-case AI-economics analysis. Feed includes paywalled posts titled with a 'Premium:' prefix — filter those out or flag as paywalled, don't synthesize from the title alone. Confirmed 2026-09-12: every item's <description> is a fixed subscribe-boilerplate footer, not real preview text — description_unreliable below suppresses it from rendering.",
+      "filter": {"skip_title_prefix": "Premium:"},
+      "description_unreliable": true
+    },
+    {
+      "id": "farmdoc_daily",
+      "label": "farmdoc daily",
+      "area": "agriculture",
+      "type": "rss",
+      "feed_url": "https://farmdocdaily.illinois.edu/feed",
+      "site_url": "https://farmdocdaily.illinois.edu/",
+      "cadence": "weekly_digest",
+      "notes": "Publishes daily — treat as a weekly digest and summarize the 1-3 most notable posts from the past week, not every item."
+    },
+    {
+      "id": "data_center_dynamics",
+      "label": "Data Center Dynamics",
+      "area": "grid_buildout",
+      "type": "rss",
+      "feed_url": "https://www.datacenterdynamics.com/en/rss/",
+      "site_url": "https://www.datacenterdynamics.com/",
+      "cadence": "weekly",
+      "notes": "Feed is broad industry news (includes sponsored posts and unrelated telecom stories) — needs curation for data-center siting/power/Indiana relevance, don't just dump the raw feed."
+    },
+    {
+      "id": "drought_monitor",
+      "label": "US Drought Monitor — Indiana",
+      "area": "climate_drought",
+      "type": "scrape",
+      "module": "drought_monitor_scrape",
+      "function": "fetch_items",
+      "site_url": "https://droughtmonitor.unl.edu/CurrentMap/StateDroughtMonitor.aspx?IN",
+      "cadence": "weekly",
+      "notes": "No RSS. Uses the USDM data service JSON API directly (structured data, not scraped HTML) — updates every Thursday. aoi param needs Indiana's FIPS code (18), not 'IN' — confirmed 2026-09-12."
+    },
+    {
+      "id": "nass_crop_progress",
+      "label": "USDA NASS Crop Progress — Indiana",
+      "area": "agriculture",
+      "type": "scrape",
+      "module": "nass_crop_progress_scrape",
+      "function": "fetch_items",
+      "site_url": "https://quickstats.nass.usda.gov/",
+      "cadence": "weekly_in_season",
+      "requires_env": "NASS_API_KEY",
+      "notes": "Verified 2026-09-12 against live data once NASS_API_KEY was added. Two real bugs surfaced and were fixed during verification: a title/summary date mismatch, and a label collision where CORN's grain vs. silage harvest sub-series (distinguished by util_practice_desc, not class_desc) both rendered as generic 'Harvested: N%'. Only meaningful April-November; returns empty (not an error) off-season."
+    },
+    {
+      "id": "interconnection_fyi",
+      "label": "interconnection.fyi — Indiana data-center tracker",
+      "area": "grid_buildout",
+      "type": "scrape",
+      "module": "interconnection_fyi_scrape",
+      "function": "fetch_items",
+      "site_url": "https://www.interconnection.fyi/data-center/state/IN",
+      "cadence": "weekly",
+      "notes": "No RSS/API, but the page's __NEXT_DATA__ script tag embeds the full project list as JSON — read that directly instead of scraping rendered HTML. This is a live snapshot, not a chronological feed, so fetch_items() emits one dated summary (counts by status/county) per pull rather than per-project items; the history ledger is what lets the Tuesday session compare week over week."
+    }
+  ],
+
+  "no_feed_available": {
+    "note": "Confirmed no usable RSS during setup (2026-09-12). US Drought Monitor, interconnection.fyi, and NASS Crop Progress now have direct scrapers/API integrations (type 'scrape' above). None currently outstanding.",
+    "sources": []
+  },
+
+  "deprioritized": {
+    "note": "Investigated 2026-09-12, deliberately not built. Revisit only if something changes.",
+    "sources": [
+      {
+        "id": "drought_gov_midwest",
+        "label": "drought.gov Midwest Drought Status Update",
+        "reason": "No structured API (Drupal site, no public JSON:API exposed). Worse, the update itself is irregular enough that no Midwest-specific update exists in the current listing at all (most recent regional updates were California-Nevada, Intermountain West, Southern Plains) — would mean building a scraper for content that isn't there most weeks. The drought_monitor source above already covers Indiana's drought classification directly from a real API, which is the higher-value, more reliable signal for the same underlying question."
+      }
+    ]
+  }
+}
