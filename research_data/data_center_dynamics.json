@@ -3,10 +3,34 @@
   "status": "ok",
   "items": [
     {
+      "title": "Attackers already understand your software supply chain better than you do",
+      "link": "https://www.datacenterdynamics.com/en/opinions/attackers-already-understand-your-software-supply-chain-better-than-you-do/",
+      "date": "Sun, 13 Sep 2026 14:00:31 +0000",
+      "summary": "And AI is only making these attackers smarter"
+    },
+    {
+      "title": "From grid constraint to grid asset: Rethinking the path to data center power",
+      "link": "https://www.datacenterdynamics.com/en/opinions/from-grid-constraint-to-grid-asset-rethinking-the-path-to-data-center-power/",
+      "date": "Sun, 13 Sep 2026 11:00:30 +0000",
+      "summary": "Stop asking for permission and start offering solutions"
+    },
+    {
+      "title": "Sponsored: From pilot to production: Direct liquid cooling deployment risks in AI data center cooling",
+      "link": "https://www.datacenterdynamics.com/en/opinions/from-pilot-to-production-direct-liquid-cooling-deployment-risks-in-ai-data-center-cooling/",
+      "date": "Sun, 13 Sep 2026 07:00:00 +0000",
+      "summary": "Examining the top eight challenges of direct liquid cooling vs air cooling data centers"
+    },
+    {
       "title": "Sponsored: Making data centers ready for AI workloads with rack-level cooling",
       "link": "https://www.datacenterdynamics.com/en/opinions/making-data-centers-ready-for-ai-workloads-with-rack-level-cooling/",
       "date": "Sat, 12 Sep 2026 15:00:00 +0000",
       "summary": "As AI matures and scales, organizations must decide: Where will these high-density workloads run?"
+    },
+    {
+      "title": "AI has changed the data center's job description",
+      "link": "https://www.datacenterdynamics.com/en/opinions/ai-has-changed-the-data-centers-job-description/",
+      "date": "Sat, 12 Sep 2026 10:00:00 +0000",
+      "summary": "AI rewrites the rules yet again"
     },
     {
       "title": "Satellite Internet coming to UK rail network as part of \u00a37.8bn space strategy",
@@ -67,35 +91,11 @@
       "link": "https://www.datacenterdynamics.com/en/news/pentagon-in-talks-to-loan-fluidstack-5bn-report/",
       "date": "Fri, 11 Sep 2026 12:38:38 +0000",
       "summary": "Money would come from Pentagon's Office of Strategic Capital"
-    },
-    {
-      "title": "Microsoft targets 38GW of data center capacity in 2032 - report",
-      "link": "https://www.datacenterdynamics.com/en/news/microsoft-targets-38gw-of-data-center-capacity-in-2032-report/",
-      "date": "Fri, 11 Sep 2026 11:28:09 +0000",
-      "summary": "Currently operates ~12GW"
-    },
-    {
-      "title": "Open standards, closed ecosystems: Is cellular IoT repeating an old telecom mistake?",
-      "link": "https://www.datacenterdynamics.com/en/opinions/open-standards-closed-ecosystems-is-cellular-iot-repeating-an-old-telecom-mistake/",
-      "date": "Fri, 11 Sep 2026 11:00:38 +0000",
-      "summary": "As IoT grapples with both legacy and modern technologies"
-    },
-    {
-      "title": "Oracle delivered 300,000 GPUs in Q1 FY2027",
-      "link": "https://www.datacenterdynamics.com/en/news/oracle-delivered-300000-gpus-in-q1-fy2027/",
-      "date": "Fri, 11 Sep 2026 10:58:37 +0000",
-      "summary": "Executives also tease \"new agentic AI accelerator\""
-    },
-    {
-      "title": "Kyivstar extends 5G pilot to Odessa, Ukraine",
-      "link": "https://www.datacenterdynamics.com/en/news/kyivstar-extends-5g-pilot-to-odessa-ukraine/",
-      "date": "Fri, 11 Sep 2026 10:30:36 +0000",
-      "summary": "Becomes the fifth Ukrainian city to trial 5G technology"
     }
   ],
   "label": "Data Center Dynamics",
   "area": "grid_buildout",
   "site_url": "https://www.datacenterdynamics.com/",
-  "fetched_at": "2026-09-12T17:44:17.256404+00:00",
+  "fetched_at": "2026-09-13T14:57:56.703459+00:00",
   "description_unreliable": false
 }
