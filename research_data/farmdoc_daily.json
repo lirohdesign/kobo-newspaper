@@ -3,6 +3,12 @@
   "status": "ok",
   "items": [
     {
+      "title": "Changing Public Perceptions of AI and Data Center Development: Results from the Gardner Food and Agricultural Policy Survey",
+      "link": "https://farmdocdaily.illinois.edu/2026/09/changing-public-perceptions-of-ai-and-data-center-development-results-from-the-gardner-food-and-agricultural-policy-survey.html",
+      "date": "Mon, 14 Sep 2026 16:26:36 +0000",
+      "summary": "The social, economic, and environmental impacts of data centers and artificial intelligence (AI) are increasingly important issues facing communities across the country. Although most existing data centers are in urban\u2026"
+    },
+    {
       "title": "Impact of Higher Corn Prices on Swine Finishing Feed Costs",
       "link": "https://farmdocdaily.illinois.edu/2026/09/impact-of-higher-corn-prices-on-swine-finishing-feed-costs.html",
       "date": "Fri, 11 Sep 2026 17:58:38 +0000",
@@ -55,17 +61,11 @@
       "link": "https://farmdocdaily.illinois.edu/2026/08/farm-machinery-demand-remains-weak-as-manufacturers-manage-production.html",
       "date": "Fri, 28 Aug 2026 16:55:43 +0000",
       "summary": "The U.S. farm machinery and equipment market continues to face weak demand despite some improvement in manufacturing production. Together, these indicators suggest that progress in adjusting production and inventories has not yet translated into a sustained recovery in equipment purchases. A\u2026"
-    },
-    {
-      "title": "Agricultural Conservation: Is Measurement the Missing Link to Increased Investment and Adoption?",
-      "link": "https://farmdocdaily.illinois.edu/2026/08/agricultural-conservation-is-measurement-the-missing-link-to-increased-investment-and-adoption.html",
-      "date": "Fri, 28 Aug 2026 00:36:02 +0000",
-      "summary": "Over the last three decades, there has been substantial change in ag production practices. Currently, information and communication technology-enhanced methods and practices are being developed and tested that have the potential to substantially impact adoption of conservation practices. Could\u2026"
     }
   ],
   "label": "farmdoc daily",
   "area": "agriculture",
   "site_url": "https://farmdocdaily.illinois.edu/",
-  "fetched_at": "2026-09-13T14:57:56.626813+00:00",
+  "fetched_at": "2026-09-14T17:00:09.419724+00:00",
   "description_unreliable": false
 }
