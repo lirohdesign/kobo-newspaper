@@ -3,6 +3,12 @@
   "status": "ok",
   "items": [
     {
+      "title": "AI Is Already In Dangerous Hands",
+      "link": "https://www.wheresyoured.at/ai-is-already-in-dangerous-hands/",
+      "date": "Mon, 14 Sep 2026 16:23:50 GMT",
+      "summary": "If you liked this piece, you should subscribe to my premium newsletter, and you can subscribe on the following links: $70 a year, $18 a quarter, or $7 a month.In return you get a weekly newsletter that\u2019s usually anywhere from 10,000 to 18,000 words, including vast, detailed analyses of NVIDIA,\u2026"
+    },
+    {
       "title": "Concentration Risk",
       "link": "https://www.wheresyoured.at/concentration-risk/",
       "date": "Tue, 08 Sep 2026 14:28:03 GMT",
@@ -54,6 +60,6 @@
   "label": "Ed Zitron \u2014 Where's Your Ed At",
   "area": "ai_market",
   "site_url": "https://www.wheresyoured.at/",
-  "fetched_at": "2026-09-13T14:57:56.282019+00:00",
+  "fetched_at": "2026-09-14T17:00:08.881291+00:00",
   "description_unreliable": true
 }

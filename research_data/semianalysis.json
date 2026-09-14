@@ -3,6 +3,18 @@
   "status": "ok",
   "items": [
     {
+      "title": "A Brain Too Big to Carry \u2014 On-Device vs Datacenter Inference",
+      "link": "https://newsletter.semianalysis.com/p/a-brain-too-big-to-carry-on-device",
+      "date": "Mon, 14 Sep 2026 16:37:25 GMT",
+      "summary": "Where should the brain of the robot go?So far, AI has mostly lived behind a screen. Chatbots answered questions. Then agents started driving software and finishing multi-step tasks on their own. The next step is AI that acts in the physical world, and the biggest piece of that is robots. It\u2019s\u2026"
+    },
+    {
+      "title": "Long Live the Short King: Why 4-hi HBM Wins",
+      "link": "https://newsletter.semianalysis.com/p/long-live-the-short-king-why-4-hi",
+      "date": "Sun, 13 Sep 2026 18:19:39 GMT",
+      "summary": "High Bandwidth Memory has been a key technology enabling the AI revolution. Despite HBM\u2019s high costs relative to other forms of memory, chip designers have packaged more and more HBM into AI accelerators. Customers push to design in newer generation HBM whilst also increasing capacity per XPU by\u2026"
+    },
+    {
       "title": "Nvidia\u2019s Backstop Universe \u2013 Heads I Win, Tails Who Loses?",
       "link": "https://newsletter.semianalysis.com/p/nvidias-backstop-universe-heads-i",
       "date": "Fri, 11 Sep 2026 17:04:52 GMT",
@@ -79,23 +91,11 @@
       "link": "https://newsletter.semianalysis.com/p/gemini-is-cooked-but-gcp-is-cooking",
       "date": "Fri, 07 Aug 2026 02:32:44 GMT",
       "summary": "On Wednesday, August 5th, Google announced a complete overhaul of DeepMind leadership. A quick recap:Demis Hassabis, DeepMind co-founder and former CEO, is no longer involved in day-to-day operations.Jeff Dean, former Google Chief Scientist and Gemini co-lead is leaving to start a neolab called\u2026"
-    },
-    {
-      "title": "Kimi K3, The Manos, The Mythos, The Legendos",
-      "link": "https://newsletter.semianalysis.com/p/kimi-k3-the-manos-the-mythos-the",
-      "date": "Mon, 03 Aug 2026 19:42:30 GMT",
-      "summary": "Kimi K3 took the world by storm at its announcement, sweeping leaderboards and establishing itself as the open frontier model. While the community is eager to understand how Kimi K3 works, many have been surprised by the unconventional techniques driving its performance. This article serves as a\u2026"
-    },
-    {
-      "title": "The Wild Wild West Of LEGO Datacenters",
-      "link": "https://newsletter.semianalysis.com/p/the-wild-wild-west-of-lego-datacenters",
-      "date": "Wed, 29 Jul 2026 22:09:56 GMT",
-      "summary": "The Labor Problem and Modularization to the RescueToday we dig into the world of datacenter construction, because how datacenters are built now bears little resemblance to how the industry has historically done it. Concrete walls arrive as finished panels, mechanical and electrical rooms arrive\u2026"
     }
   ],
   "label": "SemiAnalysis",
   "area": "ai_market",
   "site_url": "https://semianalysis.com/",
-  "fetched_at": "2026-09-13T14:57:56.054611+00:00",
+  "fetched_at": "2026-09-14T17:00:08.628566+00:00",
   "description_unreliable": false
 }
