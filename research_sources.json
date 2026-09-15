@@ -10,7 +10,7 @@
       "feed_url": "https://epochai.substack.com/feed",
       "site_url": "https://epoch.ai/",
       "cadence": "weekly",
-      "notes": "Quantitative AI-trends shop. Highest-signal bull-case data source."
+      "notes": "Quantitative AI-trends shop. Highest-signal bull-case data source. KNOWN ISSUE (confirmed 2026-09-15): the GitHub Actions cron has 403'd on this feed for at least 2 consecutive daily runs (9/13, 9/14) despite the retry-with-backoff added 9/12 — same fetch succeeds instantly from a normal residential/office IP. This reads as the same Substack/Cloudflare-vs-GitHub-Actions-runner-IP wall already documented as a dead end in CLAUDE.md for a different feature, not a transient blip retrying harder will fix. Workaround: the Tuesday interactive session has normal network access and can fetch this feed directly when the cron's copy is stale/errored — do that rather than sinking more time into the cron side."
     },
     {
       "id": "semianalysis",
