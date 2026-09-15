@@ -25,9 +25,41 @@ from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
 DATA_DIR = Path("research_data")
-FRESHNESS_LIMIT = timedelta(hours=48)  # daily cron; 2x slack for a missed run
+SOURCES_MANIFEST = Path("research_sources.json")
+
+# research_pull.py's daily cron fetches every rss/scrape source on every run
+# regardless of how often the underlying content actually changes — so
+# fetched_at staleness is fundamentally a "did the cron run recently" check,
+# not a "is this source's content current" check. But it still needs to be
+# sized per cadence family: a monthly-cadence source is documented as
+# expected to return the same latest item for weeks at a time (that's
+# normal, not a problem), and if the pipeline is ever changed to pull
+# monthly/quarterly-tier sources less often than daily, a flat 48h limit
+# would wrongly flag every one of them as stale on day 3. Falls back to the
+# default bucket for any cadence string not listed here (including an
+# empty/missing cadence field).
+FRESHNESS_LIMITS = {
+    "weekly": timedelta(hours=48),
+    "weekly_digest": timedelta(hours=48),
+    "weekly_in_season": timedelta(hours=48),
+    "monthly": timedelta(days=10),
+    "monthly_digest": timedelta(days=10),
+}
+DEFAULT_FRESHNESS_LIMIT = timedelta(hours=48)  # daily cron; 2x slack for a missed run
 DISCOVERY_MIN_COUNT = 3
 DISCOVERY_MIN_SOURCES = 2
+
+
+def _load_cadences():
+    """id -> cadence, read from research_sources.json so the freshness
+    window can be sized per source without hardcoding a second copy of the
+    manifest here."""
+    try:
+        manifest = json.loads(SOURCES_MANIFEST.read_text())
+    except Exception as e:
+        print(f"DEBUG: {SOURCES_MANIFEST} unreadable, falling back to default freshness window for all sources — {e}")
+        return {}
+    return {s["id"]: s.get("cadence", "") for s in manifest.get("sources", [])}
 
 
 def _is_valid_url(url):
@@ -38,7 +70,7 @@ def _is_valid_url(url):
         return False
 
 
-def check_source(source_id, path):
+def check_source(source_id, path, cadences):
     problems = []
     try:
         data = json.loads(path.read_text())
@@ -50,6 +82,9 @@ def check_source(source_id, path):
         problems.append(f"{source_id}: last pull status was '{status}'" +
                          (f" — {data.get('error')}" if data.get("error") else ""))
 
+    cadence = data.get("cadence") or cadences.get(source_id, "")
+    limit = FRESHNESS_LIMITS.get(cadence, DEFAULT_FRESHNESS_LIMIT)
+
     fetched_at = data.get("fetched_at")
     if not fetched_at:
         problems.append(f"{source_id}: no fetched_at timestamp on record")
@@ -57,9 +92,9 @@ def check_source(source_id, path):
         try:
             ts = datetime.fromisoformat(fetched_at)
             age = datetime.now(timezone.utc) - ts
-            if age > FRESHNESS_LIMIT:
+            if age > limit:
                 hours = age.total_seconds() / 3600
-                problems.append(f"{source_id}: stale — last pulled {hours:.0f}h ago (limit {FRESHNESS_LIMIT.total_seconds()/3600:.0f}h). Cron may have broken.")
+                problems.append(f"{source_id}: stale — last pulled {hours:.0f}h ago (limit {limit.total_seconds()/3600:.0f}h for cadence '{cadence or 'default'}'). Cron may have broken.")
         except ValueError:
             problems.append(f"{source_id}: fetched_at is not a valid ISO timestamp: {fetched_at!r}")
 
@@ -96,6 +131,7 @@ def main():
         print("research_data/ doesn't exist — has research_pull.py ever run?")
         sys.exit(1)
 
+    cadences = _load_cadences()
     all_problems = []
     source_files = sorted(p for p in DATA_DIR.glob("*.json") if p.name != "discovered_sources.json")
     if not source_files:
@@ -103,7 +139,7 @@ def main():
         sys.exit(1)
 
     for path in source_files:
-        all_problems.extend(check_source(path.stem, path))
+        all_problems.extend(check_source(path.stem, path, cadences))
 
     print(f"Checked {len(source_files)} source(s).")
     if all_problems:
