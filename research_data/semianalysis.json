@@ -96,6 +96,7 @@
   "label": "SemiAnalysis",
   "area": "ai_market",
   "site_url": "https://semianalysis.com/",
-  "fetched_at": "2026-09-15T15:38:10.948832+00:00",
+  "cadence": "weekly",
+  "fetched_at": "2026-09-15T16:10:16.211398+00:00",
   "description_unreliable": false
 }
