@@ -145,17 +145,21 @@ def _run_scraper(scraper_filename):
     return mod.collect()
 
 
-def collect_calendar(today):
-    """Read calendar.json, return (active_html, upcoming_html).
+def collect_calendar(today, calendar_path="calendar.json"):
+    """Read a calendar file (calendar.json by default; research_calendar.json
+    for the Stage 3 quarterly/annual research-monitor events — same schema
+    and trigger vocabulary, just a separate file so personal/seasonal
+    newspaper events and research-monitoring events don't mix), return
+    (active_html, upcoming_html).
 
     active_html — cards for events due today/this month, each showing either
     scraped content or a fallback reminder with a direct link.
     upcoming_html — plain list of events arriving within lookahead_days.
     """
     try:
-        cal = json.loads(Path("calendar.json").read_text())
+        cal = json.loads(Path(calendar_path).read_text())
     except Exception as e:
-        print(f"DEBUG: calendar.json error — {e}")
+        print(f"DEBUG: {calendar_path} error — {e}")
         return "", ""
 
     lookahead = timedelta(days=cal.get("lookahead_days", 14))
@@ -325,7 +329,9 @@ def main():
         weather_content = collect_weather(ts)
         nyt_content = collect_nyt(ts)
         cinema_content = collect_cinema(ts)
-        research_content = collect_research(ts)
+        research_calendar_active, research_calendar_upcoming = collect_calendar(today, "research_calendar.json")
+        research_calendar_html = "\n".join(filter(None, [research_calendar_active, research_calendar_upcoming]))
+        research_content = collect_research(ts, research_calendar_html)
         calendar_active, calendar_upcoming = collect_calendar(today)
 
         # Load existing Sent IDs from the archive folder

@@ -74,16 +74,6 @@
       "notes": "Announced early October each year."
     },
     {
-      "id": "ipcc_reports",
-      "label": "IPCC Assessment Reports",
-      "url": "https://www.ipcc.ch/news/",
-      "cadence": "irregular",
-      "trigger": "manual",
-      "dates": [],
-      "scraper": null,
-      "notes": "Add dates manually when Purdue announces a new report release. Check ipcc.ch/news."
-    },
-    {
       "id": "fed_fomc",
       "label": "Federal Reserve FOMC Statement",
       "url": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",

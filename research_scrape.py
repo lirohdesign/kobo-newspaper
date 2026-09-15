@@ -15,6 +15,20 @@ AREA_LABELS = {
     "grid_buildout": "Grid buildout & interconnection",
     "agriculture": "Agriculture",
     "climate_drought": "Climate / drought",
+    "forestry": "Forestry & woodland health",
+    "inequality": "Inequality & capital ownership",
+    "ipcc": "IPCC / global climate assessment",
+}
+
+# Cadence tag shown next to a source's label so a monthly/quarterly item
+# reads differently from the weekly-tier sources sharing the same area
+# bucket — same content grouping (by area), just a visible cadence hint.
+CADENCE_TAGS = {
+    "weekly": None,  # the default expectation; no need to call it out
+    "weekly_digest": "weekly digest",
+    "weekly_in_season": "weekly, in-season",
+    "monthly": "monthly",
+    "monthly_digest": "monthly digest",
 }
 
 
@@ -39,9 +53,12 @@ def _render_source(source_data, notes):
     fetched_at = source_data.get("fetched_at", "")
     note = notes.get(source_data.get("id"), {})
 
+    cadence_tag = CADENCE_TAGS.get(source_data.get("cadence"))
+    label_html = f"{label} <span class='metadata'>({cadence_tag})</span>" if cadence_tag else label
+
     if status != "ok" or not source_data.get("items"):
         return (
-            f"<div class='article-entry'><h3><a href='{site_url}'>{label}</a></h3>"
+            f"<div class='article-entry'><h3><a href='{site_url}'>{label_html}</a></h3>"
             f"<p class='metadata'>Fetch unavailable — check source directly.</p></div>"
         )
 
@@ -49,7 +66,7 @@ def _render_source(source_data, notes):
         as_of = note.get("as_of", fetched_at[:10] if fetched_at else "")
         meta = f"as of {as_of}" if as_of else ""
         return (
-            f"<div class='article-entry'><h3><a href='{site_url}'>{label}</a></h3>"
+            f"<div class='article-entry'><h3><a href='{site_url}'>{label_html}</a></h3>"
             f"<p class='metadata'>{meta}</p><p>{note['synthesis']}</p></div>"
         )
 
@@ -59,12 +76,17 @@ def _render_source(source_data, notes):
     trail_html = f"<p class='trail-text'>{trail}</p>" if trail else ""
     return (
         f"<div class='article-entry'><h3><a href='{item['link']}'>{item['title']}</a></h3>"
-        f"<p class='metadata'>{label} &nbsp;·&nbsp; {item.get('date', '')}</p>"
+        f"<p class='metadata'>{label_html} &nbsp;·&nbsp; {item.get('date', '')}</p>"
         f"{trail_html}</div>"
     )
 
 
-def collect_research(ts):
+def collect_research(ts, calendar_html=""):
+    """calendar_html — pre-rendered active/upcoming cards for the Stage 3
+    quarterly/annual research-monitor events (research_calendar.json via
+    main.py's collect_calendar()), appended as its own section so those
+    calendar-triggered sources land on the same research.html page rather
+    than proliferating a separate page for them."""
     print("DEBUG: Collecting Research...")
     data_dir = Path("research_data")
     if not data_dir.exists():
@@ -92,13 +114,16 @@ def collect_research(ts):
         area = source_data.get("area", "other")
         by_area.setdefault(area, []).append(_render_source(source_data, notes))
 
-    if not by_area:
-        return "<p class='metadata'>No research data pulled yet.</p>"
-
     sections = []
-    for area, entries in by_area.items():
-        area_label = AREA_LABELS.get(area, area)
-        sections.append(f"<h2>{area_label}</h2>" + "\n".join(entries))
+    if by_area:
+        for area, entries in by_area.items():
+            area_label = AREA_LABELS.get(area, area)
+            sections.append(f"<h2>{area_label}</h2>" + "\n".join(entries))
+    else:
+        sections.append("<p class='metadata'>No research data pulled yet.</p>")
+
+    if calendar_html:
+        sections.append("<h2>Quarterly / annual watch</h2>" + calendar_html)
 
     content = "\n<hr>\n".join(sections)
     with open("research.html", "w", encoding="utf-8") as f:

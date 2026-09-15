@@ -1,0 +1,155 @@
+{
+  "_README": "Quarterly/annual research-monitor events, calendar-triggered — mirrors calendar.json's schema and trigger vocabulary exactly (read by the same collect_calendar() in main.py, just pointed at this file instead) so there's one mental model for both. Kept separate from calendar.json on purpose: these are research-monitoring concerns (Stage 3 of the research pipeline, see 'monitorable source list.md'), not personal/seasonal newspaper events like the Booker Prize or FOMC dates. Rendered into research.html alongside the daily-pulled sources, not into the main daily calendar section. Same trigger types as calendar.json: 'first_tuesday_monthly', 'annual_window' (months list — reused here for quarterly cadences by listing 3-4 months, since there's no separate 'quarterly' trigger type; one vocabulary, not two), 'manual' (explicit YYYY-MM-DD dates). Added 2026-09-15/16.",
+
+  "lookahead_days": 21,
+
+  "events": [
+    {
+      "id": "chicago_fed_agletter",
+      "label": "Chicago Fed AgLetter (7th District farmland values & credit)",
+      "url": "https://www.chicagofed.org/publications/agletter/index",
+      "cadence": "quarterly",
+      "trigger": "annual_window",
+      "months": [2, 5, 8, 11],
+      "scraper": null,
+      "notes": "Published Feb/May/Aug/Nov, covering IN/IL/IA/WI/MI. No confirmed RSS — checked 2026-09-15, chicagofed.org has no obvious feed for individual publication series; manual check via the URL. Months are the publication month, not an exact day, so this fires for the whole listed month via annual_window (imprecise but the lookahead_days=21 window plus a full-month trigger means it won't be missed)."
+    },
+    {
+      "id": "fed_distributional_financial_accounts",
+      "label": "Fed Distributional Financial Accounts (wealth shares by percentile)",
+      "url": "https://www.federalreserve.gov/releases/efa/efa-distributional-financial-accounts.htm",
+      "cadence": "quarterly",
+      "trigger": "annual_window",
+      "months": [3, 6, 9, 12],
+      "scraper": null,
+      "notes": "Updated ~10-11 weeks after each quarter end (Q4 data ~mid-March, Q1 ~mid-June, Q2 ~mid-September, Q3 ~mid-December) — approximated here by release-month, not quarter-end month. No RSS found for this specific release; the Fed's .../dfa/announcements/ page is the closest thing to a change feed but isn't machine-readable. Manual check."
+    },
+    {
+      "id": "stlouis_fed_ag_finance_monitor",
+      "label": "St. Louis Fed — Ag Finance Monitor",
+      "url": "https://www.stlouisfed.org/publications/ag-finance-monitor",
+      "cadence": "quarterly",
+      "trigger": "annual_window",
+      "months": [2, 5, 8, 11],
+      "scraper": null,
+      "notes": "Eighth District quarterly ag credit/land-value survey, roughly aligned with the Chicago Fed's release cadence. Exact release months not separately confirmed — using the same Feb/May/Aug/Nov approximation as Chicago Fed pending a closer check; correct this if a Tuesday session finds the actual pattern differs."
+    },
+    {
+      "id": "indiana_climate_informer",
+      "label": "Indiana State Climate Office — Climate INformer newsletter",
+      "url": "https://ag.purdue.edu/indiana-state-climate/",
+      "cadence": "quarterly",
+      "trigger": "annual_window",
+      "months": [1, 4, 7, 10],
+      "scraper": null,
+      "notes": "Quarterly newsletter, email-only (subscribe via mailimages.purdue.edu), no RSS. Exact quarter-start months not confirmed against a real issue calendar — using calendar-quarter starts as a placeholder; correct once actual issue months are observed. Low cost of being wrong either way given the 21-day lookahead window."
+    },
+    {
+      "id": "nass_land_values_cash_rents",
+      "label": "USDA NASS Land Values annual summary & Cash Rents",
+      "url": "https://www.nass.usda.gov/Newsroom/",
+      "cadence": "annual",
+      "trigger": "annual_window",
+      "months": [8],
+      "scraper": "nass_land_values_scrape.py",
+      "notes": "State/US estimates release first week of August; county-level cash rents late August. Reuses the same Quick Stats API + NASS_API_KEY already proven working in nass_crop_progress_scrape.py (see nass_land_values_scrape.py) — UNVERIFIED LIVE as of 2026-09-15 since no key was available locally to test the LAND VALUES/CASH RENTS query params specifically. Verify against https://quickstats.nass.usda.gov/ the first time this actually fires in August."
+    },
+    {
+      "id": "iowa_state_land_value_survey",
+      "label": "Iowa State (CARD) Land Value Survey",
+      "url": "https://www.extension.iastate.edu/agdm/wdvalues.html",
+      "cadence": "annual",
+      "trigger": "annual_window",
+      "months": [12],
+      "scraper": null,
+      "notes": "Results published mid-December (2024 survey: Dec 17). No RSS found for Ag Decision Maker or the CARD Farmland Portal — checked 2026-09-15. Manual check via URL."
+    },
+    {
+      "id": "world_inequality_report",
+      "label": "World Inequality Report / WID.world annual update",
+      "url": "https://wid.world/",
+      "cadence": "annual",
+      "trigger": "annual_window",
+      "months": [12],
+      "scraper": null,
+      "notes": "WIR 2026 was released Dec 10, 2025 (lead author Ricardo Gomez-Carrera with Piketty/Chancel) — the full flagship report is periodic (2018, 2022, 2026 so far, not strictly annual), but the WID.world database itself updates annually and December is the observed pattern for both. No RSS confirmed for wid.world — manual check."
+    },
+    {
+      "id": "forest_health_highlights_spring",
+      "label": "USFS + Michigan DNR Forest Health Highlights (annual, spring)",
+      "url": "https://www.fs.usda.gov/foresthealth/",
+      "cadence": "annual",
+      "trigger": "annual_window",
+      "months": [4, 5],
+      "scraper": null,
+      "notes": "Michigan DNR's 2025 edition released late April 2026; USFS state-level Forest Health Highlights PDFs (IN_FHH, MI_FHH) follow a similar spring window. No RSS for either — PDF releases, calendar-checked. Covers both the Michigan DNR and USFS items from the source plan's Stage 3 list under one entry since they land in the same window and both lack automation; check both URLs when this fires."
+    },
+    {
+      "id": "ownership_works_impact_report",
+      "label": "Ownership Works — annual Impact Report",
+      "url": "https://ownershipworks.org/our-impact/",
+      "cadence": "annual",
+      "trigger": "annual_window",
+      "months": [5],
+      "scraper": null,
+      "notes": "The 2025 Impact Report's own site metadata indicates a ~May 2026 publication date — used as the best available signal for timing, not a confirmed fixed release month (checked 2026-09-15, no explicit 'always published in X' statement found). Revisit this month if a future year's report lands noticeably differently."
+    },
+    {
+      "id": "fed_scf_2025_results",
+      "label": "Fed Survey of Consumer Finances — 2025 results (one-time watch)",
+      "url": "https://www.federalreserve.gov/econres/scfindex.htm",
+      "cadence": "one_time",
+      "trigger": "annual_window",
+      "months": [10, 11, 12],
+      "scraper": null,
+      "notes": "Triennial survey (2019, 2022, 2025); fieldwork began March 2025, so results are expected late 2026. This entry deliberately recurs every Oct-Dec via annual_window (there's no 'fire once ever' trigger type in this vocabulary) — once the 2025 results are actually published and the Tuesday session has synthesized them, DELETE this entry rather than letting it keep firing every autumn for a release that already happened."
+    }
+  ],
+
+  "deprioritized": {
+    "note": "Investigated 2026-09-15/16, deliberately not given a calendar entry. Same documentation standard as research_sources.json's deprioritized section — revisit only on new information.",
+    "sources": [
+      {
+        "id": "indiana_woodland_steward",
+        "label": "Indiana Woodland Steward newsletter (~3x/year)",
+        "reason": "No fixed release window to build a calendar trigger around (irregular, ~3 issues/year). The purdue_gotnature RSS source in research_sources.json already surfaces new-issue announcements directly and was confirmed live carrying one at setup time ('New Indiana Woodland Steward Newsletter') — a real feed beats a guessed calendar window for something this irregular, same reasoning as using ipcc.ch's RSS over guessed AR7 dates."
+      },
+      {
+        "id": "nceo_employee_ownership_report",
+        "label": "NCEO Employee Ownership Report / annual research",
+        "reason": "No confirmed fixed release month found (checked 2026-09-15) — 'Employee Ownership Month' every October is an awareness campaign, not a confirmed publication date for NCEO's own research reports, and the bulk of NCEO's newsletter/survey content is paywalled behind membership anyway (per the original source plan). Not worth a guessed calendar window on top of low automatable value. If the user has an NCEO membership and wants this tracked, revisit with real subscriber access rather than public-page guessing.",
+        "manual_check_url": "https://www.nceo.org/research"
+      }
+    ]
+  },
+
+  "calendar_only_ai_grid_energy": {
+    "note": "These Stage 2 sources have no usable RSS/API and no NCEO-style paid-access reasoning to skip entirely — they're tracked as recurring manual-check calendar entries above are for quarterly/annual items, but their cadence (monthly) doesn't fit calendar.json's vocabulary well (there's no clean 'monthly, any day' trigger — annual_window with all 12 months would technically work but reads as a hack). Documented here instead of silently dropped; add proper calendar entries (or build automation) if/when it's worth the added complexity.",
+    "sources": [
+      {
+        "id": "eia_electric_power_monthly",
+        "label": "EIA Electric Power Monthly",
+        "url": "https://www.eia.gov/electricity/monthly/",
+        "reason": "EIA has a real Open Data API (api.eia.gov) with monthly electric-power-operations data, but it requires a free API key that isn't currently available as a secret in this repo (unlike NOAA_TOKEN and NASS_API_KEY, which were already provisioned). EIA's RSS feed guesses (eia.gov/electricity/data/rss/epm.xml, eia.gov/rss/*.xml) all 404 or redirect to a generic HTML page — checked 2026-09-15. If the user wants this automated, get an EIA API key (free, instant signup at eia.gov/opendata/) and this can follow the same api-key-scrape-module pattern as NOAA/NASS."
+      },
+      {
+        "id": "lbnl_data_center_report",
+        "label": "LBNL U.S. Data Center Energy Usage Report",
+        "url": "https://eta.lbl.gov/publications/united-states-data-center-energy-2025",
+        "reason": "Confirmed 2026-09-15 (via web search, since eta.lbl.gov 403s direct fetches — Cloudflare bot-blocked) that a successor to the Dec 2024 report already exists: the '2025 Update', published June 2026, revising the 2028 data-center electricity share estimate up to 9.5-15.3% (central 11.8%) from the original report's 6.7-12% by 2028. No RSS; irregular publication cadence (~18 months between the two editions so far). Worth a periodic manual check of eta.lbl.gov/publications, not a fixed-month calendar entry given only two data points on cadence."
+      },
+      {
+        "id": "iowa_state_ag_decision_maker",
+        "label": "Iowa State — Ag Decision Maker (monthly newsletter)",
+        "url": "https://www.extension.iastate.edu/agdm/",
+        "reason": "No RSS found (checked 2026-09-15: /rss.xml, /feed both 404). Email-subscription only. Monthly manual check."
+      },
+      {
+        "id": "kc_fed_ag_credit_survey",
+        "label": "Federal Reserve Bank of Kansas City — Ag Credit Survey / Ag Bulletin",
+        "url": "https://www.kansascityfed.org/agriculture/ag-credit-survey/",
+        "reason": "No RSS found on kansascityfed.org (checked 2026-09-15, no rss/feed links on the homepage or guessed paths). Quarterly survey plus rolling Bulletin articles; manual check."
+      }
+    ]
+  }
+}
