@@ -29,6 +29,7 @@ jobs:
       - name: Run research pull
         env:
           NASS_API_KEY: ${{ secrets.NASS_API_KEY }}
+          NOAA_TOKEN: ${{ secrets.NOAA_TOKEN }}
         run: python research_pull.py
 
       - name: Commit updated research_data
