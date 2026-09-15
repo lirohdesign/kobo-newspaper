@@ -12,6 +12,7 @@
   "label": "interconnection.fyi \u2014 Indiana data-center tracker",
   "area": "grid_buildout",
   "site_url": "https://www.interconnection.fyi/data-center/state/IN",
-  "fetched_at": "2026-09-15T15:38:16.086544+00:00",
+  "cadence": "weekly",
+  "fetched_at": "2026-09-15T16:10:19.037386+00:00",
   "description_unreliable": false
 }

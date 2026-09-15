@@ -1,102 +1,12 @@
 {
   "id": "epoch_ai",
-  "status": "ok",
-  "items": [
-    {
-      "title": "The Epoch Brief - September 12, 2026",
-      "link": "https://epochai.substack.com/p/the-epoch-brief-september-12-2026",
-      "date": "Sat, 12 Sep 2026 16:51:21 GMT",
-      "summary": "Huawei's long odds against Nvidia, the GDP growth we aren't measuring, GPT-6 Astra sets records, a new math benchmark, and more"
-    },
-    {
-      "title": "An update on AI\u2019s most important number",
-      "link": "https://epochai.substack.com/p/an-update-on-ais-most-important-number",
-      "date": "Thu, 27 Aug 2026 21:46:41 GMT",
-      "summary": "How quickly are Anthropic and OpenAI growing their revenue?"
-    },
-    {
-      "title": "The Nvidia-sized hole in US GDP statistics",
-      "link": "https://epochai.substack.com/p/the-nvidia-sized-hole-in-us-gdp-statistics",
-      "date": "Mon, 24 Aug 2026 20:29:25 GMT",
-      "summary": "GDP growth is understated by about 0.3 percentage points because of missing value from fabless chipmakers, primarily Nvidia."
-    },
-    {
-      "title": "9 Big questions benchmarks can help answer",
-      "link": "https://epochai.substack.com/p/9-big-questions-benchmarks-can-help",
-      "date": "Fri, 14 Aug 2026 17:15:24 GMT",
-      "summary": "A good benchmark asks more than just \u201ccan AI do this specific task?\u201d"
-    },
-    {
-      "title": "Will financing bottleneck AI compute? An Anthropic case study",
-      "link": "https://epochai.substack.com/p/will-financing-bottleneck-ai-compute",
-      "date": "Thu, 13 Aug 2026 21:15:46 GMT",
-      "summary": "Why Anthropic's buildout suggests that financing is unlikely to be the immediate blocker to frontier AI compute growth."
-    },
-    {
-      "title": "The Epoch Brief - July 31, 2026",
-      "link": "https://epochai.substack.com/p/the-epoch-brief-july-31-2026",
-      "date": "Sat, 01 Aug 2026 01:13:35 GMT",
-      "summary": "Expanding FrontierMath: Open Problems, how \"parallelizability\" determines a technological singularity, the realities of AI energy use, and signs of AI uplift"
-    },
-    {
-      "title": "OpenAI accidentally hacked Hugging Face \u2014 should we have seen it coming?",
-      "link": "https://epochai.substack.com/p/openai-accidentally-hacked-hugging",
-      "date": "Thu, 23 Jul 2026 00:25:02 GMT",
-      "summary": "Expert assessments and cyber benchmarks led us to expect that frontier models were capable of executing this kind of cyberattack"
-    },
-    {
-      "title": "The Epoch Brief - July 8, 2026",
-      "link": "https://epochai.substack.com/p/the-epoch-brief-july-8-2026",
-      "date": "Wed, 08 Jul 2026 21:44:37 GMT",
-      "summary": "A board game AI can't master, a cyber-disclosure spike after Claude Mythos, GPT-4's record run atop the ECI, and what's missing from AI futurism discourse"
-    },
-    {
-      "title": "The missing half of AI futurism debates",
-      "link": "https://epochai.substack.com/p/the-missing-half-of-ai-futurism-debates",
-      "date": "Tue, 07 Jul 2026 23:19:23 GMT",
-      "summary": "Why we should think a little harder about what it takes to build a Dyson Sphere"
-    },
-    {
-      "title": "The Epoch Brief - June 26, 2026",
-      "link": "https://epochai.substack.com/p/the-epoch-brief-june-26-2026",
-      "date": "Fri, 26 Jun 2026 16:00:57 GMT",
-      "summary": "Our new long-horizon coding benchmark, hyperscaler cash flows, tracking AI R&D automation, and Chinese lab strategies"
-    },
-    {
-      "title": "What we learned from 1,604 Chinese AI job postings",
-      "link": "https://epochai.substack.com/p/what-we-learned-from-1604-chinese",
-      "date": "Wed, 24 Jun 2026 23:51:47 GMT",
-      "summary": "Inferring Chinese AI labs\u2019 strategies from their job descriptions"
-    },
-    {
-      "title": "Toward an O*NET for AI R&D",
-      "link": "https://epochai.substack.com/p/toward-an-onet-for-ai-r-and-d",
-      "date": "Wed, 17 Jun 2026 21:32:42 GMT",
-      "summary": "Proposing a new way to track AI research automation"
-    },
-    {
-      "title": "The Epoch Brief - June 12, 2026",
-      "link": "https://epochai.substack.com/p/the-epoch-brief-june-12-2026",
-      "date": "Fri, 12 Jun 2026 21:01:42 GMT",
-      "summary": "Increased cyber vulnerability reports, Mythos' cyber hype, Fable 5's lead on FrontierMath v2, record-setting data centers, and what wealth distribution could look like after AGI"
-    },
-    {
-      "title": "Are Mythos\u2019 cyber capabilities overhyped?",
-      "link": "https://epochai.substack.com/p/are-mythos-cyber-capabilities-overhyped",
-      "date": "Thu, 11 Jun 2026 21:06:15 GMT",
-      "summary": "Compiling all the public evidence on Mythos Preview\u2019s cyber abilities"
-    },
-    {
-      "title": "Controlling the capital after AGI",
-      "link": "https://epochai.substack.com/p/controlling-the-capital-after-agi",
-      "date": "Wed, 10 Jun 2026 02:35:39 GMT",
-      "summary": "A simple taxonomy of the main proposals for post-AGI universal redistribution"
-    }
-  ],
+  "status": "error",
+  "error": "HTTP Error 403: Forbidden",
+  "items": [],
   "label": "Epoch AI \u2014 Gradient Updates & Data Insights",
   "area": "ai_market",
   "site_url": "https://epoch.ai/",
-  "fetched_at": "2026-09-15T14:31:04.290423+00:00",
-  "description_unreliable": false,
-  "note": "Fetched directly in the interactive session 2026-09-15 \u2014 the GitHub Actions cron has been 403ing on this feed since 9/13 (see research_sources.json notes)."
+  "cadence": "weekly",
+  "fetched_at": "2026-09-15T16:10:15.772976+00:00",
+  "description_unreliable": false
 }

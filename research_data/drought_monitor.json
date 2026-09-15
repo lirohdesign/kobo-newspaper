@@ -12,6 +12,7 @@
   "label": "US Drought Monitor \u2014 Indiana",
   "area": "climate_drought",
   "site_url": "https://droughtmonitor.unl.edu/CurrentMap/StateDroughtMonitor.aspx?IN",
-  "fetched_at": "2026-09-15T15:38:12.199266+00:00",
+  "cadence": "weekly",
+  "fetched_at": "2026-09-15T16:10:18.355712+00:00",
   "description_unreliable": false
 }

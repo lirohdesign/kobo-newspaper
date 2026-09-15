@@ -60,6 +60,7 @@
   "label": "Ed Zitron \u2014 Where's Your Ed At",
   "area": "ai_market",
   "site_url": "https://www.wheresyoured.at/",
-  "fetched_at": "2026-09-15T15:38:11.229007+00:00",
+  "cadence": "weekly",
+  "fetched_at": "2026-09-15T16:10:17.385440+00:00",
   "description_unreliable": true
 }
