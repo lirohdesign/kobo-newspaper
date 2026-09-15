@@ -39,8 +39,12 @@ STATE = "IN"
 
 # Two separate Quick Stats query shapes — land asset value and cash rent
 # are different commodity/category combinations, not two rows of the same
-# query. Params below follow NASS's documented category codes; unverified
-# against a live response (see module docstring).
+# query. Confirmed live 2026-09-15 via a broadened discovery query: cash
+# rent's real statisticcat_desc is "EXPENSE" (not a guessed "RENT, CASH,
+# CROPLAND" string, which the API 400'd on) — the cropland-vs-pastureland
+# distinction actually lives in class_desc. Same lesson as
+# nass_crop_progress_scrape.py's util_practice_desc gotcha: the
+# disambiguating field is not always the one that sounds right.
 QUERIES = [
     {
         "label": "Indiana Farm Real Estate Value",
@@ -49,8 +53,9 @@ QUERIES = [
     },
     {
         "label": "Indiana Cropland Cash Rent",
-        "params": {"commodity_desc": "RENT", "statisticcat_desc": "RENT, CASH, CROPLAND",
-                   "unit_desc": "$ / ACRE", "agg_level_desc": "STATE"},
+        "params": {"commodity_desc": "RENT", "statisticcat_desc": "EXPENSE",
+                   "class_desc": "CASH, CROPLAND", "unit_desc": "$ / ACRE",
+                   "agg_level_desc": "STATE"},
     },
 ]
 
