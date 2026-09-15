@@ -55,17 +55,24 @@ DATATYPES = ["TAVG", "TMAX", "TMIN", "PRCP"]
 UNITS = {"TAVG": "°F", "TMAX": "°F", "TMIN": "°F", "PRCP": "in"}
 
 
-def _query(token, state_fips, start, end):
+def _query(token, state_fips, datatype, start, end):
+    """One datatype per call, not all four combined. Confirmed live
+    2026-09-15: combining datatypeid=[TAVG,TMAX,TMIN,PRCP] in a single
+    request hits the CDO API's 1000-row-per-request cap before reaching
+    the temperature types — NOAA appears to return rows ordered such that
+    PRCP/precip-derived types (DP01, DP10, EMXP, ...) fill the cap first,
+    alphabetically ahead of T*. Four separate single-datatype requests
+    each stay comfortably under the cap instead of silently losing data."""
     params = {
         "datasetid": "GSOM",
         "locationid": f"FIPS:{state_fips}",
-        "datatypeid": DATATYPES,
+        "datatypeid": datatype,
         "startdate": start,
         "enddate": end,
         "units": "standard",
         "limit": 1000,
     }
-    url = API_BASE + "?" + urllib.parse.urlencode(params, doseq=True)
+    url = API_BASE + "?" + urllib.parse.urlencode(params)
     req = urllib.request.Request(url, headers={"token": token, "User-Agent": USER_AGENT})
     with urllib.request.urlopen(req, timeout=20, context=SSL_CONTEXT) as r:
         body = json.loads(r.read())
@@ -114,8 +121,10 @@ def fetch_items():
     start = end - timedelta(days=150)  # generous window given GSOM's reporting lag
     items = []
     for state, fips in STATES.items():
+        rows = []
         try:
-            rows = _query(token, fips, start.isoformat(), end.isoformat())
+            for datatype in DATATYPES:
+                rows.extend(_query(token, fips, datatype, start.isoformat(), end.isoformat()))
         except (urllib.error.URLError, urllib.error.HTTPError, ValueError, OSError) as e:
             print(f"DEBUG: noaa_ncei — {state} fetch failed — {e}")
             continue
