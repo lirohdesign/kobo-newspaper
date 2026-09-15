@@ -150,7 +150,7 @@
       "site_url": "https://www.ncei.noaa.gov/access/monitoring/monthly-report/",
       "cadence": "monthly",
       "requires_env": "NOAA_TOKEN",
-      "notes": "UNVERIFIED as of 2026-09-12 — built against the documented CDO API v2 (GSOM dataset) schema, matching the pattern already proven for nass_crop_progress_scrape.py, but NOAA_TOKEN (a GitHub Actions secret migrated from the user's climate-research project) was not available in this local dev session to test against live data. Do the same verification nass_crop_progress_scrape.py got before trusting this: once it's run for real via the daily cron, sanity-check the station-averaged temp/precip numbers against the NCEI monthly report page for the same state/month, the way the util_practice_desc and week-ending-date bugs were caught there. See noaa_ncei_scrape.py's docstring for the specific assumptions that still need confirming (FIPS-code locationid format, token-header auth)."
+      "notes": "Verified live 2026-09-15. One real bug found and fixed: combining datatypeid=[TAVG,TMAX,TMIN,PRCP] into a single request silently lost all temperature data — the CDO API's 1000-row cap was filling with precip-derived types (alphabetically ahead of T*) before temperature rows were reached, so only precip ever came back. Fixed by querying each datatype separately. Confirmed plausible output: Indiana/Michigan August 2026 avg temps (73.0°F / 68.0°F) and station-average precip, both consistent with the NCEI monthly report for the same period."
     }
   ],
 

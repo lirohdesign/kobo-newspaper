@@ -52,7 +52,7 @@
       "trigger": "annual_window",
       "months": [8],
       "scraper": "nass_land_values_scrape.py",
-      "notes": "State/US estimates release first week of August; county-level cash rents late August. Reuses the same Quick Stats API + NASS_API_KEY already proven working in nass_crop_progress_scrape.py (see nass_land_values_scrape.py) — UNVERIFIED LIVE as of 2026-09-15 since no key was available locally to test the LAND VALUES/CASH RENTS query params specifically. Verify against https://quickstats.nass.usda.gov/ the first time this actually fires in August."
+      "notes": "State/US estimates release first week of August; county-level cash rents late August. Reuses the same Quick Stats API + NASS_API_KEY already proven working in nass_crop_progress_scrape.py (see nass_land_values_scrape.py). Verified live 2026-09-15 via a manual out-of-window run: Farm Real Estate Value and Cropland Cash Rent both confirmed working ($8,600/acre and $232/acre for Indiana 2026, both plausible). One real bug found and fixed during verification — a guessed statisticcat_desc ('RENT, CASH, CROPLAND') doesn't exist and the API 400'd on it; the real field is statisticcat_desc 'EXPENSE' with class_desc carrying the cropland/pastureland distinction."
     },
     {
       "id": "iowa_state_land_value_survey",
