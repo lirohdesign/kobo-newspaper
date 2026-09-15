@@ -3,6 +3,12 @@
   "status": "ok",
   "items": [
     {
+      "title": "Vera Rubin NVL72 Agentic Inference: 67x better Performance per Dollar",
+      "link": "https://newsletter.semianalysis.com/p/vera-rubin-nvl72-agentic-inference",
+      "date": "Mon, 14 Sep 2026 22:08:56 GMT",
+      "summary": "Rubin is the first platform co-designed across six products for the agentic era: Rubin GPU, Vera CPU, NVLink 6 Switch, ConnectX-9, BlueField-4, and Spectrum-6. Today we are publishing the first verified agentic inference results for Rubin, measured on our agentic inference benchmark, AgentX. Even\u2026"
+    },
+    {
       "title": "A Brain Too Big to Carry \u2014 On-Device vs Datacenter Inference",
       "link": "https://newsletter.semianalysis.com/p/a-brain-too-big-to-carry-on-device",
       "date": "Mon, 14 Sep 2026 16:37:25 GMT",
@@ -85,17 +91,11 @@
       "link": "https://newsletter.semianalysis.com/p/spacex-10gw-in-2027-why-its-real",
       "date": "Fri, 07 Aug 2026 20:08:04 GMT",
       "summary": "Elon Musk shocked the world, once again, when he announced on SpaceX\u2019s first earnings his Gigawatt ambitions for next year. He \u201cconservatively\u201d aims to build & deliver an incremental 6-8GW in 2027 alone, with potential for that number to be well above +10GW. At 50B per GW, that\u2019s $300-500B in capex\u2026"
-    },
-    {
-      "title": "Gemini is Cooked but GCP is Cooking",
-      "link": "https://newsletter.semianalysis.com/p/gemini-is-cooked-but-gcp-is-cooking",
-      "date": "Fri, 07 Aug 2026 02:32:44 GMT",
-      "summary": "On Wednesday, August 5th, Google announced a complete overhaul of DeepMind leadership. A quick recap:Demis Hassabis, DeepMind co-founder and former CEO, is no longer involved in day-to-day operations.Jeff Dean, former Google Chief Scientist and Gemini co-lead is leaving to start a neolab called\u2026"
     }
   ],
   "label": "SemiAnalysis",
   "area": "ai_market",
   "site_url": "https://semianalysis.com/",
-  "fetched_at": "2026-09-14T17:00:08.628566+00:00",
+  "fetched_at": "2026-09-15T15:38:10.948832+00:00",
   "description_unreliable": false
 }
