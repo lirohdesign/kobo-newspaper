@@ -11,6 +11,29 @@ half: repair what broke, curate what's worth tracking, and write the actual
 synthesis a human should read. See `CLAUDE.md` for the fuller rationale if
 you haven't read it yet.
 
+**Not everything here is weekly.** `research_sources.json` now mixes
+weekly-, monthly_digest-, and monthly-cadence sources (Stage 2), and
+`research_calendar.json` holds a separate set of quarterly/annual,
+calendar-triggered sources (Stage 3) rendered into research.html's
+"Quarterly / annual watch" section via the same `collect_calendar()`
+mechanism as `calendar.json`. Don't assume every source needs fresh
+synthesis every single Tuesday:
+- `research_validate.py`'s freshness check is now cadence-aware (reads each
+  source's `cadence` field and sizes the allowed staleness window
+  accordingly) — trust its output rather than eyeballing whether a
+  monthly-cadence source's item "looks old"; a monthly source returning the
+  same item for 3+ weeks is expected, not a problem, unless validate flags
+  it stale for *its own* cadence.
+- A `monthly_digest`-cadence source (e.g. Equitable Growth, Aspen FSP) is
+  fine to skip a real synthesis update on a week where nothing new and
+  notable has posted — same logic as `farmdoc_daily`'s weekly-digest
+  treatment, just on a longer clock.
+- Stage 3 (research_calendar.json) entries mostly have no scraper — they're
+  a due-date reminder with a "check source" link. When one is active, that's
+  a signal to go read the actual release and, if there's something worth
+  saying, add a synthesis note the same way as any other source (see step 3)
+  keyed by the event's `id`.
+
 ## 0. Sync first
 
 `research_data/` is committed straight to `main` by the cron workflow

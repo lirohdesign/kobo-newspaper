@@ -1,0 +1,24 @@
+{
+  "id": "noaa_ncei_monthly",
+  "status": "ok",
+  "items": [
+    {
+      "title": "Indiana Monthly Climate Summary \u2014 2026-06",
+      "link": "https://www.ncei.noaa.gov/access/monitoring/monthly-report/",
+      "date": "2026-06",
+      "summary": "Indiana climate summary, 2026-06 (station-average, 232 station-months): Total precip: 6.5in."
+    },
+    {
+      "title": "Michigan Monthly Climate Summary \u2014 2026-06",
+      "link": "https://www.ncei.noaa.gov/access/monitoring/monthly-report/",
+      "date": "2026-06",
+      "summary": "Michigan climate summary, 2026-06 (station-average, 141 station-months): Total precip: 4.3in."
+    }
+  ],
+  "label": "NOAA NCEI Monthly Climate Summary \u2014 Indiana/Michigan",
+  "area": "climate_drought",
+  "site_url": "https://www.ncei.noaa.gov/access/monitoring/monthly-report/",
+  "cadence": "monthly",
+  "fetched_at": "2026-09-15T16:10:24.571116+00:00",
+  "description_unreliable": false
+}

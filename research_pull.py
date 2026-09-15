@@ -180,6 +180,17 @@ def pull_source(source):
     if skip_prefix:
         items = [i for i in items if not i["title"].startswith(skip_prefix)]
 
+    # Site-wide feeds (e.g. an org's whole newsroom, not a topic-scoped
+    # section) need a keyword allowlist so unrelated posts don't flood the
+    # digest. Matches against title + summary, case-insensitive, OR'd.
+    keep_keywords = source.get("filter", {}).get("keep_keyword_any")
+    if keep_keywords:
+        needles = [k.lower() for k in keep_keywords]
+        items = [
+            i for i in items
+            if any(n in (i["title"] + " " + i.get("summary", "")).lower() for n in needles)
+        ]
+
     if not items:
         print(f"DEBUG: {sid} — feed fetched but no usable items")
         return {"id": sid, "status": "empty", "items": []}
@@ -273,6 +284,7 @@ def main():
         result["label"] = source["label"]
         result["area"] = source["area"]
         result["site_url"] = source["site_url"]
+        result["cadence"] = source.get("cadence", "")
         result["fetched_at"] = datetime.now(timezone.utc).isoformat()
         result["description_unreliable"] = source.get("description_unreliable", False)
 
