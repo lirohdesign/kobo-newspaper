@@ -3,6 +3,12 @@
   "status": "ok",
   "items": [
     {
+      "title": "Everyone Says Datacenter Moratoriums Are Killing the US Buildout. We disagree",
+      "link": "https://newsletter.semianalysis.com/p/everyone-says-datacenter-moratoriums",
+      "date": "Tue, 15 Sep 2026 20:54:41 GMT",
+      "summary": "The debate on US datacenters has never been so politically charged. Four states have acted in under two months. New York has stopped issuing environmental permits for datacenters, Texas has paused the next step in its massive ERCOT interconnection queue, Pennsylvania has pulled datacenters out of\u2026"
+    },
+    {
       "title": "Vera Rubin NVL72 Agentic Inference: 67x better Performance per Dollar",
       "link": "https://newsletter.semianalysis.com/p/vera-rubin-nvl72-agentic-inference",
       "date": "Mon, 14 Sep 2026 22:08:56 GMT",
@@ -85,18 +91,12 @@
       "link": "https://newsletter.semianalysis.com/p/ultra-high-interactivity-on-nvidia",
       "date": "Mon, 10 Aug 2026 04:51:35 GMT",
       "summary": "Premium-priced \u201cfast modes\u201d are proving that users will pay more for lower latency and faster tokens, potentially yielding higher gross margins. Frontier AI labs such as OpenAI are therefore evaluating purpose-built inference systems, including Cerebras and NVIDIA Groq LPUs that prioritize\u2026"
-    },
-    {
-      "title": "SpaceX 10GW in 2027 \u2013 Why It\u2019s Real, Will Drive $300B ARR for SpaceX, and Why Microsoft Will Be the Largest Offtaker",
-      "link": "https://newsletter.semianalysis.com/p/spacex-10gw-in-2027-why-its-real",
-      "date": "Fri, 07 Aug 2026 20:08:04 GMT",
-      "summary": "Elon Musk shocked the world, once again, when he announced on SpaceX\u2019s first earnings his Gigawatt ambitions for next year. He \u201cconservatively\u201d aims to build & deliver an incremental 6-8GW in 2027 alone, with potential for that number to be well above +10GW. At 50B per GW, that\u2019s $300-500B in capex\u2026"
     }
   ],
   "label": "SemiAnalysis",
   "area": "ai_market",
   "site_url": "https://semianalysis.com/",
   "cadence": "weekly",
-  "fetched_at": "2026-09-15T16:10:16.211398+00:00",
+  "fetched_at": "2026-09-16T15:28:55.535609+00:00",
   "description_unreliable": false
 }
