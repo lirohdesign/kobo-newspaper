@@ -3,6 +3,12 @@
   "status": "ok",
   "items": [
     {
+      "title": "Illinois Cash Rents in 2026 and Outlook for 2027",
+      "link": "https://farmdocdaily.illinois.edu/2026/09/illinois-cash-rents-in-2026-and-outlook-for-2027.html",
+      "date": "Tue, 15 Sep 2026 22:13:58 +0000",
+      "summary": "Tight margins have led to downward pressure on rental rates for farmland in Illinois. The average cash rental rate reported by the USDA for cropland in Illinois was $261 per\u2026"
+    },
+    {
       "title": "Changing Public Perceptions of AI and Data Center Development: Results from the Gardner Food and Agricultural Policy Survey",
       "link": "https://farmdocdaily.illinois.edu/2026/09/changing-public-perceptions-of-ai-and-data-center-development-results-from-the-gardner-food-and-agricultural-policy-survey.html",
       "date": "Mon, 14 Sep 2026 16:26:36 +0000",
@@ -55,18 +61,12 @@
       "link": "https://farmdocdaily.illinois.edu/2026/08/the-other-base-update-issue-plc-base-yield.html",
       "date": "Mon, 31 Aug 2026 19:16:22 +0000",
       "summary": "Crop commodity program base acres have attracted considerable attention ever since their authorization in the 1980s (farmdoc daily, January 15, 2026; January 22, 2026; January 29, 2026; February 12, 2026;\u2026"
-    },
-    {
-      "title": "Farm Machinery Demand Remains Weak as Manufacturers Manage Production",
-      "link": "https://farmdocdaily.illinois.edu/2026/08/farm-machinery-demand-remains-weak-as-manufacturers-manage-production.html",
-      "date": "Fri, 28 Aug 2026 16:55:43 +0000",
-      "summary": "The U.S. farm machinery and equipment market continues to face weak demand despite some improvement in manufacturing production. Together, these indicators suggest that progress in adjusting production and inventories has not yet translated into a sustained recovery in equipment purchases. A\u2026"
     }
   ],
   "label": "farmdoc daily",
   "area": "agriculture",
   "site_url": "https://farmdocdaily.illinois.edu/",
   "cadence": "weekly_digest",
-  "fetched_at": "2026-09-15T16:10:17.975665+00:00",
+  "fetched_at": "2026-09-16T15:28:56.591023+00:00",
   "description_unreliable": false
 }
