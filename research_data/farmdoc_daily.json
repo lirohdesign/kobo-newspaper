@@ -3,6 +3,12 @@
   "status": "ok",
   "items": [
     {
+      "title": "The 2027 Margin Coverage Option (MCO) Decision",
+      "link": "https://farmdocdaily.illinois.edu/2026/09/the-2027-margin-coverage-option-mco-decision.html",
+      "date": "Wed, 16 Sep 2026 23:57:05 +0000",
+      "summary": "The Margin Coverage Option (MCO) is an area-based crop insurance endorsement that provides protection against operating margin shortfalls, which can be driven by revenue decreases, cost increases or a combination\u2026"
+    },
+    {
       "title": "Illinois Cash Rents in 2026 and Outlook for 2027",
       "link": "https://farmdocdaily.illinois.edu/2026/09/illinois-cash-rents-in-2026-and-outlook-for-2027.html",
       "date": "Tue, 15 Sep 2026 22:13:58 +0000",
@@ -55,18 +61,12 @@
       "link": "https://farmdocdaily.illinois.edu/2026/09/illinois-crop-budgets-for-2027.html",
       "date": "Tue, 01 Sep 2026 19:52:42 +0000",
       "summary": "Despite increases in projected production costs, particularly for fertilizers and fuel, improved pricing prospects for the 2026 and 2027 crop years result in higher per acre return projections compared with recent years. However, projected returns remain below longer-run averages. Downward price\u2026"
-    },
-    {
-      "title": "The Other Base Update Issue:  PLC Base Yield",
-      "link": "https://farmdocdaily.illinois.edu/2026/08/the-other-base-update-issue-plc-base-yield.html",
-      "date": "Mon, 31 Aug 2026 19:16:22 +0000",
-      "summary": "Crop commodity program base acres have attracted considerable attention ever since their authorization in the 1980s (farmdoc daily, January 15, 2026; January 22, 2026; January 29, 2026; February 12, 2026;\u2026"
     }
   ],
   "label": "farmdoc daily",
   "area": "agriculture",
   "site_url": "https://farmdocdaily.illinois.edu/",
   "cadence": "weekly_digest",
-  "fetched_at": "2026-09-16T15:28:56.591023+00:00",
+  "fetched_at": "2026-09-17T15:36:06.084060+00:00",
   "description_unreliable": false
 }

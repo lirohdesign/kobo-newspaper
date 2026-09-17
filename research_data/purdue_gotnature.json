@@ -3,6 +3,12 @@
   "status": "ok",
   "items": [
     {
+      "title": "What You Plant Matters to Wildlife",
+      "link": "https://www.purdue.edu/fnr/extension/what-you-plant-matters-to-wildlife/",
+      "date": "Wed, 16 Sep 2026 20:51:05 +0000",
+      "summary": "Purdue Landscape Report: When considering trees, shrubs, and forbs or grasses to plant for landscaping, a little research in advance can lead to dual benefits for both the appearance of your planting area and a wildlife-friendly landscape. Our native wildlife species are tuned into using our native\u2026"
+    },
+    {
       "title": "Woodland Flowers of Late Summer",
       "link": "https://www.purdue.edu/fnr/extension/woodland-flowers-of-late-summer/",
       "date": "Mon, 14 Sep 2026 14:37:46 +0000",
@@ -55,18 +61,12 @@
       "link": "https://www.purdue.edu/fnr/extension/id-that-tree-eastern-swamp-privet/",
       "date": "Wed, 22 Jul 2026 15:27:00 +0000",
       "summary": "In this edition of ID That Tree, Purdue Extension Forester Lenny Farlee introduces us to Eastern Swamp Privet, a native Indiana shrub commonly found in wetland and swampy habitats. Unlike the privets around yards, homes and towns, the Eastern Swamp Privet comes from a different genus of plants.\u2026"
-    },
-    {
-      "title": "Jarred Brooke Receives Early Career Award for Prescribed Fire Work",
-      "link": "https://www.purdue.edu/fnr/extension/jarred-brooke-receives-early-career-award-for-prescribed-fire-work/",
-      "date": "Mon, 20 Jul 2026 18:55:41 +0000",
-      "summary": "Jarred Brooke for Purdue Extension in West Lafayette, Ind. on Wednesday, Dec. 4, 2024. Jarred Brooke, Extension wildlife specialist, was honored with a Career Achievement Award at the Fire in Eastern Oak Forests Conference in June. In addition to his extension work with wildlife, Brooke has been\u2026"
     }
   ],
   "label": "Purdue Extension FNR \u2014 Got Nature? blog",
   "area": "forestry",
   "site_url": "https://www.purdue.edu/fnr/extension/",
   "cadence": "weekly",
-  "fetched_at": "2026-09-16T15:29:03.024215+00:00",
+  "fetched_at": "2026-09-17T15:36:10.897476+00:00",
   "description_unreliable": false
 }
