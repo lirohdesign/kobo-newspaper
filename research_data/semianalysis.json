@@ -3,6 +3,12 @@
   "status": "ok",
   "items": [
     {
+      "title": "Engrams Embedding Entendre: Codesign for Efficient DRAM/SSD Offloading",
+      "link": "https://newsletter.semianalysis.com/p/engrams-embedding-entendre-codesign",
+      "date": "Fri, 18 Sep 2026 14:34:20 GMT",
+      "summary": "Engram extends standard token embeddings with learned multi-token lookups. Recurring local patterns retrieve vectors directly, reducing the need to reconstruct them through attention and feed-forward layers. With Engram model architecture optimization, it allows for lower HBM capacity to be needed\u2026"
+    },
+    {
       "title": "Everyone Says Datacenter Moratoriums Are Killing the US Buildout. We disagree",
       "link": "https://newsletter.semianalysis.com/p/everyone-says-datacenter-moratoriums",
       "date": "Tue, 15 Sep 2026 20:54:41 GMT",
@@ -85,18 +91,12 @@
       "link": "https://newsletter.semianalysis.com/p/12b-of-us-ratepayers-money-wasted",
       "date": "Sun, 16 Aug 2026 22:27:59 GMT",
       "summary": "Earlier this year, we explained why residents of the PJM area, America\u2019s largest electricity market, have seen their power bills rise by ~20%. We argued that the main culprit was PJM\u2019s auction design choices and how PJM models demand and supply. To better understand the extent of the problem, our\u2026"
-    },
-    {
-      "title": "Ultra-High Interactivity on NVIDIA GPUs? - TileRT InferenceX",
-      "link": "https://newsletter.semianalysis.com/p/ultra-high-interactivity-on-nvidia",
-      "date": "Mon, 10 Aug 2026 04:51:35 GMT",
-      "summary": "Premium-priced \u201cfast modes\u201d are proving that users will pay more for lower latency and faster tokens, potentially yielding higher gross margins. Frontier AI labs such as OpenAI are therefore evaluating purpose-built inference systems, including Cerebras and NVIDIA Groq LPUs that prioritize\u2026"
     }
   ],
   "label": "SemiAnalysis",
   "area": "ai_market",
   "site_url": "https://semianalysis.com/",
   "cadence": "weekly",
-  "fetched_at": "2026-09-17T15:36:05.561196+00:00",
+  "fetched_at": "2026-09-18T15:04:28.063949+00:00",
   "description_unreliable": false
 }
