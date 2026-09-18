@@ -3,6 +3,12 @@
   "status": "ok",
   "items": [
     {
+      "title": "Under Pressure: The Size and Timing of the Harvest Low in Corn Basis",
+      "link": "https://farmdocdaily.illinois.edu/2026/09/under-pressure-the-size-and-timing-of-the-harvest-low-in-corn-basis.html",
+      "date": "Thu, 17 Sep 2026 17:34:32 +0000",
+      "summary": "US corn harvest-time corn basis bottoms in mid-October, coinciding with the peak of harvest activity. Average basis at the harvest-time low is about 11 cents below late-November levels. State-level lows average 16 cents, deepest in Missouri, Indiana and Illinois, and more loosely track local\u2026"
+    },
+    {
       "title": "The 2027 Margin Coverage Option (MCO) Decision",
       "link": "https://farmdocdaily.illinois.edu/2026/09/the-2027-margin-coverage-option-mco-decision.html",
       "date": "Wed, 16 Sep 2026 23:57:05 +0000",
@@ -12,7 +18,7 @@
       "title": "Illinois Cash Rents in 2026 and Outlook for 2027",
       "link": "https://farmdocdaily.illinois.edu/2026/09/illinois-cash-rents-in-2026-and-outlook-for-2027.html",
       "date": "Tue, 15 Sep 2026 22:13:58 +0000",
-      "summary": "Tight margins have led to downward pressure on rental rates for farmland in Illinois. The average cash rental rate reported by the USDA for cropland in Illinois was $261 per\u2026"
+      "summary": "The average cash rent for Illinois farmland saw a small decline for the second year in a row in 2026. Higher corn and soybean prices have improved the return outlook for both 2026 and 2027 compared to the previous three crop years, and producers are expected to receive relatively large payment from\u2026"
     },
     {
       "title": "Changing Public Perceptions of AI and Data Center Development: Results from the Gardner Food and Agricultural Policy Survey",
@@ -55,18 +61,12 @@
       "link": "https://farmdocdaily.illinois.edu/2026/09/trying-to-picture-a-base-acre-update-through-a-hypothetical-change-in-2025-payments.html",
       "date": "Thu, 03 Sep 2026 19:21:30 +0000",
       "summary": "Echoes of a failed vote on an unfinished Farm Bill can still be heard, although the rumble of much bigger news tends to drown them out. As just one example,\u2026"
-    },
-    {
-      "title": "Illinois Crop Budgets for 2027",
-      "link": "https://farmdocdaily.illinois.edu/2026/09/illinois-crop-budgets-for-2027.html",
-      "date": "Tue, 01 Sep 2026 19:52:42 +0000",
-      "summary": "Despite increases in projected production costs, particularly for fertilizers and fuel, improved pricing prospects for the 2026 and 2027 crop years result in higher per acre return projections compared with recent years. However, projected returns remain below longer-run averages. Downward price\u2026"
     }
   ],
   "label": "farmdoc daily",
   "area": "agriculture",
   "site_url": "https://farmdocdaily.illinois.edu/",
   "cadence": "weekly_digest",
-  "fetched_at": "2026-09-17T15:36:06.084060+00:00",
+  "fetched_at": "2026-09-18T15:04:28.843707+00:00",
   "description_unreliable": false
 }
