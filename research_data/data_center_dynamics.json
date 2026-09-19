@@ -3,10 +3,40 @@
   "status": "ok",
   "items": [
     {
+      "title": "Virginia\u2019s Loudoun County board votes to pause new data center applications",
+      "link": "https://www.datacenterdynamics.com/en/news/virginias-loudoun-county-board-votes-to-pause-new-data-center-applications/",
+      "date": "Fri, 18 Sep 2026 16:18:00 +0000",
+      "summary": "County introduces 12-month moratorium in data center hotspot"
+    },
+    {
+      "title": "Hidden costs",
+      "link": "https://www.datacenterdynamics.com/en/whitepapers/2026-guide-to-navigating-data-center-supply-chain-complexity/",
+      "date": "Fri, 18 Sep 2026 15:57:19 +0000",
+      "summary": "2026 guide to navigating data center supply chain complexity"
+    },
+    {
+      "title": "Brazil's President Lula signs ReData data center bill into law",
+      "link": "https://www.datacenterdynamics.com/en/news/president-lula-signs-bill-at-the-planalto-palace/",
+      "date": "Fri, 18 Sep 2026 15:40:08 +0000",
+      "summary": "The bill was passed by the Senate in September"
+    },
+    {
+      "title": "IQM to deploy Spark quantum computer at Brazil\u2019s Eldorado Research Institute",
+      "link": "https://www.datacenterdynamics.com/en/news/iqm-to-deploy-spark-quantum-computer-at-brazils-eldorado-research-institute/",
+      "date": "Fri, 18 Sep 2026 15:07:44 +0000",
+      "summary": "First quantum system deployed by Finnish quantum firm in South America"
+    },
+    {
+      "title": "Brazil's Eveo plans data center in Recife",
+      "link": "https://www.datacenterdynamics.com/en/news/eveo-accelerates-expansion-in-the-northeast-and-will-have-a-tier-iii-data-center-in-recife/",
+      "date": "Fri, 18 Sep 2026 15:03:00 +0000",
+      "summary": "Company adding to sites in Fortaleza, S\u00e3o Paulo, and Curitiba"
+    },
+    {
       "title": "DCD Intelligence: Data center expansion is outpacing talent",
       "link": "https://www.datacenterdynamics.com/en/news/dcd-intelligence-data-center-expansion-is-outpacing-talent/",
-      "date": "Fri, 18 Sep 2026 15:00:53 +0000",
-      "summary": "More than two-thirds reporting staffing below operational requirements"
+      "date": "Fri, 18 Sep 2026 15:00:00 +0000",
+      "summary": "More than two-thirds report staffing below operational requirements"
     },
     {
       "title": "PGIM sells data center development site in Munich",
@@ -23,7 +53,7 @@
     {
       "title": "Enabling the next generation of AI data centers",
       "link": "https://www.datacenterdynamics.com/en/opinions/enabling-the-next-generation-of-ai-data-centers/",
-      "date": "Fri, 18 Sep 2026 14:45:29 +0000",
+      "date": "Fri, 18 Sep 2026 14:45:00 +0000",
       "summary": "As demands for AI continue to shift, so does the planning for the data centers expected to support this growth"
     },
     {
@@ -61,42 +91,12 @@
       "link": "https://www.datacenterdynamics.com/en/news/russia-claims-strikes-on-de-novo-data-center-in-kyiv-ukraine/",
       "date": "Fri, 18 Sep 2026 12:59:00 +0000",
       "summary": "Strikes were part of a wider infrastructure attack"
-    },
-    {
-      "title": "SharonAI buys former printing press outside Albury, Australia",
-      "link": "https://www.datacenterdynamics.com/en/news/sharonai-buys-former-printing-press-outside-albury-australia/",
-      "date": "Fri, 18 Sep 2026 12:58:51 +0000",
-      "summary": "Company hasn't shared details on plans"
-    },
-    {
-      "title": "Hutchison to exit Macau mobile market later this year",
-      "link": "https://www.datacenterdynamics.com/en/news/hutchison-to-exit-macau-mobile-market-later-this-year/",
-      "date": "Fri, 18 Sep 2026 12:54:21 +0000",
-      "summary": "Leaves the market with two main carriers"
-    },
-    {
-      "title": "Mitsubishi invests in Japanese optical quantum startup OptQC",
-      "link": "https://www.datacenterdynamics.com/en/news/mitsubishi-invests-in-japanese-optical-quantum-startup-optqc/",
-      "date": "Fri, 18 Sep 2026 10:49:05 +0000",
-      "summary": "Size of investment has not been detailed"
-    },
-    {
-      "title": "Bitdeer AI to lease 65MW data center in Johor, Malaysia",
-      "link": "https://www.datacenterdynamics.com/en/news/bitdeer-ai-to-lease-65mw-data-center-in-johor-malaysia/",
-      "date": "Fri, 18 Sep 2026 10:46:00 +0000",
-      "summary": "Company to rent second building at Malaysian campus"
-    },
-    {
-      "title": "Blockfusion signs CoreWeave as a customer in Niagara Falls, New York",
-      "link": "https://www.datacenterdynamics.com/en/news/blockfusion-signs-coreweave-as-a-customer-in-niagara-falls-new-york/",
-      "date": "Fri, 18 Sep 2026 10:38:08 +0000",
-      "summary": "CoreWeave signs deal with another reformed cryptominer"
     }
   ],
   "label": "Data Center Dynamics",
   "area": "grid_buildout",
   "site_url": "https://www.datacenterdynamics.com/",
   "cadence": "weekly",
-  "fetched_at": "2026-09-18T15:04:29.019912+00:00",
+  "fetched_at": "2026-09-19T14:36:52.724042+00:00",
   "description_unreliable": false
 }
