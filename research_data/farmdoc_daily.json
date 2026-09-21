@@ -3,6 +3,12 @@
   "status": "ok",
   "items": [
     {
+      "title": "Farmer Perceptions of AI Benefits in the United States and Argentina",
+      "link": "https://farmdocdaily.illinois.edu/2026/09/farmer-perceptions-of-ai-benefits-in-the-united-states-and-argentina.html",
+      "date": "Mon, 21 Sep 2026 16:12:54 +0000",
+      "summary": "Artificial intelligence and data-driven tools are being applied to agriculture, from robotics, automation, and precision farming to predictive analytics and digital advisory tools (Aijaz et al., 2025; Edet and Chowdhury,\u2026"
+    },
+    {
       "title": "2025 Illinois Farm Earnings Improve but Remain Below Recent Averages",
       "link": "https://farmdocdaily.illinois.edu/2026/09/2025-illinois-farm-earnings-improve-but-remain-below-recent-averages.html",
       "date": "Fri, 18 Sep 2026 15:51:26 +0000",
@@ -55,18 +61,12 @@
       "link": "https://farmdocdaily.illinois.edu/2026/09/wheat-double-crop-soybean-profitability-in-recent-years.html",
       "date": "Tue, 08 Sep 2026 21:53:27 +0000",
       "summary": "Current projections indicate that wheat followed by double-crop soybeans will be more profitable in 2027 than either corn or stand-alone soybeans in southern Illinois. Wheat-double-crop soybeans generated the highest operator\u2026"
-    },
-    {
-      "title": "Why U.S Farmers Own Farmland and What They Expect for Land Values",
-      "link": "https://farmdocdaily.illinois.edu/2026/09/why-u-s-farmers-own-farmland-and-what-they-expect-for-land-values.html",
-      "date": "Fri, 04 Sep 2026 16:31:45 +0000",
-      "summary": "Results from August 2026 Ag Economy Barometer highlight that farmland ownership is motivated by more than current financial returns. Family or sentimental reasons were the primary motivation for 45% of respondents, while another 32% identified long-term investment as their main reason for owning\u2026"
     }
   ],
   "label": "farmdoc daily",
   "area": "agriculture",
   "site_url": "https://farmdocdaily.illinois.edu/",
   "cadence": "weekly_digest",
-  "fetched_at": "2026-09-20T14:46:33.019884+00:00",
+  "fetched_at": "2026-09-21T17:08:37.123194+00:00",
   "description_unreliable": false
 }
