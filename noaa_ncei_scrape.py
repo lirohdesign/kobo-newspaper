@@ -1,18 +1,8 @@
 """NOAA NCEI monthly climate summary — Indiana, via the CDO (Climate Data
 Online) API v2 GSOM (Global Summary of the Month) dataset.
 
-UNVERIFIED LIVE as of 2026-09-12: built against the documented CDO API v2
-schema (https://www.ncdc.noaa.gov/cdo-web/webservices/v2), but there was no
-working NOAA_TOKEN available in this local session to test against (it's a
-GitHub Actions secret migrated from the user's separate climate-research
-project, not present in this dev environment). Structure mirrors
-nass_crop_progress_scrape.py, which carried the same "unverified" caveat
-until it was later run against live data and two real bugs were found and
-fixed. Apply the same standard here: once this runs for real (via the daily
-cron, where NOAA_TOKEN is set), sanity-check the output against
-https://www.ncei.noaa.gov/access/monitoring/monthly-report/ for the same
-month/state before trusting it as verified. Update this docstring and
-research_sources.json's notes field once that check has actually happened.
+Verified live 2026-09-15 (temperatures) and 2026-09-22 (precipitation,
+after adding pagination — see _query).
 
 API notes (from NOAA's own CDO documentation, not yet confirmed against a
 live response):
@@ -62,7 +52,13 @@ def _query(token, state_fips, datatype, start, end):
     the temperature types — NOAA appears to return rows ordered such that
     PRCP/precip-derived types (DP01, DP10, EMXP, ...) fill the cap first,
     alphabetically ahead of T*. Four separate single-datatype requests
-    each stay comfortably under the cap instead of silently losing data."""
+    each stay comfortably under the cap instead of silently losing data.
+
+    Even one datatype can exceed it: PRCP has far more reporting stations
+    than temperature (Indiana: 2,045 rows over 150 days vs 304 for TAVG,
+    confirmed live 2026-09-22), and rows come back oldest-first, so the
+    first page held only May-June and the latest month was silently lost.
+    Pages via `offset` until the reported resultset count is reached."""
     params = {
         "datasetid": "GSOM",
         "locationid": f"FIPS:{state_fips}",
@@ -72,11 +68,18 @@ def _query(token, state_fips, datatype, start, end):
         "units": "standard",
         "limit": 1000,
     }
-    url = API_BASE + "?" + urllib.parse.urlencode(params)
-    req = urllib.request.Request(url, headers={"token": token, "User-Agent": USER_AGENT})
-    with urllib.request.urlopen(req, timeout=20, context=SSL_CONTEXT) as r:
-        body = json.loads(r.read())
-    return body.get("results", [])
+    rows = []
+    while True:
+        params["offset"] = len(rows) + 1  # CDO offsets are 1-based
+        url = API_BASE + "?" + urllib.parse.urlencode(params)
+        req = urllib.request.Request(url, headers={"token": token, "User-Agent": USER_AGENT})
+        with urllib.request.urlopen(req, timeout=20, context=SSL_CONTEXT) as r:
+            body = json.loads(r.read())
+        page = body.get("results", [])
+        rows.extend(page)
+        total = body.get("metadata", {}).get("resultset", {}).get("count", 0)
+        if not page or len(rows) >= total:
+            return rows
 
 
 def _summarize(state, rows):
