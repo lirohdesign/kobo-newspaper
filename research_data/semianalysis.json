@@ -3,6 +3,12 @@
   "status": "ok",
   "items": [
     {
+      "title": "Computation and Data Movement for Inference",
+      "link": "https://newsletter.semianalysis.com/p/computation-and-data-movement-for",
+      "date": "Mon, 21 Sep 2026 18:14:15 GMT",
+      "summary": "Mixture of Experts, now widely used in frontier models, has changed both the structure of serving and the economics of useful inference. It did more than increase parameter count. It changed which tensors are active for each token, what must remain close together, which transfers need strong local\u2026"
+    },
+    {
       "title": "Engrams Embedding Entendre: Codesign for Efficient DRAM/SSD Offloading",
       "link": "https://newsletter.semianalysis.com/p/engrams-embedding-entendre-codesign",
       "date": "Fri, 18 Sep 2026 14:34:20 GMT",
@@ -85,18 +91,12 @@
       "link": "https://newsletter.semianalysis.com/p/cerebrass-next-generation-cs-4-fast",
       "date": "Wed, 19 Aug 2026 01:32:08 GMT",
       "summary": "Cerebras revealed CS-4 this week, with more details to come at Hot Chips. CS-4 is their fourth-generation rack built around the same third generation 5nm wafer-scale engine: WSE-3. CS-4 doubles the performance of CS-3 through increased power consumption and clock frequency per wafer, and better\u2026"
-    },
-    {
-      "title": "$12B of US ratepayers' money wasted on a modeling mistake and PJM wants to do it again",
-      "link": "https://newsletter.semianalysis.com/p/12b-of-us-ratepayers-money-wasted",
-      "date": "Sun, 16 Aug 2026 22:27:59 GMT",
-      "summary": "Earlier this year, we explained why residents of the PJM area, America\u2019s largest electricity market, have seen their power bills rise by ~20%. We argued that the main culprit was PJM\u2019s auction design choices and how PJM models demand and supply. To better understand the extent of the problem, our\u2026"
     }
   ],
   "label": "SemiAnalysis",
   "area": "ai_market",
   "site_url": "https://semianalysis.com/",
   "cadence": "weekly",
-  "fetched_at": "2026-09-21T17:08:36.298072+00:00",
+  "fetched_at": "2026-09-22T13:36:26.390322+00:00",
   "description_unreliable": false
 }

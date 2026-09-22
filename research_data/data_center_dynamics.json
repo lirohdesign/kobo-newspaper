@@ -3,100 +3,115 @@
   "status": "ok",
   "items": [
     {
+      "title": "New Era signs 20-year gas PPA with Vistra subsidiary to power 250MW data center in Ector County, Texas",
+      "link": "https://www.datacenterdynamics.com/en/news/new-era-signs-20-year-gas-ppa-with-vistra-subsidiary-to-power-250mw-data-center-in-ector-county-texas/",
+      "date": "Tue, 22 Sep 2026 13:08:11 +0000",
+      "summary": "Powered via an adjacent natural gas plant in Odessa, Texas",
+      "priority": false
+    },
+    {
+      "title": "Kairos Power selects Samsung C&T to help build 50MW SMR for Google in Tennessee",
+      "link": "https://www.datacenterdynamics.com/en/news/kairos-power-selects-samsung-ct-to-help-build-50mw-smr-for-google-in-tennessee/",
+      "date": "Tue, 22 Sep 2026 13:04:07 +0000",
+      "summary": "Slated for completion by 2030",
+      "priority": false
+    },
+    {
+      "title": "Lithography firm Morphotonics targets data center optical component market after raising \u20ac40m",
+      "link": "https://www.datacenterdynamics.com/en/news/lithography-firm-morphotonics-targets-data-center-optical-component-market-after-raising-40m/",
+      "date": "Tue, 22 Sep 2026 12:59:56 +0000",
+      "summary": "Company\u2019s technology currently used to manufacture displays for AR glasses",
+      "priority": false
+    },
+    {
+      "title": "T-Mobile, Reliance Jio claim world's first 5G Standalone roaming connection",
+      "link": "https://www.datacenterdynamics.com/en/news/t-mobile-reliance-jio-claim-worlds-first-5g-standalone-roaming-connection/",
+      "date": "Tue, 22 Sep 2026 12:53:07 +0000",
+      "summary": "Connection was enabled by Syniverse",
+      "priority": false
+    },
+    {
+      "title": "Google inks deal to support nuclear uprates at Georgia Power's Vogtle and Hatch plants",
+      "link": "https://www.datacenterdynamics.com/en/news/google-inks-deal-to-support-nuclear-uprates-at-georgia-powers-vogtle-and-hatch-plants/",
+      "date": "Tue, 22 Sep 2026 10:50:38 +0000",
+      "summary": "Will add 96MW of additional capacity across the two plants",
+      "priority": false
+    },
+    {
+      "title": "2026 guide to navigating data center supply chain complexity",
+      "link": "https://www.datacenterdynamics.com/en/whitepapers/guide-to-navigating-data-center-supply-chain-complexity/",
+      "date": "Tue, 22 Sep 2026 10:48:30 +0000",
+      "summary": "Hidden costs",
+      "priority": false
+    },
+    {
+      "title": "Orange inaugurates first Telesat Lightspeed gateway in Europe at Bercenay-en-Othe, France",
+      "link": "https://www.datacenterdynamics.com/en/news/orange-inaugurates-first-telesat-lightspeed-gateway-in-europe-at-bercenay-en-othe-france/",
+      "date": "Tue, 22 Sep 2026 10:44:08 +0000",
+      "summary": "Telesat expands its influence on the ground, targeting defense and government markets",
+      "priority": false
+    },
+    {
+      "title": "Microsoft hires new director of global energy and sustainability policy",
+      "link": "https://www.datacenterdynamics.com/en/news/microsoft-hires-new-director-of-global-energy-and-sustainability-policy/",
+      "date": "Tue, 22 Sep 2026 10:20:34 +0000",
+      "summary": "Ray Fakhoury III joins from AWS",
+      "priority": false
+    },
+    {
+      "title": "European Commission proposes energy and water efficiency disclosure rules for data centers",
+      "link": "https://www.datacenterdynamics.com/en/news/european-commission-proposes-energy-and-water-efficiency-disclosure-rules-for-data-centers/",
+      "date": "Tue, 22 Sep 2026 10:10:39 +0000",
+      "summary": "Proposal is now subject to a two-month scrutiny period",
+      "priority": false
+    },
+    {
+      "title": "Sponsored: Scaling connectivity beyond the data center walls",
+      "link": "https://www.datacenterdynamics.com/en/marketwatch/scaling-connectivity-beyond-the-data-center-walls/",
+      "date": "Tue, 22 Sep 2026 07:00:00 +0000",
+      "summary": "Connecting buildings, sites, or cities? The challenges and core priorities look significantly different, says Corning\u2019s Nilson Gabela",
+      "priority": false
+    },
+    {
       "title": "Nokia ramps up AI-RAN momentum",
       "link": "https://www.datacenterdynamics.com/en/news/nokia-ramps-up-ai-ran-momentum/",
       "date": "Mon, 21 Sep 2026 16:21:03 +0000",
-      "summary": "As the vendor strikes further carrier partnerships"
+      "summary": "As the vendor strikes further carrier partnerships",
+      "priority": false
     },
     {
       "title": "Flag to deploy Ciena's Waveserver platform on Echo subsea cable",
       "link": "https://www.datacenterdynamics.com/en/news/flag-to-deploy-cienas-waveserver-platform-on-echo-subsea-cable/",
       "date": "Mon, 21 Sep 2026 16:18:24 +0000",
-      "summary": "This will enable Flag to launch new 400GbE and 800GbE services along the route"
+      "summary": "This will enable Flag to launch new 400GbE and 800GbE services along the route",
+      "priority": false
     },
     {
       "title": "The new 5G SA blueprint that is enabling telecom operators to provide the network backbone 24/7 industries need",
       "link": "https://www.datacenterdynamics.com/en/opinions/the-new-5g-sa-blueprint-that-is-enabling-telecom-operators-to-provide-the-network-backbone-247-industries-need/",
       "date": "Mon, 21 Sep 2026 16:01:04 +0000",
-      "summary": "It\u2019s time for telecoms to move digital infrastructure closer to the user"
+      "summary": "It\u2019s time for telecoms to move digital infrastructure closer to the user",
+      "priority": false
     },
     {
       "title": "LG launches centrifugal air cooling system for AI data centers",
       "link": "https://www.datacenterdynamics.com/en/news/lg-launches-centrifugal-air-cooling-system-for-ai-data-centers/",
       "date": "Mon, 21 Sep 2026 15:40:37 +0000",
-      "summary": "No oil required for magnetic system"
+      "summary": "No oil required for magnetic system",
+      "priority": false
     },
     {
       "title": "Valorem eyes data centers in Savonlinna and Kankaanp\u00e4\u00e4, Finland",
       "link": "https://www.datacenterdynamics.com/en/news/valorem-eyes-data-centers-in-savonlinna-and-kankaanp%C3%A4%C3%A4-finland/",
       "date": "Mon, 21 Sep 2026 15:30:38 +0000",
-      "summary": "French energy firm adds more data center projects to pipeline"
-    },
-    {
-      "title": "Kodiak Gas Services to supply 76MW of behind-the-meter gas power to West Texas data center",
-      "link": "https://www.datacenterdynamics.com/en/news/kodiak-gas-services-to-supply-76mw-of-behind-the-meter-gas-power-to-west-texas-data-center/",
-      "date": "Mon, 21 Sep 2026 15:16:10 +0000",
-      "summary": "Will deploy 40 natural gas-fueled reciprocating generation units"
-    },
-    {
-      "title": "Sponsored: Why protecting your data center's cash flow costs less than you think",
-      "link": "https://www.datacenterdynamics.com/en/opinions/why-protecting-your-data-centers-cash-flow-costs-less-than-you-think/",
-      "date": "Mon, 21 Sep 2026 15:00:00 +0000",
-      "summary": "And why the consequences of an SLA breach can go far beyond financial"
-    },
-    {
-      "title": "Virgin Media O2 extends small cells rollout to Tonbridge, Kent",
-      "link": "https://www.datacenterdynamics.com/en/news/virgin-media-o2-extends-small-cells-rollout-to-tonbridge-kent/",
-      "date": "Mon, 21 Sep 2026 11:29:48 +0000",
-      "summary": "Five small cells have gone live in Tonbridge"
-    },
-    {
-      "title": "GlobalFoundries and Marvell sign multi-year development agreement for optical technologies",
-      "link": "https://www.datacenterdynamics.com/en/news/globalfoundries-and-marvell-sign-multi-year-development-agreement-for-optical-technologies/",
-      "date": "Mon, 21 Sep 2026 10:53:05 +0000",
-      "summary": "Partners will increase silicon germanium capacity at GF\u2019s Burlington, Vermont, facility"
-    },
-    {
-      "title": "Google-backed battery storage pilot in Texas demonstrates how BESS can improve hourly carbon-free matching for data centers",
-      "link": "https://www.datacenterdynamics.com/en/news/google-backed-battery-storage-pilot-in-texas-demonstrates-how-bess-can-improve-hourly-carbon-free-matching-for-data-centers/",
-      "date": "Mon, 21 Sep 2026 10:19:29 +0000",
-      "summary": "Pilot undertaken by Quintrace, esVolta, and LevelTen Energy"
-    },
-    {
-      "title": "Prysmian, Rio Tinto to supply Amazon data center in Ohio with low-carbon aluminum",
-      "link": "https://www.datacenterdynamics.com/en/news/prysmian-rio-tinto-to-supply-amazon-data-center-in-ohio-with-low-carbon-aluminum/",
-      "date": "Mon, 21 Sep 2026 09:54:43 +0000",
-      "summary": "Will deliver electrical cabling to the data center"
-    },
-    {
-      "title": "OData to deploy Aligned's DeltaFlow liquid cooling system at Brazil and Mexico data centers",
-      "link": "https://www.datacenterdynamics.com/en/news/odata-to-deploy-aligneds-deltaflow-liquid-cooling-system-at-brazil-and-mexico-data-centers/",
-      "date": "Mon, 21 Sep 2026 09:33:48 +0000",
-      "summary": "Project will cost $630m"
-    },
-    {
-      "title": "IBM and ETH Zurich collaborate on quantum computer to be hosted in Lugano, Switzerland",
-      "link": "https://www.datacenterdynamics.com/en/news/ibm-and-eth-zurich-collaborate-on-quantum-computer-to-be-hosted-in-lugano-switzerland/",
-      "date": "Mon, 21 Sep 2026 09:33:20 +0000",
-      "summary": "New system at Swiss National Supercomputing Center will be accessible to private firms and other higher education institutions"
-    },
-    {
-      "title": "Verizon requests approval from FCC to test 4GHz band for 6G",
-      "link": "https://www.datacenterdynamics.com/en/news/verizon-requests-approval-from-fcc-to-test-4ghz-band-for-6g/",
-      "date": "Mon, 21 Sep 2026 09:31:22 +0000",
-      "summary": "Carrier seeks to test the spectrum for potential use cases"
-    },
-    {
-      "title": "Nabiax breaks ground on 100MW data center in Madrid, Spain",
-      "link": "https://www.datacenterdynamics.com/en/news/nabiax-breaks-ground-on-100mw-data-center-in-madrid-spain/",
-      "date": "Mon, 21 Sep 2026 09:28:51 +0000",
-      "summary": "Nabiax to reach 135MW of capacity in Spain across Madrid and Catalonia"
+      "summary": "French energy firm adds more data center projects to pipeline",
+      "priority": false
     }
   ],
   "label": "Data Center Dynamics",
   "area": "grid_buildout",
   "site_url": "https://www.datacenterdynamics.com/",
   "cadence": "weekly",
-  "fetched_at": "2026-09-21T17:08:37.167235+00:00",
+  "fetched_at": "2026-09-22T13:36:27.596961+00:00",
   "description_unreliable": false
 }

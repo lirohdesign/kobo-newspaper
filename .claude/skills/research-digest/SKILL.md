@@ -41,6 +41,13 @@ synthesis every single Tuesday:
 the rest of this project's generated content. Run `git pull` before anything
 else — otherwise you're validating/curating against stale local data.
 
+The cron runs 4:30 PM CT so Monday's pull includes NASS Crop Progress
+(posted Mondays 4 PM ET). Check that it actually ran since then:
+`gh run list --workflow=research-pull.yml -L 1`. If the latest run started
+before Monday 20:00 UTC (GitHub's scheduler can slip or skip), trigger one
+with `gh workflow run research-pull.yml`, wait for it
+(`gh run watch`), then `git pull` again.
+
 ## 1. Repair — run the pre-flight, fix what it flags
 
 ```

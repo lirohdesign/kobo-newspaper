@@ -8,6 +8,8 @@ between mechanical pulls (research_pull.py, unattended), curation/synthesis
 (the Tuesday session, interactive), and rendering (this file, either).
 """
 import json
+from datetime import date
+from email.utils import parsedate_to_datetime
 from pathlib import Path
 
 AREA_LABELS = {
@@ -46,6 +48,30 @@ def _load_notes():
         return {}
 
 
+def _age(date_str):
+    """('8 days ago', '2026-09-14') — saves doing the date math when deciding
+    whether an entry has already been read. Accepts ISO or RSS (RFC 822)
+    dates; month-only values (NOAA's YYYY-MM) pass through unchanged."""
+    if not date_str or len(date_str) < 10:
+        return "", date_str or ""
+    try:
+        d = date.fromisoformat(date_str[:10])
+    except ValueError:
+        try:
+            d = parsedate_to_datetime(date_str).date()
+        except (TypeError, ValueError):
+            return "", date_str
+    n = (date.today() - d).days
+    ago = "today" if n <= 0 else "1 day ago" if n == 1 else f"{n} days ago"
+    return ago, d.isoformat()
+
+
+def _age_label(date_str, verb):
+    """'8 days ago · synthesized 2026-09-14' — age leads so it can be scanned."""
+    ago, d = _age(date_str)
+    return f"{ago} · {verb} {d}" if ago else f"{verb} {d}"
+
+
 def _render_source(source_data, notes):
     label = source_data.get("label", source_data.get("id", "Unknown source"))
     site_url = source_data.get("site_url", "#")
@@ -64,7 +90,7 @@ def _render_source(source_data, notes):
 
     if note.get("synthesis"):
         as_of = note.get("as_of", fetched_at[:10] if fetched_at else "")
-        meta = f"as of {as_of}" if as_of else ""
+        meta = _age_label(as_of, "synthesized") if as_of else ""
         return (
             f"<div class='article-entry'><h3><a href='{site_url}'>{label_html}</a></h3>"
             f"<p class='metadata'>{meta}</p><p>{note['synthesis']}</p></div>"
@@ -76,7 +102,7 @@ def _render_source(source_data, notes):
     trail_html = f"<p class='trail-text'>{trail}</p>" if trail else ""
     return (
         f"<div class='article-entry'><h3><a href='{item['link']}'>{item['title']}</a></h3>"
-        f"<p class='metadata'>{label_html} &nbsp;·&nbsp; {item.get('date', '')}</p>"
+        f"<p class='metadata'>{_age_label(item.get('date', ''), 'posted')} &nbsp;·&nbsp; {label_html}</p>"
         f"{trail_html}</div>"
     )
 
