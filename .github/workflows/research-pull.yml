@@ -2,11 +2,11 @@ name: Research Pull
 
 on:
   schedule:
-    # 5:30 AM CST (11:30 AM UTC) daily — before the 6:30 AM daily build, so
-    # research.html has fresh data by the time main.py runs. Same DST caveat
-    # as daily.yml/kids-daily.yml: fires an hour "early" in local time once
-    # CDT ends in November, since GitHub Actions cron is fixed UTC.
-    - cron: '30 11 * * *'
+    # 4:30 PM CT (21:30 UTC) daily — after NASS Crop Progress posts Monday
+    # 4 PM ET, so Monday's run carries the new week into the Tuesday-morning
+    # research-digest session. GitHub starts scheduled runs 3-5h late in
+    # practice (observed Sept 2026); that still lands Monday evening.
+    - cron: '30 21 * * *'
   workflow_dispatch:
 
 permissions:

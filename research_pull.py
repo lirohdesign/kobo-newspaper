@@ -18,6 +18,7 @@ on its own:
 Run standalone: python3 research_pull.py
 """
 import json
+import re
 import ssl
 import time
 import urllib.request
@@ -190,6 +191,17 @@ def pull_source(source):
             i for i in items
             if any(n in (i["title"] + " " + i.get("summary", "")).lower() for n in needles)
         ]
+
+    # Regional priority, not a filter: matching items move to the front
+    # (flagged "priority") and everything else is kept behind them, so a quiet
+    # Midwest week still has the source's other news to fall back on.
+    priority = source.get("priority_keywords")
+    if priority:
+        needles = [k.lower() for k in priority]
+        for i in items:
+            text = (i["title"] + " " + i.get("summary", "")).lower()
+            i["priority"] = any(re.search(r"\b" + re.escape(n) + r"\b", text) for n in needles)
+        items.sort(key=lambda i: not i["priority"])  # stable: keeps date order within each group
 
     if not items:
         print(f"DEBUG: {sid} — feed fetched but no usable items")

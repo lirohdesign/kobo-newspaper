@@ -52,6 +52,7 @@
       "feed_url": "https://www.datacenterdynamics.com/en/rss/",
       "site_url": "https://www.datacenterdynamics.com/",
       "cadence": "weekly",
+      "priority_keywords": ["midwest", "corn belt", "indiana", "indianapolis", "illinois", "chicago", "iowa", "wisconsin", "michigan", "ohio", "missouri", "minnesota", "kentucky", "great lakes", "miso", "pjm"],
       "notes": "Feed is broad industry news (includes sponsored posts and unrelated telecom stories) — needs curation for data-center siting/power/Indiana relevance, don't just dump the raw feed."
     },
     {
@@ -137,8 +138,8 @@
       "feed_url": "https://www.climatehubs.usda.gov/rss.xml",
       "site_url": "https://www.climatehubs.usda.gov/hubs/midwest",
       "cadence": "monthly_digest",
-      "notes": "No hub-specific feed exists — .../hubs/midwest/feed and /rss.xml both 404 (confirmed 2026-09-12). The site-wide https://www.climatehubs.usda.gov/rss.xml (all ten regional Climate Hubs) is live and real, but most items are from other hubs (Northeast, Northwest, etc. — confirmed via live titles). Filtered here with keep_keyword_any for Midwest/Corn Belt relevance; expect a thinner, noisier stream than a dedicated feed would give, and revisit the keyword list in the Tuesday session if it's letting through too much or too little.",
-      "filter": {"keep_keyword_any": ["midwest", "corn belt", "indiana", "illinois", "iowa", "wisconsin", "michigan", "ohio", "missouri", "minnesota"]}
+      "notes": "No hub-specific feed exists — .../hubs/midwest/feed and /rss.xml both 404 (confirmed 2026-09-12). The site-wide https://www.climatehubs.usda.gov/rss.xml (all ten regional Climate Hubs) is live and real, but most items are from other hubs (Northeast, Northwest, etc. — confirmed via live titles). Midwest items are sorted first via priority_keywords (changed 2026-09-22 from a keep_keyword_any filter at the user's request: priority, not exclusion, so a weekly run always has something). Non-Midwest hub items stay behind them.",
+      "priority_keywords": ["midwest", "corn belt", "indiana", "indianapolis", "illinois", "chicago", "iowa", "wisconsin", "michigan", "ohio", "missouri", "minnesota", "kentucky", "great lakes", "miso", "pjm"]
     },
     {
       "id": "noaa_ncei_monthly",
