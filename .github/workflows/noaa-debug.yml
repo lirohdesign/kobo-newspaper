@@ -10,12 +10,4 @@ jobs:
       - run: pip install certifi
       - env: {NOAA_TOKEN: "${{ secrets.NOAA_TOKEN }}"}
         run: |
-          python - <<'PY'
-          import os,json,urllib.request,urllib.parse
-          from collections import Counter
-          for dt in ["PRCP","TAVG"]:
-              q=urllib.parse.urlencode({"datasetid":"GSOM","locationid":"FIPS:18","datatypeid":dt,"startdate":"2026-04-25","enddate":"2026-09-22","units":"standard","limit":1000})
-              b=json.loads(urllib.request.urlopen(urllib.request.Request("https://www.ncdc.noaa.gov/cdo-web/api/v2/data?"+q,headers={"token":os.environ["NOAA_TOKEN"]}),timeout=30).read())
-              print(dt,"resultset:",b.get("metadata"),"months returned:",Counter(r["date"][:7] for r in b.get("results",[])))
-          PY
           python noaa_ncei_scrape.py

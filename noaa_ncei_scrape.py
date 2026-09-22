@@ -73,7 +73,7 @@ def _query(token, state_fips, datatype, start, end):
         params["offset"] = len(rows) + 1  # CDO offsets are 1-based
         url = API_BASE + "?" + urllib.parse.urlencode(params)
         req = urllib.request.Request(url, headers={"token": token, "User-Agent": USER_AGENT})
-        with urllib.request.urlopen(req, timeout=20, context=SSL_CONTEXT) as r:
+        with urllib.request.urlopen(req, timeout=60, context=SSL_CONTEXT) as r:
             body = json.loads(r.read())
         page = body.get("results", [])
         rows.extend(page)
