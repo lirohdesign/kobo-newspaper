@@ -326,6 +326,10 @@ def main():
         # Ensure the folder exists before any logic runs
         if not os.path.exists("old_issues"):
             os.makedirs("old_issues")
+        # First build of the day sends to Instapaper; later builds (the delayed
+        # GitHub cron) only refresh the site. daily.yml copies old_issues from
+        # gh-pages, so today's file existing means an earlier build already sent.
+        already_sent_today = os.path.exists(f"old_issues/{file_date}.html")
         weather_content = collect_weather(ts)
         nyt_content = collect_nyt(ts)
         cinema_content = collect_cinema(ts)
@@ -358,7 +362,7 @@ def main():
             if article.get('id') in sent_ids or word_count < 1000: continue
 
             article_url = article.get('webUrl')
-            if SEND_GUARDIAN_TO_INSTAPAPER:
+            if SEND_GUARDIAN_TO_INSTAPAPER and not already_sent_today:
                 add_to_instapaper(article_url)
 
             read_time = max(1, word_count // 200)
@@ -402,7 +406,10 @@ def main():
             f.write(master_index.replace("style.css", "../style.css"))
 
         # Combined send — single page covering all sections (like kids build)
-        add_to_instapaper(f"{base_url}/index.html?v={ts}", title=f"liroh daily {ts}")
+        if already_sent_today:
+            print("DEBUG: Instapaper skipped — today's issue was already sent by an earlier build")
+        else:
+            add_to_instapaper(f"{base_url}/index.html?v={ts}", title=f"liroh daily {ts}")
 
         # Individual sends disabled — combined index.html send confirmed working
         # if weather_content: add_to_instapaper(f"{base_url}/weather.html?v={ts}", title=f"liroh weather {ts}")
