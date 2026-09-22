@@ -3,6 +3,18 @@
   "status": "ok",
   "items": [
     {
+      "title": "Minecraft Meets the Hellbender",
+      "link": "https://www.purdue.edu/fnr/extension/minecraft-meets-the-hellbender/",
+      "date": "Tue, 22 Sep 2026 20:14:33 +0000",
+      "summary": "Sherri Reinsch, research associate and hellbender husbandry coordinator gently handles a hellbender in the lab. (Photo provided by Purdue Agricultural Communications) Purdue Stories: This amphibious rock star gets its own educational video game with the help of Purdue research. The eastern\u2026"
+    },
+    {
+      "title": "Is It Too Early to Think About Christmas Tree Pests?",
+      "link": "https://www.purdue.edu/fnr/extension/is-it-too-early-to-think-about-christmas-tree-pests/",
+      "date": "Tue, 22 Sep 2026 20:13:11 +0000",
+      "summary": "Purdue Landscape Report: Is it too early (and too hot outside) to think about Christmas trees? Maybe, but many of the pests that attack them are active at this time of year. In this week\u2019s IDNR Entomology review, Jared Spokowsky shared damage he observed on pine from white pine weevil and Zimmerman\u2026"
+    },
+    {
       "title": "What You Plant Matters to Wildlife",
       "link": "https://www.purdue.edu/fnr/extension/what-you-plant-matters-to-wildlife/",
       "date": "Wed, 16 Sep 2026 20:51:05 +0000",
@@ -49,24 +61,12 @@
       "link": "https://www.purdue.edu/fnr/extension/lighting-a-spark-prescribed-burn-associations/",
       "date": "Thu, 06 Aug 2026 18:02:24 +0000",
       "summary": "In the past few years, prescribed fire has caught on in Indiana. Government agencies and land trusts have increasingly used it as a tool to create wildlife habitat, manage for rare and endangered species, and promote ecosystem health. On these properties, fire has been reintroduced to landscapes it\u2026"
-    },
-    {
-      "title": "ID That Tree: Nannyberry Viburnum",
-      "link": "https://www.purdue.edu/fnr/extension/id-that-tree-nannyberry-viburnum/",
-      "date": "Wed, 22 Jul 2026 15:30:08 +0000",
-      "summary": "In this edition of ID That Tree, Purdue Extension Forester Lenny Farlee introduces us to Nannyberry Viburnum, a native shrub found across Indiana woodlands. Learn how to identify Nannyberry by its finely serrated leaves, drooping branches, clustered fruit and seasonal changes from spring blooms to\u2026"
-    },
-    {
-      "title": "ID That Tree: Eastern Swamp Privet",
-      "link": "https://www.purdue.edu/fnr/extension/id-that-tree-eastern-swamp-privet/",
-      "date": "Wed, 22 Jul 2026 15:27:00 +0000",
-      "summary": "In this edition of ID That Tree, Purdue Extension Forester Lenny Farlee introduces us to Eastern Swamp Privet, a native Indiana shrub commonly found in wetland and swampy habitats. Unlike the privets around yards, homes and towns, the Eastern Swamp Privet comes from a different genus of plants.\u2026"
     }
   ],
   "label": "Purdue Extension FNR \u2014 Got Nature? blog",
   "area": "forestry",
   "site_url": "https://www.purdue.edu/fnr/extension/",
   "cadence": "weekly",
-  "fetched_at": "2026-09-22T13:36:33.720437+00:00",
+  "fetched_at": "2026-09-22T23:41:26.528096+00:00",
   "description_unreliable": false
 }

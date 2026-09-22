@@ -3,6 +3,12 @@
   "status": "ok",
   "items": [
     {
+      "title": "Where're All The AI Chips?",
+      "link": "https://www.wheresyoured.at/wherere-all-the-ai-chips/",
+      "date": "Tue, 22 Sep 2026 14:35:46 GMT",
+      "summary": "If you liked this piece, you should subscribe to my premium newsletter, and you can subscribe on the following links: $70 a year, $18 a quarter, or $7 a month.In return you get a weekly premium newsletter including vast, detailed analyses of NVIDIA, Anthropic and OpenAI\u2019s finances, and the AI\u2026"
+    },
+    {
       "title": "AI Is Already In Dangerous Hands",
       "link": "https://www.wheresyoured.at/ai-is-already-in-dangerous-hands/",
       "date": "Mon, 14 Sep 2026 16:23:50 GMT",
@@ -55,6 +61,6 @@
   "area": "ai_market",
   "site_url": "https://www.wheresyoured.at/",
   "cadence": "weekly",
-  "fetched_at": "2026-09-22T13:36:26.818596+00:00",
+  "fetched_at": "2026-09-22T23:41:20.455504+00:00",
   "description_unreliable": true
 }
