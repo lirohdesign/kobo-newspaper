@@ -5,3 +5,4 @@
 {"date": "2026-09-22", "action": "repair_needed", "target": "noaa_ncei_monthly", "reason": "PRCP absent from August 2026 summary though requested; temps present. Needs live raw-row check with NOAA_TOKEN (debug workflow)"}
 {"date": "2026-09-22", "action": "note", "target": "discovery", "reason": "All 29 candidates are news outlets, corporate/press sites, or academic hosts; none newsletter-shaped. Denylist could be expanded to cut noise"}
 {"date": "2026-09-22", "action": "note", "target": "usda_midwest_climate_hub", "reason": "'empty' is correct: feed's recent items are all Northeast; keep_keyword_any filter working. Validator flags filtered-empty as an issue \u2014 consider exempting"}
+{"date": "2026-09-22", "action": "repaired", "target": "noaa_ncei_monthly", "reason": "PRCP had 2,045 rows (>1000 cap, oldest-first) so August was cut off; added offset pagination and 60s timeout. Verified live: IN Aug precip 7.2in, MI 2.9in"}

@@ -24,7 +24,7 @@
     "as_of": "2026-09-15"
   },
   "nass_crop_progress": {
-    "synthesis": "Week ending Sept 13 (the Sept 20 report posts Monday afternoon, after this pipeline's pull): Indiana corn 84% dented, 32% mature, 2% grain harvested; soybeans 43% dropping leaves, 3% harvested. Maturity jumped from 12% to 32% in one week — harvest is starting on a normal schedule.",
+    "synthesis": "Week ending Sept 13 (the week-ending Sept 20 numbers were still not in the NASS Quick Stats API as of Tuesday morning, so this is the latest available): Indiana corn 84% dented, 32% mature, 2% grain harvested; soybeans 43% dropping leaves, 3% harvested. Maturity jumped from 12% to 32% in one week — harvest is starting on a normal schedule.",
     "as_of": "2026-09-13"
   },
   "interconnection_fyi": {
@@ -32,7 +32,7 @@
     "as_of": "2026-09-21"
   },
   "noaa_ncei_monthly": {
-    "synthesis": "August 2026 station averages: Indiana 73.0°F (highs 82.7°F, lows 63.3°F), Michigan 68.0°F. Precipitation is missing from this pull despite being requested — a known scraper gap under repair, and the number that matters most this month given the record August rain Purdue reported.",
+    "synthesis": "August 2026 was very wet in Indiana: 7.2 in. station-average precipitation, consistent with Purdue Extension's record-rainfall report, with temperatures near seasonal (73.0°F avg; highs 82.7°F, lows 63.3°F). Michigan: 68.0°F, 2.9 in. That wet month is the backdrop for the drought monitor's three-week rise in abnormally-dry coverage since.",
     "as_of": "2026-08"
   },
   "equitable_growth": {
