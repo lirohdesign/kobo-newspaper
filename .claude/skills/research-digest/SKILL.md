@@ -78,6 +78,21 @@ For each problem it reports:
 If everything's healthy, say so briefly and move on — don't manufacture
 concern where there isn't any.
 
+Known cases, so they don't get re-diagnosed each week:
+
+- **epoch_ai 403** — Substack blocks GitHub Actions IPs. Not a scraper bug;
+  fetch `https://epochai.substack.com/feed` directly this session and
+  synthesize from that.
+- **API-key sources (NASS, NOAA)** — keys live only in GitHub secrets, not
+  locally. To inspect raw API rows, add a temporary `workflow_dispatch`
+  workflow that prints them, run it with `gh workflow run` / `gh run watch`,
+  then delete the workflow in the same session.
+- **NASS week looks stale** — check whether Quick Stats actually has the
+  week before touching the scraper (past weeks loaded Mondays 16:00; some
+  weeks post late). If the API doesn't have it, say so in the synthesis.
+- **Local Python has no certifi** — ad-hoc fetch scripts should use plain
+  `urllib` without it.
+
 ## 2. Curate — evidence-based, not vibes-based
 
 **Cuts:** A source looking quiet or low-value *this* week isn't enough on
@@ -126,6 +141,15 @@ Only include sources you actually have something synthesized to say about —
 missing from this file, which is a fine outcome for a quiet source, not a
 failure to paper over.
 
+Stored `summary` fields are truncated (~300 chars), which is enough to
+triage but not to synthesize. Fetch the actual article for anything you
+write more than a headline about.
+
+`as_of` is the date of the newest source item the note is built on, not
+today's date — the page renders it as "N days ago · synthesized <date>" so
+the reader can tell at a glance whether they've already read it. Monthly
+data uses `YYYY-MM`.
+
 Self-check before finalizing: for every factual claim in a `synthesis`
 string, could you point to the specific item/link in `research_data/` (or
 `research_data/history/`) it came from? If not, it's either not verified
@@ -149,7 +173,23 @@ committed). **Confirm with the user before pushing** — this becomes part of
 the next daily build and gets sent to Instapaper, so it's not something to
 push silently on autopilot.
 
-## 5. Close with a short self-report
+## 5. Publish
+
+After the user confirms the push, start the daily build rather than waiting
+for GitHub's scheduler (which has been starting it 3-5 hours late):
+
+```
+gh workflow run daily.yml
+gh run watch $(gh run list --workflow=daily.yml -L1 --json databaseId -q '.[0].databaseId')
+```
+
+Only the first build of each day sends to Instapaper (main.py skips the send
+if `old_issues/<today>.html` already exists on gh-pages). Check
+`gh run list --workflow=daily.yml -L1` first: if today's build already ran,
+this one only refreshes the website, and the digest reaches the Kobo with
+tomorrow's issue. Tell the user which case applies.
+
+## 6. Close with a short self-report
 
 A few lines: sources checked, anything repaired, any curation flags logged
 (even if not acted on), and the as-of dates in this week's synthesis. This
