@@ -1,72 +1,12 @@
 {
   "id": "farmdoc_daily",
-  "status": "ok",
-  "items": [
-    {
-      "title": "Average Illinois Cash Rents and Soil Productivity in 2026",
-      "link": "https://farmdocdaily.illinois.edu/2026/09/average-illinois-cash-rents-and-soil-productivity-in-2026.html",
-      "date": "Tue, 22 Sep 2026 22:00:00 +0000",
-      "summary": "Since 2017, we\u2019ve provided annual updates to a simple formula for calculating the average cash rent for a piece of farmland based on its average soil productivity and location within\u2026"
-    },
-    {
-      "title": "Farmer Perceptions of AI Benefits in the United States and Argentina",
-      "link": "https://farmdocdaily.illinois.edu/2026/09/farmer-perceptions-of-ai-benefits-in-the-united-states-and-argentina.html",
-      "date": "Mon, 21 Sep 2026 16:12:54 +0000",
-      "summary": "Artificial intelligence and data-driven tools are being applied to agriculture, from robotics, automation, and precision farming to predictive analytics and digital advisory tools (Aijaz et al., 2025; Edet and Chowdhury,\u2026"
-    },
-    {
-      "title": "2025 Illinois Farm Earnings Improve but Remain Below Recent Averages",
-      "link": "https://farmdocdaily.illinois.edu/2026/09/2025-illinois-farm-earnings-improve-but-remain-below-recent-averages.html",
-      "date": "Fri, 18 Sep 2026 15:51:26 +0000",
-      "summary": "Based on records from 1,927 Illinois FBFM farms, average returns to farm operators\u2019 labor and management increased in every region of Illinois in 2025 compared with 2024. However, returns remained below the five-year average. Although yields and costs were similar to the previous year, earnings\u2026"
-    },
-    {
-      "title": "Under Pressure: The Size and Timing of the Harvest Low in Corn Basis",
-      "link": "https://farmdocdaily.illinois.edu/2026/09/under-pressure-the-size-and-timing-of-the-harvest-low-in-corn-basis.html",
-      "date": "Thu, 17 Sep 2026 17:34:32 +0000",
-      "summary": "US corn harvest-time corn basis bottoms in mid-October, coinciding with the peak of harvest activity. Average basis at the harvest-time low is about 11 cents below late-November levels. State-level lows average 16 cents, deepest in Missouri, Indiana and Illinois, and more loosely track local\u2026"
-    },
-    {
-      "title": "The 2027 Margin Coverage Option (MCO) Decision",
-      "link": "https://farmdocdaily.illinois.edu/2026/09/the-2027-margin-coverage-option-mco-decision.html",
-      "date": "Wed, 16 Sep 2026 23:57:05 +0000",
-      "summary": "The Margin Coverage Option (MCO) is an area-based crop insurance endorsement that provides protection against operating margin shortfalls, which can be driven by revenue decreases, cost increases or a combination\u2026"
-    },
-    {
-      "title": "Illinois Cash Rents in 2026 and Outlook for 2027",
-      "link": "https://farmdocdaily.illinois.edu/2026/09/illinois-cash-rents-in-2026-and-outlook-for-2027.html",
-      "date": "Tue, 15 Sep 2026 22:13:58 +0000",
-      "summary": "The average cash rent for Illinois farmland saw a small decline for the second year in a row in 2026. Higher corn and soybean prices have improved the return outlook for both 2026 and 2027 compared to the previous three crop years, and producers are expected to receive relatively large payment from\u2026"
-    },
-    {
-      "title": "Changing Public Perceptions of AI and Data Center Development: Results from the Gardner Food and Agricultural Policy Survey",
-      "link": "https://farmdocdaily.illinois.edu/2026/09/changing-public-perceptions-of-ai-and-data-center-development-results-from-the-gardner-food-and-agricultural-policy-survey.html",
-      "date": "Mon, 14 Sep 2026 16:26:36 +0000",
-      "summary": "The social, economic, and environmental impacts of data centers and artificial intelligence (AI) are increasingly important issues facing communities across the country. Although most existing data centers are in urban\u2026"
-    },
-    {
-      "title": "Impact of Higher Corn Prices on Swine Finishing Feed Costs",
-      "link": "https://farmdocdaily.illinois.edu/2026/09/impact-of-higher-corn-prices-on-swine-finishing-feed-costs.html",
-      "date": "Fri, 11 Sep 2026 17:58:38 +0000",
-      "summary": "Corn futures price for the nearby contract was approximately $4.40 per bushel at the start of 2026. For the first week in August, corn futures price averaged $5.18. Moreover, using\u2026"
-    },
-    {
-      "title": "Conservation & Risk, Part 4: Approaching the Nitrogen Application Question",
-      "link": "https://farmdocdaily.illinois.edu/2026/09/conservation-risk-part-4-approaching-the-nitrogen-application-question.html",
-      "date": "Thu, 10 Sep 2026 19:30:36 +0000",
-      "summary": "From fertilizer costs to nutrients lost, the issues and challenges of nitrogen continue for row crop agriculture. They are magnified in the moment by the conflict in Iran and the\u2026"
-    },
-    {
-      "title": "Lettuce Talk About Food Safety: Consumer Responses to Recent Outbreaks",
-      "link": "https://farmdocdaily.illinois.edu/2026/09/lettuce-talk-about-food-safety-consumer-responses-to-recent-outbreaks.html",
-      "date": "Wed, 09 Sep 2026 19:13:44 +0000",
-      "summary": "Over the last month, it has been hard to miss the news of outbreaks and recalls. Cyclospora-contaminated iceberg lettuce sickened over 11,000 across 20 states and led to a recall\u2026"
-    }
-  ],
+  "status": "error",
+  "error": "<urlopen error timed out>",
+  "items": [],
   "label": "farmdoc daily",
   "area": "agriculture",
   "site_url": "https://farmdocdaily.illinois.edu/",
   "cadence": "weekly_digest",
-  "fetched_at": "2026-09-22T23:41:21.128864+00:00",
+  "fetched_at": "2026-09-23T23:49:46.512859+00:00",
   "description_unreliable": false
 }

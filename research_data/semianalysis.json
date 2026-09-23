@@ -3,6 +3,12 @@
   "status": "ok",
   "items": [
     {
+      "title": "ClusterMAX 3.0: The Industry Standard GPU Cloud Rating System Returns",
+      "link": "https://newsletter.semianalysis.com/p/clustermax-30-the-industry-standard",
+      "date": "Wed, 23 Sep 2026 21:20:29 GMT",
+      "summary": "This post has bonus content for paid subscribers. Upgrade to get full access.In 8 months since our last major release of ClusterMAX, slavering investors have just about run out of pockets to stuff checks into. GPU supply has gone to zero. Meanwhile, we have been hard at work putting clusters\u2026"
+    },
+    {
       "title": "Computation and Data Movement for Inference",
       "link": "https://newsletter.semianalysis.com/p/computation-and-data-movement-for",
       "date": "Mon, 21 Sep 2026 18:14:15 GMT",
@@ -85,18 +91,12 @@
       "link": "https://newsletter.semianalysis.com/p/are-open-models-catching-up",
       "date": "Fri, 21 Aug 2026 16:40:02 GMT",
       "summary": "The past two months have been a breakout period for open source AI. Yes, there was the \u201cDeepSeek moment\u201d back in January 2025, but no one actually used R1 to do any economically valuable work. In contrast, models like GLM 5.3 and Kimi K3 are genuinely capable of many of the same coding and agentic\u2026"
-    },
-    {
-      "title": "Cerebras's Next Generation CS-4: Fast Just Got Faster",
-      "link": "https://newsletter.semianalysis.com/p/cerebrass-next-generation-cs-4-fast",
-      "date": "Wed, 19 Aug 2026 01:32:08 GMT",
-      "summary": "Cerebras revealed CS-4 this week, with more details to come at Hot Chips. CS-4 is their fourth-generation rack built around the same third generation 5nm wafer-scale engine: WSE-3. CS-4 doubles the performance of CS-3 through increased power consumption and clock frequency per wafer, and better\u2026"
     }
   ],
   "label": "SemiAnalysis",
   "area": "ai_market",
   "site_url": "https://semianalysis.com/",
   "cadence": "weekly",
-  "fetched_at": "2026-09-22T23:41:20.112691+00:00",
+  "fetched_at": "2026-09-23T23:49:26.050315+00:00",
   "description_unreliable": false
 }
