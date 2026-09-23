@@ -3,6 +3,62 @@
   "status": "ok",
   "items": [
     {
+      "title": "BDx breaks ground on AI Campus 2 in Jatiluhur, Indonesia",
+      "link": "https://www.datacenterdynamics.com/en/news/bdx-breaks-ground-on-ai-campus-2-in-jatiluhur-indonesia/",
+      "date": "Tue, 22 Sep 2026 16:33:27 +0000",
+      "summary": "The first 120MW building is set to go live in early 2027",
+      "priority": false
+    },
+    {
+      "title": "Orange drops M\u00e1sOrange brand in Spain following full takeover",
+      "link": "https://www.datacenterdynamics.com/en/news/masorange-disappears-and-orange-spain-assumes-the-groups-corporate-identity/",
+      "date": "Tue, 22 Sep 2026 16:30:03 +0000",
+      "summary": "The carrier is now known as Orange Espa\u00f1a",
+      "priority": false
+    },
+    {
+      "title": "Alibaba unveils Zhenwu V900, says cloud capacity will hit 20GW by 2032",
+      "link": "https://www.datacenterdynamics.com/en/news/alibaba-unveils-zhenwu-v900-says-cloud-capacity-will-hit-20gw-by-2032/",
+      "date": "Tue, 22 Sep 2026 16:25:37 +0000",
+      "summary": "New AI chip slated for release in Q1 2027",
+      "priority": false
+    },
+    {
+      "title": "Sponsored: Simplicity is the new scalability",
+      "link": "https://www.datacenterdynamics.com/en/opinions/simplicity-is-the-new-scalability/",
+      "date": "Tue, 22 Sep 2026 15:00:00 +0000",
+      "summary": "In the AI era, competitive advantage will come not from offering unlimited choice, but from knowing which choices matter",
+      "priority": false
+    },
+    {
+      "title": "Irish gov't sets out national roaming agreement for Ireland's emergency services",
+      "link": "https://www.datacenterdynamics.com/en/news/irish-govt-sets-out-national-roaming-agreement-for-irelands-emergency-services/",
+      "date": "Tue, 22 Sep 2026 14:40:43 +0000",
+      "summary": "eir, Three Ireland, and Vodafone have signed the agreement",
+      "priority": false
+    },
+    {
+      "title": "AT&T seeks to lease more 3.45GHz spectrum",
+      "link": "https://www.datacenterdynamics.com/en/news/att-seeks-to-lease-more-345ghz-spectrum/",
+      "date": "Tue, 22 Sep 2026 14:30:53 +0000",
+      "summary": "The carrier is after more midband spectrum, this time from N Squared",
+      "priority": false
+    },
+    {
+      "title": "Plans progress for 200MW data center in Schladen-Werla, Germany",
+      "link": "https://www.datacenterdynamics.com/en/news/plans-progress-for-200mw-data-center-in-schladen-werla-germany/",
+      "date": "Tue, 22 Sep 2026 13:59:39 +0000",
+      "summary": "The project is being spearheaded by Green Datacenter Development",
+      "priority": false
+    },
+    {
+      "title": "Polcom to build 40MW data center in Skawina, Poland",
+      "link": "https://www.datacenterdynamics.com/en/news/polcom-to-build-40mw-data-center-in-skawina-poland/",
+      "date": "Tue, 22 Sep 2026 13:58:35 +0000",
+      "summary": "The facility will be the cloud services firm\u2019s second in the town",
+      "priority": false
+    },
+    {
       "title": "New Era signs 20-year gas PPA with Vistra subsidiary to power 250MW data center in Ector County, Texas",
       "link": "https://www.datacenterdynamics.com/en/news/new-era-signs-20-year-gas-ppa-with-vistra-subsidiary-to-power-250mw-data-center-in-ector-county-texas/",
       "date": "Tue, 22 Sep 2026 13:08:11 +0000",
@@ -50,68 +106,12 @@
       "date": "Tue, 22 Sep 2026 10:44:08 +0000",
       "summary": "Telesat expands its influence on the ground, targeting defense and government markets",
       "priority": false
-    },
-    {
-      "title": "Microsoft hires new director of global energy and sustainability policy",
-      "link": "https://www.datacenterdynamics.com/en/news/microsoft-hires-new-director-of-global-energy-and-sustainability-policy/",
-      "date": "Tue, 22 Sep 2026 10:20:34 +0000",
-      "summary": "Ray Fakhoury III joins from AWS",
-      "priority": false
-    },
-    {
-      "title": "European Commission proposes energy and water efficiency disclosure rules for data centers",
-      "link": "https://www.datacenterdynamics.com/en/news/european-commission-proposes-energy-and-water-efficiency-disclosure-rules-for-data-centers/",
-      "date": "Tue, 22 Sep 2026 10:10:39 +0000",
-      "summary": "Proposal is now subject to a two-month scrutiny period",
-      "priority": false
-    },
-    {
-      "title": "Sponsored: Scaling connectivity beyond the data center walls",
-      "link": "https://www.datacenterdynamics.com/en/marketwatch/scaling-connectivity-beyond-the-data-center-walls/",
-      "date": "Tue, 22 Sep 2026 07:00:00 +0000",
-      "summary": "Connecting buildings, sites, or cities? The challenges and core priorities look significantly different, says Corning\u2019s Nilson Gabela",
-      "priority": false
-    },
-    {
-      "title": "Nokia ramps up AI-RAN momentum",
-      "link": "https://www.datacenterdynamics.com/en/news/nokia-ramps-up-ai-ran-momentum/",
-      "date": "Mon, 21 Sep 2026 16:21:03 +0000",
-      "summary": "As the vendor strikes further carrier partnerships",
-      "priority": false
-    },
-    {
-      "title": "Flag to deploy Ciena's Waveserver platform on Echo subsea cable",
-      "link": "https://www.datacenterdynamics.com/en/news/flag-to-deploy-cienas-waveserver-platform-on-echo-subsea-cable/",
-      "date": "Mon, 21 Sep 2026 16:18:24 +0000",
-      "summary": "This will enable Flag to launch new 400GbE and 800GbE services along the route",
-      "priority": false
-    },
-    {
-      "title": "The new 5G SA blueprint that is enabling telecom operators to provide the network backbone 24/7 industries need",
-      "link": "https://www.datacenterdynamics.com/en/opinions/the-new-5g-sa-blueprint-that-is-enabling-telecom-operators-to-provide-the-network-backbone-247-industries-need/",
-      "date": "Mon, 21 Sep 2026 16:01:04 +0000",
-      "summary": "It\u2019s time for telecoms to move digital infrastructure closer to the user",
-      "priority": false
-    },
-    {
-      "title": "LG launches centrifugal air cooling system for AI data centers",
-      "link": "https://www.datacenterdynamics.com/en/news/lg-launches-centrifugal-air-cooling-system-for-ai-data-centers/",
-      "date": "Mon, 21 Sep 2026 15:40:37 +0000",
-      "summary": "No oil required for magnetic system",
-      "priority": false
-    },
-    {
-      "title": "Valorem eyes data centers in Savonlinna and Kankaanp\u00e4\u00e4, Finland",
-      "link": "https://www.datacenterdynamics.com/en/news/valorem-eyes-data-centers-in-savonlinna-and-kankaanp%C3%A4%C3%A4-finland/",
-      "date": "Mon, 21 Sep 2026 15:30:38 +0000",
-      "summary": "French energy firm adds more data center projects to pipeline",
-      "priority": false
     }
   ],
   "label": "Data Center Dynamics",
   "area": "grid_buildout",
   "site_url": "https://www.datacenterdynamics.com/",
   "cadence": "weekly",
-  "fetched_at": "2026-09-22T13:36:27.596961+00:00",
+  "fetched_at": "2026-09-22T23:41:21.338843+00:00",
   "description_unreliable": false
 }

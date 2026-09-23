@@ -3,6 +3,12 @@
   "status": "ok",
   "items": [
     {
+      "title": "Average Illinois Cash Rents and Soil Productivity in 2026",
+      "link": "https://farmdocdaily.illinois.edu/2026/09/average-illinois-cash-rents-and-soil-productivity-in-2026.html",
+      "date": "Tue, 22 Sep 2026 22:00:00 +0000",
+      "summary": "Since 2017, we\u2019ve provided annual updates to a simple formula for calculating the average cash rent for a piece of farmland based on its average soil productivity and location within\u2026"
+    },
+    {
       "title": "Farmer Perceptions of AI Benefits in the United States and Argentina",
       "link": "https://farmdocdaily.illinois.edu/2026/09/farmer-perceptions-of-ai-benefits-in-the-united-states-and-argentina.html",
       "date": "Mon, 21 Sep 2026 16:12:54 +0000",
@@ -55,18 +61,12 @@
       "link": "https://farmdocdaily.illinois.edu/2026/09/lettuce-talk-about-food-safety-consumer-responses-to-recent-outbreaks.html",
       "date": "Wed, 09 Sep 2026 19:13:44 +0000",
       "summary": "Over the last month, it has been hard to miss the news of outbreaks and recalls. Cyclospora-contaminated iceberg lettuce sickened over 11,000 across 20 states and led to a recall\u2026"
-    },
-    {
-      "title": "Wheat Double-Crop Soybean Profitability in Recent Years",
-      "link": "https://farmdocdaily.illinois.edu/2026/09/wheat-double-crop-soybean-profitability-in-recent-years.html",
-      "date": "Tue, 08 Sep 2026 21:53:27 +0000",
-      "summary": "Current projections indicate that wheat followed by double-crop soybeans will be more profitable in 2027 than either corn or stand-alone soybeans in southern Illinois. Wheat-double-crop soybeans generated the highest operator\u2026"
     }
   ],
   "label": "farmdoc daily",
   "area": "agriculture",
   "site_url": "https://farmdocdaily.illinois.edu/",
   "cadence": "weekly_digest",
-  "fetched_at": "2026-09-22T13:36:27.506175+00:00",
+  "fetched_at": "2026-09-22T23:41:21.128864+00:00",
   "description_unreliable": false
 }

@@ -3,6 +3,12 @@
   "status": "ok",
   "items": [
     {
+      "title": "Obituary: James Philip Bruce",
+      "link": "https://www.ipcc.ch/2026/09/22/obituary-james-philip-bruce/",
+      "date": "Tue, 22 Sep 2026 20:10:52 +0000",
+      "summary": "It is with great sadness that the Intergovernmental Panel on Climate Change (IPCC) has learned of the passing of James (Jim) Philip Bruce, a foundational figure in the establishment of the IPCC. In 1988, while serving as Deputy Secretary-General of the World Meteorological Organization (WMO), Bruce\u2026"
+    },
+    {
       "title": "Graphic Designer in the IPCC Working Group I Technical Support Unit",
       "link": "https://www.ipcc.ch/2026/09/11/graphic-designer-ipcc-wg1-tsu/",
       "date": "Fri, 11 Sep 2026 17:13:05 +0000",
@@ -55,18 +61,12 @@
       "link": "https://www.ipcc.ch/2026/06/25/keynote-address-ipcc-chair-jim-skea-world-climate-investment-summit/",
       "date": "Thu, 25 Jun 2026 09:39:33 +0000",
       "summary": "London Climate Action Week 2026, 25 June 2026London Stock Exchange Sustaining Capital Flows to Clean Energy and Nature in a Different Global Context Check against delivery Ladies and gentlemen, As Chair of the Intergovernmental Panel on Climate Change, the IPCC, I thank you for this opportunity to\u2026"
-    },
-    {
-      "title": "IPCC Chair\u2019s Remarks at the 18th Meeting of the Research Dialogue",
-      "link": "https://www.ipcc.ch/2026/06/09/ipcc-chair-jim-skea-18th-research-dialogue/",
-      "date": "Tue, 09 Jun 2026 09:24:26 +0000",
-      "summary": "64th Session of the Subsidiary Body for Scientific and Technological Advice (SBSTA64), 9 June 2026, Bonn, Germany. Your Excellencies, distinguished delegates and colleagues, ladies and gentlemen, On behalf of the Intergovernmental Panel on Climate Change, the IPCC, thank you for the opportunity to\u2026"
     }
   ],
   "label": "IPCC \u2014 News & Announcements",
   "area": "ipcc",
   "site_url": "https://www.ipcc.ch/news/",
   "cadence": "weekly",
-  "fetched_at": "2026-09-22T13:36:32.483673+00:00",
+  "fetched_at": "2026-09-22T23:41:24.357298+00:00",
   "description_unreliable": false
 }
