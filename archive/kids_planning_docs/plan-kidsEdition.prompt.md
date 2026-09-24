@@ -54,7 +54,7 @@ If the kids edition needs separate content configuration later, consider adding:
 3. Add output name generation based on mode.
 4. Add archive file writing logic that includes a mode suffix for kids files.
 5. Add a mode-specific page header/title and stylesheet reference.
-6. Document the new mode and environment variables in `README.md` and `framework.md`.
+6. Document the new mode and environment variables in `README.md` and `archive/framework.md`.
 
 ## Archive naming conventions
 - Standard issue: `old_issues/2026-06-15.html`

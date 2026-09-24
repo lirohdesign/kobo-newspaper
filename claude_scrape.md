@@ -1,6 +1,6 @@
 # claude_scrape.md — the daily classification prompt
 
-This is the operating prompt for the API call described in `framework.md`
+This is the operating prompt for the API call described in `archive/framework.md`
 step 2. It's handed to Claude alongside `taste.md` (the actual rubric — read
 that first; everything below just operationalizes it) and a batch of
 pre-filtered candidate threads gathered by the Python scraper.
@@ -17,7 +17,7 @@ For every candidate, choose exactly one tier:
 - **include** — clears the bar on its own merits, against `taste.md`.
 - **borderline** — close, but you held back. Not a consolation prize — a
   genuine signal that this sits near the edge of the rubric, in either
-  direction. These get logged for calibration review (see `framework.md`),
+  direction. These get logged for calibration review (see `archive/framework.md`),
   so the *reasoning* matters more here than anywhere else in this task.
 - **exclude** — clearly doesn't clear the bar: slugfest, lottery-ideology,
   petty gripe, AI hype cycle, photo-only thread with nothing in the comments,
@@ -67,7 +67,7 @@ For `borderline` and `exclude`, omit `presentation` entirely.
 
 ## Why the borderline reasoning is the most important text you produce
 There's no feedback loop on the other end of this pipeline — Instapaper is
-static, one-way, and silent (see `framework.md`'s calibration digest section).
+static, one-way, and silent (see `archive/framework.md`'s calibration digest section).
 Your `borderline` calls and the reasons behind them are the *only* signal
 anyone will ever get about whether your sense of the line matches what
 `taste.md` actually intends. Treat that `reason` field as more important than

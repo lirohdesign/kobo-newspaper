@@ -1,6 +1,6 @@
 # kobo-newspaper CLAUDE.md
 
-The full architecture is in `framework.md`. Read that too before touching
+The full architecture is in `archive/framework.md`. Read that too before touching
 anything structural.
 
 * * *
@@ -11,7 +11,7 @@ anything structural.
 - The Instapaper/Kobo rendering rules (under Conventions) were each learned by observing the pipeline fail on-device and confirming the fix the same way. (T2)
 - If asked to "tune" the system, read recent `borderline` calls and their reasons first — a pile of correctly-rejected garbage proves nothing; the close calls are where real signal lives. (T2)
 - Verifying the calendar system: check the archived page in `old_issues/` for the trigger date — don't test by re-running the scraper against today's page, which may have changed since. The archive is the ground truth. (T4)
-- Dead ends and investigation history: see `framework.md` for the full record — not restated here. (T4)
+- Dead ends and investigation history: see `archive/framework.md` for the full record — not restated here. (T4)
 
 ## Extensions
 
@@ -27,14 +27,14 @@ anything structural.
 - *"Add/remove a subreddit" / "this DRAFT source isn't working"* →
   `sources.json`.
 - *New bucket type, new cadence, new persisted log, anything structurally
-  different* → `framework.md` first (keep the architecture true), then the
+  different* → `archive/framework.md` first (keep the architecture true), then the
   code.
 - *"Model output is inconsistent / wrong shape"* → `claude_scrape.md`.
 
 ### Kids build — what to change for what
 
 - *"Section X isn't working / needs changing"* → the module for that
-  section. See the section-to-module table in `framework.md`.
+  section. See the section-to-module table in `archive/framework.md`.
 - *"I want to add a new section"* → write a module that returns an HTML
   string (or a `(content, answers)` tuple if there are answers), import it
   in `kids_main()`, add a `<section>` to the page template, add to answers
@@ -51,7 +51,7 @@ anything structural.
 - *"Change puzzle difficulty / appearance"* → `towers.py` or `guess.py`.
   Both use date-seeded RNG (seeds differ by +11 and +22). If you change
   `SHAPES`, `N`, or grid size, re-read the rendering pipeline in
-  `framework.md` — font sizes, cell dimensions, and the 70% resize target
+  `archive/framework.md` — font sizes, cell dimensions, and the 70% resize target
   interact.
 - *"APOD isn't appearing"* → check `apod_scrape.py`. The API at
   `api.nasa.gov` is unreliable; the scraper has retries + web fallback. If
