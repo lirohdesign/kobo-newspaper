@@ -3,6 +3,12 @@
   "status": "ok",
   "items": [
     {
+      "title": "The Chinese AI Infrastructure Boom: Introducing the SemiAnalysis China Datacenter Model",
+      "link": "https://newsletter.semianalysis.com/p/the-chinese-ai-infrastructure-boom",
+      "date": "Fri, 25 Sep 2026 15:58:22 GMT",
+      "summary": "China sits at the frontier of the global model race. GLM 5.3 and Kimi K3 are the latest in a run of striking open-weights releases. ByteDance's Doubao serves 345M monthly users as China's ChatGPT, and Seedance is the State-Of-The-Art video generation model. Every one of those models runs on a\u2026"
+    },
+    {
       "title": "ClusterMAX 3.0: The Industry Standard GPU Cloud Rating System Returns",
       "link": "https://newsletter.semianalysis.com/p/clustermax-30-the-industry-standard",
       "date": "Wed, 23 Sep 2026 21:20:29 GMT",
@@ -85,18 +91,12 @@
       "link": "https://newsletter.semianalysis.com/p/agentx-inferencexv3-does-cuda-moat",
       "date": "Mon, 24 Aug 2026 00:19:35 GMT",
       "summary": "Since the Claude Code inflection point in November 2025, long-context, multi-turn agentic workloads have grown rapidly. They now dominate traffic for production inferencing. In April 2026, OpenAI\u2019s Enterprise agentic spending overtook ChatGPT spending.Agentic workflows have decisively taken the\u2026"
-    },
-    {
-      "title": "Are Open Models Catching Up?",
-      "link": "https://newsletter.semianalysis.com/p/are-open-models-catching-up",
-      "date": "Fri, 21 Aug 2026 16:40:02 GMT",
-      "summary": "The past two months have been a breakout period for open source AI. Yes, there was the \u201cDeepSeek moment\u201d back in January 2025, but no one actually used R1 to do any economically valuable work. In contrast, models like GLM 5.3 and Kimi K3 are genuinely capable of many of the same coding and agentic\u2026"
     }
   ],
   "label": "SemiAnalysis",
   "area": "ai_market",
   "site_url": "https://semianalysis.com/",
   "cadence": "weekly",
-  "fetched_at": "2026-09-24T23:56:15.993679+00:00",
+  "fetched_at": "2026-09-25T23:59:51.693926+00:00",
   "description_unreliable": false
 }

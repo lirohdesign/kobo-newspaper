@@ -3,108 +3,108 @@
   "status": "ok",
   "items": [
     {
-      "title": "Can we power it?  Yes we GaN",
-      "link": "https://www.datacenterdynamics.com/en/analysis/can-we-power-it-yes-we-gan/",
-      "date": "Thu, 24 Sep 2026 17:44:09 +0000",
-      "summary": "Is the data center industry finally catching up to the promise of gallium nitride?",
+      "title": "T-Mobile US expands AI network service",
+      "link": "https://www.datacenterdynamics.com/en/news/t-mobile-us-expands-ai-network-service/",
+      "date": "Fri, 25 Sep 2026 16:04:08 +0000",
+      "summary": "AutoPilot aids T-Mobile's self-organizing network efforts",
       "priority": false
     },
     {
-      "title": "Boldyn Networks picked to deploy private network at Ontario International Airport in California",
-      "link": "https://www.datacenterdynamics.com/en/news/boldyn-networks-picked-to-deploy-private-network-at-ontario-international-airport-in-california/",
-      "date": "Thu, 24 Sep 2026 16:00:35 +0000",
-      "summary": "The private network will support security operations at the airport",
+      "title": "Vocus to build 4,000km fiber link between Brisbane and Darwin",
+      "link": "https://www.datacenterdynamics.com/en/news/vocus-to-build-4000km-fiber-link-between-brisbane-and-darwin/",
+      "date": "Fri, 25 Sep 2026 16:03:55 +0000",
+      "summary": "The route aims to support growing demand from hyperscaler, neocloud, and enterprise customers",
       "priority": false
     },
     {
-      "title": "Southern Water deploys Lightsonic water-leak technology using Openreach's fiber infrastructure",
-      "link": "https://www.datacenterdynamics.com/en/news/southern-water-deploys-lightsonic-water-leak-technology-using-openreachs-fiber-infrastructure/",
-      "date": "Thu, 24 Sep 2026 15:50:31 +0000",
-      "summary": "As the water company seeks to monitor leaks",
+      "title": "The future of ITAD",
+      "link": "https://www.datacenterdynamics.com/en/whitepapers/the-future-of-itad/",
+      "date": "Fri, 25 Sep 2026 15:41:36 +0000",
+      "summary": "An SK tes guide to reducing carbon emissions through IT asset recovery",
       "priority": false
     },
     {
-      "title": "Oracle issues force majeure notice to Blue Owl following series of setbacks at Project Jupiter data center campus \u2013 report",
-      "link": "https://www.datacenterdynamics.com/en/news/oracle-issues-force-majeure-notice-to-blue-owl-following-series-of-setbacks-at-project-jupiter-data-center-campus-report/",
-      "date": "Thu, 24 Sep 2026 15:35:33 +0000",
-      "summary": "The 2.5GW site in New Mexico is set to come online in 2028",
+      "title": "DCD Connect 2026: Takeaway thoughts",
+      "link": "https://www.datacenterdynamics.com/en/opinions/dcd-connect-2026-takeaway-thoughts/",
+      "date": "Fri, 25 Sep 2026 15:39:00 +0000",
+      "summary": "Reflections from our first DCD Connect London",
       "priority": false
     },
     {
-      "title": "Sponsored: Powering the AI data center era: Why UPS battery technology needs to evolve",
-      "link": "https://www.datacenterdynamics.com/en/opinions/powering-the-ai-data-center-era-why-ups-battery-technology-needs-to-evolve/",
-      "date": "Thu, 24 Sep 2026 15:00:00 +0000",
-      "summary": "The rise of AI infrastructure is forcing data centers to rethink backup power strategies",
+      "title": "AI cloud and data center firm Nscale raises $3.36bn ahead of its IPO",
+      "link": "https://www.datacenterdynamics.com/en/news/ai-cloud-and-data-center-firm-nscale-raises-336bn-ahead-of-its-ipo/",
+      "date": "Fri, 25 Sep 2026 15:34:00 +0000",
+      "summary": "Follows publication of IPO prospectus",
       "priority": false
     },
     {
-      "title": "Tower Semiconductor to establish large-scale optical chip hub as part of $4bn Japanese investment pledge",
-      "link": "https://www.datacenterdynamics.com/en/news/tower-semiconductor-to-establish-large-scale-optical-chip-hub-as-part-of-4bn-japanese-investment-pledge/",
-      "date": "Thu, 24 Sep 2026 14:56:43 +0000",
-      "summary": "CEO provides further details regarding expansion plans announced earlier this year",
+      "title": "DensityAI: Chip startup founded by former Tesla Dojo execs valued at $10bn \u2013 report",
+      "link": "https://www.datacenterdynamics.com/en/news/ai-chip-startup-founded-by-former-tesla-dojo-execs-valued-at-10bn-report/",
+      "date": "Fri, 25 Sep 2026 15:02:00 +0000",
+      "summary": "Company has raised \u201chundreds of millions\u201d for development of chip with 3D DRAM stacking, report claims",
       "priority": false
     },
     {
-      "title": "QuEra partners with HPE to integrate quantum computer within Cray-powered HPC environments",
-      "link": "https://www.datacenterdynamics.com/en/news/quera-partners-with-hpe-to-integrate-quantum-computer-within-cray-powered-hpc-environments/",
-      "date": "Thu, 24 Sep 2026 13:43:00 +0000",
-      "summary": "Quantum firm now offering access to systems via both on-premises deployments and the cloud",
+      "title": "Sponsored: How to scale data centers cheaper, faster, and at a higher quality",
+      "link": "https://www.datacenterdynamics.com/en/opinions/how-to-scale-data-centers-cheaper-faster-and-at-a-higher-quality/",
+      "date": "Fri, 25 Sep 2026 15:00:00 +0000",
+      "summary": "Data centers are the last heavy industry still built by hand. It's time to move them into the factory",
       "priority": false
     },
     {
-      "title": "T-Mobile seeks to test 2.7GHz and 4GHz ahead as preparation for 6G spectrum ramps up",
-      "link": "https://www.datacenterdynamics.com/en/news/t-mobile-seeks-to-test-27ghz-and-4ghz-ahead-as-preparation-for-6g-spectrum-ramps-up/",
-      "date": "Thu, 24 Sep 2026 13:39:00 +0000",
-      "summary": "Just days after Verizon",
+      "title": "Fair markets, trusted allies: Why Korea's cloud rules matter for AI leadership",
+      "link": "https://www.datacenterdynamics.com/en/opinions/fair-markets-trusted-allies-why-koreas-cloud-rules-matter-for-ai-leadership/",
+      "date": "Fri, 25 Sep 2026 14:00:39 +0000",
+      "summary": "Will Korea's revisions to its cloud security framework work for the US?",
       "priority": false
     },
     {
-      "title": "Woodway to build 22-mile gas pipeline for undisclosed data center in US",
-      "link": "https://www.datacenterdynamics.com/en/news/woodway-to-build-22-mile-gas-pipeline-for-undisclosed-data-center-in-us/",
-      "date": "Thu, 24 Sep 2026 12:36:00 +0000",
-      "summary": "Will serve the data center behind the meter",
+      "title": "Northern Virginia's Prince William County puts controls on new data center projects",
+      "link": "https://www.datacenterdynamics.com/en/news/northern-virginias-prince-william-county-puts-controls-on-new-data-center-projects/",
+      "date": "Fri, 25 Sep 2026 13:12:00 +0000",
+      "summary": "Size of 'by right' overlay district for digital infrastructure projects cut by two thirds",
       "priority": false
     },
     {
-      "title": "Microsoft to invest $10bn into Gulf states by 2030",
-      "link": "https://www.datacenterdynamics.com/en/news/microsoft-to-invest-10bn-into-gulf-states-by-2030/",
-      "date": "Thu, 24 Sep 2026 12:32:00 +0000",
-      "summary": "Earmarked for investments across the United Arab Emirates, Saudi Arabia, Qatar, and Kuwait",
+      "title": "Keppel, StarHub confirm talks over M1 deal in Singapore",
+      "link": "https://www.datacenterdynamics.com/en/news/keppel-starhub-confirm-talks-over-m1-deal-in-singapore/",
+      "date": "Fri, 25 Sep 2026 13:09:13 +0000",
+      "summary": "Will the talks lead to consolidation in the market?",
       "priority": false
     },
     {
-      "title": "China's S-AIDC orbits Supercomputing-1 satellite to cut Earth observation processing times",
-      "link": "https://www.datacenterdynamics.com/en/news/chinas-s-aidc-orbits-supercomputing-1-satellite-to-cut-earth-observation-processing-times/",
-      "date": "Thu, 24 Sep 2026 12:25:38 +0000",
-      "summary": "Chinese private companies continue to invest in STEM-led space compute capability",
+      "title": "Thailand set to finalize new data center regulations by mid-October - report",
+      "link": "https://www.datacenterdynamics.com/en/news/thailand-set-to-finalize-new-data-center-regulations-by-mid-october-report/",
+      "date": "Fri, 25 Sep 2026 13:06:00 +0000",
+      "summary": "Expected to classify data centers with a capacity of more than 100MW hyperscale facilities",
       "priority": false
     },
     {
-      "title": "SiPearl delivers first samples of Rhea1 CPU to Bull for Jupiter exascale supercomputer",
-      "link": "https://www.datacenterdynamics.com/en/news/sipearl-delivers-first-samples-of-rhea1-cpu-to-bull-for-jupiter-exascale-supercomputer/",
-      "date": "Thu, 24 Sep 2026 12:22:54 +0000",
-      "summary": "First order of SiPearl\u2019s Rhea1 processors",
+      "title": "Project Suncatcher: Google to launch first space data center test in orbit next week",
+      "link": "https://www.datacenterdynamics.com/en/news/project-suncatcher-google-to-launch-first-space-data-center-test-in-orbit-next-week/",
+      "date": "Fri, 25 Sep 2026 11:58:00 +0000",
+      "summary": "TPUs are ready to catch some rays, hyperscaler claims",
       "priority": false
     },
     {
-      "title": "Ericsson, Vodafone demo AI-enabled instant call translation",
-      "link": "https://www.datacenterdynamics.com/en/news/ericsson-vodafone-demo-ai-enabled-instant-call-translation/",
-      "date": "Thu, 24 Sep 2026 11:10:00 +0000",
-      "summary": "The pair also showcased AI-based noise cancellation",
+      "title": "SFR workers in France strike over proposed takeover",
+      "link": "https://www.datacenterdynamics.com/en/news/sfr-workers-in-france-strike-over-proposed-takeover/",
+      "date": "Fri, 25 Sep 2026 11:10:00 +0000",
+      "summary": "Thousands of the company's employees have taken industrial action amid uncertainty over job security",
       "priority": false
     },
     {
-      "title": "Victoria, Australia, proposes rules requiring data centers to secure own renewable energy supply",
-      "link": "https://www.datacenterdynamics.com/en/news/victoria-australia-proposes-rules-requiring-data-centers-to-secure-own-renewable-energy-supply/",
-      "date": "Thu, 24 Sep 2026 10:46:00 +0000",
-      "summary": "Alongside several other provisions to prevent cost shifting and excessive water use",
+      "title": "ASML\u2019s revenue share drops to zero percent in Europe, says it has sold \u201cabsolutely nothing\u201d in the region this year",
+      "link": "https://www.datacenterdynamics.com/en/news/asmls-revenue-share-drops-to-zero-percent-in-europe-says-its-sold-absolutely-nothing-in-the-region-this-year/",
+      "date": "Fri, 25 Sep 2026 11:03:00 +0000",
+      "summary": "EUV lithography company says its working with politicians to bolster chipmaking efforts across the continent",
       "priority": false
     },
     {
-      "title": "Digital Realty hires new global head of energy",
-      "link": "https://www.datacenterdynamics.com/en/news/digital-realty-hires-new-global-head-of-energy/",
-      "date": "Thu, 24 Sep 2026 10:39:00 +0000",
-      "summary": "Microsoft veteran Jim Collins joins the team",
+      "title": "DOE unveils $1.9bn in funding for 31 grid upgrade projects to speed data center connections",
+      "link": "https://www.datacenterdynamics.com/en/news/doe-unveils-19bn-in-funding-for-31-grid-upgrade-projects-to-speed-data-center-connections/",
+      "date": "Fri, 25 Sep 2026 09:35:00 +0000",
+      "summary": "Expected to unlock 23GW of additional capacity on the grid",
       "priority": false
     }
   ],
@@ -112,6 +112,6 @@
   "area": "grid_buildout",
   "site_url": "https://www.datacenterdynamics.com/",
   "cadence": "weekly",
-  "fetched_at": "2026-09-24T23:56:16.690542+00:00",
+  "fetched_at": "2026-09-25T23:59:52.384951+00:00",
   "description_unreliable": false
 }

@@ -3,6 +3,12 @@
   "status": "ok",
   "items": [
     {
+      "title": "Farmland Values and Competitiveness in the United States and Brazil",
+      "link": "https://farmdocdaily.illinois.edu/2026/09/farmland-values-and-competitiveness-in-the-united-states-and-brazil.html",
+      "date": "Fri, 25 Sep 2026 15:15:53 +0000",
+      "summary": "Lower farmland values have long been considered a competitive advantage for Brazilian agriculture relative to U.S. agriculture (Colussi and Langemeier, 2026). However, strong farm profits, supported by periods of high\u2026"
+    },
+    {
       "title": "Updates from the Policy Design Lab: Crop Insurance and Soybeans",
       "link": "https://farmdocdaily.illinois.edu/2026/09/updates-from-the-policy-design-lab-crop-insurance-and-soybeans.html",
       "date": "Thu, 24 Sep 2026 17:13:30 +0000",
@@ -55,18 +61,12 @@
       "link": "https://farmdocdaily.illinois.edu/2026/09/changing-public-perceptions-of-ai-and-data-center-development-results-from-the-gardner-food-and-agricultural-policy-survey.html",
       "date": "Mon, 14 Sep 2026 16:26:36 +0000",
       "summary": "The social, economic, and environmental impacts of data centers and artificial intelligence (AI) are increasingly important issues facing communities across the country. Although most existing data centers are in urban\u2026"
-    },
-    {
-      "title": "Impact of Higher Corn Prices on Swine Finishing Feed Costs",
-      "link": "https://farmdocdaily.illinois.edu/2026/09/impact-of-higher-corn-prices-on-swine-finishing-feed-costs.html",
-      "date": "Fri, 11 Sep 2026 17:58:38 +0000",
-      "summary": "Corn futures price for the nearby contract was approximately $4.40 per bushel at the start of 2026. For the first week in August, corn futures price averaged $5.18. Moreover, using\u2026"
     }
   ],
   "label": "farmdoc daily",
   "area": "agriculture",
   "site_url": "https://farmdocdaily.illinois.edu/",
   "cadence": "weekly_digest",
-  "fetched_at": "2026-09-24T23:56:16.595430+00:00",
+  "fetched_at": "2026-09-25T23:59:52.310807+00:00",
   "description_unreliable": false
 }
