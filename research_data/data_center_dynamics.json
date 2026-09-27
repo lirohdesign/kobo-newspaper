@@ -3,6 +3,20 @@
   "status": "ok",
   "items": [
     {
+      "title": "Sponsored: Sustainable data center backup power is a strategy, not a battery chemistry",
+      "link": "https://www.datacenterdynamics.com/en/opinions/sustainable-data-center-backup-power-is-a-strategy-not-a-battery-chemistry/",
+      "date": "Sat, 26 Sep 2026 15:00:00 +0000",
+      "summary": "Data centers continue to walk the tightrope of meeting burgeoning power demands, while also fulfilling sustainability aims and obligations",
+      "priority": false
+    },
+    {
+      "title": "AI infrastructure will define the next industrial revolution",
+      "link": "https://www.datacenterdynamics.com/en/opinions/ai-infrastructure-will-define-the-next-industrial-revolution/",
+      "date": "Sat, 26 Sep 2026 13:00:35 +0000",
+      "summary": "Energy technology, intelligence, and digital infrastructure are providing ubiquitous benefits across the world",
+      "priority": false
+    },
+    {
       "title": "T-Mobile US expands AI network service",
       "link": "https://www.datacenterdynamics.com/en/news/t-mobile-us-expands-ai-network-service/",
       "date": "Fri, 25 Sep 2026 16:04:08 +0000",
@@ -92,26 +106,12 @@
       "date": "Fri, 25 Sep 2026 11:10:00 +0000",
       "summary": "Thousands of the company's employees have taken industrial action amid uncertainty over job security",
       "priority": false
-    },
-    {
-      "title": "ASML\u2019s revenue share drops to zero percent in Europe, says it has sold \u201cabsolutely nothing\u201d in the region this year",
-      "link": "https://www.datacenterdynamics.com/en/news/asmls-revenue-share-drops-to-zero-percent-in-europe-says-its-sold-absolutely-nothing-in-the-region-this-year/",
-      "date": "Fri, 25 Sep 2026 11:03:00 +0000",
-      "summary": "EUV lithography company says its working with politicians to bolster chipmaking efforts across the continent",
-      "priority": false
-    },
-    {
-      "title": "DOE unveils $1.9bn in funding for 31 grid upgrade projects to speed data center connections",
-      "link": "https://www.datacenterdynamics.com/en/news/doe-unveils-19bn-in-funding-for-31-grid-upgrade-projects-to-speed-data-center-connections/",
-      "date": "Fri, 25 Sep 2026 09:35:00 +0000",
-      "summary": "Expected to unlock 23GW of additional capacity on the grid",
-      "priority": false
     }
   ],
   "label": "Data Center Dynamics",
   "area": "grid_buildout",
   "site_url": "https://www.datacenterdynamics.com/",
   "cadence": "weekly",
-  "fetched_at": "2026-09-25T23:59:52.384951+00:00",
+  "fetched_at": "2026-09-26T23:43:02.797337+00:00",
   "description_unreliable": false
 }

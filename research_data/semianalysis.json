@@ -3,6 +3,12 @@
   "status": "ok",
   "items": [
     {
+      "title": "Intel Panther Lake Teardown",
+      "link": "https://newsletter.semianalysis.com/p/intel-panther-lake-teardown",
+      "date": "Sat, 26 Sep 2026 13:36:32 GMT",
+      "summary": "Panther Lake debuts the first commercial implementation of backside power delivery (BSPDN), introduces Intel\u2019s first iteration of gate-all-around (GAA) transistors, and showcases their advanced packaging capabilities with its Foveros-S assembly. With Panther Lake, Intel\u2019s manufacturing arc has\u2026"
+    },
+    {
       "title": "The Chinese AI Infrastructure Boom: Introducing the SemiAnalysis China Datacenter Model",
       "link": "https://newsletter.semianalysis.com/p/the-chinese-ai-infrastructure-boom",
       "date": "Fri, 25 Sep 2026 15:58:22 GMT",
@@ -85,18 +91,12 @@
       "link": "https://newsletter.semianalysis.com/p/openai-jalapeno-better-than-nvidia",
       "date": "Tue, 25 Aug 2026 14:00:38 GMT",
       "summary": "OpenAI has spent the past couple years quietly building \u201cJalape\u00f1o,\u201d an inference chip just announced at Hot Chips. Rumors of a successful tapeout had been swirling for a while. But now we have details. OpenAI invited us to look at their chip, go to their labs to check out how real it is, and\u2026"
-    },
-    {
-      "title": "AgentX - InferenceXv3: Does CUDA Moat Hold up in Agentic Inferencing?",
-      "link": "https://newsletter.semianalysis.com/p/agentx-inferencexv3-does-cuda-moat",
-      "date": "Mon, 24 Aug 2026 00:19:35 GMT",
-      "summary": "Since the Claude Code inflection point in November 2025, long-context, multi-turn agentic workloads have grown rapidly. They now dominate traffic for production inferencing. In April 2026, OpenAI\u2019s Enterprise agentic spending overtook ChatGPT spending.Agentic workflows have decisively taken the\u2026"
     }
   ],
   "label": "SemiAnalysis",
   "area": "ai_market",
   "site_url": "https://semianalysis.com/",
   "cadence": "weekly",
-  "fetched_at": "2026-09-25T23:59:51.693926+00:00",
+  "fetched_at": "2026-09-26T23:43:01.002874+00:00",
   "description_unreliable": false
 }
