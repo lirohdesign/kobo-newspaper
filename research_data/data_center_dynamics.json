@@ -3,6 +3,20 @@
   "status": "ok",
   "items": [
     {
+      "title": "Sponsored: Speed to power: The infrastructure solutions shaping the global data center race",
+      "link": "https://www.datacenterdynamics.com/en/opinions/speed-to-power-the-infrastructure-solutions-shaping-the-global-data-center-race/",
+      "date": "Sun, 27 Sep 2026 15:00:00 +0000",
+      "summary": "Virtual power plants, grid enhancing technologies and around-the-meter models can all support speed to power",
+      "priority": false
+    },
+    {
+      "title": "Beyond redundancy: Why dynamic stability matters in AI data centers",
+      "link": "https://www.datacenterdynamics.com/en/opinions/beyond-redundancy-why-dynamic-stability-matters-in-ai-data-centers/",
+      "date": "Sun, 27 Sep 2026 10:00:31 +0000",
+      "summary": "The future of data center resilience",
+      "priority": false
+    },
+    {
       "title": "Sponsored: Sustainable data center backup power is a strategy, not a battery chemistry",
       "link": "https://www.datacenterdynamics.com/en/opinions/sustainable-data-center-backup-power-is-a-strategy-not-a-battery-chemistry/",
       "date": "Sat, 26 Sep 2026 15:00:00 +0000",
@@ -92,26 +106,12 @@
       "date": "Fri, 25 Sep 2026 13:06:00 +0000",
       "summary": "Expected to classify data centers with a capacity of more than 100MW hyperscale facilities",
       "priority": false
-    },
-    {
-      "title": "Project Suncatcher: Google to launch first space data center test in orbit next week",
-      "link": "https://www.datacenterdynamics.com/en/news/project-suncatcher-google-to-launch-first-space-data-center-test-in-orbit-next-week/",
-      "date": "Fri, 25 Sep 2026 11:58:00 +0000",
-      "summary": "TPUs are ready to catch some rays, hyperscaler claims",
-      "priority": false
-    },
-    {
-      "title": "SFR workers in France strike over proposed takeover",
-      "link": "https://www.datacenterdynamics.com/en/news/sfr-workers-in-france-strike-over-proposed-takeover/",
-      "date": "Fri, 25 Sep 2026 11:10:00 +0000",
-      "summary": "Thousands of the company's employees have taken industrial action amid uncertainty over job security",
-      "priority": false
     }
   ],
   "label": "Data Center Dynamics",
   "area": "grid_buildout",
   "site_url": "https://www.datacenterdynamics.com/",
   "cadence": "weekly",
-  "fetched_at": "2026-09-26T23:43:02.797337+00:00",
+  "fetched_at": "2026-09-27T23:51:52.241220+00:00",
   "description_unreliable": false
 }
