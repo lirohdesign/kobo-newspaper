@@ -109,7 +109,11 @@ def _render_source(source_data, notes, source=None, today=None):
             f"<p class='metadata'>Nothing new reported.</p></div>"
         )
 
-    if status != "ok" or not source_data.get("items"):
+    # A failed cron pull (e.g. epoch_ai's Substack 403) with a curated note is
+    # the documented workaround: the Tuesday session fetched the source
+    # directly. Show the note; its as-of age label keeps staleness visible.
+    note_covers_error = status == "error" and note.get("synthesis")
+    if (status != "ok" or not source_data.get("items")) and not note_covers_error:
         return (
             f"<div class='article-entry'><h3><a href='{site_url}'>{label_html}</a></h3>"
             f"<p class='metadata'>Fetch unavailable — check source directly.</p></div>"
