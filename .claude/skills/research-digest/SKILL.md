@@ -148,6 +148,11 @@ which qualities it meets or misses. For the honest-null check, read
 `research_data/history/<id>.jsonl` for weeks when the underlying thing was
 quiet: did the source report the metrics plainly, or fill space?
 
+**Slow-moving sources.** For a source whose underlying thing changes slowly
+(e.g. interconnection_fyi's Indiana project counts), an unchanged snapshot is
+the source doing its job, not a low-value flag. Judge it on whether it would
+show the change when it comes, not on week-to-week movement.
+
 **Scope:** `calendar.json`'s Purdue research entries (`ag_barometer`,
 `purdue_farmland`, `purdue_crop_costs`) are in scope for standard reviews, and
 for reading when active, even though they render in the daily paper's calendar
