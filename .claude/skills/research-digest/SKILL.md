@@ -8,8 +8,38 @@ daily GitHub Actions cron) does the mechanical fetching unattended — RSS
 pulls and a couple of direct-API/structured-scrape sources, no Claude
 involved, so there's no permission wall to hit. This skill is the interactive
 half: repair what broke, curate what's worth tracking, and write the actual
-synthesis a human should read. See `CLAUDE.md` for the fuller rationale if
-you haven't read it yet.
+synthesis a human should read. What the research section is for, and what
+earns a source a place in it, is the next section; read it before curating.
+
+## Purpose and admission standard
+
+The section exists for consistent readings over time, not good prose: "the goal
+is not NYT quality prose. the goal is consistent readings so after 10 years, I
+feel the state of things and I know the indicators."
+
+- **Baseline.** The focus is the place the maintainer knows best, chosen for
+  personal familiarity with its landscape and climate, not because its data
+  record is longest. Other familiar places are secondary baselines. Which
+  places, and how well each is known, is in the private file
+  `~/Documents/meta-ai/places.md`; read it when a source or question concerns a
+  place. Understanding the mechanics of a familiar place gives a baseline for
+  reading about the same thing elsewhere. How far back a source's data goes is
+  still worth checking, but that is a property of the source, not the reason
+  for the focus.
+- **The question is the criterion.** The maintainer's questions are not bounded
+  by any repo. Their research repos "are only 'introductions' to the nagging
+  questions" — "first attempts to poke at the available data myself (a
+  non-expert)." A repo is never the criterion or ground truth for a source.
+- **A well-formed source** is "written by experts studying the same things I am
+  verifying on my own," "unlikely to be picked up by national or international
+  news," and "designed for and read by industry/research experts." The Purdue
+  sources are "good examples of well-formed"; "IPCC publications are also
+  important sources."
+- **What it delivers** is an expert-synthesized published metric (e.g. Purdue's
+  farmland cash rent figure), not a raw reading (e.g. a single well gauge).
+- **Honest nulls.** "perhaps a small indicator is that the source will publish
+  honestly that there is little to report other than the metrics themselves."
+  A small positive indicator, not a strong one.
 
 **Not everything here is weekly.** `research_sources.json` now mixes
 weekly-, monthly_digest-, and monthly-cadence sources (Stage 2), and
@@ -29,10 +59,16 @@ synthesis every single Tuesday:
   notable has posted — same logic as `farmdoc_daily`'s weekly-digest
   treatment, just on a longer clock.
 - Stage 3 (research_calendar.json) entries mostly have no scraper — they're
-  a due-date reminder with a "check source" link. When one is active, that's
-  a signal to go read the actual release and, if there's something worth
-  saying, add a synthesis note the same way as any other source (see step 3)
-  keyed by the event's `id`.
+  a due-date reminder with a "check source" link, rendered by `main.py`'s
+  `collect_calendar()`. A `research_notes.json` entry keyed by an event's
+  `id` is never shown: `research_scrape.py` renders notes only for ids in
+  `research_sources.json`, and `collect_calendar()` doesn't read notes. The
+  same holds for `calendar.json`'s Purdue entries. When an event is active,
+  read the actual release and record its reading in
+  `research_data/curation_log.jsonl` — `{"date": ..., "action":
+  "calendar_reading", "target": "<event id>", "reason": "<published figure,
+  period it covers, link>"}` — so later sessions can walk back through the
+  series. Mention it in the session report; it won't appear on the page.
 
 ## 0. Sync first
 
@@ -47,6 +83,11 @@ The cron runs 4:30 PM CT so Monday's pull includes NASS Crop Progress
 before Monday 20:00 UTC (GitHub's scheduler can slip or skip), trigger one
 with `gh workflow run research-pull.yml`, wait for it
 (`gh run watch`), then `git pull` again.
+
+Then read the recent tail of `research_data/curation_log.jsonl`
+(`tail -n 20`), including prior `session_report` lines and any
+`maintainer_correction` lines, before repairing or curating. The log is how
+one session's lessons reach the next.
 
 ## 1. Repair — run the pre-flight, fix what it flags
 
@@ -71,9 +112,9 @@ For each problem it reports:
   the live source, figure out what changed, fix the specific scraper
   (`research_pull.py`'s `fetch_feed()` for RSS sources, or the relevant
   `*_scrape.py` module for the direct-fetch ones).
-- Commit a genuine repair as its own commit, separate from this week's
-  digest content — makes it easy to see later whether a given week's
-  digest was affected by a mid-week fix.
+- Commit a genuine repair on its own `fix/` branch off `main`, separate from
+  this week's digest content — makes it easy to see later whether a given
+  week's digest was affected by a mid-week fix. Land it as in step 4.
 
 If everything's healthy, say so briefly and move on — don't manufacture
 concern where there isn't any.
@@ -95,6 +136,23 @@ Known cases, so they don't get re-diagnosed each week:
 
 ## 2. Curate — evidence-based, not vibes-based
 
+**Standard reviews:** each week, review 2–3 sources against the Purpose and
+admission standard — the ones whose latest `standard_review` line in the log is
+oldest, or that have none (`grep standard_review research_data/curation_log.jsonl`).
+This is sized for a token-limited session, not a full audit. Log each:
+```json
+{"date": "2026-09-29", "action": "standard_review", "target": "<id>", "reason": "<verdict>: <qualities met / missed>"}
+```
+The reason gives the verdict (keep / cut candidate / needs maintainer view) and
+which qualities it meets or misses. For the honest-null check, read
+`research_data/history/<id>.jsonl` for weeks when the underlying thing was
+quiet: did the source report the metrics plainly, or fill space?
+
+**Scope:** `calendar.json`'s Purdue research entries (`ag_barometer`,
+`purdue_farmland`, `purdue_crop_costs`) are in scope for standard reviews, and
+for reading when active, even though they render in the daily paper's calendar
+section, not research.html.
+
 **Cuts:** A source looking quiet or low-value *this* week isn't enough on
 its own — newsletters have slow weeks. Check `research_data/history/<id>.jsonl`
 for a pattern across several weeks before proposing a cut. Log the
@@ -103,18 +161,20 @@ to `research_data/curation_log.jsonl`:
 ```json
 {"date": "2026-09-16", "action": "flag_low_value", "target": "data_center_dynamics", "reason": "3 of last 4 weeks were sponsored/off-topic content with nothing DC-siting-relevant"}
 ```
-Only recommend an actual cut to the user once the log shows a real pattern —
-don't remove a source from `research_sources.json` unilaterally.
+Only recommend an actual cut to the user once the log shows a real pattern and
+the user agrees — don't remove a source from `research_sources.json`
+unilaterally.
 
 **Additions:** `research_validate.py`'s discovery-candidate list surfaces
 domains cited repeatedly across multiple existing sources' own content
 (footnotes/citations), pulled from `research_data/discovered_sources.json`.
 A domain crossing that threshold is evidence worth a look, not an automatic
-add — check what it actually is (some will be generic references like
-`arxiv.org` or `wikipedia.org`, not newsletter-shaped sources worth
-tracking) before proposing it. Log proposals the same way, `action:
-"propose_add"`. If you and the user agree on a real addition, verify it has
-an actual usable feed (same process as the original build: check for `/feed`,
+add — judge it against the admission standard, not just whether it's
+newsletter-shaped. If the list is all generic press/corporate/academic hosts
+(`arxiv.org`, `wikipedia.org`), one log line saying so is enough. Log
+proposals the same way, `action: "propose_add"`; additions need the user's
+agreement. If you and the user agree on a real addition, verify it has an
+actual usable feed (same process as the original build: check for `/feed`,
 `/rss`, or a structured JSON endpoint before committing to it — see
 `research_sources.json`'s per-source `notes` fields for the gotchas already
 found this way, e.g. Zitron's unreliable description field, the Drought
@@ -129,7 +189,8 @@ sentiment reading make sense against what was actually happening at the time
 of a past similar reading, not just "sounds similar").
 
 Write `research_notes.json` at the repo root — a flat object keyed by source
-id:
+id (only ids in `research_sources.json` render; calendar events are recorded
+in the log instead, see the Stage 3 note above):
 ```json
 {
   "epoch_ai": {"synthesis": "One or two sentences of real synthesis, not a restated headline.", "as_of": "2026-09-16"},
@@ -166,12 +227,13 @@ python3 research_scrape.py
 ```
 writes `research.html` from `research_notes.json` + `research_data/`. Check
 it rendered what you expect, then commit `research.html` and
-`research_notes.json` together (this is editorial content, committed to
-`main` directly — same pattern as `zoo-special.html`, unlike the routine
+`research_notes.json` together (this is editorial content, unlike the routine
 daily/kids builds which are pure generated artifacts that never get
-committed). **Confirm with the user before pushing** — this becomes part of
-the next daily build and gets sent to Instapaper, so it's not something to
-push silently on autopilot.
+committed). Commit on a fresh branch off `main` (e.g.
+`docs/research-digest-YYYY-MM-DD`), squash-merge to `main`, then push.
+**Confirm with the user before pushing** — this
+becomes part of the next daily build and gets sent to Instapaper, so it's not
+something to push silently on autopilot.
 
 ## 5. Publish
 
@@ -191,8 +253,13 @@ tomorrow's issue. Tell the user which case applies.
 
 ## 6. Close with a short self-report
 
-A few lines: sources checked, anything repaired, any curation flags logged
-(even if not acted on), and the as-of dates in this week's synthesis. This
-is the audit trail — there's no other feedback loop on this pipeline once
-it's on the Kobo device, so this report is what lets a "was the digest
-right" question get answered later.
+A few lines to the user: sources checked, anything repaired, any curation flags
+and standard reviews logged (even if not acted on), and the as-of dates in this
+week's synthesis. Also append it to `research_data/curation_log.jsonl` as one
+line with `"action": "session_report"`, and append each correction the
+maintainer made during the session as its own `"action":
+"maintainer_correction"` line. The log is what the next session reads, and
+there's no other feedback loop on this pipeline once it's on the Kobo device.
+
+If a correction is a standing rule, propose the exact skill-text edit to the
+maintainer in-session and, if they agree, make it on a `docs/` branch.
