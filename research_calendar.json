@@ -57,12 +57,12 @@
     {
       "id": "chicago_fed_cfnai",
       "label": "Chicago Fed National Activity Index (CFNAI) - recession-risk reading",
-      "url": "https://www.chicagofed.org/research/data/cfnai/current-data",
+      "url": "https://api.data.chicagofed.org/CFNAI/cfnai-headline-blurb.html",
       "cadence": "monthly",
       "trigger": "manual",
       "dates": ["2026-10-26", "2026-11-23", "2026-12-21"],
       "scraper": null,
-      "notes": "Added 2026-09-29. Weighted composite of 85 monthly indicators; the Chicago Fed's own reading rule is what to record: CFNAI-MA3 below -0.70 after an expansion is associated with an increasing likelihood of recession (NBER-dated history). The values sit in a chart and an Excel download, not in page HTML, and there is no RSS (chicagofed.org/rss is an HTML page), so this is a due-date reminder, not a scraper: on the day, read the MA3 and record it as a calendar_reading in research_data/curation_log.jsonl. Release dates copied from the Chicago Fed's own data-release-calendar page on 2026-09-29 (8:30 a.m. ET): Oct 26 (September data), Nov 23 (October), Dec 21 (November); 2026 already released: Jan 26, Feb 23, Mar 23, Apr 23, May 26, Jun 25, Jul 23, Aug 24, Sep 21. 2027 dates are not published yet; add them each December. Ranked below the Beige Book: a mechanical index with no prose, so no honest-null statement, but it is the direct recession-threshold metric. The 'manual' trigger marks the event due within 1 day of each date."
+      "notes": "Added 2026-09-29. Weighted composite of 85 monthly indicators; the Chicago Fed's own reading rule is what to record: CFNAI-MA3 below -0.70 after an expansion is associated with an increasing likelihood of recession (NBER-dated history). The current-data page draws its chart by script, but each release's headline text (index value, MA3, diffusion index) is a plain HTML file at the url above, refreshed at every release (checked 2026-09-29: last-modified Sep 21, 8:30 a.m. ET release day). There is no RSS and no monthly release PDF (only background PDFs), so this is a due-date reminder, not a scraper: on the day, read the MA3 from that text and record it as a calendar_reading in research_data/curation_log.jsonl. Release dates copied from the Chicago Fed's own data-release-calendar page on 2026-09-29 (8:30 a.m. ET): Oct 26 (September data), Nov 23 (October), Dec 21 (November); 2026 already released: Jan 26, Feb 23, Mar 23, Apr 23, May 26, Jun 25, Jul 23, Aug 24, Sep 21. 2027 dates are not published yet; add them each December. Ranked below the Beige Book: a mechanical index with no prose, so no honest-null statement, but it is the direct recession-threshold metric. The 'manual' trigger marks the event due within 1 day of each date."
     },
     {
       "id": "iowa_state_land_value_survey",
