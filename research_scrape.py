@@ -33,6 +33,7 @@ CADENCE_TAGS = {
     "weekly_in_season": "weekly, in-season",
     "monthly": "monthly",
     "monthly_digest": "monthly digest",
+    "annual": "annual",
 }
 
 

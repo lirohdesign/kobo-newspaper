@@ -152,6 +152,27 @@
       "cadence": "monthly",
       "requires_env": "NOAA_TOKEN",
       "notes": "Verified live 2026-09-15. One real bug found and fixed: combining datatypeid=[TAVG,TMAX,TMIN,PRCP] into a single request silently lost all temperature data — the CDO API's 1000-row cap was filling with precip-derived types (alphabetically ahead of T*) before temperature rows were reached, so only precip ever came back. Fixed by querying each datatype separately. Confirmed plausible output: Indiana/Michigan August 2026 avg temps (73.0°F / 68.0°F) and station-average precip, both consistent with the NCEI monthly report for the same period."
+    },
+    {
+      "id": "fia_indiana",
+      "label": "USFS Forest Inventory and Analysis — Indiana (EVALIDator)",
+      "area": "forestry",
+      "type": "scrape",
+      "module": "fia_indiana_scrape",
+      "function": "fetch_items",
+      "site_url": "https://apps.fs.usda.gov/fiadb-api/evalidator",
+      "cadence": "annual",
+      "notes": "Verified live 2026-09-29, no API key. Uses the FIADB-API EVALIDator fullreport endpoint (JSON, outputFormat=NJSON); wc is the EVALID (18 + evaluation year; 182025 = Indiana's 2025 evaluation, annual panels 2019-2025). Reports forest land area, growing-stock volume, average annual mortality and net growth, plus mortality and growth as % of volume and the prior evaluation's mortality rate for comparison. First run: 14.07B cu ft, mortality 1.18%/yr (SE 5.5%), net growth 2.23%/yr; 2024 evaluation had mortality 1.19% — plausible and stable. GOTCHAS: (1) an unknown EVALID returns an HTML error page with HTTP 200, not JSON, so the scraper probes years downward from the current year (182026 currently does not exist). (2) The API gives no release date; item date is the end of the evaluation year, and the link carries #eval-<EVALID> so the history ledger adds exactly one entry per new annual evaluation and nothing on the daily runs between. (3) Only changes about once a year, so most Tuesday sessions will see the same item; the mortality SE (about 5%) is larger than year-to-year moves, so read the rate as a level, not a weekly signal. (4) This is an agency estimate table, not expert prose: there is no honest-null narrative to observe. It earns its place as a forest-health metric with a stated sampling error, the only forestry source that is quantitative. The annual USFS Forest Health Highlights PDFs remain a calendar entry in research_calendar.json."
+    },
+    {
+      "id": "mrcc_monthly_summary",
+      "label": "Midwestern Regional Climate Center — Monthly Climate Summary",
+      "area": "climate_drought",
+      "type": "rss",
+      "feed_url": "https://mrcc.purdue.edu/climatesummaries/rss/Monthly%20Summary",
+      "site_url": "https://mrcc.purdue.edu/climatesummaries",
+      "cadence": "monthly",
+      "notes": "Verified live 2026-09-29 by curl: RSS 2.0, 20 items, the latest being 'August 2026' (article #1756) with Midwest-average temperature (71.8F, +0.9F vs 1991-2020) and state-by-state departures written by MRCC climatologists (Purdue/NCEI partnership) — expert-synthesized, regional, and rarely in national news. Feed URL found via the RSS links on https://mrcc.purdue.edu/climatesummaries (there is no site-wide /rss or /feed; both 404). GOTCHAS: (1) pubDate is the START of the reported period (August 2026 shows Aug 1), not the posting date, so an item can look a month old the day it appears; the validator's freshness check uses fetched_at, so this does not trip it. (2) Sibling feeds exist at the same path with 'Weekly%20Summary', 'Quarterly%20Summary', 'Annual%20Summary' and 'ENSO%20Summary'. Weekly was NOT added: its newest item on 2026-09-29 was Sept 8-14, so it runs about two weeks behind and skips weeks, and it would crowd out the monthly synthesis. The Quarterly feed items are PDFs with image previews only (no text summary in the feed) and carry both Midwest and Great Lakes editions; revisit if the quarterly PDFs are wanted. (3) The feed summary is truncated to 300 characters by research_pull.py, which keeps the temperature paragraph but drops precipitation. Honest-null behavior not observed: every item examined reports numbers."
     }
   ],
 
