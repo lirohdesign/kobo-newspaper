@@ -12,6 +12,8 @@ from datetime import date
 from email.utils import parsedate_to_datetime
 from pathlib import Path
 
+from research_validate import documented_quiet
+
 AREA_LABELS = {
     "ai_market": "AI / data-center market risk",
     "grid_buildout": "Grid buildout & interconnection",
@@ -72,7 +74,9 @@ def _age_label(date_str, verb):
     return f"{ago} · {verb} {d}" if ago else f"{verb} {d}"
 
 
-def _render_source(source_data, notes):
+def _render_source(source_data, notes, source=None, today=None):
+    """source: this source's manifest entry (collect_research already loads
+    the manifest); today is injectable for tests."""
     label = source_data.get("label", source_data.get("id", "Unknown source"))
     site_url = source_data.get("site_url", "#")
     status = source_data.get("status")
@@ -81,6 +85,27 @@ def _render_source(source_data, notes):
 
     cadence_tag = CADENCE_TAGS.get(source_data.get("cadence"))
     label_html = f"{label} <span class='metadata'>({cadence_tag})</span>" if cadence_tag else label
+
+    quiet_source = {**(source or {}), "cadence": source_data.get("cadence") or (source or {}).get("cadence")}
+    if status == "empty" and documented_quiet(quiet_source, today):
+        # Documented-normal empty only (see documented_quiet): NASS Crop
+        # Progress off-season, or a quiet week on a keyword-filtered feed.
+        # Any other empty falls through to "Fetch unavailable" below, because
+        # the scrape sources swallow fetch failures and return [], which
+        # research_pull records as "empty" — it can be a hidden failure.
+        # Keep a curated synthesis note if the Tuesday session wrote one (it
+        # carries its own as-of age); otherwise say plainly nothing was reported.
+        if note.get("synthesis"):
+            as_of = note.get("as_of", fetched_at[:10] if fetched_at else "")
+            meta = _age_label(as_of, "synthesized") if as_of else ""
+            return (
+                f"<div class='article-entry'><h3><a href='{site_url}'>{label_html}</a></h3>"
+                f"<p class='metadata'>{meta}</p><p>{note['synthesis']}</p></div>"
+            )
+        return (
+            f"<div class='article-entry'><h3><a href='{site_url}'>{label_html}</a></h3>"
+            f"<p class='metadata'>Nothing new reported.</p></div>"
+        )
 
     if status != "ok" or not source_data.get("items"):
         return (
@@ -126,6 +151,7 @@ def collect_research(ts, calendar_html=""):
 
     notes = _load_notes()
     order = [s["id"] for s in manifest["sources"]]
+    sources_by_id = {s["id"]: s for s in manifest["sources"]}
 
     by_area = {}
     for sid in order:
@@ -138,7 +164,7 @@ def collect_research(ts, calendar_html=""):
             print(f"DEBUG: research_data/{sid}.json error: {e}")
             continue
         area = source_data.get("area", "other")
-        by_area.setdefault(area, []).append(_render_source(source_data, notes))
+        by_area.setdefault(area, []).append(_render_source(source_data, notes, sources_by_id.get(sid)))
 
     sections = []
     if by_area:
