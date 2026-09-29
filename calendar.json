@@ -19,9 +19,9 @@
       "url": "https://ag.purdue.edu/commercialag/home/farmland-values/",
       "cadence": "annual",
       "trigger": "annual_window",
-      "months": [6],
+      "months": [8],
       "scraper": null,
-      "notes": "Annual survey conducted in June, results published shortly after. Check URL for new release."
+      "notes": "Annual survey conducted in June; the 2026 results were published Aug 17, 2026 (PAER-2026-24, Todd Kuethe), so the window is August, not June. Reads: statewide farmland value per acre and cash rent per acre by quality grade (tables 2 and 3a in the PAER article). Check URL for new release."
     },
     {
       "id": "purdue_crop_costs",
