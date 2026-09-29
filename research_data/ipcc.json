@@ -3,6 +3,12 @@
   "status": "ok",
   "items": [
     {
+      "title": "Nearly 200 experts meet in Bangkok to advance IPCC assessment of climate change mitigation",
+      "link": "https://www.ipcc.ch/2026/09/28/pr18-2026/",
+      "date": "Mon, 28 Sep 2026 12:46:57 +0000",
+      "summary": "PATHUM, Sept 28 \u2013 Nearly 200 authors from 79 countries are gathered at the Asian Institute of Technology in Pathum, Thailand, from 28 September to 1 October to draft the Working Group III contribution to the Intergovernmental Panel on Climate Change (IPCC) Seventh Assessment Report (AR7) on the\u2026"
+    },
+    {
       "title": "Obituary: James Philip Bruce",
       "link": "https://www.ipcc.ch/2026/09/22/obituary-james-philip-bruce/",
       "date": "Tue, 22 Sep 2026 20:10:52 +0000",
@@ -55,18 +61,12 @@
       "link": "https://www.ipcc.ch/2026/06/26/keynote-ipcc-chair-jim-skea-joint-odi-fao-event/",
       "date": "Fri, 26 Jun 2026 13:26:47 +0000",
       "summary": "London Climate Action Week 2026, 26 June 2026ODI Global Good morning. I do feel privileged for the opportunity to share a few insights from the perspective of climate science and my own professional experience at the start of this event on just transition and agrifood systems. I feel humble about\u2026"
-    },
-    {
-      "title": "Keynote address by the IPCC Chair, Jim Skea, at the World Climate Investment Summit",
-      "link": "https://www.ipcc.ch/2026/06/25/keynote-address-ipcc-chair-jim-skea-world-climate-investment-summit/",
-      "date": "Thu, 25 Jun 2026 09:39:33 +0000",
-      "summary": "London Climate Action Week 2026, 25 June 2026London Stock Exchange Sustaining Capital Flows to Clean Energy and Nature in a Different Global Context Check against delivery Ladies and gentlemen, As Chair of the Intergovernmental Panel on Climate Change, the IPCC, I thank you for this opportunity to\u2026"
     }
   ],
   "label": "IPCC \u2014 News & Announcements",
   "area": "ipcc",
   "site_url": "https://www.ipcc.ch/news/",
   "cadence": "weekly",
-  "fetched_at": "2026-09-27T23:51:54.704893+00:00",
+  "fetched_at": "2026-09-29T01:07:02.387271+00:00",
   "description_unreliable": false
 }

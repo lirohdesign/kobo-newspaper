@@ -3,6 +3,12 @@
   "status": "ok",
   "items": [
     {
+      "title": "How GLM5.3 Sparse Attention Affects HBM Memory Usage",
+      "link": "https://newsletter.semianalysis.com/p/sparse-savings-persistent-demand-inside-glm53",
+      "date": "Mon, 28 Sep 2026 19:26:41 GMT",
+      "summary": "How Sparse Attention Affects DRAM/NAND Memory How does sparse attention affect the TAM of memory, including HBM and NAND? Sparse attention selects top-k most relevant tokens to attend to, reducing the memory consumption and bandwidth requirements during the core Scaled Dot-Production Attention\u2026"
+    },
+    {
       "title": "Intel Panther Lake Teardown",
       "link": "https://newsletter.semianalysis.com/p/intel-panther-lake-teardown",
       "date": "Sat, 26 Sep 2026 13:36:32 GMT",
@@ -85,18 +91,12 @@
       "link": "https://newsletter.semianalysis.com/p/most-neoclouds-suck-at-security",
       "date": "Sun, 30 Aug 2026 15:46:22 GMT",
       "summary": "In Shakespeare\u2019s Julius Caesar, Caesar ignores a soothsayer\u2019s warning, shrugs off his wife\u2019s dream of blood running through the streets, waves away a letter revealing his assassins by name, and strides gallantly into the one room in Rome where every senator is \u201crequired\u201d to check their weapons at\u2026"
-    },
-    {
-      "title": "OpenAI Jalape\u00f1o: Better Than Nvidia Blackwell",
-      "link": "https://newsletter.semianalysis.com/p/openai-jalapeno-better-than-nvidia",
-      "date": "Tue, 25 Aug 2026 14:00:38 GMT",
-      "summary": "OpenAI has spent the past couple years quietly building \u201cJalape\u00f1o,\u201d an inference chip just announced at Hot Chips. Rumors of a successful tapeout had been swirling for a while. But now we have details. OpenAI invited us to look at their chip, go to their labs to check out how real it is, and\u2026"
     }
   ],
   "label": "SemiAnalysis",
   "area": "ai_market",
   "site_url": "https://semianalysis.com/",
   "cadence": "weekly",
-  "fetched_at": "2026-09-27T23:51:51.003143+00:00",
+  "fetched_at": "2026-09-29T01:06:58.756231+00:00",
   "description_unreliable": false
 }

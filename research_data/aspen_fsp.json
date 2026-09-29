@@ -1,18 +1,11 @@
 {
   "id": "aspen_fsp",
-  "status": "ok",
-  "items": [
-    {
-      "title": "Innovations to Accelerate Rural Wealth Building",
-      "link": "https://www.aspeninstitute.org/publications/innovations-to-accelerate-rural-wealth-building/",
-      "date": "Mon, 14 Sep 2026 16:11:55 +0000",
-      "summary": "Publications Archives UnfavoriteFavorite September 14, 2026 Financial Security Program Katherine Lucas McKay Principal Researcher, Insights and Evidence Contents INTRODUCTION The State of Rural Wealth KEY INTERVIEW FINDINGS Rural Wealth-Building Strategies What Comes Next Appendix: List of\u2026"
-    }
-  ],
+  "status": "empty",
+  "items": [],
   "label": "Aspen Institute \u2014 Financial Security Program",
   "area": "inequality",
   "site_url": "https://www.aspeninstitute.org/programs/financial-security-program/",
   "cadence": "monthly_digest",
-  "fetched_at": "2026-09-27T23:51:55.065888+00:00",
+  "fetched_at": "2026-09-29T01:07:02.777223+00:00",
   "description_unreliable": false
 }

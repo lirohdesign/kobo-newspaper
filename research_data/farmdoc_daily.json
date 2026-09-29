@@ -3,6 +3,12 @@
   "status": "ok",
   "items": [
     {
+      "title": "Managing the Herd: Balancing Anticipated Productivity with Softening Demand",
+      "link": "https://farmdocdaily.illinois.edu/2026/09/managing-the-herd-balancing-anticipated-productivity-with-softening-demand.html",
+      "date": "Mon, 28 Sep 2026 14:20:56 +0000",
+      "summary": "The USDA\u2019s September Hogs and Pigs report places the September 1st inventory of all hogs and pigs at 74.3 million head, up 1.60% from revised estimates for last quarter but\u2026"
+    },
+    {
       "title": "Farmland Values and Competitiveness in the United States and Brazil",
       "link": "https://farmdocdaily.illinois.edu/2026/09/farmland-values-and-competitiveness-in-the-united-states-and-brazil.html",
       "date": "Fri, 25 Sep 2026 15:15:53 +0000",
@@ -55,18 +61,12 @@
       "link": "https://farmdocdaily.illinois.edu/2026/09/illinois-cash-rents-in-2026-and-outlook-for-2027.html",
       "date": "Tue, 15 Sep 2026 22:13:58 +0000",
       "summary": "The average cash rent for Illinois farmland saw a small decline for the second year in a row in 2026. Higher corn and soybean prices have improved the return outlook for both 2026 and 2027 compared to the previous three crop years, and producers are expected to receive relatively large payment from\u2026"
-    },
-    {
-      "title": "Changing Public Perceptions of AI and Data Center Development: Results from the Gardner Food and Agricultural Policy Survey",
-      "link": "https://farmdocdaily.illinois.edu/2026/09/changing-public-perceptions-of-ai-and-data-center-development-results-from-the-gardner-food-and-agricultural-policy-survey.html",
-      "date": "Mon, 14 Sep 2026 16:26:36 +0000",
-      "summary": "The social, economic, and environmental impacts of data centers and artificial intelligence (AI) are increasingly important issues facing communities across the country. Although most existing data centers are in urban\u2026"
     }
   ],
   "label": "farmdoc daily",
   "area": "agriculture",
   "site_url": "https://farmdocdaily.illinois.edu/",
   "cadence": "weekly_digest",
-  "fetched_at": "2026-09-27T23:51:52.015203+00:00",
+  "fetched_at": "2026-09-29T01:06:59.370539+00:00",
   "description_unreliable": false
 }
