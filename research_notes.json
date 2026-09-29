@@ -7,10 +7,6 @@
     "synthesis": "Sept 28: analysis of how sparse attention in GLM5.3 changes memory demand (HBM and NAND); Sept 25: launched a China datacenter model. Written from the feed summaries only; the articles were not read.",
     "as_of": "2026-09-28"
   },
-  "ed_zitron": {
-    "synthesis": "Bear-case commentary, no metric of its own: the Sept 29 post leans on Fidelity macro director Jurien Timmer's remark that the AI trade has been \"dead money for more than three months,\" citing token spend and GPU lease rates. The free text is mostly a subscription pitch; the substantive analysis is paywalled.",
-    "as_of": "2026-09-29"
-  },
   "farmdoc_daily": {
     "synthesis": "Sept 25: Iowa farmland (Iowa State survey, since 1941) and Mato Grosso land compounded at 7.7% and 8.7% a year over 2002-2025; Mato Grosso peaked at $11,145/acre in 2022 and fell to $9,066 in 2025 while Iowa held roughly flat since 2024, leaving Iowa 27% higher. The authors tie Brazil's drop to lower profits, cost pressure and tight credit.",
     "as_of": "2026-09-25"
@@ -34,10 +30,6 @@
   "equitable_growth": {
     "synthesis": "Sept 24: a debt-to-wealth lens on government debt across the US, France, Japan and the UK. The authors argue a low ratio of debt to top-0.1%-wealth means narrow wealth taxes could raise a lot relative to debt, which they say describes the US more than countries with lower wealth inequality.",
     "as_of": "2026-09-24"
-  },
-  "aspen_fsp": {
-    "synthesis": "Aspen FSP published 'Innovations to Accelerate Rural Wealth Building' (Sept 14), an interview-based report on rural wealth strategies — relevant to the democratization-of-capital thread — plus a Colorado 'Essential Wealth Metric' update estimating roughly two-thirds of Colorado households lack the wealth they need to thrive (Sept 11).",
-    "as_of": "2026-09-14"
   },
   "ipcc": {
     "synthesis": "Sept 28: nearly 200 authors are in Bangkok (Sept 8 to Oct 1) for the Working Group III second lead-author meeting on AR7 mitigation; a First-Order Draft, open to expert review, follows. Otherwise administrative items.",

@@ -15,6 +15,16 @@
       "notes": "Published Feb/May/Aug/Nov, covering IN/IL/IA/WI/MI. No confirmed RSS — checked 2026-09-15, chicagofed.org has no obvious feed for individual publication series; manual check via the URL. Exact 2026 release dates (Feb 12, May 14, Aug 13, Nov 12) come from the Chicago Fed's own page, checked 2026-09-29; the 'manual' trigger marks the event due within 1 day of each date. 2027 dates are not published yet; add them once the Chicago Fed lists them."
     },
     {
+      "id": "ed_zitron_quarterly_check",
+      "label": "Ed Zitron — quarterly review (AI-economics bear case)",
+      "url": "https://www.wheresyoured.at/",
+      "cadence": "quarterly",
+      "trigger": "annual_window",
+      "months": [1, 4, 7, 10],
+      "scraper": null,
+      "notes": "Moved 2026-09-29 from the weekly feed at the maintainer's decision: one author, quality varies within a post (sharp analysis and long rants), the free text is largely a subscription pitch, and the analysis is paywalled. He is kept on trial, checked once a quarter instead of weekly. On the window, read the past quarter's free posts, note which cited a checkable figure or source (e.g. the Sept 29 post quoting Fidelity's Jurien Timmer), and log a standard_review line with a keep or cut verdict; a cut needs that pattern across quarters. Feed for the read: https://www.wheresyoured.at/rss/ (posts titled 'Premium:' are paywalled)."
+    },
+    {
       "id": "fed_distributional_financial_accounts",
       "label": "Fed Distributional Financial Accounts (wealth shares by percentile)",
       "url": "https://www.federalreserve.gov/releases/efa/efa-distributional-financial-accounts.htm",

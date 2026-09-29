@@ -23,18 +23,6 @@
       "notes": "Semiconductor/data-center supply chain analysis. Free tier only — paid Core Research posts may appear in the feed but are gated; skip if content is truncated."
     },
     {
-      "id": "ed_zitron",
-      "label": "Ed Zitron — Where's Your Ed At",
-      "area": "ai_market",
-      "type": "rss",
-      "feed_url": "https://www.wheresyoured.at/rss/",
-      "site_url": "https://www.wheresyoured.at/",
-      "cadence": "weekly",
-      "notes": "Bear-case AI-economics analysis. Feed includes paywalled posts titled with a 'Premium:' prefix — filter those out or flag as paywalled, don't synthesize from the title alone. Confirmed 2026-09-12: every item's <description> is a fixed subscribe-boilerplate footer, not real preview text — description_unreliable below suppresses it from rendering.",
-      "filter": {"skip_title_prefix": "Premium:"},
-      "description_unreliable": true
-    },
-    {
       "id": "farmdoc_daily",
       "label": "farmdoc daily",
       "area": "agriculture",
@@ -121,17 +109,6 @@
       "notes": "Confirmed live 2026-09-12: real WordPress feed, posts near-daily (recent items on generative AI's labor-market effects, UI access gaps, housing wealth/political participation). Publishes far more often than monthly — treat as a monthly digest (summarize the most notable 2-4 posts from the past month, same convention as farmdoc_daily's weekly-digest treatment) rather than dumping every item."
     },
     {
-      "id": "aspen_fsp",
-      "label": "Aspen Institute — Financial Security Program",
-      "area": "inequality",
-      "type": "rss",
-      "feed_url": "https://www.aspeninstitute.org/feed/",
-      "site_url": "https://www.aspeninstitute.org/programs/financial-security-program/",
-      "cadence": "monthly_digest",
-      "notes": "The FSP-specific feed path (.../financial-security-program/feed/) is Cloudflare-blocked (403, bot-challenge page) even with a browser User-Agent — confirmed 2026-09-12. Falls back to the Aspen Institute's site-wide feed (confirmed live, 200), which covers ALL Aspen programs, not just FSP — filtered here with keep_keyword_any so only wealth/financial-security-relevant posts survive. Widen or narrow this list in the Tuesday session if it's over- or under-filtering.",
-      "filter": {"keep_keyword_any": ["wealth", "financial security", "economic mobility", "asset building", "retirement security", "emergency savings", "benefits21", "job lock"]}
-    },
-    {
       "id": "purdue_gotnature",
       "label": "Purdue Extension FNR — Got Nature? blog",
       "area": "forestry",
@@ -195,6 +172,11 @@
   "deprioritized": {
     "note": "Investigated 2026-09-12, deliberately not built. Revisit only if something changes.",
     "sources": [
+      {
+        "id": "aspen_fsp",
+        "label": "Aspen Institute — Financial Security Program",
+        "reason": "Cut 2026-09-29 at the maintainer's decision. Policy think tank; the usable feed is Aspen's site-wide one, filtered by keyword, and its items rarely carry a metric (4 items 09-08 to 09-14, empty since). The Fed distributional accounts cover the metric. The agent's standard review flagged it first; the maintainer judged it marketing-forward and low quality."
+      },
       {
         "id": "data_center_dynamics",
         "label": "Data Center Dynamics",
