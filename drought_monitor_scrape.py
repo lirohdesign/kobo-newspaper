@@ -28,6 +28,11 @@ API_URL = "https://usdmdataservices.unl.edu/api/StateStatistics/GetDroughtSeveri
 SITE_URL = "https://droughtmonitor.unl.edu/CurrentMap/StateDroughtMonitor.aspx?IN"
 
 
+def _reading_link(map_date):
+    # Ledger dedupes by link; constant SITE_URL kept only the first reading (see interconnection_fyi_scrape.py).
+    return f"{SITE_URL}#week-{map_date[:10]}"
+
+
 def _fetch_weeks(weeks_back=8):
     start = (datetime.now(timezone.utc) - timedelta(weeks=weeks_back)).strftime("%-m/%-d/%Y")
     end = datetime.now(timezone.utc).strftime("%-m/%-d/%Y")
@@ -76,7 +81,7 @@ def fetch_items():
 
     return [{
         "title": f"Indiana Drought Monitor — week of {current['mapDate'][:10]}",
-        "link": SITE_URL,
+        "link": _reading_link(current["mapDate"]),
         "date": current["mapDate"],
         "summary": _describe(current, two_weeks_prior),
         "content_links": [],

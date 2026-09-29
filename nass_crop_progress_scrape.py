@@ -35,6 +35,13 @@ STATE = "IN"
 COMMODITIES = ["CORN", "SOYBEANS"]
 
 
+def _reading_link(commodity, week_ending):
+    # Ledger dedupes by link; constant SITE_URL kept only the first reading (see interconnection_fyi_scrape.py).
+    # Empty week_ending falls back to the pull day so the fragment is never blank.
+    stamp = week_ending or datetime.now(timezone.utc).strftime("%Y-%m-%d")
+    return f"{SITE_URL}#{commodity.lower()}-week-{stamp}"
+
+
 def _query(key, commodity, year):
     params = {
         "key": key,
@@ -118,7 +125,7 @@ def fetch_items():
 
         items.append({
             "title": f"Indiana {commodity.title()} Progress — week ending {week_ending}",
-            "link": SITE_URL,
+            "link": _reading_link(commodity, week_ending),
             "date": week_ending or str(year),
             "summary": summary,
             "content_links": [],
