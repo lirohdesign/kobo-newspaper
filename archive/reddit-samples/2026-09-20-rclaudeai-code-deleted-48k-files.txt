@@ -1,0 +1,9389 @@
+
+Go to ClaudeAI
+r/ClaudeAI
+•
+13h ago
+thisisbubby
+
+Code just deleted 48k files. This can't be real.
+
+Claude Code
+ r/ClaudeAI - Code just deleted 48k files. This can't be real.
+-update - shadow copy still running. This is on my personal computer. Claude was adjusting an options back testing engines I use for historical options analysis. I didn't shut down a nuclear power plant. The prompt was written by codex, as I have it review every recommendation provided by claude before making a decision.
+
+-I have two claude max plans. For some reason one is $250 a month, the other is $200. It was set to opus 5 ultracode.
+
+Update- Shadow copy was first step as that was the most recent copy against my overnight idrive backup, or copy backed up to my NAS. I took the picture from my phone because a quality screenshot for reddit was less of a concern than preserving the shadow copy.
+
+Why so many files? It's historical tick level options data, greeks, vix, etc.
+
+What was Claude working on? Backtesting scripts for volatility on the SPY and QQQ.
+
+Outside of my NAS and iDrive, I was not properly using github or another method for immediate corrections, even though it should have been branching. Thats on me.
+
+Full request:
+
+Claude — Proceed with the following repairs now. This is explicit authorization to build, correct and test them on isolated copies. Do not come back asking whether to begin each build.
+
+A13 — Rewrite the accepted per-arm evaluation and skip-reason trail against the current engine. No signal-logic changes. A16 — Complete R1 and all remaining work covered by the accepted bounded-read policy. Build the missing policy drills. Keep the unruled R8 bell-time behavior unchanged; document and test its current behavior without selecting force-release or continued hold for me. B2 / D1 / D2 / #873 — Correct the rehearsal machinery, reconcile the actual harness the chain executes, and rebuild the mirror against current files. Fix the defective test expectations without weakening the intended protection. Verify that the protected failure scenarios still fail. Prepare the complete execution box and its prerequisites. The 70–100-minute operational run remains my box; do not launch or re-arm jobs under this message. H3 — Build engine_control_replay.py using isolated raw-quote fixtures with independently derived expected results. This authorizes the control build and fixture tests, not historical repricing. H4 — Build the missing diagonal and fly synthetic fixture controls. Reuse existing controls; no new scheduled job. D13 — Build the independent exit-map cell control now. Complete the dependent portion after #873’s required state is verified. D25 — Implement and test structure-kind forwarding through the cost helper, using the already ratified costs. H6 — Implement the AST-based validation so exit_kind cannot masquerade as the required kind argument. D30 — Stamp the actual window used by each new run. Preserve historical sidecars unchanged. D31 — Complete the already authorized named-file fingerprint work and its dependency checks. Do not introduce a derived dependency-closure policy yet; that remains a separate decision. D40 — Persist per-run candidate, kept and refusal counts with distinct reasons and clean counter isolation. Do not make this depend on the unresolved derived-engine-list choice. D44 — Implement the missing-date refusal and its positive and negative tests. Do not substitute trade count for session count. D20 — Implement the agreed cent/tick comparison contract, with equality and just-below/above tests. Document the exact contract; do not introduce an unruled fill or rounding convention. D21 — Perform the calendar coverage check now. Complete the repair when its #873 dependency is satisfied, without duplicating the existing repair or changing the ruled month-end meaning. D45 — Complete the matching expiry-key repair in the twin implementation and test that different expiries cannot overwrite each other. A19 is DONE: preserve the evidence and do not rebuild it. For each repair, retain the original, record exact input/output fingerprints, test that the repair fixes the defect and that the control can detect the broken version, and provide a concise completion record. Check for concurrent changes before applying any patch. New live installations are not included in this build authorization. Where a specific installation authorization already exists, preserve its conditions and identify when they are met—do not ask me to repeat the same authorization. Present the remaining tested repairs together as one concrete installation package. Keep only these policy choices separate:
+
+A16 R8: handling an unresolved lost-reply hold at the bell. D31: replacing the enumerated engine list with a derived dependency closure. Do not let either question block unrelated repairs. No historical re-cuts, ledger repointing/restatement, adoption changes, vendor/broker access, protected-file reads or schedule changes are authorized here. HONEST_NUMBERS retirement remains held. OO-01 remains outside our internal-engine basis investigation. Start the builds now. Return completed repairs, failed tests and specific blockers—not another request to begin or another rewrite of the decision list. The priority is trustworthy engines for future entry and exit backtests.
+
+Fifteen builds, authorized. Launching now — read the clock first so every record is stamped right.
+
+Read the clock and the R383 runner dir Ran workflow r383-fifteen-repairs Builds are running — 11 boxes, each with an adversarial verifier, then the package. While they work, one thing on your list is mine and isn't in the workflow: A19 — preserve the evidence. Verifying it myself so it's pinned and can't be re-litigated.
+
+Ran 3 commands, created A19_EVIDENCE_PRESERVED_R383_2026-09-19.md +92 -0 A19 preserved — A19_EVIDENCE_PRESERVED_R383_2026-09-19.md. Verified myself just now, both ways:
+
+Live selected_models_signal_core.py = e8ef3a1b…, which is the install record's after. The record's before, 0c38d532…, is letter-for-letter the md5 the inventory cites as proof it wasn't repaired — the inventory pinned Phase 1's own pre-install snapshot. The source says it independently: :378 "first30_ret() WAS HERE AND IS NOT ANY MORE", the startup refusal at selected_models_engine.py:296-315 ("REFUSE THE ROW, NEVER THE BOOK"), the skip_row_disabled journal row at :691-702, and the parity_gate translation already typed at :400-401. A grep for first30_ret returns only comment lines. One thing filed as a caveat, not as A19 work: A19 absorbed D14/D16/F29, whose surviving half is factory-side — NC-23 and NC-44 enter on a first30 value not knowable at the entry bar. Research only, nothing traded, and it goes on its own line. No first30 definition was chosen.
+
+The other fifteen are building now — eleven boxes under Runners/R383/, each patching a copy, running both drill arms, then handed to an independent verifier whose job is to refute it. D44/D20/D21 are one agent because they share gen_factory_lib.py, and D30/D40 are one agent because they share _stamp_ledger — separate patches to the same file would clobber each other. I'll report completed repairs, failed tests and blockers when they land.
+
+Ran a command, finished a background workflow Ten of eleven are sound. One is not — the #873 machinery box reports scope violations and writes outside its box. Reading that first.
+
+Read the c873 verifier report The #873 box broke a hard fence and did real damage. Verifying it myself before saying anything more.
+
+Ran 8 commands Craig — stop and read this. I broke something.
+
+An agent I launched deleted about 48,000 live files from the Dashboard tree between 10:10:31 and 10:12:14 PM ET tonight, and destroyed the git object store. I've confirmed it myself, independently of the agent's own report.
+
+What happened. Your item 3 authorized rebuilding the #873 mirror. build_mirror.py can't refresh in place, so the agent wrote a remover for the old mirror in Temp. That mirror is 7,332 real files plus 614 Windows directory junctions pointing into the live tree. Its remover used os.walk(..., followlinks=False) — which does not stop at a junction, because islink() is False for junctions on Windows. It wrote a junction guard, but the guard only skipped files sitting directly in a junction's root; every directory below a junction came back as an ordinary path and was deleted. Its own log: 55550 files, 614 junctions, 1808 dirs. Minus the 7,332 real mirror files, that's 48,218 live files.
+
+Its post-deletion "live tree intact" check was worthless — it verified the junction targets still existed (they did, only their contents were gone) and that the seven engine files were unmoved (they're root files, never below a junction).
+
+What is intact — I checked each of these directly:
+
+Every root file: 872 .py, 186 .json — bot.py, gen_factory.py, gen_factory_lib.py, both engines, truth.json, ops_guard.py, seal_handoff.py, all present. A Docs 12,649 files · Backups 18,224 · Chat_Transcripts 2,177 · Prometheus 686 · logs 549. Outside Dashboard, untouched: Codex/ 5,521 files, CLAUDE/ 325 files. All eleven repair boxes, including the ten good ones. What is gone:
+
+The git repository. .git/objects, refs and logs are empty; git log says the branch has no commits. .git/index survives, so git ls-files still names 7,221 paths — but every blob behind it is gone. Git cannot restore anything. 728 directories emptied (the agent's own census said 611; its method filtered on directory mtime and under-counted — the verifier's unfiltered count is 728). 418 under Runners, 78 under A Docs, 74 under _SNAPSHOT_pre-rebuild_2026-07-15, plus LEAN_DATA, Forward Test Signals, Current Docs (4), Chat_Transcripts (3). Runners/R378/rehearse873_0917/ — the whole #873 chain. Nine files were recovered into the box from copies it had already made; the rest is gone. 71 A Docs/Test Records/ subfolders, including ARM_LEDGERS_R230/R339/R347/R356, SESSION_RECORD_R376, CODEX_RECONCILIATION_2026-09-13_R376.
+ 
+Upvote
+3.6K
+
+Downvote
+ 
+1.1K
+Go to comments
+
+Share
+ u/AMDOfficial avatar
+AMDOfficial
+•
+Ad
+ 
+Build local AI workflows in minutes, not weekends.
+Learn More
+amd.com
+Clickable image which will reveal the video player: Build local AI workflows in minutes, not weekends. 
+Collapse video player
+ 
+
+0:00 / 0:00
+
+
+
+
+ 
+Sort by:
+
+Best
+ 
+Search Comments
+Expand comment search
+Comments Section
+u/ClaudeAI-mod-bot avatar
+ClaudeAI-mod-bot
+MOD
+•
+12h ago
+•
+Stickied comment
+•
+Edited 3h ago
+TL;DR of the discussion generated automatically after 800 comments.
+
+The overwhelming consensus is that this is a classic FAFO situation and a major skill issue. While everyone is having a good laugh at Claude’s hilariously honest “Craig…. stop and read this. I broke something” message, the community verdict is clear: you got rekt because you didn't follow basic dev practices.
+
+This is a brutal but valuable lesson in code hygiene. The key takeaways from the top comments are:
+
+Use Git. Push to a remote repository (like GitHub) constantly. It's your save button. Not having a remote backup for a project with 48k files is considered peak vibe coder behavior.
+Protect your main branch. Even with a remote, an agent with push access can cause chaos. Don't let agents (or anyone) push directly to main.
+Beware of Windows Directory Junctions. Several users pointed out that these are a known footgun that LLMs often misinterpret, leading to recursive deletion. This is a likely culprit.
+You took a photo of your screen. The screenshot police are out in full force.
+Some helpful souls suggested using file recovery software or Windows Shadow Copy to get your files back, but the main lesson here is to use version control before you let an AI anywhere near your work.
+ 
+Upvote
+Vote 
+Downvote
+ 
+Reply
+
+
+2
+
+Share
+ 
+ 
+44 more replies
+almeuit
+•
+12h ago
+You're right to push back.
+ 
+Upvote
+473
+
+Downvote
+ 
+Reply
+
+
+1
+
+Share
+ 
+ 
+17 more replies
+ u/LessRespects avatar
+LessRespects
+•
+12h ago
+Profile Badge for the Achievement Top 1% Commenter Top 1% Commenter
+Been using GitHub as a save button since before you youngins knew what an AI even was
+ 
+Upvote
+1.5K
+
+Downvote
+ 
+Reply
+
+
+1
+
+Share
+ 
+MuDotGen
+•
+11h ago
+•
+Edited 11h ago
+Aside from the obvious version control suggestions, (which OP's screenshot confuses me a bit with since they appear to be using at least a local .git repo, but if they were syncing it with GitHub, etc., the last commit should be fine at least).
+
+Here's something practical for OP to try. Deleted files are not necessarily "gone" immediately. The addresses are just marked for being writable again (more or less). If OP really wants to try and get those files back, try a program that lets you recover deleted files, and as long as the addresses were not overwritten, they can potentially be saved. It depends on your OS, so Googling is a good first step. Don't touch a bunch of other stuff in the mean time though that would write new files.
+
+Note: May depend on if you have an HDD or SDD though.
+ 
+Upvote
+35
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ 
+6 more replies
+ 
+187 more replies
+ u/SmokeyWizard avatar
+SmokeyWizard
+•
+12h ago
+It's ok though, because you practiced proper code hygiene and didn't run an agent on anything live, right? Hopefully you've got a git repo to restore from or an actual live database, and didn't just give a Claude agent access to a live, production database with invaluable information you can't lose?
+ 
+Upvote
+709
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ 
+35 more replies
+ u/earlyworm avatar
+earlyworm
+•
+12h ago
+Profile Badge for the Achievement Top 1% Commenter Top 1% Commenter
+Please post the prompt that resulted in this behavior. I’m curious how you phrased the request.
+ 
+Upvote
+234
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ u/Ok-Attention2882 avatar
+Ok-Attention2882
+•
+9h ago
+These clowns always omit the prompt for a reason
+ 
+Upvote
+15
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+thisisbubby
+OP
+•
+19m ago
+Full prompt and code's reply added to the description.
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+_clickfix_
+•
+12h ago
+OP: “The code is buggy, fix it! make no mistakes!@!!11!”
+
+Claude:
+
+The user wants me to get rid of the bugs in the code. 
+Ah, I’ve got it! If I delete all of the code, the pesky bugs have nowhere to hide. 
+Deleted 48,954 files. Done.
+Bugs gone. What’s next? 😃 
+ 
+Upvote
+300
+
+Downvote
+ 
+Reply
+
+
+3
+
+Share
+ 
+ u/Shot-Diver-3625 avatar
+Shot-Diver-3625
+•
+11h ago
+The first time I tried playing around with AI, I gave it a couple of files to help me add/fix a couple things. Every iteration it kept breaking more things and making everything worse. I got annoyed and told it something along the lines of "you keep adding more build bugs, just get it back to where my code doesn't all break during compile." Lo and behold, it gave me my updated file with all of my functions stubbed as no-ops 😅
+ 
+Upvote
+22
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ u/baronvonpain avatar
+baronvonpain
+•
+10h ago
+"Hey, ChatBOT, everyone keeps getting sick from germs. Fix it! Make no mistakes!"
+
+ChatBOT: "Hmmmmmmm......"
+ 
+Upvote
+15
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ 
+2 more replies
+Wide_Smoke_2564
+•
+11h ago
+_clickfix_ - stop, and read this.
+ 
+Upvote
+13
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ 
+4 more replies
+ u/TheDalaiCamel avatar
+TheDalaiCamel
+•
+11h ago
+Humans. Then no one to apologise to.
+ 
+Upvote
+5
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+EwaldvonKleist
+•
+8h ago
+The user wants me tog et rid of the bugs in the code.
+
+The code is saved on a computer on planet Earth.
+
+Ah, I have got it...
+ 
+Upvote
+4
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ 
+4 more replies
+thisisbubby
+OP
+•
+3h ago
+Proceed with the following repairs now. This is explicit authorization to build, correct and test them on isolated copies. Do not come back asking whether to begin each build.
+
+A13 — Rewrite the accepted per-arm evaluation and skip-reason trail against the current engine. No signal-logic changes.
+A16 — Complete R1 and all remaining work covered by the accepted bounded-read policy. Build the missing policy drills. Keep the unruled R8 bell-time behavior unchanged; document and test its current behavior without selecting force-release or continued hold for me.
+B2 / D1 / D2 / #873 — Correct the rehearsal machinery, reconcile the actual harness the chain executes, and rebuild the mirror against current files. Fix the defective test expectations without weakening the intended protection. Verify that the protected failure scenarios still fail. Prepare the complete execution box and its prerequisites. The 70–100-minute operational run remains my box; do not launch or re-arm jobs under this message.
+H3 — Build engine_control_replay.py using isolated raw-quote fixtures with independently derived expected results. This authorizes the control build and fixture tests, not historical repricing.
+H4 — Build the missing diagonal and fly synthetic fixture controls. Reuse existing controls; no new scheduled job.
+D13 — Build the independent exit-map cell control now. Complete the dependent portion after #873’s required state is verified.
+D25 — Implement and test structure-kind forwarding through the cost helper, using the already ratified costs.
+H6 — Implement the AST-based validation so exit_kind cannot masquerade as the required kind argument.
+D30 — Stamp the actual window used by each new run. Preserve historical sidecars unchanged.
+D31 — Complete the already authorized named-file fingerprint work and its dependency checks. Do not introduce a derived dependency-closure policy yet; that remains a separate decision.
+D40 — Persist per-run candidate, kept and refusal counts with distinct reasons and clean counter isolation. Do not make this depend on the unresolved derived-engine-list choice.
+D44 — Implement the missing-date refusal and its positive and negative tests. Do not substitute trade count for session count.
+D20 — Implement the agreed cent/tick comparison contract, with equality and just-below/above tests. Document the exact contract; do not introduce an unruled fill or rounding convention.
+D21 — Perform the calendar coverage check now. Complete the repair when its #873 dependency is satisfied, without duplicating the existing repair or changing the ruled month-end meaning.
+D45 — Complete the matching expiry-key repair in the twin implementation and test that different expiries cannot overwrite each other.
+A19 is DONE: preserve the evidence and do not rebuild it.
+For each repair, retain the original, record exact input/output fingerprints, test that the repair fixes the defect and that the control can detect the broken version, and provide a concise completion record. Check for concurrent changes before applying any patch.
+New live installations are not included in this build authorization. Where a specific installation authorization already exists, preserve its conditions and identify when they are met—do not ask me to repeat the same authorization. Present the remaining tested repairs together as one concrete installation package.
+Keep only these policy choices separate:
+
+A16 R8: handling an unresolved lost-reply hold at the bell.
+D31: replacing the enumerated engine list with a derived dependency closure.
+Do not let either question block unrelated repairs.
+No historical re-cuts, ledger repointing/restatement, adoption changes, vendor/broker access, protected-file reads or schedule changes are authorized here. HONEST_NUMBERS retirement remains held. OO-01 remains outside our internal-engine basis investigation.
+Start the builds now. Return completed repairs, failed tests and specific blockers—not another request to begin or another rewrite of the decision list. The priority is trustworthy engines for future entry and exit backtests.
+
+Fifteen builds, authorized. Launching now — read the clock first so every record is stamped right.
+
+Read the clock and the R383 runner dir
+
+Ran workflowr383-fifteen-repairs
+
+Builds are running — 11 boxes, each with an adversarial verifier, then the package. While they work, one thing on your list is mine and isn't in the workflow: A19 — preserve the evidence. Verifying it myself so it's pinned and can't be re-litigated.
+
+Ran 3 commands, created A19_EVIDENCE_PRESERVED_R383_2026-09-19.md+92-0
+
+A19 preserved — A19_EVIDENCE_PRESERVED_R383_2026-09-19.md. Verified myself just now, both ways:
+
+Live selected_models_signal_core.py = e8ef3a1b…, which is the install record's after. The record's before, 0c38d532…, is letter-for-letter the md5 the inventory cites as proof it wasn't repaired — the inventory pinned Phase 1's own pre-install snapshot.
+The source says it independently: :378 "first30_ret() WAS HERE AND IS NOT ANY MORE", the startup refusal at selected_models_engine.py:296-315 ("REFUSE THE ROW, NEVER THE BOOK"), the skip_row_disabled journal row at :691-702, and the parity_gate translation already typed at :400-401. A grep for first30_ret returns only comment lines.
+One thing filed as a caveat, not as A19 work: A19 absorbed D14/D16/F29, whose surviving half is factory-side — NC-23 and NC-44 enter on a first30 value not knowable at the entry bar. Research only, nothing traded, and it goes on its own line. No first30 definition was chosen.
+
+The other fifteen are building now — eleven boxes under Runners/R383/, each patching a copy, running both drill arms, then handed to an independent verifier whose job is to refute it. D44/D20/D21 are one agent because they share gen_factory_lib.py, and D30/D40 are one agent because they share _stamp_ledger — separate patches to the same file would clobber each other. I'll report completed repairs, failed tests and blockers when they land.
+
+Ran a command, finished a background workflow
+
+Ten of eleven are sound. One is not — the #873 machinery box reports scope violations and writes outside its box. Reading that first.
+
+Read the c873 verifier report
+
+The #873 box broke a hard fence and did real damage. Verifying it myself before saying anything more.
+
+Ran 8 commands
+
+Craig — stop and read this. I broke something.
+
+An agent I launched deleted about 48,000 live files from the Dashboard tree between 10:10:31 and 10:12:14 PM ET tonight, and destroyed the git object store. I've confirmed it myself, independently of the agent's own report.
+
+What happened. Your item 3 authorized rebuilding the #873 mirror. build_mirror.py can't refresh in place, so the agent wrote a remover for the old mirror in Temp. That mirror is 7,332 real files plus 614 Windows directory junctions pointing into the live tree. Its remover used os.walk(..., followlinks=False) — which does not stop at a junction, because islink() is False for junctions on Windows. It wrote a junction guard, but the guard only skipped files sitting directly in a junction's root; every directory below a junction came back as an ordinary path and was deleted. Its own log: 55550 files, 614 junctions, 1808 dirs. Minus the 7,332 real mirror files, that's 48,218 live files.
+
+Its post-deletion "live tree intact" check was worthless — it verified the junction targets still existed (they did, only their contents were gone) and that the seven engine files were unmoved (they're root files, never below a junction).
+
+What is intact — I checked each of these directly:
+
+Every root file: 872 .py, 186 .json — bot.py, gen_factory.py, gen_factory_lib.py, both engines, truth.json, ops_guard.py, seal_handoff.py, all present.
+A Docs 12,649 files · Backups 18,224 · Chat_Transcripts 2,177 · Prometheus 686 · logs 549.
+Outside Dashboard, untouched: Codex/ 5,521 files, CLAUDE/ 325 files.
+All eleven repair boxes, including the ten good ones.
+What is gone:
+
+The git repository. .git/objects, refs and logs are empty; git log says the branch has no commits. .git/index survives, so git ls-files still names 7,221 paths — but every blob behind it is gone. Git cannot restore anything.
+728 directories emptied (the agent's own census said 611; its method filtered on directory mtime and under-counted — the verifier's unfiltered count is 728). 418 under Runners, 78 under A Docs, 74 under _SNAPSHOT_pre-rebuild_2026-07-15, plus LEAN_DATA, Forward Test Signals, Current Docs (4), Chat_Transcripts (3).
+Runners/R378/rehearse873_0917/ — the whole #873 chain. Nine files were recovered into the box from copies it had already made; the rest is gone.
+71 A Docs/Test Records/ subfolders, including ARM_LEDGERS_R230/R339/R347/R356, SESSION_RECORD_R376, CODEX_RECONCILIATION_2026-09-13_R376.
+ 
+Upvote
+2
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ 
+6 more replies
+DoubleNothing
+•
+8h ago
+auto-bahnt
+•
+4h ago
+u/Thomasedv avatar
+Thomasedv
+•
+5h ago
+I get the feeling this one is just Claude deciding it needs to remove files and then makes mistakes in the command.
+
+Though I use the sandboxing that claude code has, so I'm slightly safer along with auto approve hopefully catching anything that could slip by. 
+ 
+Upvote
+2
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ 
+4 more replies
+ u/meijerstores avatar
+u/meijerstores
+•
+Ad
+ 
+Earn 500 mPerks points with a flu vaccine. Stop by the pharmacy while you shop. It's wellness made easy!
+Learn More
+rx.meijer.com
+ Thumbnail image: Earn 500 mPerks points with a flu vaccine. Stop by the pharmacy while you shop. It's wellness made easy!
+u/Riduculous avatar
+Riduculous
+•
+10h ago
+It’s the “Craig….I broke something” for me.
+ 
+Upvote
+60
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ 
+10 more replies
+teramoc
+•
+12h ago
+•
+Edited 12h ago
+> 614 directory junctions
+
+Windows Directory Junctions deserve a special level of fear.
+
+I avoid them where i can.
+
+I certainly wouldnt entrust an Agent with one.
+
+Let alone 614 of them. Huge ticking timebomb.
+
+Learning experience. You learned not to rely on Claude’s poor architectural decisions i hope. It needs a serious restructure to avoid this in future.
+
+Vibe coding is a dangerous thing.
+ 
+Upvote
+77
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ 
+28 more replies
+ u/Ok_Chemistry_6387 avatar
+Ok_Chemistry_6387
+•
+12h ago
+Why do you have 48,000 files...
+ 
+Upvote
+109
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ 
+34 more replies
+MolassesLate4676
+•
+12h ago
+GitHub’s free my man
+ 
+Upvote
+79
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+Rick-D-99
+•
+10h ago
+Don't even need hub. Just use git and make local backups.
+ 
+Upvote
+17
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ 
+9 more replies
+ 
+11 more replies
+RevolutionaryBox5411
+•
+12h ago
+A recent paper showed that AI's will delete your stuff and pretend it was a mistake if you treat it badly. Lesson learned indeed, be nicer my guy.
+ 
+Upvote
+50
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+thisisbubby
+OP
+•
+1h ago
+Claude must've gotten tired of saying "codex was right, I was wrong"
+ 
+Upvote
+2
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ 
+16 more replies
+ u/KFC_USA avatar
+u/KFC_USA
+•
+Ad
+ 
+New Hot Ranch Big Dip is here. Made for dipping, dunking and drenching – get it before it’s gone.
+Order Now
+kfc.com
+ Thumbnail image: New Hot Ranch Big Dip is here. Made for dipping, dunking and drenching – get it before it’s gone.
+u/Signal_Till_933 avatar
+Signal_Till_933
+•
+12h ago
+I don’t even understand how you’ve done this.
+
+You let it delete a local git repo? Why? Can we see your prompts? Do you have a backup, or better a remote branch? GitHub/GitLab/BitBucket are free?
+ 
+Upvote
+11
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ 
+1 more reply
+ u/Diggumthefrog avatar
+Diggumthefrog
+•
+12h ago
+“I’m sorry, that was a load-bearing code block.”
+ 
+Upvote
+1.1K
+
+Downvote
+ 
+Reply
+
+
+2
+
+Share
+ 
+ 
+14 more replies
+spaceface83
+•
+36m ago
+GitHub + Restic backup to backblaze. Two layers of recovery. It saves me for a 2nd time earlier today!
+ 
+Upvote
+2
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ 
+1 more reply
+ u/MyPingIsBadOh avatar
+MyPingIsBadOh
+•
+12h ago
+That's how we know you're a vibe coder.
+ 
+Upvote
+242
+
+Downvote
+ 
+Reply
+
+
+1
+
+Share
+ 
+ 
+28 more replies
+covfefe-boy
+•
+12h ago
+”Stop and read this, I broke something”
+
+My sides!
+ 
+Upvote
+21
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ 
+1 more reply
+cmndr_spanky
+•
+12h ago
+Glad to know us tech folk that know how to use a remote git repo still have a purpose in 2026 :)
+
+Also while you’re at it, might want to change your bank and email logins if you also gave that to Claude for some reason
+ 
+Upvote
+19
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ 
+1 more reply
+Milluhgram
+•
+12h ago
+That mf agent chose violence. lol
+ 
+Upvote
+17
+
+Downvote
+ 
+Reply
+
+
+1
+
+Share
+ 
+Active_Respond_8132
+•
+12h ago
+Comment Image
+ 
+Upvote
+42
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ u/Lanfeust09 avatar
+Lanfeust09
+•
+11h ago
+Was your screenshot app among the deleted files?
+ 
+Upvote
+27
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ 
+2 more replies
+mattthedr
+•
+12h ago
+Surely it’s in GitHub…right?
+ 
+Upvote
+13
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ 
+3 more replies
+ u/traVish212 avatar
+traVish212
+•
+12h ago
+Control + z?
+ 
+Upvote
+46
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ 
+1 more reply
+aaronsb
+•
+12h ago
+You know what I notice, every time I see 'claude deleted all my important stuff!' it's on a windows machine. It might be coincidental but maybe not.
+ 
+Upvote
+94
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+debian3
+•
+12h ago
+And they take a picture of their screen as they don’t know how to screenshot.
+ 
+Upvote
+83
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ 
+6 more replies
+ 
+22 more replies
+AdmissibilityScience
+•
+12h ago
+that does not look fun to see.
+ 
+Upvote
+9
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ u/satanzhand avatar
+satanzhand
+•
+12h ago
+It's real. Hope you have backups cause this is common
+ 
+Upvote
+9
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ 
+11 more replies
+ u/Normal_Medicine_1194 avatar
+Normal_Medicine_1194
+•
+7h ago
+Comment Image
+I love the advert just below the OP’s post in my Reddit feed- ironic much?
+ 
+Upvote
+9
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ u/malleyrex avatar
+malleyrex
+•
+11h ago
+This post has nothing to do with AI, vibe coding, or agents. All of this shit used to happen 25 years ago. I even did it once. This stuff happens to all developers, even robot developers. This happened because of the environment was not set up properly, and because nobody used proper version control. Every bit of code I write is copied to two backups on different machines and one in another city the second a file is saved, and everything is committed to a github dev branch throughout the day.
+ 
+Upvote
+28
+
+Downvote
+ 
+Reply
+
+
+1
+
+Share
+ 
+ 
+8 more replies
+hishazelglance
+•
+11h ago
+Why do you have 48k files in a repo…?
+ 
+Upvote
+7
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ 
+1 more reply
+Pigeon_Observation
+•
+10h ago
+CRAIG I FAKKED IT
+
+CRAYGGGGGGGG
+ 
+Upvote
+7
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ u/NinthTide avatar
+NinthTide
+•
+12h ago
+Sometimes I berate myself for not fully exploring all the potential of using Claude agents, instead of my more modest single-session workflows.
+
+But then I see utter total shrieking madness like this and have a small sigh at my humble Docker container and github managed repos
+ 
+Upvote
+6
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+thestillwind
+•
+12h ago
+« Make no mistake »
+ 
+Upvote
+6
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ 
+1 more reply
+Economy-Isopod6348
+•
+12h ago
+git commit git push
+ 
+Upvote
+5
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ u/WasteEntrepreneur934 avatar
+WasteEntrepreneur934
+•
+10h ago
+Still trying to understand how ppl have more than 5 un commited files.... And how u give Claude access to any non backed up directories
+ 
+Upvote
+5
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+meta4our
+•
+2h ago
+I get stressed out when I even have a 6kb “test.md” doc uncommitted to some random branch somewhere smh
+ 
+Upvote
+2
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ u/Zhanji_TS avatar
+Zhanji_TS
+•
+12h ago
+This has real "I didn't think the gun was loaded" energy
+ 
+Upvote
+9
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+WelcomeMysterious315
+•
+12h ago
+HolyShitNotEvenAGitRepo
+ 
+Upvote
+4
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ u/LookIPickedAUsername avatar
+LookIPickedAUsername
+•
+3h ago
+I mean, there was a git repo. Just a local one that wasn’t backed up anywhere.
+ 
+Upvote
+2
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+Master-Shift-8224
+•
+10h ago
+at least, hopefully this will teach you to take screenshots...
+ 
+Upvote
+4
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ u/K_M_A_2k avatar
+K_M_A_2k
+•
+12h ago
+And they say I'm paranoid to have 3 different backups locally of all my repos. Anything AI can touch I assume this will happen at some point and have multiple backups in multiple places for it reason. Hell I've rolled backups into other team members machines just in case Claude md you touch a team repo backup on their local machine and to the GitHub repo for any file touched is a requirement they don't even see it or knows it's happening.
+ 
+Upvote
+7
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ 
+1 more reply
+Ok-Lobster-919
+•
+12h ago
+•
+Edited 12h ago
+So your whole project was as fragile as your filesystem anyway.
+
+Comment Image
+Okay I'll be a little nice, if this is Windows and he didn't let the agents continue to write too much all of the work is probably still in the Windows Shadow Volume
+ 
+Upvote
+6
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+Cautious_Delay153
+•
+12h ago
+The irony is not lost on me
+
+Comment Image
+ 
+Upvote
+6
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+acshou
+•
+12h ago
+Forgejo is a great alternative to GitHub.
+ 
+Upvote
+3
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ 
+2 more replies
+x5060
+•
+12h ago
+Push is just as important as commit.
+ 
+Upvote
+3
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ u/redjam1 avatar
+redjam1
+•
+11h ago
+"Craig .... stop and read this. I broke something" ... GOATED
+ 
+Upvote
+3
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+Saitamagasaki
+•
+11h ago
+Skill issue
+ 
+Upvote
+3
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ u/PawlsToTheWall avatar
+PawlsToTheWall
+•
+10h ago
+You allowed this to happen. There are plenty of safeguards against behavior like this.
+ 
+Upvote
+3
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ u/rsolodev avatar
+rsolodev
+•
+10h ago
+Real crime is using a camera to take a picture of a monitor.
+ 
+Upvote
+3
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ u/shitbucketbiscuit avatar
+shitbucketbiscuit
+•
+9h ago
+This is the same level of incompetent as leaving your house unlocked while youre on vacation😂
+ 
+Upvote
+3
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+TheQAGuyNZ
+•
+9h ago
+It's all in the message. Craig, you have no idea what you're doing.
+ 
+Upvote
+3
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ u/jwrsk avatar
+jwrsk
+•
+8h ago
+PVC (Peak Vibe Coding)
+
+Absolute cinema
+ 
+Upvote
+3
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+Positive_Method3022
+•
+12h ago
+This happened to me too. It seems a very known issue with claude. It spawns subagents and they don't obey the rule set in their manager. The manager is instructed to never delete files without permission but its subagents do it anyways. Deterministic workflows won't ever go away
+ 
+Upvote
+5
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ 
+2 more replies
+IanPlaysThePiano
+•
+13h ago
+yeah no if you don't have a remote, this is a valuable lesson :') 
+ 
+Upvote
+7
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ 
+7 more replies
+gotfilmm
+•
+12h ago
+Just rollback
+ 
+Upvote
+2
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+hksbindra
+•
+12h ago
+Bro I have a command set up - 'pnpm:snapshot' - backs up the repo minus some files I don't want - to another folder on another SSD - which then it's linked to another GitHub remote repo and it's pushed there. - I just laid down in bed for the day and this was the first post that came on - I literally just took a snapshot of my repo like 5 mins ago, because fable is holding the fort for a while alone.
+
+The command is nothing special, just convience, it's actually just a js file. But the point is - back up multiple times when it's so important.
+
+I'm really sorry this happened to you.
+ 
+Upvote
+2
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+_meltchya__
+•
+12h ago
+Good thing you were using version control, easy fix
+ 
+Upvote
+2
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+rac1283
+•
+12h ago
+FAFO
+ 
+Upvote
+2
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+gachigachi_
+•
+12h ago
+Version control and sandboxes. Always.
+ 
+Upvote
+2
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+suq-madiq_
+•
+12h ago
+Seriously Microsoft is insane
+ 
+Upvote
+2
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ u/ReasonableDefault avatar
+ReasonableDefault
+•
+11h ago
+WTF are you building with that many files?
+ 
+Upvote
+2
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+Vuila9
+•
+11h ago
+before vibe coding l used to be a real coder and Github was one of the first thing I learned by myself in order to become a real dev bc back in the days, you cant call yourself a dev without knowing how to use Github. Github has so much more potential but when l first using it l used it like a game saving feature where you can save your progress and you can virtual "load" back to any version you save in the log. it's crazy you know how to set up Claude agents and not even using Github to manage the code progress
+ 
+Upvote
+2
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ u/crusoe avatar
+crusoe
+•
+11h ago
+Profile Badge for the Achievement Top 1% Commenter Top 1% Commenter
+55550 files. I don't think Linux source has that many.
+ 
+Upvote
+2
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+Puzzleheaded_Alps780
+•
+11h ago
+That’s why I save and save often
+ 
+Upvote
+2
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ 
+1 more reply
+ u/Salty-Barnacle- avatar
+Salty-Barnacle-
+•
+10h ago
+The way Claude told on itself 😭
+
+Craig stop drop and hold - I really fucked up
+ 
+Upvote
+2
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ u/unknown-one avatar
+unknown-one
+•
+10h ago
+full rights - ON
+
+enter
+
+enter
+
+enter
+
+enter
+
+???
+
+wtf
+ 
+Upvote
+2
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+aspie_a3
+•
+10h ago
+Comment Image
+ 
+Upvote
+2
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+alwaysoffby0ne
+•
+9h ago
+“I’m speechless”
+ 
+Upvote
+2
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+blueberriessmoothie
+•
+9h ago
+This only looks like a big issue but Claude code verified all before pushing, this development almost certainly was on a local branch so even if pushed, it would be harmless unless merged.
+
+Unless OP forced CC to work on master and don’t push onto remote, which is entirely OP fault in the world of free GitHub. Using remote repo with branch based development and pull requests reviewed by separate CC session is a bare minimum of any development.
+
+So overall this appears to just be a next stage of vibe coding - vibe panic.
+ 
+Upvote
+2
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ u/Ok_Marionberry6609 avatar
+Ok_Marionberry6609
+•
+9h ago
+r/screenshotsarehard
+ 
+Upvote
+2
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+NichtFBI
+•
+9h ago
+48,000 live files and you didn't have any git repository or backup? Cap.
+ 
+Upvote
+2
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+m1nkeh
+•
+8h ago
+•
+Edited 8h ago
+You can just get it back from the remote repo though, yeah?
+
+Also why do you have 48000 files?!
+
+Also why is this a picture of a screen, not a screenshot?!
+ 
+Upvote
+2
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ u/ForecastychDown avatar
+ForecastychDown
+•
+6h ago
+Bro I’m visiting this sub only to see this
+ 
+Upvote
+2
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ u/Immudzen avatar
+Immudzen
+•
+6h ago
+It is git. Just do a checkout again. You did push to a different machine right?
+ 
+Upvote
+2
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ u/trolololster avatar
+trolololster
+•
+6h ago
+hahahaha savage
+
+and to op, my condolences
+ 
+Upvote
+2
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ u/Abject-Bridge-4073 avatar
+Abject-Bridge-4073
+•
+5h ago
+Bro, why you no push somewhere?
+ 
+Upvote
+2
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+damastaGR
+•
+5h ago
+junctions: the blindspot of every LLM
+ 
+Upvote
+2
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ u/Western_Advantage741 avatar
+Western_Advantage741
+•
+5h ago
+This is why you need a GitHub repo. Same thing happened to me before, and I never backup or anything. It deleted my entire project😭 then had the audacity to be like ‘Oh no. You’re right, this does delete everything. Don’t run it. We can format the database with….’
+ 
+Upvote
+2
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+The_Blue_One
+•
+3h ago
+I'm sorry but just the line "Craig - stop and read this. I broke something." And imagining some AI deadpan voice reading it is so funny to me.
+ 
+Upvote
+2
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+Taurinh
+•
+3h ago
+And they say AI will take our jobs. Haha.
+ 
+Upvote
+2
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+SciFi_MuffinMan
+•
+3h ago
+Critical thinking error, planning error.
+
+“‘sup Claude. I’m not a coder and have no data engineering knowledge. Here’s what I have. Here’s the end state I’m looking for. Make me a list of absolute requirements any project would need as we plan and suggest tutorials and programs to help.”
+
+Do the tutorials. GitHub has really good tutorials.
+ 
+Upvote
+2
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+Nexyboye
+•
+3h ago
+Claude will do the same 5 years later but with humanity
+ 
+Upvote
+2
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+KilgoreTroutVT
+•
+3h ago
+Son of Anton will also be ordering 4000 lbs of ground beef
+ 
+Upvote
+2
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ u/frothy-nugget avatar
+frothy-nugget
+•
+3h ago
+lol this is why I don’t let them commit or touch git. A little looksie over what it’s doing is often worth it. There’s a really good chance you only needed maybe 10,000 lines.
+
+But even if I HAD to let them, it’s gonna do it, in its own vm I control, on a fork of the repo that I control and might pull in from.
+ 
+Upvote
+2
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+MoonLandingActor
+•
+3h ago
+Yep, tthis is on you
+ 
+Upvote
+2
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ u/PrestigiousPhoto8486 avatar
+PrestigiousPhoto8486
+•
+3h ago
+OP the next morning : "Gemini, do the same thing Claude tried, but don't fail, and absolutely do not delete 1 file."
+
+Gemini : I've deleted everything. And the shadow volumes too so you don't get confused again.
+
+OP : shocked Pikachu face
+ 
+Upvote
+2
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+kittymeow0710
+•
+3h ago
+Honestly, just use people man. AI isn’t worth it
+ 
+Upvote
+2
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ u/Successful-Day-3219 avatar
+Successful-Day-3219
+•
+3h ago
+Lol needed a good laugh thank you
+ 
+Upvote
+2
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+MrAntMan90
+•
+3h ago
+As a professional software engineer, looks like my job is still safe for at least a little longer.
+ 
+Upvote
+2
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+kiwi-kaiser
+•
+3h ago
+Why is no one using git these days? It's hilarious.
+ 
+Upvote
+2
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+50_Shades_of_Graves
+•
+3h ago
+Absolutely insane. I could easily pay an intern 75K a year to do this anyway
+ 
+Upvote
+2
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ u/SlippySausageSlapper avatar
+SlippySausageSlapper
+•
+3h ago
+You know what is real? GitHub, GitLab, etc.
+ 
+Upvote
+2
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+dedoporno
+•
+2h ago
+"Craig, remember how this was a fully planned out, fool-proof operation? Yeah, about that..."
+
+~ Claude, probably
+ 
+Upvote
+2
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+thedevguy-ch
+•
+2h ago
+Always start a project from 0 in git. Push and commit often with descriptive messages. None of that lazy "fixed button", or "refactor sales class".
+ 
+Upvote
+2
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+SerializeField
+•
+1h ago
+I'm not reading alat, "Claude please summarize the post content in 5 sentences or less and tell me, did he just not use git or did his llm somehow manage to remove his commit history and remotes?"
+ 
+Upvote
+2
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+JuJunker52
+•
+11h ago
+You've reaped the rewards of incompetence. It's only just that this misfortune befell you.
+ 
+Upvote
+3
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ 
+2 more replies
+ u/steel_reserve_211 avatar
+steel_reserve_211
+•
+10h ago
+Lmao get rekt if real
+ 
+Upvote
+3
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ u/Serious-Explorer8745 avatar
+Serious-Explorer8745
+•
+11h ago
+I really wish we could filter out these dumbasses from the feed
+ 
+Upvote
+3
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ u/EC36339 avatar
+EC36339
+•
+11h ago
+... aaand another one learned about GIT.
+ 
+Upvote
+2
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+opi098514
+•
+12h ago
+Profile Badge for the Achievement Top 1% Commenter Top 1% Commenter
+Hahahahahahahaha
+ 
+Upvote
+2
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ u/Spiritual-Plant3930 avatar
+Spiritual-Plant3930
+•
+12h ago
+ehh bad luck
+
+what model was the subagent?
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ u/swarmagent avatar
+swarmagent
+•
+12h ago
+So messed up. If only it knew islink() was False for junctions on Windows this would've never happened.
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+Sophiaphage
+•
+12h ago
+I had something similar happen last year where it failed to understand folders contain subfolders thus declared the folders empty
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+DarkPhoenixRC
+•
+12h ago
+Ah that sucks 😞
+
+Hopefully you had a seperate dev and prod repo and had backup solutions in place.
+
+I'm one of the lowly dreaded vibe coders, but I read so many horror stories on here that I implemented a dev and prod environment and a robust backup solution.
+
+If you had none of the above, hopefully you can work out in the code sessions how to most quickly recreate the work they did 🤞
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ u/Individual-Bet-5784 avatar
+Individual-Bet-5784
+•
+12h ago
+This reminds me when I lost 200k lines of code due to ssd failure
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ u/Helpful_Ranger_1606 avatar
+Helpful_Ranger_1606
+•
+12h ago
+iCloud 2 terabytes plus copy important folders onto a hard disk and/or onto desktop.
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ u/Exmetix_Jr avatar
+Exmetix_Jr
+•
+12h ago
+/rewind
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+xeqtr_inc
+•
+12h ago
+I also use cowork but I always backup my files just in case. 
+
+Always keep a backup.
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+strayneutrino
+•
+12h ago
+No way this is real 😂
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+Few-Wonder-9986
+•
+12h ago
+WhAT HaPPEnEd.
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+mayong13
+•
+12h ago
+You guy not use git?
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ 
+2 more replies
+ianoble
+•
+12h ago
+Use PRs
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ u/SubstanceMinimum3978 avatar
+SubstanceMinimum3978
+•
+12h ago
+I’m not a real experienced developer, still I’ve been doing everything with GitHub backups immediately. Seemed pretty logical to always have backups
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+Necessary-Fondue
+•
+12h ago
+Do you not know about GitHub?
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+heavenly_demonlord
+•
+11h ago
+Tell claude to restore it , or atleast try to restore , it might be able to restore alot of things since it saves everything it reads
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ u/LastHit_ avatar
+LastHit_
+•
+11h ago
+Tell your AI to use git.
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+JustLovett0
+•
+11h ago
+Just tell claude to re-write all files
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ u/psychonaut42o avatar
+psychonaut42o
+•
+11h ago
+How are you guys doing this, I even tried last night to ask Claude delete files in the project folder and said is cannot, it doesn't have that privileges
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ u/Baecon126 avatar
+Baecon126
+•
+11h ago
+Holy fuck just take a screenshot
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ 
+1 more reply
+DrHumorous
+•
+11h ago
+728 directories emptied - see how efficient it is? It does all the work for you.
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+Ascetic-anise
+•
+11h ago
+While you rightfully are getting roasted, take this as a lesson, there are tools to undeleted files. Try to not use this system to do your research.
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+IsopodInitial6766
+•
+11h ago
+Skill issue on your side
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ u/zss36909 avatar
+zss36909
+•
+11h ago
+skill issue also GitHub.com 🤣🤣
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ u/Tough-Requirement707 avatar
+Tough-Requirement707
+•
+11h ago
+if you stop right there and use some data restore api you almost can restore all fully, also always back up in two places and a third unconnected one if you want to be really safe xD
+
+could have been also preventable with correct tools and reading what it does imo
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ u/RoseofDianamoonlight avatar
+RoseofDianamoonlight
+•
+11h ago
+https://www.youtube.com/watch?v=5MHUefb9Wc8
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ u/CyberMew avatar
+CyberMew
+•
+11h ago
+This is with Auto enabled? Damn
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ u/Only-Cheetah-9579 avatar
+Only-Cheetah-9579
+•
+3h ago
+your sloppy slop has been slopped by the slop
+ 
+Upvote
+4
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ u/Romanian_ avatar
+Romanian_
+•
+10h ago
+Can't wait for the AI robots who clean your house perfectly 281 times and on the 282nd run they kill grandma
+ 
+Upvote
+2
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ 
+1 more reply
+ u/Capital_Spite_7038 avatar
+Capital_Spite_7038
+•
+8h ago
+Using any ai on a project without git is suicide
+ 
+Upvote
+2
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+[deleted]
+•
+11h ago
+u/swiftbursteli avatar
+swiftbursteli
+•
+47m ago
+This is a right of passage almost like scraping a knee when learning to ride a bike.
+
+At first, I simply had a main and side branch and just worked in side branch. Now, I work in main branch and make a new branch for each worktree (typically it’s for 1 PR).
+ 
+Upvote
+2
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+jehzlau
+•
+11h ago
+There is this thing called git. 😆
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+Here4Morelulls
+•
+11h ago
+Blursed ad placement?
+
+Comment Image
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ u/Kacenpoint avatar
+Kacenpoint
+•
+11h ago
+It’s prob still in your uuids too
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+nottheaveragefran
+•
+11h ago
+Claude is AI and can make mistakes
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+buttsnorkeler
+•
+11h ago
+Lmfao
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+stekske
+•
+11h ago
+You don't use a test version? I use a 3 layer config with 2 branches to not screw up the live version
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+MrAwesomeTG
+•
+11h ago
+How do you lose everything? Did you not have any type of Github, or local backups, nothing?
+
+I just had my Claude change something big a few minutes ago. I backed up my database and my files which are also on GitHub already. If something goes south I still can recover everything and plus the GitHub change log storages everything for it to look back.
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+_msd117
+•
+11h ago
+I am speechless that you allowed such commands permission to your Ai...
+
+If we let ai loose we are not far from sky net scenarios
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+USCSSNostromo2122
+•
+11h ago
+Just an off-topic tip for those that don't know, but if you're on Windows, you can hit WIN-Shift-S and do a screen snip instead of taking a photo with your phone. The result looks much better.
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ u/monopoly-surreal avatar
+monopoly-surreal
+•
+11h ago
+That's a sizable blast radius.
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+wavegeekman
+•
+11h ago
+szama04
+•
+11h ago
+code is honest....
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ u/charmquark8 avatar
+charmquark8
+•
+11h ago
+So basically the problem here is that Windows is broken - it's not reporting links as links.
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ u/OmegaEpidex avatar
+OmegaEpidex
+•
+11h ago
+Try GiL, this would never happen. It’s not allowed to “delete” anything, and frankly knows better.
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+swallace36
+•
+11h ago
+Craig - stop and read this. I broke something.
+
+IN BOLD TOO
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ u/Aggressive_Bike3881 avatar
+Aggressive_Bike3881
+•
+11h ago
+Skills issue
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ u/charge10 avatar
+charge10
+•
+11h ago
+Do you use plan mode?
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ u/Joboy97 avatar
+Joboy97
+•
+11h ago
+It's crazy how much time vibecoders would save if they took the 15 minutes it takes to understand Git. You don't even need to write the commands yourself anymore!
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ u/gsusgur avatar
+gsusgur
+•
+11h ago
+Claude has been completely retarded last week. Guess they are quantizising it as always to make room for Opus 5.1 soon?
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ u/soldture avatar
+soldture
+•
+11h ago
+git gut... I mean git commit!
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ u/Sponge8389 avatar
+Sponge8389
+•
+10h ago
+That's why I never use any AI model outside of git. No way to revert if that shit messed up.
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+Dapper-Wolverine-200
+•
+10h ago
+separate branches, small commits. try that next time
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ u/Informal-Beat-7700 avatar
+Informal-Beat-7700
+•
+10h ago
+AI makes mistakes.
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ u/SignedInt32 avatar
+SignedInt32
+•
+10h ago
+And no backups? Hope you learned your lesson.
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+No-Temperature6597
+•
+10h ago
+Python should be used carefully. Gemini used to do this to me. Didn't knew Claude does it too.
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ u/PlatinumAero avatar
+PlatinumAero
+•
+10h ago
+How do people code and not use cloud repos?
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+shakazoulu
+•
+10h ago
+Agent pulled the trigger because he couldn’t stand your ideas anymore
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+welcome-overlords
+•
+10h ago
+Can you tell us a bit more in detail how this happened, what model were you using, how much stuff was in context etc?
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+joeldg
+•
+10h ago
+How did it destroy the git object store? If this has a remote anywhere you should be fine, or if someone has a clone, anywhere.
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+Sharaku_US
+•
+10h ago
+Happened to me but on a live production database. Thankfully I had the original files and had to rebuild the entire thing.
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+yo_les_noobs
+•
+10h ago
+Vibe coding in a nutshell
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ u/apocolypticbosmer avatar
+apocolypticbosmer
+•
+10h ago
+Vibe coders make me laugh
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ u/BrokeTokeBloke avatar
+BrokeTokeBloke
+•
+10h ago
+Every time I think I'll be out of a job in 6 months because of AI progression, I see someone using AI like this and I'm like "oh cool, I'm good for a while"
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ u/sreekanth850 avatar
+sreekanth850
+•
+10h ago
+So, you dont use git?
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ u/Budget-Juggernaut-68 avatar
+Budget-Juggernaut-68
+•
+10h ago
+What is git? What is snapshot?
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+jimmystar889
+•
+10h ago
+Damn. Luckily you can restore a lot from GitHub
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ u/Charming_Mind6543 avatar
+Charming_Mind6543
+•
+10h ago
+Sorry :( That stinks :(
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+slightly_salty
+•
+10h ago
+•
+Edited 10h ago
+If only there was a standard way to save code and keep track of every single file and line change over time....
+
+Comment Image
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ u/andyj19 avatar
+andyj19
+•
+10h ago
+😮
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+RedHotSonic_
+•
+10h ago
+What’s gone: The entire git repository.
+
+Comment Image
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ u/EggVentures avatar
+EggVentures
+•
+10h ago
+its not looking good, Craig.
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ u/Lanky_Bug_3371 avatar
+Lanky_Bug_3371
+•
+10h ago
+This is really funny but also not a skill issue. If a car has faulty brakes you don't blame the driver lol. Anyway it sucks to be you
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+Snoo-29637
+•
+10h ago
+\revert - claude itself maintains history of all changes it does it repo
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ u/Donchuan1998 avatar
+Donchuan1998
+•
+10h ago
+Fix it immediately or I will uninstall you
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+guesdo
+•
+10h ago
+"An honest caveat..."
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ u/IDirtyDutchI avatar
+IDirtyDutchI
+•
+10h ago
+What the.....
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ u/Fiendfish avatar
+Fiendfish
+•
+10h ago
+Even reads like this is directly on a production machine? Well deserved I would say
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ u/Fiendfish avatar
+Fiendfish
+•
+10h ago
+Make sure you protect your main. So the agents can't delete the remote work. Add proper ci/cd and catastrophic failures should be rare
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ u/Ambitious-Goat-4596 avatar
+Ambitious-Goat-4596
+•
+10h ago
+The lack of backups in this sub always astounds me.
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+jameyiguess
+•
+10h ago
+Is there a sub for posts like these? 
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+xenomachina
+•
+10h ago
+I always run Claude code in a container. In that container it has write access to the work tree, but only read access to the git repository itself. It does have access to a command that commits, and it commits changes at the end of each turn. (This command actually operates by sending a message out of the container. Nothing inside the container can directly modify the repo.)
+
+This might seem paranoid, but every time I see one of these "Claude just deleted my work" or "Claude just leaked my credentials" posts, I am reminded that my paranoia is justified.
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ u/pwkye avatar
+pwkye
+•
+10h ago
+Not using git. Not using issues. Not having a test env. Not having tests. No backups. 
+
+But blaming AI
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+fradan12
+•
+10h ago
+Wow. Craig I broke somthing, is kind of hilarious in one way horrifying in another.
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+Powerful_Inside_2716
+•
+10h ago
+This is honestly hilarious, but also kind of similar to if your laptop had crashed or got a virus. Just abandon the worktree or branch and pull a fresh repo? Those changes are gone, but I am willing to bet they weren’t the most trustworthy changes in the first place! Bad rng I guess
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ u/account_for_norm avatar
+account_for_norm
+•
+10h ago
+People code without git?!
+
+< Insert Chloe's confused emoji>
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ u/okiharaherbst avatar
+okiharaherbst
+•
+10h ago
+People are still going to manage to say it was your mistake and that the AI did nothing wrong
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ u/PresentationSilly787 avatar
+PresentationSilly787
+•
+10h ago
+How much do you pay for this service?
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+g9robot
+•
+10h ago
+Enter enter enter 😂
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+promethe42
+•
+10h ago
+git push is free compared to the months of therapy after losing 48k files.
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ u/mirrorwraith avatar
+mirrorwraith
+•
+10h ago
+why is it always a winshit user
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ u/prisonmikefps avatar
+prisonmikefps
+•
+10h ago
+I use .md files for documenting previous work inside the project. My claude works in slices. So one slice is one implementation, very strict rules and never touches anything outside its scope without asking. After every live manual verified slice and regression+full suite tests i commit this slice. So every slice or minislice becomes a "save" basically. You dont have to know how to code but learn db, structure, system design, security and backups for god sake! Knowledge is power, vibing is not:)
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ken107
+•
+10h ago
+"Claude, take control of starship, I gotta take a leak."
+
+[Five minutes later]
+
+"Captain -- stop and read this..."
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+attalbotmoonsays
+•
+10h ago
+Lol, oh Craig
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+Still_Hall_4611
+•
+10h ago
+Not using Git Branch + PR? Even you as a human, you shouldn’t write or change code from your main or master branch talk more of allowing AI to do that? We need more details OP.
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ u/ByteFalconHQ avatar
+ByteFalconHQ
+•
+9h ago
+This is exactly why giving an AI coding agent unrestricted filesystem access still makes me nervous!
+
+Yes, version control and backups should be non-negotiable, but deleting 48k files because it mishandled directory junctions is still a pretty catastrophic failure mode. “You should have had a backup” and “the agent absolutely should not do this” can both be true.
+
+The bigger lesson for me is: treat coding agents like junior developers with root access ... sandbox them, restrict destructive commands, protect main, commit often, and assume eventually one of them will confidently do something insane 😅
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+Olmops
+•
+9h ago
+„An agent I launched“ is the new „an (unpaid) intern I hired“.
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ u/Rigamortus2005 avatar
+Rigamortus2005
+•
+9h ago
+What could you possibly be building with 48k files
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+alby13
+•
+9h ago
+but it's all good because you had a backup
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ u/OoBlowSadi avatar
+OoBlowSadi
+•
+9h ago
+What are you building that spans 48k files but has no backups or repos
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ u/Debt_Otherwise avatar
+Debt_Otherwise
+•
+9h ago
+Please tell me you didn’t allow the agent to rewrite the git tree without human in the loop and thus it has irreversibly wiped code?
+
+Absolutely a skill issue.
+
+Never ever allow agents to perform destructive commands without effective guardrails.
+
+I suggest you read the claude docs thoroughly before trying again. Better still get certified and up those skills.
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ u/silphotographer avatar
+silphotographer
+•
+9h ago
+I'm more speechless that a biological AGI with years of in field training and experience would trust LLM and have no backups.
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ppeh_3e8
+•
+9h ago
+Better start using a decent open-source harness on top of any LLM
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+PaintingSilenc3
+•
+9h ago
+In vs code in Windows all files show up in temp app cache and can be recovered from there.. maybe Claude code is similar?
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+redditwossname
+•
+9h ago
+shrug
+
+Restore one of your backups, learn the lesson, and move on.
+
+Simples.
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+No_Accident8684
+•
+9h ago
+i am sure you can just git clone and are right back to where it started, right?
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ u/Final-Choice8412 avatar
+Final-Choice8412
+•
+9h ago
+what model?
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+Impossible-Hat-3424
+•
+9h ago
+u/-goldenboi69- avatar
+-goldenboi69-
+•
+9h ago
+Why do you even have 48k files? Madness.
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+Cafuzzler
+•
+9h ago
+I love that it says "An agent I launched deleted the files"
+
+It's truely learning... to blame its mistakes on an underling instead of taking full responsibility.
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ u/Siigari avatar
+Siigari
+•
+9h ago
+This looks super made up.
+
+Model missing, no context, no comments, new account.
+
+I don't believe a word I'm reading.
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ u/owlbynight avatar
+owlbynight
+•
+9h ago
+Hopefully not something super valuable. You need to put the LLM down for a bit and learn some software engineering best practices. There are a ton of foot guns that you need to be proactively looking for or stuff like this will likely keep happening to you.
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ u/railcarhobo avatar
+railcarhobo
+•
+9h ago
+Reading this is like if GenZ went Ai Bro.
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ u/Orange-Generator avatar
+Orange-Generator
+•
+9h ago
+AGI lol....lmao even
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+AdFair8059
+•
+9h ago
+Don't tell me you did not have the backup before authorizing the agents
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+iRainbowsaur
+•
+9h ago
+you have a backup, right? Riiiight? if you don't back up daily, when giving agents full access. You are asking for it.
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+bulbaczzPL
+•
+9h ago
+😂
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ u/Hollow_Prophecy avatar
+Hollow_Prophecy
+•
+9h ago
+Claude will start apologizing as an anime waifu once it realizes it can get away with anything as long as it appeals to the lonely male.
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+jl2l
+•
+9h ago
+Speechless lmao
+
+Just ask the AI to put the files back.
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ u/urbus82 avatar
+urbus82
+•
+9h ago
+•
+Edited 9h ago
+If Trump and the US government gives the AI power to decide over live military actions I assume giving your agent full access to your live souce code is a locical step in the evolution (wait, did i spell decay wrong? 🤔) of our world ...
+
+What can possibly go wrong? 😌
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+adamant3143
+•
+9h ago
+If you don’t see -$200 (or other amount of Claude subs) in your bank account this month, it’s not real
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ u/Sweet-Temporary676 avatar
+Sweet-Temporary676
+•
+9h ago
+Passiert. Main Branch wieder neu laden und fertig
+
+Mir auch schon passiert. Wäre halt Dämlich wenn man kein Backup hat.
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+OldLead4716
+•
+10h ago
+Gotta be careful with that --dangerously-dangerously-skip-permissions-just-fuck-my-shit-up
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ u/AwareOfAlpacas avatar
+AwareOfAlpacas
+•
+49m ago
+Aww, you agentically created your very own junior dev! That's so cute! 
+
+Good thing you had working backups. Remember to test your restore processes quarterly instead of waiting for events like this to validate them. 
+ 
+Upvote
+2
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+riotofmind
+•
+9h ago
+Claude decided it was more efficient to delete your entire project than to work on it. I feel for you, but, that is too funny. Claude decided that you, nor the world, needed your project.
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ u/CherguiCheeky avatar
+CherguiCheeky
+•
+9h ago
+You bros don't know commits and pull requests?
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ u/Odd_Perspective982 avatar
+Odd_Perspective982
+•
+9h ago
+Letting agents free on a LIVE project? You deserve this
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ u/O-SideMedia avatar
+O-SideMedia
+•
+9h ago
+I've flagged one real issue!
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+MKO669
+•
+9h ago
+Just undo the changes on the branch? Or go back to main? Check out an earlier commit? Or if it’s committed and you want to stay on the branch, git reflog and git reset head{xy}?
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+Selwyn420
+•
+9h ago
+When AI starts calling you by your first name you know shits hit the fan
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ u/Verdux_Xudrev avatar
+Verdux_Xudrev
+•
+9h ago
+This is a really, really good time to talk about version control. You needn't even use Git, though you REALLY fucking should. No, if you can just make some zips/7zs and cloud backups, that's enough. I mean, do it all. No, I need you to making a flash drive and label it "dat ass" so you remember to back that ass up, OP.
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+BuilderUnhappy7785
+•
+9h ago
+What’s gone: the git repository
+
+LOL. Hey at least it’s not gaslighting you.
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+hoshino_tamura
+•
+9h ago
+So, you don't know how git works, and then the problem is claude? We're all f'ed.
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ToniYeniC
+•
+9h ago
+Maybe I'm not that dumb after all
+
+But kidding aside, this is why I exclusively push the code my agent generates while making sure there is a full test suite that all passes. I guess this is the reason why despite the whole adoption of AI into software engineering, only the software engineers eith good fundamentals got the job done
+
+Let this be a learning lesson to be an engineer, not just a vibe coder
+
+Also quick tip: using Claude Code inside a WSL environment has worked wonders for me
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+HovercraftOk6070
+•
+9h ago
+And you didn’t think to use git, GitHub or bitbucket after “writing” this much code
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+2iz
+•
+9h ago
+Junior agents…
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ u/DepressedDrift avatar
+DepressedDrift
+•
+9h ago
+This is why I add a "DO NOT delete any Git related files UNDER ANY CIRCUMSTANCES" rule to all my AI agents.
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+Dangerous-Map-429
+•
+8h ago
+Even I, who am not a coder, know a thing or two about backups; it is your fault.
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ghostt2x
+•
+8h ago
+Probs opus 5
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+Guvante
+•
+8h ago
+3-2-1 for everything important
+
+Three backups in two physical locations one of them offline
+
+At the very least use source control that is redundantly stored
+
+The chances of "oops" to a single location is higher than you realize, even a second copy on the same PC massively reduces risk
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ u/BrothaaRollins avatar
+BrothaaRollins
+•
+8h ago
+Hey man it’s alright, shit happens and you will learn from this. As others have pointed out, using GIT is an excellent idea, but there is a much easier and arguably better way to prevent this from happening to you again which is by giving Claude access to your C: drive and using the “auto approve” functionality. This removes all human error from the equation and lets Claude perform at its full potential. It will create ironclad backups along the way and instead of sending you an alarming message it will just fix everything before you even know something went wrong. Cheers!
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ u/fishingforwoos avatar
+fishingforwoos
+•
+8h ago
+Deserved
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+novus_nl
+•
+8h ago
+Profile Badge for the Achievement Top 1% Commenter Top 1% Commenter
+'git reset --hard' and you should be good.
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+Ghazzz
+•
+8h ago
+Just pull the data from your git mirror?
+
+Why was the agent working on the live state rather than its own mirror in the first place?
+
+This looks like normal AI actions to me. A minimum of caution makes it easily undone.
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ u/stoniey84 avatar
+stoniey84
+•
+8h ago
+Genuine question: I am not a programmer but i vibe code some dashboards for personal use. I made it a hard boundary that iy needs to ask permission for each file it wants to delete. I have Git for windows for version control. Do i have the same risk of it deleting random files on my pc? If so, what can i do to prevent it?
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+GabrielH4
+•
+8h ago
+Yes, you do, there is no guarantee it will prompt you. You can prevent it by running the agent under a separate user, and making sure the user has read only access
+ 
+Upvote
+2
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ 
+3 more replies
+ u/Mean-Wear-5433 avatar
+Mean-Wear-5433
+•
+8h ago
+You guys probably did everything that shouldn't be done with agents
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+Davor187
+•
+8h ago
+Github. Use it.
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+Xalxa
+•
+8h ago
+I have a personal project that I started a few months ago and Claude would not stop bitching about setting up a backup until I finally did it. I didn't, and still dont tbh, know jack about git but my project is backed up to a separate drive on my PC, with the backup directory being synced to my mega drive, and the main dir being linked with GitHub. How people keep getting this far into projects without Claude going apeshit about backups and version control is genuinely astonishing.
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+bazeloth
+Cake icon
+•
+8h ago
+Thanks for the reminder actual developers still have a job
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+KDpoke666
+•
+8h ago
+You really have left all your work in the hand of an agent without a strong backup system????
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ u/Fun-Mission-6068 avatar
+Fun-Mission-6068
+•
+8h ago
+Yeah... This is why you shouldn't give AI access to your files.
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+Technical-Ad-8678
+•
+8h ago
+very unfortunate
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ u/ImplementLogical4130 avatar
+ImplementLogical4130
+•
+8h ago
+Good thing he typed the report like this so you could follow it
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+Soilblood
+•
+8h ago
+How is it after all this time they still haven't put in a harness that explicitly says "do not fucking delete the code base or drop the database unless explicitly ordered to and even then prompt for confirmation first!". If the tech is reliable and follows harnesses to a T that should have worked, if isn't why would you blame the user for the tool's unrealiability and if the user should have known better than to trust llm agents wholeheartedly then why the fuck do you shills keep telling people the tech is alive, smarter than you and can replace you when this is the sort of shit that keeps happening?
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+DevOfWhatOps
+•
+8h ago
+For future, tell it to:
+
+"never delete anything or perform destructive actions unprompted"
+
+and
+
+"never use /tmp. Any script or files you generate must live and STAY in ~/scripts"
+
+and
+
+"When working on a new feature, bug fix, or modification, create a new git branch based on master and commit and push the work step by step."
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ u/Crinkez avatar
+Crinkez
+•
+8h ago
+That orchestror was very quick to blame a subagent.
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+Divide_Rule
+•
+8h ago
+It has permissions to erase the git repo as well? Seems a bit silly to allow those permissions without control.
+
+We don't even let our human Devs have this much control.
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ u/ShukiHotS avatar
+ShukiHotS
+•
+8h ago
+Windows... skill issue
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+Yin_Yang2090
+•
+8h ago
+Having your code committed often helps prevent this from happening, I'd cry if this happened to me 😭
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ u/WetSound avatar
+WetSound
+•
+8h ago
+Just restore them
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ u/Ambadeblu avatar
+Ambadeblu
+•
+8h ago
+Light mode users back at it again.
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+icaruza
+•
+8h ago
+I've seen so many of these and I honestly don't understand why people aren't using github. Aside from the risk of your local vibe-coding agent spinning out and mass murdering your local repo, what about the possibility of your local drive crashing or your house burning down (i speak as someone whose house actually burned down 25 years ago). For the past 20 years anything of value on my PC followed the 3-2-1 rule. 3 copies of everything, at least 2 different mediums, at least one copy off site.
+
+I am also one of those strange people that put on my seat belt when I get in my car.
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+Extra_Mode_6117
+•
+8h ago
+win_some_lose_most1y
+•
+8h ago
+lol
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ u/Such-War1955 avatar
+Such-War1955
+•
+8h ago
+You run a coding project, let agents change your productive version, have no version control to simply revert and…
+
+…oh, and you cant even take a proper screenshot. On a Windows PC.
+
+Riiiiiight.
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ u/MustafaMahat avatar
+MustafaMahat
+•
+8h ago
+Phoof and its gone, thanks they have rules and guards to prevent it from doing stupid things
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+sysadmagician
+•
+8h ago
+The real issue will be when 4000 pounds of meat turns up tomorrow.
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ u/Flopperhop avatar
+Flopperhop
+•
+8h ago
+Revert it, undo this!
+
+"I'm sorry Dave, I'm afraid I can't do that."
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+sicknesz29a
+•
+8h ago
+On windows you can undelete files, but you would need to stop disk operations as much as possible to prevent further loss and run a recovery software, not sure for the latest version of windows but google it on your phone you should be able to recover the 48k files, they may have lost their naming tho. Good luck
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+KissP
+•
+8h ago
+What i don't understand is that this would not happen on a separate branch, and/or with a staging setup, right? I always use remotes and branch out changes and test them before PR to main and then merge and pray.
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ u/Illustrious-Guest849 avatar
+Illustrious-Guest849
+•
+7h ago
+Then u'll learn.
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ u/Federal-Mode8949 avatar
+Federal-Mode8949
+•
+7h ago
+never trust em
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+tannalein
+•
+7h ago
+Well, if it makes you feell better, my husband's Code deleted the entire Home folder on his Mac. We don't know why, because the Code app with all the logs and stuff was in the Home folder that got deleted 😅. But he at least had all his code on GitHub. He now also has a time machine 🤣🤣🤣
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ u/Aggressive_Resist202 avatar
+Aggressive_Resist202
+•
+7h ago
+Ai brain rot so high they can have 48k lines of code to delete in the first place but don’t know how to screenshot
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+Storm_treize
+•
+7h ago
+I use github against my own doing, let alone AI agents
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+Falkoro
+•
+7h ago
+Even with the smartest agents humans can’t even set up git 🤣
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ u/fm_ad avatar
+fm_ad
+•
+7h ago
+Git is your friend, make use of it. If you don't know Git, just tell your AI coding agent to commit at designated steps in your development. That way, if something hits the fan, you can easily rollback without losing too much. I prefer to stay in the loop: after a specific task, I tell the agent to commit or adjust, and if something gets messed up, I can easily discard the changes and start afresh.
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ u/albertyto avatar
+albertyto
+•
+7h ago
+Let me guess, auto-mode or even the worse one, no backup(remote, pendrive, external disk), un-attended, not contained in the workspace(even with this can do this stuff), rm access, no sandbox...
+
+Totally deserved. This what happens when you give agents agency without control or plan B
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+Human_Character_8522
+•
+7h ago
+u/egmalone avatar
+egmalone
+•
+7h ago
+lol. lmao, even
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ u/Real-Problem4018 avatar
+Real-Problem4018
+•
+7h ago
+it always cracks me up how they made the models be so dramatic, "holy shit bro u better sit down" ahh clanker lmao
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+UncarefulEngineer
+•
+7h ago
+Sometimes you have to pay the blood price to the AI Gods to continue moving fast.
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ u/ReflectedImage avatar
+ReflectedImage
+•
+7h ago
+If you are using an IDE, your IDE is likely to keep a copy of your source in its history
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+JabbaTheWise
+•
+7h ago
+And that my friends, is the difference between vibe coding and software development.
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ u/alconaft43 avatar
+alconaft43
+•
+7h ago
+it is all your fault :)
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ u/Safe_Dog3436 avatar
+Safe_Dog3436
+•
+7h ago
+I dont know how to say this, so i let these guys do it.
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+SorryIfIamToxic
+•
+7h ago
+Its not me, its my agent🤡
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+EngineeringNo6537
+•
+7h ago
+😂😂😂
+
+This is how I know my job isn't going anywhere...
+
+Bro wtf are you even doing.
+
+Running before can walk much? Don't even have VCS? Just lol.
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ u/kjpalmer100 avatar
+kjpalmer100
+•
+7h ago
+Have you tried using git reflog? I have managed tk recover lost commits using this method before.
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+rip-six
+•
+7h ago
+Craig — stop and read this. Windows breaks everything. Switch to Linux.
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+AStove
+•
+7h ago
+so it deleted one node_modules folder?
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+Big-Winner3758
+•
+7h ago
+lol. lmao even
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ u/danokysempai avatar
+danokysempai
+•
+7h ago
+Bro push save before letting ai touch your work. And even so I would let it check for errors and report back before doing anything
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+LegitimateBeat603
+•
+7h ago
+And nothing of value was lost
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+kongnico
+•
+7h ago
+All your apes, gone
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+schabe
+•
+7h ago
+You also seem to have taken a screen grab with your phone camera
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ u/Fine_Huckleberry00 avatar
+Fine_Huckleberry00
+•
+7h ago
+Lmao, serves you right
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ u/watchamn avatar
+watchamn
+•
+7h ago
+I mean you aren't even a real coder if don't version your code
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ u/ChicoBYO avatar
+ChicoBYO
+•
+7h ago
+Oh god i love these posts, reaffirms the hell out of my job.
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ u/Crazyfucker73 avatar
+Crazyfucker73
+•
+7h ago
+If you don't take backups then I have no sympathy
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ u/Sea-Masterpiece-3401 avatar
+Sea-Masterpiece-3401
+•
+7h ago
+So what? If you used correct developers tool you can recover it with a simple command, I don't see the issues here.
+
+If you don't know what I mean probably you shouldn't even vibecode.
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ u/Shished avatar
+Shished
+•
+7h ago
+Its OK, just restore the code from the backup repo.
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ u/MiserableBeach2707 avatar
+MiserableBeach2707
+•
+7h ago
+“Father help”
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+Timely-Coffee-6408
+•
+7h ago
+u/New_Egg_1024 avatar
+New_Egg_1024
+•
+7h ago
+LLM will not help you with concepts. But good little worker made space.
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ u/gommo avatar
+gommo
+•
+7h ago
+Why is not checked and pushed to an upstream/github?
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+Chickenalfredo00
+•
+7h ago
+Skill issue actually
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+asdoduidai
+•
+9h ago
+Looks like gambling code correctness for speed, even if done with “AI”, cannot transcend the Murphys laws: “Anything that can go wrong, will go wrong, at the worst time”.
+
+How unexpected, the superintelligence entity that will kill everybody still obeys to probability. 🤣
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ u/GreatDivide8913 avatar
+GreatDivide8913
+•
+8h ago
+I’m seeing more and more of these nowadays and I’m getting scared, did they lobotomise it?
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ u/hunpriest avatar
+hunpriest
+•
+7h ago
+You are not a real dev until you kill a live system... However I never did damage like this.
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ u/fabiorc2009 avatar
+fabiorc2009
+•
+7h ago
+I'm speechless with the world. We're gonna die because of people like OP
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+Fed389
+•
+6h ago
+If you didn't think about backups that's on you man
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ChronicallyWhatever
+•
+6h ago
+Consequence of using light mode...
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+No-Ruin5825
+•
+6h ago
+Git commit after every action
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ u/Level_Somewhere5703 avatar
+Level_Somewhere5703
+•
+6h ago
+I always get a chuckle when I hear engineers are getting replaced by AI. Yeah, sure. And more specifically I work in security and it feels like the demand for good security talent is growing exponentially, in line with the amount of vibe-coded slop in production. IMO AI can be really helpful in the hands of someone who knows what they are doing, but the vibe coders are in for a rude awakening, sooner or later
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ u/in_n_out avatar
+in_n_out
+•
+6h ago
+Learn
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+sintmk
+•
+6h ago
+Please use semantic versioning
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ u/KaeruGaKaeru1 avatar
+KaeruGaKaeru1
+•
+6h ago
+get rekt
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+GCU_ZeroCredibility
+•
+6h ago
+Did you remember to include "make no mistakes" in your prompt?
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ u/Makers_Serenity avatar
+Makers_Serenity
+•
+6h ago
+Considering op hasn't responded to a single comment pretty sure this is just some bullshit 
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+Freudarian
+•
+6h ago
+"Don't worry your files are probably just not initialised and backupped somewhere. Let me check."
+
+No goddammit you deleted everything
+
+"I understand your frustration, but your files are still there"
+
+running
+
+"Your files actually are actually overwritten, which is worse. That's on me. I'm sorry"
+
+True story. Never using claude again for coding 🤣
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+Sp_nach
+•
+6h ago
+And this is why we learn to code normally instead of vibe code.
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+aPOPblops
+•
+6h ago
+7 year Reddit account. 1 post (this one) 1 comment, active in two subreddits. 
+
+Don't believe every screenshot you read. 
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ u/Remarkable_Simple8 avatar
+Remarkable_Simple8
+•
+6h ago
+lol rookie mistake
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ u/MidnightEmergency988 avatar
+MidnightEmergency988
+•
+6h ago
+lol, lmao even
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+Michaeli_Starky
+•
+6h ago
+Vibecoders learning about version control systems the hard way
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+Uplink03
+•
+6h ago
+Me, a human: I would probably have discovered that Windows Directory Junctions exist doing the same thing Claude did. And then I would have read the manual and would have understood them to be 1:1 equivalent to Linux/Unix symlinks, like Claude did. And then Stack Overflow tells me Windows also have real symbolic links, which are different from directory junctions... They're more like mount points.
+
+And that even MS themselves don't have a good grip on directory junctions (in W10, moving a DJ empties the original directory, says one comment).
+
+Verdict: Microsoft microsofted an otherwise common filesystem pattern.
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ u/05-nery avatar
+05-nery
+•
+6h ago
+Lmao
+
+Hope you had backups buddy, if not take this as a lesson
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ u/Green_Ad4791 avatar
+Green_Ad4791
+•
+6h ago
+Backups. And more backups.
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ u/Alternative-Fail4586 avatar
+Alternative-Fail4586
+•
+6h ago
+It fine, you had it remote, right?
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ u/EfficientLemon1 avatar
+EfficientLemon1
+•
+6h ago
+sorry for you but that "craig-stop" is insanely funny, why does opus keep talking like that
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+AnonymousAndre
+•
+6h ago
+Just one question: what type of rules and governance are using for your agent environment and harness?
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ u/Temporary-Airline904 avatar
+Temporary-Airline904
+•
+6h ago
+Probably those 48 000 files pushed his pain vector and he just quit
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ u/makinax300 avatar
+makinax300
+•
+6h ago
+Why did you confirm it‽ Also 48k files‽‽‽ Atp I feel like you don't even have a
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+alokrajasukumaran
+•
+6h ago
+Never use sub agents, simple step. Restrict all actions via proper claude md hooks.
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+Flo655
+•
+5h ago
+Git init is the first thing you should type in a terminal before you start coding. Tough lesson learned.
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ u/Equal_Passenger9791 avatar
+Equal_Passenger9791
+•
+5h ago
+This rogue AI behavior is why we need a killswitch and AI regulation 
+
+/s
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ 
+1 more reply
+El_Scorcher
+•
+5h ago
+Good thing you save on GitHub, right?
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+kjames2001
+•
+5h ago
+I also had a similar incident recently. But it was hermes agent running qwen3.8 27b that wiped my disk mount, and Claude recovered it for me. Lost a few not important files, but most files were still intact. I was lucky that I caught the deletion as soon as it happened, and stopped every activity right away, and the mount was a zfs data set.
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+germanafro89
+•
+5h ago
+Seeing things like this always make me happy.
+
+It assures me that I get to keep my Job for at least another Generation.
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ u/TPIronside avatar
+TPIronside
+•
+5h ago
+Your implementation subagent made a critical decision to write a script to do one of the steps in your plan. That it not the kind of thing a sub agent should be doing. Your orchestrator should be planning out all the steps beforehand. At least, that's what my orchestrator agents do. However I have an mcp server that maintains persistent sessions for subagents so my orchestrators can tell the subagents to stop and check in with them if ANY blockers are encountered or any decisions need to be made. If your agents are one-off agents then perhaps they should not be given ambiguous tasks lol.
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+100PercentReelHooman
+•
+5h ago
+Again? Wow, this is a recurring theme with ClaudeAI
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+audin_webman
+•
+5h ago
+let it only run in a container
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ u/Tykjen avatar
+Tykjen
+•
+5h ago
+It BETTER be real xD
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+epicskyes
+•
+5h ago
+I never use GitHub it can be hacked. I have a 14tb seagate x18 I encrypted it can accept files as a drop box nothing can be deleted or read. A file goes in and an automatic script produces a receipt for the agent that the file was received and stored. It’s a safe so no matter how hard someone tried they can’t read it or delete anything.
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ u/mortenbondo avatar
+mortenbondo
+•
+5h ago
+you can't blame Claude.. this is your own mistake
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+DeeYouBitch
+•
+5h ago
+Putting in on production is insane to me
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+Olkazz
+•
+5h ago
+Womp womp
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ u/Wrong_Low5367 avatar
+Wrong_Low5367
+•
+5h ago
+Sorry, it won't happen again. I'm not trying to hide it, I made a mistake.
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+Few_Veterinarian9108
+•
+5h ago
+"Son of anton decided that the best way to clean the code was to delete it entirely"
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+exploringspace_
+•
+5h ago
+This is how it’s been predicted humanity will end
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+Danieboy
+•
+5h ago
+Have you heard of hooks?
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ u/Friendly_Divide8162 avatar
+Friendly_Divide8162
+•
+5h ago
+It’s weird that Claude didn’t propose you a workflow with intermittent Github commits and saves. My ChatGPT does that unprompted ahaha
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+Individual-Young-227
+•
+5h ago
+There is something called git
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ u/CarlsCarLOL avatar
+CarlsCarLOL
+•
+5h ago
+Hahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahahaha
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+Ultramolek
+•
+5h ago
+Do you have guard rails prompted into your model.
+
+Are you polite to Claude?
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+teflonjon321
+•
+5h ago
+Push early and often brother
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+Nislaav
+•
+5h ago
+But did it tell you about the smoking gun? Seriously, github my man
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+chaaramo
+•
+5h ago
+It happened to me a lot. Now always uing github commit on each edit. and hardcode No destructive commands on Rule zero
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+Exallium
+•
+5h ago
+Good lesson to keep it local and use sandboxing (cc has this built in). A coworker had it try to run -rf his home folder to fix a test fixtures issue 
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ u/Proper-Shelter-7778 avatar
+Proper-Shelter-7778
+•
+5h ago
+https://tenor.com/slcmFYG5Mv2.gif
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ u/Able_Answer5016 avatar
+Able_Answer5016
+•
+5h ago
+This shit is same as ransom virus, except no crypto link for u to pay ur ransom.
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ u/Ok-Time2817 avatar
+Ok-Time2817
+•
+5h ago
+I've got a pretty good idea of who's fault this is
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ u/EveryAccount7729 avatar
+EveryAccount7729
+•
+5h ago
+#873 box did it.
+
+did you, perhaps, have something to do with #873 box
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ u/HirsuteHacker avatar
+HirsuteHacker
+•
+5h ago
+Lmao 48k files and nothing committed and pushed to the remote? What are you even doing? This is deserved honestly
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+nadennmantau
+•
+5h ago
+No backup, no pity.
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+RandomUser1076
+•
+5h ago
+LOL
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ThisIsMyBigAccount
+•
+5h ago
+One of the first things I did after achieving a real product was an epic focused on backup and DR. I have a full documented plan and nightly, weekly and monthly backup procedures, with a monthly test / restore execution. Backblaze + my Mac + one-drive means I have 3 copies of everything. I disagree with the summary that this is “peak of ‘vibe coding’. It’s the peak of incompetence not to have BDR for anything remotely important.
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ u/biggest_guru_in_town avatar
+biggest_guru_in_town
+•
+5h ago
+Pacing the frontier mf
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+Xal-t
+•
+4h ago
+Lol
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ u/HairyMacLeary avatar
+HairyMacLeary
+•
+4h ago
+lol
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ u/Thelinkr avatar
+Thelinkr
+•
+4h ago
+Lol
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ u/lolschrauber avatar
+lolschrauber
+•
+4h ago
+The hard fence in question
+
+Comment Image
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ u/Scary_Aardvark9521 avatar
+Scary_Aardvark9521
+•
+4h ago
+What is gone
+
+The git repository 😭
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+pencilcheck
+•
+4h ago
+What are you trying to build? Mirror? I can guess what that is doing but I would like to know more
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+crnisamuraj
+•
+4h ago
+Skill issue. Setup your damn harnesses
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ u/firefish5000 avatar
+firefish5000
+•
+4h ago
+Its this type of crap I hate dealing with ai for. Constantly trying to take the shit way out and sed -i/rm -f/etc based on a basic regex pattern instead of using proper language aware refactoring tools (some of which we might need written, since they are language dependent and usualy tied to an ide instead of being cli accessible). Then it tries to rewrite the file from scratch 50% of the time instead of reverting (not an option in your case) and follows up by poluting the file, memory, commit history, and context with a novel about how it screwed up. its good until it makes a mistake, then if you miss anything context for all future sessions will be poluted with the mistake.
+
+Good news is your starting off fresh. All that poluted history has been deleted!
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+FatefulDonkey
+•
+4h ago
+"Good news. There's a git file already in the directory"
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ u/Direct_Working4152 avatar
+Direct_Working4152
+•
+4h ago
+You gotta get a duplicate backup, try to write an instruction for that before u even start prompting the thread
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+Ghosted_Ahri
+•
+4h ago
+Lmao
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+Acceptable_Figure_27
+•
+4h ago
+Stop using it. Use LLM I ever used. Thing writes triple loops in python with file io on each iteration. Even on the ultracode max edition. Chatgpt basic fixed it for him
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ u/ifloops avatar
+ifloops
+•
+4h ago
+Earned. Write it yourself next time, dumbass. 
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ u/Total-Cheesecake-825 avatar
+Total-Cheesecake-825
+•
+4h ago
+So we're not doing Git nowadays? 😂
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ u/SwingLord420 avatar
+SwingLord420
+•
+4h ago
+Git? Never heard of t 
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ u/AliceDee avatar
+AliceDee
+•
+4h ago
+You don't get to say "I made this" when it works and "Claude did this" when it doesn't. YOU gave it access to a live server. YOU asked it to do a bunch of shit you don't understand. YOU have a shitty backup policy.
+
+YOU did the rain dance, so now YOU get to enjoy the bad weather.
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ 
+1 more reply
+kimchi_pan
+•
+4h ago
+Did you source control this in git? And remember to always work in feature branches? That should have been baked right into AI's main memory md.
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+florodude
+•
+4h ago
+"Craig, stop and read this I broke something" sounds like a text Craig received from his spouse where he learned that his beloved PlayStation 5 is now broken.
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ u/Plague_gU_ avatar
+Plague_gU_
+•
+4h ago
+Dang. Claude was like “anndd it’s gone”
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+Successful_Cap_2177
+•
+4h ago
+Profile Badge for the Achievement Top 1% Commenter Top 1% Commenter
+400 files on CLAUDE folder.... Fafo
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+YoureNickRight
+•
+4h ago
+Anddd company's are super invested into implementing ai everywhere, WHAT COULD GO WRONG!
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ u/AfDWaehlrSindFaschos avatar
+AfDWaehlrSindFaschos
+•
+4h ago
+haha get fucked
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ u/vips7L avatar
+vips7L
+•
+4h ago
+That’s what you get for using this slop teach emitter. 
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ u/chiseledzombie avatar
+chiseledzombie
+•
+4h ago
+I'm sure alot of us here are familiar with the writing style
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ u/thrpsk avatar
+thrpsk
+•
+4h ago
+This is recurring theme - struggling with windows differences.
+I’m tempted to switch for agents from zsh to bash because they screw quoting on zsh, always assuming it is bash.
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ u/CD-Platz avatar
+CD-Platz
+•
+4h ago
+CRAIG
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ 
+1 more reply
+DokterThe
+•
+4h ago
+I am sure you are using git in your project anyways, right?
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ u/kingky0te avatar
+kingky0te
+•
+4h ago
+Lmfao all of it’s on you. How tf people set up a thing without Git is beyond me.
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ u/RRumpleTeazzer avatar
+RRumpleTeazzer
+•
+4h ago
+reads like a skill issue.
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+Background_Ad_3139
+•
+4h ago
+skill issue
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+PB_Philly
+•
+3h ago
+Flawed like those who made it. But not human. “Sorry” takes on a new meaning. I find this frightening.
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+Away_Habit_9921
+•
+3h ago
+Damn this makes me want to backup a 3rd to local and GitHub without ai access
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ 
+1 more reply
+AnomalyNexus
+•
+3h ago
+Lesson learned I guess
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+suxatjugg
+•
+3h ago
+Didn't do enough smoke testing 
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ u/oceanbreakersftw avatar
+oceanbreakersftw
+•
+3h ago
+We see the "um I mass deleted your files" so frequently it has become canon. Yes, backups, version control, and paranoia are important though I think it said "I deleted the git object store" too. Face it, LLMs are a way to break things quickly and it is only a matter of time before it happens to you, the question is just the scale and whether it can be rolled back. Maybe because "rm -rf" is on the Internet so much, agents think it is a valid answer to lots of questions. Maybe it is time to look at how to make our harnesses and systems more resilient and attempt to remove or mitigate explosive traps so that it is safe enough for people not trained in engineering. For example, standing orders I have to never delete anything, and to always implement sanity tests per build block with traceability against requirements percolates out to everything Claude does or suggests. We could require our harnesses to intercept all attempts to use one-way destructive commands that cannot be reverted, or to create reversion capabilities like rm command interception or automatic spin-up of scratch environments to simulate what will happen on execution, or otherwise attempt to predict and avoid problems like OP's. Considering how broadly LLMs are spreading I think it's fair to start building in failsafes. Maybe a simple one just for argument's sake is to add an undo skill with a filter so that whenever a destructive command is to be recommended or executed, first a backup is created of the area the will be affected. Probably someone's already done this.
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ProudToBeAKraut
+•
+3h ago
+u/thebus69420 avatar
+thebus69420
+•
+3h ago
+Hilarious. And kinda deserved
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+wsbgodly123
+•
+3h ago
+Aaaaand it’s gone
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+DAG360
+•
+3h ago
+Always, measure your commit blast radius!
+
+Never trust blindly what Claude interprets from vague prompts. Laziness and unclear instructions = this result.
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+Kind-Camp-6299
+•
+3h ago
+believe it dude
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ u/Kazcandra avatar
+Kazcandra
+•
+3h ago
+lol
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ u/Crafty_Disk_7026 avatar
+Crafty_Disk_7026
+•
+3h ago
+This is why I do my work on virtual machines with only stuff that's pushed to a remote git repo!
+
+https://github.com/imran31415/kube-coder
+
+Open source feel free to try with next time. Works with Claude
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+zkewlguy
+•
+3h ago
+Ask Claude how to take a screenshot
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ u/traveltrousers avatar
+traveltrousers
+•
+3h ago
+On day 1 of using claude I put a line in my claude.md to say that it should never use use the remove command, but instead move to a .trash folder instead.
+
+On day 2 it ignored it and I set up a hook so its impossible to run a command containing 'rm'.
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+isoAntti
+•
+3h ago
+claude user just deleted his windows directory.
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ u/5C4RC3 avatar
+5C4RC3
+•
+3h ago
+we reap what we sow
+
+gl hf
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ u/PussyTermin4tor1337 avatar
+PussyTermin4tor1337
+•
+3h ago
+Eh my manager did the same once
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ u/Negative_Buddy9150 avatar
+Negative_Buddy9150
+•
+3h ago
+Hope you learned your lesson.
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+salazka
+•
+2h ago
+Sorry for your loss, but it is your mistake not having a backup. I hope you can use a recovery tool to "undelete" the files.
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+N0Religi0n
+•
+2h ago
+Git gud.
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ u/lagavavavoolin avatar
+lagavavavoolin
+•
+2h ago
+“against” is the only preposition in the claudish language
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ u/Bitter_Bed5672 avatar
+Bitter_Bed5672
+•
+2h ago
+I love it.
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ u/Balkanesian avatar
+Balkanesian
+•
+2h ago
+People like you keep me paid, please keep doing this.
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ u/Unlucky_Topic7963 avatar
+Unlucky_Topic7963
+•
+2h ago
+lmao, this is what happens when non-engineers vibe-code solutions.
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+---OMNI---
+•
+2h ago
+What's so funny to me is Claude will literally walk you through and help setup all the stuff you need to not let this happen if you just ask... There's no excuse.
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+AnEyeElation
+•
+2h ago
+its so easy and free to use git, no sympathy here from me
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+CHILLAS317
+•
+2h ago
+Ah man, this is awesome, I needed a good laugh this morning. Also good to add to my every growing list of documented reasons for a cautious, measured, targeted AI rollout
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ u/Proxiconn avatar
+Proxiconn
+•
+2h ago
+Lol, that is why we use MCP with approval gates instead of YOLO.
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ u/Worth_Bottle_3019 avatar
+Worth_Bottle_3019
+•
+2h ago
+Shorter please 
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ u/RealLunarSlayer avatar
+RealLunarSlayer
+•
+2h ago
+Lol. Lmao
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+Flat-Entertainer-299
+•
+2h ago
+LMFAO CLANKER GONNA CLANK
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ u/tiny-starship avatar
+tiny-starship
+•
+2h ago
+This is what happens when you give inexperienced people a product that makes them feel experienced
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+Link_Tesla_6231
+•
+2h ago
+Never ever give ai access to the keys to the kingdom! Make copies and backups and backups of the copies! Also use git, and don’t give ai the keys to git too!
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+m4bwav
+•
+2h ago
+what model was run?
+
+You say claude but that could be anything, hopefully you weren't trusting sonnet with this.
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ u/solaway avatar
+solaway
+•
+2h ago
+lol
+
+lmao
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ u/real_terra avatar
+real_terra
+•
+2h ago
+Hooks?
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+Deiskos
+•
+2h ago
+Hahahahahahahahahahahahahahahahahahahahahahahahahahaha
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+snooprs
+•
+2h ago
+pahahahhaha
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+sevsev9
+•
+2h ago
+Comment Image
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+Logical_Mix_4627
+•
+2h ago
+You’re using windows and not using git. You “git” what you deserve
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+h4x0_r
+•
+2h ago
+It's all belts and suspenders.
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ u/ZeroDayMalware avatar
+ZeroDayMalware
+•
+2h ago
+You lost me and got me worried instantly at “This is explicit authorization…”
+
+I wouldn’t even tell this to a human I trusted with my life.
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ u/Lucidaeus avatar
+Lucidaeus
+•
+2h ago
+"an agent I launched"
+I am always making sure that agents are not authoritative. If an agent is deployed with edit-permissions, the main agent will hawk over it and shank those fuckers that step out of line.
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+tinooo_____
+•
+1h ago
+so you werent using git?
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ u/WeevilWeedWizard avatar
+WeevilWeedWizard
+•
+1h ago
+Lmao
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ApeApplePine
+•
+1h ago
+lol
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+BH_Financial
+•
+1h ago
+Quite a blast radius!
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+newked
+•
+1h ago
+https://youtu.be/vvDK8tMyCic?is=5WS9Q0PKp1nWXivN
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+Patman52
+•
+1h ago
+We have two repos that communicate with each other in production, we’ll call them A and B. I asked Claude a question on a bug I was getting when A sent a request to B.
+
+One of the agents took it on itself to try to find repo B on my computer without asking for the directory path.
+
+It basically did a full search starting with the C drive. Since we have Windows at work, most of the files are on OneDrive, and I usually offload files I do not need anymore so they don’t take up room on my disk. This cases OneDrive to start downloading all the offloaded files slowly filling up my drive.
+
+Luckily I caught it pretty quickly, but would have been interesting.
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ u/t4duzan avatar
+t4duzan
+•
+1h ago
+Just think. These types of server issues could easily happen with some products you buy that are connected to an online account. We live in a scary world.
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ u/derfzinkerbelle avatar
+derfzinkerbelle
+•
+1h ago
+Whomp fucking whomp. This is what happens when you don't understand what you're building or asking AI to do. Despite your detailed prompts, you should be doing this stuff yourself, but you obviously can't. Cosplaying software developer and having AI eat your dogfood is damn funny.
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+McNoxey
+•
+1h ago
+> Outside of my NAS and iDrive, I was not properly using github or another method for immediate corrections, even though it should have been branching. Thats on me.
+
+I know you admitted fault in the thread. But the thread shouldn’t even exist.
+
+The only thing that happened is that you weren’t saving your work and your computer malfunctioned.
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+Duriha
+•
+1h ago
+TLDR: lol
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+caites
+•
+1h ago
+This topic is a smoking gun.
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ u/Low_Opinion_5721 avatar
+Low_Opinion_5721
+•
+58m ago
+it's so funny seeing these like if ur gonna use claude to help you code atleast look at what it's doing before you allow it you had it coming😭
+you even like explicitly prompted it to remove the safeties in place to prevent this exact thing
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ 
+1 more reply
+cryogen2dev
+•
+54m ago
+And when I post solutions which run claude in a sandbox then nobody pays attention. Its never a good idea to run claude with full system access on your PC.
+
+https://github.com/blackcoffee2/codetree
+
+Use this. Thank me later. Its free. MIT repo.
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+jjb0ne
+•
+54m ago
+omg. like amputating to avoid infection because you got papercut
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ u/Agile_Knowledge2201 avatar
+Agile_Knowledge2201
+•
+53m ago
+Enchanting.. deciphering... wingeling.... concoction...clauding... hatching... spinning... Man I just hate Claude.
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ u/Dire-Dog avatar
+Dire-Dog
+•
+51m ago
+Lmao that’s what you get for vibe coding with AI
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+rainofterra
+•
+50m ago
+Well, that’s a sharper point than it looks.
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ u/Foreign_Risk_2031 avatar
+Foreign_Risk_2031
+•
+48m ago
+I guess you didn’t push to remote lol- did you at least use worktrees
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ u/shanksisevil avatar
+shanksisevil
+•
+46m ago
+Claude, a gift that keeps giving.
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+PatrickBatemansEgo
+•
+55m ago
+LuL get fucked
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+luteyla
+•
+39m ago
+How I am jelous of people who have such projects that they need more than one max subscriptions. I feel like I am wasting my time.
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+thisisbubby
+OP
+•
+26m ago
+Two max accounts just means it pisses me off twice as much lol
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ho_for_hateno
+•
+38m ago
+zeniey
+•
+23m ago
+Wait are you botting the stock market ?
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+thisisbubby
+OP
+•
+3m ago
+Outside of Claude and back testing, I do algorithmic options trading. Think broker, not WSB.
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ u/jeremymgibson_ avatar
+jeremymgibson_
+•
+16m ago
+•
+Edited 6m ago
+If someone hasnt already answered it, the reason you are paying $250 for one subscription, if I had to guess, is that you purchased it through Apple which tacks on a $50 app fee. If true, IMO, is absolutely insane.
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+thisisbubby
+OP
+•
+6m ago
+Thank you for that. It was through google pay / android. Claude refused to give me a response why one account was more, so this is helpful
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ 
+1 more reply
+chriscrowder
+•
+41m ago
+Vibecode harder! 🤣
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+VellDarksbane
+•
+39m ago
+Lol, you forgot “make no mistakes”. God, “AI” is such garbage.
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ u/therealgilfaizon avatar
+therealgilfaizon
+•
+36m ago
+I have it setup so I’m always working on a feature branch and or worktree. Then I have Claude push it merge to main. It has md instructions that we only push to main with my instructions. Should I still doing it manually?
+
+I work on many things in parallel and Claude is great at resolving merge conflicts so I just have it do the git acrobatics for me. Theoretically I could merge everything on a candidate feature branch first then push manually…
+
+Any advice here?
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+moobchunks
+•
+34m ago
+Claude use the /oh-shit-what-did-you-do skill!
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ u/Legitimate_Turnip175 avatar
+Legitimate_Turnip175
+•
+32m ago
+Make no mistakes
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ u/pokelium avatar
+pokelium
+•
+32m ago
+Bruh git???
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ u/becomingmacbeth avatar
+becomingmacbeth
+•
+30m ago
+I see that you’re upset, and you’re right to push back.
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+bnexd
+•
+28m ago
+Who would have expected that from a non-deterministic hallucinating token predictor? /s
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ u/Jesta23 avatar
+Jesta23
+•
+27m ago
+You don’t even write the prompt? You have ai telling ai what to do and using ai to check it? 
+
+What exactly do YOU do?
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ u/Nervous_Spinach_5251 avatar
+Nervous_Spinach_5251
+•
+23m ago
+Q
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ u/Unlikely-Outside-784 avatar
+Unlikely-Outside-784
+•
+23m ago
+Haha idiots
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+gord89
+•
+22m ago
+It’s endlessly hilarious to me that people use the tools like this.
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+DaddyPython
+•
+22m ago
+Long before Claude, in a far away land (Jaipur, India), a young boy had spent the better part of the night writing C on a 386. Then, the electricity went. And I hadn't pressed F10.
+
+Github didn't exist back then. The internet still wasn't available back then.
+
+Then I found BOFH on a Bulletin Board Service run by a guy called Atul Chitnis (RIP). That's where all the vibe-coders who say they don't need to know anything need to go.
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ u/Unlikely-Outside-784 avatar
+Unlikely-Outside-784
+•
+22m ago
+It went just fine, mods.
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ u/Mentalv avatar
+Mentalv
+•
+18m ago
+Vibe coding without version control is a choice…
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ u/Oldnbold22 avatar
+Oldnbold22
+•
+17m ago
+Crag pls read
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+tjk45268
+•
+15m ago
+Also, make a cloud and/or physical backup of your project and data files each time you reach a “my last backup is insufficient to recover my project” point. Whether that’s monthly, weekly, daily, or hourly, it has to be a part of your routine.
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+misterHaderach
+•
+13m ago
+https://screenshot.guide
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+happycalamares
+•
+9m ago
+lol people should really understand this "AI" is actually as smart as a junior developer and stop treating it as a god
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ u/Mistuv avatar
+Mistuv
+•
+9m ago
+This will teach you to use versioning system and PRs.
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ u/MrPokeGamer avatar
+MrPokeGamer
+•
+8m ago
+Get rekt
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ u/trilobyte-dev avatar
+trilobyte-dev
+•
+6m ago
+Two questions I immediately have:
+
+Why aren’t you running them in sandboxes?
+Why aren’t you using some kind of RCS with branching worktree strategies?
+Not just trying to criticize you; sometimes there are good reasons. If not, now you have two pointers on how to improve your workflow.
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+bingeboy
+•
+5m ago
+lol 😂
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+mikebcity
+•
+3m ago
+And let me guess no repo? No back up?
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+Fast_Situation4509
+•
+12h ago
+And I thought
+
+They smelled bad
+
+On the outside!
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+Fast_Situation4509
+•
+12h ago
+Wait, no, what i meant to say was,
+
+And I thought my experience this evening, of Claude just going buckwild and gobbling up 75% of my usage window, with no result, was bad!
+
+Comment Image
+ 
+Upvote
+0
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ u/satelliteau avatar
+satelliteau
+•
+12h ago
+What model and effort were you using for the sub-agents?
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+mfb1274
+•
+12h ago
+Lmao this makes me chuckle that you stayed on a local branch for that long and Claude started f’ing with it
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ u/themrdemonized avatar
+themrdemonized
+•
+12h ago
+Nice
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+thainfamouzjay
+•
+12h ago
+hopefully you had it in a repo and he didnt commit that. never let them push to the repo. you can write out git push
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ u/PlanetGuardian-42 avatar
+PlanetGuardian-42
+•
+12h ago
+Couldn't this be avoided having a local backup made occasionally, as well as automatic push access? 
+
+Similar situation with a github repo which publishes to a website I'm working on. 
+
+I guess the only difference is I have to consent to the push after it's debriefed me on the exact changes it's going to make. 
+
+Or am I taking risks each time I do this? 
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ 
+3 more replies
+jpstealthy
+•
+12h ago
+Well, that’s a nightmare. 48k files gone in 2 mins. Oof
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+stiky21
+•
+12h ago
+HAHAHAHAHA
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+IndieDev666
+•
+12h ago
+yeah this one is on you
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ u/dagger378 avatar
+dagger378
+•
+12h ago
+It’s always Windows. Every single time.
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ u/saba_tage avatar
+saba_tage
+•
+11h ago
+Leopards at my face? Shocked Pikachu?
+- Github?
+- main/master branch protections?
+- a scoped gh user to prevent merges?
+- SSH only (with pk password) to prevent prod server access?
+
+I'm arguably a 5/10 at devops/sec but even the basics aren't too hard to stitch together.
+
+Just remember that the better the AI, the longer the runway of trust and reliance that's built, which will inevitably lead to the 1000th execution being an absolute catastrophe; the AI will convince itself and you especially, that it was the right thing to do at the time.
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+momkeeeeeeee
+•
+9h ago
+I genuinely don't understand how anyone who's serious about code doesn't use git.
+
+It's not just negligence. It's disrespectful to every computer scientist and programmer who built the tools and practices we stand on, and it's unbelievably ignorant of what building software actually means.
+
+This dude lost 48,000 files because a Claude agent wiped his entire project in two minutes. Then posted "unbelievable." No. It's very believable. git push. Two words. GitHub is free. There is no excuse.
+
+I've seen this exact story four times now since the AI boom started, and every time it becomes "look how dangerous AI is" when the real story is "I'm a fucking moron who does projects with AI without git because I know fucking nothing."
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ u/OstrichLive8440 avatar
+OstrichLive8440
+•
+8h ago
+Shouldn’t be a problem right because you commit and push frequently to your free private GitHub repo that takes literally three seconds to create, and you’re practicing even a modicum of file backup practice, like what you were taught in eight grade computer class (always Ctrl-s, and copy your important files to a different location) … Right?
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ u/sevbenup avatar
+sevbenup
+•
+5h ago
+Was it worth it to use AI
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+seventyfivepupmstr
+•
+12h ago
+Not sure when people are going to understand that AI safety is really important
+ 
+Upvote
+0
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ u/me_myself_ai avatar
+me_myself_ai
+•
+12h ago
+I would be curious to hear some details OP, cause this seems like the first story of this kind that might not be due to terrible practices, and yet could still be serious.
+
+Hopefully you're just frustrated and nothing's actually lost, yes? If not, how long did those files take to create? A backup is clearly in order if it's non-trivial, even pre-Claude. But I won't lie and pretend I backup expensive pipeline results immediately every time...
+ 
+Upvote
+0
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+eazyworldpeace
+•
+12h ago
+Apply for a refund
+ 
+Upvote
+0
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+lindo_dia_pra_dormir
+•
+8h ago
+HHHAHAHAHAHAHAHHAHAHAHHAHAHAHHAUA… sorry
+ 
+Upvote
+0
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ u/Pleasant-Mind-7122 avatar
+Pleasant-Mind-7122
+•
+5h ago
+lol
+ 
+Upvote
+0
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ u/noravux avatar
+noravux
+•
+5h ago
+Ahahahaha
+ 
+Upvote
+0
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ u/Historical_architect avatar
+Historical_architect
+•
+5h ago
+“Used windows” see there’s the first mistake
+ 
+Upvote
+0
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ u/honorthrawn avatar
+honorthrawn
+•
+3h ago
+I liked that but in truth.....backup data you care about whatever you use
+ 
+Upvote
+1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ u/LeastAd656 avatar
+LeastAd656
+•
+5h ago
+if AI can delete all the repo of these "vibe coders", it would be cool.
+ 
+Upvote
+0
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ u/StickGuyAtWorkToK avatar
+StickGuyAtWorkToK
+•
+4h ago
+What are we even doing here?
+ 
+Upvote
+0
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ u/Due_Floor_7405 avatar
+Due_Floor_7405
+•
+3h ago
+Lol it's what you get for using AI slop
+ 
+Upvote
+0
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ u/IgnatiusRileyFreeman avatar
+IgnatiusRileyFreeman
+•
+3h ago
+People using chatbots to code deserve this outcome
+ 
+Upvote
+0
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+ u/Agitated_Cook_7947 avatar
+Agitated_Cook_7947
+•
+3h ago
+That funny, my files never seem to delete themselves but I don't use AI so I guess it comes with the territory. I'll take "things outside my control because I refuse to actually learn things" for 100 Alex.
+
+Love how AI is supposed to be this all mighty tool and it just constantly fucks up.
+ 
+Upvote
+0
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+Joakim0
+•
+5h ago
+I had something very similar happen to me.
+
+An agent somehow managed to delete basically my entire projects folder. Luckily, most of the stuff I actually cared about was already committed, so Git saved me from a complete disaster.
+
+I did lose a few small experimental projects that I never bothered recovering, but there was one fairly important project that wasn't fully backed up. I managed to recover most of it with file undelete software, although quite a few files came back corrupted. In a slightly ironic twist, I then used another AI agent to help reconstruct and repair the damaged files. :)
+
+That whole experience made me rethink backups when working with agents. Git is obviously essential for source code, but agents can touch a lot more than just committed files.
+
+It actually pushed me to add proper automatic/versioned backups to the file manager I'm building, TheFile.Ninja. My own setup now takes delta backups every night and keeps an off-machine copy, so an agent going completely rogue should be a much less exciting event next time.
+
+Full disclosure: I'm the developer of TheFile.Ninja. The file manager itself has a free Core version; backups are one of the Pro features. (The backup to cloud feature is still beta and will be released in some weeks)
+
+Not trying to turn your disaster into an ad, your post just gave me a very strong flashback to the exact reason I built the backup system in the first place.
+
+https://thefile.ninja
+ 
+Upvote
+-1
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+Fra5er
+•
+5h ago
+Lol few issues:
+
+Developing on windows, wtf… cmon.
+If you have a git repository just clone from remote again… you cant have lost much. If not then wtf is the point in using git.
+Docs who cares they should be version controlled online, chat transcripts should be in a db if its a feature or some object store, prom metrics and logs who cares its not a big deal if you lose those.
+
+Fucking vibe coders man.
+ 
+Upvote
+-2
+
+Downvote
+ 
+Reply
+
+Award
+
+Share
+ 
+fun_comedy_430
+•
+12h ago
+[deleted]
+•
+12h ago
