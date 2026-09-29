@@ -22,6 +22,7 @@ AREA_LABELS = {
     "forestry": "Forestry & woodland health",
     "inequality": "Inequality & capital ownership",
     "ipcc": "IPCC / global climate assessment",
+    "macro_recession": "Lived economy",
 }
 
 # Cadence tag shown next to a source's label so a monthly/quarterly item
