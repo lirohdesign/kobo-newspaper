@@ -8,20 +8,31 @@ Checks per source:
     did the daily cron quietly stop running?
   - schema: non-empty items, each with a title/link/date that isn't blank,
     and a link that resolves to a real absolute URL.
-  - status: did the fetch itself report ok/empty/error last run?
+  - status: did the fetch itself report ok/empty/error last run? "error"
+    (or a missing/unknown status) is a problem. "empty" is a problem too,
+    EXCEPT in the two documented-normal cases (see documented_quiet()):
+    a "weekly_in_season" source outside its season (NASS Crop Progress,
+    Dec-Mar), or a keyword-filtered site-wide feed (filter.keep_keyword_any)
+    in a quiet week. Any other empty still counts: the scrape sources
+    (drought monitor, interconnection.fyi, NOAA, NASS in season) swallow
+    fetch failures and return [], which research_pull records as "empty",
+    so an unexplained empty may be a hidden failure. Quiet empties are
+    listed informationally and still get the freshness check (a stale empty
+    file means the cron stopped).
 
 Also surfaces discovered_sources.json entries that have crossed a simple
 repetition threshold — candidates for the Tuesday session to evaluate as
 new sources, not automatic additions.
 
 Run standalone: python3 research_validate.py
-Exit code 0 if everything looks healthy, 1 if anything needs attention —
-usable as a quick gate before starting synthesis.
+Exit code 0 if everything looks healthy, 1 if anything needs attention
+(documented quiet empties do not count) — usable as a quick gate before
+starting synthesis.
 """
 import json
 import sys
 import urllib.parse
-from datetime import datetime, timedelta, timezone
+from datetime import date, datetime, timedelta, timezone
 from pathlib import Path
 
 DATA_DIR = Path("research_data")
@@ -46,6 +57,9 @@ FRESHNESS_LIMITS = {
     "monthly_digest": timedelta(days=10),
 }
 DEFAULT_FRESHNESS_LIMIT = timedelta(hours=48)  # daily cron; 2x slack for a missed run
+# NASS notes: "Only meaningful April-November" — so a weekly_in_season source
+# returning empty is expected only in the other months (Dec-Mar).
+IN_SEASON_MONTHS = range(4, 12)
 DISCOVERY_MIN_COUNT = 3
 DISCOVERY_MIN_SOURCES = 2
 
@@ -62,6 +76,34 @@ def _load_cadences():
     return {s["id"]: s.get("cadence", "") for s in manifest.get("sources", [])}
 
 
+def _load_sources():
+    """id -> manifest entry, so per-source fields (cadence, filter) are
+    available to documented_quiet()."""
+    try:
+        manifest = json.loads(SOURCES_MANIFEST.read_text())
+    except Exception:
+        return {}  # _load_cadences() already reports the unreadable manifest
+    return {s["id"]: s for s in manifest.get("sources", [])}
+
+
+def documented_quiet(source, today=None):
+    """True if an "empty" pull is the documented-normal result for this
+    manifest entry, so it is not a failure. Single definition, also used by
+    research_scrape._render_source. Exactly two cases:
+      - cadence "weekly_in_season" and the current month is outside
+        IN_SEASON_MONTHS (NASS Crop Progress, Dec-Mar);
+      - the source has filter.keep_keyword_any (a keyword-filtered
+        site-wide feed, where a quiet week legitimately filters to nothing).
+    Every other empty is treated as a possible hidden failure: the scrape
+    sources swallow fetch errors / missing API keys and return [], which
+    research_pull records as "empty". `today` is injectable for tests."""
+    source = source or {}
+    month = (today or date.today()).month
+    if source.get("cadence") == "weekly_in_season" and month not in IN_SEASON_MONTHS:
+        return True
+    return bool((source.get("filter") or {}).get("keep_keyword_any"))
+
+
 def _is_valid_url(url):
     try:
         parsed = urllib.parse.urlparse(url)
@@ -70,7 +112,9 @@ def _is_valid_url(url):
         return False
 
 
-def check_source(source_id, path, cadences):
+def check_source(source_id, path, cadences, source=None, today=None):
+    """source: this source's manifest entry (for documented_quiet); without
+    it an empty pull is always a problem."""
     problems = []
     try:
         data = json.loads(path.read_text())
@@ -78,11 +122,12 @@ def check_source(source_id, path, cadences):
         return [f"{source_id}: unreadable JSON — {e}"]
 
     status = data.get("status")
-    if status != "ok":
+    cadence = data.get("cadence") or cadences.get(source_id, "")
+    quiet_ok = documented_quiet({**(source or {}), "cadence": cadence}, today)
+    if status != "ok" and not (status == "empty" and quiet_ok):
         problems.append(f"{source_id}: last pull status was '{status}'" +
                          (f" — {data.get('error')}" if data.get("error") else ""))
 
-    cadence = data.get("cadence") or cadences.get(source_id, "")
     limit = FRESHNESS_LIMITS.get(cadence, DEFAULT_FRESHNESS_LIMIT)
 
     fetched_at = data.get("fetched_at")
@@ -113,6 +158,19 @@ def check_source(source_id, path, cadences):
     return problems
 
 
+def is_quiet(path, source=None, today=None):
+    """True if the last pull was "empty" AND that is the documented-normal
+    case for this source (documented_quiet). Informational only."""
+    try:
+        data = json.loads(path.read_text())
+    except Exception:
+        return False
+    if data.get("status") != "empty":
+        return False
+    cadence = data.get("cadence") or (source or {}).get("cadence", "")
+    return documented_quiet({**(source or {}), "cadence": cadence}, today)
+
+
 def check_discovery_candidates():
     path = DATA_DIR / "discovered_sources.json"
     if not path.exists():
@@ -132,14 +190,18 @@ def main():
         sys.exit(1)
 
     cadences = _load_cadences()
+    sources = _load_sources()
     all_problems = []
+    quiet = []
     source_files = sorted(p for p in DATA_DIR.glob("*.json") if p.name != "discovered_sources.json")
     if not source_files:
         print("No source data files found in research_data/.")
         sys.exit(1)
 
     for path in source_files:
-        all_problems.extend(check_source(path.stem, path, cadences))
+        all_problems.extend(check_source(path.stem, path, cadences, sources.get(path.stem)))
+        if is_quiet(path, sources.get(path.stem)):
+            quiet.append(path.stem)
 
     print(f"Checked {len(source_files)} source(s).")
     if all_problems:
@@ -148,6 +210,9 @@ def main():
             print(f"  - {p}")
     else:
         print("All sources fresh and well-formed.")
+
+    if quiet:
+        print(f"\n{len(quiet)} quiet (empty, not an error): {', '.join(quiet)}")
 
     candidates = check_discovery_candidates()
     if candidates:

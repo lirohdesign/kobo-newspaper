@@ -45,6 +45,11 @@ DATATYPES = ["TAVG", "TMAX", "TMIN", "PRCP"]
 UNITS = {"TAVG": "°F", "TMAX": "°F", "TMIN": "°F", "PRCP": "in"}
 
 
+def _reading_link(state, month):
+    # Ledger dedupes by link; constant SITE_URL kept only the first reading (see interconnection_fyi_scrape.py).
+    return f"{SITE_URL}#{state.lower()}-{month}"
+
+
 def _query(token, state_fips, datatype, start, end):
     """One datatype per call, not all four combined. Confirmed live
     2026-09-15: combining datatypeid=[TAVG,TMAX,TMIN,PRCP] in a single
@@ -139,7 +144,7 @@ def fetch_items():
 
         items.append({
             "title": f"{state} Monthly Climate Summary — {month}",
-            "link": SITE_URL,
+            "link": _reading_link(state, month),
             "date": month or start.isoformat(),
             "summary": summary,
             "content_links": [],

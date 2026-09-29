@@ -6,13 +6,13 @@
       "title": "How GLM5.3 Sparse Attention Affects HBM Memory Usage",
       "link": "https://newsletter.semianalysis.com/p/sparse-savings-persistent-demand-inside-glm53",
       "date": "Mon, 28 Sep 2026 19:26:41 GMT",
-      "summary": "How Sparse Attention Affects DRAM/NAND Memory How does sparse attention affect the TAM of memory, including HBM and NAND? Sparse attention selects top-k most relevant tokens to attend to, reducing the memory consumption and bandwidth requirements during the core Scaled Dot-Production Attention\u2026"
+      "summary": "How Sparse Attention Affects DRAM/NAND Memory How does sparse attention affect the TAM of memory, including HBM and NAND? Sparse attention selects top-k most relevant tokens to attend to, reducing the memory consumption and bandwidth requirements during the core Scaled Dot-Product Attention (SDPA)\u2026"
     },
     {
       "title": "Intel Panther Lake Teardown",
       "link": "https://newsletter.semianalysis.com/p/intel-panther-lake-teardown",
       "date": "Sat, 26 Sep 2026 13:36:32 GMT",
-      "summary": "Panther Lake debuts the first commercial implementation of backside power delivery (BSPDN), introduces Intel\u2019s first iteration of gate-all-around (GAA) transistors, and showcases their advanced packaging capabilities with its Foveros-S assembly. With Panther Lake, Intel\u2019s manufacturing arc has\u2026"
+      "summary": "Panther Lake debuts the first commercial implementation of a backside power delivery network (BSPDN), introduces Intel\u2019s first iteration of gate-all-around (GAA) transistors, and showcases their advanced packaging capabilities with its Foveros-S assembly. With Panther Lake, Intel\u2019s manufacturing\u2026"
     },
     {
       "title": "The Chinese AI Infrastructure Boom: Introducing the SemiAnalysis China Datacenter Model",
@@ -97,6 +97,6 @@
   "area": "ai_market",
   "site_url": "https://semianalysis.com/",
   "cadence": "weekly",
-  "fetched_at": "2026-09-29T01:06:58.756231+00:00",
+  "fetched_at": "2026-09-29T18:03:26.951906+00:00",
   "description_unreliable": false
 }

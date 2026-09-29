@@ -45,17 +45,6 @@
       "notes": "Publishes daily — treat as a weekly digest and summarize the 1-3 most notable posts from the past week, not every item."
     },
     {
-      "id": "data_center_dynamics",
-      "label": "Data Center Dynamics",
-      "area": "grid_buildout",
-      "type": "rss",
-      "feed_url": "https://www.datacenterdynamics.com/en/rss/",
-      "site_url": "https://www.datacenterdynamics.com/",
-      "cadence": "weekly",
-      "priority_keywords": ["midwest", "corn belt", "indiana", "indianapolis", "illinois", "chicago", "iowa", "wisconsin", "michigan", "ohio", "missouri", "minnesota", "kentucky", "great lakes", "miso", "pjm"],
-      "notes": "Feed is broad industry news (includes sponsored posts and unrelated telecom stories) — needs curation for data-center siting/power/Indiana relevance, don't just dump the raw feed."
-    },
-    {
       "id": "drought_monitor",
       "label": "US Drought Monitor — Indiana",
       "area": "climate_drought",
@@ -65,6 +54,17 @@
       "site_url": "https://droughtmonitor.unl.edu/CurrentMap/StateDroughtMonitor.aspx?IN",
       "cadence": "weekly",
       "notes": "No RSS. Uses the USDM data service JSON API directly (structured data, not scraped HTML) — updates every Thursday. aoi param needs Indiana's FIPS code (18), not 'IN' — confirmed 2026-09-12."
+    },
+    {
+      "id": "indiana_dnr_water",
+      "label": "Indiana DNR Division of Water — Monthly Water Resource Summary",
+      "area": "climate_drought",
+      "type": "scrape",
+      "module": "indiana_dnr_water_scrape",
+      "function": "fetch_items",
+      "site_url": "https://www.in.gov/dnr/water/water-availability-use-rights/water-resource-updates/monthly-water-resource-summary/",
+      "cadence": "monthly",
+      "notes": "Added 2026-09-29. Fills the water/groundwater gap. Written by the state Division of Water for water managers: precipitation and SPI classes, Drought Monitor status, streamflow vs normal, and a groundwater classification for the nine observation wells ('above normal', 'near normal', 'well below normal') - the Division's own categories, not raw well readings. Normal months are stated plainly (August 2026: 'near normal for four of nine wells'). Keyless, static server-rendered HTML; no RSS. Verified 2026-09-29 by live fetch: the page shows only the latest month under an h2 like 'August 2026', h3 sections beneath, so fetch_items() emits one item per pull dated month-end with link #month-YYYY-MM and the history ledger builds the series (older months are not on the page). Gotchas: the page has no publish date, only the month heading, and the summary often lands in the first week or two of the following month, so a monthly cadence with the 10-day freshness window is right; scraper returns [] (status empty, flagged by validate) if the h2/h3 layout changes; not yet confirmed that the GitHub Actions runner IP can reach in.gov (worked from a residential IP). Rejected alternatives: USGS WaterWatch and Groundwater Watch are decommissioned (WaterWatch pages now redirect to a decommission blog post); USGS state pages and statistics APIs are keyed or raw. Weekly Moisture Report (PDFs at in.gov/drought/files/drought-water-soil-conditions-MMDDYYYY.pdf, irregular dates) is an email subscription and not scraped."
     },
     {
       "id": "nass_crop_progress",
@@ -88,6 +88,17 @@
       "site_url": "https://www.interconnection.fyi/data-center/state/IN",
       "cadence": "weekly",
       "notes": "No RSS/API, but the page's __NEXT_DATA__ script tag embeds the full project list as JSON — read that directly instead of scraping rendered HTML. This is a live snapshot, not a chronological feed, so fetch_items() emits one dated summary (counts by status/county) per pull rather than per-project items; the history ledger is what lets the Tuesday session compare week over week."
+    },
+    {
+      "id": "beige_book",
+      "label": "Federal Reserve Beige Book - Chicago District and national",
+      "area": "macro_recession",
+      "type": "scrape",
+      "module": "beige_book_scrape",
+      "function": "fetch_items",
+      "site_url": "https://www.federalreserve.gov/monetarypolicy/publications/beige-book-default.htm",
+      "cadence": "monthly",
+      "notes": "Added 2026-09-29. Recession early warning, expert-synthesized: Reserve Bank staff summarize anecdotes from business contacts, in plain words, and say so when little changed (Chicago, Sep 2 2026: consumer spending and construction 'flat on balance', nonbusiness contacts 'no change'; national: 'two Districts reported no change'). Released 8 times a year, about two weeks before each FOMC meeting. No RSS (checked the Fed's feeds.htm list 2026-09-29: none for the Beige Book). Edition URLs are stable: beigebookYYYYMM-summary.htm and -chicago.htm, YYYYMM = end of the reporting period (the Sep 2 2026 release is 202608); the landing page links every edition of the year and the scraper takes the highest. One item per edition, linked to that edition's URL so the history ledger accumulates one entry per release; item date is the summary page's 'Last Update' stamp (= release date unless the Fed revises the page). Verified 2026-09-29 by live fetch of the landing page, summary and Chicago pages. Release dates verified against both the Fed's monthly calendar pages (newsevents/2026-MONTH.htm) and the Chicago Fed's data-release-calendar page: 2026-01-14, 03-04, 04-15, 06-03, 07-15, 09-02, 10-14, 11-25 (last two still ahead). Cadence is tagged monthly only for the freshness window (10 days); real cadence is 8 per year, so an unchanged item for 6 weeks is normal. Gotchas: not confirmed that the GitHub Actions runner IP can reach federalreserve.gov (worked from a residential IP); 2027 dates were not yet published (2027-january.htm is 404), re-check the calendar each December; returns [] if the landing page stops linking editions or the h4 headings change. Also weigh against: the Chicago Fed's National Activity Index is tracked as a calendar reminder in research_calendar.json."
     },
     {
       "id": "ipcc",
@@ -152,6 +163,27 @@
       "cadence": "monthly",
       "requires_env": "NOAA_TOKEN",
       "notes": "Verified live 2026-09-15. One real bug found and fixed: combining datatypeid=[TAVG,TMAX,TMIN,PRCP] into a single request silently lost all temperature data — the CDO API's 1000-row cap was filling with precip-derived types (alphabetically ahead of T*) before temperature rows were reached, so only precip ever came back. Fixed by querying each datatype separately. Confirmed plausible output: Indiana/Michigan August 2026 avg temps (73.0°F / 68.0°F) and station-average precip, both consistent with the NCEI monthly report for the same period."
+    },
+    {
+      "id": "fia_indiana",
+      "label": "USFS Forest Inventory and Analysis — Indiana (EVALIDator)",
+      "area": "forestry",
+      "type": "scrape",
+      "module": "fia_indiana_scrape",
+      "function": "fetch_items",
+      "site_url": "https://apps.fs.usda.gov/fiadb-api/evalidator",
+      "cadence": "annual",
+      "notes": "Verified live 2026-09-29, no API key. Uses the FIADB-API EVALIDator fullreport endpoint (JSON, outputFormat=NJSON); wc is the EVALID (18 + evaluation year; 182025 = Indiana's 2025 evaluation, annual panels 2019-2025). Reports forest land area, growing-stock volume, average annual mortality and net growth, plus mortality and growth as % of volume and the prior evaluation's mortality rate for comparison. First run: 14.07B cu ft, mortality 1.18%/yr (SE 5.5%), net growth 2.23%/yr; 2024 evaluation had mortality 1.19% — plausible and stable. GOTCHAS: (1) an unknown EVALID returns an HTML error page with HTTP 200, not JSON, so the scraper probes years downward from the current year (182026 currently does not exist). (2) The API gives no release date; item date is the end of the evaluation year, and the link carries #eval-<EVALID> so the history ledger adds exactly one entry per new annual evaluation and nothing on the daily runs between. (3) Only changes about once a year, so most Tuesday sessions will see the same item; the mortality SE (about 5%) is larger than year-to-year moves, so read the rate as a level, not a weekly signal. (4) This is an agency estimate table, not expert prose: there is no honest-null narrative to observe. It earns its place as a forest-health metric with a stated sampling error, the only forestry source that is quantitative. The annual USFS Forest Health Highlights PDFs remain a calendar entry in research_calendar.json."
+    },
+    {
+      "id": "mrcc_monthly_summary",
+      "label": "Midwestern Regional Climate Center — Monthly Climate Summary",
+      "area": "climate_drought",
+      "type": "rss",
+      "feed_url": "https://mrcc.purdue.edu/climatesummaries/rss/Monthly%20Summary",
+      "site_url": "https://mrcc.purdue.edu/climatesummaries",
+      "cadence": "monthly",
+      "notes": "Verified live 2026-09-29 by curl: RSS 2.0, 20 items, the latest being 'August 2026' (article #1756) with Midwest-average temperature (71.8F, +0.9F vs 1991-2020) and state-by-state departures written by MRCC climatologists (Purdue/NCEI partnership) — expert-synthesized, regional, and rarely in national news. Feed URL found via the RSS links on https://mrcc.purdue.edu/climatesummaries (there is no site-wide /rss or /feed; both 404). GOTCHAS: (1) pubDate is the START of the reported period (August 2026 shows Aug 1), not the posting date, so an item can look a month old the day it appears; the validator's freshness check uses fetched_at, so this does not trip it. (2) Sibling feeds exist at the same path with 'Weekly%20Summary', 'Quarterly%20Summary', 'Annual%20Summary' and 'ENSO%20Summary'. Weekly was NOT added: its newest item on 2026-09-29 was Sept 8-14, so it runs about two weeks behind and skips weeks, and it would crowd out the monthly synthesis. The Quarterly feed items are PDFs with image previews only (no text summary in the feed) and carry both Midwest and Great Lakes editions; revisit if the quarterly PDFs are wanted. (3) The feed summary is truncated to 300 characters by research_pull.py, which keeps the temperature paragraph but drops precipitation. Honest-null behavior not observed: every item examined reports numbers."
     }
   ],
 
@@ -163,6 +195,11 @@
   "deprioritized": {
     "note": "Investigated 2026-09-12, deliberately not built. Revisit only if something changes.",
     "sources": [
+      {
+        "id": "data_center_dynamics",
+        "label": "Data Center Dynamics",
+        "reason": "Cut 2026-09-29 at the maintainer's decision. Trade news of deals and announcements, no expert-synthesized metric; the feed mixes in sponsored posts (about a fifth of ledger items carried sponsor/webinar markers) and unrelated telecom stories. Two low-value weeks were logged 09-15 and 09-22. Replacement candidates for the AI/grid-load question: EIA Electric Power Monthly (needs a free key) and MISO large-load data."
+      },
       {
         "id": "drought_gov_midwest",
         "label": "drought.gov Midwest Drought Status Update",

@@ -9,10 +9,10 @@
       "label": "Chicago Fed AgLetter (7th District farmland values & credit)",
       "url": "https://www.chicagofed.org/publications/agletter/index",
       "cadence": "quarterly",
-      "trigger": "annual_window",
-      "months": [2, 5, 8, 11],
+      "trigger": "manual",
+      "dates": ["2026-02-12", "2026-05-14", "2026-08-13", "2026-11-12"],
       "scraper": null,
-      "notes": "Published Feb/May/Aug/Nov, covering IN/IL/IA/WI/MI. No confirmed RSS — checked 2026-09-15, chicagofed.org has no obvious feed for individual publication series; manual check via the URL. Months are the publication month, not an exact day, so this fires for the whole listed month via annual_window (imprecise but the lookahead_days=21 window plus a full-month trigger means it won't be missed)."
+      "notes": "Published Feb/May/Aug/Nov, covering IN/IL/IA/WI/MI. No confirmed RSS — checked 2026-09-15, chicagofed.org has no obvious feed for individual publication series; manual check via the URL. Exact 2026 release dates (Feb 12, May 14, Aug 13, Nov 12) come from the Chicago Fed's own page, checked 2026-09-29; the 'manual' trigger marks the event due within 1 day of each date. 2027 dates are not published yet; add them once the Chicago Fed lists them."
     },
     {
       "id": "fed_distributional_financial_accounts",
@@ -53,6 +53,16 @@
       "months": [8],
       "scraper": "nass_land_values_scrape.py",
       "notes": "State/US estimates release first week of August; county-level cash rents late August. Reuses the same Quick Stats API + NASS_API_KEY already proven working in nass_crop_progress_scrape.py (see nass_land_values_scrape.py). Verified live 2026-09-15 via a manual out-of-window run: Farm Real Estate Value and Cropland Cash Rent both confirmed working ($8,600/acre and $232/acre for Indiana 2026, both plausible). One real bug found and fixed during verification — a guessed statisticcat_desc ('RENT, CASH, CROPLAND') doesn't exist and the API 400'd on it; the real field is statisticcat_desc 'EXPENSE' with class_desc carrying the cropland/pastureland distinction."
+    },
+    {
+      "id": "chicago_fed_cfnai",
+      "label": "Chicago Fed National Activity Index (CFNAI) - recession-risk reading",
+      "url": "https://api.data.chicagofed.org/CFNAI/cfnai-headline-blurb.html",
+      "cadence": "monthly",
+      "trigger": "manual",
+      "dates": ["2026-10-26", "2026-11-23", "2026-12-21"],
+      "scraper": null,
+      "notes": "Added 2026-09-29. Weighted composite of 85 monthly indicators; the Chicago Fed's own reading rule is what to record: CFNAI-MA3 below -0.70 after an expansion is associated with an increasing likelihood of recession (NBER-dated history). The current-data page draws its chart by script, but each release's headline text (index value, MA3, diffusion index) is a plain HTML file at the url above, refreshed at every release (checked 2026-09-29: last-modified Sep 21, 8:30 a.m. ET release day). There is no RSS and no monthly release PDF (only background PDFs), so this is a due-date reminder, not a scraper: on the day, read the MA3 from that text and record it as a calendar_reading in research_data/curation_log.jsonl. Release dates copied from the Chicago Fed's own data-release-calendar page on 2026-09-29 (8:30 a.m. ET): Oct 26 (September data), Nov 23 (October), Dec 21 (November); 2026 already released: Jan 26, Feb 23, Mar 23, Apr 23, May 26, Jun 25, Jul 23, Aug 24, Sep 21. 2027 dates are not published yet; add them each December. Ranked below the Beige Book: a mechanical index with no prose, so no honest-null statement, but it is the direct recession-threshold metric. The 'manual' trigger marks the event due within 1 day of each date."
     },
     {
       "id": "iowa_state_land_value_survey",

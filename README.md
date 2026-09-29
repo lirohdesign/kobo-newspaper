@@ -16,7 +16,7 @@ A personal automated newspaper service that curates content from The Guardian, N
 
 A private Substack sync used to run alongside the daily build but was removed —
 Substack/Cloudflare blocks GitHub Actions' IPs and there was no reliable way
-around it. See [`project_substack_sync_blocked.md`](project_substack_sync_blocked.md)
+around it. See [`project_substack_sync_blocked.md`](archive/project_substack_sync_blocked.md)
 for the diagnosis and the lead worth following if this gets revisited.
 
 ## 🛠️ Maintenance
