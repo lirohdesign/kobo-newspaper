@@ -15,6 +15,16 @@
       "notes": "Published Feb/May/Aug/Nov, covering IN/IL/IA/WI/MI. No confirmed RSS — checked 2026-09-15, chicagofed.org has no obvious feed for individual publication series; manual check via the URL. Exact 2026 release dates (Feb 12, May 14, Aug 13, Nov 12) come from the Chicago Fed's own page, checked 2026-09-29; the 'manual' trigger marks the event due within 1 day of each date. 2027 dates are not published yet; add them once the Chicago Fed lists them."
     },
     {
+      "id": "ed_zitron_quarterly_check",
+      "label": "Ed Zitron — quarterly review (AI-economics bear case)",
+      "url": "https://www.wheresyoured.at/",
+      "cadence": "quarterly",
+      "trigger": "annual_window",
+      "months": [1, 4, 7, 10],
+      "scraper": null,
+      "notes": "Moved 2026-09-29 from the weekly feed at the maintainer's decision: one author, quality varies within a post (sharp analysis and long rants), the free text is largely a subscription pitch, and the analysis is paywalled. He is kept on trial, checked once a quarter instead of weekly. On the window, read the past quarter's free posts, note which cited a checkable figure or source (e.g. the Sept 29 post quoting Fidelity's Jurien Timmer), and log a standard_review line with a keep or cut verdict; a cut needs that pattern across quarters. Feed for the read: https://www.wheresyoured.at/rss/ (posts titled 'Premium:' are paywalled)."
+    },
+    {
       "id": "fed_distributional_financial_accounts",
       "label": "Fed Distributional Financial Accounts (wealth shares by percentile)",
       "url": "https://www.federalreserve.gov/releases/efa/efa-distributional-financial-accounts.htm",
@@ -103,6 +113,26 @@
       "months": [5],
       "scraper": null,
       "notes": "The 2025 Impact Report's own site metadata indicates a ~May 2026 publication date — used as the best available signal for timing, not a confirmed fixed release month (checked 2026-09-15, no explicit 'always published in X' statement found). Revisit this month if a future year's report lands noticeably differently."
+    },
+    {
+      "id": "iea_energy_and_ai",
+      "label": "IEA Energy and AI (global data-centre electricity demand)",
+      "url": "https://www.iea.org/reports/energy-and-ai",
+      "cadence": "annual",
+      "trigger": "annual_window",
+      "months": [4],
+      "scraper": null,
+      "notes": "Global benchmark for data-centre power. The April 2025 report put 2024 data-centre demand at about 415 TWh and projected about 945 TWh by 2030 (Base Case), with the US and China about 80% of the growth (figures from search-result summaries of the report, 2026-09-29; not read on iea.org). UNVERIFIED: iea.org returns 403 to scripted fetches (curl and WebFetch, 2026-09-29), so no feed, scraper or next-release date could be checked, and whether IEA issues an annual update or an Energy and AI observatory refresh is not confirmed; April is a guess from the 2025 release month. Check the URL by hand in a normal browser. Companion to epoch_datacenters (dated global snapshot)."
+    },
+    {
+      "id": "lbnl_data_center_energy",
+      "label": "LBNL US Data Center Energy Usage Report (national benchmark)",
+      "url": "https://eta.lbl.gov/publications/2024-lbnl-data-center-energy-usage-report",
+      "cadence": "irregular",
+      "trigger": "annual_window",
+      "months": [12],
+      "scraper": null,
+      "notes": "National benchmark for data-centre electricity. The 2024 report was published 2024-12-19 (estimates back to 2014, scenarios to 2028: 6.7-12.0% of US electricity by 2028); a 2025 Update exists (11.8% of US electricity by 2030, range 9.5-15.3%; per search-result summaries 2026-09-29, not read directly). Release dates are irregular, and eta.lbl.gov returns 403 to scripted fetches, so nothing here is verified beyond the search listing; December is the month of the 2024 release, not a schedule. Check https://datacenters.lbl.gov/publications by hand and log the published figure when a new edition appears."
     },
     {
       "id": "fed_scf_2025_results",
