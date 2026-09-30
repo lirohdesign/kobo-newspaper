@@ -17,15 +17,12 @@ The section exists for consistent readings over time, not good prose: "the goal
 is not NYT quality prose. the goal is consistent readings so after 10 years, I
 feel the state of things and I know the indicators."
 
-- **Baseline.** The focus is the place the maintainer knows best, chosen for
-  personal familiarity with its landscape and climate, not because its data
-  record is longest. Other familiar places are secondary baselines. Which
-  places, and how well each is known, is in the private file
-  `~/Documents/meta-ai/places.md`; read it when a source or question concerns a
-  place. Understanding the mechanics of a familiar place gives a baseline for
-  reading about the same thing elsewhere. How far back a source's data goes is
-  still worth checking, but that is a property of the source, not the reason
-  for the focus.
+Admission is defined in the private file
+`~/Documents/meta-ai/research-invariants.md`: the axiom and source classes
+(§1), the declared concerns and the familiar places B (§2), and lead intake
+(§3). Read it before curating. It governs; the notes below are the
+maintainer's earlier words and give way to it where they differ.
+
 - **The question is the criterion.** The maintainer's questions are not bounded
   by any repo. Their research repos "are only 'introductions' to the nagging
   questions" — "first attempts to poke at the available data myself (a
@@ -35,11 +32,6 @@ feel the state of things and I know the indicators."
   news," and "designed for and read by industry/research experts." The Purdue
   sources are "good examples of well-formed"; "IPCC publications are also
   important sources."
-- **What it delivers** is an expert-synthesized published metric (e.g. Purdue's
-  farmland cash rent figure), not a raw reading (e.g. a single well gauge).
-- **Honest nulls.** "perhaps a small indicator is that the source will publish
-  honestly that there is little to report other than the metrics themselves."
-  A small positive indicator, not a strong one.
 
 **Not everything here is weekly.** `research_sources.json` now mixes
 weekly-, monthly_digest-, and monthly-cadence sources (Stage 2), and
@@ -86,7 +78,7 @@ with `gh workflow run research-pull.yml`, wait for it
 
 Then read the recent tail of `research_data/curation_log.jsonl`
 (`tail -n 20`), including prior `session_report` lines and any
-`maintainer_correction` lines, before repairing or curating. The log is how
+`maintainer_correction` and `lead_verdict` lines, before repairing or curating. The log is how
 one session's lessons reach the next.
 
 ## 1. Repair — run the pre-flight, fix what it flags
@@ -136,15 +128,16 @@ Known cases, so they don't get re-diagnosed each week:
 
 ## 2. Curate — evidence-based, not vibes-based
 
-**Standard reviews:** each week, review 2–3 sources against the Purpose and
-admission standard — the ones whose latest `standard_review` line in the log is
+**Standard reviews:** each week, review 2–3 sources against
+`research-invariants.md` §1–2 — the ones whose latest `standard_review` line in the log is
 oldest, or that have none (`grep standard_review research_data/curation_log.jsonl`).
 This is sized for a token-limited session, not a full audit. Log each:
 ```json
-{"date": "2026-09-29", "action": "standard_review", "target": "<id>", "reason": "<verdict>: <qualities met / missed>"}
+{"date": "2026-09-29", "action": "standard_review", "target": "<id>", "reason": "<verdict>: <class>; <qualities met / missed>"}
 ```
-The reason gives the verdict (keep / cut candidate / needs maintainer view) and
-which qualities it meets or misses. For the honest-null check, read
+The reason gives the verdict (keep / cut candidate / needs maintainer view),
+the source's class (witness / feed / compiled / check / excluded), and which qualities it meets or
+misses. For the honest-null check, read
 `research_data/history/<id>.jsonl` for weeks when the underlying thing was
 quiet: did the source report the metrics plainly, or fill space?
 
@@ -184,6 +177,21 @@ actual usable feed (same process as the original build: check for `/feed`,
 `research_sources.json`'s per-source `notes` fields for the gotchas already
 found this way, e.g. Zitron's unreliable description field, the Drought
 Monitor API needing a FIPS code not a state abbreviation).
+
+**Leads:** when the maintainer brings a lead, or you find one, run §3 of
+`research-invariants.md`. First read the earlier lead lines
+(`grep '"action": "lead' research_data/curation_log.jsonl`). Classify, scout,
+log, then stop: collecting, classifying and scouting need no verdict; adding a
+source, a variable, a method change or a concern does. Log the scouting:
+```json
+{"date": "...", "action": "lead", "target": "<lead-slug>", "brought_by": "maintainer | agent", "link": "<url>", "kind": "trend | framework", "inventory": [{"source": "...", "measures": "...", "cadence": "...", "class": "witness | feed | compiled | check | excluded"}], "gaps": ["..."], "reason": "<what the lead proposes to change>"}
+```
+A framework lead has an empty `inventory` and `gaps`; its `reason` names the
+repo or method it changes. Log the maintainer's verdict when given:
+```json
+{"date": "...", "action": "lead_verdict", "target": "<lead-slug>", "verdict": "kept | dropped", "reason": "<the maintainer's one-line reason>"}
+```
+Your hit rate is kept ÷ brought, over leads with `"brought_by": "agent"`.
 
 ## 3. Synthesize
 
@@ -258,8 +266,8 @@ tomorrow's issue. Tell the user which case applies.
 
 ## 6. Close with a short self-report
 
-A few lines to the user: sources checked, anything repaired, any curation flags
-and standard reviews logged (even if not acted on), and the as-of dates in this
+A few lines to the user: sources checked, anything repaired, any curation flags,
+standard reviews and leads logged (even if not acted on), and the as-of dates in this
 week's synthesis. Also append it to `research_data/curation_log.jsonl` as one
 line with `"action": "session_report"`, and append each correction the
 maintainer made during the session as its own `"action":
