@@ -3,6 +3,12 @@
   "status": "ok",
   "items": [
     {
+      "title": "Rethinking Phosphorus and Potassium, Part 3: Economics",
+      "link": "https://farmdocdaily.illinois.edu/2026/09/rethinking-phosphorus-and-potassium-part-3-economics.html",
+      "date": "Wed, 30 Sep 2026 15:39:11 +0000",
+      "summary": "Grain nutrient concentrations can vary across the farm and may provide an opportunity to cut input costs this fall. Soil test values can vary due to sampling time and lab procedures; it may be worthwhile to monitor the variability of soil test values by sampling at different timepoints post-harvest\u2026"
+    },
+    {
       "title": "Changing Nitrogen Rates on PCM Farms: Implications for 2027 Nitrogen Decisions",
       "link": "https://farmdocdaily.illinois.edu/2026/09/changing-nitrogen-rates-on-pcm-farms-implications-for-2027-nitrogen-decisions.html",
       "date": "Tue, 29 Sep 2026 22:39:41 +0000",
@@ -55,18 +61,12 @@
       "link": "https://farmdocdaily.illinois.edu/2026/09/under-pressure-the-size-and-timing-of-the-harvest-low-in-corn-basis.html",
       "date": "Thu, 17 Sep 2026 17:34:32 +0000",
       "summary": "US corn harvest-time corn basis bottoms in mid-October, coinciding with the peak of harvest activity. Average basis at the harvest-time low is about 11 cents below late-November levels. State-level lows average 16 cents, deepest in Missouri, Indiana and Illinois, and more loosely track local\u2026"
-    },
-    {
-      "title": "The 2027 Margin Coverage Option (MCO) Decision",
-      "link": "https://farmdocdaily.illinois.edu/2026/09/the-2027-margin-coverage-option-mco-decision.html",
-      "date": "Wed, 16 Sep 2026 23:57:05 +0000",
-      "summary": "The Margin Coverage Option (MCO) is an area-based crop insurance endorsement that provides protection against operating margin shortfalls, which can be driven by revenue decreases, cost increases or a combination\u2026"
     }
   ],
   "label": "farmdoc daily",
   "area": "agriculture",
   "site_url": "https://farmdocdaily.illinois.edu/",
   "cadence": "weekly_digest",
-  "fetched_at": "2026-09-30T00:38:07.378837+00:00",
+  "fetched_at": "2026-10-01T00:39:42.557976+00:00",
   "description_unreliable": false
 }
