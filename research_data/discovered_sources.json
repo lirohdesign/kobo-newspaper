@@ -1,6 +1,6 @@
 {
   "abc.xyz": {
-    "count": 18,
+    "count": 19,
     "example_links": [
       "https://abc.xyz/investor/events/event-details/2026/2026-Q2-Earnings-Call-2026-GgTAq7Is0z/default.aspx?ref=wheresyoured.at#:~:text=Approximately%2060%25%20of%20our%20investment%20in%20technical%20infrastructure%20this%20quarter",
       "https://abc.xyz/investor/news/news-details/2025/Alphabet-Announces-Agreement-to-Acquire-Intersect-to-Advance-U-S--Energy-Innovation-2025-DVIuVDM9wW/default.aspx"
@@ -32,7 +32,7 @@
     ]
   },
   "academic.oup.com": {
-    "count": 19,
+    "count": 20,
     "example_links": [
       "https://academic.oup.com/oxrep/article-abstract/38/3/449/6701682?"
     ],
@@ -42,7 +42,7 @@
     ]
   },
   "access.redhat.com": {
-    "count": 25,
+    "count": 26,
     "example_links": [
       "https://access.redhat.com/security/cve/cve-2026-4631"
     ],
@@ -84,10 +84,11 @@
     ]
   },
   "aeaweb.org": {
-    "count": 38,
+    "count": 41,
     "example_links": [
       "https://www.aeaweb.org/articles?id=10.1257%2Fapp.4.1.1",
-      "https://www.aeaweb.org/articles?id=10.1257/aer.20170765"
+      "https://www.aeaweb.org/articles?id=10.1257/aer.20170765",
+      "https://www.aeaweb.org/articles?id=10.1257/aer.20130375"
     ],
     "first_seen": "2026-09-15T16:10:20.552679+00:00",
     "seen_in_sources": [
@@ -107,7 +108,7 @@
     ]
   },
   "agc.org": {
-    "count": 19,
+    "count": 20,
     "example_links": [
       "https://www.agc.org/news/2025/08/28/construction-workforce-shortages-are-leading-cause-project-delays-immigration-enforcement-affects"
     ],
@@ -117,7 +118,7 @@
     ]
   },
   "ai.meta.com": {
-    "count": 25,
+    "count": 26,
     "example_links": [
       "https://ai.meta.com/research/publications/cyberseceval-3-advancing-the-evaluation-of-cybersecurity-risks-and-capabilities-in-large-language-models/"
     ],
@@ -137,7 +138,7 @@
     ]
   },
   "alibabacloud.com": {
-    "count": 10,
+    "count": 11,
     "example_links": [
       "https://www.alibabacloud.com/help/en/ack/cloud-native-ai-suite/use-cases/implement-slurm-hpc-and-kubernetes-load-hybrid-scheduling-on-ack-cluster"
     ],
@@ -157,7 +158,7 @@
     ]
   },
   "amazon.jobs": {
-    "count": 10,
+    "count": 11,
     "example_links": [
       "https://www.amazon.jobs/content/en/our-workplace/leadership-principles"
     ],
@@ -167,7 +168,7 @@
     ]
   },
   "amd.com": {
-    "count": 25,
+    "count": 26,
     "example_links": [
       "https://www.amd.com/en/resources/product-security.html"
     ],
@@ -177,7 +178,7 @@
     ]
   },
   "americanactionforum.org": {
-    "count": 19,
+    "count": 20,
     "example_links": [
       "https://www.americanactionforum.org/research/the-budgetary-and-economic-costs-of-addressing-unauthorized-immigration-alt/"
     ],
@@ -197,7 +198,7 @@
     ]
   },
   "americanprogress.org": {
-    "count": 41,
+    "count": 42,
     "example_links": [
       "https://www.americanprogress.org/article/subprime-mortgages-by-the-numbers/?ref=wheresyoured.at",
       "https://www.americanprogress.org/article/protecting-undocumented-workers-pandemics-front-lines-2/"
@@ -209,7 +210,7 @@
     ]
   },
   "anthropic.com": {
-    "count": 158,
+    "count": 160,
     "example_links": [
       "https://www.anthropic.com/glasswing",
       "https://www.anthropic.com/news/higher-limits-spacex?ref=wheresyoured.at",
@@ -242,7 +243,7 @@
     ]
   },
   "apnews.com": {
-    "count": 42,
+    "count": 43,
     "example_links": [
       "https://apnews.com/article/meta-ai-zuckerberg-llama-chatgpt-9431120efcc8e598c3d34af9b5201d1c?ref=wheresyoured.at",
       "https://apnews.com/article/trump-immigration-ice-raids-undocumented-workers-aa451dc90dda76004fdc5636b21bde97",
@@ -275,7 +276,7 @@
     ]
   },
   "appliedmaterials.com": {
-    "count": 7,
+    "count": 8,
     "example_links": [
       "https://www.appliedmaterials.com/us/en/blog/blog-posts/cobalt-enables-power-and-performance-scaling-at-single-digit-logic-nodes.html"
     ],
@@ -285,7 +286,7 @@
     ]
   },
   "apps.ipcc.ch": {
-    "count": 38,
+    "count": 40,
     "example_links": [
       "https://apps.ipcc.ch/comments/slcf/",
       "https://apps.ipcc.ch/comments/ar7wg1/register.php?q=fod"
@@ -358,7 +359,7 @@
     ]
   },
   "argentum-ai.com": {
-    "count": 10,
+    "count": 11,
     "example_links": [
       "https://argentum-ai.com/"
     ],
@@ -388,7 +389,7 @@
     ]
   },
   "arxiv.org": {
-    "count": 180,
+    "count": 185,
     "example_links": [
       "https://arxiv.org/abs/2604.15464v1",
       "https://arxiv.org/abs/2406.05590",
@@ -412,7 +413,7 @@
     ]
   },
   "atlas.semianalysis.com": {
-    "count": 10,
+    "count": 11,
     "example_links": [
       "https://atlas.semianalysis.com/?dashboard=datacenter_model"
     ],
@@ -432,7 +433,7 @@
     ]
   },
   "awslabs.github.io": {
-    "count": 10,
+    "count": 11,
     "example_links": [
       "https://awslabs.github.io/mcp/servers/sagemaker-ai-mcp-server"
     ],
@@ -442,7 +443,7 @@
     ]
   },
   "axios.com": {
-    "count": 104,
+    "count": 105,
     "example_links": [
       "https://www.axios.com/2026/07/27/off-grid-ai-data-centers-reckoning",
       "https://www.axios.com/2026/08/23/greg-abbott-texas-data-centers-ai-backlash?ref=wheresyoured.at",
@@ -465,7 +466,7 @@
     ]
   },
   "bakerinstitute.org": {
-    "count": 19,
+    "count": 20,
     "example_links": [
       "https://www.bakerinstitute.org/research/undocumented-immigrants-texas-cost-benefit-assessment"
     ],
@@ -526,7 +527,7 @@
     ]
   },
   "bing.com": {
-    "count": 25,
+    "count": 26,
     "example_links": [
       "https://www.bing.com/search?pglt=2083&q=onsite+gas+deep+dive&cvid=bb1ec263808b4c889798e699f40117f7&gs_lcrp=EgRlZGdlKgYIABBFGDkyBggAEEUYOdIBCDI4OTZqMGo3qAIAsAIA&FORM=ANNTA1&PC=DCTS"
     ],
@@ -536,7 +537,7 @@
     ]
   },
   "bitdeer.ai": {
-    "count": 10,
+    "count": 11,
     "example_links": [
       "http://bitdeer.ai"
     ],
@@ -556,7 +557,7 @@
     ]
   },
   "blackstone.com": {
-    "count": 10,
+    "count": 11,
     "example_links": [
       "https://www.blackstone.com/news/press/blackstone-announces-joint-venture-with-google-to-create-new-tpu-cloud/"
     ],
@@ -566,7 +567,7 @@
     ]
   },
   "blog.aks.azure.com": {
-    "count": 45,
+    "count": 47,
     "example_links": [
       "https://blog.aks.azure.com/2025/10/24/dynamo-on-aks#enterprise-scale-inference-experiments--dynamo-with-gb200-running-on-aks"
     ],
@@ -576,7 +577,7 @@
     ]
   },
   "blog.google": {
-    "count": 55,
+    "count": 57,
     "example_links": [
       "https://blog.google/innovation-and-ai/infrastructure-and-cloud/google-cloud/ironwood-google-tpu-things-to-know/",
       "https://blog.google/security/chrome-stronger-with-every-update/",
@@ -598,7 +599,7 @@
     ]
   },
   "blogs.nvidia.com": {
-    "count": 45,
+    "count": 47,
     "example_links": [
       "https://blogs.nvidia.com/blog/ai-cloud-providers-reference-architecture/",
       "https://blogs.nvidia.com/blog/inference-open-source-models-blackwell-reduce-cost-per-token/?ref=wheresyoured.at",
@@ -611,7 +612,7 @@
     ]
   },
   "blogs.oracle.com": {
-    "count": 10,
+    "count": 11,
     "example_links": [
       "https://blogs.oracle.com/cloud-infrastructure/first-principles-acceleron-multiplanar-networking"
     ],
@@ -621,7 +622,7 @@
     ]
   },
   "bloomberg.com": {
-    "count": 195,
+    "count": 196,
     "example_links": [
       "https://www.bloomberg.com/news/articles/2026-08-26/anthropic-to-pay-nscale-45-billion-for-ai-computing-power?ref=wheresyoured.at",
       "https://www.bloomberg.com/news/articles/2006-02-12/why-the-economy-is-a-lot-stronger-than-you-think?utm_medium=cpc_search&utm_campaign=NB_ENG_DSAXX_DSAXXXXXXXXXX_EVG_XXXX_XXX_COUSA_EN_EN_X_BLOM_GO_SE_XXX_XXXXXXXXXX&gad_source=1&gclid=Cj0KCQiA88a5BhDPARIsAFj595gR6_lrqfpLH3b3A3gz8LM0vNF58jAufXZnBaiImlRZCM9JvRu4sTwaAnEfEALw_wcB&gclsrc=aw.ds&ref=wheresyoured.at",
@@ -634,7 +635,7 @@
     ]
   },
   "bls.gov": {
-    "count": 49,
+    "count": 52,
     "example_links": [
       "https://www.bls.gov/news.release/empsit.t12.htm",
       "https://www.bls.gov/opub/ted/2023/most-unemployed-people-in-2022-did-not-apply-for-unemployment-insurance-benefits.htm",
@@ -657,7 +658,7 @@
     ]
   },
   "bsky.app": {
-    "count": 181,
+    "count": 189,
     "example_links": [
       "https://bsky.app/profile/arakharazian.bsky.social/post/3mukjsrupvs2t?ref=wheresyoured.at",
       "https://bsky.app/profile/punkey.org/?ref=wheresyoured.at",
@@ -681,7 +682,7 @@
     ]
   },
   "businessinsider.com": {
-    "count": 178,
+    "count": 179,
     "example_links": [
       "https://www.businessinsider.com/astra-model-launch-agi-milestone-openai-greg-brockman-2026-9?ref=wheresyoured.at",
       "https://www.businessinsider.com/adam-neumann-flow-apartment-startup-tour-florida-wework-2023-12?ref=wheresyoured.at",
@@ -695,7 +696,7 @@
     ]
   },
   "businesswire.com": {
-    "count": 20,
+    "count": 21,
     "example_links": [
       "https://www.businesswire.com/news/home/20251204702555/en/Press-Release-of-December-4-2025-Related-to-the-Proposed-Public-Buy-Out-Offer-Followed-by-a-Squeeze-out-on-the-Shares-of-the-Company-Balyo-Initiated-by-Silver-Bands-4-US-Corp.?ref=wheresyoured.at",
       "https://www.businesswire.com/news/home/20260708517182/en/Vultr-and-SUSE-Launch-Validated-Full-Stack-NVIDIA-Enterprise-AI-Platform-to-Accelerate-Production-Deployments"
@@ -707,7 +708,7 @@
     ]
   },
   "byteplus.com": {
-    "count": 10,
+    "count": 11,
     "example_links": [
       "https://www.byteplus.com/en/product/gpu"
     ],
@@ -737,9 +738,10 @@
     ]
   },
   "cambridge.org": {
-    "count": 19,
+    "count": 21,
     "example_links": [
-      "https://www.cambridge.org/core/journals/british-journal-of-political-science/article/personal-economic-shocks-and-public-opposition-to-unauthorized-immigration/6E97F20DC97D4EB6587BCCD2B31DF3FF"
+      "https://www.cambridge.org/core/journals/british-journal-of-political-science/article/personal-economic-shocks-and-public-opposition-to-unauthorized-immigration/6E97F20DC97D4EB6587BCCD2B31DF3FF",
+      "https://www.cambridge.org/core/journals/public-health-nutrition/article/snap-participation-and-the-health-and-health-care-utilization-of-lowincome-adults-and-children/F0889E87B0104D151582D0C574EE0577"
     ],
     "first_seen": "2026-09-15T16:10:20.552679+00:00",
     "seen_in_sources": [
@@ -767,7 +769,7 @@
     ]
   },
   "cato.org": {
-    "count": 19,
+    "count": 20,
     "example_links": [
       "https://www.cato.org/sites/cato.org/files/pubs/pdf/PA709.pdf"
     ],
@@ -777,7 +779,7 @@
     ]
   },
   "cbo.gov": {
-    "count": 19,
+    "count": 20,
     "example_links": [
       "https://www.cbo.gov/system/files/2024-02/59710-Outlook-2024.pdf"
     ],
@@ -794,6 +796,16 @@
     "first_seen": "2026-09-29T18:03:27.371602+00:00",
     "seen_in_sources": [
       "ed_zitron"
+    ]
+  },
+  "cbpp.org": {
+    "count": 1,
+    "example_links": [
+      "https://www.cbpp.org/research/food-assistance/snap-helps-millions-of-workers-in-low-paying-jobs"
+    ],
+    "first_seen": "2026-10-02T00:58:56.923584+00:00",
+    "seen_in_sources": [
+      "equitable_growth"
     ]
   },
   "cbsnews.com": {
@@ -818,7 +830,7 @@
     ]
   },
   "cdn.americanprogress.org": {
-    "count": 19,
+    "count": 20,
     "example_links": [
       "https://cdn.americanprogress.org/wp-content/uploads/2016/09/20120917/massdeport1.pdf"
     ],
@@ -828,7 +840,7 @@
     ]
   },
   "cdrdv2-public.intel.com": {
-    "count": 7,
+    "count": 8,
     "example_links": [
       "https://cdrdv2-public.intel.com/866361/ITT_2025_Panther_Lake_Recap1.pdf"
     ],
@@ -838,7 +850,7 @@
     ]
   },
   "census.gov": {
-    "count": 52,
+    "count": 54,
     "example_links": [
       "https://www.census.gov/newsroom/blogs/random-samplings/2026/01/historic-decline-in-net-international-migration.html",
       "https://www.census.gov/programs-surveys/cps/about/modernization.html",
@@ -870,6 +882,16 @@
       "ed_zitron"
     ]
   },
+  "chrome-extension:": {
+    "count": 1,
+    "example_links": [
+      "http://chrome-extension://efaidnbmnnnibpcajpcglclefindmkaj/https://fna-bwbufwdzbabpezgc.z01.azurefd.us/sites/default/files/resource-files/snap-fy2024householdcharacteristics-report.pdf"
+    ],
+    "first_seen": "2026-10-02T00:58:56.923584+00:00",
+    "seen_in_sources": [
+      "equitable_growth"
+    ]
+  },
   "classover.com": {
     "count": 1,
     "example_links": [
@@ -891,7 +913,7 @@
     ]
   },
   "clustermax.ai": {
-    "count": 35,
+    "count": 37,
     "example_links": [
       "https://www.clustermax.ai/criteria"
     ],
@@ -901,7 +923,7 @@
     ]
   },
   "cnbc.com": {
-    "count": 185,
+    "count": 186,
     "example_links": [
       "https://www.cnbc.com/video/2026/04/08/crowdstrike-ceo-ai-finding-vulnerabilities-will-cause-high-number-of-cybersecurity-attacks.html",
       "https://www.cnbc.com/2026/03/25/legal-ai-startup-harvey-raises-200-million-at-11-billion-valuation.html?ref=wheresyoured.at",
@@ -956,7 +978,7 @@
     ]
   },
   "community.intel.com": {
-    "count": 7,
+    "count": 8,
     "example_links": [
       "https://community.intel.com/t5/Blogs/Tech-Innovation/Edge-5G/Intel-at-ISSCC-2025-Navid-Shahriari-Invited-Talk-Eight-Papers/post/1667592"
     ],
@@ -987,7 +1009,7 @@
     ]
   },
   "congress.gov": {
-    "count": 52,
+    "count": 53,
     "example_links": [
       "https://www.congress.gov/crs-product/IF10336",
       "https://www.congress.gov/bill/119th-congress/house-bill/6644/text",
@@ -1000,7 +1022,7 @@
     ]
   },
   "coreweave.com": {
-    "count": 113,
+    "count": 114,
     "example_links": [
       "https://www.coreweave.com/blog/nvidia-vera-rubin-nvl72-on-coreweave-10x-more-tokens-per-megawatt-than-blackwell",
       "https://www.coreweave.com/news/jane-street-signs-6-billion-ai-cloud-agreement-with-coreweave?ref=wheresyoured.at",
@@ -1013,7 +1035,7 @@
     ]
   },
   "corvex.ai": {
-    "count": 10,
+    "count": 11,
     "example_links": [
       "https://www.corvex.ai/blog/press-release-corvex-to-go-public-in-all-stock-merger-withmovano-creating-a-pure-play-platform-for-secure-ai-infrastructure-and-high-performanceinference"
     ],
@@ -1053,7 +1075,7 @@
     ]
   },
   "crusoe.ai": {
-    "count": 32,
+    "count": 33,
     "example_links": [
       "https://www.crusoe.ai/resources/newsroom/crusoe-blue-owl-capital-and-primary-digital-infrastructure-enter-joint-venture?ref=wheresyoured.at",
       "https://www.crusoe.ai/resources/newsroom/crusoe-announces-series-f-funding"
@@ -1117,7 +1139,7 @@
     ]
   },
   "datacenterdynamics.com": {
-    "count": 8,
+    "count": 9,
     "example_links": [
       "https://www.datacenterdynamics.com/en/news/south-korea-announces-919bn-investment-into-three-mega-projects-plans-to-build-184gw-worth-of-data-centers-by-2035/",
       "https://www.datacenterdynamics.com/en/news/microsoft-breaks-ground-on-1bn-data-center-in-wisconsin/?ref=wheresyoured.at",
@@ -1140,7 +1162,7 @@
     ]
   },
   "davidcard.berkeley.edu": {
-    "count": 19,
+    "count": 20,
     "example_links": [
       "https://davidcard.berkeley.edu/papers/mariel-impact.pdf"
     ],
@@ -1180,7 +1202,7 @@
     ]
   },
   "developer.nvidia.com": {
-    "count": 35,
+    "count": 37,
     "example_links": [
       "https://developer.nvidia.com/blog/infiniband-multilayered-security-protects-data-centers-and-ai-workloads",
       "https://developer.nvidia.com/blog/understanding-nccl-tuning-to-accelerate-gpu-to-gpu-communication/"
@@ -1191,7 +1213,7 @@
     ]
   },
   "developers.googleblog.com": {
-    "count": 25,
+    "count": 26,
     "example_links": [
       "https://developers.googleblog.com/torchtpu-running-pytorch-natively-on-tpus-at-google-scale/"
     ],
@@ -1221,7 +1243,7 @@
     ]
   },
   "digitalocean.com": {
-    "count": 10,
+    "count": 11,
     "example_links": [
       "https://www.digitalocean.com/products/bare-metal-gpus"
     ],
@@ -1251,7 +1273,7 @@
     ]
   },
   "docs.coreweave.com": {
-    "count": 10,
+    "count": 11,
     "example_links": [
       "https://docs.coreweave.com/products/sunk/discover_sunk/straggler-detection"
     ],
@@ -1261,7 +1283,7 @@
     ]
   },
   "docs.crusoecloud.com": {
-    "count": 10,
+    "count": 11,
     "example_links": [
       "https://docs.crusoecloud.com/installing-the-cli/"
     ],
@@ -1271,7 +1293,7 @@
     ]
   },
   "docs.hyperstack.cloud": {
-    "count": 10,
+    "count": 11,
     "example_links": [
       "https://docs.hyperstack.cloud/llms.txt"
     ],
@@ -1281,7 +1303,7 @@
     ]
   },
   "docs.nebius.com": {
-    "count": 10,
+    "count": 11,
     "example_links": [
       "https://docs.nebius.com/object-storage/"
     ],
@@ -1291,7 +1313,7 @@
     ]
   },
   "docs.nvidia.com": {
-    "count": 48,
+    "count": 50,
     "example_links": [
       "https://docs.nvidia.com/aiperf/benchmark-modes/trace-replay-with-mooncake-traces",
       "https://docs.nvidia.com/dsx/maxlps/overview",
@@ -1303,7 +1325,7 @@
     ]
   },
   "docs.pytorch.org": {
-    "count": 25,
+    "count": 26,
     "example_links": [
       "https://docs.pytorch.org/xla/master/learn/xla-overview.html"
     ],
@@ -1333,7 +1355,7 @@
     ]
   },
   "doi.org": {
-    "count": 7,
+    "count": 8,
     "example_links": [
       "https://doi.org/10.23919/vlsitechnologyandcir57934.2023.10185208"
     ],
@@ -1343,7 +1365,7 @@
     ]
   },
   "dol.gov": {
-    "count": 19,
+    "count": 20,
     "example_links": [
       "https://www.dol.gov/sites/dolgov/files/ETA/Layoff/pdfs/_EmployerWARN2003.pdf"
     ],
@@ -1353,7 +1375,7 @@
     ]
   },
   "download.intel.com": {
-    "count": 7,
+    "count": 8,
     "example_links": [
       "https://download.intel.com/newsroom/2026/Intel-Core-Series-3/Intel-Core-Series-3-Launch-Press-Deck.pdf"
     ],
@@ -1373,7 +1395,7 @@
     ]
   },
   "dwarkesh.com": {
-    "count": 35,
+    "count": 37,
     "example_links": [
       "https://www.dwarkesh.com/p/openai-huggingface?utm_campaign=posts-open-in-app&triedRedirect=true",
       "https://www.dwarkesh.com/p/satya-nadella-2"
@@ -1384,7 +1406,7 @@
     ]
   },
   "dyna.co": {
-    "count": 21,
+    "count": 22,
     "example_links": [
       "https://www.dyna.co/dyna-2"
     ],
@@ -1424,7 +1446,7 @@
     ]
   },
   "ecfr.gov": {
-    "count": 25,
+    "count": 26,
     "example_links": [
       "https://www.ecfr.gov/current/title-40/chapter-I/subchapter-U/part-1068/subpart-A/section-1068.30"
     ],
@@ -1434,7 +1456,7 @@
     ]
   },
   "econirc.com": {
-    "count": 19,
+    "count": 20,
     "example_links": [
       "https://econirc.com/july-2026-fact-sheet-page"
     ],
@@ -1476,7 +1498,7 @@
     ]
   },
   "eiec.kdi.re.kr": {
-    "count": 25,
+    "count": 26,
     "example_links": [
       "https://eiec.kdi.re.kr/policy/materialView.do?num=269498"
     ],
@@ -1526,7 +1548,7 @@
     ]
   },
   "emojipedia.org": {
-    "count": 10,
+    "count": 11,
     "example_links": [
       "https://emojipedia.org/face-exhaling"
     ],
@@ -1536,7 +1558,7 @@
     ]
   },
   "en.wikipedia.org": {
-    "count": 115,
+    "count": 117,
     "example_links": [
       "https://en.wikipedia.org/wiki/Coordinated_vulnerability_disclosure",
       "https://en.wikipedia.org/wiki/Thundering_herd_problem",
@@ -1559,7 +1581,7 @@
     ]
   },
   "epa.gov": {
-    "count": 25,
+    "count": 26,
     "example_links": [
       "https://www.epa.gov/green-book"
     ],
@@ -1569,7 +1591,7 @@
     ]
   },
   "epi.org": {
-    "count": 38,
+    "count": 40,
     "example_links": [
       "https://www.epi.org/publication/gig-worker-survey/",
       "https://www.epi.org/press/new-report-shows-that-misclassifying-workers-as-independent-contractors-is-costly-for-workers-and-states/"
@@ -1580,13 +1602,15 @@
     ]
   },
   "ers.usda.gov": {
-    "count": 14,
+    "count": 15,
     "example_links": [
-      "https://www.ers.usda.gov/amber-waves/2021/august/rural-poverty-has-distinct-regional-and-racial-patterns"
+      "https://www.ers.usda.gov/amber-waves/2021/august/rural-poverty-has-distinct-regional-and-racial-patterns",
+      "https://www.ers.usda.gov/data-products/chart-gallery/54640"
     ],
     "first_seen": "2026-09-15T16:10:20.805818+00:00",
     "seen_in_sources": [
-      "aspen_fsp"
+      "aspen_fsp",
+      "equitable_growth"
     ]
   },
   "events.in.gov": {
@@ -1634,7 +1658,7 @@
     ]
   },
   "falcao.org": {
-    "count": 25,
+    "count": 26,
     "example_links": [
       "https://falcao.org/posts/ai-bug-reports-open-source/"
     ],
@@ -1654,7 +1678,7 @@
     ]
   },
   "federalregister.gov": {
-    "count": 52,
+    "count": 53,
     "example_links": [
       "https://www.federalregister.gov/documents/2026/01/15/2026-00677/new-source-performance-standards-review-for-stationary-combustion-turbines-and-stationary-gas",
       "https://www.federalregister.gov/documents/2024/07/03/2024-14668/north-american-electric-reliability-corporation-order-approving-extreme-cold-weather-reliability",
@@ -1740,7 +1764,7 @@
     ]
   },
   "finance.senate.gov": {
-    "count": 19,
+    "count": 20,
     "example_links": [
       "https://www.finance.senate.gov/imo/media/doc/ui_section-by-section_summary.pdf"
     ],
@@ -1750,7 +1774,7 @@
     ]
   },
   "finance.yahoo.com": {
-    "count": 152,
+    "count": 153,
     "example_links": [
       "https://finance.yahoo.com/technology/ai/articles/openai-cuts-cursor-off-models-223547147.html?ref=wheresyoured.at",
       "https://finance.yahoo.com/news/evidence-of-food-price-gouging-is-hard-to-find-181613112.html?guccounter=1&guce_referrer=aHR0cHM6Ly93d3cuZ29vZ2xlLmNvbS8&guce_referrer_sig=AQAAAC_Tt58CQZKzpitjOxlbPO9olzXVaJ_X0R3l9o9dEITnVASt3w9kY8PfgLxxGTs9SEV_1VHsG0GHbijLnDH1F86s1rtAT6ekj4ZXmKD-AjTlT1n-qzpPYEdmMH6tfrJyIG46gYa04B7r2xDINvB2YgrRHaI1C--64fkctjn-LVDu&ref=wheresyoured.at",
@@ -1793,7 +1817,7 @@
     ]
   },
   "firmus.co": {
-    "count": 10,
+    "count": 11,
     "example_links": [
       "https://firmus.co/newsroom/firmus-announces-fully-subscribed-usdusd2-billion-strategic-equity-investment-to-accelerate-nvidia-ai-factory-expansion-across-australia-and-asia-pacific"
     ],
@@ -1813,7 +1837,7 @@
     ]
   },
   "fool.com": {
-    "count": 10,
+    "count": 11,
     "example_links": [
       "https://www.fool.com/earnings/call-transcripts/2026/08/18/coreweave-crwv-q2-2026-earnings-call-transcript/"
     ],
@@ -1845,7 +1869,7 @@
     ]
   },
   "forums.developer.nvidia.com": {
-    "count": 10,
+    "count": 11,
     "example_links": [
       "https://forums.developer.nvidia.com/t/xid-62-xid-154-gsp-pmu-halt-crash-on-rtx-pro-6000-blackwell-during-llm-inference/364958"
     ],
@@ -1855,7 +1879,7 @@
     ]
   },
   "fox35orlando.com": {
-    "count": 11,
+    "count": 12,
     "example_links": [
       "https://www.fox35orlando.com/news/florida-tourism-dips-again-canadian-visitors-decline-sharply"
     ],
@@ -1938,7 +1962,7 @@
     ]
   },
   "gao.gov": {
-    "count": 19,
+    "count": 20,
     "example_links": [
       "https://www.gao.gov/blog/lessons-learned-when-pandemic-led-rapidly-rising-unemployment-claims"
     ],
@@ -1968,7 +1992,7 @@
     ]
   },
   "genaiadoptiontracker.com": {
-    "count": 19,
+    "count": 20,
     "example_links": [
       "https://www.genaiadoptiontracker.com/"
     ],
@@ -1978,7 +2002,7 @@
     ]
   },
   "generalistai.com": {
-    "count": 21,
+    "count": 22,
     "example_links": [
       "https://generalistai.com/blog/gen-1"
     ],
@@ -1988,7 +2012,7 @@
     ]
   },
   "github.com": {
-    "count": 149,
+    "count": 155,
     "example_links": [
       "https://github.com/vllm-project/tpu-inference/blob/a32e183a676cf428cb1cea953f58fdd616accb3e/tpu_inference/models/vllm/vllm_model_wrapper.py#L171-L348",
       "https://github.com/SemiAnalysisAI/clustermax",
@@ -2010,7 +2034,7 @@
     ]
   },
   "globalai.com": {
-    "count": 10,
+    "count": 11,
     "example_links": [
       "https://www.globalai.com/"
     ],
@@ -2020,7 +2044,7 @@
     ]
   },
   "globenewswire.com": {
-    "count": 10,
+    "count": 11,
     "example_links": [
       "https://www.globenewswire.com/news-release/2025/10/24/3172932/0/en/Crusoe-the-AI-Factory-Company-Raising-1-375-Billion-at-a-Valuation-Above-10-Billion-to-Power-the-Future-of-AI-Infrastructure.html"
     ],
@@ -2030,7 +2054,7 @@
     ]
   },
   "gmicloud.ai": {
-    "count": 10,
+    "count": 11,
     "example_links": [
       "https://www.gmicloud.ai/en/blog/gmi-cloud-brings-taiwans-first-ai-factory"
     ],
@@ -2050,7 +2074,7 @@
     ]
   },
   "google.github.io": {
-    "count": 25,
+    "count": 26,
     "example_links": [
       "https://google.github.io/torchax/user_guide/how-it-works/"
     ],
@@ -2082,7 +2106,7 @@
     ]
   },
   "groq.com": {
-    "count": 10,
+    "count": 11,
     "example_links": [
       "https://groq.com/newsroom/groq-becomes-an-nvidia-cloud-partner"
     ],
@@ -2123,7 +2147,7 @@
     ]
   },
   "hackerone.com": {
-    "count": 25,
+    "count": 26,
     "example_links": [
       "https://hackerone.com/together_ai"
     ],
@@ -2140,6 +2164,16 @@
     "first_seen": "2026-09-12T17:40:29.242704+00:00",
     "seen_in_sources": [
       "ed_zitron"
+    ]
+  },
+  "healthaffairs.org": {
+    "count": 1,
+    "example_links": [
+      "https://www.healthaffairs.org/doi/abs/10.1377/hlthaff.2018.05265"
+    ],
+    "first_seen": "2026-10-02T00:58:56.923584+00:00",
+    "seen_in_sources": [
+      "equitable_growth"
     ]
   },
   "heeforeststudy.org": {
@@ -2163,7 +2197,7 @@
     ]
   },
   "hosted-files.sched.co": {
-    "count": 25,
+    "count": 26,
     "example_links": [
       "https://hosted-files.sched.co/pytorchconferenceeu2026/cb/TorchTPU%20-%20PyTorch%20Paris%20%2726%20-%20Google%20Slides.pdf"
     ],
@@ -2173,7 +2207,7 @@
     ]
   },
   "hpcwire.com": {
-    "count": 35,
+    "count": 37,
     "example_links": [
       "https://www.hpcwire.com/2023/03/21/nvidia-announces-bluefield-3-ga-oracle-cloud-is-early-user/",
       "https://www.hpcwire.com/off-the-wire/massed-compute-gains-300m-backing-for-nvidia-powered-ai-cloud-expansion/"
@@ -2184,7 +2218,7 @@
     ]
   },
   "hpe.com": {
-    "count": 10,
+    "count": 11,
     "example_links": [
       "https://www.hpe.com/us/en/newsroom/press-release/2026/06/vultr-selects-hpe-and-nvidia-for-next-generation-ai-infrastructure-for-cloud-scale-data-centers.html"
     ],
@@ -2224,7 +2258,7 @@
     ]
   },
   "huggingface.co": {
-    "count": 68,
+    "count": 70,
     "example_links": [
       "https://huggingface.co/Motif-Technologies/Motif-2.6B",
       "https://huggingface.co/blog/security-incident-july-2026",
@@ -2246,7 +2280,7 @@
     ]
   },
   "hydrahost.com": {
-    "count": 10,
+    "count": 11,
     "example_links": [
       "https://hydrahost.com/post/tokens-are-the-new-oil-hydra-host-series-a/"
     ],
@@ -2266,7 +2300,7 @@
     ]
   },
   "imec-int.com": {
-    "count": 7,
+    "count": 8,
     "example_links": [
       "https://www.imec-int.com/en/articles/how-power-chips-backside"
     ],
@@ -2276,7 +2310,7 @@
     ]
   },
   "immigrationpolicy.org": {
-    "count": 19,
+    "count": 20,
     "example_links": [
       "https://immigrationpolicy.org/sites/default/files/docs/rising_tide_final.pdf"
     ],
@@ -2349,7 +2383,7 @@
     ]
   },
   "inferencemax.semianalysis.com": {
-    "count": 45,
+    "count": 47,
     "example_links": [
       "https://inferencemax.semianalysis.com/quotes"
     ],
@@ -2359,7 +2393,7 @@
     ]
   },
   "inferencex.semianalysis.com": {
-    "count": 155,
+    "count": 161,
     "example_links": [
       "https://inferencex.semianalysis.com/",
       "https://inferencex.semianalysis.com",
@@ -2392,7 +2426,7 @@
     ]
   },
   "intc.com": {
-    "count": 7,
+    "count": 8,
     "example_links": [
       "https://www.intc.com/filings-reports/all-sec-filings/content/0001193125-21-224438/d199788dex991.htm"
     ],
@@ -2402,7 +2436,7 @@
     ]
   },
   "intel.com": {
-    "count": 32,
+    "count": 34,
     "example_links": [
       "https://www.intel.com/content/www/us/en/security/security-practices/vulnerability-management/bug-bounty-program.html",
       "https://www.intel.com/content/dam/www/central-libraries/us/en/documents/2025-11/intel-foundry-hpc-ai-brief.pdf"
@@ -2446,7 +2480,7 @@
     ]
   },
   "investor.nvidia.com": {
-    "count": 47,
+    "count": 48,
     "example_links": [
       "https://investor.nvidia.com/news/press-release-details/2025/NVIDIA-and-Samsung-Build-AI-Factory-to-Transform-Global-Intelligent-Manufacturing/default.aspx",
       "https://investor.nvidia.com/financial-info/financial-reports/default.aspx?ref=wheresyoured.at"
@@ -2458,7 +2492,7 @@
     ]
   },
   "investors.corescientific.com": {
-    "count": 10,
+    "count": 11,
     "example_links": [
       "https://investors.corescientific.com/news-events/press-releases/detail/124/core-scientific-announces-termination-of-merger-agreement-with-coreweave"
     ],
@@ -2468,7 +2502,7 @@
     ]
   },
   "investors.coreweave.com": {
-    "count": 103,
+    "count": 104,
     "example_links": [
       "https://investors.coreweave.com/news/news-details/2025/CoreWeave-Expands-Agreement-with-OpenAI-by-up-to-6-5B/default.aspx?ref=wheresyoured.at",
       "https://investors.coreweave.com/news/news-details/2026/CoreWeave-Reports-Strong-Second-Quarter-2026-Results/default.aspx?ref=wheresyoured.at",
@@ -2521,7 +2555,7 @@
     ]
   },
   "ir.amd.com": {
-    "count": 27,
+    "count": 28,
     "example_links": [
       "https://ir.amd.com/news-events/press-releases/detail/1292/amd-and-anthropic-announce-strategic-partnership-to-deploy-up-to-2-gigawatts-of-amd-instinct-mi450-series-gpus?ref=wheresyoured.at",
       "https://ir.amd.com/news-events/press-releases/detail/1292/amd-and-anthropic-announce-strategic-partnership-to-deploy-up-to-2-gigawatts-of-amd-instinct-mi450-series-gpus"
@@ -2543,7 +2577,7 @@
     ]
   },
   "ir.appliedmaterials.com": {
-    "count": 7,
+    "count": 8,
     "example_links": [
       "https://ir.appliedmaterials.com/news-releases/news-release-details/applied-materials-unveils-chip-wiring-innovations-more-energy"
     ],
@@ -2553,7 +2587,7 @@
     ]
   },
   "ir.bitdeer.com": {
-    "count": 10,
+    "count": 11,
     "example_links": [
       "https://ir.bitdeer.com/news-releases/news-release-details/bitdeer-reports-unaudited-financial-results-second-quarter-2026"
     ],
@@ -2603,7 +2637,7 @@
     ]
   },
   "issues.chromium.org": {
-    "count": 25,
+    "count": 26,
     "example_links": [
       "https://issues.chromium.org/issues/487383169"
     ],
@@ -2613,7 +2647,7 @@
     ]
   },
   "itep.org": {
-    "count": 19,
+    "count": 20,
     "example_links": [
       "https://itep.org/undocumented-immigrants-taxes-2024/"
     ],
@@ -2623,7 +2657,7 @@
     ]
   },
   "jamanetwork.com": {
-    "count": 19,
+    "count": 20,
     "example_links": [
       "https://jamanetwork.com/journals/jama/fullarticle/2852745?guestAccessKey=da3ba888-5ff2-456f-9d94-b301cf5d2884"
     ],
@@ -2633,7 +2667,7 @@
     ]
   },
   "jax-ml.github.io": {
-    "count": 25,
+    "count": 26,
     "example_links": [
       "https://jax-ml.github.io/scaling-book/tpus/"
     ],
@@ -2653,7 +2687,7 @@
     ]
   },
   "jhr.uwpress.org": {
-    "count": 19,
+    "count": 20,
     "example_links": [
       "https://jhr.uwpress.org/content/early/2022/05/02/jhr.0920-11197R1"
     ],
@@ -2663,7 +2697,7 @@
     ]
   },
   "job-boards.greenhouse.io": {
-    "count": 10,
+    "count": 11,
     "example_links": [
       "https://job-boards.greenhouse.io/anthropic/jobs/5211241008"
     ],
@@ -2673,7 +2707,7 @@
     ]
   },
   "joelonsoftware.com": {
-    "count": 25,
+    "count": 26,
     "example_links": [
       "https://www.joelonsoftware.com/2002/06/12/strategy-letter-v/"
     ],
@@ -2683,7 +2717,7 @@
     ]
   },
   "journals.uchicago.edu": {
-    "count": 38,
+    "count": 40,
     "example_links": [
       "https://www.journals.uchicago.edu/doi/10.1086/724589",
       "https://www.journals.uchicago.edu/doi/10.1086/721152"
@@ -2694,9 +2728,10 @@
     ]
   },
   "jstor.org": {
-    "count": 19,
+    "count": 21,
     "example_links": [
-      "https://www.jstor.org/stable/10.1086/589756"
+      "https://www.jstor.org/stable/10.1086/589756",
+      "https://www.jstor.org/stable/26304695?casa_token=BOSuygOeRx4AAAAA:jbGMu2-WoJe8KJl8dbur9LPiyjytq1D3UakPAvzY5LSikGcvS7D_yfKkO80iBmkhsCOLGcM4IeqFqUx7KX-LhUs1WQ_LTYUf-tFqgCn8fsfNsdJoGcxr"
     ],
     "first_seen": "2026-09-15T16:10:20.552679+00:00",
     "seen_in_sources": [
@@ -2714,7 +2749,7 @@
     ]
   },
   "karpenter.sh": {
-    "count": 10,
+    "count": 11,
     "example_links": [
       "https://karpenter.sh/"
     ],
@@ -2734,7 +2769,7 @@
     ]
   },
   "kgsa.net": {
-    "count": 10,
+    "count": 11,
     "example_links": [
       "https://kgsa.net/?page_id=29&mod=document&uid=8667"
     ],
@@ -2744,7 +2779,7 @@
     ]
   },
   "killedbygoogle.com": {
-    "count": 10,
+    "count": 11,
     "example_links": [
       "https://killedbygoogle.com/"
     ],
@@ -2784,7 +2819,7 @@
     ]
   },
   "kvcache.ai": {
-    "count": 25,
+    "count": 26,
     "example_links": [
       "https://kvcache.ai/blog/scaling-kv-cache-beyond-memory/"
     ],
@@ -2794,7 +2829,7 @@
     ]
   },
   "lambda.ai": {
-    "count": 10,
+    "count": 11,
     "example_links": [
       "https://lambda.ai/blog/lambda-closes-1-billion-senior-secured-credit-facility"
     ],
@@ -2804,7 +2839,7 @@
     ]
   },
   "law.cornell.edu": {
-    "count": 36,
+    "count": 38,
     "example_links": [
       "https://www.law.cornell.edu/uscode/text/42/7475",
       "https://www.law.cornell.edu/uscode/text/19/1338"
@@ -2816,7 +2851,7 @@
     ]
   },
   "ledger-enquirer.com": {
-    "count": 18,
+    "count": 19,
     "example_links": [
       "https://www.ledger-enquirer.com/news/environment/article315964444.html"
     ],
@@ -2826,7 +2861,7 @@
     ]
   },
   "libertystreeteconomics.newyorkfed.org": {
-    "count": 19,
+    "count": 20,
     "example_links": [
       "https://libertystreeteconomics.newyorkfed.org/2026/06/remote-work-leaves-younger-workers-sidelined/"
     ],
@@ -2846,7 +2881,7 @@
     ]
   },
   "link.springer.com": {
-    "count": 19,
+    "count": 20,
     "example_links": [
       "https://link.springer.com/article/10.1007/BF00125401"
     ],
@@ -2856,7 +2891,7 @@
     ]
   },
   "lmsys.org": {
-    "count": 17,
+    "count": 19,
     "example_links": [
       "https://www.lmsys.org/blog/2026-08-11-unified-radix-cache",
       "https://www.lmsys.org/blog/2026-04-10-sglang-hisparse"
@@ -2877,7 +2912,7 @@
     ]
   },
   "lore.kernel.org": {
-    "count": 25,
+    "count": 26,
     "example_links": [
       "https://lore.kernel.org/linux-media/CAHk-=wi4zC+Ze8e+p3tMv8TtG_80KzsZ1syL9anBtmEh5Z40vg@mail.gmail.com/"
     ],
@@ -2899,7 +2934,7 @@
     ]
   },
   "lwn.net": {
-    "count": 25,
+    "count": 26,
     "example_links": [
       "https://lwn.net/Articles/1073193/"
     ],
@@ -2931,7 +2966,7 @@
     ]
   },
   "massedcompute.com": {
-    "count": 10,
+    "count": 11,
     "example_links": [
       "https://massedcompute.com/faq-answers/?question=What%20are%20the%20key%20features%20of%20NVIDIA%20H100%20GPUs%20that%20enable%20improved%20performance%20in%20machine%20learning%20workloads%3F#:~:text=These%20answers%20are%20generated%20by%20an%20AI%20system%20and%20may%20be%20incomplete%20or%20inaccurate."
     ],
@@ -2973,7 +3008,7 @@
     ]
   },
   "microsoft.com": {
-    "count": 50,
+    "count": 51,
     "example_links": [
       "https://www.microsoft.com/en-us/msrc/bounty-microsoft-azure",
       "https://www.microsoft.com/en-us/investor/earnings/fy-2026-q4/press-release-webcast?ref=wheresyoured.at",
@@ -3006,7 +3041,7 @@
     ]
   },
   "mithril.ai": {
-    "count": 10,
+    "count": 11,
     "example_links": [
       "https://mithril.ai/blog/introducing-foundry"
     ],
@@ -3016,7 +3051,7 @@
     ]
   },
   "mlive.com": {
-    "count": 18,
+    "count": 19,
     "example_links": [
       "https://www.mlive.com/news/ann-arbor/2026/05/rural-township-extends-pause-on-data-centers-following-controversial-meta-backed-project.html"
     ],
@@ -3066,7 +3101,7 @@
     ]
   },
   "moonlite.ai": {
-    "count": 10,
+    "count": 11,
     "example_links": [
       "https://www.moonlite.ai/"
     ],
@@ -3096,7 +3131,7 @@
     ]
   },
   "mrbruh.com": {
-    "count": 25,
+    "count": 26,
     "example_links": [
       "https://mrbruh.com/amd2/"
     ],
@@ -3106,7 +3141,7 @@
     ]
   },
   "mthreads.com": {
-    "count": 5,
+    "count": 6,
     "example_links": [
       "https://www.mthreads.com/news/341"
     ],
@@ -3126,7 +3161,7 @@
     ]
   },
   "myrgv.com": {
-    "count": 18,
+    "count": 19,
     "example_links": [
       "https://myrgv.com/publications/the-brownsville-herald/2026/09/02/brownsville-commissioners-move-forward-with-data-center-moratorium/"
     ],
@@ -3136,7 +3171,7 @@
     ]
   },
   "nationalacademies.org": {
-    "count": 19,
+    "count": 20,
     "example_links": [
       "https://www.nationalacademies.org/read/23550/chapter/5#80"
     ],
@@ -3158,7 +3193,7 @@
     ]
   },
   "nber.org": {
-    "count": 38,
+    "count": 40,
     "example_links": [
       "https://www.nber.org/system/files/working_papers/w30589/w30589.pdf",
       "https://www.nber.org/papers/w30266"
@@ -3189,7 +3224,7 @@
     ]
   },
   "nebius.com": {
-    "count": 49,
+    "count": 50,
     "example_links": [
       "https://nebius.com/newsroom/nebius-announces-multi-billion-dollar-agreement-with-microsoft-for-ai-infrastructure?ref=wheresyoured.at",
       "https://nebius.com/newsroom/nvidia-and-nebius-partner-to-scale-full-stack-ai-cloud"
@@ -3211,7 +3246,7 @@
     ]
   },
   "networking-docs.nvidia.com": {
-    "count": 25,
+    "count": 26,
     "example_links": [
       "https://networking-docs.nvidia.com/doca/archive/3-4-0/bluefield-modes-of-operation"
     ],
@@ -3221,7 +3256,7 @@
     ]
   },
   "networkworld.com": {
-    "count": 25,
+    "count": 26,
     "example_links": [
       "https://www.networkworld.com/article/4205156/palo-alto-networks-at-black-hat-how-ai-erased-the-50-day-patch-window.html"
     ],
@@ -3231,7 +3266,7 @@
     ]
   },
   "newamerica.org": {
-    "count": 19,
+    "count": 20,
     "example_links": [
       "https://www.newamerica.org/insights/unpacking-inequities-unemployment-insurance/"
     ],
@@ -3271,7 +3306,7 @@
     ]
   },
   "news.gallup.com": {
-    "count": 18,
+    "count": 19,
     "example_links": [
       "https://news.gallup.com/poll/709772/americans-oppose-data-centers-area.aspx"
     ],
@@ -3301,7 +3336,7 @@
     ]
   },
   "news1.kr": {
-    "count": 25,
+    "count": 26,
     "example_links": [
       "https://www.news1.kr/it-science/general-it/5868735"
     ],
@@ -3321,7 +3356,7 @@
     ]
   },
   "newsroom.lamresearch.com": {
-    "count": 7,
+    "count": 8,
     "example_links": [
       "https://newsroom.lamresearch.com/molybdenum-metallization-ai-revolution"
     ],
@@ -3341,7 +3376,7 @@
     ]
   },
   "nexgencloud.com": {
-    "count": 10,
+    "count": 11,
     "example_links": [
       "https://www.nexgencloud.com/news/nexgen-cloud-secures-45-million-in-series-a-funding-to-expand-sovereign-ai-infrastructure-in-europe"
     ],
@@ -3361,7 +3396,7 @@
     ]
   },
   "neysa.ai": {
-    "count": 10,
+    "count": 11,
     "example_links": [
       "https://neysa.ai/press-release/blackstone-leads-funding-of-over-1-billion-dollar-to-neysa/"
     ],
@@ -3381,7 +3416,7 @@
     ]
   },
   "nihcm.org": {
-    "count": 19,
+    "count": 20,
     "example_links": [
       "https://nihcm.org/publications/addressing-health-care-workforce-shortages"
     ],
@@ -3391,7 +3426,7 @@
     ]
   },
   "niskanencenter.org": {
-    "count": 19,
+    "count": 20,
     "example_links": [
       "https://www.niskanencenter.org/wp-content/uploads/2026/01/The-case-for-enhanced-wage-records.pdf"
     ],
@@ -3401,7 +3436,7 @@
     ]
   },
   "nlxresearchhub.org": {
-    "count": 19,
+    "count": 20,
     "example_links": [
       "https://nlxresearchhub.org/"
     ],
@@ -3443,7 +3478,7 @@
     ]
   },
   "nscale.com": {
-    "count": 10,
+    "count": 11,
     "example_links": [
       "https://www.nscale.com/press-releases/nscale-series-c"
     ],
@@ -3453,7 +3488,7 @@
     ]
   },
   "nvcr.io": {
-    "count": 10,
+    "count": 11,
     "example_links": [
       "http://nvcr.io"
     ],
@@ -3463,7 +3498,7 @@
     ]
   },
   "nvd.nist.gov": {
-    "count": 25,
+    "count": 26,
     "example_links": [
       "https://nvd.nist.gov/vuln/detail/cve-2026-46300"
     ],
@@ -3473,7 +3508,7 @@
     ]
   },
   "nvidia.com": {
-    "count": 35,
+    "count": 37,
     "example_links": [
       "https://www.nvidia.com/en-us/product-security/",
       "http://nvidia.com/gpu.clique"
@@ -3484,7 +3519,7 @@
     ]
   },
   "nvidia.custhelp.com": {
-    "count": 25,
+    "count": 26,
     "example_links": [
       "https://nvidia.custhelp.com/app/answers/detail/a_id/5659"
     ],
@@ -3494,7 +3529,7 @@
     ]
   },
   "nvidianews.nvidia.com": {
-    "count": 122,
+    "count": 125,
     "example_links": [
       "https://nvidianews.nvidia.com/news/nvidia-partners-with-apollo-blackrock-blackstone-brookfield-goldman-sachs-and-kkr-to-establish-ai-compute-infrastructure-financing-platforms-to-mobilize-over-500-billion-of-third-party-capital",
       "https://nvidianews.nvidia.com/news/nvidia-introduces-new-family-of-bluefield-dpus-to-bring-breakthrough-networking-storage-and-security-performance-to-every-data-center",
@@ -3507,7 +3542,7 @@
     ]
   },
   "nytimes.com": {
-    "count": 76,
+    "count": 78,
     "example_links": [
       "https://www.nytimes.com/2020/12/22/us/politics/trump-pardons.html?ref=wheresyoured.at",
       "https://www.nytimes.com/2026/06/25/technology/openai-ipo-artificial-intelligence.html?ref=wheresyoured.at",
@@ -3520,7 +3555,7 @@
     ]
   },
   "oecd.org": {
-    "count": 19,
+    "count": 20,
     "example_links": [
       "https://www.oecd.org/content/dam/oecd/en/publications/reports/2025/02/algorithmic-management-in-the-workplace_3c84ed6d/287c13c4-en.pdf"
     ],
@@ -3530,7 +3565,7 @@
     ]
   },
   "onetcenter.org": {
-    "count": 19,
+    "count": 20,
     "example_links": [
       "https://www.onetcenter.org/overview.html"
     ],
@@ -3540,10 +3575,11 @@
     ]
   },
   "onlinelibrary.wiley.com": {
-    "count": 33,
+    "count": 35,
     "example_links": [
       "https://onlinelibrary.wiley.com/doi/abs/10.1111/iere.12043",
-      "https://onlinelibrary.wiley.com/doi/10.1111/ruso.12475"
+      "https://onlinelibrary.wiley.com/doi/10.1111/ruso.12475",
+      "https://onlinelibrary.wiley.com/doi/abs/10.1093/ajae/aar026?casa_token=s-uawbw6ySAAAAAA:jnwyqcNlMuWBlRNh_55H7BIo7qccxHoM4WClKxhGw4oYnWyNEkZAk0FIfhmsYthM7OwPBYkxkjDoLJCD"
     ],
     "first_seen": "2026-09-15T16:10:20.552679+00:00",
     "seen_in_sources": [
@@ -3552,7 +3588,7 @@
     ]
   },
   "openai.com": {
-    "count": 191,
+    "count": 194,
     "example_links": [
       "https://openai.com/index/hugging-face-model-evaluation-security-incident/",
       "https://openai.com/daybreak/",
@@ -3565,7 +3601,7 @@
     ]
   },
   "opencve.alliance.unm.edu": {
-    "count": 25,
+    "count": 26,
     "example_links": [
       "https://opencve.alliance.unm.edu/cve/CVE-2026-65617"
     ],
@@ -3595,7 +3631,7 @@
     ]
   },
   "oracle.com": {
-    "count": 25,
+    "count": 26,
     "example_links": [
       "https://www.oracle.com/corporate/security-practices/assurance/vulnerability/disclosure/"
     ],
@@ -3625,7 +3661,7 @@
     ]
   },
   "papers.ssrn.com": {
-    "count": 19,
+    "count": 20,
     "example_links": [
       "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5384966"
     ],
@@ -3645,7 +3681,7 @@
     ]
   },
   "patents.justia.com": {
-    "count": 7,
+    "count": 8,
     "example_links": [
       "https://patents.justia.com/patent/20180197770"
     ],
@@ -3655,7 +3691,7 @@
     ]
   },
   "pbs.org": {
-    "count": 19,
+    "count": 20,
     "example_links": [
       "https://www.pbs.org/newshour/politics/whats-next-for-immigrants-with-tps-status-after-supreme-court-ruling"
     ],
@@ -3687,7 +3723,7 @@
     ]
   },
   "pewresearch.org": {
-    "count": 19,
+    "count": 20,
     "example_links": [
       "https://www.pewresearch.org/short-reads/2026/08/12/second-trump-administration-has-ended-temporary-protected-status-for-most-immigrants-who-had-it/"
     ],
@@ -3697,7 +3733,7 @@
     ]
   },
   "piie.com": {
-    "count": 19,
+    "count": 20,
     "example_links": [
       "https://www.piie.com/sites/default/files/2024-06/2024-06-26warwickppt.pdf"
     ],
@@ -3737,7 +3773,7 @@
     ]
   },
   "planetdetroit.org": {
-    "count": 18,
+    "count": 19,
     "example_links": [
       "https://planetdetroit.org/2024/12/michigan-senate-passes-tax-breaks/"
     ],
@@ -3757,7 +3793,7 @@
     ]
   },
   "policymattersohio.org": {
-    "count": 18,
+    "count": 19,
     "example_links": [
       "https://policymattersohio.org/research/ohioans-should-not-pay-for-data-centers-energy-demands/"
     ],
@@ -3787,7 +3823,7 @@
     ]
   },
   "press.aboutamazon.com": {
-    "count": 10,
+    "count": 11,
     "example_links": [
       "https://press.aboutamazon.com/2026/2/openai-and-amazon-announce-strategic-partnership"
     ],
@@ -3809,7 +3845,7 @@
     ]
   },
   "primeintellect.ai": {
-    "count": 27,
+    "count": 28,
     "example_links": [
       "https://www.primeintellect.ai/",
       "https://www.primeintellect.ai/blog/series-a"
@@ -3820,7 +3856,7 @@
     ]
   },
   "prnewswire.com": {
-    "count": 10,
+    "count": 11,
     "example_links": [
       "https://www.prnewswire.com/news-releases/runpod-raises-100m-led-by-summit-partners-to-accelerate-the-ai-developer-cloud-302808689.html"
     ],
@@ -3847,6 +3883,16 @@
     "first_seen": "2026-09-29T18:03:27.371602+00:00",
     "seen_in_sources": [
       "ed_zitron"
+    ]
+  },
+  "pubmed.ncbi.nlm.nih.gov": {
+    "count": 1,
+    "example_links": [
+      "https://pubmed.ncbi.nlm.nih.gov/31501236/"
+    ],
+    "first_seen": "2026-10-02T00:58:56.923584+00:00",
+    "seen_in_sources": [
+      "equitable_growth"
     ]
   },
   "purduelandscapereport.org": {
@@ -3891,7 +3937,7 @@
     ]
   },
   "pytorch.org": {
-    "count": 25,
+    "count": 26,
     "example_links": [
       "https://pytorch.org/blog/helion-on-tpu-towards-hardware-heterogeneous-kernel-authoring/"
     ],
@@ -3911,7 +3957,7 @@
     ]
   },
   "qumulusai.com": {
-    "count": 10,
+    "count": 11,
     "example_links": [
       "https://www.qumulusai.com/articles/qumulusai-secures-500m-non-recourse-financing-facility-through-usdai-to-accelerate-ai-infrastructure-growth"
     ],
@@ -3991,7 +4037,7 @@
     ]
   },
   "research.nvidia.com": {
-    "count": 21,
+    "count": 22,
     "example_links": [
       "https://research.nvidia.com/labs/gear/robottt/"
     ],
@@ -4001,7 +4047,7 @@
     ]
   },
   "research.perplexity.ai": {
-    "count": 10,
+    "count": 11,
     "example_links": [
       "https://research.perplexity.ai/articles/enabling-trillion-parameter-models-on-aws-efa"
     ],
@@ -4011,7 +4057,7 @@
     ]
   },
   "research.upjohn.org": {
-    "count": 19,
+    "count": 20,
     "example_links": [
       "https://research.upjohn.org/cgi/viewcontent.cgi?article=1330&context=empl_research"
     ],
@@ -4033,7 +4079,7 @@
     ]
   },
   "reuters.com": {
-    "count": 229,
+    "count": 233,
     "example_links": [
       "https://www.reuters.com/business/finance/anthropics-mythos-sends-us-banks-rushing-plug-cyber-holes-2026-05-12/",
       "https://www.reuters.com/technology/anthropic-signs-35-billion-cloud-deal-with-nvidia-backed-lambda-source-says-2026-08-31/?ref=wheresyoured.at",
@@ -4077,7 +4123,7 @@
     ]
   },
   "rsfjournal.org": {
-    "count": 33,
+    "count": 34,
     "example_links": [
       "https://www.rsfjournal.org/content/9/3/78",
       "https://www.rsfjournal.org/content/rsfjss/8/4/155.full.pdf"
@@ -4089,7 +4135,7 @@
     ]
   },
   "runpod.io": {
-    "count": 10,
+    "count": 11,
     "example_links": [
       "https://www.runpod.io/careers"
     ],
@@ -4130,7 +4176,7 @@
     ]
   },
   "s205.q4cdn.com": {
-    "count": 18,
+    "count": 19,
     "example_links": [
       "https://s205.q4cdn.com/133937190/files/doc_financials/2026/q2/CoreWeave-Q2-26-Earnings-Infographic.pdf?ref=wheresyoured.at",
       "https://s205.q4cdn.com/133937190/files/doc_financials/2026/q2/CRWV-US-CORRECTED-TRANSCRIPT-CoreWeave-Q2-2026-Earnings-Call-11August2026.pdf"
@@ -4152,7 +4198,7 @@
     ]
   },
   "s23.q4cdn.com": {
-    "count": 10,
+    "count": 11,
     "example_links": [
       "https://s23.q4cdn.com/440135859/files/content_files/1q27-pressrelease-September_FINAL.pdf#page=1"
     ],
@@ -4172,10 +4218,11 @@
     ]
   },
   "sciencedirect.com": {
-    "count": 33,
+    "count": 35,
     "example_links": [
       "https://www.sciencedirect.com/science/article/abs/pii/S0927537109001018",
-      "https://www.sciencedirect.com/science/article/pii/S0970389615000658"
+      "https://www.sciencedirect.com/science/article/pii/S0970389615000658",
+      "https://www.sciencedirect.com/science/article/abs/pii/S0749379718317343"
     ],
     "first_seen": "2026-09-15T16:10:20.552679+00:00",
     "seen_in_sources": [
@@ -4194,7 +4241,7 @@
     ]
   },
   "sec.gov": {
-    "count": 36,
+    "count": 37,
     "example_links": [
       "https://www.sec.gov/Archives/edgar/data/1819989/000095010325015073/dp237633_ex9901.htm?ref=wheresyoured.at",
       "https://www.sec.gov/newsroom/press-releases/2022-79?ref=wheresyoured.at",
@@ -4238,7 +4285,7 @@
     ]
   },
   "semiconductor.samsung.com": {
-    "count": 7,
+    "count": 8,
     "example_links": [
       "https://semiconductor.samsung.com/news-events/news/samsung-showcases-ai-era-vision-and-latest-foundry-technologies-at-sff-2024/"
     ],
@@ -4248,7 +4295,7 @@
     ]
   },
   "sfchronicle.com": {
-    "count": 19,
+    "count": 20,
     "example_links": [
       "https://www.sfchronicle.com/food/restaurants/article/bay-area-restaurants-ice-20382074.php"
     ],
@@ -4268,7 +4315,7 @@
     ]
   },
   "sharonai.com": {
-    "count": 32,
+    "count": 33,
     "example_links": [
       "https://sharonai.com/press-releases/sharon-ai-reports-second-quarter-2026-results/?ref=wheresyoured.at",
       "https://sharonai.com/press-releases/sharon-ai-announces-us1-32-billion-five-year-cloud-computing-service-agreement/"
@@ -4300,7 +4347,7 @@
     ]
   },
   "skild.ai": {
-    "count": 10,
+    "count": 11,
     "example_links": [
       "https://www.skild.ai/"
     ],
@@ -4322,7 +4369,7 @@
     ]
   },
   "ssa.gov": {
-    "count": 19,
+    "count": 20,
     "example_links": [
       "https://www.ssa.gov/oact/NOTES/pdf_notes/note151.pdf"
     ],
@@ -4362,7 +4409,7 @@
     ]
   },
   "static1.squarespace.com": {
-    "count": 19,
+    "count": 20,
     "example_links": [
       "https://static1.squarespace.com/static/5ecd75a3c406d1318b20454d/t/5f45bdc62add6969dacf7f01/1598406087783/Bitler-Hoynes-JOLE-2016.pdf"
     ],
@@ -4432,7 +4479,7 @@
     ]
   },
   "swordart-online.net": {
-    "count": 5,
+    "count": 6,
     "example_links": [
       "https://www.swordart-online.net/"
     ],
@@ -4442,7 +4489,7 @@
     ]
   },
   "synopsys.com": {
-    "count": 7,
+    "count": 8,
     "example_links": [
       "https://www.synopsys.com/articles/firmware-based-training-ddr-ip.html"
     ],
@@ -4482,7 +4529,7 @@
     ]
   },
   "techcrunch.com": {
-    "count": 148,
+    "count": 149,
     "example_links": [
       "https://techcrunch.com/2025/06/05/cursors-anysphere-nabs-9-9b-valuation-soars-past-500m-arr/?ref=wheresyoured.at",
       "https://techcrunch.com/2026/05/27/ai-coding-startup-cognition-raises-1b-at-25b-pre-money-valuation/?ref=wheresyoured.at",
@@ -4505,7 +4552,7 @@
     ]
   },
   "tensorwave.com": {
-    "count": 10,
+    "count": 11,
     "example_links": [
       "https://tensorwave.com/blog/tensorwave-powers-frontier-ai-growth-for-cloud-customers-with-amd-helios-rackscale-solution"
     ],
@@ -4515,7 +4562,7 @@
     ]
   },
   "texastribune.org": {
-    "count": 18,
+    "count": 19,
     "example_links": [
       "https://www.texastribune.org/2026/08/31/spacex-brownsville-deannex-land-water-projects/"
     ],
@@ -4525,7 +4572,7 @@
     ]
   },
   "theguardian.com": {
-    "count": 147,
+    "count": 148,
     "example_links": [
       "https://www.theguardian.com/technology/2026/aug/17/are-microsofts-ai-plans-being-held-back-by-a-shortage-of-chips?ref=wheresyoured.at",
       "https://www.theguardian.com/australia-news/2015/dec/09/australian-mercenary-reportedly-killed-yemen-clashes?ref=wheresyoured.at",
@@ -4538,7 +4585,7 @@
     ]
   },
   "thehill.com": {
-    "count": 18,
+    "count": 19,
     "example_links": [
       "https://thehill.com/newsletters/technology/6085640-the-debate-over-ai-doomsday-warnings/"
     ],
@@ -4642,7 +4689,7 @@
     ]
   },
   "together.ai": {
-    "count": 10,
+    "count": 11,
     "example_links": [
       "https://www.together.ai/blog/announcing-our-series-c"
     ],
@@ -4662,7 +4709,7 @@
     ]
   },
   "tokenomics.semianalysis.com": {
-    "count": 10,
+    "count": 11,
     "example_links": [
       "https://tokenomics.semianalysis.com/openai/financials"
     ],
@@ -4714,7 +4761,7 @@
     ]
   },
   "tubmanfuneralhomes.com": {
-    "count": 11,
+    "count": 12,
     "example_links": [
       "https://www.tubmanfuneralhomes.com/obituaries/james-bruce"
     ],
@@ -4724,7 +4771,7 @@
     ]
   },
   "ubuntu.com": {
-    "count": 10,
+    "count": 11,
     "example_links": [
       "https://ubuntu.com/security/CVE-2026-64378"
     ],
@@ -4734,7 +4781,7 @@
     ]
   },
   "uciexpress.org": {
-    "count": 7,
+    "count": 8,
     "example_links": [
       "https://www.uciexpress.org/_files/ugd/0c1418_c5970a68ab214ffc97fab16d11581449.pdf"
     ],
@@ -4785,7 +4832,7 @@
     ]
   },
   "users.cs.utah.edu": {
-    "count": 7,
+    "count": 8,
     "example_links": [
       "https://users.cs.utah.edu/~rajeev/cacti6/cacti6-tr.pdf"
     ],
@@ -4795,7 +4842,7 @@
     ]
   },
   "usnlx.com": {
-    "count": 19,
+    "count": 20,
     "example_links": [
       "https://usnlx.com/postajob/"
     ],
@@ -4825,7 +4872,7 @@
     ]
   },
   "vcluster.com": {
-    "count": 35,
+    "count": 37,
     "example_links": [
       "https://www.vcluster.com/docs/vcluster/production-guide/choose-worker-node-model#decide-with-three-questions",
       "https://www.vcluster.com/case-studies/boost-run"
@@ -4836,7 +4883,7 @@
     ]
   },
   "verda.com": {
-    "count": 10,
+    "count": 11,
     "example_links": [
       "https://verda.com/blog/100m-revenue-run-rate",
       "https://verda.com/blog/instant-clusters-h1-2026#gpu-cluster-health-checks"
@@ -4847,7 +4894,7 @@
     ]
   },
   "vessl.ai": {
-    "count": 10,
+    "count": 11,
     "example_links": [
       "https://vessl.ai/ko/blog/vessl-b200-ai-factory"
     ],
@@ -4877,7 +4924,7 @@
     ]
   },
   "vllm.ai": {
-    "count": 49,
+    "count": 51,
     "example_links": [
       "https://vllm.ai/blog/2025-10-16-vllm-tpu",
       "https://vllm.ai/blog/2026-07-27-k3",
@@ -4889,7 +4936,7 @@
     ]
   },
   "volts.wtf": {
-    "count": 25,
+    "count": 26,
     "example_links": [
       "https://www.volts.wtf/p/doing-data-centers-the-not-dumb-way"
     ],
@@ -4899,7 +4946,7 @@
     ]
   },
   "washingtonpost.com": {
-    "count": 27,
+    "count": 28,
     "example_links": [
       "https://www.washingtonpost.com/business/2026/02/25/federal-investment-accounts-children-trump/",
       "https://www.washingtonpost.com/politics/2026/04/23/data-center-opposition-is-growing-impacting-key-midterm-campaigns/"
@@ -4931,7 +4978,7 @@
     ]
   },
   "weather.gov": {
-    "count": 4,
+    "count": 5,
     "example_links": [
       "https://www.weather.gov/iwx/03062026_LowerMichiganTornadoes"
     ],
@@ -4961,7 +5008,7 @@
     ]
   },
   "whitefiber.com": {
-    "count": 10,
+    "count": 11,
     "example_links": [
       "https://www.whitefiber.com/news?id=19"
     ],
@@ -4971,7 +5018,7 @@
     ]
   },
   "whitehouse.gov": {
-    "count": 20,
+    "count": 21,
     "example_links": [
       "https://www.whitehouse.gov/briefings-statements/2026/06/first-lady-melania-trump-launches-fostering-the-future-accountsamericas-first-savings-investment-vehicle-for-foster-youth/",
       "https://www.whitehouse.gov/presidential-actions/2026/09/excluding-certain-canadian-products-from-importation-into-the-united-states-in-response-to-continued-discrimination-against-the-commerce-of-the-united-states-with-respect-to-dairy/"
@@ -5004,7 +5051,7 @@
     ]
   },
   "wsj.com": {
-    "count": 219,
+    "count": 222,
     "example_links": [
       "https://www.wsj.com/tech/nvidia-pauses-revenue-sharing-deals-with-ai-cloud-companies-9c71454e?mod=author_content_page_1_pos_4",
       "https://www.wsj.com/cio-journal/yes-were-entering-the-era-of-artificial-general-intelligence-d9b0920e?ref=wheresyoured.at",
@@ -5018,7 +5065,7 @@
     ]
   },
   "www150.statcan.gc.ca": {
-    "count": 11,
+    "count": 12,
     "example_links": [
       "https://www150.statcan.gc.ca/n1/pub/36-28-0001/2026007/article/00005-eng.htm"
     ],
@@ -5028,7 +5075,7 @@
     ]
   },
   "www2.census.gov": {
-    "count": 19,
+    "count": 20,
     "example_links": [
       "https://www2.census.gov/programs-surveys/abs/information/abs_2023.pdf"
     ],
@@ -5048,7 +5095,7 @@
     ]
   },
   "yotta.com": {
-    "count": 10,
+    "count": 11,
     "example_links": [
       "https://yotta.com/press-releases/darya-ai-and-yotta-data-services-sign-strategic-collaboration-agreement-to-develop-tajikistans-first-green-ai-data-center/"
     ],
@@ -5071,7 +5118,7 @@
     ]
   },
   "z.ai": {
-    "count": 5,
+    "count": 6,
     "example_links": [
       "https://z.ai/blog/glm-5.2"
     ],
@@ -5081,7 +5128,7 @@
     ]
   },
   "zartonkmedia.com": {
-    "count": 10,
+    "count": 11,
     "example_links": [
       "https://zartonkmedia.com/2026/09/06/following-wsj-report-firebird-co-founder-offers-context-armenia-ai-project-has-roots-going-back-years-built-to-make-armenia-a-global-technology-powerhouse/"
     ],

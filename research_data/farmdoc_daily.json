@@ -3,6 +3,12 @@
   "status": "ok",
   "items": [
     {
+      "title": "Detecting Tillage Practices from Space: A New Approach to Monitoring Conservation Agriculture in the US Midwest",
+      "link": "https://farmdocdaily.illinois.edu/2026/10/detecting-tillage-practices-from-space-a-new-approach-to-monitoring-conservation-agriculture-in-the-us-midwest.html",
+      "date": "Thu, 01 Oct 2026 18:00:26 +0000",
+      "summary": "From 2014 to 2023, the Environmental Quality Incentives Program (EQIP) invested a total of $133.7 million in no-till and reduce till practices, out of a total of $10 billion in\u2026"
+    },
+    {
       "title": "Rethinking Phosphorus and Potassium, Part 3: Economics",
       "link": "https://farmdocdaily.illinois.edu/2026/09/rethinking-phosphorus-and-potassium-part-3-economics.html",
       "date": "Wed, 30 Sep 2026 15:39:11 +0000",
@@ -55,18 +61,12 @@
       "link": "https://farmdocdaily.illinois.edu/2026/09/2025-illinois-farm-earnings-improve-but-remain-below-recent-averages.html",
       "date": "Fri, 18 Sep 2026 15:51:26 +0000",
       "summary": "Based on records from 1,927 Illinois FBFM farms, average returns to farm operators\u2019 labor and management increased in every region of Illinois in 2025 compared with 2024. However, returns remained below the five-year average. Although yields and costs were similar to the previous year, earnings\u2026"
-    },
-    {
-      "title": "Under Pressure: The Size and Timing of the Harvest Low in Corn Basis",
-      "link": "https://farmdocdaily.illinois.edu/2026/09/under-pressure-the-size-and-timing-of-the-harvest-low-in-corn-basis.html",
-      "date": "Thu, 17 Sep 2026 17:34:32 +0000",
-      "summary": "US corn harvest-time corn basis bottoms in mid-October, coinciding with the peak of harvest activity. Average basis at the harvest-time low is about 11 cents below late-November levels. State-level lows average 16 cents, deepest in Missouri, Indiana and Illinois, and more loosely track local\u2026"
     }
   ],
   "label": "farmdoc daily",
   "area": "agriculture",
   "site_url": "https://farmdocdaily.illinois.edu/",
   "cadence": "weekly_digest",
-  "fetched_at": "2026-10-01T00:39:42.557976+00:00",
+  "fetched_at": "2026-10-02T00:58:36.966103+00:00",
   "description_unreliable": false
 }
