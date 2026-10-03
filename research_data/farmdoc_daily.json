@@ -3,6 +3,12 @@
   "status": "ok",
   "items": [
     {
+      "title": "Liquidity and Repayment Capacity",
+      "link": "https://farmdocdaily.illinois.edu/2026/10/liquidity-and-repayment-capacity.html",
+      "date": "Fri, 02 Oct 2026 17:51:33 +0000",
+      "summary": "Previous articles have examined differences in crop machinery investment, crop machinery costs, and labor standards for different sized crop farms (Langemeier, 2025a; Langemeier, 2025b; Langemeier, 2026). This article examines trends\u2026"
+    },
+    {
       "title": "Detecting Tillage Practices from Space: A New Approach to Monitoring Conservation Agriculture in the US Midwest",
       "link": "https://farmdocdaily.illinois.edu/2026/10/detecting-tillage-practices-from-space-a-new-approach-to-monitoring-conservation-agriculture-in-the-us-midwest.html",
       "date": "Thu, 01 Oct 2026 18:00:26 +0000",
@@ -55,18 +61,12 @@
       "link": "https://farmdocdaily.illinois.edu/2026/09/farmer-perceptions-of-ai-benefits-in-the-united-states-and-argentina.html",
       "date": "Mon, 21 Sep 2026 16:12:54 +0000",
       "summary": "Artificial intelligence and data-driven tools are being applied to agriculture, from robotics, automation, and precision farming to predictive analytics and digital advisory tools (Aijaz et al., 2025; Edet and Chowdhury,\u2026"
-    },
-    {
-      "title": "2025 Illinois Farm Earnings Improve but Remain Below Recent Averages",
-      "link": "https://farmdocdaily.illinois.edu/2026/09/2025-illinois-farm-earnings-improve-but-remain-below-recent-averages.html",
-      "date": "Fri, 18 Sep 2026 15:51:26 +0000",
-      "summary": "Based on records from 1,927 Illinois FBFM farms, average returns to farm operators\u2019 labor and management increased in every region of Illinois in 2025 compared with 2024. However, returns remained below the five-year average. Although yields and costs were similar to the previous year, earnings\u2026"
     }
   ],
   "label": "farmdoc daily",
   "area": "agriculture",
   "site_url": "https://farmdocdaily.illinois.edu/",
   "cadence": "weekly_digest",
-  "fetched_at": "2026-10-02T00:58:36.966103+00:00",
+  "fetched_at": "2026-10-03T00:35:48.438223+00:00",
   "description_unreliable": false
 }

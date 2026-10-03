@@ -3,16 +3,16 @@
   "status": "ok",
   "items": [
     {
-      "title": "Epoch AI data centers (global) \u2014 2026-10-02",
-      "link": "https://epoch.ai/data/ai-data-centers#snapshot-2026-10-02",
-      "date": "2026-10-02",
-      "summary": "Epoch AI covers 93 large AI data centers (71 drawing power now): 13.7 GW current power, 14.2M H100-equivalents, 10 countries with capacity. By power: United States 11.95 GW (87%), China 0.73 GW (5%), Malaysia 0.66 GW (5%), United Kingdom 0.09 GW (1%). Indiana: 3 sites, 1.09 GW = 7.9% of the covered global total (Anthropic-Amazon New Carlisle (910 MW), Meta Jeffersonville (178 MW), Google Fort Wayne (0 MW)). Covered set only, not world capacity; skewed to the US. Dataset updated 2026-10-01."
+      "title": "Epoch AI data centers (global) \u2014 2026-10-03",
+      "link": "https://epoch.ai/data/ai-data-centers#snapshot-2026-10-03",
+      "date": "2026-10-03",
+      "summary": "Epoch AI covers 93 large AI data centers (72 drawing power now): 13.7 GW current power, 14.3M H100-equivalents, 10 countries with capacity. By power: United States 11.76 GW (86%), Malaysia 0.89 GW (7%), China 0.73 GW (5%), United Kingdom 0.09 GW (1%). Indiana: 3 sites, 1.09 GW = 7.9% of the covered global total (Anthropic-Amazon New Carlisle (910 MW), Meta Jeffersonville (178 MW), Google Fort Wayne (0 MW)). Covered set only, not world capacity; skewed to the US. Dataset updated 2026-10-02."
     }
   ],
   "label": "Epoch AI \u2014 AI data centers hub (global benchmark)",
   "area": "grid_buildout",
   "site_url": "https://epoch.ai/data/ai-data-centers",
   "cadence": "weekly",
-  "fetched_at": "2026-10-02T00:58:54.883065+00:00",
+  "fetched_at": "2026-10-03T00:36:03.622797+00:00",
   "description_unreliable": false
 }
