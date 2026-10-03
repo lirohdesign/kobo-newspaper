@@ -1,12 +1,72 @@
 {
   "id": "purdue_gotnature",
-  "status": "error",
-  "error": "HTTP Error 500: Internal Server Error",
-  "items": [],
+  "status": "ok",
+  "items": [
+    {
+      "title": "October Is Firewood Month: Protect Indiana\u2019s Forests by Making Smart Choices",
+      "link": "https://www.purdue.edu/fnr/extension/october-is-firewood-month-protect-indianas-forests-by-making-smart-choices/",
+      "date": "Thu, 01 Oct 2026 14:02:37 +0000",
+      "summary": "As the crisp autumn air settles in and campfires become a seasonal staple, October brings an important reminder: your firewood choices matter. That\u2019s why October is officially Firewood Month, a nationwide campaign to raise awareness about the risks of moving firewood and the spread of invasive\u2026"
+    },
+    {
+      "title": "Minecraft Meets the Hellbender",
+      "link": "https://www.purdue.edu/fnr/extension/minecraft-meets-the-hellbender/",
+      "date": "Tue, 22 Sep 2026 20:14:33 +0000",
+      "summary": "Sherri Reinsch, research associate and hellbender husbandry coordinator gently handles a hellbender in the lab. (Photo provided by Purdue Agricultural Communications) Purdue Stories: This amphibious rock star gets its own educational video game with the help of Purdue research. The eastern\u2026"
+    },
+    {
+      "title": "Is It Too Early to Think About Christmas Tree Pests?",
+      "link": "https://www.purdue.edu/fnr/extension/is-it-too-early-to-think-about-christmas-tree-pests/",
+      "date": "Tue, 22 Sep 2026 20:13:11 +0000",
+      "summary": "Purdue Landscape Report: Is it too early (and too hot outside) to think about Christmas trees? Maybe, but many of the pests that attack them are active at this time of year. In this week\u2019s IDNR Entomology review, Jared Spokowsky shared damage he observed on pine from white pine weevil and Zimmerman\u2026"
+    },
+    {
+      "title": "What You Plant Matters to Wildlife",
+      "link": "https://www.purdue.edu/fnr/extension/what-you-plant-matters-to-wildlife/",
+      "date": "Wed, 16 Sep 2026 20:51:05 +0000",
+      "summary": "Purdue Landscape Report: When considering trees, shrubs, and forbs or grasses to plant for landscaping, a little research in advance can lead to dual benefits for both the appearance of your planting area and a wildlife-friendly landscape. Our native wildlife species are tuned into using our native\u2026"
+    },
+    {
+      "title": "Woodland Flowers of Late Summer",
+      "link": "https://www.purdue.edu/fnr/extension/woodland-flowers-of-late-summer/",
+      "date": "Mon, 14 Sep 2026 14:37:46 +0000",
+      "summary": "It is natural to think of spring as the season of flowers in our woodlands, but summer can also provide some outstanding displays of native bloom. In addition, these flowers are often attracting some of our largest and showiest butterflies and bumblebees. Here are a few of the late summer flowers\u2026"
+    },
+    {
+      "title": "Heavy August Rains Bring More Mosquitoes to Indiana",
+      "link": "https://www.purdue.edu/fnr/extension/heavy-august-rains-bring-more-mosquitoes-to-indiana/",
+      "date": "Wed, 09 Sep 2026 17:47:48 +0000",
+      "summary": "Have you been hearing more annoying buzzing around your ears than normal? Maybe you\u2019ve got an itch you just can\u2019t seem to scratch. There\u2019s a good explanation for that. Photo provided by Purdue Extension \u2013 Entomology Indiana saw record amounts of rainfall in August, resulting in flooding across the\u2026"
+    },
+    {
+      "title": "Question: Why Did the Shagbark Hickories Survive the Tornado?",
+      "link": "https://www.purdue.edu/fnr/extension/question-why-did-the-shagbark-hickories-survive-the-tornado/",
+      "date": "Thu, 27 Aug 2026 13:14:45 +0000",
+      "summary": "Following a recent tornado in Monroe County, an Indiana homeowner noticed something remarkable among the storm damage. More than 30 trees, including walnut and butternut, were either uprooted or snapped. Yet several mature shagbark hickory trees stood largely untouched amid the destruction. This\u2026"
+    },
+    {
+      "title": "New Indiana Woodland Steward Newsletter",
+      "link": "https://www.purdue.edu/fnr/extension/new-indiana-woodland-steward-newsletter/",
+      "date": "Wed, 12 Aug 2026 20:21:50 +0000",
+      "summary": "Explore the latest newsletter updates on the Indiana Woodland Steward website. Stay up-to-date with forestry news and receive their free e-newsletter by subscribing at IWS Subscribe. Highlights from the new Newsletter include: Ticks in Indiana Woodlands: Identification, Risk Reduction, and\u2026"
+    },
+    {
+      "title": "Indiana Fall Hunting Licenses on Sale and New Mobile App Available",
+      "link": "https://www.purdue.edu/fnr/extension/indiana-fall-hunting-licenses-on-sale-and-new-mobile-app-available/",
+      "date": "Wed, 12 Aug 2026 18:45:31 +0000",
+      "summary": "Fall Hunting and Fishing Licenses on Sale MyDNR, Indiana\u2019s Outdoor Newsletter: Whether you\u2019re gearing up to hunt, fish, or simply enjoy the outdoors this season, now\u2019s the perfect time to prepare. Check out the IN DNR Sport License webpage as you will find information for: Deer Turkey Small Game\u2026"
+    },
+    {
+      "title": "Trees and Storms: Understanding Damage, Risk and Recovery",
+      "link": "https://www.purdue.edu/fnr/extension/trees-and-storms-understanding-the-damage/",
+      "date": "Wed, 12 Aug 2026 18:30:53 +0000",
+      "summary": "Trees are lost every year from storm-related events. Major damage to parts of the tree or even the entire tree can result from high winds, snow and ice. Historic, specimen and significant trees provide value to the landscape and the community, and these trees can become aesthetic, financial and\u2026"
+    }
+  ],
   "label": "Purdue Extension FNR \u2014 Got Nature? blog",
   "area": "forestry",
   "site_url": "https://www.purdue.edu/fnr/extension/",
   "cadence": "weekly",
-  "fetched_at": "2026-10-02T00:58:57.306789+00:00",
+  "fetched_at": "2026-10-03T00:36:07.615690+00:00",
   "description_unreliable": false
 }
