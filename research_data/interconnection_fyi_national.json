@@ -3,9 +3,9 @@
   "status": "ok",
   "items": [
     {
-      "title": "US data-center tracker \u2014 2026-10-03",
-      "link": "https://www.interconnection.fyi/data-center#snapshot-2026-10-03",
-      "date": "2026-10-03",
+      "title": "US data-center tracker \u2014 2026-10-05",
+      "link": "https://www.interconnection.fyi/data-center#snapshot-2026-10-05",
+      "date": "2026-10-05",
       "summary": "3866 projects across 46 US state pages: 2435 Operational, 804 Proposed, 408 Unknown, 168 Construction, 51 Cancelled. Top states by active pipeline (Proposed + Construction): VA (329), TX (282), OH (86), IN (39), NM (37). Indiana: 39 in pipeline (rank 4 of 46, 4.0% of 972); 4 operational (rank 32, 0.2% of 2435). Tracker headline: 12538 records (4862 Unknown, 4055 Operational, 2534 Proposed, 1020 Construction, 67 Cancelled); not reconcilable with the state-page project lists used above."
     }
   ],
@@ -13,6 +13,6 @@
   "area": "grid_buildout",
   "site_url": "https://www.interconnection.fyi/data-center",
   "cadence": "weekly",
-  "fetched_at": "2026-10-03T23:57:41.099775+00:00",
+  "fetched_at": "2026-10-05T00:02:39.299962+00:00",
   "description_unreliable": false
 }
