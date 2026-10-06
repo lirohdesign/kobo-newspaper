@@ -131,16 +131,6 @@
       "notes": "Confirmed live 2026-09-12: real WordPress feed, posts near-daily (recent items on generative AI's labor-market effects, UI access gaps, housing wealth/political participation). Publishes far more often than monthly — treat as a monthly digest (summarize the most notable 2-4 posts from the past month, same convention as farmdoc_daily's weekly-digest treatment) rather than dumping every item."
     },
     {
-      "id": "purdue_gotnature",
-      "label": "Purdue Extension FNR — Got Nature? blog",
-      "area": "forestry",
-      "type": "rss",
-      "feed_url": "https://www.purdue.edu/fnr/extension/feed/",
-      "site_url": "https://www.purdue.edu/fnr/extension/",
-      "cadence": "weekly",
-      "notes": "Confirmed live 2026-09-12: real WordPress feed (several posts/week — Indiana wildlife, ID That Tree, prescribed fire, tree health). Bonus find: this feed itself carries new-issue announcements for the Indiana Woodland Steward newsletter (a live item titled 'New Indiana Woodland Steward Newsletter' was in the feed at verification time) — so this single source covers both the original Stage 2 'Got Nature?' request and doubles as the practical tracking mechanism for the irregular (~3x/year) Woodland Steward from the Stage 3 list, rather than needing a separate guessed calendar window for that one. See the 'deprioritized' section below for the reasoning on not building a standalone Woodland Steward calendar entry."
-    },
-    {
       "id": "usda_midwest_climate_hub",
       "label": "USDA Midwest Climate Hub",
       "area": "climate_drought",
@@ -203,6 +193,11 @@
         "id": "data_center_dynamics",
         "label": "Data Center Dynamics",
         "reason": "Cut 2026-09-29 at the maintainer's decision. Trade news of deals and announcements, no expert-synthesized metric; the feed mixes in sponsored posts (about a fifth of ledger items carried sponsor/webinar markers) and unrelated telecom stories. Two low-value weeks were logged 09-15 and 09-22. Replacement candidates for the AI/grid-load question: EIA Electric Power Monthly (needs a free key) and MISO large-load data."
+      },
+      {
+        "id": "purdue_gotnature",
+        "label": "Purdue Extension FNR — Got Nature? blog",
+        "reason": "Cut 2026-10-06 at the maintainer's decision: not valuable the way the ag and forestry data sources are. Extension blog, mostly educational posts with no metric (ID That Tree, license sales, Firewood Month); a few report observed Indiana conditions. The agent's standard review the same day put most of the feed outside the admission standard and asked for the maintainer's view. Its side role of surfacing Indiana Woodland Steward issues goes with it."
       },
       {
         "id": "drought_gov_midwest",
