@@ -152,7 +152,7 @@
       {
         "id": "indiana_woodland_steward",
         "label": "Indiana Woodland Steward newsletter (~3x/year)",
-        "reason": "No fixed release window to build a calendar trigger around (irregular, ~3 issues/year). The purdue_gotnature RSS source in research_sources.json already surfaces new-issue announcements directly and was confirmed live carrying one at setup time ('New Indiana Woodland Steward Newsletter') — a real feed beats a guessed calendar window for something this irregular, same reasoning as using ipcc.ch's RSS over guessed AR7 dates."
+        "reason": "No fixed release window to build a calendar trigger around (irregular, ~3 issues/year). New issues were surfaced by the purdue_gotnature feed until that source was cut on 2026-10-06; nothing tracks it now. Revisit only if the maintainer wants it watched."
       },
       {
         "id": "nceo_employee_ownership_report",

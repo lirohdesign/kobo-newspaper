@@ -3,22 +3,22 @@
   "status": "ok",
   "items": [
     {
-      "title": "Indiana Corn Progress \u2014 week ending 2026-09-27",
-      "link": "https://quickstats.nass.usda.gov/#corn-week-2026-09-27",
-      "date": "2026-09-27",
-      "summary": "Indiana Corn as of week ending 2026-09-27: Dented: 95%, Mature: 62%, Harvested (Grain): 13%, Harvested (Silage): 73%."
+      "title": "Indiana Corn Progress \u2014 week ending 2026-10-04",
+      "link": "https://quickstats.nass.usda.gov/#corn-week-2026-10-04",
+      "date": "2026-10-04",
+      "summary": "Indiana Corn as of week ending 2026-10-04: Dented: 99%, Mature: 77%, Harvested (Grain): 21%, Harvested (Silage): 83%."
     },
     {
-      "title": "Indiana Soybeans Progress \u2014 week ending 2026-09-27",
-      "link": "https://quickstats.nass.usda.gov/#soybeans-week-2026-09-27",
-      "date": "2026-09-27",
-      "summary": "Indiana Soybeans as of week ending 2026-09-27: Dropping Leaves: 74%, Harvested: 14%."
+      "title": "Indiana Soybeans Progress \u2014 week ending 2026-10-04",
+      "link": "https://quickstats.nass.usda.gov/#soybeans-week-2026-10-04",
+      "date": "2026-10-04",
+      "summary": "Indiana Soybeans as of week ending 2026-10-04: Dropping Leaves: 86%, Harvested: 27%."
     }
   ],
   "label": "USDA NASS Crop Progress \u2014 Indiana",
   "area": "agriculture",
   "site_url": "https://quickstats.nass.usda.gov/",
   "cadence": "weekly_in_season",
-  "fetched_at": "2026-10-05T00:02:30.482522+00:00",
+  "fetched_at": "2026-10-06T01:49:00.903482+00:00",
   "description_unreliable": false
 }

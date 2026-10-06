@@ -3,6 +3,12 @@
   "status": "ok",
   "items": [
     {
+      "title": "Anthropic Subscriptions Offer 5x+ More Value Than OpenAI",
+      "link": "https://newsletter.semianalysis.com/p/anthropic-subscriptions-offer-5x",
+      "date": "Mon, 05 Oct 2026 20:01:09 GMT",
+      "summary": "Subscription plans are still the primary way consumers and small businesses pay for AI. These plans are highly subsidized\u2014as we previously explained in June\u2014but can still make economic sense as powerful customer acquisition and marketing tools. For example, the goodwill engendered by OpenAI\u2019s\u2026"
+    },
+    {
       "title": "How GLM5.3 Sparse Attention Affects HBM Memory Usage",
       "link": "https://newsletter.semianalysis.com/p/sparse-savings-persistent-demand-inside-glm53",
       "date": "Mon, 28 Sep 2026 19:26:41 GMT",
@@ -85,18 +91,12 @@
       "link": "https://newsletter.semianalysis.com/p/koreas-trillion-dollar-sovereign",
       "date": "Tue, 01 Sep 2026 20:14:32 GMT",
       "summary": "Every day, businesses and governments around the world are becoming increasingly reliant on America\u2019s frontier models. Startup CEOs already can\u2019t imagine running their companies without AI, and it won\u2019t be long until the same is true for every other organization in the world.At the same time, it\u2019s\u2026"
-    },
-    {
-      "title": "Most Neoclouds Suck At Security",
-      "link": "https://newsletter.semianalysis.com/p/most-neoclouds-suck-at-security",
-      "date": "Sun, 30 Aug 2026 15:46:22 GMT",
-      "summary": "In Shakespeare\u2019s Julius Caesar, Caesar ignores a soothsayer\u2019s warning, shrugs off his wife\u2019s dream of blood running through the streets, waves away a letter revealing his assassins by name, and strides gallantly into the one room in Rome where every senator is \u201crequired\u201d to check their weapons at\u2026"
     }
   ],
   "label": "SemiAnalysis",
   "area": "ai_market",
   "site_url": "https://semianalysis.com/",
   "cadence": "weekly",
-  "fetched_at": "2026-10-05T00:02:29.061141+00:00",
+  "fetched_at": "2026-10-06T01:48:58.903082+00:00",
   "description_unreliable": false
 }

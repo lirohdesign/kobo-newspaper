@@ -3,6 +3,12 @@
   "status": "ok",
   "items": [
     {
+      "title": "The deeper argument at the heart of the federal budget debate",
+      "link": "https://equitablegrowth.org/research-paper/the-deeper-argument-at-the-heart-of-the-federal-budget-debate/",
+      "date": "Mon, 05 Oct 2026 15:00:00 +0000",
+      "summary": "Key takeaways The federal budget debate is filtered through claims about spending and revenue levels, but the debate is really about whether the size of the federal budget should be allowed to change with changing circumstances. The real argument is more about a fundamental view of the world. The\u2026"
+    },
+    {
       "title": "Unpacking the implications of new SNAP rules as increased costs shift to states",
       "link": "https://equitablegrowth.org/unpacking-the-implications-of-new-snap-rules-as-increased-costs-shift-to-states/",
       "date": "Thu, 01 Oct 2026 18:15:00 +0000",
@@ -55,18 +61,12 @@
       "link": "https://equitablegrowth.org/terms-and-conditions-for-generative-ai-users-outline-a-new-legal-framework-that-puts-u-s-consumers-at-risk/",
       "date": "Thu, 20 Aug 2026 09:00:00 +0000",
       "summary": "Key takeaways Generative AI firms are answering the legal questions raised by their new technologies unilaterally via their terms and conditions. When users agree to the terms and conditions set by generative AI providers, they may be unknowingly relinquishing control over their creative works,\u2026"
-    },
-    {
-      "title": "The Terms and Conditions of Generative AI",
-      "link": "https://equitablegrowth.org/working-papers/the-terms-and-conditions-of-generative-ai/",
-      "date": "Thu, 20 Aug 2026 08:59:00 +0000",
-      "summary": "Authors:John M. Newman, University of MemphisAndres Sawicki, University of Miami Abstract: Generative AI raises pressing questions for myriad doctrinal areas. Policymakers and scholars have responded rapidly, devoting substantial attention to these difficult legal and policy questions. But, as a\u2026"
     }
   ],
   "label": "Washington Center for Equitable Growth",
   "area": "inequality",
   "site_url": "https://equitablegrowth.org/",
   "cadence": "monthly_digest",
-  "fetched_at": "2026-10-05T00:02:40.668850+00:00",
+  "fetched_at": "2026-10-06T01:49:16.252461+00:00",
   "description_unreliable": false
 }
