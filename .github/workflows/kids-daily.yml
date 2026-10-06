@@ -10,9 +10,9 @@ on:
 
 jobs:
   build_and_deploy_kids:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
 
       - name: Sync existing site
         run: |
@@ -21,7 +21,7 @@ jobs:
           rm -rf existing_site
 
       - name: Set up Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v6
         with:
           python-version: '3.13'
 

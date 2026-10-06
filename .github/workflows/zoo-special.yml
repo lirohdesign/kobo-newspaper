@@ -9,9 +9,9 @@ on:
 
 jobs:
   deploy_and_send:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
 
       - name: Sync existing site
         run: |
