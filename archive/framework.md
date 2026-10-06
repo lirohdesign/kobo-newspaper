@@ -163,7 +163,7 @@ Two independent GitHub Actions workflows, each with their own schedule and deplo
 
 ### Standard build (`.github/workflows/daily.yml`)
 
-Runs weekday 6:29 AM CST / weekend 7:43 AM CST, plus `workflow_dispatch`.
+Runs weekday 6:29 AM CST / weekend 7:43 AM CST, plus `workflow_dispatch`, with a backup run 4 hours after each (10:29 AM / 11:43 AM CST). GitHub can skip a scheduled run or fail to get it a runner (2026-10-05 sent no issue); the backup covers that. `main.py` sends to Instapaper only when `old_issues/<today>.html` is not yet on gh-pages, so after a good main run the backup only refreshes the site. A `concurrency` group queues overlapping runs so the second sees the first's archive file instead of both sending.
 
 1. Clone gh-pages branch → restore `old_issues/` and `nyt_morning.html` into workspace
 2. Install: `pip install requests beautifulsoup4 certifi pillow`
