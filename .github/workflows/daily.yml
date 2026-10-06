@@ -6,7 +6,19 @@ on:
     - cron: '29 12 * * 1-5'
     # 7:45 AM CST (1:45 PM UTC) Weekends (Sat-Sun)
     - cron: '43 13 * * 6,0'
+    # Backup runs 4h later. GitHub can skip a scheduled run or fail to get it
+    # a runner (2026-10-05: no issue that day). main.py sends only from the
+    # first build of the day, so when the main run worked this one just
+    # refreshes the site.
+    - cron: '29 16 * * 1-5'
+    - cron: '43 17 * * 6,0'
   workflow_dispatch:
+
+# Queue overlapping runs so the second sees the first's old_issues/ file and
+# skips the send, rather than both sending.
+concurrency:
+  group: daily-newspaper
+  cancel-in-progress: false
 
 jobs:
   build_and_deploy:

@@ -6,7 +6,7 @@ A personal automated newspaper service that curates content from The Guardian, N
 
 | Workflow | Frequency (CST) | Purpose |
 | :--- | :--- | :--- |
-| **Daily Newspaper** | 6:30 AM (M-F) / 7:45 AM (S-S) | Builds `index.html`. Weekend lag handles NYT publishing delays. |
+| **Daily Newspaper** | 6:30 AM (M-F) / 7:45 AM (S-S), backup run 4h later | Builds `index.html`. Weekend lag handles NYT publishing delays. Only the first build of the day sends to Instapaper. |
 
 ## 📂 Persistent Storage
 
