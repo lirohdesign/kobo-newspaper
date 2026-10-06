@@ -3,6 +3,12 @@
   "status": "ok",
   "items": [
     {
+      "title": "Food Inflation and the Outlook for Beef Prices",
+      "link": "https://farmdocdaily.illinois.edu/2026/10/food-inflation-and-the-outlook-for-beef-prices.html",
+      "date": "Mon, 05 Oct 2026 15:54:17 +0000",
+      "summary": "The August 2026 CPI data show that food prices were 2.7% higher than a year earlier. Food-at-home prices rose 2.2%, while food-away-from-home prices increased 3.4%. Beef and veal prices were 5.9% higher in August than a year earlier, extending a period of elevated beef prices that has persisted for\u2026"
+    },
+    {
       "title": "Liquidity and Repayment Capacity",
       "link": "https://farmdocdaily.illinois.edu/2026/10/liquidity-and-repayment-capacity.html",
       "date": "Fri, 02 Oct 2026 17:51:33 +0000",
@@ -55,18 +61,12 @@
       "link": "https://farmdocdaily.illinois.edu/2026/09/average-illinois-cash-rents-and-soil-productivity-in-2026.html",
       "date": "Tue, 22 Sep 2026 22:00:00 +0000",
       "summary": "Since 2017, we\u2019ve provided annual updates to a simple formula for calculating the average cash rent for a piece of farmland based on its average soil productivity and location within Illinois. Today\u2019s article provides the latest in this series of updates to reflect the relationship between rental\u2026"
-    },
-    {
-      "title": "Farmer Perceptions of AI Benefits in the United States and Argentina",
-      "link": "https://farmdocdaily.illinois.edu/2026/09/farmer-perceptions-of-ai-benefits-in-the-united-states-and-argentina.html",
-      "date": "Mon, 21 Sep 2026 16:12:54 +0000",
-      "summary": "Artificial intelligence and data-driven tools are being applied to agriculture, from robotics, automation, and precision farming to predictive analytics and digital advisory tools (Aijaz et al., 2025; Edet and Chowdhury,\u2026"
     }
   ],
   "label": "farmdoc daily",
   "area": "agriculture",
   "site_url": "https://farmdocdaily.illinois.edu/",
   "cadence": "weekly_digest",
-  "fetched_at": "2026-10-05T00:02:29.557842+00:00",
+  "fetched_at": "2026-10-06T01:48:59.159016+00:00",
   "description_unreliable": false
 }

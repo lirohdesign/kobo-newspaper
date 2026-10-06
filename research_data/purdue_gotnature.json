@@ -3,6 +3,12 @@
   "status": "ok",
   "items": [
     {
+      "title": "Disease May Cause Wilting and Eventual Death of Certain Trees and Shrubs, Purdue Landscape Report",
+      "link": "https://www.purdue.edu/fnr/extension/disease-may-cause-wilting-and-eventual-death-of-certain-trees-and-shrubs-purdue-landscape-report/",
+      "date": "Mon, 05 Oct 2026 13:19:43 +0000",
+      "summary": "Purdue Landscape Report: This article is not meant to raise an alarm for a new, deadly tree disease. Rather, I wish to increase your awareness of a disease that has been around for a long time. According to Purdue experts, it is one of the most common and destructive diseases of woody ornamental\u2026"
+    },
+    {
       "title": "October Is Firewood Month: Protect Indiana\u2019s Forests by Making Smart Choices",
       "link": "https://www.purdue.edu/fnr/extension/october-is-firewood-month-protect-indianas-forests-by-making-smart-choices/",
       "date": "Thu, 01 Oct 2026 14:02:37 +0000",
@@ -55,18 +61,12 @@
       "link": "https://www.purdue.edu/fnr/extension/indiana-fall-hunting-licenses-on-sale-and-new-mobile-app-available/",
       "date": "Wed, 12 Aug 2026 18:45:31 +0000",
       "summary": "Fall Hunting and Fishing Licenses on Sale MyDNR, Indiana\u2019s Outdoor Newsletter: Whether you\u2019re gearing up to hunt, fish, or simply enjoy the outdoors this season, now\u2019s the perfect time to prepare. Check out the IN DNR Sport License webpage as you will find information for: Deer Turkey Small Game\u2026"
-    },
-    {
-      "title": "Trees and Storms: Understanding Damage, Risk and Recovery",
-      "link": "https://www.purdue.edu/fnr/extension/trees-and-storms-understanding-the-damage/",
-      "date": "Wed, 12 Aug 2026 18:30:53 +0000",
-      "summary": "Trees are lost every year from storm-related events. Major damage to parts of the tree or even the entire tree can result from high winds, snow and ice. Historic, specimen and significant trees provide value to the landscape and the community, and these trees can become aesthetic, financial and\u2026"
     }
   ],
   "label": "Purdue Extension FNR \u2014 Got Nature? blog",
   "area": "forestry",
   "site_url": "https://www.purdue.edu/fnr/extension/",
   "cadence": "weekly",
-  "fetched_at": "2026-10-05T00:02:42.747572+00:00",
+  "fetched_at": "2026-10-06T01:49:18.600155+00:00",
   "description_unreliable": false
 }
