@@ -3,6 +3,12 @@
   "status": "ok",
   "items": [
     {
+      "title": "Variable Cash Lease Considerations for 2027",
+      "link": "https://farmdocdaily.illinois.edu/2026/10/variable-cash-lease-considerations-for-2027.html",
+      "date": "Tue, 06 Oct 2026 20:20:49 +0000",
+      "summary": "Today\u2019s article revisits a simple design for a variable cash lease for farmland in Illinois. A rent factor is applied to direct crop revenues to determine the variable rent level. \u2026"
+    },
+    {
       "title": "Food Inflation and the Outlook for Beef Prices",
       "link": "https://farmdocdaily.illinois.edu/2026/10/food-inflation-and-the-outlook-for-beef-prices.html",
       "date": "Mon, 05 Oct 2026 15:54:17 +0000",
@@ -55,18 +61,12 @@
       "link": "https://farmdocdaily.illinois.edu/2026/09/foreign-ownership-of-us-agricultural-land.html",
       "date": "Wed, 23 Sep 2026 20:14:34 +0000",
       "summary": "Using US land in Farms as the reference, foreign ownership interests amount to 0.67% of the total, and the remaining 99.33% is US owned. Forestland accounts for 88.5% while cropland, pasture, and other agricultural land account for 11.5%. The countries with the largest ownership positions in U.S.\u2026"
-    },
-    {
-      "title": "Average Illinois Cash Rents and Soil Productivity in 2026",
-      "link": "https://farmdocdaily.illinois.edu/2026/09/average-illinois-cash-rents-and-soil-productivity-in-2026.html",
-      "date": "Tue, 22 Sep 2026 22:00:00 +0000",
-      "summary": "Since 2017, we\u2019ve provided annual updates to a simple formula for calculating the average cash rent for a piece of farmland based on its average soil productivity and location within Illinois. Today\u2019s article provides the latest in this series of updates to reflect the relationship between rental\u2026"
     }
   ],
   "label": "farmdoc daily",
   "area": "agriculture",
   "site_url": "https://farmdocdaily.illinois.edu/",
   "cadence": "weekly_digest",
-  "fetched_at": "2026-10-06T01:48:59.159016+00:00",
+  "fetched_at": "2026-10-07T00:52:48.647515+00:00",
   "description_unreliable": false
 }
