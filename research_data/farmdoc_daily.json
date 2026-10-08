@@ -3,6 +3,12 @@
   "status": "ok",
   "items": [
     {
+      "title": "Enough Room for the Harvest? Grain Storage Pressure in the Corn Belt",
+      "link": "https://farmdocdaily.illinois.edu/2026/10/enough-room-for-the-harvest-grain-storage-pressure-in-the-corn-belt.html",
+      "date": "Wed, 07 Oct 2026 21:34:53 +0000",
+      "summary": "US grain storage capacity can in aggregate hold this year's carry-in stocks and expected harvest, but potential storage demand exceeds capacity in ten of thirteen Corn Belt states. Historically, grain movement during the harvest period relieves this pressure by December, so a 2026 storage crunch is\u2026"
+    },
+    {
       "title": "Variable Cash Lease Considerations for 2027",
       "link": "https://farmdocdaily.illinois.edu/2026/10/variable-cash-lease-considerations-for-2027.html",
       "date": "Tue, 06 Oct 2026 20:20:49 +0000",
@@ -55,18 +61,12 @@
       "link": "https://farmdocdaily.illinois.edu/2026/09/updates-from-the-policy-design-lab-crop-insurance-and-soybeans.html",
       "date": "Thu, 24 Sep 2026 17:13:30 +0000",
       "summary": "The Policy Design Lab project recently released two updates to the web-based policy visualizations. The first includes further developments for crop insurance, allowing users to visualize data at the county level and by year and/or by crop. The second is a storyboard for soybeans, visualizing\u2026"
-    },
-    {
-      "title": "Foreign Ownership of U.S. Agricultural Land",
-      "link": "https://farmdocdaily.illinois.edu/2026/09/foreign-ownership-of-us-agricultural-land.html",
-      "date": "Wed, 23 Sep 2026 20:14:34 +0000",
-      "summary": "Using US land in Farms as the reference, foreign ownership interests amount to 0.67% of the total, and the remaining 99.33% is US owned. Forestland accounts for 88.5% while cropland, pasture, and other agricultural land account for 11.5%. The countries with the largest ownership positions in U.S.\u2026"
     }
   ],
   "label": "farmdoc daily",
   "area": "agriculture",
   "site_url": "https://farmdocdaily.illinois.edu/",
   "cadence": "weekly_digest",
-  "fetched_at": "2026-10-07T00:52:48.647515+00:00",
+  "fetched_at": "2026-10-08T01:09:03.403464+00:00",
   "description_unreliable": false
 }

@@ -3,6 +3,12 @@
   "status": "ok",
   "items": [
     {
+      "title": "IPCC invites experts to review the first draft of the report on climate impacts, adaptation, and vulnerabilities",
+      "link": "https://www.ipcc.ch/2026/10/07/ipcc-expert-review-first-order-draft-wgii-ar7/",
+      "date": "Wed, 07 Oct 2026 10:58:40 +0000",
+      "summary": "GENEVA, Oct 7 \u2013 Registration is open for experts worldwide to review the First Order Draft of the Working Group II contribution to the IPCC Seventh Assessment Report (AR7). The Working Group II contribution to AR7 assesses the vulnerability of socio-economic and natural systems to climate change,\u2026"
+    },
+    {
       "title": "Nearly 200 experts meet in Bangkok to advance IPCC assessment of climate change mitigation",
       "link": "https://www.ipcc.ch/2026/09/28/pr18-2026/",
       "date": "Mon, 28 Sep 2026 12:46:57 +0000",
@@ -55,18 +61,12 @@
       "link": "https://www.ipcc.ch/2026/07/06/ipcc-wg1ar7-expert-review/",
       "date": "Mon, 06 Jul 2026 13:27:00 +0000",
       "summary": "GENEVA, 6 July \u2013 Registration is now open for experts to review the First Order Draft of the Working Group I contribution to the IPCC Seventh Assessment Report (AR7). The Working Group I contribution to AR7 is assessing the latest physical science basis of climate change, including observed and\u2026"
-    },
-    {
-      "title": "Keynote address by the IPCC Chair Jim Skea at the Joint ODI-FAO event: \u201cJust Transition for Agrifood Systems: Decent Livelihoods, Women\u2019s Empowerment and Climate Resilience\u201d",
-      "link": "https://www.ipcc.ch/2026/06/26/keynote-ipcc-chair-jim-skea-joint-odi-fao-event/",
-      "date": "Fri, 26 Jun 2026 13:26:47 +0000",
-      "summary": "London Climate Action Week 2026, 26 June 2026ODI Global Good morning. I do feel privileged for the opportunity to share a few insights from the perspective of climate science and my own professional experience at the start of this event on just transition and agrifood systems. I feel humble about\u2026"
     }
   ],
   "label": "IPCC \u2014 News & Announcements",
   "area": "ipcc",
   "site_url": "https://www.ipcc.ch/news/",
   "cadence": "weekly",
-  "fetched_at": "2026-10-07T00:53:11.642594+00:00",
+  "fetched_at": "2026-10-08T01:09:27.574115+00:00",
   "description_unreliable": false
 }
