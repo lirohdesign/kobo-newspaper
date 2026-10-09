@@ -3,6 +3,12 @@
   "status": "ok",
   "items": [
     {
+      "title": "Beijing Will Not Pace the Frontier: China\u2019s Speed-First AI Safety Regime",
+      "link": "https://newsletter.semianalysis.com/p/beijing-will-not-pace-the-frontier",
+      "date": "Thu, 08 Oct 2026 17:46:05 GMT",
+      "summary": "AI safety is on fire. On 12 September 2026, Dario Amodei published an essay arguing that frontier labs must deliberately slow the pace at which they improve model capabilities. China was central to his geopolitical argument: export controls and tighter security could preserve America\u2019s lead,\u2026"
+    },
+    {
       "title": "Anthropic Subscriptions Offer 5x+ More Value Than OpenAI",
       "link": "https://newsletter.semianalysis.com/p/anthropic-subscriptions-offer-5x",
       "date": "Mon, 05 Oct 2026 20:01:09 GMT",
@@ -85,18 +91,12 @@
       "link": "https://newsletter.semianalysis.com/p/tpu-inferencex-full-steam",
       "date": "Mon, 07 Sep 2026 20:00:18 GMT",
       "summary": "For more than a decade, the industry has watched Google build an empire on its own silicon. Search, Ads, YouTube, and every generation of Gemini run on TPUs. Few accelerators have attracted as much architectural scrutiny or as much debate about what their performance and economics would look like\u2026"
-    },
-    {
-      "title": "Korea\u2019s Trillion-Dollar Sovereign AI Investment: Nvidia Wins, Hynix Loses",
-      "link": "https://newsletter.semianalysis.com/p/koreas-trillion-dollar-sovereign",
-      "date": "Tue, 01 Sep 2026 20:14:32 GMT",
-      "summary": "Every day, businesses and governments around the world are becoming increasingly reliant on America\u2019s frontier models. Startup CEOs already can\u2019t imagine running their companies without AI, and it won\u2019t be long until the same is true for every other organization in the world.At the same time, it\u2019s\u2026"
     }
   ],
   "label": "SemiAnalysis",
   "area": "ai_market",
   "site_url": "https://semianalysis.com/",
   "cadence": "weekly",
-  "fetched_at": "2026-10-08T01:09:02.515883+00:00",
+  "fetched_at": "2026-10-09T01:18:48.362548+00:00",
   "description_unreliable": false
 }

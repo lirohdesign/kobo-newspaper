@@ -3,6 +3,12 @@
   "status": "ok",
   "items": [
     {
+      "title": "Conservation & Risk, Part 5: Examining a Risk-Payment Gap for Nitrogen Management",
+      "link": "https://farmdocdaily.illinois.edu/2026/10/conservation-risk-part-5-examining-a-risk-payment-gap-for-nitrogen-management.html",
+      "date": "Thu, 08 Oct 2026 14:40:10 +0000",
+      "summary": "Agricultural conservation policies include assistance for nutrient management. To the extent that this assistance is intended to encourage farmers to reduce application rates for nutrients, such as nitrogen, the policy presents another variation on the conservation-risk challenges examined in this\u2026"
+    },
+    {
       "title": "Enough Room for the Harvest? Grain Storage Pressure in the Corn Belt",
       "link": "https://farmdocdaily.illinois.edu/2026/10/enough-room-for-the-harvest-grain-storage-pressure-in-the-corn-belt.html",
       "date": "Wed, 07 Oct 2026 21:34:53 +0000",
@@ -12,7 +18,7 @@
       "title": "Variable Cash Lease Considerations for 2027",
       "link": "https://farmdocdaily.illinois.edu/2026/10/variable-cash-lease-considerations-for-2027.html",
       "date": "Tue, 06 Oct 2026 20:20:49 +0000",
-      "summary": "Today\u2019s article revisits a simple design for a variable cash lease for farmland in Illinois. A rent factor is applied to direct crop revenues to determine the variable rent level. \u2026"
+      "summary": "The variable lease will result in larger rents during higher crop revenue periods and lower rents during lower crop revenue periods, providing some natural risk protection for the farmer tenant while also providing landowners with upside rent potential under better revenue conditions. However, the\u2026"
     },
     {
       "title": "Food Inflation and the Outlook for Beef Prices",
@@ -55,18 +61,12 @@
       "link": "https://farmdocdaily.illinois.edu/2026/09/farmland-values-and-competitiveness-in-the-united-states-and-brazil.html",
       "date": "Fri, 25 Sep 2026 15:15:53 +0000",
       "summary": "Lower farmland values have long been considered a competitive advantage for Brazilian agriculture relative to U.S. agriculture (Colussi and Langemeier, 2026). However, strong farm profits, supported by periods of high\u2026"
-    },
-    {
-      "title": "Updates from the Policy Design Lab: Crop Insurance and Soybeans",
-      "link": "https://farmdocdaily.illinois.edu/2026/09/updates-from-the-policy-design-lab-crop-insurance-and-soybeans.html",
-      "date": "Thu, 24 Sep 2026 17:13:30 +0000",
-      "summary": "The Policy Design Lab project recently released two updates to the web-based policy visualizations. The first includes further developments for crop insurance, allowing users to visualize data at the county level and by year and/or by crop. The second is a storyboard for soybeans, visualizing\u2026"
     }
   ],
   "label": "farmdoc daily",
   "area": "agriculture",
   "site_url": "https://farmdocdaily.illinois.edu/",
   "cadence": "weekly_digest",
-  "fetched_at": "2026-10-08T01:09:03.403464+00:00",
+  "fetched_at": "2026-10-09T01:18:48.617331+00:00",
   "description_unreliable": false
 }
