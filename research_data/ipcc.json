@@ -3,6 +3,12 @@
   "status": "ok",
   "items": [
     {
+      "title": "IPCC\u2019s Sixty-Fifth Session in Addis Ababa, Ethiopia",
+      "link": "https://www.ipcc.ch/2026/10/09/media-advisory-ipcc65/",
+      "date": "Fri, 09 Oct 2026 08:32:36 +0000",
+      "summary": "GENEVA, Oct 8\u2013 The Intergovernmental Panel on Climate Change (IPCC) will be holding its Sixty-Fifth Plenary Session in Addis Ababa, Ethiopia, from 12 to 16 October 2026. The 65th Session of the IPCC is hosted by the United Nations Economic Commission for Africa (UNECA) and the Federal Democratic\u2026"
+    },
+    {
       "title": "IPCC invites experts to review the first draft of the report on climate impacts, adaptation, and vulnerabilities",
       "link": "https://www.ipcc.ch/2026/10/07/ipcc-expert-review-first-order-draft-wgii-ar7/",
       "date": "Wed, 07 Oct 2026 10:58:40 +0000",
@@ -55,18 +61,12 @@
       "link": "https://www.ipcc.ch/2026/08/03/srcities-lam4/",
       "date": "Mon, 03 Aug 2026 10:59:02 +0000",
       "summary": "BHOPAL, Aug 3 \u2013 More than 100 leading scientists from 56 countries are meeting in Bhopal, India, from 3 to 7 August 2026 for the Fourth Lead Author Meeting of the Intergovernmental Panel on Climate Change (IPCC) Special Report on Climate Change and Cities. This meeting is hosted by the Indian\u2026"
-    },
-    {
-      "title": "IPCC opens registration for experts to review First Order Draft of Working Group I contribution to the Seventh Assessment Report",
-      "link": "https://www.ipcc.ch/2026/07/06/ipcc-wg1ar7-expert-review/",
-      "date": "Mon, 06 Jul 2026 13:27:00 +0000",
-      "summary": "GENEVA, 6 July \u2013 Registration is now open for experts to review the First Order Draft of the Working Group I contribution to the IPCC Seventh Assessment Report (AR7). The Working Group I contribution to AR7 is assessing the latest physical science basis of climate change, including observed and\u2026"
     }
   ],
   "label": "IPCC \u2014 News & Announcements",
   "area": "ipcc",
   "site_url": "https://www.ipcc.ch/news/",
   "cadence": "weekly",
-  "fetched_at": "2026-10-09T01:19:09.754536+00:00",
+  "fetched_at": "2026-10-10T01:04:22.635169+00:00",
   "description_unreliable": false
 }

@@ -3,6 +3,12 @@
   "status": "ok",
   "items": [
     {
+      "title": "Agricultural Lending by Commercial Banks: 2026 Second Quarter",
+      "link": "https://farmdocdaily.illinois.edu/2026/10/agricultural-lending-by-commercial-banks-2026-second-quarter.html",
+      "date": "Fri, 09 Oct 2026 21:11:08 +0000",
+      "summary": "Agricultural loan balances at U.S. commercial banks increased in the second quarter of 2026, with gains in both farm real estate and non-real estate loans. At agricultural banks, farm loan\u2026"
+    },
+    {
       "title": "Conservation & Risk, Part 5: Examining a Risk-Payment Gap for Nitrogen Management",
       "link": "https://farmdocdaily.illinois.edu/2026/10/conservation-risk-part-5-examining-a-risk-payment-gap-for-nitrogen-management.html",
       "date": "Thu, 08 Oct 2026 14:40:10 +0000",
@@ -55,18 +61,12 @@
       "link": "https://farmdocdaily.illinois.edu/2026/09/managing-the-herd-balancing-anticipated-productivity-with-softening-demand.html",
       "date": "Mon, 28 Sep 2026 14:20:56 +0000",
       "summary": "The USDA\u2019s September Hogs and Pigs report places the September 1st inventory of all hogs and pigs at 74.3 million head, up 1.60% from revised estimates for last quarter but\u2026"
-    },
-    {
-      "title": "Farmland Values and Competitiveness in the United States and Brazil",
-      "link": "https://farmdocdaily.illinois.edu/2026/09/farmland-values-and-competitiveness-in-the-united-states-and-brazil.html",
-      "date": "Fri, 25 Sep 2026 15:15:53 +0000",
-      "summary": "Lower farmland values have long been considered a competitive advantage for Brazilian agriculture relative to U.S. agriculture (Colussi and Langemeier, 2026). However, strong farm profits, supported by periods of high\u2026"
     }
   ],
   "label": "farmdoc daily",
   "area": "agriculture",
   "site_url": "https://farmdocdaily.illinois.edu/",
   "cadence": "weekly_digest",
-  "fetched_at": "2026-10-09T01:18:48.617331+00:00",
+  "fetched_at": "2026-10-10T01:04:00.367431+00:00",
   "description_unreliable": false
 }
