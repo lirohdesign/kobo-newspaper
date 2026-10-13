@@ -1,72 +1,12 @@
 {
   "id": "farmdoc_daily",
-  "status": "ok",
-  "items": [
-    {
-      "title": "Agricultural Lending by Commercial Banks: 2026 Second Quarter",
-      "link": "https://farmdocdaily.illinois.edu/2026/10/agricultural-lending-by-commercial-banks-2026-second-quarter.html",
-      "date": "Fri, 09 Oct 2026 21:11:08 +0000",
-      "summary": "Agricultural loan balances at U.S. commercial banks increased in the second quarter of 2026, with gains in both farm real estate and non-real estate loans. At agricultural banks, farm loan\u2026"
-    },
-    {
-      "title": "Conservation & Risk, Part 5: Examining a Risk-Payment Gap for Nitrogen Management",
-      "link": "https://farmdocdaily.illinois.edu/2026/10/conservation-risk-part-5-examining-a-risk-payment-gap-for-nitrogen-management.html",
-      "date": "Thu, 08 Oct 2026 14:40:10 +0000",
-      "summary": "Agricultural conservation policies include assistance for nutrient management. To the extent that this assistance is intended to encourage farmers to reduce application rates for nutrients, such as nitrogen, the policy presents another variation on the conservation-risk challenges examined in this\u2026"
-    },
-    {
-      "title": "Enough Room for the Harvest? Grain Storage Pressure in the Corn Belt",
-      "link": "https://farmdocdaily.illinois.edu/2026/10/enough-room-for-the-harvest-grain-storage-pressure-in-the-corn-belt.html",
-      "date": "Wed, 07 Oct 2026 21:34:53 +0000",
-      "summary": "US grain storage capacity can in aggregate hold this year's carry-in stocks and expected harvest, but potential storage demand exceeds capacity in ten of thirteen Corn Belt states. Historically, grain movement during the harvest period relieves this pressure by December, so a 2026 storage crunch is\u2026"
-    },
-    {
-      "title": "Variable Cash Lease Considerations for 2027",
-      "link": "https://farmdocdaily.illinois.edu/2026/10/variable-cash-lease-considerations-for-2027.html",
-      "date": "Tue, 06 Oct 2026 20:20:49 +0000",
-      "summary": "The variable lease will result in larger rents during higher crop revenue periods and lower rents during lower crop revenue periods, providing some natural risk protection for the farmer tenant while also providing landowners with upside rent potential under better revenue conditions. However, the\u2026"
-    },
-    {
-      "title": "Food Inflation and the Outlook for Beef Prices",
-      "link": "https://farmdocdaily.illinois.edu/2026/10/food-inflation-and-the-outlook-for-beef-prices.html",
-      "date": "Mon, 05 Oct 2026 15:54:17 +0000",
-      "summary": "The August 2026 CPI data show that food prices were 2.7% higher than a year earlier. Food-at-home prices rose 2.2%, while food-away-from-home prices increased 3.4%. Beef and veal prices were 5.9% higher in August than a year earlier, extending a period of elevated beef prices that has persisted for\u2026"
-    },
-    {
-      "title": "Liquidity and Repayment Capacity",
-      "link": "https://farmdocdaily.illinois.edu/2026/10/liquidity-and-repayment-capacity.html",
-      "date": "Fri, 02 Oct 2026 17:51:33 +0000",
-      "summary": "Previous articles have examined differences in crop machinery investment, crop machinery costs, and labor standards for different sized crop farms (Langemeier, 2025a; Langemeier, 2025b; Langemeier, 2026). This article examines trends\u2026"
-    },
-    {
-      "title": "Detecting Tillage Practices from Space: A New Approach to Monitoring Conservation Agriculture in the US Midwest",
-      "link": "https://farmdocdaily.illinois.edu/2026/10/detecting-tillage-practices-from-space-a-new-approach-to-monitoring-conservation-agriculture-in-the-us-midwest.html",
-      "date": "Thu, 01 Oct 2026 18:00:26 +0000",
-      "summary": "From 2014 to 2023, the Environmental Quality Incentives Program (EQIP) invested a total of $133.7 million in no-till and reduce till practices, out of a total of $10 billion in\u2026"
-    },
-    {
-      "title": "Rethinking Phosphorus and Potassium, Part 3: Economics",
-      "link": "https://farmdocdaily.illinois.edu/2026/09/rethinking-phosphorus-and-potassium-part-3-economics.html",
-      "date": "Wed, 30 Sep 2026 15:39:11 +0000",
-      "summary": "Grain nutrient concentrations can vary across the farm and may provide an opportunity to cut input costs this fall. Soil test values can vary due to sampling time and lab procedures; it may be worthwhile to monitor the variability of soil test values by sampling at different timepoints post-harvest\u2026"
-    },
-    {
-      "title": "Changing Nitrogen Rates on PCM Farms: Implications for 2027 Nitrogen Decisions",
-      "link": "https://farmdocdaily.illinois.edu/2026/09/changing-nitrogen-rates-on-pcm-farms-implications-for-2027-nitrogen-decisions.html",
-      "date": "Tue, 29 Sep 2026 22:39:41 +0000",
-      "summary": "Average nitrogen rates used on farms enrolled in Precision Conservation Management (PCM) have varied little across years. The high nitrogen fertilizer prices suggest that application rates above economically optimal levels\u2026"
-    },
-    {
-      "title": "Managing the Herd: Balancing Anticipated Productivity with Softening Demand",
-      "link": "https://farmdocdaily.illinois.edu/2026/09/managing-the-herd-balancing-anticipated-productivity-with-softening-demand.html",
-      "date": "Mon, 28 Sep 2026 14:20:56 +0000",
-      "summary": "The USDA\u2019s September Hogs and Pigs report places the September 1st inventory of all hogs and pigs at 74.3 million head, up 1.60% from revised estimates for last quarter but\u2026"
-    }
-  ],
+  "status": "error",
+  "error": "<urlopen error timed out>",
+  "items": [],
   "label": "farmdoc daily",
   "area": "agriculture",
   "site_url": "https://farmdocdaily.illinois.edu/",
   "cadence": "weekly_digest",
-  "fetched_at": "2026-10-12T00:40:07.844957+00:00",
+  "fetched_at": "2026-10-13T02:39:42.816470+00:00",
   "description_unreliable": false
 }

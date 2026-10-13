@@ -3,14 +3,26 @@
   "status": "ok",
   "items": [
     {
+      "title": "IPCC Opens Sixty Fifth Plenary Session in Addis Ababa, Ethiopia",
+      "link": "https://www.ipcc.ch/2026/10/12/ipcc-sixty-fifth-plenary-addis-ababa/",
+      "date": "Mon, 12 Oct 2026 13:22:47 +0000",
+      "summary": "ADDIS ABABA, Oct 12 \u2013 The Sixty-Fifth Session of the Intergovernmental Panel on Climate Change (IPCC) began today in Addis Ababa, Ethiopia. IPCC member governments are meeting from 12 to 16 October to advance the IPCC work planned for the seventh assessment cycle. The Panel\u2019s agenda for this\u2026"
+    },
+    {
+      "title": "IPCC Chair Jim Skea\u2019s remarks during the opening of the 65th Session of the IPCC",
+      "link": "https://www.ipcc.ch/2026/10/12/ipcc-chair-jim-skea-remarks-ipcc-65-opening/",
+      "date": "Mon, 12 Oct 2026 10:32:43 +0000",
+      "summary": "Addis Ababa, Ethiopia, 12 October 2026 Thank you, Ko, especially as you serve in a dual role at this plenary: interim Secretary of the IPCC and Deputy Secretary-General of the WMO. Your Excellencies, distinguished delegates and colleagues, dear guests, ladies and gentlemen, The Intergovernmental\u2026"
+    },
+    {
       "title": "IPCC\u2019s Sixty-Fifth Session in Addis Ababa, Ethiopia",
-      "link": "https://www.ipcc.ch/2026/10/09/media-advisory-ipcc65/",
+      "link": "https://www.ipcc.ch/2026/10/09/ma20-2026/",
       "date": "Fri, 09 Oct 2026 08:32:36 +0000",
       "summary": "GENEVA, Oct 8\u2013 The Intergovernmental Panel on Climate Change (IPCC) will be holding its Sixty-Fifth Plenary Session in Addis Ababa, Ethiopia, from 12 to 16 October 2026. The 65th Session of the IPCC is hosted by the United Nations Economic Commission for Africa (UNECA) and the Federal Democratic\u2026"
     },
     {
       "title": "IPCC invites experts to review the first draft of the report on climate impacts, adaptation, and vulnerabilities",
-      "link": "https://www.ipcc.ch/2026/10/07/ipcc-expert-review-first-order-draft-wgii-ar7/",
+      "link": "https://www.ipcc.ch/2026/10/07/pr19-2026/",
       "date": "Wed, 07 Oct 2026 10:58:40 +0000",
       "summary": "GENEVA, Oct 7 \u2013 Registration is open for experts worldwide to review the First Order Draft of the Working Group II contribution to the IPCC Seventh Assessment Report (AR7). The Working Group II contribution to AR7 assesses the vulnerability of socio-economic and natural systems to climate change,\u2026"
     },
@@ -49,24 +61,12 @@
       "link": "https://www.ipcc.ch/2026/08/13/prslcfsod/",
       "date": "Thu, 13 Aug 2026 10:11:29 +0000",
       "summary": "GENEVA, Aug 13 \u2013 The Intergovernmental Panel on Climate Change (IPCC) has opened registration for experts to serve as Expert Reviewers of the Second-Order Draft (SOD) of the 2027 Methodology Report on Inventories for Short-Lived Climate Forcers (SLCF), which will undergo Government and Expert\u2026"
-    },
-    {
-      "title": "Authors of IPCC\u2019s 2027 Methodology Report on Carbon Dioxide Removal Technologies, Carbon Capture, Utilization, and Storage gather in Mexico City to advance the report\u2019s draft",
-      "link": "https://www.ipcc.ch/2026/08/11/prtficdrlam2/",
-      "date": "Tue, 11 Aug 2026 14:36:08 +0000",
-      "summary": "GENEVA, Aug 11 \u2013 More than 120 IPCC authors are meeting in Mexico City, Mexico, from 11 to 14 August to advance the First Order Draft of the 2027 Methodology Report on Carbon Dioxide Removal Technologies, Carbon Capture, Utilization, and Storage (CDR-CCUS). This report is being prepared by the\u2026"
-    },
-    {
-      "title": "Leading scientists gather in India for final meeting to work on the Special Report on Climate Change and Cities",
-      "link": "https://www.ipcc.ch/2026/08/03/srcities-lam4/",
-      "date": "Mon, 03 Aug 2026 10:59:02 +0000",
-      "summary": "BHOPAL, Aug 3 \u2013 More than 100 leading scientists from 56 countries are meeting in Bhopal, India, from 3 to 7 August 2026 for the Fourth Lead Author Meeting of the Intergovernmental Panel on Climate Change (IPCC) Special Report on Climate Change and Cities. This meeting is hosted by the Indian\u2026"
     }
   ],
   "label": "IPCC \u2014 News & Announcements",
   "area": "ipcc",
   "site_url": "https://www.ipcc.ch/news/",
   "cadence": "weekly",
-  "fetched_at": "2026-10-12T00:40:28.291667+00:00",
+  "fetched_at": "2026-10-13T02:39:56.551599+00:00",
   "description_unreliable": false
 }
