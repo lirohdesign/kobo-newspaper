@@ -133,16 +133,6 @@
       "months": [12],
       "scraper": null,
       "notes": "National benchmark for data-centre electricity. The 2024 report was published 2024-12-19 (estimates back to 2014, scenarios to 2028: 6.7-12.0% of US electricity by 2028); a 2025 Update exists (11.8% of US electricity by 2030, range 9.5-15.3%; per search-result summaries 2026-09-29, not read directly). Release dates are irregular, and eta.lbl.gov returns 403 to scripted fetches, so nothing here is verified beyond the search listing; December is the month of the 2024 release, not a schedule. Check https://datacenters.lbl.gov/publications by hand and log the published figure when a new edition appears."
-    },
-    {
-      "id": "fed_scf_2025_results",
-      "label": "Fed Survey of Consumer Finances — 2025 results (one-time watch)",
-      "url": "https://www.federalreserve.gov/econres/scfindex.htm",
-      "cadence": "one_time",
-      "trigger": "annual_window",
-      "months": [10, 11, 12],
-      "scraper": null,
-      "notes": "Triennial survey (2019, 2022, 2025); fieldwork began March 2025, so results are expected late 2026. This entry deliberately recurs every Oct-Dec via annual_window (there's no 'fire once ever' trigger type in this vocabulary) — once the 2025 results are actually published and the Tuesday session has synthesized them, DELETE this entry rather than letting it keep firing every autumn for a release that already happened."
     }
   ],
 
