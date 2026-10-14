@@ -3,6 +3,12 @@
   "status": "ok",
   "items": [
     {
+      "title": "September 2026",
+      "link": "https://mrcc.purdue.edu/climatesummaries/1764",
+      "date": "Tue, 01 Sep 2026 00:00:00 -0400",
+      "summary": "September 2026 Overview \u2013 Midwestern Regional Climate Center Temperature The average September temperature for the Midwest was 68.5\u00b0F, 4.9\u00b0F above the 1991-2020 normal (Figure 1). The entire region had above-normal temperatures, with conditions 1-4\u00b0F above normal across the upper Midwest and 6 to\u2026"
+    },
+    {
       "title": "August 2026",
       "link": "https://mrcc.purdue.edu/climatesummaries/1756",
       "date": "Sat, 01 Aug 2026 00:00:00 -0400",
@@ -85,18 +91,12 @@
       "link": "https://mrcc.purdue.edu/climatesummaries/1682",
       "date": "Tue, 01 Jul 2025 00:00:00 -0400",
       "summary": "Temperature The average July temperature for the Midwest was 74.9\u00b0F, which was 2.2\u00b0F above the 1991-2020 normal (Figure 1). Temperatures across the region went from near normal in the northwest, warming to up to 3\u00b0F above normal in the southeast (Figure 2). Statewide temperatures ranged from 0.8\u00b0F\u2026"
-    },
-    {
-      "title": "June 2025",
-      "link": "https://mrcc.purdue.edu/climatesummaries/1676",
-      "date": "Sun, 01 Jun 2025 00:00:00 -0400",
-      "summary": "June 2025 Overview \u2013 Midwestern Regional Climate Center Temperature The average June temperature for the Midwest was 70.6\u00b0F, which was 1.6 \u00b0F above the 1991-2020 normal (Figure 1). Temperatures were near normal in the northwest portion of the region while elsewhere had temperatures 1 to 4\u00b0F above\u2026"
     }
   ],
   "label": "Midwestern Regional Climate Center \u2014 Monthly Climate Summary",
   "area": "climate_drought",
   "site_url": "https://mrcc.purdue.edu/climatesummaries",
   "cadence": "monthly",
-  "fetched_at": "2026-10-13T02:40:19.170913+00:00",
+  "fetched_at": "2026-10-14T00:27:04.908875+00:00",
   "description_unreliable": false
 }
