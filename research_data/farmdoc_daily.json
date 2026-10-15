@@ -3,10 +3,16 @@
   "status": "ok",
   "items": [
     {
+      "title": "Wind and Solar Leases in Foreign-Held U.S. Agricultural Land",
+      "link": "https://farmdocdaily.illinois.edu/2026/10/wind-and-solar-leases-in-foreign-held-us-agricultural-land.html",
+      "date": "Wed, 14 Oct 2026 15:12:04 +0000",
+      "summary": "Most long-term leases held by foreign persons are for wind and solar projects, covering 6.3 million acres, or about 0.7 percent of U.S. land in farms. In most counties the share is under 1 percent, and nearly all of these acres are associated with investors from Canada and Western Europe. Because\u2026"
+    },
+    {
       "title": "2025 Final ARC/PLC Payments",
       "link": "https://farmdocdaily.illinois.edu/2026/10/2025-final-arc-plc-payments.html",
       "date": "Tue, 13 Oct 2026 22:41:11 +0000",
-      "summary": "Final marketing year average (MYA) prices were recently released by the USDA for nearly all eligible commodities, and the Farm Service Agency (FSA) has finalized the payments for most commodities\u2026"
+      "summary": "Revision Note on October 14, 2026: Average payment rates and aggregate payment estimates were revised since the original publishing of this article to adjust for the use of county-level payment\u2026"
     },
     {
       "title": "Rural Broadband Infrastructure and Its Implications for Households and Agriculture",
@@ -55,18 +61,12 @@
       "link": "https://farmdocdaily.illinois.edu/2026/10/detecting-tillage-practices-from-space-a-new-approach-to-monitoring-conservation-agriculture-in-the-us-midwest.html",
       "date": "Thu, 01 Oct 2026 18:00:26 +0000",
       "summary": "From 2014 to 2023, the Environmental Quality Incentives Program (EQIP) invested a total of $133.7 million in no-till and reduce till practices, out of a total of $10 billion in\u2026"
-    },
-    {
-      "title": "Rethinking Phosphorus and Potassium, Part 3: Economics",
-      "link": "https://farmdocdaily.illinois.edu/2026/09/rethinking-phosphorus-and-potassium-part-3-economics.html",
-      "date": "Wed, 30 Sep 2026 15:39:11 +0000",
-      "summary": "Grain nutrient concentrations can vary across the farm and may provide an opportunity to cut input costs this fall. Soil test values can vary due to sampling time and lab procedures; it may be worthwhile to monitor the variability of soil test values by sampling at different timepoints post-harvest\u2026"
     }
   ],
   "label": "farmdoc daily",
   "area": "agriculture",
   "site_url": "https://farmdocdaily.illinois.edu/",
   "cadence": "weekly_digest",
-  "fetched_at": "2026-10-14T00:26:05.817158+00:00",
+  "fetched_at": "2026-10-14T23:59:46.755384+00:00",
   "description_unreliable": false
 }

@@ -13,6 +13,6 @@
   "area": "climate_drought",
   "site_url": "https://droughtmonitor.unl.edu/CurrentMap/StateDroughtMonitor.aspx?IN",
   "cadence": "weekly",
-  "fetched_at": "2026-10-14T00:26:06.170522+00:00",
+  "fetched_at": "2026-10-14T23:59:47.118801+00:00",
   "description_unreliable": false
 }
