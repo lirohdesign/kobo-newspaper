@@ -3,10 +3,16 @@
   "status": "ok",
   "items": [
     {
+      "title": "Illinois Farm Financial Trends in 2025:  Summary and Analysis",
+      "link": "https://farmdocdaily.illinois.edu/2026/10/illinois-farm-financial-trends-in-2025-summary-and-analysis.html",
+      "date": "Fri, 16 Oct 2026 14:58:54 +0000",
+      "summary": "Farm incomes in 2025 were higher than in 2024, resulting in slightly stronger average financial positions for Illinois farms. However, after three years of lower incomes on grain farms before 2025, working cash has decreased almost 40% from 2022 on the average farm to 2020 levels. With projected\u2026"
+    },
+    {
       "title": "Sample Cost and Returns for a Migratory Commercial Beekeeping Operation 2025-2026",
       "link": "https://farmdocdaily.illinois.edu/2026/10/sample-cost-and-returns-for-a-migratory-commercial-beekeeping-operation-2025-2026.html",
       "date": "Thu, 15 Oct 2026 21:36:44 +0000",
-      "summary": "Honey bees play a critical role in agricultural production, particularly through pollination services that support crops such as California almonds (see farmdoc daily, February 17, 2025), while also producing honey\u2026"
+      "summary": "Honey bees play a critical role in agricultural production, however commercial beekeepers face substantial costs and uncertainty. A representative operation cannot cover total costs and requires government payments to cover cash costs. This highlights the economic impact colony losses and health\u2026"
     },
     {
       "title": "Wind and Solar Leases in Foreign-Held U.S. Agricultural Land",
@@ -55,18 +61,12 @@
       "link": "https://farmdocdaily.illinois.edu/2026/10/food-inflation-and-the-outlook-for-beef-prices.html",
       "date": "Mon, 05 Oct 2026 15:54:17 +0000",
       "summary": "The August 2026 CPI data show that food prices were 2.7% higher than a year earlier. Food-at-home prices rose 2.2%, while food-away-from-home prices increased 3.4%. Beef and veal prices were 5.9% higher in August than a year earlier, extending a period of elevated beef prices that has persisted for\u2026"
-    },
-    {
-      "title": "Liquidity and Repayment Capacity",
-      "link": "https://farmdocdaily.illinois.edu/2026/10/liquidity-and-repayment-capacity.html",
-      "date": "Fri, 02 Oct 2026 17:51:33 +0000",
-      "summary": "Previous articles have examined differences in crop machinery investment, crop machinery costs, and labor standards for different sized crop farms (Langemeier, 2025a; Langemeier, 2025b; Langemeier, 2026). This article examines trends\u2026"
     }
   ],
   "label": "farmdoc daily",
   "area": "agriculture",
   "site_url": "https://farmdocdaily.illinois.edu/",
   "cadence": "weekly_digest",
-  "fetched_at": "2026-10-15T23:44:13.970882+00:00",
+  "fetched_at": "2026-10-16T23:44:30.860112+00:00",
   "description_unreliable": false
 }
