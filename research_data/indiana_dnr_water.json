@@ -3,16 +3,16 @@
   "status": "ok",
   "items": [
     {
-      "title": "Indiana Monthly Water Resource Summary \u2014 August 2026",
-      "link": "https://www.in.gov/dnr/water/water-availability-use-rights/water-resource-updates/monthly-water-resource-summary/#month-2026-08",
-      "date": "2026-08-31",
-      "summary": "Precipitation: During August 2026, Indiana\u2019s average precipitation was well above normal, with a statewide monthly precipitation average of 200 percent normal. Drought Monitor: For September 8, 2026, the U.S. Drought Monitor shows isolated spots of \u201cabnormally dry\u201d conditions in the southwest and south-central part of the state and no drought conditions for the rest of Indiana. The U.S. Seasonal Drought Outlook predicts no drought conditions through at least the end of November 2026. Streamflow: In August 2026, all twelve of the twelve streams included in drought reporting since 1999 had above normal to significantly above normal stream flow. Eel River at North Manchester had the lowest mean monthly flow at 116%, and the Whitewater River near Alpine had the highest mean monthly flow at 1554%. Groundwater: As of August 31, 2026, new water level data is available for all nine wells currently monitored. Data indicates that water level is above normal for four of the nine wells: Vigo 7, Morgan 4, Randolph 3, and Posey 3. Data indicates that the water level is near normal for Laporte 9, Fulton 7, Clark 20, and Harrison 8; and water level remains well below normal for LaGrange 2."
+      "title": "Indiana Monthly Water Resource Summary \u2014 September 2026",
+      "link": "https://www.in.gov/dnr/water/water-availability-use-rights/water-resource-updates/monthly-water-resource-summary/#month-2026-09",
+      "date": "2026-09-30",
+      "summary": "Precipitation: During September 2026, Indiana\u2019s average precipitation was slightly below normal, with a statewide monthly precipitation average of 91 percent normal. Drought Monitor: For October 6, 2026, the U.S. Drought Monitor shows most of the far southern portions of Indiana experiencing \u201cabnormally dry\u201d conditions and no drought conditions for the rest of Indiana. The U.S. Seasonal Drought Outlook predicts no drought conditions through at least the end of December 2026. Streamflow: In September 2026, ten of the twelve streams included in drought reporting since 1999 had above normal to significantly above normal stream flow. Muscatatuck River near Deputy had the lowest mean monthly flow at 16%, and the St. Groundwater: As of September 30, 2026, new water level data is available for all nine wells currently monitored. Data indicates that water level is above normal for four of the nine wells: Laporte 9, Fulton 7, Vigo 7, and Morgan 4. Data indicates that the water level is near normal for Randolph 3, Posey 3, and Harrison 8; and water level remains well below normal for LaGrange 2 and Clark 20."
     }
   ],
   "label": "Indiana DNR Division of Water \u2014 Monthly Water Resource Summary",
   "area": "climate_drought",
   "site_url": "https://www.in.gov/dnr/water/water-availability-use-rights/water-resource-updates/monthly-water-resource-summary/",
   "cadence": "monthly",
-  "fetched_at": "2026-10-14T23:59:47.435250+00:00",
+  "fetched_at": "2026-10-15T23:44:14.546085+00:00",
   "description_unreliable": false
 }
