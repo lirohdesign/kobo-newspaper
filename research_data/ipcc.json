@@ -3,6 +3,12 @@
   "status": "ok",
   "items": [
     {
+      "title": "65th Plenary Session of IPCC suspended",
+      "link": "https://www.ipcc.ch/2026/10/16/65th-plenary-session-of-ipcc/",
+      "date": "Fri, 16 Oct 2026 19:41:51 +0000",
+      "summary": "ADDIS ABABA, Oct 16 \u2013 The IPCC Chair, Jim Skea, suspended tonight the 65th Plenary Session in Addis Ababa after the meeting ran over its planned duration and many delegations from least developed countries and Small Island Developing States had to leave. The Chair\u2019s decision safeguards and upholds\u2026"
+    },
+    {
       "title": "IPCC Opens Sixty Fifth Plenary Session in Addis Ababa, Ethiopia",
       "link": "https://www.ipcc.ch/2026/10/12/ipcc-sixty-fifth-plenary-addis-ababa/",
       "date": "Mon, 12 Oct 2026 13:22:47 +0000",
@@ -55,18 +61,12 @@
       "link": "https://www.ipcc.ch/2026/09/02/iwmi-ipcc-co-sponsored-expert-meeting/",
       "date": "Wed, 02 Sep 2026 13:09:30 +0000",
       "summary": "COLOMBO, Sri Lanka, 8 September 2026 \u2013 The International Water Management Institute (IWMI) and the Intergovernmental Panel on Climate Change (IPCC) are bringing together experts at a co-sponsored meeting titled \u2018Addressing Water Risks and Building Resilience to Climate Change: Evidence, Gaps and\u2026"
-    },
-    {
-      "title": "IPCC invites government representatives and experts to review the second draft of the 2027 Methodology Report on Short-Lived Climate Forcers",
-      "link": "https://www.ipcc.ch/2026/08/13/prslcfsod/",
-      "date": "Thu, 13 Aug 2026 10:11:29 +0000",
-      "summary": "GENEVA, Aug 13 \u2013 The Intergovernmental Panel on Climate Change (IPCC) has opened registration for experts to serve as Expert Reviewers of the Second-Order Draft (SOD) of the 2027 Methodology Report on Inventories for Short-Lived Climate Forcers (SLCF), which will undergo Government and Expert\u2026"
     }
   ],
   "label": "IPCC \u2014 News & Announcements",
   "area": "ipcc",
   "site_url": "https://www.ipcc.ch/news/",
   "cadence": "weekly",
-  "fetched_at": "2026-10-15T23:44:38.298797+00:00",
+  "fetched_at": "2026-10-16T23:44:52.442315+00:00",
   "description_unreliable": false
 }
