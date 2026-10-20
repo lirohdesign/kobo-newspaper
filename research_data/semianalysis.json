@@ -3,6 +3,12 @@
   "status": "ok",
   "items": [
     {
+      "title": "Datacenters 2027: The Year of Acceleration, +50GW in a Single Year",
+      "link": "https://newsletter.semianalysis.com/p/datacenters-2027-the-year-of-acceleration",
+      "date": "Mon, 19 Oct 2026 05:39:38 GMT",
+      "summary": "Not a week goes without another piece of datacenter FUD. We\u2019ve already debunked in depth why moratoriums aren\u2019t as impactful as one may think. Despite that, many still misunderstand the pace of the global AI datacenter buildout. Just the other week, Brad Gerstner from Altimeter showed our data on\u2026"
+    },
+    {
       "title": "ASML Is Building a Hybrid Bonding Tool!",
       "link": "https://newsletter.semianalysis.com/p/asml-is-building-a-hybrid-bonding",
       "date": "Thu, 15 Oct 2026 19:27:20 GMT",
@@ -85,18 +91,12 @@
       "link": "https://newsletter.semianalysis.com/p/nvidias-backstop-universe-heads-i",
       "date": "Fri, 11 Sep 2026 17:04:52 GMT",
       "summary": "Follow the money behind the AI buildout with our AI Compute, Capital and Markets Model - understand who is funding the expansion, how deals are structured, and where the risks sit. Contact our team here to find out more.We\u2019re also hiring for SemiAnalysis\u2019s Compute, Capital & Markets team. We have\u2026"
-    },
-    {
-      "title": "What is So Hard About Behind-The-Meter Power For Datacenters? Part 1",
-      "link": "https://newsletter.semianalysis.com/p/what-is-so-hard-about-behind-the",
-      "date": "Thu, 10 Sep 2026 14:28:20 GMT",
-      "summary": "Last year we were the first to call out Onsite Gas Generation as the primary method adopted by AI Labs and Hyperscalers to solve power constraints. Our positive view was far from being consensus: behind-the-meter primary power solutions have been called all sorts of names, such as \u201cscience\u2026"
     }
   ],
   "label": "SemiAnalysis",
   "area": "ai_market",
   "site_url": "https://semianalysis.com/",
   "cadence": "weekly",
-  "fetched_at": "2026-10-18T23:25:52.575470+00:00",
+  "fetched_at": "2026-10-20T00:29:05.390167+00:00",
   "description_unreliable": false
 }
