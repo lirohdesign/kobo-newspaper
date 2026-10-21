@@ -3,6 +3,12 @@
   "status": "ok",
   "items": [
     {
+      "title": "Diesel Fuel Price Impact on Fuel & Oil and Per-Acre Machinery Costs",
+      "link": "https://farmdocdaily.illinois.edu/2026/10/diesel-fuel-price-impact-on-fuel-oil-and-per-acre-machinery-costs.html",
+      "date": "Tue, 20 Oct 2026 20:20:04 +0000",
+      "summary": "Diesel fuel prices for agricultural use in Illinois have reached a record high. Those higher prices are estimated to raise fuel and oil costs on Central Illinois grain farms with\u2026"
+    },
+    {
       "title": "Differences in Sentiment Among Corn and Soybean Producers",
       "link": "https://farmdocdaily.illinois.edu/2026/10/differences-in-sentiment-among-corn-and-soybean-producers.html",
       "date": "Mon, 19 Oct 2026 14:53:50 +0000",
@@ -55,18 +61,12 @@
       "link": "https://farmdocdaily.illinois.edu/2026/10/enough-room-for-the-harvest-grain-storage-pressure-in-the-corn-belt.html",
       "date": "Wed, 07 Oct 2026 21:34:53 +0000",
       "summary": "US grain storage capacity can in aggregate hold this year's carry-in stocks and expected harvest, but potential storage demand exceeds capacity in ten of thirteen Corn Belt states. Historically, grain movement during the harvest period relieves this pressure by December, so a 2026 storage crunch is\u2026"
-    },
-    {
-      "title": "Variable Cash Lease Considerations for 2027",
-      "link": "https://farmdocdaily.illinois.edu/2026/10/variable-cash-lease-considerations-for-2027.html",
-      "date": "Tue, 06 Oct 2026 20:20:49 +0000",
-      "summary": "The variable lease will result in larger rents during higher crop revenue periods and lower rents during lower crop revenue periods, providing some natural risk protection for the farmer tenant while also providing landowners with upside rent potential under better revenue conditions. However, the\u2026"
     }
   ],
   "label": "farmdoc daily",
   "area": "agriculture",
   "site_url": "https://farmdocdaily.illinois.edu/",
   "cadence": "weekly_digest",
-  "fetched_at": "2026-10-20T00:29:05.826677+00:00",
+  "fetched_at": "2026-10-20T23:59:34.570359+00:00",
   "description_unreliable": false
 }
