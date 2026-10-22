@@ -173,6 +173,137 @@
       "site_url": "https://mrcc.purdue.edu/climatesummaries",
       "cadence": "monthly",
       "notes": "Verified live 2026-09-29 by curl: RSS 2.0, 20 items, the latest being 'August 2026' (article #1756) with Midwest-average temperature (71.8F, +0.9F vs 1991-2020) and state-by-state departures written by MRCC climatologists (Purdue/NCEI partnership) — expert-synthesized, regional, and rarely in national news. Feed URL found via the RSS links on https://mrcc.purdue.edu/climatesummaries (there is no site-wide /rss or /feed; both 404). GOTCHAS: (1) pubDate is the START of the reported period (August 2026 shows Aug 1), not the posting date, so an item can look a month old the day it appears; the validator's freshness check uses fetched_at, so this does not trip it. (2) Sibling feeds exist at the same path with 'Weekly%20Summary', 'Quarterly%20Summary', 'Annual%20Summary' and 'ENSO%20Summary'. Weekly was NOT added: its newest item on 2026-09-29 was Sept 8-14, so it runs about two weeks behind and skips weeks, and it would crowd out the monthly synthesis. The Quarterly feed items are PDFs with image previews only (no text summary in the feed) and carry both Midwest and Great Lakes editions; revisit if the quarterly PDFs are wanted. (3) The feed summary is truncated to 300 characters by research_pull.py, which keeps the temperature paragraph but drops precipitation. Honest-null behavior not observed: every item examined reports numbers."
+    },
+    {
+      "id": "ohchr_ukraine_civilians",
+      "label": "OHCHR monitoring mission — Ukraine civilian casualties (via UN News)",
+      "area": "conflict",
+      "type": "rss",
+      "feed_url": "https://news.un.org/feed/subscribe/en/news/region/europe/feed/rss.xml",
+      "site_url": "https://ukraine.ohchr.org/en/reports/protection-of-civilians",
+      "cadence": "monthly",
+      "filter": {
+        "keep_keyword_any": [
+          "civilian casualt"
+        ]
+      },
+      "notes": "Added 2026-10-21 under c4 (armed conflict). H: civilians killed and injured. Compiled (HRMMU verifies each case; counts revised upward in later updates). ukraine.ohchr.org returns 502 and www.ohchr.org 403 to scripted fetches (2026-10-21), so this reads UN News's Europe feed filtered to the monthly casualty stories; the session reads the HRMMU update itself (usually mid-month for the month before)."
+    },
+    {
+      "id": "ochaopt_gaza",
+      "label": "OCHA oPt — Gaza reported impact snapshots and situation reports",
+      "area": "conflict",
+      "type": "scrape",
+      "module": "ochaopt_gaza_scrape",
+      "function": "fetch_items",
+      "site_url": "https://www.ochaopt.org/publications",
+      "cadence": "weekly",
+      "notes": "Added 2026-10-21 under c4 (armed conflict). H: casualties, displacement, food and aid access. Compiled; casualty input is Gaza MoH and Israeli-authority figures, unverified by the UN (OCHA's own disclaimer). Figures are in each snapshot's PDF. IPC analyses are linked from these products; no separate IPC source (ipcinfo.org 403s)."
+    },
+    {
+      "id": "iranhr_executions",
+      "label": "Iran Human Rights (IHRNGO) — monthly execution counts",
+      "area": "conflict",
+      "type": "rss",
+      "feed_url": "https://iranhr.net/en/rss/",
+      "site_url": "https://iranhr.net/en/",
+      "cadence": "monthly",
+      "filter": {
+        "keep_keyword_any": [
+          "hanged in iran in 20",
+          "executions in first",
+          "recorded in"
+        ]
+      },
+      "notes": "Added 2026-10-21 under c4 (armed conflict). H: executions. Compiled; counts only cases with two independent sources or sufficient documentation. The Atom feed carries single executions as well; the filter keeps the monthly tallies, whose titles take forms like '71 Executions Recorded in July; At Least 444 Hanged in Iran in 2026' and 'At least 101 Executions in June; More Than 370 Executions in First Six Months of 2026'. The feed holds about a week of news items, so a monthly report is caught only if the cron runs that week. HRANA (broader inclusion) is the cross-check, read by hand."
+    },
+    {
+      "id": "ofac_sdn",
+      "label": "OFAC sanctions list — entries by program",
+      "area": "conflict",
+      "type": "scrape",
+      "module": "ofac_sdn_scrape",
+      "function": "fetch_items",
+      "site_url": "https://ofac.treasury.gov/",
+      "cadence": "weekly",
+      "notes": "Added 2026-10-21 under c4 (armed conflict). S: sanctions. Feed: counts of SDN entries tagged Russia/Ukraine, Iran, SDGT from sdn.csv. A count on the list, so delistings lower it."
+    },
+    {
+      "id": "kiel_tracker",
+      "label": "Kiel Institute — Ukraine Support Tracker releases",
+      "area": "conflict",
+      "type": "scrape",
+      "module": "kiel_tracker_scrape",
+      "function": "fetch_items",
+      "site_url": "https://www.kielinstitut.de/topics/war-against-ukraine/ukraine-support-tracker/",
+      "cadence": "monthly",
+      "notes": "Added 2026-10-21 under c4 (armed conflict). S: aid. Compiled (government-reported values, market prices otherwise). Release every ~2 months as XLSX; the scraper flags a new release, the session reads the figures."
+    },
+    {
+      "id": "ice_detention",
+      "label": "ICE detention statistics — currently detained",
+      "area": "visibility",
+      "type": "scrape",
+      "module": "ice_detention_scrape",
+      "function": "fetch_items",
+      "site_url": "https://www.ice.gov/detain/detention-management",
+      "cadence": "monthly",
+      "notes": "Added 2026-10-21 under c5 (visibility, US). in: detention. Feed (agency's own counts, published under appropriations law). On 2026-10-21 the latest file was dated 2026-07-20 with data of 07-09: ICE had not updated in three months. TRAC uses the same file."
+    },
+    {
+      "id": "press_freedom_tracker",
+      "label": "U.S. Press Freedom Tracker — incidents against journalists",
+      "area": "visibility",
+      "type": "scrape",
+      "module": "press_freedom_tracker_scrape",
+      "function": "fetch_items",
+      "site_url": "https://pressfreedomtracker.us/",
+      "cadence": "weekly",
+      "notes": "Added 2026-10-21 under c5 (visibility, US). in: arrest and prosecution of journalists. Compiled; reports published after verification. Chilling statements excluded from the headline total as editorial judgement."
+    },
+    {
+      "id": "atlas_surveillance",
+      "label": "EFF Atlas of Surveillance — police surveillance technology",
+      "area": "visibility",
+      "type": "scrape",
+      "module": "atlas_surveillance_scrape",
+      "function": "fetch_items",
+      "site_url": "https://atlasofsurveillance.org/",
+      "cadence": "monthly",
+      "notes": "Added 2026-10-21 under c5 (visibility, US). in: technology deployed. Compiled from public records and news. Slow-moving; an unchanged count is the source doing its job."
+    },
+    {
+      "id": "fec_money",
+      "label": "FEC — money by entity type, current cycle",
+      "area": "visibility",
+      "type": "scrape",
+      "module": "fec_money_scrape",
+      "function": "fetch_items",
+      "site_url": "https://www.fec.gov/data/",
+      "cadence": "monthly",
+      "notes": "Added 2026-10-21 under c5 (visibility, US). out: outside spending, partial (PAC totals include super PACs). Feed. Undisclosed-donor spending is not separable here; no source found yet."
+    },
+    {
+      "id": "justsecurity_litigation",
+      "label": "Just Security — litigation tracker case count",
+      "area": "visibility",
+      "type": "scrape",
+      "module": "justsecurity_litigation_scrape",
+      "function": "fetch_items",
+      "site_url": "https://www.justsecurity.org/107087/tracker-litigation-legal-challenges-trump-administration/",
+      "cadence": "weekly",
+      "notes": "Added 2026-10-21 under c5 (visibility, US). contested: actions challenged in court. Compiled from dockets with stated counting rules. No download; count only."
+    },
+    {
+      "id": "ccc_protests",
+      "label": "Crowd Counting Consortium — US protest events",
+      "area": "visibility",
+      "type": "scrape",
+      "module": "ccc_protests_scrape",
+      "function": "fetch_items",
+      "site_url": "https://ash.harvard.edu/programs/crowd-counting-consortium/",
+      "cadence": "monthly",
+      "notes": "Added 2026-10-21 under c5 (visibility, US). contested: protest. Compiled, fact-checked from public sources. Posted to Dataverse about monthly, data several months behind (version of 2026-09-10 runs through May 2026)."
     }
   ],
 
