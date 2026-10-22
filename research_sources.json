@@ -248,7 +248,7 @@
       "function": "fetch_items",
       "site_url": "https://www.ice.gov/detain/detention-management",
       "cadence": "monthly",
-      "notes": "Added 2026-10-21 under c5 (visibility, US). in: detention. Feed (agency's own counts, published under appropriations law). On 2026-10-21 the latest file was dated 2026-07-20 with data of 07-09: ICE had not updated in three months. TRAC uses the same file."
+      "notes": "Added 2026-10-21 under c5 (visibility, US). in: detention. Feed (agency's own counts, published under appropriations law). On 2026-10-21 the latest file was dated 2026-07-20 with data of 07-09: ICE had not updated in three months. TRAC uses the same file. ice.gov returns 403 to the GitHub runner (first run 2026-10-22) though it serves the local machine: like epoch_ai, run `python3 ice_detention_scrape.py` in session."
     },
     {
       "id": "press_freedom_tracker",
@@ -292,7 +292,7 @@
       "function": "fetch_items",
       "site_url": "https://www.justsecurity.org/107087/tracker-litigation-legal-challenges-trump-administration/",
       "cadence": "weekly",
-      "notes": "Added 2026-10-21 under c5 (visibility, US). contested: actions challenged in court. Compiled from dockets with stated counting rules. No download; count only."
+      "notes": "Added 2026-10-21 under c5 (visibility, US). contested: actions challenged in court. Compiled from dockets with stated counting rules. No download; count only. justsecurity.org returns 403 to the GitHub runner (first run 2026-10-22) though it serves the local machine: like epoch_ai, run `python3 justsecurity_litigation_scrape.py` in session."
     },
     {
       "id": "ccc_protests",
