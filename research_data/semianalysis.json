@@ -3,6 +3,24 @@
   "status": "ok",
   "items": [
     {
+      "title": "The Huawei-DeepSeek Symbiosis",
+      "link": "https://newsletter.semianalysis.com/p/huawei-deepseek",
+      "date": "Wed, 21 Oct 2026 17:34:38 GMT",
+      "summary": "Right before China\u2019s national day holidays, DeepSeek released Ascend support for TileLang, DeepGEMM, DeepEP, TileKernels, FlashMLA, and DeepSelect.Neither can do this alone. Although they have Pangu, Huawei has no frontier lab to prove their chip can train or infer models, DeepSeek has models but\u2026"
+    },
+    {
+      "title": "Datacenters 2027: The Year of Acceleration, +50GW in a Single Year",
+      "link": "https://newsletter.semianalysis.com/p/datacenters-2027-the-year-of-acceleration",
+      "date": "Mon, 19 Oct 2026 05:39:38 GMT",
+      "summary": "Not a week goes without another piece of datacenter FUD. We\u2019ve already debunked in depth why moratoriums aren\u2019t as impactful as one may think. Despite that, many still misunderstand the pace of the global AI datacenter buildout. Just the other week, Brad Gerstner from Altimeter showed our data on\u2026"
+    },
+    {
+      "title": "ASML Is Building a Hybrid Bonding Tool!",
+      "link": "https://newsletter.semianalysis.com/p/asml-is-building-a-hybrid-bonding",
+      "date": "Thu, 15 Oct 2026 19:27:20 GMT",
+      "summary": "ASML has not announced anything yet, but its patent filings, a news report and its own roadmap all suggest so. We believe it will start with a die-to-wafer (D2W) hybrid bonding (HB) tool. This is harder to build than wafer-to-wafer but is where ASML could gain an edge. We see the move as a natural\u2026"
+    },
+    {
       "title": "Beijing Will Not Pace the Frontier: China\u2019s Speed-First AI Safety Regime",
       "link": "https://newsletter.semianalysis.com/p/beijing-will-not-pace-the-frontier",
       "date": "Thu, 08 Oct 2026 17:46:05 GMT",
@@ -73,30 +91,12 @@
       "link": "https://newsletter.semianalysis.com/p/long-live-the-short-king-why-4-hi",
       "date": "Sun, 13 Sep 2026 18:19:39 GMT",
       "summary": "High Bandwidth Memory has been a key technology enabling the AI revolution. Despite HBM\u2019s high costs relative to other forms of memory, chip designers have packaged more and more HBM into AI accelerators. Customers push to design in newer generation HBM whilst also increasing capacity per XPU by\u2026"
-    },
-    {
-      "title": "Nvidia\u2019s Backstop Universe \u2013 Heads I Win, Tails Who Loses?",
-      "link": "https://newsletter.semianalysis.com/p/nvidias-backstop-universe-heads-i",
-      "date": "Fri, 11 Sep 2026 17:04:52 GMT",
-      "summary": "Follow the money behind the AI buildout with our AI Compute, Capital and Markets Model - understand who is funding the expansion, how deals are structured, and where the risks sit. Contact our team here to find out more.We\u2019re also hiring for SemiAnalysis\u2019s Compute, Capital & Markets team. We have\u2026"
-    },
-    {
-      "title": "What is So Hard About Behind-The-Meter Power For Datacenters? Part 1",
-      "link": "https://newsletter.semianalysis.com/p/what-is-so-hard-about-behind-the",
-      "date": "Thu, 10 Sep 2026 14:28:20 GMT",
-      "summary": "Last year we were the first to call out Onsite Gas Generation as the primary method adopted by AI Labs and Hyperscalers to solve power constraints. Our positive view was far from being consensus: behind-the-meter primary power solutions have been called all sorts of names, such as \u201cscience\u2026"
-    },
-    {
-      "title": "TPU Inference Externalization Full Steam Ahead - InferenceX",
-      "link": "https://newsletter.semianalysis.com/p/tpu-inferencex-full-steam",
-      "date": "Mon, 07 Sep 2026 20:00:18 GMT",
-      "summary": "For more than a decade, the industry has watched Google build an empire on its own silicon. Search, Ads, YouTube, and every generation of Gemini run on TPUs. Few accelerators have attracted as much architectural scrutiny or as much debate about what their performance and economics would look like\u2026"
     }
   ],
   "label": "SemiAnalysis",
   "area": "ai_market",
   "site_url": "https://semianalysis.com/",
   "cadence": "weekly",
-  "fetched_at": "2026-10-13T02:39:22.565036+00:00",
+  "fetched_at": "2026-10-22T00:04:30.463112+00:00",
   "description_unreliable": false
 }
