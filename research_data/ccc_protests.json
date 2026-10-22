@@ -1,0 +1,18 @@
+{
+  "id": "ccc_protests",
+  "status": "ok",
+  "items": [
+    {
+      "title": "Crowd Counting Consortium \u2014 version 18.0, data through 2026-05",
+      "link": "https://doi.org/10.7910/DVN/RI9JFU#v18.0",
+      "date": "2026-05",
+      "summary": "Dataverse version 18.0 (posted 2026-09-10), data through 2026-05. Events by month: 2025-12 2348, 2026-01 6226, 2026-02 3343, 2026-03 6620, 2026-04 3284, 2026-05 4534. Indiana: 2025-12 107, 2026-01 137, 2026-02 128, 2026-03 180, 2026-04 121, 2026-05 128."
+    }
+  ],
+  "label": "Crowd Counting Consortium \u2014 US protest events",
+  "area": "visibility",
+  "site_url": "https://ash.harvard.edu/programs/crowd-counting-consortium/",
+  "cadence": "monthly",
+  "fetched_at": "2026-10-22T04:39:09.911639+00:00",
+  "description_unreliable": false
+}

@@ -1,0 +1,18 @@
+{
+  "id": "kiel_tracker",
+  "status": "ok",
+  "items": [
+    {
+      "title": "Ukraine Support Tracker \u2014 Release 31 (updated October 8, 2026)",
+      "link": "https://www.kielinstitut.de/topics/war-against-ukraine/ukraine-support-tracker/#release-31",
+      "date": "2026-10-08",
+      "summary": "Release 31, page updated October 8, 2026. Data file: https://www.kielinstitut.de/fileadmin/Dateiverwaltung/IfW-Publications/fis-import/bc5059ba-ef38-4f08-988a-746a03905a6c-Ukraine_Support_Tracker__Release_31.xlsx"
+    }
+  ],
+  "label": "Kiel Institute \u2014 Ukraine Support Tracker releases",
+  "area": "conflict",
+  "site_url": "https://www.kielinstitut.de/topics/war-against-ukraine/ukraine-support-tracker/",
+  "cadence": "monthly",
+  "fetched_at": "2026-10-22T04:39:04.418807+00:00",
+  "description_unreliable": false
+}
