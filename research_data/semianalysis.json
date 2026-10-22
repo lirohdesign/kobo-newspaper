@@ -3,6 +3,12 @@
   "status": "ok",
   "items": [
     {
+      "title": "The Huawei-DeepSeek Symbiosis",
+      "link": "https://newsletter.semianalysis.com/p/huawei-deepseek",
+      "date": "Wed, 21 Oct 2026 17:34:38 GMT",
+      "summary": "Right before China\u2019s national day holidays, DeepSeek released Ascend support for TileLang, DeepGEMM, DeepEP, TileKernels, FlashMLA, and DeepSelect.Neither can do this alone. Although they have Pangu, Huawei has no frontier lab to prove their chip can train or infer models, DeepSeek has models but\u2026"
+    },
+    {
       "title": "Datacenters 2027: The Year of Acceleration, +50GW in a Single Year",
       "link": "https://newsletter.semianalysis.com/p/datacenters-2027-the-year-of-acceleration",
       "date": "Mon, 19 Oct 2026 05:39:38 GMT",
@@ -85,18 +91,12 @@
       "link": "https://newsletter.semianalysis.com/p/long-live-the-short-king-why-4-hi",
       "date": "Sun, 13 Sep 2026 18:19:39 GMT",
       "summary": "High Bandwidth Memory has been a key technology enabling the AI revolution. Despite HBM\u2019s high costs relative to other forms of memory, chip designers have packaged more and more HBM into AI accelerators. Customers push to design in newer generation HBM whilst also increasing capacity per XPU by\u2026"
-    },
-    {
-      "title": "Nvidia\u2019s Backstop Universe \u2013 Heads I Win, Tails Who Loses?",
-      "link": "https://newsletter.semianalysis.com/p/nvidias-backstop-universe-heads-i",
-      "date": "Fri, 11 Sep 2026 17:04:52 GMT",
-      "summary": "Follow the money behind the AI buildout with our AI Compute, Capital and Markets Model - understand who is funding the expansion, how deals are structured, and where the risks sit. Contact our team here to find out more.We\u2019re also hiring for SemiAnalysis\u2019s Compute, Capital & Markets team. We have\u2026"
     }
   ],
   "label": "SemiAnalysis",
   "area": "ai_market",
   "site_url": "https://semianalysis.com/",
   "cadence": "weekly",
-  "fetched_at": "2026-10-20T23:59:34.142025+00:00",
+  "fetched_at": "2026-10-22T00:04:30.463112+00:00",
   "description_unreliable": false
 }
