@@ -133,6 +133,44 @@
       "months": [12],
       "scraper": null,
       "notes": "National benchmark for data-centre electricity. The 2024 report was published 2024-12-19 (estimates back to 2014, scenarios to 2028: 6.7-12.0% of US electricity by 2028); a 2025 Update exists (11.8% of US electricity by 2030, range 9.5-15.3%; per search-result summaries 2026-09-29, not read directly). Release dates are irregular, and eta.lbl.gov returns 403 to scripted fetches, so nothing here is verified beyond the search listing; December is the month of the 2024 release, not a schedule. Check https://datacenters.lbl.gov/publications by hand and log the published figure when a new edition appears."
+    },
+    {
+      "id": "sipri_arms_transfers",
+      "label": "SIPRI — Trends in International Arms Transfers (annual)",
+      "url": "https://www.sipri.org/databases/armstransfers",
+      "cadence": "annual",
+      "trigger": "annual_window",
+      "months": [
+        3
+      ],
+      "scraper": null,
+      "notes": "Added 2026-10-21 under c4 S (arms transfers). Annual fact sheet, usually March, with the Arms Transfers Database update. Release month from memory, not checked. On release, record transfers to Ukraine, Israel and Iran as a calendar_reading."
+    },
+    {
+      "id": "odni_transparency_report",
+      "label": "ODNI — Annual Statistical Transparency Report (FISA, Section 702)",
+      "url": "https://www.intel.gov/ic-on-the-record-database/results/statistical-transparency-report",
+      "cadence": "annual",
+      "trigger": "annual_window",
+      "months": [
+        4,
+        5
+      ],
+      "scraper": null,
+      "notes": "Added 2026-10-21 under c5 in (surveillance authorities, queries). The CY2025 report is out (2026_ASTR_for_CY2025.pdf); per search snippets 349,823 Section 702 targets in CY2025 against 291,824 in CY2024, not read from the PDF (odni.gov serves HTML to scripted downloads). Window is a guess from past releases; read the report and record targets and U.S.-person query counts as a calendar_reading."
+    },
+    {
+      "id": "uscourts_wiretap_report",
+      "label": "US Courts — Wiretap Report (annual)",
+      "url": "https://www.uscourts.gov/data-news/reports/statistical-reports/wiretap-reports",
+      "cadence": "annual",
+      "trigger": "annual_window",
+      "months": [
+        6,
+        7
+      ],
+      "scraper": null,
+      "notes": "Added 2026-10-21 under c5 in. Covers the calendar year before; excludes FISA. Wiretap Report 2025 is the latest listed. Window from memory, not checked; record authorized federal and state wiretaps and encryption encountered as a calendar_reading."
     }
   ],
 

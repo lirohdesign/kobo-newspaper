@@ -23,6 +23,8 @@ AREA_LABELS = {
     "inequality": "Inequality & capital ownership",
     "ipcc": "IPCC / global climate assessment",
     "macro_recession": "Lived economy",
+    "conflict": "Armed conflict — Ukraine, Gaza, Iran",
+    "visibility": "Visibility — the state and the individual (US)",
 }
 
 # Cadence tag shown next to a source's label so a monthly/quarterly item

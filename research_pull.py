@@ -149,7 +149,9 @@ def fetch_feed(url):
         items.append({
             "title": (it.findtext("atom:title", default="", namespaces=ns) or "").strip(),
             "link": link_el.get("href") if link_el is not None else "",
-            "date": (it.findtext("atom:updated", default="", namespaces=ns) or "").strip(),
+            # Some Atom feeds (iranhr.net) carry <published> and no <updated>.
+            "date": (it.findtext("atom:updated", default="", namespaces=ns)
+                     or it.findtext("atom:published", default="", namespaces=ns) or "").strip(),
             "summary": _truncate(text),
             "content_links": links,
         })

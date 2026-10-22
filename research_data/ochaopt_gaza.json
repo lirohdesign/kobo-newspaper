@@ -1,0 +1,48 @@
+{
+  "id": "ochaopt_gaza",
+  "status": "ok",
+  "items": [
+    {
+      "title": "Humanitarian Situation Report | 15 October 2026",
+      "link": "https://www.ochaopt.org/content/humanitarian-situation-report-15-october-2026",
+      "date": "2026-10-15",
+      "summary": "Casualty figures are Gaza MoH and Israeli-authority figures, not yet UN-verified (OCHA's disclaimer)."
+    },
+    {
+      "title": "Reported impact snapshot | Gaza Strip (14 October 2026)",
+      "link": "https://www.ochaopt.org/content/reported-impact-snapshot-gaza-strip-14-october-2026",
+      "date": "2026-10-14",
+      "summary": "Figures in the PDF: https://www.ochaopt.org/sites/default/files/Gaza_Reported_Impact_Snapshot_14_October_2026.pdf. Casualty figures are Gaza MoH and Israeli-authority figures, not yet UN-verified (OCHA's disclaimer)."
+    },
+    {
+      "title": "Reported impact snapshot | Gaza Strip (7 October 2026)",
+      "link": "https://www.ochaopt.org/content/reported-impact-snapshot-gaza-strip-7-october-2026",
+      "date": "2026-10-07",
+      "summary": "Figures in the PDF: https://www.ochaopt.org/sites/default/files/Gaza_Reported_Impact_Snapshot_7_October_2026.pdf. Casualty figures are Gaza MoH and Israeli-authority figures, not yet UN-verified (OCHA's disclaimer)."
+    },
+    {
+      "title": "Reported impact snapshot | Gaza Strip (30 September 2026)",
+      "link": "https://www.ochaopt.org/content/reported-impact-snapshot-gaza-strip-30-september-2026",
+      "date": "2026-09-30",
+      "summary": "Figures in the PDF: https://www.ochaopt.org/sites/default/files/Gaza_Reported_Impact_Snapshot_30_September_2026.pdf. Casualty figures are Gaza MoH and Israeli-authority figures, not yet UN-verified (OCHA's disclaimer)."
+    },
+    {
+      "title": "Humanitarian Situation Report | 2 October 2026",
+      "link": "https://www.ochaopt.org/content/humanitarian-situation-report-2-october-2026",
+      "date": "2026-10-02",
+      "summary": "Casualty figures are Gaza MoH and Israeli-authority figures, not yet UN-verified (OCHA's disclaimer)."
+    },
+    {
+      "title": "Reported impact snapshot | Gaza Strip (23 September 2026)",
+      "link": "https://www.ochaopt.org/content/reported-impact-snapshot-gaza-strip-23-september-2026",
+      "date": "2026-09-23",
+      "summary": "Figures in the PDF: https://www.ochaopt.org/sites/default/files/Gaza_Reported_Impact_Snapshot_23_September_2026.pdf. Casualty figures are Gaza MoH and Israeli-authority figures, not yet UN-verified (OCHA's disclaimer)."
+    }
+  ],
+  "label": "OCHA oPt \u2014 Gaza reported impact snapshots and situation reports",
+  "area": "conflict",
+  "site_url": "https://www.ochaopt.org/publications",
+  "cadence": "weekly",
+  "fetched_at": "2026-10-22T04:39:01.456394+00:00",
+  "description_unreliable": false
+}

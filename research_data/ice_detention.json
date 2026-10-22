@@ -1,0 +1,12 @@
+{
+  "id": "ice_detention",
+  "status": "error",
+  "error": "HTTP Error 403: Forbidden",
+  "items": [],
+  "label": "ICE detention statistics \u2014 currently detained",
+  "area": "visibility",
+  "site_url": "https://www.ice.gov/detain/detention-management",
+  "cadence": "monthly",
+  "fetched_at": "2026-10-22T04:39:04.577064+00:00",
+  "description_unreliable": false
+}

@@ -3,6 +3,12 @@
   "status": "ok",
   "items": [
     {
+      "title": "Mixing Politics and Perceptions of AI and Data Centers: Results from the Gardner Food & Agricultural Policy Survey",
+      "link": "https://farmdocdaily.illinois.edu/2026/10/mixing-politics-and-perceptions-of-ai-and-data-centers-results-from-the-gardner-food-agricultural-policy-survey.html",
+      "date": "Wed, 21 Oct 2026 16:05:43 +0000",
+      "summary": "With an eye towards the rapidly approaching 2026 midterm elections, this article further reviews survey results from the Gardner Food and Agricultural Policy Survey, but through the lens of political affiliation. Specifically, we examine how perceptions of the benefits and challenges associated\u2026"
+    },
+    {
       "title": "Diesel Fuel Price Impact on Fuel & Oil and Per-Acre Machinery Costs",
       "link": "https://farmdocdaily.illinois.edu/2026/10/diesel-fuel-price-impact-on-fuel-oil-and-per-acre-machinery-costs.html",
       "date": "Tue, 20 Oct 2026 20:20:04 +0000",
@@ -55,18 +61,12 @@
       "link": "https://farmdocdaily.illinois.edu/2026/10/conservation-risk-part-5-examining-a-risk-payment-gap-for-nitrogen-management.html",
       "date": "Thu, 08 Oct 2026 14:40:10 +0000",
       "summary": "Agricultural conservation policies include assistance for nutrient management. To the extent that this assistance is intended to encourage farmers to reduce application rates for nutrients, such as nitrogen, the policy presents another variation on the conservation-risk challenges examined in this\u2026"
-    },
-    {
-      "title": "Enough Room for the Harvest? Grain Storage Pressure in the Corn Belt",
-      "link": "https://farmdocdaily.illinois.edu/2026/10/enough-room-for-the-harvest-grain-storage-pressure-in-the-corn-belt.html",
-      "date": "Wed, 07 Oct 2026 21:34:53 +0000",
-      "summary": "US grain storage capacity can in aggregate hold this year's carry-in stocks and expected harvest, but potential storage demand exceeds capacity in ten of thirteen Corn Belt states. Historically, grain movement during the harvest period relieves this pressure by December, so a 2026 storage crunch is\u2026"
     }
   ],
   "label": "farmdoc daily",
   "area": "agriculture",
   "site_url": "https://farmdocdaily.illinois.edu/",
   "cadence": "weekly_digest",
-  "fetched_at": "2026-10-20T23:59:34.570359+00:00",
+  "fetched_at": "2026-10-22T04:38:26.070951+00:00",
   "description_unreliable": false
 }

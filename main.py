@@ -105,7 +105,14 @@ def collect_nyt(ts):
                 raw_html = f.read()
             clean = re.sub(r'<(style|script)[^>]*>.*?</\1>', '', raw_html, flags=re.DOTALL)
             content_blocks = re.findall(r'<(p|h2|h3|li)[^>]*>(.*?)</\1>', clean, flags=re.DOTALL)
-            content = "".join([f'<{tag}>{re.sub(r"<[^>]+>", "", text).strip()}</{tag}>' for tag, text in content_blocks if tag in ('h2', 'h3') or len(text) > 40])
+            blocks = [(tag, re.sub(r"<[^>]+>", "", text).strip()) for tag, text in content_blocks if tag in ('h2', 'h3') or len(text) > 40]
+            # The newsletter's GAMES heading always marks the start of Wordle/Connections
+            # promo, sign-off, masthead, and unsubscribe/legal boilerplate -- never content.
+            for i, (tag, text) in enumerate(blocks):
+                if tag == 'h3' and text.upper() == 'GAMES':
+                    blocks = blocks[:i]
+                    break
+            content = "".join([f'<{tag}>{text}</{tag}>' for tag, text in blocks])
             
             html = f"""<!DOCTYPE html><html><head><meta charset='UTF-8'><title>liroh nyt morning {ts}</title><link rel='stylesheet' href='style.css'></head>
             <body><h1>liroh nyt morning {ts}</h1>{content}</body></html>"""
