@@ -3,6 +3,12 @@
   "status": "ok",
   "items": [
     {
+      "title": "The US No Loss Crop Sector Safety Net",
+      "link": "https://farmdocdaily.illinois.edu/2026/10/the-us-no-loss-crop-sector-safety-net.html",
+      "date": "Fri, 23 Oct 2026 14:02:02 +0000",
+      "summary": "Consistent with \u201cCrop Loss\u201d headlines dating to 2023, combined loss at harvest totaled $28.1 billion for producing the US 2025 cost of production crops (barley, corn, oats, peanuts, rice, seed cotton, sorghum, soybeans, wheat). However, all but $3.7 billion of this loss was covered by the US crop\u2026"
+    },
+    {
       "title": "Conservation Policy: The Baseline Shuffle and Tradeoffs in the Bardo",
       "link": "https://farmdocdaily.illinois.edu/2026/10/conservation-policy-the-baseline-shuffle-and-tradeoffs-in-the-bardo.html",
       "date": "Thu, 22 Oct 2026 22:24:52 +0000",
@@ -55,18 +61,12 @@
       "link": "https://farmdocdaily.illinois.edu/2026/10/rural-broadband-infrastructure-and-its-implications-for-households-and-agriculture.html",
       "date": "Mon, 12 Oct 2026 15:22:49 +0000",
       "summary": "Survey results in this article show that although many rural households now have access to broadband service, the existing infrastructure often falls short of meeting evolving household and business needs. Agriculture has distinct broadband needs that extend beyond residential service requirements,\u2026"
-    },
-    {
-      "title": "Agricultural Lending by Commercial Banks: 2026 Second Quarter",
-      "link": "https://farmdocdaily.illinois.edu/2026/10/agricultural-lending-by-commercial-banks-2026-second-quarter.html",
-      "date": "Fri, 09 Oct 2026 21:11:08 +0000",
-      "summary": "Agricultural loan balances at U.S. commercial banks increased in the second quarter of 2026, with gains in both farm real estate and non-real estate loans. At agricultural banks, farm loan\u2026"
     }
   ],
   "label": "farmdoc daily",
   "area": "agriculture",
   "site_url": "https://farmdocdaily.illinois.edu/",
   "cadence": "weekly_digest",
-  "fetched_at": "2026-10-23T00:03:21.964800+00:00",
+  "fetched_at": "2026-10-23T23:54:13.709685+00:00",
   "description_unreliable": false
 }
