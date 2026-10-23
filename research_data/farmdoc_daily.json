@@ -3,6 +3,12 @@
   "status": "ok",
   "items": [
     {
+      "title": "Conservation Policy: The Baseline Shuffle and Tradeoffs in the Bardo",
+      "link": "https://farmdocdaily.illinois.edu/2026/10/conservation-policy-the-baseline-shuffle-and-tradeoffs-in-the-bardo.html",
+      "date": "Thu, 22 Oct 2026 22:24:52 +0000",
+      "summary": "October marks the beginning of the federal fiscal year, which is payment season for farm policy (USDA, October 7, 2026; Farm Policy News, October 19, 2026). Payments are made in\u2026"
+    },
+    {
       "title": "Mixing Politics and Perceptions of AI and Data Centers: Results from the Gardner Food & Agricultural Policy Survey",
       "link": "https://farmdocdaily.illinois.edu/2026/10/mixing-politics-and-perceptions-of-ai-and-data-centers-results-from-the-gardner-food-agricultural-policy-survey.html",
       "date": "Wed, 21 Oct 2026 16:05:43 +0000",
@@ -55,18 +61,12 @@
       "link": "https://farmdocdaily.illinois.edu/2026/10/agricultural-lending-by-commercial-banks-2026-second-quarter.html",
       "date": "Fri, 09 Oct 2026 21:11:08 +0000",
       "summary": "Agricultural loan balances at U.S. commercial banks increased in the second quarter of 2026, with gains in both farm real estate and non-real estate loans. At agricultural banks, farm loan\u2026"
-    },
-    {
-      "title": "Conservation & Risk, Part 5: Examining a Risk-Payment Gap for Nitrogen Management",
-      "link": "https://farmdocdaily.illinois.edu/2026/10/conservation-risk-part-5-examining-a-risk-payment-gap-for-nitrogen-management.html",
-      "date": "Thu, 08 Oct 2026 14:40:10 +0000",
-      "summary": "Agricultural conservation policies include assistance for nutrient management. To the extent that this assistance is intended to encourage farmers to reduce application rates for nutrients, such as nitrogen, the policy presents another variation on the conservation-risk challenges examined in this\u2026"
     }
   ],
   "label": "farmdoc daily",
   "area": "agriculture",
   "site_url": "https://farmdocdaily.illinois.edu/",
   "cadence": "weekly_digest",
-  "fetched_at": "2026-10-22T04:38:26.070951+00:00",
+  "fetched_at": "2026-10-23T00:03:21.964800+00:00",
   "description_unreliable": false
 }
