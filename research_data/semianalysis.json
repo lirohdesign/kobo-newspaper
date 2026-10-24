@@ -3,6 +3,12 @@
   "status": "ok",
   "items": [
     {
+      "title": "Amazon\u2019s Trainium Takes a Strike at the Training King",
+      "link": "https://newsletter.semianalysis.com/p/amazons-trainium-takes-a-strike-at",
+      "date": "Fri, 23 Oct 2026 19:06:44 GMT",
+      "summary": "Trainium has already proven itself in the realm of inference. Anthropic is running production inference and RL rollouts on Trainium2 and Trainium3. Historically, Trainium has been great for inference but not the best fit for research training. In inference, the model architecture changes at a much\u2026"
+    },
+    {
       "title": "The Huawei-DeepSeek Symbiosis",
       "link": "https://newsletter.semianalysis.com/p/huawei-deepseek",
       "date": "Wed, 21 Oct 2026 17:34:38 GMT",
@@ -85,18 +91,12 @@
       "link": "https://newsletter.semianalysis.com/p/a-brain-too-big-to-carry-on-device",
       "date": "Mon, 14 Sep 2026 16:37:25 GMT",
       "summary": "Where should the brain of the robot go?So far, AI has mostly lived behind a screen. Chatbots answered questions. Then agents started driving software and finishing multi-step tasks on their own. The next step is AI that acts in the physical world, and the biggest piece of that is robots. It\u2019s\u2026"
-    },
-    {
-      "title": "Long Live the Short King: Why 4-hi HBM Wins",
-      "link": "https://newsletter.semianalysis.com/p/long-live-the-short-king-why-4-hi",
-      "date": "Sun, 13 Sep 2026 18:19:39 GMT",
-      "summary": "High Bandwidth Memory has been a key technology enabling the AI revolution. Despite HBM\u2019s high costs relative to other forms of memory, chip designers have packaged more and more HBM into AI accelerators. Customers push to design in newer generation HBM whilst also increasing capacity per XPU by\u2026"
     }
   ],
   "label": "SemiAnalysis",
   "area": "ai_market",
   "site_url": "https://semianalysis.com/",
   "cadence": "weekly",
-  "fetched_at": "2026-10-23T00:03:21.425549+00:00",
+  "fetched_at": "2026-10-23T23:54:13.220525+00:00",
   "description_unreliable": false
 }
