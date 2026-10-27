@@ -3,6 +3,12 @@
   "status": "ok",
   "items": [
     {
+      "title": "US-Mexico Cattle Trade and Beef Markets",
+      "link": "https://farmdocdaily.illinois.edu/2026/10/us-mexico-cattle-trade-and-beef-markets.html",
+      "date": "Tue, 27 Oct 2026 00:01:45 +0000",
+      "summary": "Mexico exported feeder cattle to the US until New World Screwworm (NWS) caused officials to stop this flow in 2025. Given the partial reopening in effect now, there is uncertainty\u2026"
+    },
+    {
       "title": "The US No Loss Crop Sector Safety Net",
       "link": "https://farmdocdaily.illinois.edu/2026/10/the-us-no-loss-crop-sector-safety-net.html",
       "date": "Fri, 23 Oct 2026 14:02:02 +0000",
@@ -55,18 +61,12 @@
       "link": "https://farmdocdaily.illinois.edu/2026/10/2025-final-arc-plc-payments.html",
       "date": "Tue, 13 Oct 2026 22:41:11 +0000",
       "summary": "Final marketing year average (MYA) prices were recently released by the USDA for nearly all eligible commodities, and the Farm Service Agency (FSA) has finalized the payments for most commodities from the Agricultural Risk Coverage (ARC) and Price Loss (PLC) programs for the 2025 crop year.\u2026"
-    },
-    {
-      "title": "Rural Broadband Infrastructure and Its Implications for Households and Agriculture",
-      "link": "https://farmdocdaily.illinois.edu/2026/10/rural-broadband-infrastructure-and-its-implications-for-households-and-agriculture.html",
-      "date": "Mon, 12 Oct 2026 15:22:49 +0000",
-      "summary": "Survey results in this article show that although many rural households now have access to broadband service, the existing infrastructure often falls short of meeting evolving household and business needs. Agriculture has distinct broadband needs that extend beyond residential service requirements,\u2026"
     }
   ],
   "label": "farmdoc daily",
   "area": "agriculture",
   "site_url": "https://farmdocdaily.illinois.edu/",
   "cadence": "weekly_digest",
-  "fetched_at": "2026-10-25T23:24:33.974641+00:00",
+  "fetched_at": "2026-10-27T00:39:15.746381+00:00",
   "description_unreliable": false
 }
