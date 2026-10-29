@@ -3,6 +3,12 @@
   "status": "ok",
   "items": [
     {
+      "title": "The 2026 ARC/PLC Decision: ARC-CO vs PLC",
+      "link": "https://farmdocdaily.illinois.edu/2026/10/the-2026-arc-plc-decision-arc-co-vs-plc.html",
+      "date": "Wed, 28 Oct 2026 01:34:48 +0000",
+      "summary": "Producers are facing a December 11th deadline to make their commodity program election decisions for the 2026 crop year. Today\u2019s article includes context for the 2026 ARC-CO and PLC programs\u2026"
+    },
+    {
       "title": "US-Mexico Cattle Trade and Beef Markets",
       "link": "https://farmdocdaily.illinois.edu/2026/10/us-mexico-cattle-trade-and-beef-markets.html",
       "date": "Tue, 27 Oct 2026 00:01:45 +0000",
@@ -55,18 +61,12 @@
       "link": "https://farmdocdaily.illinois.edu/2026/10/wind-and-solar-leases-in-foreign-held-us-agricultural-land.html",
       "date": "Wed, 14 Oct 2026 15:12:04 +0000",
       "summary": "Most long-term leases held by foreign persons are for wind and solar projects, covering 6.3 million acres, or about 0.7 percent of U.S. land in farms. In most counties the share is under 1 percent, and nearly all of these acres are associated with investors from Canada and Western Europe. Because\u2026"
-    },
-    {
-      "title": "2025 Final ARC/PLC Payments",
-      "link": "https://farmdocdaily.illinois.edu/2026/10/2025-final-arc-plc-payments.html",
-      "date": "Tue, 13 Oct 2026 22:41:11 +0000",
-      "summary": "Final marketing year average (MYA) prices were recently released by the USDA for nearly all eligible commodities, and the Farm Service Agency (FSA) has finalized the payments for most commodities from the Agricultural Risk Coverage (ARC) and Price Loss (PLC) programs for the 2025 crop year.\u2026"
     }
   ],
   "label": "farmdoc daily",
   "area": "agriculture",
   "site_url": "https://farmdocdaily.illinois.edu/",
   "cadence": "weekly_digest",
-  "fetched_at": "2026-10-28T00:37:16.667557+00:00",
+  "fetched_at": "2026-10-29T01:06:39.792348+00:00",
   "description_unreliable": false
 }
