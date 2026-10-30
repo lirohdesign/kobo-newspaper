@@ -3,6 +3,12 @@
   "status": "ok",
   "items": [
     {
+      "title": "IPCC\u2019s Sixty-Fifth Session",
+      "link": "https://www.ipcc.ch/2026/10/29/ipcc-65/",
+      "date": "Thu, 29 Oct 2026 16:14:32 +0000",
+      "summary": "GENEVA, Oct 29 \u2013 The Intergovernmental Panel on Climate Change (IPCC) will resume its Sixty-Fifth Session (IPCC-65) from 1 to 3 December 2026. The meeting will be held virtually. At the resumed session, the IPCC member governments will primarily consider two remaining agenda items: the Work Plan\u2026"
+    },
+    {
       "title": "Communication Officer in the IPCC WGI Technical Support Unit",
       "link": "https://www.ipcc.ch/2026/10/19/comm-officer-ipcc-wg1-tsu/",
       "date": "Mon, 19 Oct 2026 10:03:34 +0000",
@@ -55,18 +61,12 @@
       "link": "https://www.ipcc.ch/2026/09/22/obituary-james-philip-bruce/",
       "date": "Tue, 22 Sep 2026 20:10:52 +0000",
       "summary": "It is with great sadness that the Intergovernmental Panel on Climate Change (IPCC) has learned of the passing of James (Jim) Philip Bruce, a foundational figure in the establishment of the IPCC. In 1988, while serving as Deputy Secretary-General of the World Meteorological Organization (WMO), Bruce\u2026"
-    },
-    {
-      "title": "Graphic Designer in the IPCC Working Group I Technical Support Unit [Closed]",
-      "link": "https://www.ipcc.ch/2026/09/11/graphic-designer-ipcc-wg1-tsu/",
-      "date": "Fri, 11 Sep 2026 17:13:05 +0000",
-      "summary": "Working Group I of the Intergovernmental Panel on Climate Change is filling the position of Graphic Designer in the Technical Support Unit This entry-level design position is located in the Paris area, at Gif-sur-Yvette (France). The Intergovernmental Panel on Climate Change (IPCC) The IPCC was\u2026"
     }
   ],
   "label": "IPCC \u2014 News & Announcements",
   "area": "ipcc",
   "site_url": "https://www.ipcc.ch/news/",
   "cadence": "weekly",
-  "fetched_at": "2026-10-29T01:07:04.087165+00:00",
+  "fetched_at": "2026-10-30T01:12:42.426405+00:00",
   "description_unreliable": false
 }

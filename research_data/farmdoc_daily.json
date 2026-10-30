@@ -3,10 +3,22 @@
   "status": "ok",
   "items": [
     {
+      "title": "Smaller Loans Drive Decline in Non-Real Estate Farm Lending at Commercial Banks in Q3 2026",
+      "link": "https://farmdocdaily.illinois.edu/2026/10/smaller-loans-drive-decline-in-non-real-estate-farm-lending-at-commercial-banks-in-q3-2026.html",
+      "date": "Thu, 29 Oct 2026 16:12:33 +0000",
+      "summary": "Non-real estate farm loan volume at commercial banks fell 25.0% year-over-year in the third quarter of 2026. A sharp contraction in average loan sizes drove the decline, even as the total number of loan originations increased. Average maturities shortened across categories, most notably for farm\u2026"
+    },
+    {
+      "title": "The 45Z Biofuel Tax Credit, Part 4: Inside the Updated USDA Feedstock Carbon Intensity Calculator",
+      "link": "https://farmdocdaily.illinois.edu/2026/10/the-45z-biofuel-tax-credit-part-4-inside-the-updated-usda-feedstock-carbon-intensity-calculator.html",
+      "date": "Thu, 29 Oct 2026 01:50:38 +0000",
+      "summary": "USDA recently released an updated version of its Feedstock Intensity Calculator (FD-CIC) for the 45Z Clean Fuel Production Tax Credit (USDA, FD-CIC v.1.2; User Manual, September 4, 2026). The updated calculator changes the Carbon Intensity (CI) scoring in significant ways. It also includes more\u2026"
+    },
+    {
       "title": "The 2026 ARC/PLC Decision: ARC-CO vs PLC",
       "link": "https://farmdocdaily.illinois.edu/2026/10/the-2026-arc-plc-decision-arc-co-vs-plc.html",
       "date": "Wed, 28 Oct 2026 01:34:48 +0000",
-      "summary": "Producers are facing a December 11th deadline to make their commodity program election decisions for the 2026 crop year. Today\u2019s article includes context for the 2026 ARC-CO and PLC programs\u2026"
+      "summary": "The commodity program decision deadline for program crops harvested in 2026 is December 11, 2026. Current projections and expectations for prices and yields suggest that ARC-CO would be expected to trigger larger payments than PLC on corn and soybean base acres in most counties. The comparison for\u2026"
     },
     {
       "title": "US-Mexico Cattle Trade and Beef Markets",
@@ -49,24 +61,12 @@
       "link": "https://farmdocdaily.illinois.edu/2026/10/illinois-farm-financial-trends-in-2025-summary-and-analysis.html",
       "date": "Fri, 16 Oct 2026 14:58:54 +0000",
       "summary": "Farm incomes in 2025 were higher than in 2024, resulting in slightly stronger average financial positions for Illinois farms. However, after three years of lower incomes on grain farms before 2025, working cash has decreased almost 40% from 2022 on the average farm to 2020 levels. With projected\u2026"
-    },
-    {
-      "title": "Sample Cost and Returns for a Migratory Commercial Beekeeping Operation 2025-2026",
-      "link": "https://farmdocdaily.illinois.edu/2026/10/sample-cost-and-returns-for-a-migratory-commercial-beekeeping-operation-2025-2026.html",
-      "date": "Thu, 15 Oct 2026 21:36:44 +0000",
-      "summary": "Honey bees play a critical role in agricultural production, however commercial beekeepers face substantial costs and uncertainty. A representative operation cannot cover total costs and requires government payments to cover cash costs. This highlights the economic impact colony losses and health\u2026"
-    },
-    {
-      "title": "Wind and Solar Leases in Foreign-Held U.S. Agricultural Land",
-      "link": "https://farmdocdaily.illinois.edu/2026/10/wind-and-solar-leases-in-foreign-held-us-agricultural-land.html",
-      "date": "Wed, 14 Oct 2026 15:12:04 +0000",
-      "summary": "Most long-term leases held by foreign persons are for wind and solar projects, covering 6.3 million acres, or about 0.7 percent of U.S. land in farms. In most counties the share is under 1 percent, and nearly all of these acres are associated with investors from Canada and Western Europe. Because\u2026"
     }
   ],
   "label": "farmdoc daily",
   "area": "agriculture",
   "site_url": "https://farmdocdaily.illinois.edu/",
   "cadence": "weekly_digest",
-  "fetched_at": "2026-10-29T01:06:39.792348+00:00",
+  "fetched_at": "2026-10-30T01:12:19.656735+00:00",
   "description_unreliable": false
 }
