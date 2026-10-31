@@ -3,6 +3,12 @@
   "status": "ok",
   "items": [
     {
+      "title": "An end to summer tariff peace threatens U.S. economic growth",
+      "link": "https://equitablegrowth.org/an-end-to-summer-tariff-peace-threatens-u-s-economic-growth/",
+      "date": "Fri, 30 Oct 2026 13:00:00 +0000",
+      "summary": "Key takeaways: Resurgent uncertainty over U.S. trade policies, rising tariff rates, and looming action against Canada risk significant harm to U.S. businesses and consumers reliant on low-tariff imports.Direct and indirect tariff costs could further fuel inflationary pressures already growing under\u2026"
+    },
+    {
       "title": "Assessing proposed legislation to expand Unemployment Insurance to protect U.S. workers amid AI-related disruptions",
       "link": "https://equitablegrowth.org/assessing-proposed-legislation-to-expand-unemployment-insurance-to-protect-u-s-workers-amid-ai-related-disruptions/",
       "date": "Fri, 23 Oct 2026 14:25:00 +0000",
@@ -55,18 +61,12 @@
       "link": "https://equitablegrowth.org/what-happens-to-u-s-workers-without-access-to-unemployment-insurance-amid-economic-downturns-or-disruptions-related-to-ai/",
       "date": "Wed, 02 Sep 2026 13:00:00 +0000",
       "summary": "Key Takeaways: The adoption of artificial intelligence in the workplace has led to predictions of U.S. labor market disruptions. In response, policymakers have increased attention on the fitness of the nation\u2019s existing social insurance programs.Reforms to our social insurance programs are sorely\u2026"
-    },
-    {
-      "title": "Economic research shows immigration is good for U.S. workers, the economy, and affordability",
-      "link": "https://equitablegrowth.org/economic-research-shows-immigration-is-good-for-u-s-workers-the-economy-and-affordability/",
-      "date": "Mon, 31 Aug 2026 16:00:00 +0000",
-      "summary": "Key takeaways: Immigrants to the United States are essential to U.S. economic growth. Immigrants are integral to U.S. history and cultural identity. They support a vibrant U.S. economy as workers, consumers, taxpayers, inventors, and entrepreneurs.Immigrants fill both low-skilled jobs that\u2026"
     }
   ],
   "label": "Washington Center for Equitable Growth",
   "area": "inequality",
   "site_url": "https://equitablegrowth.org/",
   "cadence": "monthly_digest",
-  "fetched_at": "2026-10-30T01:12:42.755882+00:00",
+  "fetched_at": "2026-10-31T00:55:29.655710+00:00",
   "description_unreliable": false
 }
