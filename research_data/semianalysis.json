@@ -3,6 +3,12 @@
   "status": "ok",
   "items": [
     {
+      "title": "The Datacenter Backlash Goes Bipartisan: Next Week's Midterms and the 2028 Buildout",
+      "link": "https://newsletter.semianalysis.com/p/the-datacenter-backlash-goes-bipartisan",
+      "date": "Sun, 01 Nov 2026 18:40:45 GMT",
+      "summary": "The 2027 datacenter boom is already being built and next week\u2019s midterms won\u2019t stop it now. Roughly three-quarters of the 33.8 GW due across our top 20 states is already under construction, which is why we remain comfortable with the global +50 GW year we laid out in our Oct. 16 article. The\u2026"
+    },
+    {
       "title": "Amazon\u2019s Trainium Takes a Strike at the Training King",
       "link": "https://newsletter.semianalysis.com/p/amazons-trainium-takes-a-strike-at",
       "date": "Fri, 23 Oct 2026 19:06:44 GMT",
@@ -85,18 +91,12 @@
       "link": "https://newsletter.semianalysis.com/p/vera-rubin-nvl72-agentic-inference",
       "date": "Mon, 14 Sep 2026 22:08:56 GMT",
       "summary": "Rubin is the first platform co-designed across six products for the agentic era: Rubin GPU, Vera CPU, NVLink 6 Switch, ConnectX-9, BlueField-4, and Spectrum-6. Today we are publishing the first verified agentic inference results for Rubin, measured on our agentic inference benchmark, AgentX. Even\u2026"
-    },
-    {
-      "title": "A Brain Too Big to Carry \u2014 On-Device vs Datacenter Inference",
-      "link": "https://newsletter.semianalysis.com/p/a-brain-too-big-to-carry-on-device",
-      "date": "Mon, 14 Sep 2026 16:37:25 GMT",
-      "summary": "Where should the brain of the robot go?So far, AI has mostly lived behind a screen. Chatbots answered questions. Then agents started driving software and finishing multi-step tasks on their own. The next step is AI that acts in the physical world, and the biggest piece of that is robots. It\u2019s\u2026"
     }
   ],
   "label": "SemiAnalysis",
   "area": "ai_market",
   "site_url": "https://semianalysis.com/",
   "cadence": "weekly",
-  "fetched_at": "2026-11-01T00:15:20.683071+00:00",
+  "fetched_at": "2026-11-02T00:55:58.790560+00:00",
   "description_unreliable": false
 }
