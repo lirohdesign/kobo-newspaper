@@ -3,6 +3,12 @@
   "status": "ok",
   "items": [
     {
+      "title": "IPCC authors meet in Tanzania to advance report on physical science of climate change",
+      "link": "https://www.ipcc.ch/2026/11/02/ipcc-ar7-wgi-lam3-arusha-tanzania/",
+      "date": "Mon, 02 Nov 2026 15:35:32 +0000",
+      "summary": "GENEVA, Nov 2- Scientists of the Working Group I of the Intergovernmental Panel on Climate Change (IPCC), which assesses the physical science of climate change, are meeting in Arusha, Tanzania, from 2 to 6 November to advance their contribution to the Seventh Assessment Report. The meeting is\u2026"
+    },
+    {
       "title": "IPCC Invites Experts to Review Draft Methodology Report on Carbon Dioxide Removal Technologies, Carbon Capture, Utilization and Storage",
       "link": "https://www.ipcc.ch/2026/10/30/ipcc-methodology-report-cdrtccus-expert-review/",
       "date": "Fri, 30 Oct 2026 12:20:49 +0000",
@@ -55,18 +61,12 @@
       "link": "https://www.ipcc.ch/2026/10/07/pr19-2026/",
       "date": "Wed, 07 Oct 2026 10:58:40 +0000",
       "summary": "GENEVA, Oct 7 \u2013 Registration is open for experts worldwide to review the First Order Draft of the Working Group II contribution to the IPCC Seventh Assessment Report (AR7). The Working Group II contribution to AR7 assesses the vulnerability of socio-economic and natural systems to climate change,\u2026"
-    },
-    {
-      "title": "Nearly 200 experts meet in Bangkok to advance IPCC assessment of climate change mitigation",
-      "link": "https://www.ipcc.ch/2026/09/28/pr18-2026/",
-      "date": "Mon, 28 Sep 2026 12:46:57 +0000",
-      "summary": "PATHUM, Sept 28 \u2013 Nearly 200 authors from 79 countries are gathered at the Asian Institute of Technology in Pathum, Thailand, from 28 September to 1 October to draft the Working Group III contribution to the Intergovernmental Panel on Climate Change (IPCC) Seventh Assessment Report (AR7) on the\u2026"
     }
   ],
   "label": "IPCC \u2014 News & Announcements",
   "area": "ipcc",
   "site_url": "https://www.ipcc.ch/news/",
   "cadence": "weekly",
-  "fetched_at": "2026-11-02T00:56:15.482947+00:00",
+  "fetched_at": "2026-11-03T02:59:17.017754+00:00",
   "description_unreliable": false
 }

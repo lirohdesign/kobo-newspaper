@@ -3,10 +3,16 @@
   "status": "ok",
   "items": [
     {
+      "title": "GDPx: Measuring Frontier Model Capabilities Across the Most Valuable Domains",
+      "link": "https://newsletter.semianalysis.com/p/gdpx-measuring-frontier-model-capabilities",
+      "date": "Mon, 02 Nov 2026 01:51:42 GMT",
+      "summary": "GDPx is a benchmark that covers the most valuable domains for frontier intelligence. It aims to be the world\u2019s best benchmark for measuring general agentic capabilities.We believe the first trillion dollars of AI revenue will be concentrated in sectors that can deploy frontier intelligence at high\u2026"
+    },
+    {
       "title": "The Datacenter Backlash Goes Bipartisan: Next Week's Midterms and the 2028 Buildout",
       "link": "https://newsletter.semianalysis.com/p/the-datacenter-backlash-goes-bipartisan",
       "date": "Sun, 01 Nov 2026 18:40:45 GMT",
-      "summary": "The 2027 datacenter boom is already being built and next week\u2019s midterms won\u2019t stop it now. Roughly three-quarters of the 33.8 GW due across our top 20 states is already under construction, which is why we remain comfortable with the global +50 GW year we laid out in our Oct. 16 article. The\u2026"
+      "summary": "The 2027 datacenter boom is already being built, and next week\u2019s midterms won\u2019t stop it now. Roughly three-quarters of the 33.8 GW due across our top 20 states is already under construction, which is why we remain comfortable with the global +50 GW year we laid out in our Oct. 16 article. The\u2026"
     },
     {
       "title": "Amazon\u2019s Trainium Takes a Strike at the Training King",
@@ -85,18 +91,12 @@
       "link": "https://newsletter.semianalysis.com/p/everyone-says-datacenter-moratoriums",
       "date": "Tue, 15 Sep 2026 20:54:41 GMT",
       "summary": "The debate on US datacenters has never been so politically charged. Four states have acted in under two months. New York has stopped issuing environmental permits for datacenters, Texas has paused the next step in its massive ERCOT interconnection queue, Pennsylvania has pulled datacenters out of\u2026"
-    },
-    {
-      "title": "Vera Rubin NVL72 Agentic Inference: 67x better Performance per Dollar",
-      "link": "https://newsletter.semianalysis.com/p/vera-rubin-nvl72-agentic-inference",
-      "date": "Mon, 14 Sep 2026 22:08:56 GMT",
-      "summary": "Rubin is the first platform co-designed across six products for the agentic era: Rubin GPU, Vera CPU, NVLink 6 Switch, ConnectX-9, BlueField-4, and Spectrum-6. Today we are publishing the first verified agentic inference results for Rubin, measured on our agentic inference benchmark, AgentX. Even\u2026"
     }
   ],
   "label": "SemiAnalysis",
   "area": "ai_market",
   "site_url": "https://semianalysis.com/",
   "cadence": "weekly",
-  "fetched_at": "2026-11-02T00:55:58.790560+00:00",
+  "fetched_at": "2026-11-03T02:58:55.145364+00:00",
   "description_unreliable": false
 }

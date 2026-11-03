@@ -3,6 +3,12 @@
   "status": "ok",
   "items": [
     {
+      "title": "Seed, Fertilizer, and Pesticide Costs: Comparing U.S. and Brazilian Soybean Farms",
+      "link": "https://farmdocdaily.illinois.edu/2026/11/seed-fertilizer-and-pesticide-costs-comparing-u-s-and-brazilian-soybean-farms.html",
+      "date": "Mon, 02 Nov 2026 14:11:21 +0000",
+      "summary": "The September 2026 Purdue University\u2013CME Group Ag Economy Barometer found that 80% of producers were concerned or very concerned about the competitiveness of U.S. soybeans relative to Brazil. In the\u2026"
+    },
+    {
       "title": "Convergence of Financial Performance",
       "link": "https://farmdocdaily.illinois.edu/2026/10/convergence-of-financial-performance.html",
       "date": "Fri, 30 Oct 2026 14:55:05 +0000",
@@ -55,18 +61,12 @@
       "link": "https://farmdocdaily.illinois.edu/2026/10/diesel-fuel-price-impact-on-fuel-oil-and-per-acre-machinery-costs.html",
       "date": "Tue, 20 Oct 2026 20:20:04 +0000",
       "summary": "Diesel fuel prices for agricultural use in Illinois have reached a record high. Those higher prices are estimated to raise fuel and oil costs on Central Illinois grain farms with\u2026"
-    },
-    {
-      "title": "Differences in Sentiment Among Corn and Soybean Producers",
-      "link": "https://farmdocdaily.illinois.edu/2026/10/differences-in-sentiment-among-corn-and-soybean-producers.html",
-      "date": "Mon, 19 Oct 2026 14:53:50 +0000",
-      "summary": "This article examines dispersion in producer sentiment, as measured by the Ag Economy Barometer (AEB) index, among survey respondents over time, and illustrated differences in sentiment and survey answers among corn and soybean producers using results from the September 2026 AEB survey. Dispersion\u2026"
     }
   ],
   "label": "farmdoc daily",
   "area": "agriculture",
   "site_url": "https://farmdocdaily.illinois.edu/",
   "cadence": "weekly_digest",
-  "fetched_at": "2026-11-02T00:55:59.054531+00:00",
+  "fetched_at": "2026-11-03T02:58:55.610253+00:00",
   "description_unreliable": false
 }
