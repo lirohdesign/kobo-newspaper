@@ -252,6 +252,11 @@ def collect_calendar(today, calendar_path="calendar.json"):
     return active_html, upcoming_html
 
 
+# Off while vickerstheatre.com is a client-rendered app that parse_vickers
+# cannot read (2026-11-04). Set True once the cinema source is fixed.
+CINEMA_ENABLED = False
+
+
 def collect_cinema(ts):
     print("DEBUG: Collecting Cinema...")
     try:
@@ -339,7 +344,7 @@ def main():
         already_sent_today = os.path.exists(f"old_issues/{file_date}.html")
         weather_content = collect_weather(ts)
         nyt_content = collect_nyt(ts)
-        cinema_content = collect_cinema(ts)
+        cinema_content = collect_cinema(ts) if CINEMA_ENABLED else ""
         research_calendar_active, research_calendar_upcoming = collect_calendar(today, "research_calendar.json")
         research_calendar_html = "\n".join(filter(None, [research_calendar_active, research_calendar_upcoming]))
         research_content = collect_research(ts, research_calendar_html)
@@ -397,14 +402,17 @@ def main():
         calendar_section = "\n".join(filter(None, [calendar_active, calendar_upcoming])) or "<p class='metadata'>No events due or upcoming in the next 14 days.</p>"
 
         # MASTER index.html
+        cinema_nav = '<a href="cinema.html">cinema</a> | ' if CINEMA_ENABLED else ""
+        cinema_section = (f"<section><h2>04. cinema</h2>{cinema_content if cinema_content else '<p>unavailable</p>'}</section><hr>\n"
+                          if CINEMA_ENABLED else "")
+        n_research, n_calendar = ("05", "06") if CINEMA_ENABLED else ("04", "05")
         master_index = f"""<!DOCTYPE html><html><head><meta charset='UTF-8'><title>liroh daily {ts}</title><link rel='stylesheet' href='style.css'></head>
-<body><h1>liroh daily {ts}</h1><nav><a href="weather.html">weather</a> | <a href="nyt.html">nyt</a> | <a href="links.html">links</a> | <a href="cinema.html">cinema</a> | <a href="research.html">research</a> | <a href="archive.html">archive</a></nav>
+<body><h1>liroh daily {ts}</h1><nav><a href="weather.html">weather</a> | <a href="nyt.html">nyt</a> | <a href="links.html">links</a> | {cinema_nav}<a href="research.html">research</a> | <a href="archive.html">archive</a></nav>
 <section><h2>01. weather</h2>{weather_content if weather_content else '<p>unavailable</p>'}</section><hr>
 <section><h2>02. nyt briefing</h2>{nyt_content if nyt_content else '<p>unavailable</p>'}</section><hr>
 <section><h2>03. daily links</h2>{links_final_content}</section><hr>
-<section><h2>04. cinema</h2>{cinema_content if cinema_content else '<p>unavailable</p>'}</section><hr>
-<section><h2>05. research</h2>{research_content if research_content else '<p>unavailable</p>'}</section><hr>
-<section><h2>06. calendar</h2>{calendar_section}</section></body></html>"""
+{cinema_section}<section><h2>{n_research}. research</h2>{research_content if research_content else '<p>unavailable</p>'}</section><hr>
+<section><h2>{n_calendar}. calendar</h2>{calendar_section}</section></body></html>"""
         
         with open("index.html", "w", encoding="utf-8") as f:
             f.write(master_index)
