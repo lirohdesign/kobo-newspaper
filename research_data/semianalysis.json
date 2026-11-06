@@ -3,6 +3,12 @@
   "status": "ok",
   "items": [
     {
+      "title": "The Iron(wood) Throne: Google's TPU Stakes Its Claim on Inference",
+      "link": "https://newsletter.semianalysis.com/p/tpu-strikes-the-king",
+      "date": "Thu, 05 Nov 2026 19:03:45 GMT",
+      "summary": "In November 2025, we published a newsletter saying that Google is selling TPUs to external customers. Since then, we have been proven right over and over again with Oracle, OpenAI, Anthropic, and Meta all becoming customers of TPUs just as our Accelerator Model reported.Hardware demand is only half\u2026"
+    },
+    {
       "title": "Elon Is Doing It Again: SpaceX Will Be The World\u2019s Biggest AI Cloud",
       "link": "https://newsletter.semianalysis.com/p/elon-is-doing-it-again-spacex-will",
       "date": "Tue, 03 Nov 2026 20:44:53 GMT",
@@ -85,18 +91,12 @@
       "link": "https://newsletter.semianalysis.com/p/computation-and-data-movement-for",
       "date": "Mon, 21 Sep 2026 18:14:15 GMT",
       "summary": "Mixture of Experts, now widely used in frontier models, has changed both the structure of serving and the economics of useful inference. It did more than increase parameter count. It changed which tensors are active for each token, what must remain close together, which transfers need strong local\u2026"
-    },
-    {
-      "title": "Engrams Embedding Entendre: Codesign for Efficient DRAM/SSD Offloading",
-      "link": "https://newsletter.semianalysis.com/p/engrams-embedding-entendre-codesign",
-      "date": "Fri, 18 Sep 2026 14:34:20 GMT",
-      "summary": "Engram extends standard token embeddings with learned multi-token lookups. Recurring local patterns retrieve vectors directly, reducing the need to reconstruct them through attention and feed-forward layers. With Engram model architecture optimization, it allows for lower HBM capacity to be needed\u2026"
     }
   ],
   "label": "SemiAnalysis",
   "area": "ai_market",
   "site_url": "https://semianalysis.com/",
   "cadence": "weekly",
-  "fetched_at": "2026-11-05T01:34:49.774144+00:00",
+  "fetched_at": "2026-11-06T01:42:00.158281+00:00",
   "description_unreliable": false
 }
