@@ -3,6 +3,12 @@
   "status": "ok",
   "items": [
     {
+      "title": "We Visited China\u2019s Stargate in Inner Mongolia",
+      "link": "https://newsletter.semianalysis.com/p/we-visited-chinas-stargate-in-inner",
+      "date": "Sat, 07 Nov 2026 19:01:39 GMT",
+      "summary": "Stargate Abilene has become the symbol of America\u2019s AI buildout. It is a gigawatt-scale campus on the Texas plains built for OpenAI. China has campuses on a similar scale, though few people outside the country have had a look inside. In September, we visited one, and we found the speed, scale,\u2026"
+    },
+    {
       "title": "The Iron(wood) Throne: Google's TPU Stakes Its Claim on Inference",
       "link": "https://newsletter.semianalysis.com/p/tpu-strikes-the-king",
       "date": "Thu, 05 Nov 2026 19:03:45 GMT",
@@ -85,18 +91,12 @@
       "link": "https://newsletter.semianalysis.com/p/clustermax-30-the-industry-standard",
       "date": "Wed, 23 Sep 2026 21:20:29 GMT",
       "summary": "This post has bonus content for paid subscribers. Upgrade to get full access.In 8 months since our last major release of ClusterMAX, slavering investors have just about run out of pockets to stuff checks into. GPU supply has gone to zero. Meanwhile, we have been hard at work putting clusters\u2026"
-    },
-    {
-      "title": "Computation and Data Movement for Inference",
-      "link": "https://newsletter.semianalysis.com/p/computation-and-data-movement-for",
-      "date": "Mon, 21 Sep 2026 18:14:15 GMT",
-      "summary": "Mixture of Experts, now widely used in frontier models, has changed both the structure of serving and the economics of useful inference. It did more than increase parameter count. It changed which tensors are active for each token, what must remain close together, which transfers need strong local\u2026"
     }
   ],
   "label": "SemiAnalysis",
   "area": "ai_market",
   "site_url": "https://semianalysis.com/",
   "cadence": "weekly",
-  "fetched_at": "2026-11-07T01:01:15.639865+00:00",
+  "fetched_at": "2026-11-08T00:49:12.282891+00:00",
   "description_unreliable": false
 }
