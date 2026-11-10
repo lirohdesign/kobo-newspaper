@@ -357,7 +357,7 @@ def main():
             sent_ids = []
         
         # Section include-list mirrors the trades/market-sentiment/climate/policy
-        # buckets in taste.md — deliberately leaves out politics/us-news/uk-news,
+        # buckets in archive/taste.md — deliberately leaves out politics/us-news/uk-news,
         # where slugfest and hot-take material concentrates and a length+recency
         # filter has no way to tell that apart from signal.
         params = {'api-key': GUARDIAN_API_KEY, 'page-size': 50, 'type': 'article', 'section': 'environment|world|global-development|business|science', 'show-fields': 'wordcount,trailText', 'order-by': 'newest'}

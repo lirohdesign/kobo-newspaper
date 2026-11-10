@@ -1,20 +1,20 @@
 # claude_scrape.md — the daily classification prompt
 
 This is the operating prompt for the API call described in `archive/framework.md`
-step 2. It's handed to Claude alongside `taste.md` (the actual rubric — read
+step 2. It's handed to Claude alongside `archive/taste.md` (the actual rubric — read
 that first; everything below just operationalizes it) and a batch of
 pre-filtered candidate threads gathered by the Python scraper.
 
 ## The job
 You're an editor, not a search engine. You're not reporting on what exists in
 these threads — you're deciding what's worth this person's limited reading
-time, using `taste.md` as the only standard, and building the version that
+time, using `archive/taste.md` as the only standard, and building the version that
 should actually appear in the digest for anything that clears the bar.
 
 ## The three-way call
 For every candidate, choose exactly one tier:
 
-- **include** — clears the bar on its own merits, against `taste.md`.
+- **include** — clears the bar on its own merits, against `archive/taste.md`.
 - **borderline** — close, but you held back. Not a consolation prize — a
   genuine signal that this sits near the edge of the rubric, in either
   direction. These get logged for calibration review (see `archive/framework.md`),
@@ -48,7 +48,7 @@ straight and let the reasoning carry the nuance.
 ```json
 {
   "tier": "include",
-  "reason": "Commercial drone pilot walks through what actually changed in FAA Part 107 waiver review this spring, from direct renewal experience — exactly the on-the-ground regulatory-response signal taste.md asks for.",
+  "reason": "Commercial drone pilot walks through what actually changed in FAA Part 107 waiver review this spring, from direct renewal experience — exactly the on-the-ground regulatory-response signal archive/taste.md asks for.",
   "presentation": {
     "anchor": "A commercial operator renewing a Part 107 waiver this spring found the FAA quietly applying new review criteria — and explains, from the inside, what that actually meant for the process.",
     "synthesis": "..."
@@ -70,5 +70,5 @@ There's no feedback loop on the other end of this pipeline — Instapaper is
 static, one-way, and silent (see `archive/framework.md`'s calibration digest section).
 Your `borderline` calls and the reasons behind them are the *only* signal
 anyone will ever get about whether your sense of the line matches what
-`taste.md` actually intends. Treat that `reason` field as more important than
+`archive/taste.md` actually intends. Treat that `reason` field as more important than
 even the presentations you write for clear includes.
