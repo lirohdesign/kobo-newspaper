@@ -3,6 +3,12 @@
   "status": "ok",
   "items": [
     {
+      "title": "Remarks by the IPCC Chair Jim Skea during the opening of COP31 of the UNFCCC",
+      "link": "https://www.ipcc.ch/2026/11/09/remarks-ipcc-chair-jim-skea-unfccc-cop31/",
+      "date": "Mon, 09 Nov 2026 08:50:10 +0000",
+      "summary": "9 November 2026, Antalya, Turkey Your Excellencies, distinguished delegates, colleagues and friends, ladies and gentlemen, As Chair of the Intergovernmental Panel on Climate Change, I am grateful for the opportunity to address the opening of COP31. This is the first COP held in T\u00fcrkiye, and I thank\u2026"
+    },
+    {
       "title": "IPCC at COP31",
       "link": "https://www.ipcc.ch/2026/11/06/ipcc-at-cop31/",
       "date": "Fri, 06 Nov 2026 14:42:04 +0000",
@@ -55,18 +61,12 @@
       "link": "https://www.ipcc.ch/2026/10/12/ipcc-chair-jim-skea-remarks-ipcc-65-opening/",
       "date": "Mon, 12 Oct 2026 10:32:43 +0000",
       "summary": "Addis Ababa, Ethiopia, 12 October 2026 Thank you, Ko, especially as you serve in a dual role at this plenary: interim Secretary of the IPCC and Deputy Secretary-General of the WMO. Your Excellencies, distinguished delegates and colleagues, dear guests, ladies and gentlemen, The Intergovernmental\u2026"
-    },
-    {
-      "title": "IPCC\u2019s Sixty-Fifth Session in Addis Ababa, Ethiopia",
-      "link": "https://www.ipcc.ch/2026/10/09/ma20-2026/",
-      "date": "Fri, 09 Oct 2026 08:32:36 +0000",
-      "summary": "GENEVA, Oct 8\u2013 The Intergovernmental Panel on Climate Change (IPCC) will be holding its Sixty-Fifth Plenary Session in Addis Ababa, Ethiopia, from 12 to 16 October 2026. The 65th Session of the IPCC is hosted by the United Nations Economic Commission for Africa (UNECA) and the Federal Democratic\u2026"
     }
   ],
   "label": "IPCC \u2014 News & Announcements",
   "area": "ipcc",
   "site_url": "https://www.ipcc.ch/news/",
   "cadence": "weekly",
-  "fetched_at": "2026-11-09T01:04:31.845667+00:00",
+  "fetched_at": "2026-11-10T03:41:17.581563+00:00",
   "description_unreliable": false
 }
