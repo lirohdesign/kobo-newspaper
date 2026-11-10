@@ -22,7 +22,7 @@ anything structural.
 ### Standard build — what to change for what
 
 - *"Stop showing me X" / "I want more Y" / "this thread isn't landing"* →
-  `taste.md`. Rubric problem, not code. Fix the rubric; the prompt that
+  `archive/taste.md`. Rubric problem, not code. Fix the rubric; the prompt that
   defers to it follows automatically.
 - *"Add/remove a subreddit" / "this DRAFT source isn't working"* →
   `sources.json`.

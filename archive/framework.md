@@ -217,12 +217,12 @@ If you want a path excluded from `main`'s tracking without risking this, just do
 
 ## Reddit digest pipeline (parked)
 
-The spec for a Claude-scored Reddit digest lives in `taste.md`, `sources.json`, and `claude_scrape.md`. The pipeline is described below but is **currently not running** — Reddit data access is blocked (see "Access wall" section).
+The spec for a Claude-scored Reddit digest lives in `archive/taste.md`, `sources.json`, and `claude_scrape.md`. The pipeline is described below but is **currently not running** — Reddit data access is blocked (see "Access wall" section).
 
 ### Daily run design
 
 1. **Gather.** Fetch from subreddits in `sources.json` `daily` buckets via unauthenticated `.json` endpoints. Pre-filter: drop one-line comments, sort by score, cap comments per thread.
-2. **Classify.** One batched API call with `taste.md` (rubric) and `claude_scrape.md` (instructions). Per candidate: tier (include/borderline/exclude), one-line reason, synthesized presentation for includes.
+2. **Classify.** One batched API call with `archive/taste.md` (rubric) and `claude_scrape.md` (instructions). Per candidate: tier (include/borderline/exclude), one-line reason, synthesized presentation for includes.
 3. **Render.** Included items → new section in daily build, alongside existing sections.
 4. **Persist.** Sent-hash log (SHA-256 masked IDs, no repeats) + near-miss log (borderline calls only — the calibration record).
 
@@ -232,7 +232,7 @@ Each run checks `sources.json` `seasonal` entries — is today inside a `windows
 
 ### Calibration digest
 
-On a set cadence, generate a short digest from the near-miss log (borderline calls + reasoning) and deliver it to Instapaper. This is how drift gets caught — Instapaper gives no engagement signal back, so the only feedback loop is reviewing close calls periodically. See `taste.md` and `claude_scrape.md` for the rubric and prompt contract.
+On a set cadence, generate a short digest from the near-miss log (borderline calls + reasoning) and deliver it to Instapaper. This is how drift gets caught — Instapaper gives no engagement signal back, so the only feedback loop is reviewing close calls periodically. See `archive/taste.md` and `claude_scrape.md` for the rubric and prompt contract.
 
 ### Access wall
 
@@ -276,7 +276,7 @@ Calendar triggers are date-dependent — can't be tested with a dry run. Check t
 
 | Concern | File |
 | :--- | :--- |
-| Kids section content and scoring rubric | `taste.md` (for Reddit); section-specific modules for kids |
+| Kids section content and scoring rubric | `archive/taste.md` (for Reddit); section-specific modules for kids |
 | Reddit subreddits, buckets, daily vs. seasonal | `sources.json` |
 | Reddit runtime prompt and output contract | `claude_scrape.md` |
 | Calendar events and scrapers | `calendar.json` |

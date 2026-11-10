@@ -1,5 +1,5 @@
 {
-  "_README": "Source map for the Reddit digest, organized by the buckets defined in taste.md. Entries marked DRAFT are starting candidates that haven't been vetted in a live run yet — check them against taste.md's filters (especially the slugfest and petty-gripe rules) before trusting them long-term.",
+  "_README": "Source map for the Reddit digest, organized by the buckets defined in archive/taste.md. Entries marked DRAFT are starting candidates that haven't been vetted in a live run yet — check them against archive/taste.md's filters (especially the slugfest and petty-gripe rules) before trusting them long-term.",
 
   "daily": [
     {
@@ -19,7 +19,7 @@
       "subreddits": [
         "RealEstate", "Construction", "Homebuilding"
       ],
-      "notes": "DRAFT. Your follow list doesn't include a dedicated real-estate-economics sub, so these are starting guesses. Caution: r/RealEstate skews toward individual-buyer anxiety threads ('should I waive inspection') — exactly the petty-gripe pattern taste.md says to filter. Worth checking whether it clears the bar after a week of real output, or whether something more trade-press-flavored fits better."
+      "notes": "DRAFT. Your follow list doesn't include a dedicated real-estate-economics sub, so these are starting guesses. Caution: r/RealEstate skews toward individual-buyer anxiety threads ('should I waive inspection') — exactly the petty-gripe pattern archive/taste.md says to filter. Worth checking whether it clears the bar after a week of real output, or whether something more trade-press-flavored fits better."
     },
     {
       "id": "climate_ecology_human_rights",
@@ -28,7 +28,7 @@
         "climate", "ecology", "conservation", "HumanRights",
         "sustainability", "Sustainable", "Permaculture"
       ],
-      "notes": "DRAFT, deliberately cast wide per 'open to anything.' Sustainability/Sustainable/Permaculture overlap with the trades bucket — that's fine, a good thread can surface in either. Same slugfest/outrage filter from taste.md applies here, probably more than anywhere else."
+      "notes": "DRAFT, deliberately cast wide per 'open to anything.' Sustainability/Sustainable/Permaculture overlap with the trades bucket — that's fine, a good thread can surface in either. Same slugfest/outrage filter from archive/taste.md applies here, probably more than anywhere else."
     },
     {
       "id": "political_economy_academic",
@@ -69,12 +69,12 @@
         "major Fed releases / significant economic data drops"
       ],
       "subreddits": ["climate", "Economics", "economy"],
-      "notes": "Check for and surface discussion around known release windows; same evidence-over-hot-take filter from taste.md applies to the discussion threads these spawn."
+      "notes": "Check for and surface discussion around known release windows; same evidence-over-hot-take filter from archive/taste.md applies to the discussion threads these spawn."
     }
   ],
 
   "from_your_follow_list_not_yet_placed": {
-    "note": "Subreddits from your historical follow dump that don't map cleanly onto a bucket above. Some look like deliberate 'weight down' calls from taste.md (financialindependence/personalfinance/Frugal — the lottery-ideology pattern); others (dad, Dogtraining, reactivedogs, Huntingdogs, redletterchristians, Darkroom, Lightning, CLOUDS, Kiteboarding, Sup, mathteachers, TheGreatLoop, ThingsIWishIKnew, treehouse, treehouses, declutter, minimalism, minimalist, NoLawns, fucklawns) just look like personal-life/hobby follows that may not be 'newspaper'-shaped at all. Flagging rather than guessing — say the word if any of these should be folded into a bucket.",
+    "note": "Subreddits from your historical follow dump that don't map cleanly onto a bucket above. Some look like deliberate 'weight down' calls from archive/taste.md (financialindependence/personalfinance/Frugal — the lottery-ideology pattern); others (dad, Dogtraining, reactivedogs, Huntingdogs, redletterchristians, Darkroom, Lightning, CLOUDS, Kiteboarding, Sup, mathteachers, TheGreatLoop, ThingsIWishIKnew, treehouse, treehouses, declutter, minimalism, minimalist, NoLawns, fucklawns) just look like personal-life/hobby follows that may not be 'newspaper'-shaped at all. Flagging rather than guessing — say the word if any of these should be folded into a bucket.",
     "subreddits": [
       "financialindependence", "personalfinance", "Frugal",
       "dad", "Dogtraining", "reactivedogs", "Huntingdogs", "redletterchristians",
