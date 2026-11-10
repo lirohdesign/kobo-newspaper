@@ -308,11 +308,21 @@ if `old_issues/<today>.html` already exists on gh-pages). Check
 this one only refreshes the website, and the digest reaches the Kobo with
 tomorrow's issue. Tell the user which case applies.
 
-## 6. Close with a short self-report
+## 6. Close with the decisions made
 
-A few lines to the user: sources checked, anything repaired, any curation flags,
-standard reviews and leads logged (even if not acted on), and the as-of dates in this
-week's synthesis. Also append it to `research_data/curation_log.jsonl` as one
+End the session with a summary in the chat of the decisions you made, one line
+each with its reason, in this order:
+
+- what you changed in the automated layer (repairs, scrapers, calendar rows)
+- what you added or retired as a watch or a source flag
+- standard reviews and leads logged, and the as-of dates in this week's
+  synthesis
+- what you looked at and dropped
+- the tokens spent looking outward, if that step ran
+- last, anything that needs the maintainer's reply. At most three. Say what
+  happens by default if there is no reply.
+
+Also append it to `research_data/curation_log.jsonl` as one
 line with `"action": "session_report"`, and append each correction the
 maintainer made during the session as its own `"action":
 "maintainer_correction"` line. The log is what the next session reads, and
