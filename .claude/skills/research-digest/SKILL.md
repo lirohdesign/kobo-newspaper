@@ -193,6 +193,50 @@ repo or method it changes. Log the maintainer's verdict when given:
 ```
 Your hit rate is kept ÷ brought, over leads with `"brought_by": "agent"`.
 
+## 2b. Look outward (optional)
+
+Skip this step when the session is short on tokens; steps 0-2 and 3-6 do not
+depend on it. It runs only when the private state directory
+`~/Documents/kobo-lookout` exists. Design and limits: `lookout-plan.md`.
+
+This repo and its Pages site are public. Nothing from this step is written
+here: no find, no name, no reason. Sections, reactions and sources live in the
+private directory. The only trace in this repo is one clause in the
+`session_report` line: sections written, sources broken.
+
+What the maintainer wants from this step is information about the things he
+already likes coming back to him, and some he has not considered. Not events
+to attend.
+
+Do it in this order, and stop after any item; each leaves the state
+consistent.
+
+1. **Read the state** (under 1,000 tokens): `lessons.md`, `ledger.json`.
+2. **Gather** (no tokens): run each `*_pack.py` in the private directory. A
+   pack script reads the maintainer's own files and open data, and writes a
+   pack of candidates it has not offered before.
+3. **Write one short section per pack** (about 500 words) into the private
+   directory, in the form `lessons.md` records as liked. Pick from the pack;
+   do not use all of it. Quote another writer for a sentence or two and link
+   to the rest.
+4. **Mark what is not confirmed.** A database entry or a search summary is a
+   lead: say so in the section, or confirm it on the source's own page. A fact
+   from your own knowledge is marked as yours.
+5. **Commit the private directory.**
+6. **Only with tokens to spare, look further out**: one or two searches for
+   writing about something in this week's section, or for a new open source a
+   pack script could read every week. A source that works is added to the
+   script, so next week it costs nothing.
+
+When the maintainer reacts in the chat, record it the same session: update
+the counts in `ledger.json`, and add or strengthen one line in `lessons.md` (a
+lesson from one reaction is tentative; it becomes a rule at two that agree).
+A reaction about something public-safe in this repo is still logged here as a
+`maintainer_correction`.
+
+`lookout.py` in this repo watches listing pages for new lines and is run only
+if `watches.json` in the private directory is non-empty.
+
 ## 3. Synthesize
 
 Read `research_data/<id>.json` (latest pull) and, for sources worth checking
