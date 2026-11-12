@@ -3,16 +3,16 @@
   "status": "ok",
   "items": [
     {
-      "title": "Press Freedom Tracker year to date \u2014 2026-11-11",
-      "link": "https://pressfreedomtracker.us/#snapshot-2026-11-11",
-      "date": "2026-11-11",
-      "summary": "262 incidents Jan 1 to Nov 11, 2026 excluding chilling statements (287 in the same span of 2025); latest incident dated 2026-11-10. By category: Assault 168, Arrest/Criminal Charge 46, Equipment Damage 32, Subpoena/Legal Order 25, Chilling Statement 21, Other Incident 14, Denial of Access 9, Equipment Search or Seizure 8, Leak Case 5, Prior Restraint 3, Border Stop 1."
+      "title": "Press Freedom Tracker year to date \u2014 2026-11-12",
+      "link": "https://pressfreedomtracker.us/#snapshot-2026-11-12",
+      "date": "2026-11-12",
+      "summary": "262 incidents Jan 1 to Nov 12, 2026 excluding chilling statements (287 in the same span of 2025); latest incident dated 2026-11-10. By category: Assault 168, Arrest/Criminal Charge 46, Equipment Damage 32, Subpoena/Legal Order 25, Chilling Statement 21, Other Incident 14, Denial of Access 9, Equipment Search or Seizure 8, Leak Case 5, Prior Restraint 3, Border Stop 1."
     }
   ],
   "label": "U.S. Press Freedom Tracker \u2014 incidents against journalists",
   "area": "visibility",
   "site_url": "https://pressfreedomtracker.us/",
   "cadence": "weekly",
-  "fetched_at": "2026-11-11T01:21:54.366976+00:00",
+  "fetched_at": "2026-11-12T02:22:31.837969+00:00",
   "description_unreliable": false
 }

@@ -3,6 +3,18 @@
   "status": "ok",
   "items": [
     {
+      "title": "Rewriting the RFS Playbook: The Coming Battle over the 2027 Biomass-Based Diesel RVOs",
+      "link": "https://farmdocdaily.illinois.edu/2026/11/rewriting-the-rfs-playbook-the-coming-battle-over-the-2027-biomass-based-diesel-rvos.html",
+      "date": "Thu, 12 Nov 2026 02:20:20 +0000",
+      "summary": "The battle over the 2027 Renewable Fuel Standard (RFS) volumes has begun. Earlier this week, Louisiana Governor Jeff Landry and Alabama Governor Kay Ivey asked EPA Administrator Lee Zeldin for\u2026"
+    },
+    {
+      "title": "The 2026 ARC/PLC Decision: Who Should Consider ARC-IC?",
+      "link": "https://farmdocdaily.illinois.edu/2026/11/the-2026-arc-plc-decision-who-should-consider-arc-ic.html",
+      "date": "Wed, 11 Nov 2026 02:28:38 +0000",
+      "summary": "The December 11th deadline for the 2026 crop year ARC/PLC enrollment is approaching. Because the deadline is later than usual, most farmers have harvested their crops. Knowing individual farm yields\u2026"
+    },
+    {
       "title": "Farm Absorption Capacity and Producer Sentiment",
       "link": "https://farmdocdaily.illinois.edu/2026/11/farm-absorption-capacity-and-producer-sentiment.html",
       "date": "Fri, 06 Nov 2026 15:55:48 +0000",
@@ -49,24 +61,12 @@
       "link": "https://farmdocdaily.illinois.edu/2026/10/the-2026-arc-plc-decision-arc-co-vs-plc.html",
       "date": "Wed, 28 Oct 2026 01:34:48 +0000",
       "summary": "The commodity program decision deadline for program crops harvested in 2026 is December 11, 2026. Current projections and expectations for prices and yields suggest that ARC-CO would be expected to trigger larger payments than PLC on corn and soybean base acres in most counties. The comparison for\u2026"
-    },
-    {
-      "title": "US-Mexico Cattle Trade and Beef Markets",
-      "link": "https://farmdocdaily.illinois.edu/2026/10/us-mexico-cattle-trade-and-beef-markets.html",
-      "date": "Tue, 27 Oct 2026 00:01:45 +0000",
-      "summary": "Mexico exported feeder cattle to the US until New World Screwworm caused officials to stop this flow in 2025. In this farmdoc daily article, we estimate the impacts on the US and Mexico going from baseline projections where live trade returns to pre-entry levels to an alternative case with less\u2026"
-    },
-    {
-      "title": "The US No Loss Crop Sector Safety Net",
-      "link": "https://farmdocdaily.illinois.edu/2026/10/the-us-no-loss-crop-sector-safety-net.html",
-      "date": "Fri, 23 Oct 2026 14:02:02 +0000",
-      "summary": "Consistent with \u201cCrop Loss\u201d headlines dating to 2023, combined loss at harvest totaled $28.1 billion for producing the US 2025 cost of production crops (barley, corn, oats, peanuts, rice, seed cotton, sorghum, soybeans, wheat). However, all but $3.7 billion of this loss was covered by the US crop\u2026"
     }
   ],
   "label": "farmdoc daily",
   "area": "agriculture",
   "site_url": "https://farmdocdaily.illinois.edu/",
   "cadence": "weekly_digest",
-  "fetched_at": "2026-11-11T01:21:02.788447+00:00",
+  "fetched_at": "2026-11-12T02:21:56.786985+00:00",
   "description_unreliable": false
 }
