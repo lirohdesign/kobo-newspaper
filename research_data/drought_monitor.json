@@ -3,16 +3,16 @@
   "status": "ok",
   "items": [
     {
-      "title": "Indiana Drought Monitor \u2014 week of 2026-11-03",
-      "link": "https://droughtmonitor.unl.edu/CurrentMap/StateDroughtMonitor.aspx?IN#week-2026-11-03",
-      "date": "2026-11-03T00:00:00",
-      "summary": "Indiana as of 2026-11-03: 17.4% no classification, 82.6% D0 (abnormally dry), 24.2% D1 (moderate drought). Any-dryness coverage (D0+) is up from 51.1% the week of 2026-10-20."
+      "title": "Indiana Drought Monitor \u2014 week of 2026-11-10",
+      "link": "https://droughtmonitor.unl.edu/CurrentMap/StateDroughtMonitor.aspx?IN#week-2026-11-10",
+      "date": "2026-11-10T00:00:00",
+      "summary": "Indiana as of 2026-11-10: 7.4% no classification, 92.6% D0 (abnormally dry), 33.2% D1 (moderate drought). Any-dryness coverage (D0+) is up from 88.9% the week of 2026-10-27."
     }
   ],
   "label": "US Drought Monitor \u2014 Indiana",
   "area": "climate_drought",
   "site_url": "https://droughtmonitor.unl.edu/CurrentMap/StateDroughtMonitor.aspx?IN",
   "cadence": "weekly",
-  "fetched_at": "2026-11-12T02:21:57.129522+00:00",
+  "fetched_at": "2026-11-13T01:59:38.748812+00:00",
   "description_unreliable": false
 }
