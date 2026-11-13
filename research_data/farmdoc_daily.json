@@ -3,6 +3,12 @@
   "status": "ok",
   "items": [
     {
+      "title": "The Split Personality of 2026 US Corn Yield Estimates",
+      "link": "https://farmdocdaily.illinois.edu/2026/11/the-split-personality-of-2026-us-corn-yield-estimates.html",
+      "date": "Fri, 13 Nov 2026 00:07:40 +0000",
+      "summary": "This crop year, market observers have a heightened cynicism about the veracity of US national average corn yield estimates after data processing errors led to the release of an erroneous\u2026"
+    },
+    {
       "title": "Rewriting the RFS Playbook: The Coming Battle over the 2027 Biomass-Based Diesel RVOs",
       "link": "https://farmdocdaily.illinois.edu/2026/11/rewriting-the-rfs-playbook-the-coming-battle-over-the-2027-biomass-based-diesel-rvos.html",
       "date": "Thu, 12 Nov 2026 02:20:20 +0000",
@@ -55,18 +61,12 @@
       "link": "https://farmdocdaily.illinois.edu/2026/10/the-45z-biofuel-tax-credit-part-4-inside-the-updated-usda-feedstock-carbon-intensity-calculator.html",
       "date": "Thu, 29 Oct 2026 01:50:38 +0000",
       "summary": "USDA recently released an updated version of its Feedstock Intensity Calculator (FD-CIC) for the 45Z Clean Fuel Production Tax Credit (USDA, FD-CIC v.1.2; User Manual, September 4, 2026). The updated calculator changes the Carbon Intensity (CI) scoring in significant ways. It also includes more\u2026"
-    },
-    {
-      "title": "The 2026 ARC/PLC Decision: ARC-CO vs PLC",
-      "link": "https://farmdocdaily.illinois.edu/2026/10/the-2026-arc-plc-decision-arc-co-vs-plc.html",
-      "date": "Wed, 28 Oct 2026 01:34:48 +0000",
-      "summary": "The commodity program decision deadline for program crops harvested in 2026 is December 11, 2026. Current projections and expectations for prices and yields suggest that ARC-CO would be expected to trigger larger payments than PLC on corn and soybean base acres in most counties. The comparison for\u2026"
     }
   ],
   "label": "farmdoc daily",
   "area": "agriculture",
   "site_url": "https://farmdocdaily.illinois.edu/",
   "cadence": "weekly_digest",
-  "fetched_at": "2026-11-12T02:21:56.786985+00:00",
+  "fetched_at": "2026-11-13T01:59:38.409963+00:00",
   "description_unreliable": false
 }

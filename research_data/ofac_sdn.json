@@ -3,9 +3,9 @@
   "status": "ok",
   "items": [
     {
-      "title": "OFAC SDN list by program \u2014 2026-11-12",
-      "link": "https://ofac.treasury.gov/specially-designated-nationals-and-blocked-persons-list-sdn-human-readable-lists#snapshot-2026-11-12",
-      "date": "2026-11-12",
+      "title": "OFAC SDN list by program \u2014 2026-11-13",
+      "link": "https://ofac.treasury.gov/specially-designated-nationals-and-blocked-persons-list-sdn-human-readable-lists#snapshot-2026-11-13",
+      "date": "2026-11-13",
       "summary": "19563 entries on the SDN list (file last modified 2026-11-09). Russia/Ukraine: 6733, Iran: 4093, SDGT: 3360. SDGT is counter-terrorism and not Gaza-specific."
     }
   ],
@@ -13,6 +13,6 @@
   "area": "conflict",
   "site_url": "https://ofac.treasury.gov/",
   "cadence": "weekly",
-  "fetched_at": "2026-11-12T02:22:28.642095+00:00",
+  "fetched_at": "2026-11-13T02:00:27.495789+00:00",
   "description_unreliable": false
 }

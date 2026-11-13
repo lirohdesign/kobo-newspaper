@@ -3,6 +3,12 @@
   "status": "ok",
   "items": [
     {
+      "title": "Nvidia and the World Without Jensen",
+      "link": "https://newsletter.semianalysis.com/p/nvidia-and-the-world-without-jensen",
+      "date": "Thu, 12 Nov 2026 18:06:26 GMT",
+      "summary": "Jensen Huang is no longer the CEO of Nvidia. Nvidia\u2019s board was investigating Jensen\u2019s conduct and weighing his future at the company he founded, and clearly the conduct issue is real; it is ethically problematic to have relationships with a customer who is a Chinese CCP asset and with multiple\u2026"
+    },
+    {
       "title": "We Visited China\u2019s Stargate in Inner Mongolia",
       "link": "https://newsletter.semianalysis.com/p/we-visited-chinas-stargate-in-inner",
       "date": "Sat, 07 Nov 2026 19:01:39 GMT",
@@ -85,18 +91,12 @@
       "link": "https://newsletter.semianalysis.com/p/the-chinese-ai-infrastructure-boom",
       "date": "Fri, 25 Sep 2026 15:58:22 GMT",
       "summary": "China sits at the frontier of the global model race. GLM 5.3 and Kimi K3 are the latest in a run of striking open-weights releases. ByteDance's Doubao serves 345M monthly users as China's ChatGPT, and Seedance is the State-Of-The-Art video generation model. Every one of those models runs on a\u2026"
-    },
-    {
-      "title": "ClusterMAX 3.0: The Industry Standard GPU Cloud Rating System Returns",
-      "link": "https://newsletter.semianalysis.com/p/clustermax-30-the-industry-standard",
-      "date": "Wed, 23 Sep 2026 21:20:29 GMT",
-      "summary": "This post has bonus content for paid subscribers. Upgrade to get full access.In 8 months since our last major release of ClusterMAX, slavering investors have just about run out of pockets to stuff checks into. GPU supply has gone to zero. Meanwhile, we have been hard at work putting clusters\u2026"
     }
   ],
   "label": "SemiAnalysis",
   "area": "ai_market",
   "site_url": "https://semianalysis.com/",
   "cadence": "weekly",
-  "fetched_at": "2026-11-12T02:21:56.346438+00:00",
+  "fetched_at": "2026-11-13T01:59:37.758349+00:00",
   "description_unreliable": false
 }
