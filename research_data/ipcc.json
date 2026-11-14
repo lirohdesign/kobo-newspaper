@@ -3,6 +3,18 @@
   "status": "ok",
   "items": [
     {
+      "title": "IPCC invites experts to review first draft of report on mitigation of climate change",
+      "link": "https://www.ipcc.ch/2026/11/13/ipcc-invites-experts-to-review-first-draft-of-report-on-mitigation-of-climate-change/",
+      "date": "Fri, 13 Nov 2026 16:09:03 +0000",
+      "summary": "GENEVA, Nov 13 \u2013 The first draft of the Working Group III contribution to the IPCC Seventh Assessment Report (AR7) will open for review next week. The Working Group III contribution to AR7 assesses the mitigation of climate change. Authors finalized the first draft following their second Lead\u2026"
+    },
+    {
+      "title": "IPCC Chair keynote address at COP31 Presidency Event: Science, Solutions and Keeping 1.5\u00b0C Within Reach",
+      "link": "https://www.ipcc.ch/2026/11/13/ipcc-chair-jim-skea-keynote-cop31-presidency-event-science-solutions/",
+      "date": "Fri, 13 Nov 2026 15:06:51 +0000",
+      "summary": "13 November 2026 Antalya, T\u00fcrkiye Check against delivery The state of the science and implications for COP31 and beyond Distinguished delegates, ladies and gentlemen, During the opening session of this COP, I offered the proposition that \u201cclimate action without science is like a ship without a\u2026"
+    },
+    {
       "title": "Remarks by the IPCC Chair Jim Skea during the opening of COP31 of the UNFCCC",
       "link": "https://www.ipcc.ch/2026/11/09/remarks-ipcc-chair-jim-skea-unfccc-cop31/",
       "date": "Mon, 09 Nov 2026 08:50:10 +0000",
@@ -49,24 +61,12 @@
       "link": "https://www.ipcc.ch/2026/10/16/65th-plenary-session-of-ipcc/",
       "date": "Fri, 16 Oct 2026 19:41:51 +0000",
       "summary": "ADDIS ABABA, Oct 16 \u2013 The IPCC Chair, Jim Skea, suspended tonight the 65th Plenary Session in Addis Ababa after the meeting ran over its planned duration and many delegations from least developed countries and Small Island Developing States had to leave. The Chair\u2019s decision safeguards and upholds\u2026"
-    },
-    {
-      "title": "IPCC Opens Sixty Fifth Plenary Session in Addis Ababa, Ethiopia",
-      "link": "https://www.ipcc.ch/2026/10/12/ipcc-sixty-fifth-plenary-addis-ababa/",
-      "date": "Mon, 12 Oct 2026 13:22:47 +0000",
-      "summary": "ADDIS ABABA, Oct 12 \u2013 The Sixty-Fifth Session of the Intergovernmental Panel on Climate Change (IPCC) began today in Addis Ababa, Ethiopia. IPCC member governments are meeting from 12 to 16 October to advance the IPCC work planned for the seventh assessment cycle. The Panel\u2019s agenda for this\u2026"
-    },
-    {
-      "title": "IPCC Chair Jim Skea\u2019s remarks during the opening of the 65th Session of the IPCC",
-      "link": "https://www.ipcc.ch/2026/10/12/ipcc-chair-jim-skea-remarks-ipcc-65-opening/",
-      "date": "Mon, 12 Oct 2026 10:32:43 +0000",
-      "summary": "Addis Ababa, Ethiopia, 12 October 2026 Thank you, Ko, especially as you serve in a dual role at this plenary: interim Secretary of the IPCC and Deputy Secretary-General of the WMO. Your Excellencies, distinguished delegates and colleagues, dear guests, ladies and gentlemen, The Intergovernmental\u2026"
     }
   ],
   "label": "IPCC \u2014 News & Announcements",
   "area": "ipcc",
   "site_url": "https://www.ipcc.ch/news/",
   "cadence": "weekly",
-  "fetched_at": "2026-11-13T02:00:01.685826+00:00",
+  "fetched_at": "2026-11-14T01:32:36.596263+00:00",
   "description_unreliable": false
 }
