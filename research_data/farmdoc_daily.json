@@ -3,6 +3,12 @@
   "status": "ok",
   "items": [
     {
+      "title": "The Growing Role of ECO and SCO in Federal Crop Insurance Support",
+      "link": "https://farmdocdaily.illinois.edu/2026/11/the-growing-role-of-eco-and-sco-in-federal-crop-insurance-support.html",
+      "date": "Sat, 14 Nov 2026 03:37:15 +0000",
+      "summary": "This article documents increases in premium support associated with two county add-on products: the Supplemental Coverage Option (SCO) and the Enhanced Coverage Option (ECO). Premium support is the amount of\u2026"
+    },
+    {
       "title": "The Split Personality of 2026 US Corn Yield Estimates",
       "link": "https://farmdocdaily.illinois.edu/2026/11/the-split-personality-of-2026-us-corn-yield-estimates.html",
       "date": "Fri, 13 Nov 2026 00:07:40 +0000",
@@ -55,18 +61,12 @@
       "link": "https://farmdocdaily.illinois.edu/2026/10/smaller-loans-drive-decline-in-non-real-estate-farm-lending-at-commercial-banks-in-q3-2026.html",
       "date": "Thu, 29 Oct 2026 16:12:33 +0000",
       "summary": "Non-real estate farm loan volume at commercial banks fell 25.0% year-over-year in the third quarter of 2026. A sharp contraction in average loan sizes drove the decline, even as the total number of loan originations increased. Average maturities shortened across categories, most notably for farm\u2026"
-    },
-    {
-      "title": "The 45Z Biofuel Tax Credit, Part 4: Inside the Updated USDA Feedstock Carbon Intensity Calculator",
-      "link": "https://farmdocdaily.illinois.edu/2026/10/the-45z-biofuel-tax-credit-part-4-inside-the-updated-usda-feedstock-carbon-intensity-calculator.html",
-      "date": "Thu, 29 Oct 2026 01:50:38 +0000",
-      "summary": "USDA recently released an updated version of its Feedstock Intensity Calculator (FD-CIC) for the 45Z Clean Fuel Production Tax Credit (USDA, FD-CIC v.1.2; User Manual, September 4, 2026). The updated calculator changes the Carbon Intensity (CI) scoring in significant ways. It also includes more\u2026"
     }
   ],
   "label": "farmdoc daily",
   "area": "agriculture",
   "site_url": "https://farmdocdaily.illinois.edu/",
   "cadence": "weekly_digest",
-  "fetched_at": "2026-11-14T01:32:16.508587+00:00",
+  "fetched_at": "2026-11-15T01:09:39.625930+00:00",
   "description_unreliable": false
 }
