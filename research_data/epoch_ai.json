@@ -1,12 +1,102 @@
 {
   "id": "epoch_ai",
-  "status": "error",
-  "error": "HTTP Error 403: Forbidden",
-  "items": [],
+  "status": "ok",
+  "items": [
+    {
+      "title": "What Huawei\u2019s Horinger data center reveals about China\u2019s compute gap",
+      "link": "https://epochai.substack.com/p/what-huaweis-horinger-data-center",
+      "date": "Thu, 12 Nov 2026 16:03:15 GMT",
+      "summary": "This is a condensed version of a longer report on our websiteHuawei, China\u2019s biggest AI chip developer, is drawing on China\u2019s abundant energy to build data centers. However, because of US export controls, it lags behind its US competitor Nvidia in both chip performance and efficiency.As a case\u2026"
+    },
+    {
+      "title": "The Epoch Brief - November 11, 2026",
+      "link": "https://epochai.substack.com/p/the-epoch-brief-november-11-2026",
+      "date": "Wed, 11 Nov 2026 17:18:46 GMT",
+      "summary": "Welcome to the Epoch Brief. Here\u2019s what we\u2019ve been working on:An open-weight AI model autonomously hacked six Firefox versions for ~$1,000 each. In our controlled test, GLM 5.3 built working exploits for a browser with over 200 million users by reverse-engineering attacks from patches that hadn\u2019t\u2026"
+    },
+    {
+      "title": "AI can turn public security fixes into working exploits before users receive an update",
+      "link": "https://epochai.substack.com/p/glm-patch-gap-exploit-firefox",
+      "date": "Fri, 30 Oct 2026 12:07:16 GMT",
+      "summary": "This is a summary of a longer report on our websiteImagine you\u2019re one of Firefox\u2019s 200 million users. You visit a website, the page loads, and you leave without clicking on anything. Nothing to worry about.Except, just loading the page might have given an attacker the ability to read any files on\u2026"
+    },
+    {
+      "title": "We tried to automate Epoch",
+      "link": "https://epochai.substack.com/p/can-ai-automate-epoch",
+      "date": "Mon, 26 Oct 2026 16:33:24 GMT",
+      "summary": "This is a summary of a longer report on our website.AIs continue to saturate new benchmarks year after year. Yet even as the list of benchmarks where AI has surpassed humans keeps growing, the actual economic impact of AI seems to be growing more slowly.This \u201cproductivity paradox\u201d reflects several\u2026"
+    },
+    {
+      "title": "The Epoch Brief - October 23, 2026",
+      "link": "https://epochai.substack.com/p/the-epoch-brief-october-23-2026",
+      "date": "Fri, 23 Oct 2026 19:29:17 GMT",
+      "summary": "Welcome to the Epoch Brief. Here\u2019s what we\u2019ve been working on:Can AI automate our own jobs? We gave six AI models 11 realistic tasks drawn from work at Epoch, from designing graphics to drafting short research articles, to see whether they could automate Epoch. The verdict: not yet.AI is getting\u2026"
+    },
+    {
+      "title": "Can AI automate AI R&D yet?",
+      "link": "https://epochai.substack.com/p/can-ai-automate-ai-r-and-d-yet",
+      "date": "Fri, 09 Oct 2026 18:41:00 GMT",
+      "summary": "This is a summary of a longer report on our website.Leading AI companies say they are building automated AI researchers. Many \u2014 including the labs themselves \u2014 say that recursively self-improving AIs could be extremely dangerous. But how close are we to actually achieving it?Existing evidence shows\u2026"
+    },
+    {
+      "title": "The Epoch Brief - October 8, 2026",
+      "link": "https://epochai.substack.com/p/the-epoch-brief-october-8-2026",
+      "date": "Thu, 08 Oct 2026 19:30:49 GMT",
+      "summary": "Welcome back to the Epoch Brief. In this edition, we\u2019re covering:Proliferating agents and plummeting costs. Our new report estimates how many AI agents could soon exist in the world: nearly 2 billion at the upper bound, assuming agents run on cheap models. Another report shows that prices for a\u2026"
+    },
+    {
+      "title": "Hundreds of millions of AI agents are coming. Is there work for them?",
+      "link": "https://epochai.substack.com/p/hundreds-of-millions-of-ai-agents",
+      "date": "Fri, 02 Oct 2026 19:11:16 GMT",
+      "summary": "This is a summary of a longer report on our website.Anthropic\u2019s Dario Amodei has described a future \u201ccountry of geniuses in a datacenter\u201d, but could we actually see AI spitting out a country\u2019s worth of labor in the next few years?AI companies are shelling out hundreds of billions of dollars each\u2026"
+    },
+    {
+      "title": "AI is getting cheaper faster than any other transformative technology",
+      "link": "https://epochai.substack.com/p/how-fast-is-ai-getting-cheaper",
+      "date": "Mon, 28 Sep 2026 15:33:44 GMT",
+      "summary": "This is a summary of a longer report on our website.Would you be surprised if the sticker price on a new car fell from $50,000 to $296 in two years?Because that\u2019s how fast AI is getting cheaper.Over the past five years, the price of thought \u2014 the cost for an AI to hit a particular benchmark score \u2014\u2026"
+    },
+    {
+      "title": "How far behind Nvidia is Huawei?",
+      "link": "https://epochai.substack.com/p/how-far-behind-nvidia-is-huawei",
+      "date": "Thu, 24 Sep 2026 16:04:51 GMT",
+      "summary": "This is a summary of a more detailed report, available on our website.The US-China AI competition spans everything from models and data centers to chips and the manufacturing equipment used to make them. Chips and manufacturing equipment form the foundation of that stack and determine how much\u2026"
+    },
+    {
+      "title": "The Epoch Brief - September 12, 2026",
+      "link": "https://epochai.substack.com/p/the-epoch-brief-september-12-2026",
+      "date": "Sat, 12 Sep 2026 16:51:21 GMT",
+      "summary": "Welcome back to the Epoch Brief! It\u2019s been longer between Briefs than usual, so buckle up for a rich edition.Here\u2019s the full rundown:An in-depth report on Huawei\u2019s AI chip roadmap and production capacity, and how it will stack up with Nvidia this decade.An Nvidia-sized hole in US GDP statistics:\u2026"
+    },
+    {
+      "title": "An update on AI\u2019s most important number",
+      "link": "https://epochai.substack.com/p/an-update-on-ais-most-important-number",
+      "date": "Thu, 27 Aug 2026 21:46:41 GMT",
+      "summary": "This post is part of Epoch AI\u2019s Gradient Updates newsletter, which shares more opinionated or informal takes on big questions in AI progress. These posts solely represent the views of the authors, and do not necessarily reflect the views of Epoch AI as a whole.OpenAI and Anthropic are growing about\u2026"
+    },
+    {
+      "title": "The Nvidia-sized hole in US GDP statistics",
+      "link": "https://epochai.substack.com/p/the-nvidia-sized-hole-in-us-gdp-statistics",
+      "date": "Mon, 24 Aug 2026 20:29:25 GMT",
+      "summary": "The AI boom has driven US investment in computing equipment to roughly $400 billion per year, nearly triple its 2023 level. Yet the measured impact on GDP growth has remained modest. The conventional explanation is that much of this investment is spent on imported technology goods, which are\u2026"
+    },
+    {
+      "title": "9 Big questions benchmarks can help answer",
+      "link": "https://epochai.substack.com/p/9-big-questions-benchmarks-can-help",
+      "date": "Fri, 14 Aug 2026 17:15:24 GMT",
+      "summary": "This post is part of Epoch AI\u2019s Gradient Updates newsletter, which shares more opinionated or informal takes on big questions in AI progress. These posts solely represent the views of the authors, and do not necessarily reflect the views of Epoch AI as a whole.In this post, I lay out some big\u2026"
+    },
+    {
+      "title": "Will financing bottleneck AI compute? An Anthropic case study",
+      "link": "https://epochai.substack.com/p/will-financing-bottleneck-ai-compute",
+      "date": "Thu, 13 Aug 2026 21:15:46 GMT",
+      "summary": "This post is part of Epoch AI\u2019s Gradient Updates newsletter, which shares more opinionated or informal takes on big questions in AI progress. These posts solely represent the views of the authors, and do not necessarily reflect the views of Epoch AI as a whole.Compute scaling has driven much of the\u2026"
+    }
+  ],
   "label": "Epoch AI \u2014 Gradient Updates & Data Insights",
   "area": "ai_market",
   "site_url": "https://epoch.ai/",
   "cadence": "weekly",
-  "fetched_at": "2026-11-15T01:09:38.888883+00:00",
+  "fetched_at": "2026-11-16T01:14:44.873269+00:00",
   "description_unreliable": false
 }
