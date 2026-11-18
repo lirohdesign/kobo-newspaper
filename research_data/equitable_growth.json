@@ -3,6 +3,12 @@
   "status": "ok",
   "items": [
     {
+      "title": "An economic statistical agenda for the next presidential administration and U.S. Congress",
+      "link": "https://equitablegrowth.org/research-paper/an-economic-statistical-agenda-for-the-next-presidential-administration-and-u-s-congress/",
+      "date": "Tue, 17 Nov 2026 14:00:00 +0000",
+      "summary": "Rebuilding trust and capacity by measuring what everyday Americans care about Key Takeaways The federal economic statistical system is under-resourced and is under attack by the Trump administration. Both forces are threatening the quality of gathered data and undermining the American public\u2019s\u2026"
+    },
+    {
       "title": "An end to summer tariff peace threatens U.S. economic growth",
       "link": "https://equitablegrowth.org/an-end-to-summer-tariff-peace-threatens-u-s-economic-growth/",
       "date": "Fri, 30 Oct 2026 13:00:00 +0000",
@@ -55,18 +61,12 @@
       "link": "https://equitablegrowth.org/working-papers/what-work-does-generative-ai-do/",
       "date": "Tue, 08 Sep 2026 12:59:00 +0000",
       "summary": "Authors:Alexander Bick, Federal Reserve Bank of St. LouisAdam Blandin, Vanderbilt UniversityDavid Deming, Harvard UniversityTyler Schumacher, Vanderbilt University Abstract: We measure how workers use genAI for their jobs in a nationally representative survey linking genAI adoption to detailed\u2026"
-    },
-    {
-      "title": "What happens to U.S. workers without access to Unemployment Insurance amid economic downturns or disruptions related to AI?",
-      "link": "https://equitablegrowth.org/what-happens-to-u-s-workers-without-access-to-unemployment-insurance-amid-economic-downturns-or-disruptions-related-to-ai/",
-      "date": "Wed, 02 Sep 2026 13:00:00 +0000",
-      "summary": "Key Takeaways: The adoption of artificial intelligence in the workplace has led to predictions of U.S. labor market disruptions. In response, policymakers have increased attention on the fitness of the nation\u2019s existing social insurance programs.Reforms to our social insurance programs are sorely\u2026"
     }
   ],
   "label": "Washington Center for Equitable Growth",
   "area": "inequality",
   "site_url": "https://equitablegrowth.org/",
   "cadence": "monthly_digest",
-  "fetched_at": "2026-11-17T04:04:15.819718+00:00",
+  "fetched_at": "2026-11-18T03:00:18.170739+00:00",
   "description_unreliable": false
 }
