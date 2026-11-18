@@ -3,6 +3,12 @@
   "status": "ok",
   "items": [
     {
+      "title": "Illinois Yields in 2026 Below Trend",
+      "link": "https://farmdocdaily.illinois.edu/2026/11/illinois-yields-in-2026-below-trend.html",
+      "date": "Wed, 18 Nov 2026 01:38:30 +0000",
+      "summary": "Many Illinois farmers report that 2026 yields fell short of expectations. The November yield forecasts from the National Agricultural Statistics Service (NASS), U.S. Department of Agriculture, also point to below-trend\u2026"
+    },
+    {
       "title": "The Growing Role of ECO and SCO in Federal Crop Insurance Support",
       "link": "https://farmdocdaily.illinois.edu/2026/11/the-growing-role-of-eco-and-sco-in-federal-crop-insurance-support.html",
       "date": "Sat, 14 Nov 2026 03:37:15 +0000",
@@ -55,18 +61,12 @@
       "link": "https://farmdocdaily.illinois.edu/2026/10/convergence-of-financial-performance.html",
       "date": "Fri, 30 Oct 2026 14:55:05 +0000",
       "summary": "A recent article examined differences in liquidity and repayment capacity for different sized crop farms (Langemeier, 2026). This article examines trends in the operating profit margins, asset turnover ratios, and\u2026"
-    },
-    {
-      "title": "Smaller Loans Drive Decline in Non-Real Estate Farm Lending at Commercial Banks in Q3 2026",
-      "link": "https://farmdocdaily.illinois.edu/2026/10/smaller-loans-drive-decline-in-non-real-estate-farm-lending-at-commercial-banks-in-q3-2026.html",
-      "date": "Thu, 29 Oct 2026 16:12:33 +0000",
-      "summary": "Non-real estate farm loan volume at commercial banks fell 25.0% year-over-year in the third quarter of 2026. A sharp contraction in average loan sizes drove the decline, even as the total number of loan originations increased. Average maturities shortened across categories, most notably for farm\u2026"
     }
   ],
   "label": "farmdoc daily",
   "area": "agriculture",
   "site_url": "https://farmdocdaily.illinois.edu/",
   "cadence": "weekly_digest",
-  "fetched_at": "2026-11-17T04:03:43.875100+00:00",
+  "fetched_at": "2026-11-18T02:59:51.041377+00:00",
   "description_unreliable": false
 }
