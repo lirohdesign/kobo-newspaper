@@ -3,6 +3,12 @@
   "status": "ok",
   "items": [
     {
+      "title": "AI-related inputs drove U.S. businesses\u2019 import growth in 2025",
+      "link": "https://equitablegrowth.org/ai-related-inputs-drove-u-s-businesses-import-growth-in-2025/",
+      "date": "Wed, 18 Nov 2026 14:00:00 +0000",
+      "summary": "Key takeaways: U.S. imports of business inputs grew in 2025, driven largely by intermediate goods related to the build out of AI infrastructure, including computers, electronics, equipment, machinery, and metals. Excluding AI-related goods, the share of intermediate inputs coming from abroad has\u2026"
+    },
+    {
       "title": "An economic statistical agenda for the next presidential administration and U.S. Congress",
       "link": "https://equitablegrowth.org/research-paper/an-economic-statistical-agenda-for-the-next-presidential-administration-and-u-s-congress/",
       "date": "Tue, 17 Nov 2026 14:00:00 +0000",
@@ -55,18 +61,12 @@
       "link": "https://equitablegrowth.org/what-work-does-generative-ai-do/",
       "date": "Tue, 08 Sep 2026 13:00:00 +0000",
       "summary": "This column originally appeared on the Federal Reserve Bank of St. Louis\u2019s website at https://www.stlouisfed.org/on-the-economy/2026/sep/what-work-does-generative-ai-do Key Takeaways: Two new measures of AI adoption offer another way to study the technology\u2019s effect on the U.S. labor market. They\u2026"
-    },
-    {
-      "title": "What Work Does Generative AI Do?",
-      "link": "https://equitablegrowth.org/working-papers/what-work-does-generative-ai-do/",
-      "date": "Tue, 08 Sep 2026 12:59:00 +0000",
-      "summary": "Authors:Alexander Bick, Federal Reserve Bank of St. LouisAdam Blandin, Vanderbilt UniversityDavid Deming, Harvard UniversityTyler Schumacher, Vanderbilt University Abstract: We measure how workers use genAI for their jobs in a nationally representative survey linking genAI adoption to detailed\u2026"
     }
   ],
   "label": "Washington Center for Equitable Growth",
   "area": "inequality",
   "site_url": "https://equitablegrowth.org/",
   "cadence": "monthly_digest",
-  "fetched_at": "2026-11-18T03:00:18.170739+00:00",
+  "fetched_at": "2026-11-19T02:42:16.361842+00:00",
   "description_unreliable": false
 }
