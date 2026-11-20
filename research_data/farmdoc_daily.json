@@ -3,10 +3,16 @@
   "status": "ok",
   "items": [
     {
+      "title": "Old Gavels, New Hands: Can the Next Congress Begin to Repair Farm Policy?",
+      "link": "https://farmdocdaily.illinois.edu/2026/11/old-gavels-new-hands-can-the-next-congress-begin-to-repair-farm-policy.html",
+      "date": "Fri, 20 Nov 2026 02:07:46 +0000",
+      "summary": "The 120th United States Congress will be sworn into office on January 3, 2027. With the new Congress there will be new hands gripping old gavels in many committees and\u2026"
+    },
+    {
       "title": "Illinois Yields in 2026 Below Trend",
       "link": "https://farmdocdaily.illinois.edu/2026/11/illinois-yields-in-2026-below-trend.html",
       "date": "Wed, 18 Nov 2026 01:38:30 +0000",
-      "summary": "Many Illinois farmers report that 2026 yields fell short of expectations. The November yield forecasts from the National Agricultural Statistics Service (NASS), U.S. Department of Agriculture, also point to below-trend\u2026"
+      "summary": "Many Illinois farmers report that 2026 yields fell short of expectations. The November yield forecasts from the USDA also point to below-trend yields. Illinois corn yield is projected at 200 bushels per acre, 17 bushels below trend. Soybean yield is projected at 64 bushels per acre, about 3 bushels\u2026"
     },
     {
       "title": "The Growing Role of ECO and SCO in Federal Crop Insurance Support",
@@ -55,18 +61,12 @@
       "link": "https://farmdocdaily.illinois.edu/2026/11/seed-fertilizer-and-pesticide-costs-comparing-u-s-and-brazilian-soybean-farms.html",
       "date": "Mon, 02 Nov 2026 14:11:21 +0000",
       "summary": "Soybean farmers in both countries have little control over the prices they receive. Because individual farms sell in the same global market, their ability to compete depends largely on how much it costs them to produce a crop. This article compares what nine typical farms in the U.S. and Brazil\u2026"
-    },
-    {
-      "title": "Convergence of Financial Performance",
-      "link": "https://farmdocdaily.illinois.edu/2026/10/convergence-of-financial-performance.html",
-      "date": "Fri, 30 Oct 2026 14:55:05 +0000",
-      "summary": "A recent article examined differences in liquidity and repayment capacity for different sized crop farms (Langemeier, 2026). This article examines trends in the operating profit margins, asset turnover ratios, and\u2026"
     }
   ],
   "label": "farmdoc daily",
   "area": "agriculture",
   "site_url": "https://farmdocdaily.illinois.edu/",
   "cadence": "weekly_digest",
-  "fetched_at": "2026-11-19T02:42:04.313158+00:00",
+  "fetched_at": "2026-11-20T02:27:45.452463+00:00",
   "description_unreliable": false
 }

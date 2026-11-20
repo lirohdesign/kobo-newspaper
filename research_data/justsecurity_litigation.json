@@ -1,12 +1,18 @@
 {
   "id": "justsecurity_litigation",
-  "status": "error",
-  "error": "HTTP Error 403: Forbidden",
-  "items": [],
+  "status": "ok",
+  "items": [
+    {
+      "title": "Litigation tracker \u2014 2026-11-20",
+      "link": "https://www.justsecurity.org/107087/tracker-litigation-legal-challenges-trump-administration/#snapshot-2026-11-20",
+      "date": "2026-11-20",
+      "summary": "1,002 cases currently tracked (page modified 2026-11-19)."
+    }
+  ],
   "label": "Just Security \u2014 litigation tracker case count",
   "area": "visibility",
   "site_url": "https://www.justsecurity.org/107087/tracker-litigation-legal-challenges-trump-administration/",
   "cadence": "weekly",
-  "fetched_at": "2026-11-19T02:43:04.116620+00:00",
+  "fetched_at": "2026-11-20T02:28:24.475366+00:00",
   "description_unreliable": false
 }
