@@ -6,13 +6,13 @@
       "title": "FEC money by entity \u2014 2026 cycle through 2026-10-31",
       "link": "https://www.fec.gov/data/spending-bythenumbers/#through-2026-10-31",
       "date": "2026-10-31",
-      "summary": "2026 cycle through 2026-10-31: PACs raised $12.51B and spent $5.45B; parties raised $1.98B; candidates raised $3.26B."
+      "summary": "2026 cycle through 2026-10-31: PACs raised $12.52B and spent $5.46B; parties raised $1.98B; candidates raised $3.24B."
     }
   ],
   "label": "FEC \u2014 money by entity type, current cycle",
   "area": "visibility",
   "site_url": "https://www.fec.gov/data/",
   "cadence": "monthly",
-  "fetched_at": "2026-11-20T02:28:24.100368+00:00",
+  "fetched_at": "2026-11-21T02:39:45.766274+00:00",
   "description_unreliable": false
 }
