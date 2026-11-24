@@ -3,16 +3,16 @@
   "status": "ok",
   "items": [
     {
-      "title": "Litigation tracker \u2014 2026-11-23",
-      "link": "https://www.justsecurity.org/107087/tracker-litigation-legal-challenges-trump-administration/#snapshot-2026-11-23",
-      "date": "2026-11-23",
-      "summary": "1,004 cases currently tracked (page modified 2026-11-20)."
+      "title": "Litigation tracker \u2014 2026-11-24",
+      "link": "https://www.justsecurity.org/107087/tracker-litigation-legal-challenges-trump-administration/#snapshot-2026-11-24",
+      "date": "2026-11-24",
+      "summary": "1,006 cases currently tracked (page modified 2026-11-23)."
     }
   ],
   "label": "Just Security \u2014 litigation tracker case count",
   "area": "visibility",
   "site_url": "https://www.justsecurity.org/107087/tracker-litigation-legal-challenges-trump-administration/",
   "cadence": "weekly",
-  "fetched_at": "2026-11-23T01:53:56.098521+00:00",
+  "fetched_at": "2026-11-24T05:26:11.757081+00:00",
   "description_unreliable": false
 }
