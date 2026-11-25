@@ -3,6 +3,12 @@
   "status": "ok",
   "items": [
     {
+      "title": "Consider ARC-IC for FSA Farms Planted Entirely to Corn",
+      "link": "https://farmdocdaily.illinois.edu/2026/11/consider-arc-ic-for-fsa-farms-planted-entirely-to-corn.html",
+      "date": "Tue, 24 Nov 2026 15:31:59 +0000",
+      "summary": "Agriculture Risk Coverage at the individual level (ARC-IC) deserves consideration for 2026 on Farm Service Agency (FSA) farms planted entirely to corn with relatively low yields. ARC-IC bases its revenue\u2026"
+    },
+    {
       "title": "Is Tax Planning Needed for 2026?",
       "link": "https://farmdocdaily.illinois.edu/2026/11/is-tax-planning-needed-for-2026.html",
       "date": "Fri, 20 Nov 2026 15:28:29 +0000",
@@ -55,18 +61,12 @@
       "link": "https://farmdocdaily.illinois.edu/2026/11/trying-to-reason-with-a-midterm-election-earthquake.html",
       "date": "Fri, 06 Nov 2026 01:46:37 +0000",
       "summary": "Well, the American electorate certainly sent a message in the midterm elections on Tuesday. As of this writing, Democrats have won a substantial majority in the House of Representatives, 252\u2026"
-    },
-    {
-      "title": "2026 Crop Insurance Harvest Prices for Corn and Soybeans",
-      "link": "https://farmdocdaily.illinois.edu/2026/11/2026-crop-insurance-harvest-prices-for-corn-and-soybeans.html",
-      "date": "Wed, 04 Nov 2026 01:40:15 +0000",
-      "summary": "October settlement prices of Chicago Mercantile Exchange (CME) futures contracts are used to set harvest prices on Federal crop insurance products for corn and soybeans in the Midwest. Harvest prices are $4.75 per bushel for corn and $12.63 per bushel for soybeans. Both are above their projected\u2026"
     }
   ],
   "label": "farmdoc daily",
   "area": "agriculture",
   "site_url": "https://farmdocdaily.illinois.edu/",
   "cadence": "weekly_digest",
-  "fetched_at": "2026-11-24T05:23:58.922188+00:00",
+  "fetched_at": "2026-11-25T04:24:45.330490+00:00",
   "description_unreliable": false
 }
