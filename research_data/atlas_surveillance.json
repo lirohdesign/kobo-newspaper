@@ -3,9 +3,9 @@
   "status": "ok",
   "items": [
     {
-      "title": "Atlas of Surveillance \u2014 2026-11-24",
-      "link": "https://atlasofsurveillance.org/#snapshot-2026-11-24",
-      "date": "2026-11-24",
+      "title": "Atlas of Surveillance \u2014 2026-11-25",
+      "link": "https://atlasofsurveillance.org/#snapshot-2026-11-25",
+      "date": "2026-11-25",
       "summary": "15240 records across 7749 agencies. Top technologies: Body-worn Cameras 5647, Automated License Plate Readers 3866, Drones 1932, Third-party Investigative Platforms 1071, Face Recognition 987, Camera Registry 829. Indiana: 341 records; Automated License Plate Readers 145, Body-worn Cameras 112, Drones 38, Camera Registry 15."
     }
   ],
@@ -13,6 +13,6 @@
   "area": "visibility",
   "site_url": "https://atlasofsurveillance.org/",
   "cadence": "monthly",
-  "fetched_at": "2026-11-24T05:26:10.987521+00:00",
+  "fetched_at": "2026-11-25T04:25:26.972693+00:00",
   "description_unreliable": false
 }
