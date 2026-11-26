@@ -3,6 +3,12 @@
   "status": "ok",
   "items": [
     {
+      "title": "Season\u2019s Eatings: Holiday Meals and Food Price Concerns",
+      "link": "https://farmdocdaily.illinois.edu/2026/11/seasons-eatings-holiday-meals-and-food-price-concerns.html",
+      "date": "Thu, 26 Nov 2026 02:18:52 +0000",
+      "summary": "Introduction As the holiday season approaches, many households are planning gatherings and preparing tables for festive meals. An added stress for many during the holidays is the rising cost of\u2026"
+    },
+    {
       "title": "Consider ARC-IC for FSA Farms Planted Entirely to Corn",
       "link": "https://farmdocdaily.illinois.edu/2026/11/consider-arc-ic-for-fsa-farms-planted-entirely-to-corn.html",
       "date": "Tue, 24 Nov 2026 15:31:59 +0000",
@@ -55,18 +61,12 @@
       "link": "https://farmdocdaily.illinois.edu/2026/11/farm-absorption-capacity-and-producer-sentiment.html",
       "date": "Fri, 06 Nov 2026 15:55:48 +0000",
       "summary": "Agility and absorption capacity represent two distinct strategies through which a farm builds resilience (Lippsmeyer and Langemeier, 2023). Agility is a farm\u2019s ability to spot and exploit market changes in\u2026"
-    },
-    {
-      "title": "Trying to Reason with A Midterm Election Earthquake",
-      "link": "https://farmdocdaily.illinois.edu/2026/11/trying-to-reason-with-a-midterm-election-earthquake.html",
-      "date": "Fri, 06 Nov 2026 01:46:37 +0000",
-      "summary": "Well, the American electorate certainly sent a message in the midterm elections on Tuesday. As of this writing, Democrats have won a substantial majority in the House of Representatives, 252\u2026"
     }
   ],
   "label": "farmdoc daily",
   "area": "agriculture",
   "site_url": "https://farmdocdaily.illinois.edu/",
   "cadence": "weekly_digest",
-  "fetched_at": "2026-11-25T04:24:45.330490+00:00",
+  "fetched_at": "2026-11-26T03:40:53.215162+00:00",
   "description_unreliable": false
 }
