@@ -3,6 +3,12 @@
   "status": "ok",
   "items": [
     {
+      "title": "Humanitarian Situation Report | 26 November 2026",
+      "link": "https://www.ochaopt.org/content/humanitarian-situation-report-26-november-2026",
+      "date": "2026-11-26",
+      "summary": "Casualty figures are Gaza MoH and Israeli-authority figures, not yet UN-verified (OCHA's disclaimer)."
+    },
+    {
       "title": "Humanitarian Situation Report | 18 November 2026",
       "link": "https://www.ochaopt.org/content/humanitarian-situation-report-18-november-2026",
       "date": "2026-11-18",
@@ -25,18 +31,12 @@
       "link": "https://www.ochaopt.org/content/humanitarian-situation-report-heavy-rains-gaza-strip-8-november-2026",
       "date": "2026-11-08",
       "summary": "Casualty figures are Gaza MoH and Israeli-authority figures, not yet UN-verified (OCHA's disclaimer)."
-    },
-    {
-      "title": "Humanitarian Situation Report | 5 November 2026",
-      "link": "https://www.ochaopt.org/content/humanitarian-situation-report-5-november-2026",
-      "date": "2026-11-05",
-      "summary": "Casualty figures are Gaza MoH and Israeli-authority figures, not yet UN-verified (OCHA's disclaimer)."
     }
   ],
   "label": "OCHA oPt \u2014 Gaza reported impact snapshots and situation reports",
   "area": "conflict",
   "site_url": "https://www.ochaopt.org/publications",
   "cadence": "weekly",
-  "fetched_at": "2026-11-26T03:42:27.476461+00:00",
+  "fetched_at": "2026-11-27T03:43:19.122146+00:00",
   "description_unreliable": false
 }
