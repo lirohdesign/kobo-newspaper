@@ -3,6 +3,12 @@
   "status": "ok",
   "items": [
     {
+      "title": "AWS Challenger: Trainium3 Inference and Microarchitecture Deep Dive",
+      "link": "https://newsletter.semianalysis.com/p/trainium3-inferencex",
+      "date": "Fri, 27 Nov 2026 15:54:59 GMT",
+      "summary": "The Nvidia GPU was originally built to shade pixels, and every Nvidia generation since 2017 has bolted on another piece of AI-specific hardware to fix the bottleneck the previous one exposed. Volta added Tensor Cores, Hopper added TMA for tile data movement between HBM and SRAM, and Blackwell added\u2026"
+    },
+    {
       "title": "Evaluating Recent Model Releases on GDPx",
       "link": "https://newsletter.semianalysis.com/p/evaluating-recent-model-releases",
       "date": "Thu, 26 Nov 2026 00:05:35 GMT",
@@ -85,18 +91,12 @@
       "link": "https://newsletter.semianalysis.com/p/sparse-savings-persistent-demand-inside-glm53",
       "date": "Mon, 28 Sep 2026 19:26:41 GMT",
       "summary": "How Sparse Attention Affects DRAM/NAND Memory How does sparse attention affect the TAM of memory, including HBM and NAND? Sparse attention selects top-k most relevant tokens to attend to, reducing the memory consumption and bandwidth requirements during the core Scaled Dot-Product Attention (SDPA)\u2026"
-    },
-    {
-      "title": "Intel Panther Lake Teardown",
-      "link": "https://newsletter.semianalysis.com/p/intel-panther-lake-teardown",
-      "date": "Sat, 26 Sep 2026 13:36:32 GMT",
-      "summary": "Panther Lake debuts the first commercial implementation of a backside power delivery network (BSPDN), introduces Intel\u2019s first iteration of gate-all-around (GAA) transistors, and showcases their advanced packaging capabilities with its Foveros-S assembly. With Panther Lake, Intel\u2019s manufacturing\u2026"
     }
   ],
   "label": "SemiAnalysis",
   "area": "ai_market",
   "site_url": "https://semianalysis.com/",
   "cadence": "weekly",
-  "fetched_at": "2026-11-27T03:42:16.268017+00:00",
+  "fetched_at": "2026-11-28T03:24:23.516897+00:00",
   "description_unreliable": false
 }
