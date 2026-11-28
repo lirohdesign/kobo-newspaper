@@ -12,13 +12,13 @@
       "title": "Michigan Monthly Climate Summary \u2014 2026-10",
       "link": "https://www.ncei.noaa.gov/access/monitoring/monthly-report/#michigan-2026-10",
       "date": "2026-10",
-      "summary": "Michigan climate summary, 2026-10 (station-average, 720 station-months): Avg temp: 53.4\u00b0F, Avg high: 64.7\u00b0F, Avg low: 42.2\u00b0F, Total precip: 2.1in."
+      "summary": "Michigan climate summary, 2026-10 (station-average, 721 station-months): Avg temp: 53.4\u00b0F, Avg high: 64.7\u00b0F, Avg low: 42.2\u00b0F, Total precip: 2.1in."
     }
   ],
   "label": "NOAA NCEI Monthly Climate Summary \u2014 Indiana/Michigan",
   "area": "climate_drought",
   "site_url": "https://www.ncei.noaa.gov/access/monitoring/monthly-report/",
   "cadence": "monthly",
-  "fetched_at": "2026-11-27T03:42:48.466795+00:00",
+  "fetched_at": "2026-11-28T03:25:30.021648+00:00",
   "description_unreliable": false
 }
